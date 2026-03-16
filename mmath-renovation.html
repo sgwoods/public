@@ -43,6 +43,13 @@
             background: #f1eee5;
             border-left: 4px solid #b0a58c;
         }
+        .meta-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .meta-list li {
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -53,12 +60,37 @@
     </p>
 
     <p>
-        The immediate goal is to recover the original algorithmic context, document the historical implementation, and prepare a clean foundation for reconstructing and evaluating the planner in a modern repository.
+        The repository has moved beyond the initial bootstrap stage and is now focused on validating a runnable SBCL baseline, comparing restored planning modes, and documenting where the recovered code aligns with or diverges from the thesis and papers.
     </p>
 
     <div class="note">
-        Public project note: the project documentation bootstrap is underway. The initial emphasis is on source provenance, references, and implementation recovery rather than modernization.
+        Public project note: active restoration work is underway. As of March 16, 2026, the repository reports a working SBCL baseline across multiple historical planning benchmarks, with ongoing comparison work around Hanoi-4 hierarchy and frontier behavior.
     </div>
+
+    <h2>Repository Snapshot</h2>
+    <ul>
+        <li>
+            Repository: <a href="https://github.com/sgwoods/mmath-renovation">sgwoods/mmath-renovation</a>
+        </li>
+        <li>
+            Last repository update: March 16, 2026
+        </li>
+        <li>
+            Latest recorded commit: <em>Compare ismb and isbm hanoi4 frontiers</em>
+        </li>
+        <li>
+            Present state: the repo now documents a live SBCL working copy, restored benchmark runs, recovered historical snapshots, and a growing set of comparison and diagnosis notes for the strongest current planning domains.
+        </li>
+    </ul>
+
+    <h2>Current State</h2>
+    <ul>
+        <li>The working copy solves `blocks` / `sussman` in both `tweak` and `abtweak`.</li>
+        <li>The restored baseline solves `registers` in `tweak` and runs `hanoi-3` plus `macro-hanoi` in both modes.</li>
+        <li>`simple-robot-2` shows the expected left-wedge effect in `abtweak`.</li>
+        <li>`hanoi-4` now runs to a bounded search outcome under the restored BFS path, with ongoing comparison work on hierarchy and frontier choices.</li>
+        <li>The repository includes historical snapshots, a current SBCL working tree, and focused documentation for baseline selection, algorithm correspondence, and benchmark interpretation.</li>
+    </ul>
 
     <h2>Core References</h2>
     <ul>
@@ -78,14 +110,16 @@
 
     <h2>Renovation Priorities</h2>
     <ol>
-        <li>Recover the historical terminology, claims, and evaluation criteria from the papers and thesis.</li>
-        <li>Locate or reconstruct the original implementation artifacts and example planning domains.</li>
-        <li>Document any differences between the archived code, the thesis, and the published research.</li>
-        <li>Prepare a reproducible baseline before attempting broader modernization work.</li>
+        <li>Keep tightening the runnable SBCL baseline against the historical papers, thesis, and recovered snapshots.</li>
+        <li>Document how benchmark behavior changes across hierarchy and control choices, especially on larger Hanoi cases.</li>
+        <li>Preserve clear provenance between archival code, working copies, and interpretive modernization steps.</li>
+        <li>Use the repository documentation as the public working log for restoration decisions and benchmark evidence.</li>
     </ol>
 
     <h2>Related Pages</h2>
     <ul>
+        <li><a href="https://github.com/sgwoods/mmath-renovation">MMath renovation repository</a></li>
+        <li><a href="phd-renovation.html">PhD renovation project</a></li>
         <li><a href="patents-publications.html">Patents and publications</a></li>
         <li><a href="index.html">Steven Woods Public Pages</a></li>
     </ul>

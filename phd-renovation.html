@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhD Renovation: Program Understanding via Constraint Satisfaction</title>
+    <style>
+        body {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 840px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+            background: #faf8f2;
+        }
+        h1 {
+            margin-bottom: 0.4em;
+            color: #1f2b1f;
+        }
+        h2 {
+            margin-top: 36px;
+            margin-bottom: 12px;
+            border-left: 5px solid #ccc;
+            padding-left: 12px;
+            color: #111;
+        }
+        p {
+            margin-bottom: 1.1em;
+        }
+        ul,
+        ol {
+            padding-left: 1.4rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+        }
+        a {
+            color: #0056b3;
+        }
+        .note {
+            padding: 14px 16px;
+            background: #f1eee5;
+            border-left: 4px solid #b0a58c;
+        }
+    </style>
+</head>
+<body>
+    <h1>PhD Renovation: Program Understanding via Constraint Satisfaction</h1>
+
+    <p>
+        This project tracks the renovation of Steven Woods' PhD research code on automated program understanding via constraint satisfaction, originally developed at the University of Waterloo and now modernized for SBCL on current hardware.
+    </p>
+
+    <p>
+        The repository combines restored historical snapshots, a runnable modern baseline, replicated experiment batches, and supporting documentation for understanding how the thesis-era systems behaved and how faithfully they can be reproduced today.
+    </p>
+
+    <div class="note">
+        Public project note: active empirical and archival work is underway. As of March 16, 2026, the repository includes modern SBCL runs, preserved historical snapshots, and refreshed data assets for the original ADT situation experiments.
+    </div>
+
+    <h2>Repository Snapshot</h2>
+    <ul>
+        <li>
+            Repository: <a href="https://github.com/sgwoods/phd-renovation">sgwoods/phd-renovation</a>
+        </li>
+        <li>
+            Last repository update: March 16, 2026
+        </li>
+        <li>
+            Latest recorded commit: <em>Replace MvSit2.tar.Z with extracted ADT situation files</em>
+        </li>
+        <li>
+            Present state: the repo contains a modern SBCL codebase, preserved 1996 and 1997 historical snapshots, replicated experiment batches, graphing scripts, and test suites covering the core CSP and memory-search systems.
+        </li>
+    </ul>
+
+    <h2>Current State</h2>
+    <ul>
+        <li>The primary systems include MAP-CSP (`adt`), Memory-CSP (`memory-search`), and Quilici-style search variants.</li>
+        <li>The codebase is organized around runnable SBCL entry points, FiveAM test suites, historical snapshots, and archived experiment outputs.</li>
+        <li>The repository reports that SBCL experiment results on modern hardware statistically match the original Allegro CL/SPARC results across the four maintained code snapshots.</li>
+        <li>Current repository work includes preserving thesis-era data assets in directly usable form rather than relying on obsolete compressed archives.</li>
+    </ul>
+
+    <h2>Renovation Priorities</h2>
+    <ol>
+        <li>Preserve the historical CSP, memory-based search, and Quilici-search implementations in runnable form.</li>
+        <li>Keep the thesis-era datasets, outputs, and experiment structure accessible on modern systems.</li>
+        <li>Document what matches the original SPARC/Allegro behavior and what differs under SBCL or cleaned-up workflows.</li>
+        <li>Maintain a clear bridge between the historical research artifacts and the modernized reproducible codebase.</li>
+    </ol>
+
+    <h2>Repository Highlights</h2>
+    <ul>
+        <li>Multiple maintained system trees: `csp/`, `qcsp3/`, and preserved 1996/1997 snapshots.</li>
+        <li>Replicated experiment batches under `Q-Batch-SBCL/` with comparison plots against the historical results.</li>
+        <li>Checked-in thesis/publication material plus preserved source and data inventories.</li>
+        <li>Automated test coverage for the main solver families and historical variants.</li>
+    </ul>
+
+    <h2>Related Pages</h2>
+    <ul>
+        <li><a href="https://github.com/sgwoods/phd-renovation">PhD renovation repository</a></li>
+        <li><a href="academic.html">Academic ancestry</a></li>
+        <li><a href="patents-publications.html">Patents and publications</a></li>
+        <li><a href="mmath-renovation.html">Masters of Mathematics renovation project</a></li>
+        <li><a href="index.html">Steven Woods Public Pages</a></li>
+    </ul>
+</body>
+</html>
