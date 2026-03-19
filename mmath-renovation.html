@@ -64,7 +64,7 @@
     </p>
 
     <div class="note">
-        Public project note: active restoration work is underway. As of March 16, 2026, the repository reports a working SBCL baseline across multiple historical planning benchmarks, with ongoing comparison work around Hanoi-4 hierarchy and frontier behavior.
+        Public project note: active restoration work is underway. As of March 18, 2026, the repository has a first formal beta checkpoint, `0.9.0-beta.1`, with a restored operator-style SBCL baseline across multiple historical planning benchmarks. Hanoi-4 remains the main open publication-facing benchmark.
     </div>
 
     <h2>Repository Snapshot</h2>
@@ -73,13 +73,16 @@
             Repository: <a href="https://github.com/sgwoods/mmath-renovation">sgwoods/mmath-renovation</a>
         </li>
         <li>
-            Last repository update: March 16, 2026
+            Last repository update: March 18, 2026
         </li>
         <li>
-            Latest recorded commit: <em>Compare ismb and isbm hanoi4 frontiers</em>
+            Latest recorded commit: <em>Establish beta release process</em>
         </li>
         <li>
-            Present state: the repo now documents a live SBCL working copy, restored benchmark runs, recovered historical snapshots, and a growing set of comparison and diagnosis notes for the strongest current planning domains.
+            Formal checkpoint version: <code>0.9.0-beta.1</code>
+        </li>
+        <li>
+            Present state: the repo now has a named pre-release process, a tagged restoration checkpoint, a checked-in release snapshot, and a live SBCL working copy with restored benchmark runs and benchmark-specific diagnosis notes.
         </li>
     </ul>
 
@@ -88,7 +91,7 @@
         <li>The working copy solves `blocks` / `sussman` in both `tweak` and `abtweak`.</li>
         <li>The restored baseline solves `registers` in `tweak` and runs `hanoi-3` plus `macro-hanoi` in both modes.</li>
         <li>`simple-robot-2` shows the expected left-wedge effect in `abtweak`.</li>
-        <li>`hanoi-4` now runs to a bounded search outcome under the restored BFS path, with ongoing comparison work on hierarchy and frontier choices.</li>
+        <li>`hanoi-4` now runs to a bounded search outcome under the restored BFS path, with a formal diagnostic trail covering replay, score sensitivity, lineage, and branch divergence.</li>
         <li>The repository includes historical snapshots, a current SBCL working tree, and focused documentation for baseline selection, algorithm correspondence, and benchmark interpretation.</li>
     </ul>
 
