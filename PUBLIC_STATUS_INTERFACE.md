@@ -151,6 +151,10 @@ That renderer will:
   `repo_pushed_at`
 - generate [/Users/stevenwoods/GitPages/public/index.html](/Users/stevenwoods/GitPages/public/index.html)
 
+Current renderer path:
+
+- [/Users/stevenwoods/GitPages/public/tools/render_index.py](/Users/stevenwoods/GitPages/public/tools/render_index.py)
+
 ## Suggested Homepage Sentence Template
 
 The `public` renderer should build homepage entry text centrally from the
