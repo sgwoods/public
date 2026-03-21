@@ -64,7 +64,7 @@
     </p>
 
     <div class="note">
-        Public project note: active restoration work is underway. As of March 18, 2026, the repository has a first formal beta checkpoint, `0.9.0-beta.1`, with a restored operator-style SBCL baseline across multiple historical planning benchmarks. Hanoi-4 remains the main open publication-facing benchmark.
+        Public project note: active restoration work is underway. As of March 21, 2026, the repository is at `0.10.0-beta.1`, with exact lower-Hanoi reproduction, broad operator-style benchmark coverage, and a dedicated release dashboard tracking the road to `1.0.0`. Hanoi-4 remains the main open extension benchmark.
     </div>
 
     <h2>Repository Snapshot</h2>
@@ -73,16 +73,16 @@
             Repository: <a href="https://github.com/sgwoods/mmath-renovation">sgwoods/mmath-renovation</a>
         </li>
         <li>
-            Last repository update: March 18, 2026
+            Last repository update: March 21, 2026
         </li>
         <li>
-            Latest recorded commit: <em>Establish beta release process</em>
+            Latest recorded commit: <em>Add imbs-h1 hanoi4 hierarchy analogue</em>
         </li>
         <li>
-            Formal checkpoint version: <code>0.9.0-beta.1</code>
+            Formal checkpoint version: <code>0.10.0-beta.1</code>
         </li>
         <li>
-            Present state: the repo now has a named pre-release process, a tagged restoration checkpoint, a checked-in release snapshot, and a live SBCL working copy with restored benchmark runs and benchmark-specific diagnosis notes.
+            Present state: the repo now has a named pre-release process, exact `hanoi-2` and `hanoi-3` historical alignment, broad retained benchmark coverage, and a live release dashboard for the remaining path to `1.0.0`.
         </li>
     </ul>
 
@@ -91,8 +91,14 @@
         <li>The working copy solves `blocks` / `sussman` in both `tweak` and `abtweak`.</li>
         <li>The restored baseline solves `registers` in `tweak` and runs `hanoi-3` plus `macro-hanoi` in both modes.</li>
         <li>`simple-robot-2` shows the expected left-wedge effect in `abtweak`.</li>
-        <li>`hanoi-4` now runs to a bounded search outcome under the restored BFS path, with a formal diagnostic trail covering replay, score sensitivity, lineage, and branch divergence.</li>
+        <li>`hanoi-4` now has a tighter formal diagnosis, retained five-peg sanity checks, and active hierarchy analogue experiments like `imbs-h1`.</li>
         <li>The repository includes historical snapshots, a current SBCL working tree, and focused documentation for baseline selection, algorithm correspondence, and benchmark interpretation.</li>
+    </ul>
+
+    <h2>Release Tracking</h2>
+    <ul>
+        <li><a href="mmath-renovation-release-dashboard.html">Release dashboard</a></li>
+        <li>The dashboard highlights completed restoration milestones, the live `hanoi-4` gate, and the current beta-to-`1.0.0` path at a glance.</li>
     </ul>
 
     <h2>Core References</h2>
@@ -122,6 +128,7 @@
     <h2>Related Pages</h2>
     <ul>
         <li><a href="https://github.com/sgwoods/mmath-renovation">MMath renovation repository</a></li>
+        <li><a href="mmath-renovation-release-dashboard.html">MMath release dashboard</a></li>
         <li><a href="phd-renovation.html">PhD renovation project</a></li>
         <li><a href="patents-publications.html">Patents and publications</a></li>
         <li><a href="index.html">Steven Woods Public Pages</a></li>
