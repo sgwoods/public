@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "project_id": "codex-test1",
+  "active": true,
+  "display_name": "Codex-Test1 game project",
+  "project_page_path": "codex-test1.html",
+  "repo_url": "https://github.com/sgwoods/Codex-Test1",
+  "dashboard_url": "https://sgwoods.github.io/Codex-Test1/release-dashboard.html",
+  "experience_url": "https://sgwoods.github.io/Codex-Test1/",
+  "repo_pushed_at": "2026-03-21T11:56:58-04:00",
+  "status_generated_at": "2026-03-21T16:17:01Z",
+  "status_label": "Current release",
+  "status_value": "0.5.0-alpha.1",
+  "focus_label": "Current focus",
+  "focus_value": "Polished four-stage 1.0 slice"
+}
