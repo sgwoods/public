@@ -37,11 +37,14 @@ class ProjectStatus:
     project_id: str
     display_name: str
     project_page_path: str
+    repo_url: str
     dashboard_url: str | None
     experience_url: str | None
     repo_pushed_at: datetime
     status_label: str
     status_value: str
+    focus_label: str
+    focus_value: str
     active: bool
 
 
@@ -63,50 +66,72 @@ def load_project(path: Path) -> ProjectStatus:
         project_id=payload["project_id"],
         display_name=payload["display_name"],
         project_page_path=payload["project_page_path"],
+        repo_url=payload["repo_url"],
         dashboard_url=payload.get("dashboard_url"),
         experience_url=payload.get("experience_url"),
         repo_pushed_at=parse_datetime(payload["repo_pushed_at"]),
         status_label=payload["status_label"],
         status_value=payload["status_value"],
+        focus_label=payload["focus_label"],
+        focus_value=payload["focus_value"],
         active=bool(payload["active"]),
     )
 
 
-def project_sentence(project: ProjectStatus) -> str:
-    prefix = PROJECT_DESCRIPTIONS[project.project_id]
-    parts = [
-        prefix,
-        f"Last repo update: {format_local_date(project.repo_pushed_at)}.",
-        f"{project.status_label}: {project.status_value}.",
+def project_description(project: ProjectStatus) -> str:
+    return PROJECT_DESCRIPTIONS.get(
+        project.project_id,
+        "Public project page synced from its repository status manifest.",
+    )
+
+
+def sort_key(project: ProjectStatus) -> tuple[int, str]:
+    if project.project_id in PROJECT_ORDER:
+        return (PROJECT_ORDER.index(project.project_id), project.display_name.lower())
+    return (len(PROJECT_ORDER), project.display_name.lower())
+
+
+def render_button(href: str, label: str) -> str:
+    return f'<a class="button" href="{html.escape(href)}">{html.escape(label)}</a>'
+
+
+def render_project_card(project: ProjectStatus) -> str:
+    buttons = [
+        render_button(project.project_page_path, "Open project page"),
+        render_button(project.repo_url, "Open repository"),
     ]
     if project.dashboard_url:
-        parts.append(f"Dashboard: {project.dashboard_url}.")
+        buttons.insert(1, render_button(project.dashboard_url, "Open dashboard"))
     if project.experience_url:
-        parts.append(f"Live experience: {project.experience_url}.")
-    return " ".join(parts)
+        buttons.insert(2, render_button(project.experience_url, "Open live experience"))
+    return f"""                <article class="card">
+                    <h3>{html.escape(project.display_name)}</h3>
+                    <p>{html.escape(project_description(project))}</p>
+                    <div class="detailList">
+                        <div><strong>Last repo update</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>
+                        <div><strong>{html.escape(project.status_label)}</strong> {html.escape(project.status_value)}</div>
+                        <div><strong>{html.escape(project.focus_label)}</strong> {html.escape(project.focus_value)}</div>
+                    </div>
+                    <div class="links">
+                        {" ".join(buttons)}
+                    </div>
+                </article>"""
 
 
 def render() -> str:
-    manifests = {
-        path.stem: load_project(path)
-        for path in sorted(DATA_DIR.glob("*.json"))
-    }
-    projects = [
-        manifests[project_id]
-        for project_id in PROJECT_ORDER
-        if project_id in manifests and manifests[project_id].active
-    ]
+    projects = sorted(
+        (
+            load_project(path)
+            for path in sorted(DATA_DIR.glob("*.json"))
+        ),
+        key=sort_key,
+    )
+    projects = [project for project in projects if project.active]
     if not projects:
         raise SystemExit("No active project manifests found.")
 
     last_updated = max(project.repo_pushed_at for project in projects)
-    project_items = "\n".join(
-        f"""        <li>
-            <a href="{html.escape(project.project_page_path)}">{html.escape(project.display_name)}</a>
-            <span class="label">{html.escape(project_sentence(project))}</span>
-        </li>"""
-        for project in projects
-    )
+    project_cards = "\n".join(render_project_card(project) for project in projects)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -115,64 +140,257 @@ def render() -> str:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Woods Public Pages</title>
     <style>
+        :root {{
+            --bg: #07131f;
+            --bg2: #10253b;
+            --card: rgba(7, 19, 31, 0.72);
+            --text: #eff7ff;
+            --muted: #9cc4df;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+        }}
+
+        * {{
+            box-sizing: border-box;
+        }}
+
         body {{
-            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 760px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background: #faf8f2;
+            margin: 0;
+            color: var(--text);
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(103, 230, 168, 0.18), transparent 26%),
+                radial-gradient(circle at top right, rgba(121, 184, 255, 0.22), transparent 32%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+            min-height: 100vh;
         }}
+
         h1 {{
-            margin-bottom: 0.4em;
-            color: #1f2b1f;
+            margin: 18px 0 10px;
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: .95;
+            letter-spacing: -0.04em;
         }}
-        p {{
-            margin-bottom: 1.2em;
-        }}
-        ul {{
-            padding-left: 1.2rem;
-        }}
-        li {{
-            margin-bottom: 1rem;
-        }}
+
         a {{
-            color: #0056b3;
+            color: #d9f7ff;
         }}
-        .label {{
+
+        .shell {{
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 72px;
+        }}
+
+        .hero,
+        .panel {{
+            border: 1px solid rgba(177, 222, 255, 0.18);
+            border-radius: 28px;
+            background:
+                linear-gradient(160deg, rgba(12, 34, 54, 0.88), rgba(7, 19, 31, 0.72)),
+                radial-gradient(circle at 20% 0%, rgba(103, 230, 168, 0.14), transparent 32%);
+            box-shadow: var(--shadow);
+        }}
+
+        .hero {{
+            padding: 36px 34px 32px;
+        }}
+
+        .eyebrow {{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #d7ecff;
+            font-size: 12px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }}
+
+        .hero p,
+        .panel p {{
+            color: var(--muted);
+            line-height: 1.6;
+        }}
+
+        .hero p {{
+            max-width: 760px;
+            font-size: 18px;
+        }}
+
+        .meta {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 28px;
+        }}
+
+        .metaCard {{
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }}
+
+        .metaLabel {{
             display: block;
-            font-size: 0.95em;
-            color: #666;
+            color: #8fb3cc;
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
         }}
-        .note {{
-            padding: 14px 16px;
-            margin-bottom: 1.4em;
-            background: #f1eee5;
-            border-left: 4px solid #b0a58c;
+
+        .metaValue {{
+            font-size: 18px;
+            font-weight: 600;
+        }}
+
+        .metaNote {{
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.5;
+        }}
+
+        .panel {{
+            margin-top: 22px;
+            padding: 28px;
+            background: rgba(7, 19, 31, 0.68);
+        }}
+
+        .panel h2 {{
+            margin: 0 0 12px;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+        }}
+
+        .grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }}
+
+        .card {{
+            padding: 18px 18px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }}
+
+        .card h3 {{
+            margin: 0 0 8px;
+            font-size: 18px;
+        }}
+
+        .detailList {{
+            display: grid;
+            gap: 8px;
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }}
+
+        .detailList strong {{
+            color: #eff7ff;
+            margin-right: 6px;
+        }}
+
+        .links {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }}
+
+        .button {{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 16px;
+            border-radius: 999px;
+            background: rgba(121, 184, 255, 0.18);
+            border: 1px solid rgba(121, 184, 255, 0.28);
+            color: #eff7ff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+        }}
+
+        .footer {{
+            margin-top: 18px;
+            color: #8db0c8;
+            font-size: 13px;
+            line-height: 1.6;
+        }}
+
+        @media (max-width: 720px) {{
+            .shell {{
+                padding: 20px 14px 54px;
+            }}
+
+            .hero,
+            .panel {{
+                padding: 24px 22px;
+            }}
         }}
     </style>
 </head>
 <body>
-    <h1>Steven Woods Public Pages</h1>
-    <p>
-        This site collects public documents and project links.
-    </p>
-    <p class="note">
-        Repository work last updated: {html.escape(format_local_date(last_updated))}.
-    </p>
+    <!-- Generated by tools/render_index.py from data/projects/*.json -->
+    <main class="shell">
+        <section class="hero">
+            <span class="eyebrow">Public Index</span>
+            <h1>Steven Woods Public Pages</h1>
+            <p>
+                Shared public entry point for long-lived research restorations, active software projects,
+                and supporting reference material. Active project cards below are rendered from the
+                project status manifests in this repository.
+            </p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Tracked Projects</span>
+                    <span class="metaValue">{len(projects)}</span>
+                    <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Repository Work Last Updated</span>
+                    <span class="metaValue">{html.escape(format_local_date(last_updated))}</span>
+                    <div class="metaNote">Computed from the latest `repo_pushed_at` value across active project manifests.</div>
+                </div>
+            </div>
+        </section>
 
-    <ul>
-        <li>
-            <a href="academic.html">Academic ancestry</a>
-            <span class="label">Direct advisor lineage with links to the Mathematics Genealogy Project.</span>
-        </li>
-        <li>
-            <a href="patents-publications.html">Patents and publications</a>
-            <span class="label">Selected books, patents, and academic publications.</span>
-        </li>
-{project_items}
-    </ul>
+        <section class="panel">
+            <h2>Reference Pages</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Academic ancestry</h3>
+                    <p>Direct advisor lineage with links to the Mathematics Genealogy Project.</p>
+                    <div class="links">
+                        {render_button("academic.html", "Open page")}
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Patents and publications</h3>
+                    <p>Selected books, patents, and academic publications.</p>
+                    <div class="links">
+                        {render_button("patents-publications.html", "Open page")}
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Active Project Dashboards</h2>
+            <div class="grid">
+{project_cards}
+            </div>
+            <p class="footer">This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
+        </section>
+    </main>
 </body>
 </html>
 """
