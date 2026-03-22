@@ -421,6 +421,7 @@ def render_page(entries: list[BibEntry]) -> str:
             </p>
             <div class="breadcrumbs">
                 <a class="button button--ghost" href="style-guide.html">Open style guide</a>
+                <a class="button button--ghost" href="https://www.researchgate.net/profile/Steven-Woods">Open ResearchGate</a>
                 <a class="button button--ghost" href="Spectra/Html/Publication-Archive/index.html">Open archive reference</a>
             </div>
         </section>
