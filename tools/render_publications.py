@@ -277,6 +277,18 @@ def secondary_link(entry: BibEntry) -> tuple[str, str] | None:
     return None
 
 
+def archive_link(entry: BibEntry, field: str) -> tuple[str, str] | None:
+    url = latex_to_text(entry.fields.get(field, ""))
+    if not url:
+        return None
+    label = {
+        "archive_pdf": "Archive PDF",
+        "archive_ps": "Archive PS",
+        "archive_landing": "Archive landing",
+    }.get(field, "Archive link")
+    return url, label
+
+
 def default_link_label(entry: BibEntry) -> str:
     if section_for(entry) == "patents":
         return "View patent"
@@ -296,6 +308,15 @@ def venue_text(entry: BibEntry) -> str:
     return entry.entry_type.title()
 
 
+def render_button_link(href: str, label: str, ghost: bool = False) -> str:
+    classes = "button button--ghost" if ghost else "button"
+    return f'                        <a class="{classes}" href="{html.escape(href)}">{html.escape(label)}</a>'
+
+
+def render_button_note(label: str) -> str:
+    return f'                        <span class="button button--ghost button--disabled">{html.escape(label)}</span>'
+
+
 def render_entry(entry: BibEntry) -> str:
     title = html.escape(latex_to_text(entry.fields.get("title", entry.key)))
     authors = html.escape(format_authors(entry.fields.get("author", "")))
@@ -303,22 +324,53 @@ def render_entry(entry: BibEntry) -> str:
     year = html.escape(latex_to_text(entry.fields.get("year", "")))
     primary = primary_link(entry)
     secondary = secondary_link(entry)
-    links: list[str] = []
-    for link in (primary, secondary):
-        if not link:
-            continue
-        href, label = link
-        links.append(f'            <a class="resource-link" href="{html.escape(href)}">{html.escape(label)}</a>')
+    archive_pdf = archive_link(entry, "archive_pdf")
+    archive_ps = archive_link(entry, "archive_ps")
+    archive_landing = archive_link(entry, "archive_landing")
 
-    return "\n".join(
-        [
-            "        <li>",
-            f'            <span class="title">{title}</span>',
-            f'            <span class="meta">{authors}. <em>{venue}</em> <span class="year">{year}</span>.</span>',
+    links: list[str] = []
+    if primary:
+        href, label = primary
+        links.append(render_button_link(href, label))
+    if secondary:
+        href, label = secondary
+        links.append(render_button_link(href, label, ghost=True))
+
+    archive_links: list[str] = []
+    if section_for(entry) == "publications":
+        if archive_landing:
+            href, label = archive_landing
+            archive_links.append(render_button_link(href, label, ghost=True))
+        if archive_pdf:
+            href, label = archive_pdf
+            archive_links.append(render_button_link(href, label, ghost=True))
+        else:
+            archive_links.append(render_button_note("PDF n/a"))
+        if archive_ps:
+            href, label = archive_ps
+            archive_links.append(render_button_link(href, label, ghost=True))
+        else:
+            archive_links.append(render_button_note("PS n/a"))
+
+    blocks = [
+        '                <article class="entry">',
+        f'                    <h3 class="entryTitle">{title}</h3>',
+        f'                    <span class="entryMeta">{authors}. <em>{venue}</em> <strong>{year}</strong>.</span>',
+    ]
+    if links:
+        blocks.extend([
+            '                    <div class="entryLinks">',
             *links,
-            "        </li>",
-        ]
-    )
+            '                    </div>',
+        ])
+    if archive_links:
+        blocks.extend([
+            '                    <div class="entryLinks">',
+            *archive_links,
+            '                    </div>',
+        ])
+    blocks.append('                </article>')
+    return "\n".join(blocks)
 
 
 def render_section(entries: list[BibEntry], section_id: str, label: str) -> str:
@@ -327,10 +379,12 @@ def render_section(entries: list[BibEntry], section_id: str, label: str) -> str:
     items = "\n".join(render_entry(entry) for entry in entries)
     return "\n".join(
         [
-            f"    <h2>{label}</h2>",
-            "    <ul>",
+            '        <section class="panel">',
+            f"            <h2>{label}</h2>",
+            '            <div class="entryGrid">',
             items,
-            "    </ul>",
+            '            </div>',
+            '        </section>',
         ]
     )
 
@@ -351,109 +405,41 @@ def render_page(entries: list[BibEntry]) -> str:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Gregory Woods - Publications &amp; Patents</title>
-    <style>
-        body {{
-            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 860px;
-            margin: 40px auto;
-            padding: 0 20px 40px;
-            background-color: #fdfdfd;
-        }}
-        h1 {{
-            border-bottom: 2px solid #555;
-            padding-bottom: 10px;
-            color: #000;
-            margin-bottom: 0.5em;
-        }}
-        h2 {{
-            margin-top: 40px;
-            margin-bottom: 16px;
-            padding-left: 12px;
-            border-left: 5px solid #ccc;
-            color: #111;
-        }}
-        .intro {{
-            margin-bottom: 16px;
-            font-style: italic;
-        }}
-        .source-note {{
-            margin-bottom: 30px;
-            font-size: 0.95em;
-            color: #555;
-        }}
-        code {{
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.95em;
-        }}
-        ul {{
-            list-style-type: none;
-            padding-left: 0;
-        }}
-        li {{
-            margin-bottom: 18px;
-            padding-left: 25px;
-            position: relative;
-        }}
-        li::before {{
-            content: "•";
-            position: absolute;
-            left: 6px;
-            color: #888;
-        }}
-        .title {{
-            font-weight: bold;
-            font-size: 1.05em;
-            color: #0056b3;
-        }}
-        .meta {{
-            display: block;
-            font-size: 0.95em;
-            color: #555;
-        }}
-        .year {{
-            color: #666;
-            font-weight: bold;
-        }}
-        .resource-link {{
-            display: inline-block;
-            margin-top: 6px;
-            margin-right: 14px;
-            color: #0056b3;
-            text-decoration: none;
-        }}
-        .resource-link:hover,
-        .resource-link:focus {{
-            text-decoration: underline;
-        }}
-        footer {{
-            margin-top: 50px;
-            font-size: 0.85em;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-            color: #777;
-        }}
-    </style>
+    <link rel="stylesheet" href="assets/public-site.css">
 </head>
 <body>
+    <main class="shell shell--narrow">
+        <!-- Generated by tools/render_publications.py from data/publications.bib -->
+        <section class="hero">
+            <div class="heroTop">
+                <span class="eyebrow">Reference Page</span>
+                <a class="heroHomeLink" href="index.html">Steven Woods</a>
+            </div>
+            <h1>Patents and Publications</h1>
+            <p class="lead">
+                Curated active reference page for selected books, patents, and academic publications associated with Steven Gregory Woods.
+            </p>
+            <div class="breadcrumbs">
+                <a class="button button--ghost" href="style-guide.html">Open style guide</a>
+                <a class="button button--ghost" href="Spectra/Html/Publication-Archive/index.html">Open archive reference</a>
+            </div>
+        </section>
 
-    <!-- Generated by tools/render_publications.py from data/publications.bib -->
-    <h1>Steven Gregory Woods</h1>
-
-    <p class="intro">
-        Selected books, patents, and academic publications associated with Steven Gregory Woods.
-    </p>
-    <p class="source-note">
-        This page is rebuilt from <code>public/data/publications.bib</code>, making it easy to migrate older LaTeX or BibTeX entries into the site without hand-editing HTML.
-    </p>
+        <section class="panel">
+            <div class="notePanel">
+                <strong>Source of truth:</strong> This page is rebuilt from <code>public/data/publications.bib</code>.
+                Canonical publisher or DOI links remain primary, while recovered Spectra archive PS/PDF artifacts are surfaced here when they are available.
+            </div>
+        </section>
 
 {sections}
 
-    <footer>
-        Public reference page for publications and patents associated with Steven Gregory Woods.
-    </footer>
-
+        <section class="panel">
+            <p class="footer">
+                Active publications are rendered from a shared bibliography source and linked back to the recovered Spectra archive when matching artifacts exist, so the active page and archive references do not drift separately.
+            </p>
+        </section>
+    </main>
 </body>
 </html>
 """
