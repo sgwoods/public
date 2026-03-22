@@ -285,7 +285,7 @@ def render_project_card(project: ProjectStatus) -> str:
         buttons.insert(1, render_button(project.dashboard_url, "Open dashboard"))
     if project.experience_url:
         buttons.insert(2, render_button(project.experience_url, "Open live experience"))
-    return f"""                <article class="card">
+    return f"""                <article class="card" data-project-card="{html.escape(project.project_id)}">
                     <h3>{html.escape(project.display_name)}</h3>
                     <p>{html.escape(project_description(project))}</p>
                     <div class="detailList">
@@ -327,6 +327,13 @@ def render() -> str:
 
     last_updated = max(project.repo_pushed_at for project in projects)
     project_cards = "\n".join(render_project_card(project) for project in projects)
+    project_manifest_config = {
+        "repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main",
+        "fallback_manifest_paths": [f"data/projects/{path.name}" for path in sorted(DATA_DIR.glob("*.json"))],
+        "project_order": PROJECT_ORDER,
+        "project_descriptions": PROJECT_DESCRIPTIONS,
+    }
+    project_manifest_config_json = json.dumps(project_manifest_config).replace("</", "<\\/")
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -351,12 +358,12 @@ def render() -> str:
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Tracked Projects</span>
-                    <span class="metaValue">{len(projects)}</span>
+                    <span class="metaValue" data-project-count>{len(projects)}</span>
                     <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Repository Work Last Updated</span>
-                    <span class="metaValue">{html.escape(format_local_date(last_updated))}</span>
+                    <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(last_updated))}</span>
                     <div class="metaNote">Computed from the latest `repo_pushed_at` value across active project manifests.</div>
                 </div>
             </div>
@@ -389,12 +396,13 @@ def render() -> str:
             </div>
         </section>
 
-        <section class="panel">
+        <section class="panel" data-project-manifests>
             <h2>Active Project Dashboards</h2>
-            <div class="grid">
+            <div class="grid" data-project-grid>
 {project_cards}
             </div>
-            <p class="footer">This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
+            <p class="footer" data-project-status>This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
+            <script id="project-manifest-config" type="application/json">{project_manifest_config_json}</script>
         </section>
 
         <section class="panel">

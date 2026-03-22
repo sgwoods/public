@@ -21,12 +21,12 @@
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Tracked Projects</span>
-                    <span class="metaValue">3</span>
+                    <span class="metaValue" data-project-count>3</span>
                     <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Repository Work Last Updated</span>
-                    <span class="metaValue">March 22, 2026</span>
+                    <span class="metaValue" data-project-last-updated>March 22, 2026</span>
                     <div class="metaNote">Computed from the latest `repo_pushed_at` value across active project manifests.</div>
                 </div>
             </div>
@@ -59,11 +59,11 @@
             </div>
         </section>
 
-        <section class="panel">
+        <section class="panel" data-project-manifests>
             <h2>Active Project Dashboards</h2>
-            <div class="grid">
-                <article class="card">
-                    <h3>Codex-Test1 game project</h3>
+            <div class="grid" data-project-grid>
+                <article class="card" data-project-card="codex-test1">
+                    <h3>Neo Galaga Tribute</h3>
                     <p>Public project page for the Neo Galaga Tribute web application.</p>
                     <div class="detailList">
                         <div><strong>Last repo update</strong> March 22, 2026</div>
@@ -74,19 +74,19 @@
                         <a class="button" href="codex-test1.html">Open project page</a> <a class="button" href="https://sgwoods.github.io/Codex-Test1/release-dashboard.html">Open dashboard</a> <a class="button" href="https://sgwoods.github.io/Codex-Test1/">Open live experience</a> <a class="button" href="https://github.com/sgwoods/Codex-Test1">Open repository</a>
                     </div>
                 </article>
-                <article class="card">
+                <article class="card" data-project-card="phd-renovation">
                     <h3>PhD renovation project</h3>
                     <p>Public project page for the restored PhD program-understanding codebase.</p>
                     <div class="detailList">
-                        <div><strong>Last repo update</strong> March 21, 2026</div>
-                        <div><strong>Current build line</strong> 0.3.x-docs</div>
-                        <div><strong>Current focus</strong> Operator docs</div>
+                        <div><strong>Last repo update</strong> March 22, 2026</div>
+                        <div><strong>Current build line</strong> 1.0.0</div>
+                        <div><strong>Current focus</strong> Intake + cleanup</div>
                     </div>
                     <div class="links">
                         <a class="button" href="phd-renovation.html">Open project page</a> <a class="button" href="https://sgwoods.github.io/public/phd-renovation-dashboard.html">Open dashboard</a> <a class="button" href="https://github.com/sgwoods/phd-renovation">Open repository</a>
                     </div>
                 </article>
-                <article class="card">
+                <article class="card" data-project-card="mmath-renovation">
                     <h3>Masters of Mathematics renovation project</h3>
                     <p>Public project page for reviving the AbTweak thesis code and documentation.</p>
                     <div class="detailList">
@@ -99,7 +99,8 @@
                     </div>
                 </article>
             </div>
-            <p class="footer">This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
+            <p class="footer" data-project-status>This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
+            <script id="project-manifest-config" type="application/json">{"repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main", "fallback_manifest_paths": ["data/projects/codex-test1.json", "data/projects/mmath-renovation.json", "data/projects/phd-renovation.json"], "project_order": ["codex-test1", "phd-renovation", "mmath-renovation"], "project_descriptions": {"codex-test1": "Public project page for the Neo Galaga Tribute web application.", "phd-renovation": "Public project page for the restored PhD program-understanding codebase.", "mmath-renovation": "Public project page for reviving the AbTweak thesis code and documentation."}}</script>
         </section>
 
         <section class="panel">
@@ -211,13 +212,13 @@
                     </div>
                     <div class="activityWeek" data-activity-week="2026-03-16T00:00:00-04:00">
                         <div class="activityColumn">
-                            <div class="activityStack" aria-label="Mar 16: 204 total commits">
+                            <div class="activityStack" aria-label="Mar 16: 205 total commits">
                                 <span class="activitySegment activitySegment--abtweak" data-activity-project="mmath-renovation" style="height: 46.67%;" title="Abtweak: 105 commits"></span>
                                 <span class="activitySegment activitySegment--csp" data-activity-project="phd-renovation" style="height: 4.00%;" title="CSP: 9 commits"></span>
-                                <span class="activitySegment activitySegment--galaga" data-activity-project="codex-test1" style="height: 40.00%;" title="Galaga: 90 commits"></span>
+                                <span class="activitySegment activitySegment--galaga" data-activity-project="codex-test1" style="height: 40.44%;" title="Galaga: 91 commits"></span>
                             </div>
                         </div>
-                        <div class="activityTotal" data-activity-total>204</div>
+                        <div class="activityTotal" data-activity-total>205</div>
                         <div class="activityLabel">Mar 16</div>
                     </div>
                     </div>
@@ -234,11 +235,11 @@
                 </div>
                 <div class="activityLegendItem">
                     <span class="activityLegendSwatch activitySegment--galaga"></span>
-                    <span><strong>Galaga</strong> <span data-activity-legend-total="codex-test1">111</span> commits in the last 8 weeks</span>
+                    <span><strong>Galaga</strong> <span data-activity-legend-total="codex-test1">112</span> commits in the last 8 weeks</span>
                 </div>
             </div>
             <p class="footer" data-activity-status>Rendered from local repository history and refreshed from GitHub when the page loads.</p>
-            <script id="activity-chart-config" type="application/json">{"generated_at": "2026-03-22T17:56:07.359520-04:00", "weeks": ["2026-01-26T00:00:00-05:00", "2026-02-02T00:00:00-05:00", "2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00"], "projects": [{"label": "Abtweak", "project_id": "mmath-renovation", "repo": "mmath-renovation", "ref": "main"}, {"label": "CSP", "project_id": "phd-renovation", "repo": "phd-renovation", "ref": "main"}, {"label": "Galaga", "project_id": "codex-test1", "repo": "Codex-Test1", "ref": "main"}]}</script>
+            <script id="activity-chart-config" type="application/json">{"generated_at": "2026-03-22T18:04:18.143065-04:00", "weeks": ["2026-01-26T00:00:00-05:00", "2026-02-02T00:00:00-05:00", "2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00"], "projects": [{"label": "Abtweak", "project_id": "mmath-renovation", "repo": "mmath-renovation", "ref": "main"}, {"label": "CSP", "project_id": "phd-renovation", "repo": "phd-renovation", "ref": "main"}, {"label": "Galaga", "project_id": "codex-test1", "repo": "Codex-Test1", "ref": "main"}]}</script>
         </section>
     </main>
 </body>
