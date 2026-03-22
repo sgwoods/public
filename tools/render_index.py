@@ -160,204 +160,7 @@ def render() -> str:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Woods Public Pages</title>
-    <style>
-        :root {{
-            --bg: #07131f;
-            --bg2: #10253b;
-            --card: rgba(7, 19, 31, 0.72);
-            --text: #eff7ff;
-            --muted: #9cc4df;
-            --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-        }}
-
-        * {{
-            box-sizing: border-box;
-        }}
-
-        body {{
-            margin: 0;
-            color: var(--text);
-            font-family: "Avenir Next", "Segoe UI", sans-serif;
-            background:
-                radial-gradient(circle at top left, rgba(103, 230, 168, 0.18), transparent 26%),
-                radial-gradient(circle at top right, rgba(121, 184, 255, 0.22), transparent 32%),
-                linear-gradient(160deg, var(--bg), var(--bg2));
-            min-height: 100vh;
-        }}
-
-        h1 {{
-            margin: 18px 0 10px;
-            font-size: clamp(34px, 5vw, 58px);
-            line-height: .95;
-            letter-spacing: -0.04em;
-        }}
-
-        a {{
-            color: #d9f7ff;
-        }}
-
-        .shell {{
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px 72px;
-        }}
-
-        .hero,
-        .panel {{
-            border: 1px solid rgba(177, 222, 255, 0.18);
-            border-radius: 28px;
-            background:
-                linear-gradient(160deg, rgba(12, 34, 54, 0.88), rgba(7, 19, 31, 0.72)),
-                radial-gradient(circle at 20% 0%, rgba(103, 230, 168, 0.14), transparent 32%);
-            box-shadow: var(--shadow);
-        }}
-
-        .hero {{
-            padding: 36px 34px 32px;
-        }}
-
-        .eyebrow {{
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 7px 12px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #d7ecff;
-            font-size: 12px;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-        }}
-
-        .hero p,
-        .panel p {{
-            color: var(--muted);
-            line-height: 1.6;
-        }}
-
-        .hero p {{
-            max-width: 760px;
-            font-size: 18px;
-        }}
-
-        .meta {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 14px;
-            margin-top: 28px;
-        }}
-
-        .metaCard {{
-            padding: 16px 18px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }}
-
-        .metaLabel {{
-            display: block;
-            color: #8fb3cc;
-            font-size: 12px;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }}
-
-        .metaValue {{
-            font-size: 18px;
-            font-weight: 600;
-        }}
-
-        .metaNote {{
-            margin-top: 8px;
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.5;
-        }}
-
-        .panel {{
-            margin-top: 22px;
-            padding: 28px;
-            background: rgba(7, 19, 31, 0.68);
-        }}
-
-        .panel h2 {{
-            margin: 0 0 12px;
-            font-size: 24px;
-            letter-spacing: -0.02em;
-        }}
-
-        .grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }}
-
-        .card {{
-            padding: 18px 18px 16px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }}
-
-        .card h3 {{
-            margin: 0 0 8px;
-            font-size: 18px;
-        }}
-
-        .detailList {{
-            display: grid;
-            gap: 8px;
-            margin-top: 14px;
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.5;
-        }}
-
-        .detailList strong {{
-            color: #eff7ff;
-            margin-right: 6px;
-        }}
-
-        .links {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 18px;
-        }}
-
-        .button {{
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 11px 16px;
-            border-radius: 999px;
-            background: rgba(121, 184, 255, 0.18);
-            border: 1px solid rgba(121, 184, 255, 0.28);
-            color: #eff7ff;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 0.04em;
-        }}
-
-        .footer {{
-            margin-top: 18px;
-            color: #8db0c8;
-            font-size: 13px;
-            line-height: 1.6;
-        }}
-
-        @media (max-width: 720px) {{
-            .shell {{
-                padding: 20px 14px 54px;
-            }}
-
-            .hero,
-            .panel {{
-                padding: 24px 22px;
-            }}
-        }}
-    </style>
+    <link rel="stylesheet" href="assets/public-site.css">
 </head>
 <body>
     <!-- Generated by tools/render_index.py from data/projects/*.json -->
@@ -399,6 +202,13 @@ def render() -> str:
                     <p>Selected books, patents, and academic publications.</p>
                     <div class="links">
                         {render_button("patents-publications.html", "Open page")}
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Style guide</h3>
+                    <p>Shared colors, panels, button patterns, and ancestor-navigation guidance for public pages.</p>
+                    <div class="links">
+                        {render_button("style-guide.html", "Open guide")}
                     </div>
                 </article>
             </div>

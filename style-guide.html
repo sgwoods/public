@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Site Style Guide</title>
+    <link rel="stylesheet" href="assets/public-site.css">
+</head>
+<body>
+    <main class="shell shell--narrow">
+        <section class="hero">
+            <span class="eyebrow">Style Guide</span>
+            <h1>Public Site Style Guide</h1>
+            <p class="lead">
+                Reference guide for pages that want to match the current public homepage and active project dashboards.
+                Use this page as the shared visual contract for colors, panels, buttons, spacing, and navigation patterns.
+            </p>
+            <div class="breadcrumbs">
+                <a class="button button--ghost" href="index.html">Back to public index</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Core Palette</h2>
+            <div class="swatchGrid">
+                <article class="swatchCard">
+                    <div class="swatch swatch--bg"></div>
+                    <span class="microLabel">Background</span>
+                    <div class="microNote">Deep blue-black gradient with soft green and sky highlights.</div>
+                </article>
+                <article class="swatchCard">
+                    <div class="swatch swatch--card"></div>
+                    <span class="microLabel">Cards and Panels</span>
+                    <div class="microNote">Translucent dark surfaces with soft borders and glow.</div>
+                </article>
+                <article class="swatchCard">
+                    <div class="swatch swatch--button"></div>
+                    <span class="microLabel">Buttons</span>
+                    <div class="microNote">Rounded pill buttons using the light blue accent family.</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Page Structure</h2>
+            <div class="sectionStack">
+                <div class="notePanel">
+                    <strong>Top section:</strong> Start with a <code>hero</code> block containing an eyebrow label, one clear page title, a short lead paragraph, and a breadcrumb/button row.
+                </div>
+                <div class="notePanel">
+                    <strong>Main content:</strong> Group content into <code>panel</code> sections. Within panels, use <code>grid</code> for cards or <code>entryGrid</code> for stacked records.
+                </div>
+                <div class="notePanel">
+                    <strong>Cards:</strong> Use <code>card</code> for overview tiles and <code>entry</code> for record-style items like publications, ancestors, or archive entries.
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Navigation Pattern</h2>
+            <ul class="guideList">
+                <li>Every child page should include a visible button back to <a href="index.html">the public index</a>.</li>
+                <li>When a page belongs to a sub-area, add a second ghost button back to the immediate parent or ancestor page.</li>
+                <li>Use short action labels such as <code>Back to public index</code>, <code>Back to archive</code>, or <code>Open source</code>.</li>
+                <li>Keep primary actions in the same rounded-button style used on the homepage.</li>
+            </ul>
+        </section>
+
+        <section class="panel">
+            <h2>Component Examples</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Reference card</h3>
+                    <p class="lead">Use for static pages linked from the public homepage.</p>
+                    <div class="links">
+                        <a class="button" href="academic.html">Primary action</a>
+                        <a class="button button--ghost" href="index.html">Secondary action</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Record entry</h3>
+                    <span class="entryMeta"><strong>Pattern</strong> title, short metadata line, then one or more buttons</span>
+                    <div class="entryLinks">
+                        <a class="button" href="patents-publications.html">Open page</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Implementation Notes</h2>
+            <div class="codeLike">&lt;link rel="stylesheet" href="assets/public-site.css"&gt;
+
+&lt;main class="shell shell--narrow"&gt;
+  &lt;section class="hero"&gt;...&lt;/section&gt;
+  &lt;section class="panel"&gt;...&lt;/section&gt;
+&lt;/main&gt;</div>
+            <p class="footer">
+                Recommended rule: pages under this public site should reuse <code>assets/public-site.css</code> and follow the ancestor-navigation pattern above rather than carrying independent one-off themes.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

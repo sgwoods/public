@@ -1,0 +1,313 @@
+:root {
+    --bg: #07131f;
+    --bg2: #10253b;
+    --panel-bg: rgba(7, 19, 31, 0.68);
+    --panel-glow: rgba(103, 230, 168, 0.14);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --panel-border: rgba(177, 222, 255, 0.18);
+    --button-bg: rgba(121, 184, 255, 0.18);
+    --button-border: rgba(121, 184, 255, 0.28);
+    --button-bg-ghost: rgba(255, 255, 255, 0.04);
+    --text: #eff7ff;
+    --muted: #9cc4df;
+    --muted-strong: #d7ecff;
+    --accent: #67e6a8;
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(103, 230, 168, 0.18), transparent 26%),
+        radial-gradient(circle at top right, rgba(121, 184, 255, 0.22), transparent 32%),
+        linear-gradient(160deg, var(--bg), var(--bg2));
+}
+
+a {
+    color: #d9f7ff;
+}
+
+.shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 72px;
+}
+
+.shell--narrow {
+    max-width: 920px;
+}
+
+.hero,
+.panel {
+    border: 1px solid var(--panel-border);
+    border-radius: 28px;
+    background:
+        linear-gradient(160deg, rgba(12, 34, 54, 0.88), rgba(7, 19, 31, 0.72)),
+        radial-gradient(circle at 20% 0%, var(--panel-glow), transparent 32%);
+    box-shadow: var(--shadow);
+}
+
+.hero {
+    padding: 36px 34px 32px;
+}
+
+.panel {
+    margin-top: 22px;
+    padding: 28px;
+    background: var(--panel-bg);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--muted-strong);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 18px 0 10px;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+p,
+li,
+dd {
+    line-height: 1.6;
+}
+
+.lead,
+.panel > p,
+.entry p,
+.guideList li {
+    color: var(--muted);
+}
+
+.lead {
+    max-width: 760px;
+    font-size: 18px;
+}
+
+.meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.metaCard,
+.card,
+.entry,
+.swatchCard {
+    padding: 18px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+}
+
+.metaCard {
+    padding: 16px 18px;
+    border-radius: 18px;
+}
+
+.metaLabel,
+.microLabel {
+    display: block;
+    color: #8fb3cc;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.metaValue {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.metaNote,
+.footer,
+.entryMeta,
+.microNote {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.grid,
+.entryGrid,
+.swatchGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.entryGrid {
+    grid-template-columns: 1fr;
+}
+
+.detailList {
+    display: grid;
+    gap: 8px;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.detailList strong,
+.entryMeta strong {
+    color: var(--text);
+    margin-right: 6px;
+}
+
+.links,
+.entryLinks,
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 16px;
+    border-radius: 999px;
+    background: var(--button-bg);
+    border: 1px solid var(--button-border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+.button:hover,
+.button:focus {
+    background: rgba(121, 184, 255, 0.26);
+}
+
+.button--ghost {
+    background: var(--button-bg-ghost);
+}
+
+.button--ghost:hover,
+.button--ghost:focus {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.entryTitle,
+.entryTitle a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.entryTitle a:hover,
+.entryTitle a:focus {
+    text-decoration: underline;
+}
+
+.entryMeta {
+    display: block;
+    margin-top: 6px;
+}
+
+.sectionStack {
+    display: grid;
+    gap: 16px;
+}
+
+.notePanel {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 4px solid rgba(121, 184, 255, 0.55);
+}
+
+.guideList {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.swatch {
+    height: 72px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 12px;
+}
+
+.swatch--bg {
+    background: linear-gradient(160deg, var(--bg), var(--bg2));
+}
+
+.swatch--card {
+    background: var(--card-bg);
+}
+
+.swatch--button {
+    background: var(--button-bg);
+}
+
+.codeLike {
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cfe8fb;
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 13px;
+    overflow-x: auto;
+}
+
+.footer {
+    margin-top: 18px;
+}
+
+@media (max-width: 720px) {
+    .shell {
+        padding: 20px 14px 54px;
+    }
+
+    .hero,
+    .panel {
+        padding: 24px 22px;
+    }
+
+    .links,
+    .entryLinks,
+    .breadcrumbs {
+        gap: 10px;
+    }
+}
