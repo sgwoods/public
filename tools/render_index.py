@@ -317,9 +317,10 @@ def render_style_guide_note() -> str:
     return f"""        <section class="panel">
             <div class="notePanel">
                 <span class="microLabel">Project Note</span>
-                <p class="microNote">The shared public-site style guide lives here for the active project pages, but it stays intentionally low-profile on the homepage.</p>
+                <p class="microNote">The shared public-site style guide lives here for the active project pages, but it stays intentionally low-profile on the homepage. LinkedIn is also linked here as an external profile/source reference.</p>
                 <div class="links">
                     {render_button("style-guide.html", "Open style guide")}
+                    {render_button("https://www.linkedin.com/in/stevenwoods/", "Open LinkedIn")}
                 </div>
             </div>
         </section>"""
