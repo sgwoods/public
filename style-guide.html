@@ -9,15 +9,15 @@
 <body>
     <main class="shell shell--narrow">
         <section class="hero">
-            <span class="eyebrow">Style Guide</span>
+            <div class="heroTop">
+                <span class="eyebrow">Style Guide</span>
+                <a class="heroHomeLink" href="index.html">Steven Woods</a>
+            </div>
             <h1>Public Site Style Guide</h1>
             <p class="lead">
                 Reference guide for pages that want to match the current public homepage and active project dashboards.
                 Use this page as the shared visual contract for colors, panels, buttons, spacing, and navigation patterns.
             </p>
-            <div class="breadcrumbs">
-                <a class="button button--ghost" href="index.html">Back to public index</a>
-            </div>
         </section>
 
         <section class="panel">
@@ -45,7 +45,7 @@
             <h2>Page Structure</h2>
             <div class="sectionStack">
                 <div class="notePanel">
-                    <strong>Top section:</strong> Start with a <code>hero</code> block containing an eyebrow label, one clear page title, a short lead paragraph, and a breadcrumb/button row.
+                    <strong>Top section:</strong> Start with a <code>hero</code> block containing a <code>heroTop</code> row, an eyebrow label on the left, a top-right ancestor link, one clear page title, and a short lead paragraph.
                 </div>
                 <div class="notePanel">
                     <strong>Main content:</strong> Group content into <code>panel</code> sections. Within panels, use <code>grid</code> for cards or <code>entryGrid</code> for stacked records.
@@ -59,9 +59,10 @@
         <section class="panel">
             <h2>Navigation Pattern</h2>
             <ul class="guideList">
-                <li>Every child page should include a visible button back to <a href="index.html">the public index</a>.</li>
-                <li>When a page belongs to a sub-area, add a second ghost button back to the immediate parent or ancestor page.</li>
-                <li>Use short action labels such as <code>Back to public index</code>, <code>Back to archive</code>, or <code>Open source</code>.</li>
+                <li>Every child page should include a visible top-right ancestor link using <code>heroHomeLink</code>.</li>
+                <li>For top-level reference pages, that ancestor link should go to <a href="index.html">the public index</a> and typically use the label <code>Steven Woods</code>.</li>
+                <li>When a page belongs to a sub-area, keep the top-right ancestor link for the immediate parent and use the lower button row for any secondary navigation.</li>
+                <li>Use the lower action row for secondary links such as <code>Back to archive</code>, <code>Open source</code>, or other contextual actions.</li>
                 <li>Keep primary actions in the same rounded-button style used on the homepage.</li>
             </ul>
         </section>
@@ -92,7 +93,13 @@
             <div class="codeLike">&lt;link rel="stylesheet" href="assets/public-site.css"&gt;
 
 &lt;main class="shell shell--narrow"&gt;
-  &lt;section class="hero"&gt;...&lt;/section&gt;
+  &lt;section class="hero"&gt;
+    &lt;div class="heroTop"&gt;
+      &lt;span class="eyebrow"&gt;Reference Page&lt;/span&gt;
+      &lt;a class="heroHomeLink" href="index.html"&gt;Steven Woods&lt;/a&gt;
+    &lt;/div&gt;
+    ...
+  &lt;/section&gt;
   &lt;section class="panel"&gt;...&lt;/section&gt;
 &lt;/main&gt;</div>
             <p class="footer">
