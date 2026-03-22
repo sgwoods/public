@@ -313,6 +313,18 @@ def render_legacy_card() -> str:
                 </article>"""
 
 
+def render_style_guide_note() -> str:
+    return f"""        <section class="panel">
+            <div class="notePanel">
+                <span class="microLabel">Project Note</span>
+                <p class="microNote">The shared public-site style guide lives here for the active project pages, but it stays intentionally low-profile on the homepage.</p>
+                <div class="links">
+                    {render_button("style-guide.html", "Open style guide")}
+                </div>
+            </div>
+        </section>"""
+
+
 def render() -> str:
     projects = sorted(
         (
@@ -386,13 +398,6 @@ def render() -> str:
                         {render_button("patents-publications.html", "Open page")}
                     </div>
                 </article>
-                <article class="card">
-                    <h3>Style guide</h3>
-                    <p>Shared colors, panels, button patterns, and ancestor-navigation guidance for public pages.</p>
-                    <div class="links">
-                        {render_button("style-guide.html", "Open guide")}
-                    </div>
-                </article>
             </div>
         </section>
 
@@ -413,6 +418,8 @@ def render() -> str:
         </section>
 
 {render_activity_chart()}
+
+{render_style_guide_note()}
     </main>
 </body>
 </html>
