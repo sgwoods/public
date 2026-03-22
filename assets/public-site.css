@@ -295,6 +295,151 @@ dd {
     margin-top: 18px;
 }
 
+code {
+    font-family: "SFMono-Regular", "Menlo", monospace;
+    font-size: 0.95em;
+    color: var(--muted-strong);
+}
+
+.activityChart {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    align-items: stretch;
+    margin-top: 22px;
+}
+
+.activityYAxis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 260px;
+    padding: 8px 0 32px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+.activityPlot {
+    position: relative;
+    min-height: 260px;
+    padding-top: 8px;
+}
+
+.activityGridLine {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.activityGridLine--top {
+    top: 8px;
+}
+
+.activityGridLine--mid {
+    top: calc(50% + 4px);
+}
+
+.activityBars {
+    position: relative;
+    z-index: 1;
+    min-height: 260px;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 14px;
+    align-items: end;
+    padding: 8px 0 0;
+}
+
+.activityWeek {
+    display: grid;
+    gap: 8px;
+}
+
+.activityColumn {
+    min-height: 220px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.activityStack {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    overflow: hidden;
+    border-radius: 18px 18px 8px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.08));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.activitySegment {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    transition: height 0.5s ease;
+}
+
+.activitySegment--abtweak,
+.activityLegendSwatch.activitySegment--abtweak {
+    background: linear-gradient(180deg, rgba(103, 230, 168, 0.96), rgba(57, 181, 124, 0.96));
+}
+
+.activitySegment--csp,
+.activityLegendSwatch.activitySegment--csp {
+    background: linear-gradient(180deg, rgba(121, 184, 255, 0.96), rgba(74, 126, 230, 0.96));
+}
+
+.activitySegment--galaga,
+.activityLegendSwatch.activitySegment--galaga {
+    background: linear-gradient(180deg, rgba(255, 214, 107, 0.96), rgba(233, 157, 62, 0.96));
+}
+
+.activityTotal,
+.activityLabel {
+    text-align: center;
+}
+
+.activityTotal {
+    color: var(--muted-strong);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.activityLabel {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.activityLegend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 18px;
+    margin-top: 18px;
+}
+
+.activityLegendItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.activityLegendSwatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
 @media (max-width: 720px) {
     .shell {
         padding: 20px 14px 54px;
@@ -309,5 +454,27 @@ dd {
     .entryLinks,
     .breadcrumbs {
         gap: 10px;
+    }
+
+    .activityChart {
+        grid-template-columns: 1fr;
+    }
+
+    .activityYAxis {
+        min-height: auto;
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .activityBars {
+        gap: 10px;
+    }
+
+    .activityStack,
+    .activityColumn {
+        height: 180px;
+        min-height: 180px;
     }
 }
