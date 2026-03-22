@@ -1,0 +1,142 @@
+
+total 22
+drwxr-xr-x  2 woods        1024 Jul 13 09:33 Ab-routines
+drwxr-xr-x  2 woods         512 Mar 10 10:12 Doc
+drwxr-xr-x  2 woods        1024 Mar 12 09:15 Domains
+drwxr-xr-x  2 woods         512 Jul 13 09:33 Mcallester-plan
+drwxr-xr-x  2 woods         512 Jul 13 09:33 My-routines
+drwxr-xr-x  2 woods         512 Jul 13 09:33 Plan-routines
+drwxr-xr-x  2 woods         512 Jul 13 09:33 Search-routines
+drwxr-xr-x  5 woods         512 Jul 13 09:33 Tw-routines
+-rwxr-xr-x  1 woods         597 Jul 13 09:33 clean
+-rwxr-----  1 woods         521 Apr 19 09:23 compile.lisp
+-rw-r-----  1 woods         588 Mar 12 09:28 compiled-load.lisp
+-rwxr-xr-x  1 woods         356 Mar 12 09:55 grepall
+-rwxr-----  1 woods         523 Mar 12 09:26 init.lisp
+-rwxr-x---  1 woods          82 Mar 12 09:33 lispa
+-rwxr-xr-x  1 woods          83 Mar 12 09:33 lispb
+-rwxr-xr-x  1 woods         426 Mar 12 09:17 lisptolsp
+-rwxr-xr-x  1 woods         426 Mar 12 09:14 lsptolisp
+-rw-r-----  1 woods        4145 Mar 12 09:59 plan.lisp
+
+Abtweak93/Ab-routines:
+total 38
+-rwxr-----  1 woods        6988 Jan 24  1991 ab-causal.lisp
+-rw-r-----  1 woods        7875 Mar 11  1992 ab-general.lisp
+-rw-r-----  1 woods         527 Mar 11  1992 ab-heuristic.lisp
+-rw-r-----  1 woods        2411 Mar  4  1991 ab-mp-check.lisp
+-rwxr-----  1 woods        1400 Jan 10  1992 ab-mtc.lisp
+-rw-r-----  1 woods        6348 Mar 16  1992 ab-successors.lisp
+-rw-r-----  1 woods        1705 Jan  2  1992 abtweak-planner-interface.lisp
+-rw-r-----  1 woods         607 Mar 11  1992 compile.lisp
+-rw-r-----  1 woods         561 Mar 12 09:30 compiled-load.lisp
+-rw-r-----  1 woods         713 Mar 11  1992 drp-output.lisp
+-rwxr-----  1 woods         607 Feb 24  1992 init.lisp
+-rw-r-----  1 woods        3650 Apr 19 08:51 update-branching-factor-counts.lisp
+
+Abtweak93/Doc:
+total 157
+-rw-r--r--  1 woods      129514 Mar 10 09:39 users-manual.ps
+-rw-r-----  1 woods       20649 Mar 10 09:38 users-manual.tex
+
+Abtweak93/Domains:
+total 118
+-rw-r-----  1 woods        4875 Apr  8  1992 biology.lisp
+-rwxr-----  1 woods        2218 Nov 25  1991 blocks.lisp
+-rw-r-----  1 woods         338 Mar 24  1992 check-primary-effects.lisp
+-rw-r-----  1 woods        1693 Apr  6  1992 computer.lisp
+-rw-r-----  1 woods       17307 Feb 25  1992 database.lisp
+-rw-r-----  1 woods        1195 Mar 11  1992 driving.lisp
+-rw-r-----  1 woods        1652 Apr 16  1992 fly.lisp
+-rwxr-----  1 woods        2718 Mar 24  1992 hanoi-3.lisp
+-rw-r-----  1 woods        2893 Mar 14  1991 hanoi-4.lisp
+-rw-r-----  1 woods         450 Apr 11  1991 loop.lisp
+-rw-r-----  1 woods        2028 Mar 18  1991 macro-hanoi.lisp
+-rw-r-----  1 woods       20680 Mar 10  1992 newd.lisp
+-rwxr-----  1 woods        1852 Mar  5  1991 nils-blocks.lisp
+-rw-r-----  1 woods         522 Apr  8  1991 registers.lisp
+-rw-r-----  1 woods        2129 Feb  7  1992 robot-heuristic.lisp
+-rw-r-----  1 woods        5341 Mar 11  1992 scheduling.lisp
+-rw-r-----  1 woods        9586 Feb  7  1992 simple-robot-1.lisp
+-rw-r-----  1 woods        9776 Feb  7  1992 simple-robot-2.lisp
+-rw-r-----  1 woods        9282 Feb  6  1992 simple-robot.lisp
+-rw-r-----  1 woods       13954 Mar 19  1992 stylistics.lisp
+
+Abtweak93/Mcallester-plan:
+total 17
+-rw-r-----  1 woods         299 Mar 12 10:32 compile.lisp
+-rw-r-----  1 woods         155 Mar 12 09:31 compiled-load.lisp
+-rw-r-----  1 woods         707 Dec 20  1991 find-one-mr-conflict.lisp
+-rw-r-----  1 woods         238 Mar  2  1992 init.lisp
+-rw-r-----  1 woods        1929 Dec 19  1991 mr-conf-detection.lisp
+-rw-r-----  1 woods        1298 Dec 19  1991 mr-declob.lisp
+-rw-r-----  1 woods         848 Dec 20  1991 mr-goal.lisp
+-rw-r-----  1 woods         280 Dec 19  1991 mr-planner-interface.lisp
+-rw-r-----  1 woods        6616 Dec 20  1991 successors.lisp
+
+Abtweak93/My-routines:
+total 2
+-rw-r-----  1 woods          41 Mar  4  1991 compile.lisp
+-rw-r-----  1 woods         130 Mar  4  1991 heuristic.lisp
+
+Abtweak93/Plan-routines:
+total 9
+-rw-r-----  1 woods         103 Mar 11  1992 check-domain.lisp
+-rw-r-----  1 woods        3852 Apr  9  1992 init-global-vars.lisp
+-rw-r-----  1 woods         256 Jan  4  1992 planner-heuristic.lisp
+-rw-r-----  1 woods        2431 Apr  9  1992 planner-interface.lisp
+
+Abtweak93/Search-routines:
+total 20
+-rw-r-----  1 woods         325 Sep 26  1991 compile.lisp
+-rw-r-----  1 woods         185 Mar 12 09:32 compiled-load.lisp
+-rw-r-----  1 woods          77 Mar 12 10:47 init-global-vars.lisp
+-rw-r-----  1 woods         227 Mar  5  1991 init.lisp
+-rwxr-----  1 woods        2483 Apr 19 08:53 list-access.lisp
+-rwxr-----  1 woods        1887 Mar  3  1991 node-access.lisp
+-rwxr-----  1 woods         405 Dec 14  1990 search-load-lsp.lisp
+-rwxr-----  1 woods         231 Mar  3  1991 search-load.lisp
+-rw-r--r--  1 woods        5788 Mar 12 10:46 search.lisp
+-rw-r-----  1 woods        1067 Sep 26  1991 stack-list-access.lisp
+-rwxr-----  1 woods         215 Mar  3  1991 state-expansion.lisp
+
+Abtweak93/Tw-routines:
+total 28
+drwxr-xr-x  2 woods         512 Jul 13 09:33 Conf-infer
+drwxr-xr-x  2 woods         512 Jul 13 09:33 Plan-infer
+drwxr-xr-x  2 woods         512 Jul 13 09:33 Succ
+-rw-r-----  1 woods        1479 Mar  5  1991 compile.lisp
+-rw-r-----  1 woods        1053 Mar 12 09:33 compiled-load.lisp
+-rwxr-----  1 woods        3567 May 17  1991 general.lisp
+-rwxr-----  1 woods        1263 Mar  5  1991 init.lisp
+-rwxr-----  1 woods        3523 Jan 24  1991 mtc.lisp
+-rwxr-----  1 woods        2318 Mar  4  1991 structs.lisp
+-rwxr-----  1 woods        4756 Sep 26  1991 successors.lisp
+-rw-r-----  1 woods         844 Mar  5  1991 tw-heuristic.lisp
+-rw-r-----  1 woods        1348 Apr  8  1992 tweak-planner-interface.lisp
+
+Abtweak93/Tw-routines/Conf-infer:
+total 14
+-rwxr-----  1 woods        2184 Sep 25  1991 classify.lisp
+-rwxr-----  1 woods        3609 Jan 24  1991 conflict-detection.lisp
+-rwxr-----  1 woods        6045 Sep 25  1991 declob.lisp
+-rwxr-----  1 woods         434 Jan 24  1991 intermed-access.lisp
+
+Abtweak93/Tw-routines/Plan-infer:
+total 43
+-rwxr-----  1 woods         586 Dec 14  1990 cr-access.lisp
+-rwxr-----  1 woods       19050 Mar 10 12:35 plan-dependent.lisp
+-rwxr-----  1 woods        9164 Feb  7  1992 plan-inference.lisp
+-rwxr-----  1 woods        2476 Jan 24  1991 plan-modification.lisp
+-rw-r--r--  1 woods        1978 Mar 10 12:33 precedence.leo1
+-rw-r--r--  1 woods        2877 Mar 10 12:33 precedence.leo2
+-rw-r--r--  1 woods        1365 Mar 10 12:30 precedence.orig
+-rwxr-----  1 woods        3834 Oct  3  1991 show-plan.lisp
+
+Abtweak93/Tw-routines/Succ:
+total 12
+-rwxr-----  1 woods         629 Jan 24  1991 find-exist-ests.lisp
+-rwxr-----  1 woods         507 Jan 24  1991 find-nec-exist-ests.lisp
+-rw-r-----  1 woods        2187 Mar  3  1991 find-new-ests.lisp
+-rwxr-----  1 woods        4513 Mar  3  1991 find-pos-exist-ests.lisp
+-rwxr-----  1 woods        1837 Feb  7  1992 select-ops.lisp

@@ -1,0 +1,8 @@
+The value of A[8]  is   8, and the address is f7fff530
+The value of A[10] is -19, and the address is f7fff538
+The value of A[11] is  55, and the address is f7fff53c
+
+Array Average =  7.83
+Array Minimum = -19 at addr f7fff53c
+Array Maximum = 55  at addr f7fff538
+Array Median  = 8   at addr f7fff530

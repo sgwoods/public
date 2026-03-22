@@ -1,0 +1,166 @@
+
+; search routine of the planner.  The basic structure of the routine is
+; a graphsearch according to Nilssons routine.  However, there is no checking
+; for cycles in the graph.  
+
+(defun A-search (initial-plan)
+      "Search-routines/search.lsp
+       Using the *operators* to generate a plan space graph.  
+       Terminates when (goal-p plan) is true."
+   (declare (array initial-plan))
+       
+   (let (plan        ;the current plan in the search space, 
+	              ; which is a plan struct.
+         cost         ;the total cost of a node
+         node         ;a node in the search graph.
+         newcost      ;the cost to the new node
+         newplan     ;the new plan created in expanding the cur node
+         newnode      ;the new node structure
+         heuristic-function ) ;the heuristic function used
+     (declare (integer cost newcost) (array plan newplan)
+	      (list node newnode) (function heuristic-function) )
+
+     (setq heuristic-function (which-heuristic-function))
+     (unless *continue-p*
+	     (setq *internal-start-time* (get-internal-run-time)
+		   *num-expanded*  0 ; search counter variables - global
+		   *num-generated* 0
+		   cost (funcall heuristic-function initial-plan) )
+	     (add-node-to-open-list (make-node :priority cost
+					       :plan initial-plan)) ;initialize
+	     (setq *closed* nil)                                ;initialize
+	     (setq *first-time-in-loop* t) ) ;let
+
+     (do ()    	;;main loop.  until goal is found or graph is exhausted, do...
+	 ((null *open*)              ; exit condition 
+	  (if (and *drp-mode* *drp-stack*)
+		;; if drp, then backtrack
+		;; to a higher abs level:
+		;; if drp-mode on, then check if *curr-level* is changed from
+		;; i-1 to i.  If so,then an abstract level backtrack occured.
+		;; Consequently, one should check *abs-branching-counts* at i,
+		;; to see if it has exceeded the limit *abs-branching-limit*.
+		;; If so, then *drp-stack* should be dumped till level i+1 plan
+		;; appears.  
+	     
+	     (let (level) ;; drp-mode.
+	       (setq *open* (pop *drp-stack*)
+		     level (plan-kval (node-plan (first-of-open))) )
+	       (when (= (get-abs-branching-count level)
+			*abs-branching-limit* )
+		     (unless (setq *open* (reset-abs-branching-counts level))
+			     (return nil) )
+		     (format *output-stream*
+			      "~%Abs Limit Exceeded at ~D;~
+			       ~%Abs Branching Counts: ~S.~&" 
+			      level *abs-branching-counts* )
+		     (setq level (plan-kval (node-plan (first-of-open)))) )
+
+	       (when *drp-debug-mode*
+		     (format *output-stream*
+			     "~% Backtracking Across Abstraction Levels: ~
+                                         ~D to ~D" 
+			     (1- level) level )
+		     (when *debug-break-mode* (break)) )) ;let
+
+	    (progn ;; else of if --> not drp-mode.
+	      (format *output-stream* "***open exhausted***~&")
+	      (return nil) )    ;failure, return nil.
+	    )) ;; end of exit condition of do
+
+	 (when (and *open* ;; dump out open cost as it changes
+		    *print-output-p* )
+	       (print-current-plan-cost (first (car *open*))) )
+
+	 (setq node   (get-next-open-node) ; & remv off open.
+	       *open* (remove-first-node *open*)
+	       plan   (node-plan node) )   ;extract cur. plan from node.
+
+	 (cond ((goal-p plan) ;; all preconds satisfied (mtc) and kval == 0?
+		(setq *solution* plan)
+		(return t) )
+	       ((> *num-expanded* *expand-bound*)
+		(setq *solution* 'expand-limit-exceeded)
+		(return nil) )
+	       ((> (- (get-internal-run-time) ;; check CPU time bound.
+		      *internal-start-time* )
+		   (* *cpu-sec-limit* internal-time-units-per-second) )
+		(setq *solution* 'CPU-time-limit-exceeded)
+		(format *output-stream* "***cpu-time-limit-exceeded***~&")
+		(return nil) )
+	       ((>= (- (length (plan-a plan)) 2)
+		    *solution-limit* )
+		(setq *open* nil
+		      *num-expanded* -1 ))
+	       (t
+		(setq *num-expanded* (1+ *num-expanded*)) ;count expanded node
+
+		;; generate successors of node
+		;; note newplan&cost bound to each of successors in turn,
+		;;  until there are none left.
+		(dolist (newplan&cost 
+			 (successors&costs plan) ;compute expansion plans
+			 ) ;params of dolist
+			(setq newplan (first newplan&cost)
+			      newcost (second newplan&cost) )
+			(when *debug-mode*     ; debugging part.
+			      (setq *ps*   plan
+				    *cs*   newplan
+				    *ns-c* newplan&cost )
+			      (format *output-stream*
+				      " -- ~%~% Parent Plan ~S *ps* =~%"
+				      (plan-id plan) )
+			      (show-ops plan)
+			      (format *output-stream* 
+				      "~%        Cost    = ~S~
+			               ~%        Size    = ~S~
+			               ~%  Heur  Cost    = ~S~
+			               ~%  Open  Size    = ~S~
+			               ~%  1st Open Cost = ~S~ 
+			               ~%  Children Plan  ~S *cs* =~%"
+				      (plan-cost plan)
+				      (length (plan-a plan))
+				      (funcall heuristic-function plan)
+				      (length *open*)
+				      (if *open*
+					  (first (car *open*))
+					'none )
+				      (plan-id newplan) )
+			      (show-ops newplan)
+			      (format *output-stream*
+				      "~%        Cost  = ~S~
+			               ~%        Size  = ~S~
+			               ~%  Heur  Cost  = ~S"
+				      (plan-cost newplan)
+				      (length (plan-a newplan))
+				      (funcall heuristic-function newplan) )
+			      (when *debug-break-mode* (break))
+			      ) ;when
+			(setq newnode                         ;create new node
+			      (make-node 
+			       :priority (funcall heuristic-function newplan)
+			       :plan newplan )
+			      *num-generated* (1+ *num-generated*) ;count generated node
+			      *open* (add-node-to-open-list newnode)
+			      *first-time-in-loop* nil )
+			) ;dolist
+		(when *plan-debug-mode*
+		      (format *output-stream*
+			      "~%Search: plan costs on *open*:~{ ~a~}~%"
+			      (mapcar #'first *open*) ))
+		)) ;cond
+	 ) ;do main loop
+     ) ;let
+   ) ;defun
+
+
+;; print current plan cost when it changes
+(let ((cur-open-cost 0))
+
+  (defun print-current-plan-cost ( cost )
+    (if (> cost cur-open-cost)
+	(format *output-stream* "~%Next Open Plan Cost: ~S.~&"  	
+		(setq cur-open-cost cost) ))) 
+
+  (defun reset-print-current-plan-cost () (setq cur-open-cost 0))
+  )

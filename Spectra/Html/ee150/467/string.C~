@@ -1,0 +1,122 @@
+/
+// Class declaration for provided String class.
+//
+#include "string.h"
+
+//
+// Basic Constructor
+//
+// If used as:
+//
+//    String s("alex");
+//
+// the result is string with data alex\0 and len 4.
+//
+// If passed a null pointer, it makes a null string.
+//
+
+inline void String::MakeNull()
+  { data[len = 0] = '\0'; }
+
+String::String(char *init_value)
+{
+  if (init_value == 0)
+  {
+    data = new char[size = 1];
+    MakeNull();
+  }
+  else
+  {
+    data = new char[size = ((len = strlen(init_value)) + 1)];
+    strcpy(data, init_value);
+  }
+}
+
+//
+// Another basic constructor.
+//
+// If used as 
+//
+//    String s(10);
+//
+// it will create a string of size 10, filled with 10 \0's, length of 0
+//
+String::String(int n)
+{
+  len = 0;
+  data = new char[size = n];
+  for (int i = 0; i < size; i++)
+    data[i] = '\0';
+}
+
+//
+// Copy constructor and helper function to implement it
+//
+inline void String::InitFromCopy(const String& s)
+{
+  size = s.size;
+  len = s.len;
+  data = new char[size];
+  strcpy(data, s.data);
+}
+
+String::String(const String& s)
+  { InitFromCopy(s); }
+
+//
+// Assignment operator
+//
+String& String::operator=(const String& s)
+{
+  if (this != &s)
+    if (size < s.size)       // optimize if room in target
+    {
+      strcpy(data, s.data);
+      len = s.len;
+    }
+    else
+    {
+      CleanUp();
+      InitFromCopy(s);
+    }
+  return *this;
+}
+      
+//
+// Input operator
+//
+// Reads a word into a string, skipping blanks and stopping at
+// first non-blank, except that if the first char is a quote, read
+// until the next quote, or eoln, whichever comes first.
+//
+
+inline void String::Append(char c)    // unsafe, doesn't put null
+{                                     // after adding character
+  if (len < size)
+    data[len++] = c;
+}
+
+inline void String::MakeValid()       // take care that last char is
+  { data[len] = '\0'; }               // null
+
+istream& operator>>(istream& in, String &s)
+{ 
+  int c;
+
+  s.MakeNull();                 // turn into null string
+  while ((c = in.get()) != EOF && (c == ' ' || c == '\t'))
+    ;  // skip blanks
+
+  if (c == '\n')                // end of line:
+    s.Append('\n');             //   return stirng containing EOL
+  else if (c != EOF)            // not EOF and not EOLN:
+    if (c == '\"')              //   deal with quoted string
+      while ((c = in.get()) != EOF && c != '\n' && c != '\"')
+        s.Append(c);        // read until string or line end
+    else
+      do                        //   read through blank/tab
+        s.Append(c);
+      while ((c = in.get()) != EOF && c != ' ' && c != '\t' && c != '\n');
+  s.MakeValid();
+  return in;
+}

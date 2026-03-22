@@ -1,0 +1,189 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Sample Midterm #2 Solution </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Sample Midterm #2<BR>
+Solutions</H2>
+
+You should resist the temptation to look at these
+answers until after you have first tried to solve the
+problems in the same midterm!
+
+<BR CLEAR=all>
+
+<B>Jump To Solution For Problem</B>:
+ [<A HREF=#prob1>1</A> |
+  <A HREF=#prob2>2</A> |
+  <A HREF=#prob3>3</A> |
+  <A HREF=#prob4>4</A>] <BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob1">Problem #1</A></H2>
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+90
+80
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P> The <TT>for</TT> loop is designed to take <TT>i</TT> from 7 down 
+through 0.  Each time through the loop, the first <TT>if</TT> tests
+whether the table element indexed by <TT>i</TT> is greater than 75
+and prints the value if that's case.   The second <TT>if</TT> tests
+whether that same element is negative and exits the loop early if it
+is.
+
+So, this program is working its way backwards through the array,
+printing each element that is greater than 75, and stopping as soon
+as it encounters a negative array element.
+
+<P><A HREF="sam2.html#prob1a">The problem</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+0-b
+1-b
+2-b
+3-a
+3-b
+4-a
+4-b
+5-b
+</PRE></BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+The <TT>for</TT> loop runs <TT>i</TT> from 0 up to 5, stopping when
+<TT>i</TT> gets to be 6.  The first <TT>if</TT> checks whether <TT>i</TT>
+is between 3 and 4, and prints <TT>i</TT> and "a" if it is.  The second
+<TT>if</TT> checks whether <TT>i</TT> is greater than or equal to 3
+or less than or equal to 4.  The first condition is true for 3, 4, and 5;
+the second is true for 0, 1, 2, 3, and 4.  As a result, it writes a <TT>b</TT>
+for all values of <TT>i</TT> we try, and also writes an <TT>a</TT> first
+when <TT>i</TT> is 3 or 4.
+
+<P><A HREF="sam2.html#prob1b">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob2">Problem #2</A></H2>
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> Count needs to be initialized to zero before the loop.
+<LI> The test in the <TT>if</TT> should be <TT>!=</TT> rather than
+<TT>==</TT>.
+<LI> The while loop needs a <TT>c = getchar()</TT> inside the loop,
+as well as the one before it.
+<LI> The statement updating <TT>count</TT> should be adding <TT>count + 1</TT>,
+not <TT>c + 1</TT>.
+</UL>
+
+<P><A HREF="sam2.html#prob2a">The problem</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> The <TT>for</TT> loop test should check whether <TT>i</TT> is
+greater than or equal to 0, not just whether it is greater than 0.
+<LI> The function should return <TT>count</TT> rather than <TT>i</TT>.
+<LI> The <TT>a[i]</TT> should be <TT>table[i]</TT>.
+<LI> The <TT>if</TT> should be testing whether <TT>i</TT> is less than 0,
+not greater than 0.
+</UL>
+
+<P><A HREF="sam2.html#prob2b">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob3">Problem #3</A></H2>
+
+<P> One solution is the following:
+
+<BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+
+main()
+{
+  int readline();
+
+  int length;
+  int lines = 0;
+  int total_lengths = 0;
+
+  while ((length = readline()) != -1)
+  {
+    printf("%i\n", length);
+    total_lengths += length;
+    lines++;
+  }
+  printf("There were %i bars with an average length of %i\n",
+          lines, (lines != 0) ? total_lengths / lines : 0);
+  return 0;
+}
+
+int readline()
+{
+  int c;
+  int count;
+
+  if ((c = getchar()) == EOF)      /* EOF causes -1 to be returned. */
+    return -1;
+
+  for (count = 0; c != '\n'; count++)
+    c = getchar():
+  return count;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="sam2.html#prob3">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob4">Problem #4</A></H2>
+
+<P> One solution for this function (that makes the assumption
+that <TT>n</TT> will never be zero).
+
+<BLOCKQUOTE><PRE>
+int maxvalue(int table[], int n)
+{
+  int i;
+  int max;
+
+  max = table[0];
+  for (i = 1; i &lt; n; i++)
+    if (table[i] &gt; max)
+      max = table[i];
+  return max;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="sam2.html#prob4">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

@@ -1,0 +1,31 @@
+Initialize:  a, b, c   ints   unset
+Initialize:  d, f      floats unset
+Initialize:  *p1, *p2  ptr to ints unset
+Initialize:  table t   with 3 values 2.0, 2.1, 2.2Initialize:  *p3       ptr to double unset
+Initialize:  dd        double set to 1.5
+Set b = 2, a = 3
+Set d = 2.5, c = 3
+Set dd = 32.97
+Set p1 to point at e at addr = f7fff528
+Set p2 to point where p1 does : at addr = f7fff528
+Increment *p2 by 3 to 11
+Set *p1 to 11
+Set a to 11
+Set d to  4.20
+Set p3 to f7fff520
+Set a to 2
+Set d to  2.20
+Set *(t + 2) at f7fff520 to  0.00
+Set f  3.00
+Set a to 5
+Set b to 3
+Set c to 1
+Set c to 1
+Fizbin Call:  *i = 5, i addr = f7fff544
+Fizbin Call:  *j = 3, j addr = f7fff540
+  Fizbin Sets *i = 15, at addr = f7fff544
+  Fizbin Sets *j = 12, at addr = f7fff540
+Fizbin Returns = 3
+Set c to 4
+Set a to 15
+Set b to 12

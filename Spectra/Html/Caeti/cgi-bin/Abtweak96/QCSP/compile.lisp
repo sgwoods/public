@@ -1,0 +1,76 @@
+;; compile.lsp
+
+(defun compile-all (&optional (speed 'fast))
+"
+Compile CSP application
+"
+  (if *unix*    
+      (progn
+	(load "QCSP/init-global-vars.lisp") ;avoids compile warnings @ globals
+
+	(load "QCSP/compile-set")
+	(compile-set)
+
+	(compile-file "QCSP/bt.lisp")
+	(compile-file "QCSP/bm.lisp")
+	(compile-file "QCSP/ct.lisp")
+	(compile-file "QCSP/gsat.lisp")
+
+	(compile-file "QCSP/utility.lisp")
+
+	(compile-file "QCSP/mpr-simple.lisp")
+	(compile-file "QCSP/mpr-setup.lisp")
+	(compile-file "QCSP/queens.lisp")
+
+	(compile-file "QCSP/quilici-search.lisp")
+	(compile-file "QCSP/memory-csp.lisp")
+
+	(compile-file "QCSP/adt-simple.lisp")
+	(compile-file "QCSP/adt-setup.lisp")
+
+	(compile-file "QCSP/terrain-simple.lisp")
+	(compile-file "QCSP/terrain-setup.lisp")
+
+	(compile-file "QCSP/caeti-db-all")
+	(compile-file "QCSP/terrain-setup-dp") 
+	(compile-file "QCSP/yj-adt-simple.lisp")
+	(compile-file "QCSP/yj-adt-setup.lisp")
+
+	(load "QCSP/load-from-planner") ;(load "QCSP/load")
+	)
+
+    (progn
+ 
+ (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:compile-set.lisp")
+ (compile-set)
+
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:bt.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:bm.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ct.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:gsat.lisp")
+
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:utility.lisp")
+
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:mpr-simple.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:mpr-setup.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:queens.lisp")
+
+ (compile-file 
+  "Macintosh HD:Languages:Allegro Common Lisp:qcsp:quilici-search.lisp")
+ (compile-file 
+  "Macintosh HD:Languages:Allegro Common Lisp:qcsp:memory-csp.lisp")
+
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:adt-simple.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:adt-setup.lisp")
+
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:terrain-simple.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:terrain-setup.lisp")
+
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:yj-adt-simple.lisp")
+ (compile-file "Macintosh HD:Languages:Allegro Common Lisp:qcsp:yj-adt-setup.lisp")
+
+ (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:load")
+
+      )))
+
+

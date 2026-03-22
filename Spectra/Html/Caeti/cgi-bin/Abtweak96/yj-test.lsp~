@@ -1,0 +1,70 @@
+
+;;
+;; This function contains a dummy invokation of the planner, sufficient only
+;;   to demonstrate the correct parameter passing to an output file.
+;; In actuality the invoked function should be the planner with this params,
+;;   and the output file should contain the values required for producing the
+;;   map and any other appropriate return-screen output.
+
+(defun demo (&key theStartForm 
+		  theStartCoords
+		  (one-leg? nil) 
+		  Leg1Tform 
+		  Leg1TravT 
+		  Leg1BDrill 
+		  Leg1StopForm
+		  (two-legs? nil) 
+		  Leg2Tform Leg2TravT 
+		  Leg2BDrill 
+		  Leg2StopForm
+		  (three-legs? nil) 
+		  Leg3Tform 
+		  Leg3TravT 
+		  Leg3BDrill 
+		  Leg3StopForm
+		  theEndForm 
+		  theEndCoords 
+		  )
+
+  (with-open-file (out-stream "Test/yj-test.out"
+			      :direction :output
+			      :if-exists :supersede)
+		  (format out-stream 
+			  "~%theStartForm ~A~
+                           ~%theStartCoords ~A~
+		           ~%one-leg? ~A~
+                           ~%Leg1Tform ~A~
+                           ~%Leg1TravT ~A~
+                           ~%Leg1BDrill ~A~
+                           ~%Leg1StopForm ~A~
+          		   ~%two-legs? ~A~
+                           ~%Leg2Tform ~A~
+                           ~%Leg2TravT ~A~
+                           ~%Leg2BDrill ~A~
+                           ~%Leg2StopForm ~A~
+		           ~%three-legs? ~A~
+                           ~%Leg3Tform ~A~
+                           ~%Leg3TravT ~A~
+                           ~%Leg3BDrill ~A~
+                           ~%Leg3StopForm ~A~
+		           ~%theEndForm ~A~
+                           ~%theEndCoords ~A"
+			  theStartForm
+			  theStartCoords
+			  one-leg?
+			  Leg1Tform
+			  Leg1TravT
+			  Leg1BDrill
+			  Leg1StopForm
+			  two-legs?
+			  Leg2Tform
+			  Leg2TravT
+			  Leg2BDrill
+			  Leg2StopForm
+			  three-legs?
+			  Leg3Tform
+			  Leg3TravT
+			  Leg3BDrill
+			  Leg3StopForm
+			  theEndForm
+			  theEndCoords )))

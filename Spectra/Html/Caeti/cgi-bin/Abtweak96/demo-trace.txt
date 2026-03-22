@@ -1,0 +1,683 @@
+;; This is output info for 5 scenarios that employ all the operators
+;; in the caeti9 domain specification.
+
+SCENARIO 1
+
+;;Html form settings:
+;; Herringbone 390175
+;; leg1 Column   Traveling-technique Contact-drill NONE
+;; leg2 No-tform Bounding-overwatch  Popup-attack  NONE/Halt-B-O
+;; leg3 Vee      Traveling-overwatch NONE          Coil
+;; 60 < time < 180
+
+Plan requirements parsed from Html form
+
+  Initial state: ((390 175)
+                  (IN-STAT-FORMATION WHITE (390 175) HERRINGBONE $security2
+                   0.0))
+    1st leg required opids: (MTLEFNBO CWSAFD NTM TICF MOFSF)
+    1st leg goal: (cp1 (AT-LOCATION WHITE cp1 $exec-time3)
+                   (MOVING-ALONG-LEG WHITE (390 175) cp1 $security4 $method5))
+
+    2nd leg initial state: (cp1 (AT-LOCATION WHITE cp1 $exec-time3)
+                            (MOVING-ALONG-LEG WHITE (390 175) cp1 $security4
+                             $method5))
+    2nd leg required opids: (DAPAA TWBO MFLS)
+    2nd leg goal: (cp6 (STOPPED-AT WHITE cp6 $exec-time7))
+
+    3rd leg initial state: (cp6 (STOPPED-AT WHITE cp6 $exec-time7))
+    3rd leg required opids: (MTLEFNBO NBD TWO TIVF SICF MOFHBO)
+  Goal state: (cp0 (IN-STAT-FORMATION WHITE cp0 COIL $security9 $exec-time8))
+
+  Additional constraints: ((< $exec-time8 180) (< 60 $exec-time8))
+
+ The new exercise contains these actions:
+
+    (MOVE-OUT-FROM-STATIONARY-FORMATION WHITE (390 175) cp1 COLUMN
+     NORMAL-TRAVEL-METHOD 0.0 $1569 $1567 HERRINGBONE $security2)
+
+    (TRAVEL-IN-COLUMN-FORMATION WHITE MOVE-FROM (390 175) cp1
+     NORMAL-TRAVEL-METHOD (+ 0.0 (IF (= COIL HERRINGBONE) 0.2 0.1)))
+
+    (NORMAL-TRAVEL-METHOD WHITE MOVE-FROM (390 175) cp1 COLUMN
+     (+ 0.0 (IF (= COIL HERRINGBONE) 0.2 0.1)) F-FIRE-MODERATE L-FIRE-MODERATE
+     R-FIRE-MODERATE)
+
+    (CONTACT-WITH-SMALL-ARMS-FIRE-DRILL WHITE (390 175) cp1 $1631 $1261
+     (+ 0.0 (IF (= COIL HERRINGBONE) 0.2 0.1)) $1611 1.0 $1606)
+
+    (TRAVEL-WITH-BOUNDING-OVERWATCH WHITE MOVE-THROUGH cp1 $928 $exec-time3)
+
+    (DEFEND-AGAINST-POPUP-AIR-ATTACK WHITE cp1 $928 $881 $900 cp6 $exec-time3
+     2.5 SECURITY-EXCELLENT TRAVEL-WITH-BOUNDING-OVERWATCH $884 $926 $856 $861
+     $909)
+
+    (MOVE-OUT-FROM-HALTED-BOUNDING-OVERWATCH WHITE cp6 cp0 VEE
+     TRAVEL-WITH-OVERWATCH $609 $613 $611)
+
+    (TRAVEL-IN-VEE-FORMATION WHITE MOVE-FROM cp6 cp0 TRAVEL-WITH-OVERWATCH
+     (+ $609 0.05))
+
+    (TRAVEL-WITH-OVERWATCH WHITE MOVE-FROM cp6 cp0 VEE (+ $609 0.05))
+
+    (STOP-IN-COIL-FORMATION WHITE cp6 cp0 SECURITY-GOOD TRAVEL-WITH-OVERWATCH
+     (+ (+ $609 0.05) (* 1.75 $642)))
+
+ The training table for the new exercise is:
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-FROM (390 175) COLUMN NORMAL-TRAVEL-METHOD)
+
+    (CONTACT-REPORT-GIVEN-TO WHITE $1632 $1631 NO-ANTITANK-WEAPONS)
+
+    (FIRE-ORDER-GIVEN-TO WHITE $1632 $1631 $1630)
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-THROUGH cp1 NO-TRAVELING-FORMATION
+     TRAVEL-WITH-BOUNDING-OVERWATCH)
+
+    (STOP-ORDER-GIVEN-TO WHITE cp0 COIL)
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-FROM cp6 VEE TRAVEL-WITH-OVERWATCH)
+
+ The new exercise also places constraints on the scenario:
+
+    (COLLECTIVE-TRAVEL-TIME (390 175) cp1 $1639)
+
+    (LOC-EMPTY cp1)
+
+    (PRECEDES (390 175) cp1)
+
+    (SEPARATION $1631 $1632 0.1 1.0)
+
+    (SEPARATION (390 175) cp1 1.0 POS-INFIN)
+
+    (LEG-LATERAL-SPACE (390 175) cp1 (RANGE 0.1 POS-INFIN))
+
+    (LEG-CLEAR (390 175) cp1)
+
+    (NOT-ENEMY-UNIT (OPTIONS HELICOPTER ARTILLERY T-72S BMPS) $1569 (390 175)
+     $1567 FIRING 0.0)
+
+    (COLLECTIVE-TRAVEL-TIME (390 175) $1631 $1611)
+
+    (ENEMY-UNIT SMALL-ARMS $1632 $1631 NOT-MOVING FIRING
+     (+ (+ 0.0 (IF (= COIL HERRINGBONE) 0.2 0.1)) $1611))
+
+    (TERRAIN-TYPE $1632 FOREST $1606)
+
+    (POINT-ON-SEGMENT $1631 (390 175) cp1)
+
+    (TERRAIN-TYPE $881 MOUNTAIN $856)
+
+    (TERRAIN-TYPE $900 PLAIN $861)
+
+    (SEPARATION $928 $900 1.1 2.8)
+
+    (COLLECTIVE-TRAVEL-TIME cp1 $928 $884)
+
+    (ANGLE-FORMED $900 $928 cp6 45.0)
+
+    (TERRAIN-TYPE cp6 FOREST $909)
+
+    (LEG-LATERAL-SPACE $928 cp6 (RANGE 0.4 POS-INFIN))
+
+    (COLLECTIVE-TRAVEL-TIME $928 cp6 $926)
+
+    (LOC-EMPTY cp6)
+
+    (LEG-CLEAR $928 cp6)
+
+    (SEPARATION $928 cp6 0.2 0.5)
+
+    (ENEMY-UNIT HELICOPTER $900 $928 NOT-MOVING FIRING (+ $exec-time3 $884))
+
+    (SEPARATION $881 $900 0.1 0.6)
+
+    (SEPARATION $928 $881 1.0 2.0)
+
+    (SEPARATION cp1 $928 1.0 POS-INFIN)
+
+    (ANGLE-FORMED (390 175) cp1 $928 180.0)
+
+    (LEG-CLEAR cp1 $928)
+
+    (LEG-LATERAL-SPACE cp1 $928 (RANGE 0.4 POS-INFIN))
+
+    (LOC-RADIAL-SPACE cp0 (RANGE 0.4 POS-INFIN))
+
+    (LOC-EMPTY cp0)
+
+    (PRECEDES cp6 cp0)
+
+    (COLLECTIVE-TRAVEL-TIME cp6 cp0 $642)
+
+    (SEPARATION cp6 cp0 1.0 POS-INFIN)
+
+    (LEG-LATERAL-SPACE cp6 cp0 (RANGE 0.4 POS-INFIN))
+
+    (LEG-CLEAR cp6 cp0)
+
+    (NOT-ENEMY-UNIT (OPTIONS HELICOPTER ARTILLERY T-72S BMPS) $613 cp6 $611
+     FIRING $609)
+
+    (< $exec-time8 180)
+
+    (< 60 $exec-time8)
+
+---------------------------------------------------------------------
+
+SCENARIO 2
+
+;; Html form settings
+
+Plan requirements parsed from Html form
+
+  Initial state: ((390 175)
+                  (IN-STAT-FORMATION WHITE (390 175) HERRINGBONE $security2
+                   0.0))
+    1st leg required opids: (MTLEFNBO NBD TRM TIEF RTIFD-SF)
+    1st leg goal: (cp1 (AT-LOCATION WHITE cp1 $exec-time3)
+                   (MOVING-ALONG-LEG WHITE (390 175) cp1 $security4 $method5))
+
+    2nd leg initial state: (cp1 (AT-LOCATION WHITE cp1 $exec-time3)
+                            (MOVING-ALONG-LEG WHITE (390 175) cp1 $security4
+                             $method5))
+    2nd leg required opids: (NBD TWO TISCF HTF CODTAO)
+    2nd leg goal: (cp6 (STOPPED-AT WHITE cp6 $exec-time7)
+                   (IN-TRAV-FORMATION WHITE cp1 cp6 STAGGERED-COLUMN $ff8 $lf9
+                    $rf10 $tmethod11))
+
+    3rd leg initial state: (cp6 (STOPPED-AT WHITE cp6 $exec-time7)
+                            (IN-TRAV-FORMATION WHITE cp1 cp6 STAGGERED-COLUMN
+                             $ff8 $lf9 $rf10 $tmethod11))
+    3rd leg required opids: (MTLEFNBO PLBEU NTM TIWF SICF MOFHTF)
+  Goal state: (cp0 (IN-STAT-FORMATION WHITE cp0 COIL $security13 $exec-time12))
+
+  Additional constraints: ((< $exec-time12 600) (< 120 $exec-time12))
+
+
+ The new exercise contains these actions:
+
+    (REACT-TO-INDIRECT-FIRE-DRILL-STATIONARY-FORMATION WHITE (390 175) cp1
+     ECHELON TACTICAL-ROAD-MARCH 0.0 $2959 $2957 $2950 HERRINGBONE $security2)
+
+    (TRAVEL-IN-ECHELON-FORMATION WHITE MOVE-FROM (390 175) cp1
+     TACTICAL-ROAD-MARCH (+ 0.0 (IF (= COIL HERRINGBONE) 0.2 0.1)))
+
+    (TACTICAL-ROAD-MARCH WHITE MOVE-FROM (390 175) cp1 ECHELON
+     (+ 0.0 (IF (= COIL HERRINGBONE) 0.2 0.1)) F-FIRE-EXCELLENT
+     L-FIRE-EXCELLENT R-FIRE-BAD)
+
+    (CHANGE-OF-DIRECTION-TO-AVOID-OBSTACLE WHITE cp1 cp6 $2261 $2265
+     STAGGERED-COLUMN TRAVEL-WITH-OVERWATCH $2211 $2222 $2246 (390 175)
+     $method5 $security4 $2206)
+
+    (TRAVEL-IN-STAGGERED-COLUMN-FORMATION WHITE MOVE-THROUGH cp1 cp6
+     TRAVEL-WITH-OVERWATCH $2211)
+
+    (TRAVEL-WITH-OVERWATCH WHITE MOVE-THROUGH cp1 cp6 STAGGERED-COLUMN $2211)
+
+    (HALT-TRAVELING-FORMATION WHITE cp1 cp6 SECURITY-GOOD STAGGERED-COLUMN
+     TRAVEL-WITH-OVERWATCH F-FIRE-GOOD L-FIRE-GOOD R-FIRE-GOOD $2211 1.75
+     $2184)
+
+    (MOVE-OUT-FROM-HALTED-TRAVELING-FORMATION WHITE cp6 cp0 WEDGE
+     NORMAL-TRAVEL-METHOD $918 $922 $920 cp1 STAGGERED-COLUMN $tmethod11 $ff8
+     $lf9 $rf10)
+
+    (TRAVEL-IN-WEDGE-FORMATION WHITE MOVE-FROM cp6 cp0 NORMAL-TRAVEL-METHOD
+     $849 (+ $918 0.05))
+
+    (NORMAL-TRAVEL-METHOD WHITE MOVE-FROM cp6 cp0 WEDGE (+ $918 0.05)
+     F-FIRE-EXCELLENT L-FIRE-GOOD R-FIRE-MODERATE)
+
+    (PASS-LAND-BASED-ENEMY-UNIT WHITE cp6 cp0 $892 $409 (+ $918 0.05) $878 1.0
+     $885 $873)
+
+    (STOP-IN-COIL-FORMATION WHITE cp6 cp0 SECURITY-MODERATE
+     NORMAL-TRAVEL-METHOD (+ (+ $918 0.05) (* 1.0 $900)))
+
+ The training table for the new exercise is:
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-FROM (390 175) ECHELON TACTICAL-ROAD-MARCH)
+
+    (STOP-ORDER-GIVEN-TO WHITE cp6 STAGGERED-COLUMN)
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-FROM cp6 WEDGE NORMAL-TRAVEL-METHOD)
+
+    (CONTACT-REPORT-GIVEN-TO WHITE $893 $892 NO-ANTITANK-WEAPONS)
+
+    (STOP-ORDER-GIVEN-TO WHITE cp0 COIL)
+
+ The new exercise also places constraints on the scenario:
+
+    (SEPARATION (390 175) cp1 3.0 POS-INFIN)
+
+    (LEG-CLEAR (390 175) cp1)
+
+    (TERRAIN-TYPE $2959 (OPTIONS PLAIN FOREST) $2950)
+
+    (ENEMY-UNIT (OPTIONS ARTILLERY T-72S BMPS) $2959 (390 175) $2957 FIRING
+     0.0)
+
+    (LEG-LATERAL-SPACE (390 175) cp1 (RANGE 0.4 POS-INFIN))
+
+    (LOC-EMPTY cp1)
+
+    (COLLECTIVE-TRAVEL-TIME (390 175) cp1 $2941)
+
+    (PRECEDES (390 175) cp1)
+
+    (SEPARATION cp1 cp6 1.0 POS-INFIN)
+
+    (ANGLE-FORMED (390 175) cp1 cp6 180.0)
+
+    (TERRAIN-TYPE cp1 (OPTIONS PLAIN FOREST) $2206)
+
+    (SEPARATION cp1 $2261 0.2 2.0)
+
+    (ANGLE-FORMED (390 175) cp1 $2261 $2222)
+
+    (< 30.0 (ABSOLUTE-VALUE (- 180.0 $2222)))
+
+    (< (ABSOLUTE-VALUE (- 180.0 $2222)) 90.0)
+
+    (LEG-CLEAR cp1 $2261)
+
+    (SEPARATION $2261 $2265 0.2 2.0)
+
+    (ANGLE-FORMED cp1 $2261 $2265 $2246)
+
+    (< 30.0 (ABSOLUTE-VALUE (- 180.0 $2246)))
+
+    (< (ABSOLUTE-VALUE (- 180.0 $2246)) 90.0)
+
+    (LEG-CLEAR $2261 $2265)
+
+    (ANGLE-FORMED (390 175) cp1 $2265 180.0)
+
+    (< (DISTANCE-BETWEEN cp1 $2265) (DISTANCE-BETWEEN cp1 cp6))
+
+    (LEG-LATERAL-SPACE cp1 cp6 (RANGE 0.2 POS-INFIN))
+
+    (LEG-CLEAR cp1 cp6)
+
+    (COLLECTIVE-TRAVEL-TIME cp1 cp6 $2184)
+
+    (LOC-EMPTY cp6)
+
+    (LOC-RADIAL-SPACE cp6 (RANGE 0.4 POS-INFIN))
+
+    (PRECEDES cp1 cp6)
+
+    (SEPARATION cp6 cp0 1.0 POS-INFIN)
+
+    (LEG-CLEAR cp6 cp0)
+
+    (NOT-ENEMY-UNIT (OPTIONS HELICOPTER ARTILLERY T-72S BMPS) $922 cp6 $920
+     FIRING $918)
+
+    (LEG-LATERAL-SPACE cp6 cp0 (RANGE 0.4 POS-INFIN))
+
+    (OVERWATCHING $849 WHITE cp6 cp0)
+
+    (POINT-ON-SEGMENT $892 cp6 cp0)
+
+    (SEPARATION $892 $893 1.7 4.0)
+
+    (TERRAIN-TYPE $893 (OPTIONS FOREST PLAIN) $873)
+
+    (COLLECTIVE-TRAVEL-TIME cp6 $892 $878)
+
+    (ENEMY-UNIT (OPTIONS T-72S BMPS SMALL-ARMS) $893 $892 $885 NOT-FIRING
+     (+ (+ $918 0.05) $878))
+
+    (LOC-EMPTY cp0)
+
+    (COLLECTIVE-TRAVEL-TIME cp6 cp0 $900)
+
+    (PRECEDES cp6 cp0)
+
+    (LOC-RADIAL-SPACE cp0 (RANGE 0.4 POS-INFIN))
+
+    (< $exec-time12 600)
+
+    (< 120 $exec-time12)
+
+---------------------------------------------------------------------
+
+SCENARIO 3
+
+Plan requirements parsed from Html form
+
+  Initial state: ((390 175) (STOPPED-AT WHITE (390 175) 0.0))
+    1st leg required opids: (MTLEFNBO NBD NTM TIWF RTIFD-HBO)
+    1st leg goal: (cp1 (AT-LOCATION WHITE cp1 $exec-time2)
+                   (MOVING-ALONG-LEG WHITE (390 175) cp1 $security3
+                    $method4))
+
+    2nd leg initial state: (cp1 (AT-LOCATION WHITE cp1 $exec-time2)
+                            (MOVING-ALONG-LEG WHITE (390 175) cp1
+                             $security3 $method4))
+    2nd leg required opids: (MTLEFNBO NBD NTM TILF CODTAE)
+    2nd leg goal: (cp5 (AT-LOCATION WHITE cp5 $exec-time6)
+                   (MOVING-ALONG-LEG WHITE cp1 cp5 $security7 $method8))
+
+    3rd leg initial state: (cp5 (AT-LOCATION WHITE cp5 $exec-time6)
+                            (MOVING-ALONG-LEG WHITE cp1 cp5 $security7
+                             $method8))
+    3rd leg required opids: (PAD NTM TIWF MFLS)
+  Goal state: (cp0 (STOPPED-AT WHITE cp0 $exec-time9)
+               (IN-TRAV-FORMATION WHITE cp5 cp0 WEDGE $ff10 $lf11 $rf12
+                $tmethod13))
+
+  Additional constraints: ((< $exec-time9 180) (< 60 $exec-time9))
+
+ The new exercise contains these actions:
+
+    (REACT-TO-INDIRECT-FIRE-DRILL-HALTED-BOUNDING-OVERWATCH WHITE (390 175)
+     cp0 WEDGE NORMAL-TRAVEL-METHOD 0.0 $2737 $2735 $2728 $2736)
+
+    (TRAVEL-IN-WEDGE-FORMATION WHITE MOVE-FROM (390 175) cp0
+     NORMAL-TRAVEL-METHOD $2760 (+ 0.0 0.05))
+
+    (NORMAL-TRAVEL-METHOD WHITE MOVE-FROM (390 175) cp0 WEDGE (+ 0.0 0.05)
+     F-FIRE-EXCELLENT L-FIRE-GOOD R-FIRE-MODERATE)
+
+    (CHANGE-OF-DIRECTION-TO-ASSAULT-ENEMY WHITE cp0 cp4 $2079
+     NORMAL-TRAVEL-METHOD $exec-time1 $2040 $2044 $2070 (390 175) $method3
+     $security2)
+
+    (TRAVEL-IN-LINE-FORMATION WHITE $2040 cp0 cp4 NORMAL-TRAVEL-METHOD $2091
+     $exec-time1)
+
+    (NORMAL-TRAVEL-METHOD WHITE $2040 cp0 cp4 LINE $exec-time1
+     F-FIRE-EXCELLENT L-FIRE-BAD R-FIRE-BAD)
+
+    (TRAVEL-IN-WEDGE-FORMATION WHITE MOVE-THROUGH cp4 (420 280)
+     NORMAL-TRAVEL-METHOD $570 $exec-time5)
+
+    (NORMAL-TRAVEL-METHOD WHITE MOVE-THROUGH cp4 (420 280) WEDGE $exec-time5
+     F-FIRE-EXCELLENT L-FIRE-GOOD R-FIRE-MODERATE)
+
+    (PASSIVE-AIR-DEFENSE WHITE cp4 (420 280) $609 $610 (420 280) $exec-time5
+     1.0 SECURITY-MODERATE NORMAL-TRAVEL-METHOD $601 $637 $620)
+
+ The training table for the new exercise is:
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-FROM (390 175) WEDGE NORMAL-TRAVEL-METHOD)
+
+    (FIRE-ORDER-GIVEN-TO WHITE $2079 cp4 $2077)
+
+    (CHANGE-OF-DIRECTION-ORDER-GIVEN-TO WHITE $2040 cp0 LINE
+     NORMAL-TRAVEL-METHOD)
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-THROUGH cp4 WEDGE NORMAL-TRAVEL-METHOD)
+
+ The new exercise also places constraints on the scenario:
+
+    (LOC-EMPTY cp0)
+
+    (COLLECTIVE-TRAVEL-TIME (390 175) cp0 $2772)
+
+    (PRECEDES (390 175) cp0)
+
+    (SEPARATION (390 175) cp0 1.0 POS-INFIN)
+
+    (LEG-LATERAL-SPACE (390 175) cp0 (RANGE 0.4 POS-INFIN))
+
+    (ENEMY-UNIT (OPTIONS ARTILLERY T-72S BMPS) $2737 $2736 $2735 FIRING 0.0)
+
+    (TERRAIN-TYPE $2737 (OPTIONS PLAIN FOREST) $2728)
+
+    (LEG-CLEAR (390 175) cp0)
+
+    (OVERWATCHING $2760 WHITE (390 175) cp0)
+
+    (LOC-EMPTY cp4)
+
+    (COLLECTIVE-TRAVEL-TIME cp0 cp4 $2107)
+
+    (PRECEDES cp0 cp4)
+
+    (SEPARATION cp0 cp4 1.0 POS-INFIN)
+
+    (OVERWATCHING $2091 WHITE cp0 cp4)
+
+    (< 15.0 (ABSOLUTE-VALUE (- 180.0 $2040)))
+
+    (ANGLE-FORMED (390 175) cp0 cp4 $2040)
+
+    (MINIMIZE (ABSOLUTE-VALUE (- 180.0 $2040)))
+
+    (COLLECTIVE-TRAVEL-TIME cp0 cp4 $2044)
+
+    (< (DISTANCE-BETWEEN cp0 cp4) (DISTANCE-BETWEEN cp0 $2079))
+
+    (LEG-CLEAR cp4 $2079)
+
+    (ENEMY-UNIT (OPTIONS ARTILLERY T-72S BMPS) $2079 cp0 NOT-MOVING $2070
+     (+ $exec-time1 $2044))
+
+    (ANGLE-FORMED cp0 cp4 $2079 180.0)
+
+    (SEPARATION cp4 $2079 0.2 0.4)
+
+    (LEG-LATERAL-SPACE cp0 cp4 (RANGE 0.4 POS-INFIN))
+
+    (LEG-CLEAR cp0 cp4)
+
+    (SEPARATION (420 280) $610 1.1 2.8)
+
+    (SEPARATION (420 280) $609 3.0 POS-INFIN)
+
+    (COLLECTIVE-TRAVEL-TIME cp4 (420 280) $601)
+
+    (SEPARATION (420 280) (420 280) 0.2 0.5)
+
+    (LEG-CLEAR (420 280) (420 280))
+
+    (LOC-EMPTY (420 280))
+
+    (COLLECTIVE-TRAVEL-TIME (420 280) (420 280) $637)
+
+    (LEG-LATERAL-SPACE (420 280) (420 280) (RANGE 0.4 POS-INFIN))
+
+    (TERRAIN-TYPE (420 280) FOREST $620)
+
+    (ENEMY-UNIT HELICOPTER $610 $609 MOVING NOT-FIRING (+ $exec-time5 $601))
+
+    (NOT-SAME-SEGMENT-SPACE (420 280) $609 $610 1.0)
+
+    (LEG-CLEAR cp4 (420 280))
+
+    (LEG-LATERAL-SPACE cp4 (420 280) (RANGE 0.4 POS-INFIN))
+
+    (OVERWATCHING $570 WHITE cp4 (420 280))
+
+    (ANGLE-FORMED cp0 cp4 (420 280) 180.0)
+
+    (SEPARATION cp4 (420 280) 1.0 POS-INFIN)
+
+    (< $exec-time8 180)
+
+    (< 60 $exec-time8)
+
+---------------------------------------------------------------
+
+SCENARIO 4
+
+Plan requirements parsed from Html form
+
+  Initial state: ((390 175) (STOPPED-AT WHITE (390 175) 0.0)
+                  (IN-TRAV-FORMATION WHITE (390 175) (390 175) COLUMN
+                   $ff1 $lf2 $rf3 $tmethod4))
+    1st leg required opids: (MTLEFNBO NBD NTM TIWF RTIFD-HTF)
+    1st leg goal: (cp0 (AT-LOCATION WHITE cp0 $exec-time5)
+                   (MOVING-ALONG-LEG WHITE (390 175) cp0 $security6
+                    $method7))
+
+    2nd leg initial state: (cp0 (AT-LOCATION WHITE cp0 $exec-time5)
+                            (MOVING-ALONG-LEG WHITE (390 175) cp0
+                             $security6 $method7))
+    2nd leg required opids: (MTLEFNBO NBD NTM TIWF CODTAIA)
+    2nd leg goal: (cp8 (AT-LOCATION WHITE cp8 $exec-time9)
+                   (MOVING-ALONG-LEG WHITE cp0 cp8 $security10
+                    $method11))
+
+    3rd leg initial state: (cp8 (AT-LOCATION WHITE cp8 $exec-time9)
+                            (MOVING-ALONG-LEG WHITE cp0 cp8 $security10
+                             $method11))
+    3rd leg required opids: (DAMAA NTM TIWF MFLS)
+  Goal state: ((420 280) (STOPPED-AT WHITE (420 280) $exec-time12)
+               (IN-TRAV-FORMATION WHITE cp8 (420 280) WEDGE $ff13 $lf14
+                $rf15 $tmethod16))
+
+  Additional constraints: ((< $exec-time12 180) (< 60 $exec-time12))
+
+
+ The new exercise contains these actions:
+
+    (REACT-TO-INDIRECT-FIRE-DRILL-HALTED-TRAVELING-FORMATION WHITE
+     (390 175) cp0 WEDGE NORMAL-TRAVEL-METHOD 0.0 $2931 $2929 $2922
+     (390 175) COLUMN $tmethod4 $ff1 $lf2 $rf3)
+
+    (TRAVEL-IN-WEDGE-FORMATION WHITE MOVE-FROM (390 175) cp0
+     NORMAL-TRAVEL-METHOD $2954 (+ 0.0 0.05))
+
+    (NORMAL-TRAVEL-METHOD WHITE MOVE-FROM (390 175) cp0 WEDGE
+     (+ 0.0 0.05) F-FIRE-EXCELLENT L-FIRE-GOOD R-FIRE-MODERATE)
+
+    (CHANGE-OF-DIRECTION-TO-AVOID-IMPACT-AREA WHITE cp0 cp8 $2083 $2087
+     $2034 WEDGE NORMAL-TRAVEL-METHOD $2024 $2044 $2068 $2026 $2019
+     (390 175) $method7 $security6)
+
+    (TRAVEL-IN-WEDGE-FORMATION WHITE MOVE-THROUGH cp0 cp8
+     NORMAL-TRAVEL-METHOD $2104 $2024)
+
+    (NORMAL-TRAVEL-METHOD WHITE MOVE-THROUGH cp0 cp8 WEDGE $2024
+     F-FIRE-EXCELLENT L-FIRE-GOOD R-FIRE-MODERATE)
+
+    (TRAVEL-IN-WEDGE-FORMATION WHITE MOVE-THROUGH cp8 (420 280)
+     NORMAL-TRAVEL-METHOD $572 $exec-time9)
+
+    (NORMAL-TRAVEL-METHOD WHITE MOVE-THROUGH cp8 (420 280) WEDGE
+     $exec-time9 F-FIRE-EXCELLENT L-FIRE-GOOD R-FIRE-MODERATE)
+
+    (DEFEND-AGAINST-MOVING-AIR-ATTACK WHITE cp8 (420 280) $607
+     (420 280) $exec-time9 1.0 SECURITY-MODERATE NORMAL-TRAVEL-METHOD
+     $591 $633 $616)
+
+ The training table for the new exercise is:
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-FROM (390 175) WEDGE
+     NORMAL-TRAVEL-METHOD)
+
+    (MOVE-ORDER-GIVEN-TO WHITE MOVE-THROUGH cp8 WEDGE
+     NORMAL-TRAVEL-METHOD)
+
+ The new exercise also places constraints on the scenario:
+
+    (LOC-EMPTY cp0)
+
+    (COLLECTIVE-TRAVEL-TIME (390 175) cp0 $2966)
+
+    (PRECEDES (390 175) cp0)
+
+    (SEPARATION (390 175) cp0 1.0 POS-INFIN)
+
+    (LEG-LATERAL-SPACE (390 175) cp0 (RANGE 0.4 POS-INFIN))
+
+    (ENEMY-UNIT (OPTIONS ARTILLERY T-72S BMPS) $2931 (390 175) $2929
+     FIRING 0.0)
+
+    (TERRAIN-TYPE $2931 (OPTIONS PLAIN FOREST) $2922)
+
+    (LEG-CLEAR (390 175) cp0)
+
+    (OVERWATCHING $2954 WHITE (390 175) cp0)
+
+    (COLLECTIVE-TRAVEL-TIME cp0 cp8 $2120)
+
+    (LOC-EMPTY cp8)
+
+    (PRECEDES cp0 cp8)
+
+    (LEG-CLEAR cp0 cp8)
+
+    (LEG-LATERAL-SPACE cp0 cp8 (RANGE 0.4 POS-INFIN))
+
+    (TERRAIN-TYPE $2034 (OPTIONS PLAIN FOREST) $2019)
+
+    (ANGLE-FORMED (390 175) cp0 cp8 180.0)
+
+    (ENEMY-UNIT (OPTIONS ARTILLERY T-72S) $2034 cp0 $2026 FIRING $2024)
+
+    (SEPARATION cp0 $2083 0.2 2.0)
+
+    (< 30.0 (ABSOLUTE-VALUE (- 180.0 $2044)))
+
+    (LEG-CLEAR cp0 $2083)
+
+    (ANGLE-FORMED cp0 $2083 $2087 $2068)
+
+    (< (ABSOLUTE-VALUE (- 180.0 $2068)) 90.0)
+
+    (ANGLE-FORMED (390 175) cp0 $2087 180.0)
+
+    (< (DISTANCE-BETWEEN cp0 $2087) (DISTANCE-BETWEEN cp0 cp8))
+
+    (LEG-CLEAR $2083 $2087)
+
+    (< 30.0 (ABSOLUTE-VALUE (- 180.0 $2068)))
+
+    (SEPARATION $2083 $2087 0.2 2.0)
+
+    (< (ABSOLUTE-VALUE (- 180.0 $2044)) 90.0)
+
+    (ANGLE-FORMED (390 175) cp0 $2083 $2044)
+
+    (SEPARATION cp0 $2034 0.1 1.0)
+
+    (OVERWATCHING $2104 WHITE cp0 cp8)
+
+    (SEPARATION cp0 cp8 1.0 POS-INFIN)
+
+    (SEPARATION (420 280) $607 1.1 2.8)
+
+    (COLLECTIVE-TRAVEL-TIME cp8 (420 280) $591)
+
+    (ANGLE-FORMED $607 (420 280) (420 280) 45.0)
+
+    (TERRAIN-TYPE (420 280) FOREST $616)
+
+    (LEG-LATERAL-SPACE (420 280) (420 280) (RANGE 0.4 POS-INFIN))
+
+    (COLLECTIVE-TRAVEL-TIME (420 280) (420 280) $633)
+
+    (LOC-EMPTY (420 280))
+
+    (LEG-CLEAR (420 280) (420 280))
+
+    (SEPARATION (420 280) (420 280) 0.2 0.5)
+
+    (ENEMY-UNIT HELICOPTER $607 (420 280) MOVING FIRING
+     (+ $exec-time9 $591))
+
+    (LEG-CLEAR cp8 (420 280))
+
+    (LEG-LATERAL-SPACE cp8 (420 280) (RANGE 0.4 POS-INFIN))
+
+    (OVERWATCHING $572 WHITE cp8 (420 280))
+
+    (ANGLE-FORMED cp0 cp8 (420 280) 180.0)
+
+    (SEPARATION cp8 (420 280) 1.0 POS-INFIN)
+
+    (< $exec-time12 180)
+
+    (< 60 $exec-time12)
+
+---------------------------------------------------------
+
+SCENARIO 5
+

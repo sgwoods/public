@@ -1,0 +1,590 @@
+
+<TITLE>EE150, Spring 1996 - Assignment #4, Questions and Answers </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../../Images/QandA.gif"
+     HEIGHT=132 WIDTH=162 HSPACE=10 ALT="" ALIGN=right>
+
+<H1>EE150 - Spring 1996</H1>
+
+<H2>Programming Assignment #4 <BR>
+Questions and Answers </H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Getting Started <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qgs1">
+       I'm having a hard time getting started with the
+       "base" program.  What should I do?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qgs2">
+       I'm having a hard time getting started with the
+       "primes" program.  What should I do?
+       </A> <P>
+  </DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+   Questions about Functions <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qf1">
+       How do I figure out what <TT>getNumInBase</TT> and those
+       other functions in <B>helpers.c</B> actually do?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qf2">
+       How come I get an error about <TT>pow</TT> and <TT>floor</TT>
+       not being defined when I compile <B>helpers.c</B>?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qf3">
+       Do I need to copy the functions in <B>helpers.c</B> into
+       <B>base1.c</B> and <B>base2.c</B>?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qf4">
+       How come <TT>sqrt</TT> is giving me the wrong result?
+       </A> <P>
+  </DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+     Questions about the Input <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi1">
+       Does the first prime number program read just one set of
+       input values?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi2">
+       Do we have to deal with negative binary numbers?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi3">
+       What do we do if the user enters a NO in response to the question
+       about printing the primes in <EM>ascending</EM> order?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi4">
+      I'm using a test file to test my program.  After all my inputs,
+      how do i put a control-d in there to make my program end?
+      </A><P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi5">
+      Do we have to allow spaces before the operators?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi6">
+      What error do we print out for the input "+ 10" (with a return right
+      after the 0 in the 10)?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi7">
+      What error do we print out for the input "b 50 10"?
+      </A> </P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi8">
+      What exactly counts as a "yes" or a "no" answer?
+      </A> </P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi9">
+      Are the numbers always in order for the first prime number program?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi10">
+      Are you going to test the base programs with blank lines?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi11">
+      How should we handle EOF and input errors in the prime program?
+      </A> <P>
+  </DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about the Output <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qo1">
+       How do I interpret the output for the binary arithmetic
+       program?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qo2">
+       How come I get "log10: Domain Error" when I output the
+       result of a subtraction with <TT>putNumInBase</TT>?
+       </A> <P>
+  </DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about the Program's Processing <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp1">
+       How do we figure out which operation to do for a given
+       input line?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp2">
+       What do we do about 0, or negative numbers?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp3">
+       Is the range for the primes inclusive?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp4">
+       How can we tell if a number is prime?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp5">
+       Is 1 a prime number?
+       </A> <P>
+  </DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Language Constructs <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#ql1">
+       How do we use a <TT>switch</TT> when we want to do more than
+       one action for a given case?
+       </A> <P>
+  </DL>
+</DL>
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qgs1">
+I'm having a hard time getting started with the
+<B>base1</B> program.  What should I do?
+</A></H4>
+
+<P> You should attack this problem the way I have been attacking
+all problems in class.  Pick a small piece of the problem and
+get that working and then gradually extend it from there.
+
+<P> So, for this program, one way to get started is to simply
+read in the operators and print out an appropriate message for
+each operator as you read it (like "PLUS" for "+", and so on).
+That is accomplished <EM>almost exactly</EM> like the checkbook
+example in class.
+
+<P> Once you have that working, imagine writing the program using
+<TT>scanf</TT> to read the two values (as if they were
+already in decimal).  Given that, you can fill in the actual
+calculations the program would do (adding the inputs, subtracting
+them, and so on) and printing the result.  
+
+<P> Then try to extend the program to print the result not only
+as a decimal number, but also as a binary number,
+using the <TT>putNumInBase</TT> function.
+
+<P> Now, finally, worry about replacing <TT>scanf</TT> with a couple
+of calls to <TT>getNumInBase</TT> to read binary values as input
+rather than decimals.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qgs2">
+I'm having a hard time getting started with the
+"primes" program.  What should I do?
+</A> </H4>
+
+<P> The first thing you need to do is write a program that can 
+read in a single value and determine whether it is prime.  This
+divides into two parts: reading the value (which we can do with
+<TT>scanf</TT>) and then calling a function to determine whether
+it is prime (so we have to pass the input value to that function).
+
+<P> The catch is that function doesn't exist.  However, see the
+answer to the question about
+<A HREF="http:#qp4">how to determine whether a number is prime</A>
+for some guidelines on writing that function.  The function
+should return a 0 if the number isn't prime and some other value
+otherwise.
+
+<P> Once you have the function, you should be able to extend
+your program to read in a pair of values and then use a loop to 
+run from one value to the another, calling your function on each
+value of the loop index, and printing the loop index when the
+function determines the number is prime.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf1">How do I figure out what <TT>getNumInBase</TT>
+and those other functions in <B>helpers.c</B> actually do?
+</A></H4>
+
+<P> The way to find out what these functions do is to write a
+little main program that uses them.  As in the last assignment,
+there are a few examples of calling these functions in the
+assignment description.   Write a main program that includes
+these calls and see what they do with various inputs.   For example,
+<BLOCKQUOTE> <PRE>
+#include &ltstdio.h&gt
+main()
+{
+  long getNumInBase(int base, char follow);
+  long n;
+ 
+  n = getNumInBase(2, ' ');
+  printf("%li", n);
+  n = getNumInBase(2, '\n');
+  printf("%li", n);
+}
+</PRE></BLOCKQUOTE>
+
+<P> Try running the program with different inputs to see what it
+prints for <TT>n</TT>.  This should give you an idea of what the
+function does and how to use it.   You then need to do something
+similar with the <TT>putNumInBase</TT> functions.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf2">
+How come I get an error about <TT>pow</TT> and <TT>floor</TT>
+not being defined when I compile <B>helpers.c</B>?
+</A></H4>
+
+<P> The functions in <B>helpers.c</B> use the math library.  To 
+use the math library functions, you need to add <TT>-lm</TT> (that's
+a minus sign, and ell, and an m) to the end of the command line
+use use to link the object modules together, as in:
+
+<BLOCKQUOTE>
+<TT>cc base1.o helpers.o -lm</TT>
+</BLOCKQUOTE>
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf3">
+Do I need to copy the functions in <B>helpers.c</B> into
+<B>base1.c</B> and <B>base2.c</B>?
+</A></H4>
+
+<P> Absolutely not.  In fact, you will get lots of 
+points off if you do.
+Write <B>base1.c</B> using the functions in <B>helpers.c</B>,
+use separate compilation to make the executable, and
+then turn in only <B>base1.c</B> and not <B>helpers.c</B>.
+We will automatically compile what you turn in with our
+own version of <B>helpers.c</B>, which will result in
+"doubly defined symbol" error messages if you have
+copied those functions into the <B>base1.c</B>.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf4">
+How come <TT>sqrt</TT> is giving me the wrong result?
+</A></H4>
+
+<P> <TT>sqrt</TT> is a function that expects to be passed a <TT>double</TT>.
+If you pass it an <TT>int</TT>, there are going to be problems--unless you
+make sure to do two things.   The first is include the <TT>math.h</TT>
+header file.  This includes a function prototype for <TT>sqrt</TT>.  The
+second is to compile with the -Aa option.  This invokves an ANSI-C compiler.
+The ANSI-C compiler reads the prototype, realizes that you are passing
+an <TT>int</TT> to a function expecting a <TT>double</TT>, and automatically
+converts the <TT>int</TT> to a <TT>double</TT> for you.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi1">
+Does the first prime number program read just one set of input values?
+</A></H4>
+
+<P> Yes.  There is no need for an input-reading loop for this part.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+<P><H4><A NAME="qi2">
+Do we have to deal with negative binary numbers?
+</A> </H4>
+
+<P> No.  You will not be given negative binary numbers as input (and
+if you were, the <TT>getNumInBase</TT> function would return -1 as soon
+as it encountered the minus sign when it was trying to read
+in the number).
+
+<P> Keep in mind, however,
+that the result of subtracting one binary number from another could be
+negative, so you do have to worry about producing negative binary
+numbers as output.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi3">
+What do we do if the user enters a NO in response to the question
+about printing the primes in <EM>ascending</EM> order?
+</A></H4>
+
+<P>In that case, your program should print the primes in
+<EM>descending</EM> order.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi4">
+I'm using a test file to test my program.  After all my inputs,
+how do i put a control-d in there to make my program end?
+</A></H4>
+
+<P> You don't have to put a control-d in there.   The input-reading
+functions will return EOF when they encounter on a control-d
+from the keyboard or the actual end of the input file.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi5">
+Do we have to allow spaces before the operators?
+</A> </H4>
+
+<P> No.  We will not be testing your program with a blank where
+the operator should be.  (That means you can if you want, but
+you don't to.)
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi6">
+What error do we print out for the input "+ 10" (with a return right
+after the 0 in the 10)?
+</A> </H4>
+
+<P> Your program should print "Second operand is missing."
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi7">
+What error do we print out for the input "b 50 10"?
+</A> </H4>
+
+<P> This question is really, should we print a bad operator message or should
+we print "First operand is bad."?   
+
+<P> Your program should print "First operand is bad."  
+That means your program should read and check all the 
+input before checking whether the operator is illegal.  This actually
+makes the design of your program simpler, since the check for a
+bad operator will fall naturally out of your switch that maps
+the various operators to their implementation.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi8">
+What exactly counts as a "yes" or a "no" answer?
+</A> </H4>
+
+<P> The examples in the assignment only show "y" being treated
+as a yes, and "n" as a no.  So that's all that will be fair for
+us to test on the program you turn in.
+
+<P> However, we recommend that you simply go ahead and use
+the <TT>yesorno</TT> function we developed in class.  That way
+your program will allow leading spaces, and will treat
+any word <EM>beginning</EM> with a "y" or "n" as a "yes" or "no"
+(Plus, you can be sure that function works
+correctly as we analyzed it carefully in class.)  To use our
+<TT>yesorno</TT>, you'll need to type it in as part of <B>prime2.c</B>.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi9">
+Are the numbers always in order for the first prime number program?
+</A></H4>
+
+<P> Yes.  The first input will be less than or equal to the second.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi10">
+Are you going to test the base programs with blank lines?
+</A></H4>
+
+<P> I assume by blank line, you mean an inputl line where the user
+hits return immediately.  
+
+<P> In that case, no.  Ideally, your program would print a special
+error message, such as "Missing operator", but there is no requirement
+to do so for this program.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi11">
+How should we handle EOF and input errors in the prime program?
+</A></H4>
+
+<P> Basically anywhere you read input, you could potentially read
+garbage or an EOF.  So those places are the question about whether
+the program should print any primes, the question about whether the
+numbers should be printed in ascending or descending order, and
+where you read the range of values.
+
+<P> For the questions, it's reasonable to treat EOF as a "NO"
+answer.  If you do this, your program will automatically quit when
+you ask the user whether there any prime numbers to print.  Similarly,
+the "yesorno" we did in class treats junk input as a "NO", so your
+program will quit if the user enteres garbage in response to that
+question.
+
+<P> So what about the other question?  If the user enters EOF to
+that question (about ascending/descending order), it will be treated
+as a no, and your program will go ahead and print the primes and
+then ask the question about whether to print more primes.  Since
+the EOF is still there, you'll get another "no" and the program will
+quit.  Similarly, if the user enters garbage, that will be treated
+as a "no" to the ascending/descending question (with the remainder of
+the line ignored).  So the program will then ask the question about
+continuing, at which point the user can point in a new answer.
+
+<P> Finally, we have the two numbers the user enters for the input
+range.  Here, you have to test the result of the scanf you are
+using to read them in and if it's not two (assuming you are reading
+both values with a single scanf), you need to exit the loop.  The
+easiest way to accomplish this is with a "break;" in the "if".   A
+"break;" leaves the nearest enclosing loop or switch.  That means
+if your scanf reading is inside a while loop, the "break;" will
+kick you out of that loop.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qo1">
+How do I interpret the output for the binary arithmetic program?
+</A></H4>
+
+<P> The idea is that you input an operator and a pair of binary
+numbers.    The output is the result of applying the operator
+to two binary numbers.  For example, take the first input/output
+pair in the handout:
+
+<BLOCKQUOTE>
+<EM> + 1001 1101 </EM> <BR>
+<TT> 1001 (9) + 1101 (13) = 10110 (22) </TT> <BR>
+</BLOCKQUOTE>
+
+<P> Here we are requesting that it print the result of adding the
+binary number 1001 to the binary number 1101.   The output shows
+the result of that addition in binary, along with the base 10 numbers
+each of those binary numbers represent (in parentheses
+following the number).  So 1001 is 9 in base 10 (you can figure this
+out by hand by taking 1*2^0 + 0*2^1 + 0*2^2 + 1*2^3, but getNumInBase
+will return 9 when it reads in this value, so you don't have to).
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qo2">
+How come I get "log10: Domain Error" when I output the
+result of a subtraction with <TT>putNumInBase</TT>?
+</A></H4>
+
+<P> The problem is that <TT>putNumInBase</TT> doesn't know how to
+display negative numbers (and that error message is C's unfriendly
+way of telling you that).   What you have to do to get around this
+problem is check whether you have a negative result, and if you do,
+write the negative sign yourself and then pass <TT>putNumInBase</TT>
+the absolute value of the number.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp1">
+How do we figure out which operation to do for a given input line?
+</A></H4>
+
+<P> You have to read the operator (e.g, the + or other character
+the user types) into a variable.  You can then use a large <TT>if</TT>
+to test whether it's a '+' and do an addition is, or if it's a '-',
+and do a subtraction if it is, and so on.  You can also use a
+<TT>switch</TT>, which we will talk about March 4th or 6th.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp2">
+What do we do about 0, or negative numbers?
+</A> </H4>
+
+<P> For this assignment, consider 0 to be a prime number (although we aren't
+planning on providing 0 as a test input).   In addition, you can assume
+that we will not test your program with negative numbers.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp3">
+Is the range for the primes inclusive?
+</A> </H4>
+
+<P> Yes.  If you are given 19 and 31 as the range, the primes to be
+output are 19, 23, 29, and 31 (as opposed to 23 and 29, which would
+be the case if the input range was not inclusive).
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp4">
+How can we tell if a number is prime?
+</A></H4>
+
+
+<P> The definition of a prime number is a number that is divisible
+evenly (with a remainder of 0) only by 1 and itself.  To tell if
+a given number is prime, you therefore need to divide it by 2, then
+by 3, and so on, all the way up to one less than that number.  
+If there's any division that has a remainder of 0, it's not prime.
+
+<P> Now, there are actually one big shortcut.  One is that you don't
+actually have to go all the way up to one less than the number.  You
+can go up to the square root of the number (that's because if there's
+a factor of the number that's greater than the square root, there is also
+one that's less that the square root, so we would have already detected
+that the number isn't prime).  
+
+<P> Of course, the question is going to come up: How do we tell if
+the remainder when we divide two numbers is zero?  And the answer is,
+you just compute the remainder directly, using the <TT>%</TT> operator
+and compare that result with zero.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp5">
+Is 1 a prime number?
+</A></H4>
+
+<P> Yes.  It is divisible evenly only by 1 and itself.  
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="#ql1">
+How do we use a <TT>switch</TT> when we want to do more than
+one action for a given case?
+</A></H4>
+
+<P> You can have a <TT>case</TT> in a <TT>switch</TT> have
+more than one action simply by listing the actions after the
+case label.   Here's a template:
+
+<BLOCKQUOTE><PRE>
+switch( VARIABLE )
+{
+  case VALUE-1:
+    ACTION-1
+    ACTION-2
+      ...
+    break;
+  case VALUE-2:
+    ACTION-1
+    ACTION-2
+      ...
+    break;
+  ...
+}
+</PRE></BLOCKQUOTE>
+The idea is that the <TT>break</TT> kicks you out of the matching
+case, so you don't need any curly braces around the actions
+you want to do.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

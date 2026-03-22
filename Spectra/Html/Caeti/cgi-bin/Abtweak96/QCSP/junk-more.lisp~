@@ -1,0 +1,134 @@
+
+(defun save-mapndx ()
+" save mapdb indices for later recovery "
+  (let (
+	(mapndx-file  "CaetiMapDB/caeti-mapdb-file1.ndx")
+	)
+    (if (not (probe-file mapndx-file))    ; don't overwrite
+	(progn
+	  (setq *mapndx-stream*
+		(open mapndx-file 
+		      :direction :output 
+		      :if-exists :overwrite
+		      :if-does-not-exist :create))
+	  (write (list *real-terrain-plain* 
+		       *real-terrain-forest* 
+		       *real-terrain-mountain*)
+		 :stream *mapndx-stream*)
+	  (close *mapndx-stream*)
+	  t)
+      (progn
+	(format *standard-output* "~&Warning - map ndx not overwritten!! ~&")
+	nil))
+  ))
+
+(defun load-mapndx ()
+" load previously saved updated mapdb array "
+  (let (
+	(mapndx-file "CaetiMapDB/caeti-mapdb-file1.ndx")
+	)
+    (setq *mapndx* (read (open mapndx-file :direction :input)))
+    (setq *real-terrain-plain*    (first  *mapndx*))
+    (setq *real-terrain-forest*   (second *mapndx*))
+    (setq *real-terrain-mountain* (third  *mapndx*))
+    ))
+
+(defun update-caeti-ndx ( map )
+  (setq *real-terrain-plain*    nil)
+  (setq *real-terrain-forest*   nil)
+  (setq *real-terrain-mountain* nil)
+  (let ( (x 180) (y 370) (xend 280) (yend 500) )
+    (loop         ; x
+     (setq y 370)
+     (format *standard-output* "~&")
+     (loop        ; y
+      (let* (
+	     (ptid      (concatenate 'string (num-to-string x) "-" 
+				      (num-to-string y)))
+	     (ptpr      (list x y))
+	     (arr-thing (get-map-xy map x y))
+	     (pttype    (resolve-pt (third arr-thing)))
+	     (ptwide    (fourth arr-thing))
+	     (ptray     (fifth arr-thing)) 
+	     (entry     (list ptid ptpr pttype ptwide ptray))
+	     )
+	(format *standard-output* "~A" (third arr-thing))
+	(if (eq pttype 'Plain)
+	    (setq *real-terrain-plain*
+		  (append *real-terrain-plain* (list entry)))
+	  (if (eq pttype 'Forest)
+	      (setq *real-terrain-forest*
+		    (append *real-terrain-forest* (list entry)))
+	    (if (eq pttype 'Mountain)
+		(setq *real-terrain-mountain* 
+		      (append *real-terrain-mountain* (list entry)))
+	      (format *standard-output* "~& Error in update ndx ~&")))
+	  ))
+      (setq y (1+ y))
+      (if (= y yend) (return))
+      )
+     (setq x (1+ x))
+     (if (= x xend) (return))
+     )))
+     
+(defun resolve-pt ( x )
+  (if (eq x 0)
+      'Plain
+    (if (eq x 1)
+	'Forest
+      (if (eq x 2)
+	  'Mountain
+	'Error))))
+
+(defun save-mapdb ( map )
+" save mapdb array for later recovery "
+  (let (
+	(mapdb-file  "CaetiMapDB/caeti-mapdb-file1.dat")
+	)
+    (if (not (probe-file mapdb-file))    ; don't overwrite
+	(progn
+	  (setq *mapdb-stream*
+		(open mapdb-file 
+		      :direction :output 
+		      :if-exists :overwrite
+		      :if-does-not-exist :create))
+	  (write map :stream *mapdb-stream*)
+	  (close *mapdb-stream*)
+	  t)
+      (progn
+	(format *standard-output* "~&Warning - map database not overwritten!! ~&")
+	nil))
+  ))
+
+(defun load-mapdb ()
+" load previously saved updated mapdb array "
+  (let (
+	(mapdb-file "CaetiMapDB/caeti-mapdb-file1.dat")
+	)
+    (setq *mapdb* (read (open mapdb-file :direction :input)))
+    ))
+
+(defun update-map (map)
+" in place update of map to include vector range and locality info "
+  (let ( (x 180) (y 370) (xend 280) (yend 500) (old-thing nil) )
+    (loop   ; x
+     (setq y 370)
+     (format *standard-output* "~&")
+     (loop  ; y
+
+      (setq old-thing (get-map-xy map x y))
+      (set-map-xy map x y (list (first  old-thing)  ; x coord
+				(second old-thing)  ; y coord
+				(third  old-thing)  ; pt type 0 pln 1 fst 2 mtn
+				(pt-range map x y)  ; width
+				(second (range-calc map x y)))) ; compass ray szs
+
+      (format *standard-output* "~A" (third old-thing))
+
+      (setq y (1+ y))
+      (if (= y yend) (return))
+      )
+     (setq x (1+ x))
+     (if (= x xend) (return))
+     )
+    ))

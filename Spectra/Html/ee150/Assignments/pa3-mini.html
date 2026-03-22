@@ -1,0 +1,98 @@
+
+<HEAD>
+<TITLE>EE150, Fall 1996 - Mini Programming Assignment #3</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Fall 1996</H1>
+<H2>Programming<BR>
+Mini-Assignment #3</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment has one goal:
+
+<UL>
+<LI> 
+To make you understand functions by trying to build a simple pair of functions.
+
+</UL>
+
+<P> The due date is: <B> Friday, September 27th, 1996 </B> in class.
+You should expect to spend between three to five hours of
+computer time over the next week.  This time will save you time on
+the later assignment three and may help you pass the midterm!  
+You should also expect to spend one to two hours of thinking time, depending on
+how much prior programming experience you have.  As usual, we will not
+accept late assignments.
+
+<H4> What To Do </H4>
+
+<P> <B><A NAME=part1>Part 1</A></B>: In file <a
+href="Solutions/3/a3-main.c"><B>a3-main.c</B></a> we provide 
+a main program.  DO NOT CHANGE THIS PROGRAM.  The task is to create a pair of 
+functions that make the given "main" program/function work as advertised.
+You may include the functions in the same file as the given main program or
+compile them separately as discussed in class - it is your choice.  For grading
+purposes we will be compiling your functions separately and running them 
+against our own main program.
+
+<P> 
+Therefore you need to build two functions:
+<UL>
+<li> 1. strange_cube
+<li> 2. display_cube
+</UL>
+These functions are documented briefly in the main program in which they
+are used.
+
+<P>
+For example, if you write the functions in a file called <B>my_functions.c</B>
+and compile this file into a re-useable object called <B>my_functions.o</B>
+with the command "cc -Aa -c my_functions.c", and similarly compile 
+the main program stored in <B>a3-main.c</B> into a re-useable object
+called <B>a3-main.o</B> using "cc -Aa -c a3-main.c", then you can make an
+executable <B>a3-main</B> (by linking the two re-useable objects together) with
+the command  "cc -Aa -o a3-main a3-main.o my_functions.o".
+
+<P>
+Now, executing the program "a3-main" should give the following output - 
+exactly ...
+<BLOCKQUOTE> <PRE>
+All is well with main - strange_cube!
+
+ Let's call display_cube once with VAL3!  We expect 3375.
+Strange Cube of   15.00 is 3375.00 !
+ That's all folks! 
+ 
+</PRE> </BLOCKQUOTE>
+
+<H4> What To Turn In </H4>
+
+<P>
+To get credit for this assignment, you must electronically turn in
+ONLY THE FUNCTIONS you created in Part 1.  These should be in 
+a file called: <B>my_functions.c</B>.
+
+<P> <A NAME="grade">As usual, to turn in your program, you need to use
+the <TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the command:
+<BLOCKQUOTE>
+<TT> grade -m3s2,ee150 my_functions.c </TT>
+</BLOCKQUOTE>
+The <TT>-m3s2</TT> tells the grade command which assignment you are
+turning in (mini-assignment #3) and for which section, 
+the <TT>ee150</TT> tells it
+your class (EE150, so the programs get sent to the EE150 professor and not to
+the professor of some other class), and the ".c" files are the source files you
+are actually turning in. Please make sure you type in the command exactly as it
+shown above. 
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

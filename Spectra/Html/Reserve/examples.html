@@ -1,0 +1,109 @@
+<TITLE>CGI Test Cases</TITLE>
+<H1><IMG SRC="prism-small.gif"> CGI test cases</H1>
+
+This document references a test server which has implemented the CGI
+interface. It is provided to give a better understanding of how CGI
+works in reality. <P>
+
+If you are interested, you should look at the <A
+HREF="test-cgi.txt">source</A> for the CGI script used in these
+examples. <P>
+
+For more source of CGI scripts, see the <A
+HREF="file://ftp.ncsa.uiuc.edu/Web/ncsa_httpd/cgi">CGI
+archive</A> of scripts people have written. In addition, see the <A
+HREF="/docs/setup/Download.html">NCSA httpd distribution</A> in the
+<CODE>cgi-src</CODE> directory. <P>
+
+<HR>
+
+This is just a request for a CGI script with no extra path information
+and no query. <P>
+
+<A
+HREF="/cgi-bin/test-cgi">http://hoohoo.ncsa.uiuc.edu/cgi-bin/test-cgi</A>
+<P>
+
+<HR>
+
+This is a request for a script with extra path information, and no
+query. Note that this is a server running NCSA httpd, with a
+DocumentRoot of /u/Web. <P>
+
+<A
+HREF="/cgi-bin/test-cgi/extra/path">http://hoohoo.ncsa.uiuc.edu/cgi-bin/test-cgi/extra/path</A>
+<P>
+<HR>
+
+This is a request for a script with no extra path information, and an
+ISINDEX query. <P>
+
+<A
+HREF="/cgi-bin/test-cgi?query">http://hoohoo.ncsa.uiuc.edu/cgi-bin/test-cgi?query</A>
+<P>
+
+<HR>
+
+This is a request for a script with extra path information as well as
+an ISINDEX query. <P>
+
+<A
+HREF="/cgi-bin/test-cgi/extra/path?a+query">http://hoohoo.ncsa.uiuc.edu/cgi-bin/test-cgi/extra/path?a+query</A>
+<P>
+
+<HR>
+
+You'll need a browser which supports HTML forms for this example.
+Clicking the submit button will send an form request with no extra
+path information using the GET method. <P>
+
+<FORM ACTION="http://hoohoo.ncsa.uiuc.edu/cgi-bin/test-cgi"
+METHOD="GET">
+
+<INPUT TYPE="checkbox" NAME="button" VALUE="on">
+     Press me. <P>
+
+<INPUT TYPE="submit" VALUE="Submit"> <P>
+
+
+</FORM>
+
+<P>
+<HR>
+You'll need a browser which supports HTML forms for this example.
+Clicking the submit button will send an form request with no extra
+path information using the POST method. <P>
+
+<FORM ACTION="http://hoohoo.ncsa.uiuc.edu/cgi-bin/test-cgi"
+METHOD="POST">
+
+<INPUT TYPE="checkbox" NAME="button" VALUE="on">
+     Press me. <P>
+
+<INPUT TYPE="submit" VALUE="Submit"> <P>
+
+</FORM>
+
+<P>
+<HR>
+You'll need a browser which supports HTML forms for this example.
+Clicking the submit button will send an form request with extra path
+information of /foo using the POST method. <P>
+
+<FORM ACTION="http://hoohoo.ncsa.uiuc.edu/cgi-bin/test-cgi/foo"
+METHOD="POST">
+
+<INPUT TYPE="checkbox" NAME="button" VALUE="on">
+     Press me. <P>
+
+<INPUT TYPE="submit" VALUE="Submit"> <P>
+
+</FORM>
+
+<HR>
+
+
+<A HREF="overview.html"><IMG SRC="back.gif">Return to the overview</A> <P>
+
+<A HREF="http://www.ncsa.uiuc.edu/SDG/People/robm/sg.html">Rob McCool
+</A><EM> robm@ncsa.uiuc.edu</EM>

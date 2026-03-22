@@ -1,0 +1,198 @@
+\documentstyle[12pt,fullpage,steve]{article}
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{EE 150 Final Exams : Part II \\ {\bf CLOSED BOOK}}
+\author{Wednesday, December 11 1996}
+\date{}
+\maketitle
+
+\begin{itemize}
+\item {\bf Name:}
+\item {\bf Student Id Number:}
+\end{itemize} 
+
+{\bf Read First:}
+\begin{enumerate}
+\item [A.] {\bf **READ** THE DIRECTIONS CAREFULLY!}
+\item [B.] Any materials including your text and notes may be consulted
+during the exam at your discretion. 
+\item [C.] You have a maximum of 50 minutes to complete the exam.  The exam
+paper will be picked up from your desk (do not get up) at the end of
+the alloted time.
+\item [D.] There are 3 problems worth a total of 50 points. Be careful not to
+spend too much time on any particular problem.  {\bf If you get stuck,
+go on to the next problem}.  You can always come back to the ones that
+are giving you problems.   
+\item [E.] Write all answers, including any scratch paper or rough 
+notes on the pages given you.
+\item [F.] If you split the exam paper, write your student id number
+on each and every page.
+\end{enumerate}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1} (20 points)
+
+Below is a C function named {\em replace}.  {\bf It doesn't work
+like it supposed to}.
+
+\begin{verbatim}
+int replace(int x[], int old, int new, int stop)  {
+  int i;
+  printf("Replace Call: old = %i, new = %i, stop = %i\n", old, new, stop);*/
+  for (i = 1; x[i] >= stop; i++)
+    {
+      printf("Replace Loop: i = %i, x[i] = %i\n", i, x[i]);*/
+      if (x[i] != old)
+        {
+          x[i] = new;
+          printf("Replace New : i = %i, x[i] = %i\n", i, x[i]);
+        }
+    }
+  printf("Replace Return value is i = %i\n", i);
+  return i;
+}
+\end{verbatim}
+
+What it is supposed to do is this: run through the
+first $stop$ elements of array $x$, replacing each element that
+contains the value $old$ with the value $new$.  It is then supposed to
+return the number of elements it modified.  So, for example, suppose 
+$table$ was array of $int$s that was initialized
+this way:
+\begin{verbatim}
+int table[] =
+  {31, 17, 26, 9, 6, 17, 19, 17, 21, 17, 96, 108, 61, 19, 17};
+\end{verbatim}
+Then the code:
+\begin{verbatim}
+n = replace(table, 17, 40, 9);
+printf("%i\n", n);
+\end{verbatim}
+should have written a 3 and changed table to look like:
+\begin{verbatim}
+   31, 40, 26, 9, 6, 40, 19, 17, 21, 17, 96, 108, 61, 19, 17
+\end{verbatim}
+That is, it should have run through the first 9 elements of <TT>table</TT>,
+changing each 17 to a 40.  But it doesn't!  
+
+{\bf continued on next page ...}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1-A} (7 points)
+
+Trace through the program shown using the Tables model shown in class
+and used repeatedly on quizzes.  If you do not use the Tables model
+{\bf you will receive 0 on this part.}
+
+Write your solution below.  Explicitly state any assumptions you make.
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1-B} (3 points)
+
+What does this code actually write for the value of $n$ ?
+\vspace{1.0in}
+
+{\bf PROBLEM \#1-C} (5 points)
+
+What does $table$ look like when the function is completed ?
+\vspace{2.0in}
+
+{\bf PROBLEM \#1-D} (5 points)
+
+What has to be done to repair $replace$?  Either show a fixed version
+of  the function, or explain {\em exactly} what must be changed and 
+what the changes are.
+
+\vspace{4.0in}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#2} (15 points)
+
+Using the TABLES model, show how this program executes {\em and} what 
+it prints out.
+
+\begin{verbatim}
+#include <stdio.h>
+main()
+{
+int a, b;
+int c; float d, f;
+int *p1, *p2;  
+int e = 10; 
+double t[3] = {2.0,2.1,2.2};
+double *p3;
+double dd = 1.5;
+int fizbin(int *, int *);
+b = 2, a = b++;
+d = 2.5, c = ++d;
+dd = (double) (6.55 + 4.44) * (int) 3.1;
+p1 = &e; p2 = p1, *p2 += 3;  *p1 = 11; a = *p1, *p2;  
+*(&a) = *t, p3 = t + 2, d = a + *p3;
+*(&(*(&d))) = *(t + 2), *(t + 2) = 3; f = t[2];
+a = 5; b = 3; c = 1; c = (a == b) + (a > b) * (c < a) - (c < a > b);
+for(c=1;c<3;c++) c = fizbin(&a,&b);
+}
+
+int fizbin(int *i,int *j) {
+     *i = *i * *j;
+     *j = *i - *j;
+     return *i - *j; }
+\end{verbatim}
+
+Write your solution below.  Explicitly state any assumptions you make.
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#2} ( continued ... )
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#3} (15 points)
+
+We are given the task of producing a histogram for a set of student
+grades.  Imagine we are given the four cut off points for each of the
+letter grades of A, B, C, and D.  In addition, we are given a number
+indicating how many buckets (rows) should appear in a histogram, a
+number indicating the maximum possible student score (the lowest is
+0),  a number indicating how many student grades are following, and
+then the list of student grades.
+
+Each bucket covers an equal range of student grades.  For example, a
+number of buckets equal 4 and maximum grade equal 100 would indicate
+each bucket covers a range of 25 marks.
+
+We would like to produce a histogram output showing the student score
+together with the grade letter for each grade input. 
+
+For example, an input file that looks like the following:
+\begin{verbatim}
+85 74 63 52 3 100 9 67 56 91 94 96 23 88 55 66
+\end{verbatim}
+
+Says we want 3 rows of output. Also, since the maximum score is 100, we know
+the range of each column is 0-33, 33-66 and 66-100. The output would look like:
+\begin{verbatim} 
+0-33    23-F
+33-66   56-D 55-D 66-C
+66-100  67-C 91-A 94-A 96-A 88-A 
+\end{verbatim}
+
+Write a program that creates this histogram given the specified input.
+Explicitly state any assumptions you make.
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#3} ( continued ... )
+
+
+\end{document}
+
+/* Local Variables: */
+/* compile-command: "latex ee150-final2" */
+/* End: */

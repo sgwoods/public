@@ -1,0 +1,40 @@
+\documentstyle[12pt,fullpage,steve]{article}
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{EE 150 Quiz \#2}
+\author{Due: Oct. 16, 1996 2:40 pm (in class)}
+\date{}
+\maketitle
+
+In a popular board game, three of the characters include Colonel
+Mustard, Mrs. White, and Professor Plum.  Imagine you have to write a
+function {\tt return-the-other-one} which accepts as parameters {\bf two}
+{\tt chars}, each of which is a 'm' (Mustard), 'w' (White) or 'p'
+(Plum).  This function returns the letter corresponding to the
+character {\em not} passed as a parameter.  Note that the characters
+are passed in no particular order.
+
+For example, a call to the function {\bf return-the-other-one( 'm',
+'w')} results in a returned value of 'p'.  
+
+Given the following skeleton for the function, give an implementation
+using ANDs (\&\&) and ORs ($||$) of each of the conditions 1 and 2
+that will make the following function behave as advertised.  You may
+not change the structure of the function, only specify the appropriate
+conditions. 
+\begin{verbatim}
+char return-the-other-one( char c1, char c2 )
+{
+if ( ...condition 1... )
+return 'p';               /* then the other character is Professor Plum */
+else
+if ( ...condition 2... )
+return 'w';               /* then the other character is Mrs. White */
+else
+return 'm';               /* last possibility is Colonel Mustard */  
+}
+\end{verbatim}
+
+\end{document}

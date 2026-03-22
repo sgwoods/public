@@ -1,0 +1,148 @@
+;; quil-test.lisp
+;; Written 8-9/97 and Verified 9/3/97 by David Pautler
+
+;; requires quil.lsp (which itself requires infer-utils.lsp)
+
+;; NOTE: This test file only checks whether quil.lsp works for the small set
+;;  of background facts and rules (er's 4,8,15, and 22) needed to make the
+;;  example in Alex's paper work.  A full set of facts and rules may not
+;;  work as well (in particular, scoring is quite sensitive to the contents
+;;  of the advisor model).  One example I've already found is that the
+;;  system won't use er-22 to generate response (1-6) if the advisor already
+;;  knows that mv-to-tmp doesn't fill-up-tmp (although it does return the
+;;  right answer -- as the fact rather than as a consequent).
+
+(reset-dbs-1)
+
+(def-rule-1
+  :er8
+  '((_is-best-plan-for_ ?plan1 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT= ?side-effect ?goal) AND
+      ((_has-result_ ?plan1 ?side-effect) AND
+       ((_is-desired ?side-effect) AND
+	(NOT ((NOT= ?plan2 ?plan1) AND
+	      ((_has-result_ ?plan2 ?goal) AND
+	       (_has-result_ ?plan2 ?side-effect) )))))))))
+
+(def-fact '(_has-result_ rm-i remove-file))
+(def-fact '(_has-result_ rm-i ask-before-remove))
+(def-fact '(_is-desired ask-before-remove))
+;; NBF: no plan other than rm-i causes 'remove-file and 'ask-before-remove
+
+(RESPOND-TO '(_is-best-plan-for_ ?plan remove-file))
+
+(format t "~%Only correct response: (_IS-BEST-PLAN-FOR_ RM-I REMOVE-FILE)~%")
+
+(def-rule-1
+  :er4
+  '((_is-desired (NOT ?event1)) IMPLIED-BY
+    ((_has-result_ ?event1 ?event2) AND
+     (_is-desired (NOT ?event2)) )))
+
+(def-fact '(_has-result_ ask-before-remove answer-questions)) ;only for scoring
+(def-fact '(_has-result_ mv-to-tmp remove-file))
+(def-fact '(_has-result_ mv-to-tmp recoverable-file))
+(def-fact '(_is-desired recoverable-file))
+
+(RESPOND-TO '(_is-desired (NOT answer-questions)))
+
+(format t "~%Only correct response: (_IS-BEST-PLAN-FOR_ MV-TO-TMP REMOVE-FILE)~%")
+
+(def-rule-1
+  :er15
+  '((_is-better-plan-than_for_ ?plan1 ?plan2 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT (_has-result_ ?plan1 ?side-effect)) AND
+      ((_is-desired (NOT ?side-effect)) AND
+       ((_has-result_ ?plan2 ?goal) AND
+	(_has-result_ ?plan2 ?side-effect) ))))))
+
+(def-fact '(_is-desired (NOT fill-up-tmp)))       ;only used during scoring
+(def-fact '(NOT (_has-result_ rm-i fill-up-tmp))) ;only used during scoring
+;(def-fact '(NOT (_has-result_ mv-to-tmp fill-up-tmp))) ;ditto
+(def-fact '(_is-better-plan-than_for_ rm-i mv-to-tmp remove-file)) ;ditto
+
+(def-rule-1 ;not a commonsensical fact
+  :er22
+  '((NOT (_has-result_ ?event1 ?event3)) IMPLIED-BY
+    ((NOT (_has-result_ ?event1 (NOT ?event2))) AND
+     (_has-result_ ?event2 (NOT ?event3)) )))
+
+(def-fact '(NOT (_has-result_ mv-to-tmp (NOT clean-up-program))))
+(def-fact '(_has-result_ clean-up-program (NOT fill-up-tmp)))
+
+(RESPOND-TO '(_is-desired (NOT fill-up-tmp)))
+
+(format t "~%Only correct response: (NOT (_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP))~%")
+
+#|
+Output: 
+              User:    (_IS-BEST-PLAN-FOR_ ?PLAN REMOVE-FILE)
+ 
+              Advisor: (_IS-BEST-PLAN-FOR_ RM-I REMOVE-FILE)
+Only correct response: (_IS-BEST-PLAN-FOR_ RM-I REMOVE-FILE)
+ 
+              User:    (_IS-DESIRED (NOT ANSWER-QUESTIONS))
+ 
+              Advisor: (_IS-BEST-PLAN-FOR_ MV-TO-TMP REMOVE-FILE)
+Only correct response: (_IS-BEST-PLAN-FOR_ MV-TO-TMP REMOVE-FILE)
+ 
+              User:    (_IS-DESIRED (NOT FILL-UP-TMP))
+ 
+              Advisor: (NOT (_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP))
+Only correct response: (NOT (_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP))
+
+final user-focus-space
+[(_IS-BETTER-PLAN-THAN_FOR_ RM-I MV-TO-TMP REMOVE-FILE)]
+[(_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP)]
+
+final advisor-focus-space
+[(_HAS-RESULT_ CLEAN-UP-PROGRAM (NOT FILL-UP-TMP))]
+[(NOT (_HAS-RESULT_ MV-TO-TMP (NOT CLEAN-UP-PROGRAM)))]
+[(_IS-BEST-PLAN-FOR_ MV-TO-TMP REMOVE-FILE)]
+[(NOT (_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP))]
+
+final user model
+[(_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP)]
+[(_IS-BETTER-PLAN-THAN_FOR_ RM-I MV-TO-TMP REMOVE-FILE)]
+[(_HAS-RESULT_ MV-TO-TMP REMOVE-FILE)]
+[(NOT= RECOVERABLE-FILE REMOVE-FILE)]
+[(_HAS-RESULT_ MV-TO-TMP RECOVERABLE-FILE)]
+[(_IS-DESIRED RECOVERABLE-FILE)]
+[(NOT ((NOT= ?PLAN2612 MV-TO-TMP) AND
+       ((_HAS-RESULT_ ?PLAN2612 REMOVE-FILE) AND
+        (_HAS-RESULT_ ?PLAN2612 RECOVERABLE-FILE))))]
+[(_HAS-RESULT_ ASK-BEFORE-REMOVE ANSWER-QUESTIONS)]
+[(_IS-DESIRED (NOT ANSWER-QUESTIONS))]
+[(_IS-DESIRED (NOT ASK-BEFORE-REMOVE))]
+[(_HAS-RESULT_ RM-I REMOVE-FILE)]
+[(NOT= ASK-BEFORE-REMOVE REMOVE-FILE)]
+[(_HAS-RESULT_ RM-I ASK-BEFORE-REMOVE)]
+[(NOT ((NOT= ?PLAN2612 RM-I) AND
+       ((_HAS-RESULT_ ?PLAN2612 REMOVE-FILE) AND
+        (_HAS-RESULT_ ?PLAN2612 ASK-BEFORE-REMOVE))))]
+
+final advisor model
+[(NOT (_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP))]
+[(NOT (_HAS-RESULT_ MV-TO-TMP (NOT CLEAN-UP-PROGRAM)))]
+[(_HAS-RESULT_ CLEAN-UP-PROGRAM (NOT FILL-UP-TMP))]
+[(_HAS-RESULT_ MV-TO-TMP REMOVE-FILE)]
+[(NOT= RECOVERABLE-FILE REMOVE-FILE)]
+[(_HAS-RESULT_ MV-TO-TMP RECOVERABLE-FILE)]
+[(_IS-DESIRED RECOVERABLE-FILE)]
+[(NOT ((NOT= ?PLAN2612 MV-TO-TMP) AND
+       ((_HAS-RESULT_ ?PLAN2612 REMOVE-FILE) AND
+        (_HAS-RESULT_ ?PLAN2612 RECOVERABLE-FILE))))]
+[(_IS-BEST-PLAN-FOR_ RM-I REMOVE-FILE)]
+[(_HAS-RESULT_ RM-I REMOVE-FILE)]
+[(NOT= ASK-BEFORE-REMOVE REMOVE-FILE)]
+[(_HAS-RESULT_ RM-I ASK-BEFORE-REMOVE)]
+[(_IS-DESIRED ASK-BEFORE-REMOVE)]
+[(NOT ((NOT= ?PLAN2612 RM-I) AND
+       ((_HAS-RESULT_ ?PLAN2612 REMOVE-FILE) AND
+        (_HAS-RESULT_ ?PLAN2612 ASK-BEFORE-REMOVE))))]
+[(_IS-DESIRED (NOT FILL-UP-TMP))]
+[(NOT (_HAS-RESULT_ RM-I FILL-UP-TMP))]
+[(_IS-BETTER-PLAN-THAN_FOR_ RM-I MV-TO-TMP REMOVE-FILE)]
+|#

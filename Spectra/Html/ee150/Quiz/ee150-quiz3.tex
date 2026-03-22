@@ -1,0 +1,52 @@
+\documentstyle[12pt,fullpage,steve]{article}
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{EE 150 Quiz \#3}
+\author{Due: Oct. 21, 1996 2:45 pm (in class)}
+\date{}
+\maketitle
+
+Imagine you are creating a tic-tac-toe game.  One of the functions you
+need to write is called {\tt is-this-a-win-state} which returns 1 if
+the board is a win for {\em X}, returns 2 if the board is a win for
+{\em O}, returns -1 if the board is a dead-game with no winner, and
+returns zero if the board is not a win for anyone (yet, i.e. the board
+is not filled).
+
+\begin{verbatim}
+p1 | p2 | p3       p1 through p9 are integer values - they have value 0  
+------------       if the board space is empty, value 1 if the space is
+p4 | p5 | p6       filled with an ``X'' and value 2 if the space is filled
+------------       with a ``O''.
+p7 | p8 | p9
+\end{verbatim}
+
+Given the following skeleton for the function, give an implementation
+using ANDs (\&\&) and ORs ($||$) of each of the conditions 1 thru 3
+that will make the following function behave as advertised.
+\begin{verbatim}
+int is-this-a-win-state(int p1, int p2, int p3, int p4, int p5, int p6
+                        int p7, int p8, int p9)
+{
+	if  (condition #1)
+		return 1;           /* then Player X wins */
+	else 
+	if (condition #2)
+		return 2;           /* then Player O wins */
+	else
+	if (condition #3)
+		return 0;          /* No winner yet, board not completed */
+        else	     	
+		return -1;         /* then Game board is filled, dead-game */
+}
+\end{verbatim}
+
+{\bf Hint:} First figure out how many ways player {\em X} can win. Any
+of these ways is enough for a win.  Repeat for player {\em O}.
+{\bf Hint 2 for \#3:} Remember, you only get to an ``else'' if the ``then'' 
+position was not reached.  If X did not win and Y did not win, then
+what condition indicates the game is not over?
+
+\end{document}

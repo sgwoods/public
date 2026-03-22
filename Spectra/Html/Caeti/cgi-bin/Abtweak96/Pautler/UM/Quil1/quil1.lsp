@@ -1,0 +1,1111 @@
+;; quil.lsp
+;; An implementation of Alex's dissertation program
+;; 8/97 DP
+
+;; infer-utils.lsp must be loaded before this code will work
+
+;; The fn 'contradiction-p' below is highly domain-dependent
+
+
+(defmacro push-newer-node (item1 list1) ;needed so generate-rsp works on A side
+  `(if ,list1
+       (setq ,list1
+	     (cons ,item1
+		   (remove ,item1 ,list1
+			   :test #'(lambda (x y)
+				     (equalp (node-propo x)
+					     (node-propo y) )))))
+     (setq ,list1 (list ,item1)) ))
+
+;;;;;;;;;;;;;;;;;;; COLL-HANDLING FNS (Coll is single node or list* of them)
+
+(defun mapc-1 (fn1 coll1) ;coll is single node or list* of nodes
+  (declare (function fn1))
+  (and coll1
+       (if (consp coll1)
+	   (prog1 'diddly
+	     (funcall fn1 (car coll1))
+	     (mapc-1 fn1 (cdr coll1)) )
+	 (funcall fn1 coll1) )))
+
+(defun mapcar-1 (fn1 coll1)
+  (declare (function fn1))
+  (and coll1
+       (if (consp coll1)
+	   (cons (funcall fn1 (car coll1))
+		 (mapcar-1 fn1 (cdr coll1)) )
+	 (funcall fn1 coll1) )))
+
+(defun find-1 (item1 coll1 &key (test #'eq))
+  (declare (function test))
+  (and coll1
+       (if (consp coll1)
+	   (or (funcall test item1 (car coll1))
+	       (find-1 item1 (cdr coll1) :test test) )
+	 (funcall test item1 coll1) )))
+
+(defun find-if-1 (fn1 coll1)
+  (declare (function fn1))
+  (and coll1
+       (if (consp coll1)
+	   (or (funcall fn1 (car coll1))
+	       (find-if-1 fn1 (cdr coll1)) )
+	 (funcall fn1 coll1) )))
+
+(defun position-1 (item1 coll1 coll2) ;find the equivalent of item1 in coll2
+  (if (consp coll1)
+      (or (and (eq item1 (car coll1))
+	       (car coll2) )
+	  (position-1 item1 (cdr coll1) (cdr coll2)) )
+    (and (eq item1 coll1)
+	 coll2 )))
+
+(defun remove-1 (item1 coll1)
+  (if (consp coll1)
+      (if (eq item1 (car coll1))
+	  (cdr coll1)
+	(if (consp (cdr coll1))
+	    (cons (car coll1) (remove-1 item1 (cdr coll1)))
+	  (if (eq item1 (cdr coll1))
+	      (car coll1)
+	    coll1 )))
+    (if (eq item1 coll1)
+	nil ;bad: will result in a list instead of a list*
+      coll1 )))
+
+
+;;;;;;;;;;;;;;;;;;;; DATA STRUCTURES FOR CLAUSES AND RULES
+
+;;for facts, antecs, and conseqs
+(defstruct (node
+	    (:print-function
+	     (lambda (node stream depth)
+	       (declare (ignore depth))
+	       (format stream "[~s]" (node-propo node)) )))
+  propo (container nil) (instance-of nil) (instances nil) (contradicts nil) )
+
+(defstruct (rule
+	    (:print-function
+	     (lambda (rule stream depth)
+	       (declare (ignore depth))
+	       (format stream "{~s:~s <- ~s}"
+		       (rule-id rule)
+		       (rule-conseqs rule) (rule-antes rule) ))))
+  id antes conseqs )
+
+(defvar *verbose1?* nil) ;for debugging scoring
+(defvar *verbose2?* nil) ;for debugging backchain traces
+
+(defvar *rule-base-alist* nil)
+(defvar *complete-rule-base* nil)
+(defvar *search-depth-limit* 1) ;count starts at 0
+
+(defvar *facts* nil)
+(defvar *user-model* nil)         ;Each of these is a list of facts
+(defvar *advisor-model* nil)
+(defvar *user-focus-space* nil)
+(defvar *advisor-focus-space* nil)
+(defvar *old-advisor-focus-space* nil)
+
+(defun reset-dbs-1 ()
+  (setq *rule-base-alist* nil
+	*complete-rule-base* nil
+	*facts* nil )
+  (reset-dbs-2) )
+
+(defun reset-dbs-2 ()
+  (setq *user-model* nil
+	*advisor-model* (copy-list *facts*)
+	*user-focus-space* nil
+	*advisor-focus-space* nil ))
+
+(defun def-fact (propo &aux (node (make-node :propo propo)))
+  (push-end node *facts*)
+  node )
+
+;; changed from infer.lsp to use nodes; drops -> <-
+(defun def-rule-1 (tag propo &key (syntactic? nil))
+  (declare (symbol tag) (list propo))
+
+  (let* ((rule-propo (standardize-vars propo))
+	 (antec-nodes  (compose-nodes (third rule-propo))) ;BC-like rule syntax
+	 (conseq-nodes (compose-nodes (first rule-propo)))
+	 (rule (make-rule :id tag :antes antec-nodes :conseqs conseq-nodes)) )
+    (mapc-1
+     #'(lambda (node) (setf (node-container node) rule))
+      antec-nodes )
+    (mapc-1
+     #'(lambda (node) (setf (node-container node) rule))
+     conseq-nodes )
+    (push-end (cons tag rule) *complete-rule-base*)
+    (unless syntactic?
+	    (push-end (cons tag rule) *rule-base-alist*) )
+    ))
+
+(defun compose-nodes (propo) ;returns a list* or a single node
+  (if (eq 'AND (second propo))
+      (cons (make-node :propo (first propo))
+	    (compose-nodes (third propo)) )
+    (make-node :propo propo) ))
+
+(defun copy-rule-1 (rule &aux new-rule)
+  (setq new-rule
+	(make-rule :id (rule-id rule)
+		   :antes   (mapcar-1 #'copy-node (rule-antes rule))
+		   :conseqs (mapcar-1 #'copy-node (rule-conseqs rule)) ))
+  (mapc-1
+   #'(lambda (antec) (setf (node-container antec) new-rule))
+   (rule-antes new-rule) )
+  (mapc-1
+   #'(lambda (conseq) (setf (node-container conseq) new-rule))
+   (rule-conseqs new-rule) )
+  new-rule )
+
+
+;;;;;;;;;;;;;;;;;;;; DIALOG-HANDLING ROUTINES
+
+(defun RESPOND-TO (input-propo
+		   &aux (input-node (make-node :propo input-propo))
+		   user-response? (explanation-rule nil) antes update-start
+		   response-path-start response answer-node parent-node )
+  (format t "~%              User:    ~s" input-propo)
+  (prog1
+      (setq answer-node
+	    (cond ((some #'var-p input-propo) ;if so, assume it's a question
+		   (setq user-response? nil)
+		   (and (prove-2 input-node *advisor-model* nil nil nil nil 0)
+			(setq update-start
+			      (first (node-instances input-node)) )))
+		  (t                    ;if not, assume it's a comment/argument
+		   (setq user-response? t)
+		   (push-newer-node input-node *user-model*) ;must precede expl
+		   (cond ((and (setq explanation-rule
+				     (explain-user-belief input-node) )
+			       (rule-p explanation-rule) )
+			  (format t "~%Expl: ~s" explanation-rule)
+			  (setq antes (rule-antes explanation-rule))
+			  (mapc-1
+			   #'(lambda (ante)
+			       (push-newer-node ante *user-focus-space*) )
+			   antes )
+			  (mapc-1
+			   #'(lambda (conseq)
+			       (push-newer-node conseq *user-focus-space*) )
+			   (rule-conseqs explanation-rule) )
+			  (setq response-path-start
+				(if (consp antes) (car antes) antes) )
+			  ;;                      ^ any ante will do
+			  (setq response
+				(generate-response response-path-start)
+				update-start (cdr response) )
+			  (car response) )
+			 (t nil) ))))
+    (unless answer-node
+	    (if user-response?
+		(if (rule-p explanation-rule)
+		    (format t "~%~%              Advisor: ~
+			              NO APPLICABLE RESPONSE TO EXPLANATION:~
+                               ~% ~s"
+			    explanation-rule )
+		  (format t "~%~%              Advisor: ~
+                                      COULD NOT EXPLAIN USER INPUT" ))
+	      (format t "~%~%              Advisor: ~
+                                      COULD NOT FIND A SUITABLE PLAN" )))
+    (when answer-node
+	  (format t "~%~%              Advisor: ~s" (node-propo answer-node))
+	  (setq *advisor-focus-space* nil)
+	  (update-focus-spaces (find-leaf-node update-start))
+	  (when user-response? ;add uncontested advisor beliefs to user model
+		(build-user-model) )
+	  (dolist (user-belief *user-focus-space*)
+		  (push-newer-node user-belief *user-model*) )
+	  (dolist (advisor-belief *advisor-focus-space*)
+		  (unless (and (setq parent-node
+				     (node-instance-of advisor-belief) )
+			       (< 1 (length ;don't add 'mv-to-tmp is best'
+				     (node-instances parent-node) )))
+			  (push-newer-node advisor-belief *advisor-model*) ))
+	  (setq *old-advisor-focus-space* *advisor-focus-space*)
+	  )))
+
+(defun build-user-model (&aux (acceptable-advisor-beliefs
+			       *old-advisor-focus-space* )
+			      contradicted-advisor-belief
+			      user-belief-propo rule )
+  (declare (list acceptable-advisor-beliefs user-belief-propo)
+	   (array contradicted-advisor-belief rule) )
+
+  (dolist (user-belief *user-focus-space*)
+	  (when (setq contradicted-advisor-belief
+		      (or (node-contradicts user-belief)
+			  (and (setq user-belief-propo
+				     (node-propo user-belief) )
+			       (find-if
+				#'(lambda (advisor-belief)
+				    (contradiction-p 
+				     user-belief-propo
+				     (node-propo advisor-belief) ))
+				acceptable-advisor-beliefs ))))
+		(when (find-1 contradicted-advisor-belief
+			      (and (setq rule (node-container
+					       contradicted-advisor-belief ))
+				   (rule-antes rule) ))
+		      (mapc-1
+		       #'(lambda (conseq)
+			   (setq acceptable-advisor-beliefs
+				 (remove conseq
+					 acceptable-advisor-beliefs )))
+		       (rule-conseqs rule) ))
+		(setq acceptable-advisor-beliefs
+		      (remove contradicted-advisor-belief
+			      acceptable-advisor-beliefs ))))
+  (dolist (advisor-belief acceptable-advisor-beliefs)
+	  (push-newer-node advisor-belief *user-model*) ))
+
+(defun explain-user-belief (input-node &aux (Q nil))
+  (declare (array input-node) (list Q))
+
+  (push-end (cons (make-score) input-node) Q)
+  (do ((first-pass? t nil)
+       (trigger-node nil nil) ;don't pop until after loop-end check
+       (trigger-node-score nil nil)
+       (top-score 0 0)
+       (P nil nil) (M nil nil) (S nil nil) (F nil nil) (U nil nil)
+       (P-prime nil)
+       (explanation nil explanation)
+       (explanations nil nil)
+       (old-complete-explanations nil old-complete-explanations) )
+      ((or explanation ;a node containing an instantiated rule
+	   (endp Q) )
+       (or explanation 'quiescence-without-explanation) )
+      (setq trigger-node-score (caar Q)
+	    trigger-node (cdr (pop Q)) )
+      (mapc                                                        ;construct P
+       #'(lambda (tag-rule-pair ;tag of pair not used here
+		  &aux (rule (copy-rule-1 (cdr tag-rule-pair))) )
+	   (multiple-value-bind                 ;v single node or list*
+	    (match? codes-pairs noncodes-alist proven-ante unproven-antes)
+
+	    (match-trigger-to-rule-1 trigger-node
+				     (rule-antes rule)
+				     nil   ;blocked-propos
+				     nil   ;codes-pairs
+				     nil ) ;noncodes-alist
+	    (when match?    ;v returns a cons of rule + UAs
+		  (push-end (instantiate-nodes rule unproven-antes
+					       codes-pairs noncodes-alist )
+			    P ))))
+        (if first-pass?
+	    *rule-base-alist*
+	  *complete-rule-base* ))
+      ;;(format t "~%P:~{~%   ~s~}" P) ;debug
+      (setq P-prime (copy-list P)) ;deletions might be made
+      (mapc                                                        ;construct M
+       #'(lambda (P-pair)
+	   #|(multiple-value-bind
+	    (match? codes-pairs noncodes-alist) ;ignore conseq returned
+
+	    (match-conseq-to-fact (rule-conseqs (car P-pair))     ;ever used???
+				  *user-focus-space* ) ;fact nodes
+	    (when match?
+		  (setq P-prime (remove P-pair P-prime))
+		  ;;                           v rule       v unproven-antes
+		  (push-end (instantiate-nodes (car P-pair) (cdr P-pair)
+					       codes-pairs noncodes-alist )
+			    M ))
+	    (unless match?|#
+		    (multiple-value-bind
+		     (match? codes-pairs noncodes-alist) ;ignore conseq retrned
+
+		     (match-conseq-to-fact (rule-conseqs (car P-pair))
+					   *advisor-focus-space*
+					   :find-contra? t )
+		     (when match?
+			   (setq P-prime (remove P-pair P-prime))
+			   (push-end (instantiate-nodes (car P-pair)
+							(cdr P-pair)
+							codes-pairs
+							noncodes-alist )
+				     M )))
+		    ;;))
+		    )
+       P )
+      ;;(format t "~%M :~{~%   ~s~}~
+      ;;           ~%P':~{~%   ~s~}" M P-prime ) ;debug
+
+      ;;v The purpose of constructing S and F seems to be to instantiate
+      ;;   the rules in M and (P - M) as much as possible before scoring
+      ;;   (when the propos will have to match items in the models exactly)
+      ;;   by getting binds from whatever antecedent-supporters can be found.
+
+      (setq S
+	    (mapcar
+	     #'(lambda (M-pair)
+		 (when *verbose1?* (format t "~%S SUPPORTING ~s" (car M-pair)))
+		 (mapc-1
+		  #'(lambda (unproven-ante)
+		      (if (eq 'er15 (rule-id (node-container unproven-ante)))
+			  (setq *verbose2?* t)
+			(setq *verbose2?* nil) )
+		      (multiple-value-bind
+		       (satisfied? codes-pairs noncodes-alist)
+
+		       (backchain-2 unproven-ante *user-model* *user-model*
+				    *complete-rule-base* nil nil nil nil 0 )
+		       (when satisfied?
+			     (instantiate-nodes (car M-pair) nil
+						codes-pairs noncodes-alist ))))
+		  (cdr M-pair) ) ;unproven-antes (a coll)
+		 (car M-pair) )
+	     M ))
+      ;;(format t "~%S:~{~%   ~s~}" S) ;debug
+      (setq F
+	    (mapcar
+	     #'(lambda (P-prime-pair)
+		 (when *verbose1?*
+		       (format t "~%F SUPPORTING ~s" (car P-prime-pair)) )
+		 (mapc-1
+		  #'(lambda (unproven-ante)
+		      (multiple-value-bind
+		       (satisfied? codes-pairs noncodes-alist)
+
+		       (backchain-2 unproven-ante *user-model* *user-model*
+				    *complete-rule-base* nil nil nil nil 0 )
+		       (when satisfied?
+			     (instantiate-nodes (car P-prime-pair) nil
+						codes-pairs noncodes-alist ))))
+		  (cdr P-prime-pair) ) ;unproven-antes (a coll)
+		 (car P-prime-pair) )
+	     P-prime ))
+      ;;(format t "~%F:~{~%   ~s~}" F) ;debug
+
+      (setq U (sort (append (score (append S F) trigger-node-score)
+			    old-complete-explanations )
+		    #'> :key #'eval-score-in-car ))
+      (when *verbose1?*
+	    (format t "~%U:~{~%   ~s~}" U) ;debug
+	    (print 'end-of-lists) )
+      (setq *u* U *s* S *f* F *tns* trigger-node-score
+	    *oce* old-complete-explanations )
+
+      (setq explanations nil
+	    top-score (eval-score-in-car (car U)) )
+      (dolist (score-pair1 U)                   ;construct 'explanations' list
+	      (cond ((> top-score (eval-score-in-car score-pair1))
+		     (return) )
+		    ((find (cdr score-pair1) S)
+		     (push (cdr score-pair1) explanations)
+		     (push score-pair1 old-complete-explanations) )
+		    ((find score-pair1 old-complete-explanations)
+		     (push (cdr score-pair1) explanations) )
+		    (t nil) ))
+      (if explanations
+	  (if (< 1 (length explanations))
+	      (setq explanation  ;v use contras to A beliefs for score2
+		    (cdar (sort (score2 explanations) #'> :key #'car)) )
+	    (setq explanation (first explanations)) )
+	(dolist (score-pair1 (sort (score F trigger-node-score) #'>
+				   :key #'eval-score-in-car ))
+		(mapc-1
+		 #'(lambda (conseq-node)
+		     (push-end (cons (car score-pair1) conseq-node) Q) )
+		 (rule-conseqs (cdr score-pair1)) )))
+      ))
+
+(defun generate-response (input-node ;i-n is an ante of an instan'd rule
+			  &key (user-side? t)
+			  &aux user-mistake challenged-advisor-belief
+			  user-query blocked-propos )
+  (declare (array input-node user-mistake challenged-advisor-belief
+		  user-query )
+	   (atom user-side?) (list blocked-propos) )
+  (cond
+   (user-side?
+    (cond
+     ((setq
+       user-mistake
+       (or #|(find-if-1 ;commented out because should always find explanation
+	    #'(lambda (ante &aux (ante-propo (node-propo ante)))
+		(some
+		 #'(lambda (advisor-belief)
+		     (and (contradiction-p ante-propo
+					   (node-propo advisor-belief) )
+			  (cons advisor-belief ante) )) ;2nd used in update-f-s
+		 *advisor-model* ))
+	    (rule-antes (node-container input-node)) )|#
+	   (find-if-1
+	    #'(lambda (ante)
+		(find-advisor-explanation ante :find-contra? t)	)
+	    (rule-antes (node-container input-node)) )))
+      (setq *user-focus-space* nil) ;reset unless giving new plan
+      user-mistake ) ;how to ensure that this has not been presented before??
+     ((setq challenged-advisor-belief ; call this fn on advisor-side
+	    (find-if-1 #'node-contradicts
+		       (rule-conseqs (node-container input-node)) ))
+      (format t "~%GR Try to find an alternate plan~
+                 ~%     challenged-advisor-belief: ~s"
+	      challenged-advisor-belief )
+      (generate-response challenged-advisor-belief :user-side? nil) )
+     (t nil) ))
+   (t ;advisor-side
+    (or
+     (and (setq user-query                          ;try to find alternate plan
+		(find-if-1 #'node-instance-of
+			   (rule-conseqs (node-container input-node)) ))
+	  (prog1 t
+	    ;;(setq *in* input-node) ;debug
+	    (push (node-propo input-node) blocked-propos)
+	    (mapc-1
+	     #'(lambda (conseq)
+		 (push (node-propo conseq) blocked-propos) )
+	     (rule-conseqs (node-container input-node)) )
+	    )
+	  (and (prove-2 user-query *advisor-model* blocked-propos
+			nil nil nil 0 )
+	       ;;           2nd used for update-f-sp's --v
+	       (cons (first (node-instances user-query)) user-query) ))
+     (prog1 t
+       (setq *user-focus-space* nil) ;reset unless giving new plan
+       (format t "~%GR Try to find a justification for challenged assertion") )
+     (find-advisor-explanation input-node)    ;try to explain challenged belief
+     )))
+  ;; returns an 'answer-node'
+  )
+
+(defun find-advisor-explanation (ante &key (find-contra? nil))
+  (some
+   #'(lambda (tag-rule-pair &aux (rule1 (copy-rule-1 (cdr tag-rule-pair))))
+       (multiple-value-bind
+	(match? codes-pairs noncodes-alist conseq)
+
+	(match-conseq-to-fact (rule-conseqs rule1) ;also sets
+			      (list ante)          ; contra link
+			      :find-contra? find-contra? )
+	(and match?
+	     (progn
+	       (setq rule1
+		     (car (instantiate-nodes rule1 nil
+					     codes-pairs noncodes-alist )))
+	       ;;(format t "~%FAE candidate expl: ~s" rule1) ;debug
+	       (multiple-value-bind
+		(proven? codes-pairs noncodes-alist)
+
+		(prove-2 (rule-antes rule1) *advisor-model* nil nil nil nil 0)
+		(and proven?
+		     (car (instantiate-nodes ;rule1
+			   rule1 nil
+			   codes-pairs noncodes-alist ))
+		     (cons conseq conseq) )))))) ;2nd used for update-f-sp's
+   *rule-base-alist* ))
+
+;; Makes destructive changes.
+(defun instantiate-nodes (rule unproven-antes codes-pairs noncodes-alist)
+  (mapc-1
+   #'(lambda (ante-node)
+       (setf (node-propo ante-node)
+	     (install-noncodes (instantiate (node-propo ante-node)
+					    codes-pairs )
+			       noncodes-alist )))
+   (rule-antes rule) )
+  (mapc-1
+   #'(lambda (conseq-node)
+       (setf (node-propo conseq-node)
+	     (install-noncodes (instantiate (node-propo conseq-node)
+					    codes-pairs )
+			       noncodes-alist )))
+   (rule-conseqs rule) )
+  (cons rule unproven-antes) )
+
+;; Makes destructive changes.
+;; This is called for each antec or conseq of a rule separately, so we can't
+;;  be more efficient by using a 'vars-done' search history within this fn,
+;;  because that history won't be saved for the next call.
+(defun install-noncodes (item noncodes-alist &aux ncs)
+  (cond ((null noncodes-alist) item)
+	((and (var-p item)
+	      (setq ncs (cdr (assoc item noncodes-alist))) )
+	 (setf (var-noncodes-items item)
+	       (union ncs (var-noncodes-items item)) )
+	 item )
+	((consp item)
+	 (cons (install-noncodes (car item) noncodes-alist)
+	       (install-noncodes (cdr item) noncodes-alist) ))
+	(t item) ))
+
+(defun match-trigger-to-rule-1 (trigger-node antes-nodes blocked-propos
+					     codes-pairs noncodes-alist
+					     &aux ante-propo trigger-propo
+					     blocked? unwanted-codes-set )
+  (declare (list ante-propo trigger-propo blocked-propos
+		 codes-pairs noncodes-alist unwanted-codes-set )
+	   (array trigger-node) (atom blocked?) )
+
+  (if (consp antes-nodes)
+      (multiple-value-bind                       
+       (head-ante-match? codes-pairs1 noncodes-alist1) ;antes left out
+
+       (match-trigger-to-rule-1 trigger-node (car antes-nodes)
+				blocked-propos codes-pairs noncodes-alist )
+       (if head-ante-match?
+	   (values t codes-pairs1 noncodes-alist1
+		   (car antes-nodes) (cdr antes-nodes) )
+	 (multiple-value-bind
+	  (tail-antes-match? codes-pairs1 noncodes-alist1
+			     proven-ante unproven-antes )
+
+	  (match-trigger-to-rule-1 trigger-node (cdr antes-nodes)
+				   blocked-propos codes-pairs noncodes-alist )
+	  (if tail-antes-match?
+	      (values t codes-pairs1 noncodes-alist1 proven-ante
+		      (if unproven-antes
+			  (cons (car antes-nodes) unproven-antes)
+			(car antes-nodes) ))
+	    (values nil codes-pairs noncodes-alist nil nil) ))))
+    (progn                                                      ; else
+      (setq trigger-propo (node-propo trigger-node)
+	    ante-propo    (node-propo antes-nodes) )
+      (multiple-value-setq
+       (blocked? unwanted-codes-set)
+
+       (propo-blocked-p ante-propo blocked-propos codes-pairs noncodes-alist) )
+      (if blocked?
+	  (values nil codes-pairs noncodes-alist nil nil)
+	(multiple-value-bind
+	 (unify? codes-pairs1)
+
+	 (unify trigger-propo ante-propo codes-pairs noncodes-alist)
+	 (if (and unify?
+		  (not (and unwanted-codes-set
+			    (subsetp unwanted-codes-set
+				     codes-pairs1 :test #'equalp ))))
+	     (values t codes-pairs1 noncodes-alist antes-nodes nil)
+	   (values nil codes-pairs noncodes-alist nil nil) ))))))
+
+;; Also installs contradicts ptrs when applicable.
+;; Disallowing contradictions that are made by creating a noncodes-alist
+;;  is an arbitrary way of getting the output to resemble Alex's more closely.
+(defun match-conseq-to-fact (conseq-nodes fact-nodes &key (find-contra? nil)
+					  &aux conseq unify? codes-pairs1
+					  noncodes-alist1 )
+  (declare (list conseq-nodes fact-nodes conseq codes-pairs1 noncodes-alist1)
+	   (atom find-contra? unify?) )
+
+  (cond ((consp conseq-nodes)
+	 (multiple-value-bind
+	  (match? codes-pairs noncodes-alist) ;ignore conseq returned
+
+	  (match-conseq-to-fact (car conseq-nodes) fact-nodes
+				:find-contra? find-contra? )
+	  (if match?
+	      (values t codes-pairs noncodes-alist (car conseq-nodes))
+	    (match-conseq-to-fact (cdr conseq-nodes) fact-nodes
+				  :find-contra? find-contra? )
+	    )))
+	((and (setq conseq (node-propo conseq-nodes))
+	      (some
+	       #'(lambda (fact-node &aux (fact (node-propo fact-node)))
+		   (cond (find-contra?
+			  (multiple-value-setq
+			   (unify? codes-pairs1 noncodes-alist1)
+
+			   (contradiction-p conseq fact) )
+			  (when (and unify?
+				     (null noncodes-alist1) ) ;arbitrary
+				(setf (node-contradicts conseq-nodes)
+				      fact-node )))
+			 (t
+			  (multiple-value-setq
+			   (unify? codes-pairs1)
+
+			   (unify conseq fact nil nil) )
+			  (setq noncodes-alist1 nil) ))
+		   (and unify?
+			(null noncodes-alist1) )) ;arbitrary
+	       fact-nodes ))
+	 (values t codes-pairs1 noncodes-alist1 conseq-nodes) )
+	(t nil) ))
+
+;; Contradictions cover several types:
+;;  P ^ (NOT P)
+;;  best-plan-for(X G) ^ best-plan-for(Y G) ^ NOT=(X Y)
+;;  best-plan-for(X G) ^ better-plan-for(Y X G)
+;;  better-plan-for(X Y G) ^ better-plan-for(Y X G)
+
+;; returns 3 vals: contra? codes-pairs noncodes-alist
+(defun contradiction-p (propo1 propo2)
+  (declare (list propo1 propo2))
+
+  (multiple-value-bind
+   (unify? codes-pairs)
+
+   (unify `(NOT ,propo1) propo2 nil nil)
+   (if unify?
+       (values t codes-pairs nil)
+     (multiple-value-bind
+      (unify? codes-pairs)
+
+      (and (consp propo1)
+	   (eq 'NOT (first propo1))
+	   (unify (second propo1) propo2 nil nil) )
+      (if unify?
+	  (values t codes-pairs nil)
+	(and (consp propo1)
+	     (consp propo2)
+	     (multiple-value-bind
+	      (unify? codes-pairs)
+
+	      (and (eq '_IS-BEST-PLAN-FOR_ (first propo1))
+		   (eq '_IS-BEST-PLAN-FOR_ (first propo2))
+		   (not (equalp (second propo1) (second propo2)))
+		   (unify (third propo1) (third propo2) nil nil) )
+	      (if unify?
+		  (values t
+			  codes-pairs
+			  `((,(second propo1) ,(second propo2)) ;noncodes-alist
+			    (,(second propo2) ,(second propo1)) ))
+		(multiple-value-bind
+		 (unify? codes-pairs)
+
+		 (and (eq '_IS-BEST-PLAN-FOR_ (first propo1))
+		      (eq '_IS-BETTER-PLAN-THAN_FOR_ (first propo2))
+		      (unify (cdr propo1) (cddr propo2) nil nil) )
+		 (if unify?
+		     (values t codes-pairs nil)
+		   (multiple-value-bind
+		    (unify? codes-pairs)
+
+		    (and (eq '_IS-BETTER-PLAN-THAN_FOR_ (first propo1))
+			 (eq '_IS-BEST-PLAN-FOR_ (first propo2))
+			 (unify (cddr propo1) (cdr propo2) nil nil) )
+		    (if unify?
+			(values t codes-pairs nil)
+		      (multiple-value-bind
+		       (unify? codes-pairs)
+
+		       (and (eq '_IS-BETTER-PLAN-THAN_FOR_ (first propo1))
+			    (eq '_IS-BETTER-PLAN-THAN_FOR_ (first propo2))
+			    (unify (list (second propo1)
+					 (first propo1)
+					 (third propo1) )
+				   (cdr propo2) nil nil ))
+		       (if unify?
+			   (values t codes-pairs nil)
+			 (multiple-value-bind
+			  (contra? codes-pairs noncodes-alist)
+
+			  (and (eq '_is-desired (first propo1))
+			       (eq '_is-desired (first propo2))
+			       (contradiction-p (second propo1)
+						(second propo2) ))
+			  (if contra?
+			      (values t codes-pairs noncodes-alist)
+			    (and (eq 'NOT (first propo1))
+				 (eq 'NOT (first propo2))
+				 (contradiction-p (second propo1)
+						  (second propo2) )))))
+		       ) ;mvb
+		      )) ;mvb
+		   )) ;mvb
+		)) ;mvb
+	     ))) ;mvb
+     )) ;mvb
+  )
+
+
+;;;;;;;;;;;;;;;;;;;; BACKCHAINING
+
+;; PROVE-2 and BACKCHAIN-2 are almost identical to their counterparts
+;; PROVE-1 and BACKCHAIN in infer.lsp, except that PROVE-2 takes a facts-list
+;; as an arg, and all BC'ing must ground out in matches to these facts.
+;; The negation-by-failure arg in PROVE-1 is assumed T here.
+
+(defun prove-2 (rule-antes fact-nodes blocked-propos
+			   codes-pairs noncodes-alist
+			   search-history search-depth
+			   &aux satisfied1? (codes-pairs1 nil)
+			   (noncodes-alist1 nil) )
+  (declare (list rule-antes fact-nodes blocked-propos
+		 codes-pairs noncodes-alist
+		 search-history codes-pairs1 noncodes-alist1 )
+	   (number search-depth) (atom satisfied1?) )
+
+  #|(format t "~%PROVE-2~
+             ~%   antes: ~s~
+             ~%   codes: ~s~
+             ~%noncodes: ~s~
+             ~%    hist: ~s"
+	  rule-antes codes-pairs noncodes-alist search-history )|#
+  (if (consp rule-antes)
+      (do ((untried-facts fact-nodes        untried-facts)
+	   (untried-rules (if (= 0 search-depth)
+			      *rule-base-alist*
+			    *complete-rule-base* )
+			  untried-rules )
+	   (satisfied2? nil satisfied2?) )
+	  ((or satisfied2?
+	       (not (or untried-facts
+			untried-rules )))
+	   (values satisfied2? codes-pairs1 noncodes-alist1) )
+	  (multiple-value-setq
+	   (satisfied1? codes-pairs1 noncodes-alist1
+			untried-facts untried-rules)
+
+	   (backchain-2 (car rule-antes) fact-nodes untried-facts untried-rules
+			blocked-propos codes-pairs noncodes-alist
+			search-history search-depth ))
+	  (multiple-value-setq
+	   (satisfied2? codes-pairs1 noncodes-alist1)
+
+	   (and satisfied1?
+		(prove-2 (cdr rule-antes) fact-nodes blocked-propos
+			 codes-pairs1 noncodes-alist1 search-history
+			 search-depth ))))
+    (multiple-value-bind
+     (satisfied? codes-pairs1 noncodes-alist1) ;ignore returned untried fs + rs
+
+     (backchain-2 rule-antes fact-nodes fact-nodes
+		  (if (= 0 search-depth)
+		      *rule-base-alist*
+		    *complete-rule-base* )
+		  blocked-propos codes-pairs noncodes-alist
+		  search-history search-depth )
+     (if satisfied?
+	 (values t codes-pairs1 noncodes-alist1)
+       (and (eq 'NOT (first (node-propo rule-antes)))
+	    (values (null (prove-2 (compose-nodes
+				    (second (node-propo rule-antes)) )
+				   fact-nodes
+				   blocked-propos
+				   codes-pairs
+				   noncodes-alist
+				   search-history
+				   search-depth ))
+		    codes-pairs          ;return original binds for NBF success
+		    noncodes-alist ))))))
+
+(defun propo-blocked-p (candidate-support blocked-propos codes-pairs
+					  noncodes-alist
+					  &aux (blocked? nil)
+					  (unwanted-codes-set nil)
+					  unify? codes-pairs1 )
+  (dolist (blocked-propo blocked-propos)
+	  (multiple-value-setq
+	   (unify? codes-pairs1)
+
+	   (unify candidate-support blocked-propo codes-pairs noncodes-alist) )
+	  (when unify?
+		(if codes-pairs1
+		    (setq unwanted-codes-set
+			  (append codes-pairs1 unwanted-codes-set) )
+		  (return (setq blocked? t)) )))
+  (values blocked? (and (not blocked?) unwanted-codes-set)) )
+
+(defun backchain-2 (unproven-ante fact-nodes untried-facts untried-rules
+				  blocked-propos codes-pairs noncodes-alist
+				  search-history search-depth
+				  &aux (ante-propo (node-propo unproven-ante))
+				  (codes-pairs2 nil) (noncodes-alist2 nil)
+				  pred-fn rule rule1 rule2
+				  conseq conseq2 unused-conseqs
+				  unproven-antes unproven-antes2 )
+  (declare (array unproven-ante conseq conseq2 rule rule1 rule2)
+	   (number search-depth) (function pred-fn)
+	   (list fact-nodes untried-facts untried-rules search-history
+		 codes-pairs noncodes-alist codes-pairs2 noncodes-alist2
+		 ante-propo unused-conseqs unproven-antes unproven-antes2
+		 blocked-propos ))
+
+  (when *verbose2?*
+	(format t "~%B-C ~s ante: ~s~
+                   ~%        fs: ~s ufs: ~s urs: ~s~
+                   ~%  blockeds:~{ ~s~}~
+                   ~%     codes: ~s~
+                   ~%       ncs: ~s~%"
+		search-depth unproven-ante
+		(length fact-nodes)
+		(length untried-facts)
+		(length untried-rules)
+		blocked-propos codes-pairs noncodes-alist ))
+  (cond ((setq pred-fn (get-pred-fn (first ante-propo) 'EVAL))
+	 (apply pred-fn
+		(append (rest ante-propo)
+			(list codes-pairs)
+			(list noncodes-alist)
+			(list search-depth) )))
+	((do ((untried-fs1 untried-facts (cdr untried-fs1))
+	      (untried-fact nil nil)
+	      (blocked? nil nil)
+	      (unwanted-codes-set nil nil)
+	      (satisfied? nil satisfied?) )
+	     ((or satisfied?
+		  (null untried-fs1) )
+	      (setq untried-facts untried-fs1)
+	      satisfied? )
+	     (setq untried-fact (node-propo (car untried-fs1)))
+	     (multiple-value-setq
+	      (blocked? unwanted-codes-set)
+
+	      (propo-blocked-p untried-fact blocked-propos
+			       codes-pairs noncodes-alist ))
+	     (when *verbose2?*
+		   (format t "~%bcF blckd? ~s ~s ~s"
+			   blocked? unwanted-codes-set untried-fact )) ;debug
+	     (unless blocked?
+		     (multiple-value-setq
+		      (satisfied? codes-pairs1)
+
+		      (unify ante-propo untried-fact codes-pairs
+			     noncodes-alist ))
+		     (setq satisfied?
+			   (and satisfied?
+				(not (and unwanted-codes-set
+					  (subsetp unwanted-codes-set
+						   codes-pairs1
+						   :test #'equalp )))))
+		     ))
+	 (values t codes-pairs1 noncodes-alist untried-facts untried-rules) )
+	((do ((untried-rs1 untried-rules (cdr untried-rs1))
+	      (satisfied? nil satisfied?) )
+	     ((or satisfied?
+		  (> search-depth *search-depth-limit*)
+		  (null untried-rs1)
+		  (prog1 nil
+		    (when *verbose2?*
+			  (format t "~%bcR ~s ante: ~s~
+                                     ~%        rs: ~s"
+				  search-depth unproven-ante
+				  (mapcar #'car untried-rs1) ))) ;rule tags
+		  )
+	      (setq untried-rules untried-rs1)
+	      satisfied? )
+	     (setq rule (cdar untried-rs1))
+	     (unless
+	      (find rule search-history)
+
+	      (setq rule1 (copy-rule-1 rule))
+	      (multiple-value-bind
+	       (satisfied1? codes-pairs1 noncodes-alist1 conseq)
+	       ;;                       v rule ante's of tag-rule pair
+	       (match-trigger-to-rule-1 unproven-ante
+					(rule-conseqs rule1)
+					blocked-propos
+					codes-pairs
+					noncodes-alist )
+	       (setq unproven-antes (rule-antes rule1))
+	       ;;Note that only one conseq is used, and none are added
+	       ;; to *completions-list* (yet) -- and I believe they
+	       ;; definitely should not be added to *open-list* because
+	       ;; they should not trigger FCing.
+	 
+	       (when satisfied1?
+		     (setq rule2
+			   (car (instantiate-nodes rule1 nil codes-pairs1
+						   noncodes-alist1 ))
+			   conseq2
+			   (position-1 conseq (rule-conseqs rule1)
+				       (rule-conseqs rule2) )
+			   unproven-antes2
+			   (mapcar-1
+			    #'(lambda (ante)
+				(position-1 ante (rule-antes rule1)
+					    (rule-antes rule2) ))
+			    unproven-antes ))
+		     (multiple-value-setq
+		      (satisfied? codes-pairs2 noncodes-alist2)
+
+		      (prove-2 unproven-antes2 fact-nodes blocked-propos
+			       codes-pairs1 noncodes-alist1
+			       (cons rule search-history)
+			       (1+ search-depth) )) ;crude chk for infin regr
+		     (when satisfied?
+			   (setf (node-instance-of conseq2) unproven-ante)
+			   (push conseq2 (node-instances unproven-ante))
+			   (instantiate-nodes rule2 nil
+					      codes-pairs2 noncodes-alist2 )
+			   ))))) ;^ make sure rule is as instan'd as possible
+	 (values t codes-pairs2 noncodes-alist2
+		 nil untried-rules ))
+
+	(t nil) ))
+
+
+;;;;;;;;;;;;;;;;;;;; SCORING + FOCUS-SPACE UPDATING
+
+(defstruct (score
+	    (:print-function
+	     (lambda (score stream depth)
+	       (declare (ignore depth))
+	       (format stream "[~s ~s ~s ~s]"
+		       (score-couplings score) (score-agreements score)
+		       (score-clause-count score)
+		       (score-num-uninstand-vars score) )
+	       )))
+  (couplings 0) (agreements 0) (clause-count 0) (num-uninstand-vars 0) )
+
+(defun eval-score-in-car (score-pair &aux (score (car score-pair)))
+  (* (/ 1 (1+ (score-num-uninstand-vars score)))
+     (/ (* (score-couplings score)
+	   (score-agreements score) )
+	(score-clause-count score) )))
+
+(defun score (rules &optional (base-score nil))
+  (mapcar
+   #'(lambda (rule &aux (clause-count 0) (couplings 0) (agreements 0)
+		   num-uninstand-vars score1 )
+       (mapc-1 #'(lambda (ante &aux (ante-propo (node-propo ante)))
+		   (incf clause-count)
+		   (when (coupled-p ante-propo)
+			 (incf couplings) )
+		   (when (agreement-p ante-propo)
+			 (incf agreements) ))
+	       (rule-antes rule) )
+       (mapc-1 #'(lambda (conseq &aux (conseq-propo (node-propo conseq)))
+		   (incf clause-count)
+		   (when (coupled-p conseq-propo)
+			 (incf couplings) )
+		   (when (agreement-p conseq-propo)
+			 (incf agreements) ))
+	       (rule-conseqs rule) )
+       (setq num-uninstand-vars (num-uninstand-vars rule))
+       (when *verbose1?*
+	     (format t "~%Score coup: ~s agr: ~s count: ~s nuv: ~s"
+		     couplings agreements clause-count num-uninstand-vars ))
+       (setq score1 (if base-score (copy-score base-score) (make-score)))
+       (incf (score-num-uninstand-vars score1) num-uninstand-vars)
+       (incf (score-couplings score1) couplings)
+       (incf (score-agreements score1) agreements)
+       (incf (score-clause-count score1) clause-count)
+       (cons score1 rule)
+       )
+   rules ))
+
+(defun coupled-p (propo1)
+  (declare (list propo1))
+  (find propo1 *user-model* :key #'node-propo :test #'equalp) )
+
+(defun agreement-p (propo1)
+  (declare (list propo1))
+  (find propo1 *advisor-model* :key #'node-propo :test #'equalp) )
+
+(defun num-uninstand-vars (rule)
+  (length
+   (uninstand-vars (rule-conseqs rule)
+		   (uninstand-vars (rule-antes rule) nil) )))
+
+(defun uninstand-vars (coll1 ui-vars)
+  (mapc-1
+   #'(lambda (node1)
+       (setq ui-vars
+	     (uninstand-vars-1 (node-propo node1) ui-vars) ))
+   coll1 )
+  ui-vars )
+
+(defun uninstand-vars-1 (item1 ui-vars)
+  (if (consp item1)
+      (uninstand-vars-1 (cdr item1)
+			(uninstand-vars-1 (car item1) ui-vars) )
+    (if (and (var-p item1)
+	     (not (find item1 ui-vars)) )
+	(cons item1 ui-vars)
+      ui-vars )))
+
+(defun score2 (rules &optional (base-value 0))
+  (mapcar
+   #'(lambda (rule &aux (clause-count 0) (contradictions 0))
+       (mapc-1 #'(lambda (ante &aux (ante-propo (node-propo ante)))
+		   (incf clause-count)
+		   (when (find-if
+			  #'(lambda (advisor-belief)
+			      (contradiction-p ante-propo
+					       (node-propo advisor-belief) ))
+			  *advisor-model* )
+			 (incf contradictions) ))
+	       (rule-antes rule) )
+       (mapc-1 #'(lambda (conseq &aux (conseq-propo (node-propo conseq)))
+		   (incf clause-count)
+		   (when (find-if
+			  #'(lambda (advisor-belief)
+			      (contradiction-p conseq-propo
+					       (node-propo advisor-belief) ))
+			  *advisor-model* )
+			 (incf contradictions) ))
+	       (rule-conseqs rule) )
+       (cons (+ base-value (/ contradictions clause-count))
+	     rule )
+       )
+   rules ))
+
+(defun find-leaf-node (node &aux instance)
+  (declare (array node instance))
+  (if (setq instance (first (node-instances node))) ;assume 1st only is enough
+      (find-if-1 #'find-leaf-node (rule-antes (node-container instance)))
+    node ))
+
+(defun update-focus-spaces (answer-node &key (advisor-side? t) (all-antes? t)
+					(source nil) (antes-only? nil)
+					&aux container parent-node contra-node)
+  (and (setq container (node-container answer-node))
+       (cond
+	(advisor-side?
+	 (unless
+	  antes-only?
+	  (mapc-1
+	   #'(lambda (conseq-node)
+	       (pushnew conseq-node *advisor-focus-space*)
+	       (when (setq parent-node (node-instance-of conseq-node))
+		     (if (node-container parent-node)
+			 (progn
+			   (push parent-node *advisor-focus-space*)
+			   (update-focus-spaces parent-node
+						:advisor-side? t
+						:all-antes? all-antes?
+						:source conseq-node ))
+		       'diddly ;a question is not a user belief
+		       ;; (push parent-node *user-focus-space*)
+		       ))
+	       (when (setq contra-node (node-contradicts conseq-node))
+		     (push contra-node *user-focus-space*)
+		     (update-focus-spaces contra-node
+					  :advisor-side? nil
+					  :all-antes? nil )))
+	   (rule-conseqs container) ))
+	 (when all-antes?
+	       (mapc-1
+		#'(lambda (ante-node)
+		    (pushnew ante-node *advisor-focus-space*)
+		    (when (node-instances ante-node) ;v assume 1st is correct
+			  (update-focus-spaces (car (node-instances ante-node))
+					       :advisor-side? t
+					       :all-antes? all-antes?
+					       :antes-only? t )))
+		(remove-1 source (rule-antes container)) )))
+	(t
+	 (unless antes-only?
+		 (mapc-1
+		  #'(lambda (conseq-node)
+		      (pushnew conseq-node *user-focus-space*)
+		      (when (and (setq parent-node
+				       (node-instance-of conseq-node) )
+				 (node-container parent-node) )
+			    (push parent-node *user-focus-space*)
+			    (update-focus-spaces parent-node
+						 :advisor-side? nil
+						 :all-antes? all-antes?
+						 :source conseq-node ))
+		      (when (setq contra-node (node-contradicts conseq-node))
+			    (push contra-node *advisor-focus-space*)
+			    (update-focus-spaces contra-node
+						 :advisor-side? t
+						 :all-antes? nil )))
+		  (rule-conseqs container) ))
+	 (when all-antes?
+	       (mapc-1
+		#'(lambda (ante-node)
+		    (pushnew ante-node *user-focus-space*)
+		    (when (node-instances ante-node) ;v assume 1st is correct
+			  (update-focus-spaces (car (node-instances ante-node))
+					       :advisor-side? nil
+					       :all-antes? all-antes?
+					       :antes-only? t )))
+		(remove-1 source (rule-antes container)) )))
+	)))

@@ -1,0 +1,64 @@
+
+#define PASS_GRADE 65
+
+main()
+{
+  double grade1 = 60.0;
+  double grade2 = 70.0;
+  
+  int test_grade( double );
+
+  /* enter two scores */
+  printf("Enter two scores\n");
+  scanf("%lf %lf", &grade1, &grade2);
+
+  printf(" Testing Solution 1 ... \n");
+  test_grade1( grade1 );
+  test_grade1( grade2 );
+
+  printf(" Testing Solution 2 ... \n");
+  test_grade2( grade1 );
+  test_grade2( grade2 );
+}
+
+/*  ---------------------------------------------------------------------------
+    Solution #1 to Bonus
+*/
+int test_grade1( double grade )
+  {
+  
+    while( grade >= PASS_GRADE )
+      {
+	printf(" Grade of [%lf] is a PASS! \n", grade);
+	return 0;
+      }
+  
+    printf(" Grade of [%lf] is a FAIL! \n", grade);  
+
+  }
+
+
+/*  ---------------------------------------------------------------------------
+    Solution #2 to Bonus
+*/
+int test_grade2( double grade )
+  {
+
+    int temp = grade;
+  
+    while( temp >= PASS_GRADE )
+      {
+	printf(" Grade of [%lf] is a PASS! \n", grade);
+	temp = 0;
+      }
+
+    while( temp != 0 )
+      {
+	printf(" Grade of [%lf] is a FAIL! \n", grade);  
+	temp = 0;
+      }
+  }
+
+/* Local Variables: */
+/* compile-command: "gcc -ansi -o simple simple.c" */
+/* End: */

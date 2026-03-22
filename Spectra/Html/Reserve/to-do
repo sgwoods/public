@@ -1,0 +1,23 @@
+
+Html script execution
+
+1. Check out srm.conf  access.conf   .... .conf 
+ see http server location, man page
+
+  In srm.conf "addType" command possibly from htaccess  (global file on
+  server installation)
+
+ addType Applications/x-httpd-cgi .cgi .sh ...
+
+  shouldn't htaccess override / append this  locally ?
+
+htaccess file
+ 
+ Options ExecCgi     ; allows scripts executeable in this directory,
+                       scripts need to be 755
+
+ 
+Info at:
+
+  http://hoohoo.ncsa.uiuc.edu/
+ 

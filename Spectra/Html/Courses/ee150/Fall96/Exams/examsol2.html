@@ -1,0 +1,274 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Midterm #2 Solutions</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME=top>EE150 - Spring 1996</A></H1>
+
+<H2>Midterm #2 (4/1/96)<BR>
+Solutions</H2>
+
+<BR CLEAR=all>
+
+<B>Jump To Solution For Problem</B>:
+ [<A HREF=#prob1>1</A> |
+  <A HREF=#prob2>2</A> |
+  <A HREF=#prob3>3</A> |
+  <A HREF=#prob4>4</A>] <BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob1"><H2>Problem #1</H2></A>
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+c=4, s=6
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P> The <TT>for</TT> loop differs from most we have seen in that
+the test involves a different variable (<TT>s</TT>) than the one
+we are initializing and incrementing (<TT>c</TT>).
+
+<P> The table below shows what happens each iteration of the loop
+(after doing the <TT>c++</TT>).
+
+<BLOCKQUOTE><PRE>
+                 s   c
+Before loop:     0   1
+After 1st time:  1   2
+After 2nd time:  3   3
+After 3rd time:  6   4
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="mid2.html#prob1a">The problem</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+?
+*
+**
+***
+?
+</PRE> </BLOCKQUOTE>
+
+<P> Here's the reason why.
+
+<P> The loop runs <TT>i</TT> from 0 to 4, stopping when <TT>i</TT> is 5.
+When <TT>i</TT> is 0, we are going to the <TT>default</TT> case of the
+<TT>switch</TT>, writing a <TT>?</TT>.  When it is 1, 2 or 3, we
+do the appropriate case, writing out that many stars.  When it is 4,
+we hit the <TT>default</TT> case again, writing the <TT>?</TT>.
+
+<P><A HREF="mid2.html#prob1b">The problem</A>.<P>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+0.00
+3
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P> The expression <TT>x/y</TT> is 10/20, where 10 and 20 are integers,
+so it results in a 0, which is converted to a <TT>double</TT> and assigned
+to <TT>d</TT>.
+
+<P> The expression <TT>d/y</TT> is 7.5/2, which will use real division
+and give us 3.25.  However, this 3.25 is assigned to an integer <TT>x</TT>,
+which causes the .25 to be truncated, so <TT>x</TT> is assigned a 3.
+
+<P><A HREF="mid2.html#prob1c">The problem</A>.<P>
+
+<H4><A NAME="prob1d">Part D</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+4
+17 9 13 17
+</PRE></BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P> Before <TT>tweak</TT> is called the entire array <TT>t</TT>
+contains 17's.  Inside <TT>tweak</TT>, changing <TT>s</TT> is
+equivalent to changing <TT>t</TT>, so we are modifying <TT>t[1]</TT>
+and <TT>t[2]</TT> to 9 and 13.   But when we change <TT>t</TT> in
+<TT>tweak</TT>, that's changing the local variable and not the <TT>s</TT>
+that is passed to it.
+
+<P><A HREF="mid2.html#prob1d">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob2"><H2>Problem #2</H2></A>
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<P> The changes are (any 4 out of these 6):
+<UL>
+<LI> Move the declaration of <TT>table</TT> out of main so that it
+is global.
+<LI> Add a global declaration for <TT>x</TT>.
+<LI> Pass 100 as an asgument to <TT>setTable</TT>.
+<LI> Add a prototype for <TT>setTable</TT> to <TT>main</TT>.
+<LI> Add a declaration for <TT>i</TT> to <TT>setTable</TT>.
+<LI> Add a <TT>return 0;</TT> to the end of <TT>main</TT>.
+</UL>
+
+<P><A HREF="mid2.html#prob2a">The problem</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> There should be an <TT>==</TT> instead of an <TT>=</TT>
+in the <TT>if</TT> statement.
+<LI> The assignment <TT>i = 1</TT> should be <TT>i = 0</TT>.
+<LI> It should set <TT>t[i]</TT> to <TT>newvalue</TT>, not <TT>i</TT>.
+<LI> The function should return <TT>void</TT> rather than <TT>int</TT>.
+</UL>
+
+<P><A HREF="mid2.html#prob2b">The problem</A>.<P>
+
+<H4><A NAME="prob2c">Part C</A></H4>
+
+<P> The changes are (any 4 out of these 5):
+<UL>
+<LI> The loop test should be against a newline, not EOF.
+<LI> The <TT>c=getchar()</TT> in the loop test needs to be surrounded
+by parentheses.
+<LI> The <TT>&&</TT> should be an <TT>||</TT>.
+<LI> The function should return <TT>int</TT> not <TT>void</TT>.
+<LI> <TT>c</TT> should be declared as an <TT>int</TT>.
+</UL>
+
+<P><A HREF="mid2.html#prob2c">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob3"><H2>Problem #3</H2></A>
+
+<P> The key here is to write a loop that runs through the table and
+for each element, divides the world into cases: that of a positive table
+element and that of a negative table element.  For a positive element,
+you need to write a set of dots, the !, the number of +'s in the
+table element's value, and then dots to the end.  This winds up being
+a set of calls to <TT>writeN</TT>.  The negative case is similar.
+
+<BLOCKQUOTE><PRE>
+void displayTable(int a[], int n, int dots, char pos, char neg)
+{
+  void writeN(int c, int n);
+  int i;
+
+  for (i = 0; i &lt; n; i++)
+  {
+    if (a[i] &gt; 0)
+    {
+      writeN('.', dots);
+      writeN('!', 1);
+      writeN('+', a[i]);
+      writeN('.', dots - a[i]);
+    }
+    else
+    {
+      writeN('.', dots + a[i]);
+      writeN('-', -a[i]);
+      writeN('!', 1);
+      writeN('.', dots);
+    }
+    putchar('\n');
+  }
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="mid2.html#prob3">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob4"><H2>Problem #4</H2></A>
+
+<P> The key to this solution is to start with a loop that reads each
+character in the input, one character at a time.  You then can construct
+a very simple state machine where you are either in a quote or not in
+a quote and reading a quote causes a transition between the states.
+
+<BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+
+#define INQUOTE     0
+#define NOT_INQUOTE 1
+
+main()
+{
+  int c;
+  int state = NOT_INQUOTE;
+
+  while ((c = getchar()) != EOF)
+    if (state == NOT_INQUOTE)
+    {
+      if (c == '"')
+        state = INQUOTE;
+    }
+    else /* INQUOTE */
+    {
+      if (c != '"')
+        putchar(c);
+      else
+      { 
+        putchar('\n');
+        state = NOT_INQUOTE;
+      }
+    }
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+If you don't like state machines, you can instead check each character
+you read to see if it's a quote and then have a loop that keeps reading
+and printing characters until it hits another quote.
+
+<BLOCKQUOTE><PRE>
+#include <stdio.h>
+
+main()
+{
+  int c;
+
+  while ((c = getchar()) != EOF)
+  {
+    if (c == '"')    
+    {
+      while ((c = getchar()) != '"' && c != EOF)
+        putchar(c);
+      putchar('\n');
+    }
+  }
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="mid2.html#prob4">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">E150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>
+

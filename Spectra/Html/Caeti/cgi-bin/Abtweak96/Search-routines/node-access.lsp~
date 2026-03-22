@@ -1,0 +1,52 @@
+; Search-routines/node-access.lsp
+;
+; node access routines
+; a node is implemented as a list (priority plan cost parent-node).
+;
+          
+;****************************************************************************
+;* get priority value from the node structure
+;****************************************************************************
+(defun get-priority (node)
+   "Search-routines/node-access"
+    (declare (list node))
+
+    (first node) )
+
+;****************************************************************************
+;* get plan value from the node structure
+;****************************************************************************
+(defun get-plan (node)
+   "Search-routines/node-access"
+    (declare (list node))
+
+    (second node) )
+
+;****************************************************************************
+;* get cost value from the node structure
+;****************************************************************************
+(defun get-cost (node)
+   "Search-routines/node-access"
+    (declare (list node))
+
+    (third node) )
+
+;****************************************************************************
+;* get solution depth value from the node structure
+;  (ie depth from root in successor generation)
+;****************************************************************************
+
+(defun get-solution-depth (node)
+  "Search-routines/node-access"
+   (declare (list node))
+
+   (if node
+       (fourth node)
+     0 ))  ; i.e. the node is initial/root - no parent exists
+
+(defun make-node (priority plan cost parent-node)
+  "Search-routines/node-access
+   makes a node as a list of (priority plan cost solution-depth)"
+  (declare (integer priority cost) (type plan plan) (list parent-node))
+
+  (list priority plan cost (1+ (get-solution-depth parent-node))) )

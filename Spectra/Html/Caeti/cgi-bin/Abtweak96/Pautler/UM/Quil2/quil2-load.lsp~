@@ -1,0 +1,10 @@
+;; quil2-load.lsp
+
+(defun load-all ()
+  (load "../../Infer/coll-utils.fasl")
+  (load "../../Infer/infer-utils.fasl")
+  (load "quil2-utils.lsp")
+  (load "quil2.lsp")
+  (load "quil2-rules.lisp") )
+
+(load-all)

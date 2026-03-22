@@ -1,0 +1,22 @@
+
+Plan requirements parsed from Html form
+
+  Initial state: ((390 175)
+                  (IN-STAT-FORMATION WHITE (390 175) COIL $security16 0.0))
+    1st leg required opids: (MTLEFNBO CWSAFD NTM TICF MOFSF)
+    1st leg goal: (cp15 (AT-LOCATION WHITE cp15 $exec-time17)
+                   (MOVING-ALONG-LEG WHITE (390 175) cp15 $security18
+                    $method19))
+
+    2nd leg initial state: (cp15 (AT-LOCATION WHITE cp15 $exec-time17)
+                            (MOVING-ALONG-LEG WHITE (390 175) cp15 $security18
+                             $method19))
+    2nd leg required opids: (DAPAA TWBO MFLS)
+    2nd leg goal: (cp20 (STOPPED-AT WHITE cp20 $exec-time21))
+
+    3rd leg initial state: (cp20 (STOPPED-AT WHITE cp20 $exec-time21))
+    3rd leg required opids: (MTLEFNBO NBD TWO TIWF SICF MOFSBO)
+  Goal state: (cp14
+               (IN-STAT-FORMATION WHITE cp14 COIL $security23 $exec-time22))
+
+  Additional constraints: ((< $exec-time22 180) (< 60 $exec-time22))

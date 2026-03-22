@@ -1,0 +1,117 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Programming Assignment #1</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Fall 1996</H1>
+<H2>Programming<BR>
+Assignment #1</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment has several parts.  The first asks you to log on
+and send an electronic mail message telling us who you are and
+why you are taking the course.  The second asks you to type in,
+compile, and execute the first few programs we discuss in class.
+The third asks you to modify a program that's been written for you.
+
+<P> The due date is: <B> Wednesday, September 4th, 1996 </B> at 6pm.
+We will not accept any late assignments, period.  
+
+<H4> What To Do </H4>
+
+<P> <A NAME="part1"><B>Part 1</B></A>:
+Log onto Wiliki and send your TA (yzhang@wiliki) an electronic mail message.
+You can use either the <B>elm</B> or <B>pine</B> commands.  Your
+message's subject line must be <B>EE150: ASSIGNMENT #1</B> (in upper case,
+and with exactly one space following the colon and the last "T" in 
+"ASSIGNMENT", with nothing following the #1).  The reason for this
+pickiness is that your mail message will be automatically processed to
+give you credit for this part of the assignment.
+
+<P> The message body should have your name on the first line, your social
+security number on the second line, and empty third line, and then a
+<EM>brief</EM> paragraph telling us why you are taking the course
+and how much prior computing experience you have had (if any).
+
+<P> The point of this part of this assignment is to familiarize yourself
+with sending e-mail, as that's the primary mechanism by which we expect
+you to ask questions and to receive information about how you are doing
+in the course.
+
+<P> Please make sure that you send this mail message from your Wiliki
+account and not from an account on some other machine, such as "uhunix".
+Messages from machines other than Wiliki will be ignored.
+
+<P> <A NAME="part2"><B>Part 2</B></A>:
+Create a file containing the program <B>welcome2.c</B>
+that is on page 7 of the text.  Compile this file and run the
+resulting executable program.  Make sure its output is IDENTICAL to
+the output in the text (no typos, no extra spaces, and so on).
+
+<P> <A NAME="part3"><B>Part 3</B></A>:
+Create a file <B>first.c</B> that an identical copy of
+<B>welcome2.c</B>.  The modify the program to print the message below
+(instead of its current welcoming message):
+<BLOCKQUOTE>
+<PRE>
+This is my first C program.
+</PRE>
+</BLOCKQUOTE>
+Make sure the program prints exactly this message and nothing else!
+
+<P> <A NAME="part4"><B>Part 4</B></A>:
+Create a file <B>second.c</B> that an identical copy of
+<B>first.c</B>.  Then modify the program to print the message five times,
+changing the word "first" to "second".  That is, the program should now
+print:
+<BLOCKQUOTE>
+<PRE>
+This is my second C program.
+This is my second C program.
+This is my second C program.
+This is my second C program.
+This is my second C program.
+</PRE>
+</BLOCKQUOTE>
+
+<H4> What To Turn In </H4>
+
+<P>
+To get credit for this assignment, you must send us mail (as mentioned
+in Part 1) and then electronically turn in the three files you created
+in Parts 2 through 4: <B>welcome2.c</B>, <B>first.c</B> and <B>second.c</B>.
+
+<P>
+<A NAME="grade">To turn in your program, you need to use the
+<TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the command:
+<BLOCKQUOTE>
+<TT> grade -1,ee150 welcome2.c first.c second.c </TT>
+</BLOCKQUOTE>
+The <TT>-1</TT> tells the grade command which assignment you are
+turning in (assignment #1), the <TT>ee150</TT> tells it your class (EE150,
+so the programs get sent to the EE150 professor and not to the professor
+of some other class), and the
+".c" files are the source files you are actually turning in.
+Please make sure you type in the command exactly as it shown above.
+
+<P> Your programs will be graded by correctness by the computer.  After you
+turn them in, the computer runs your programs and compares the output they
+produce against the output it expects.  The computer is <EM>extremely</EM>
+picky.  It will complain if your output doesn't <EM>exactly</EM> match
+ours!  It complains softly about spacing problems (like extra blank lines
+or missing spaces or tabs).  It complains more vocally about simple
+typos (characters in lower case that should be uppercase or characters
+it expects to see but doesn't).  And it complains loudly about any other
+problems (such as more complicated typos or just generally wrong results).
+Your grade is assigned based on how much and how loudly the computer
+complains.  What that means is you need to check your output character
+by character against the expected output to make sure that it matches.
+If it doesn't, you won't get a good score.

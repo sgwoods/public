@@ -1,0 +1,277 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Midterm #2</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Midterm #2 (2/14/96)</H2>
+
+<B>Jump To Problem</B>:
+[<A HREF="#prob1">1</A> |
+ <A HREF="#prob2">2</A> |
+ <A HREF="#prob3">3</A> |
+ <A HREF="#prob4">4</A>]
+
+<BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This exam is a total of 6 pages, including this one.  It is open
+book, open notes, and closed neighbor!
+
+<P> You have 50 minutes to complete the exam.  We will pick up all
+midterms and leave the room at 55 minutes after the hour.
+
+<P> There are 4 problems worth a total of 100 points.  The problems are
+almost equally weighted.  Be careful not to spend too much time on
+any particular problem.  <B> If you get stuck, go on to the next
+problem.</B>  You can always come back to the one that is giving you
+problems.  As a guideline, allow about 12 minutes per problem,
+which leaves you a couple of minutes at the end to check your work.
+To ensure you have read these instructions, you get two bonus
+points simply for writing your initials at the bottom of this page.
+
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="probl">PROBLEM #1</A> (24 points, 6 points each)</H3>
+
+Tell us what each of the following program fragments do.  To determine
+the answer, work through the code by hand and show us the output that
+results.  <EM>You must show how these programs execute with the
+``boxes'' model in order to get credit.</EM>  Put the output to the
+<B>left</B> of the program and the boxes to the <B>right</B>.
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int c, s = 0;
+
+  for (c = 1; s &lt; 6; c++)
+    s += c;
+  printf("c=%i, s=%i\n", c, s);
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob1a">The solution</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int i;
+
+  for (i = 0; i &lt; 5; i++)
+    switch(i)
+    {
+      case 1:   printf("*\n");    break;
+      case 2:   printf("**\n");   break;
+      case 3:   printf("***\n");  break;
+      default:  printf("?\n");    break;
+    }
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob1b">The solution</A>.<P>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int x = 10, y = 20; 
+  double d = x/y;
+
+  printf("%.2f\n", d);
+  d = 7.5;  y = 2;   x = d / y;
+  printf("%i\n", x);
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob1c">The solution</A>.<P>
+
+<H4><A NAME="prob1d">Part D</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  void tweak(double s[], int t);
+
+  int s = 4;
+  double t[4] = {17, 17, 17, 17};
+
+  tweak(t, s);
+  printf("%i\n", s);
+  printf("%i %i %i %I\n", t[0], t[1], t[2], t[3]);
+  return 0;
+}
+
+void tweak(double s[], int t)
+{
+  s[1] = 9;  s[2] = 13;  t = 10;
+}
+</PRE></BLOCKQUOTE>
+ 
+<P><A HREF="examsol2.html#prob1d">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="prob2">PROBLEM #2</A> (24 points, 8 points each)</H3>
+
+Each of the following programs have a comment that says what they
+are supposed to do.  But they don't do what they're supposed to do!
+Show us the minimal set of changes necessary to make these programs do
+what their comment claims that they do.   That is, <EM>mark up</EM>
+the programs to make them work!
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+ * Set all 10 elements of table to 100.
+ */
+main()
+{
+  int table[10];
+
+  x = 10;
+  setTable();
+}
+
+void setTable(int v)
+{
+  for (i = 0; i &lt; x; i++)
+    table[i] = v;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob2a">The solution</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+ * Set all "n" elements in "t" that match "value" to "newvalue"
+ */
+int remove(int t[], int n, int value, int newvalue)
+{
+  int i;
+  
+  for (i = 1; i &lt; n; i++)
+    if (t[i] = value)
+      i = newvalue;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob2b">The solution</A>.<P>
+
+<H4><A NAME="prob2c">Part C</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+ * Read one line of input and return a count of all the commas or periods
+ * that appear on the line.
+ */
+#include <stdio.h>
+
+void countPunct()
+{
+  int count = 0;
+  
+  while (c=getchar() != EOF)
+    if (c == ',' && c == '.')
+      count++;
+  return count;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob2c">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="prob3">PROBLEM #3</A> (32 points)</H3>
+
+<P> Assume you have a function, <TT>writeN</TT>, <EM>that has already
+been written for you</EM>.  <TT>writeN</TT> takes two arguments,
+a character,
+and a number, and writes that character that number of times. 
+For example, <TT>writeN('x', 5)</TT> writes <TT>xxxxx</TT>.
+Using this function, <EM>write a new function</EM>, <TT>displayTable</TT>,
+where the call
+<BLOCKQUOTE><PRE>
+tab[0] = 3; tab[1] = -5; tab[2] = 4; tab[3] = 0; tab[4] = -6;
+displayTable(tab, 5, 10, '+', '-');
+</PRE></BLOCKQUOTE>
+produces this output:
+<BLOCKQUOTE><PRE>
+..........!+++.......
+.....-----!..........
+..........!++++......
+..........!..........
+....------!..........
+</PRE></BLOCKQUOTE>
+
+<P>
+A sketch of the function and its expected parameters is shown
+at the top of the next page.   Your job is to fill in its body.
+
+<BLOCKQUOTE><PRE>
+/*
+   Display table's parameters:
+
+     a -    A table of integers.  Each array element states how many
+            "pos" or "neg" characters to write.  If the value is
+            positive, write that number of "pos" characters to the
+            right of the !, if it's negative, write that number of
+            "neg" characters to the left of the !
+     n  -   The number of entries in the table 
+     dots - The maximum number of dots to produce before and after the !. 
+     pos -  The character to write for a positive array element 
+     neg -  The character to write for a negative array element
+*/
+
+displayTable(int a[], int n, int dots, char pos, char neg)
+{
+
+
+}
+</PRE></BLOCKQUOTE>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><A HREF="examsol2.html#prob3">The solution</A>.<P>
+
+<H3><A NAME="prob4">PROBLEM #4</A> (20 points)</H3>
+
+<P> Write a program that prints only those input characters that appear
+between double quotes.  That is, if the input is:
+<BLOCKQUOTE><PRE>
+Some common greetings are "Hi", "Hello", and "Howzit".
+</PRE></BLOCKQUOTE>
+the output should be:
+<BLOCKQUOTE><PRE>
+Hi
+Hello
+Howzit
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob4">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

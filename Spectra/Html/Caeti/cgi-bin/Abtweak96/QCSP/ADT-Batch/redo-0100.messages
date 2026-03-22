@@ -1,0 +1,386 @@
+Note: the Allegro CL shared library moved to 0xef231000 because the previous
+      address of 0xf2222000 was not available.  Will perform relocation.
+      See the Allegro CL Release Notes for details.
+Allegro CL 4.2 [SPARC; R1] (9/6/94 11:02)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): Koala Redo Old Data Test Run: 0100, q-i2, FCDR, Dist1
+"Koala Redo Old Data Test Run: 0100, q-i2, FCDR, Dist1"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): 
+; Loading /users/sgwoods/Abtweak96/QCSP/load.lisp.
+T
+USER(5): Warning: NODE-CONSISTENT-VARIABLES, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: NODE-CONSISTENT-ONE-NODE, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: NODE-CONSISTENT-P, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: ARC-P, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: CONSISTENT-P, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: SORT-CONSTR, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-CONSTRAINT-MAX-LEVEL, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: CONSISTENT-ALL, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: TEST-CONSTRAINT-1, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: TEST-CONSTRAINT-2, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TEMPL-ID, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TEMPL-SLOTS, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TEMPL-CONSTRAINTS, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TEMPL-SLOT-OBJECT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: FIND-TEMPL-SLOT-OBJECT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-RELATED-CONSTRAINTS, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-SLOT-INTERSECTION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: APPLIES-TO-P, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: MEMBER-BOTH-P, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TSLOT-ID, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TSLOT-TYPE, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TSLOT-INSTANT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TSLOT-DOMAIN, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-BIND-ELEM-TSID, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-BIND-ELEM-SITID, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-BIND-ELEM-DOM, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TSLOT-BIND-ELEM, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-CONSTRAINT-TYPE, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-AFFECTED-LIST, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-PARAMETER-LIST, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-PARAM-LIST-LENGTH, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-NTH-PARAM, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-TEMPL-OBJECT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: FIND-TEMPL-OBJECT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: SET-CURRENT-TEMPLATE, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-SIT-OBJECT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-SIT-IDS, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-IDS, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-SIT-OBJ-TYPE, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: FIND-SIT-OBJECT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-SITUATION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: FIND-SITUATION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: SET-CURRENT-SITUATION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-DIST, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-SIT-ID, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: GET-SIT-TYPE, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-simple.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-simple.lisp
+Warning: CREATE-RAN-SITUATION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: CREATE-RANDOM-LST, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: N-VALS, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: CREATE-SIT-ID, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: RANDOM-ELEMENT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: RANDOM-ORDER, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: RANDOM-POSITION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: SHOW, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: SHOW-TEMPLATE, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: SHOW-SITUATION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: SAVE-SITUATION, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: SAVE-RAND, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: LOAD-RAND, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: UNIQUE-STRING, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: SAVE-GNUPLOT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/terrain-setup.lisp and is now being
+         defined in /users/sgwoods/Abtweak96/QCSP/adt-setup.lisp
+Warning: COMMENT, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/utility.lisp and is now being defined
+         in /users/sgwoods/Abtweak96/QCSP/adt-translate.lisp
+Warning: COMMENT1, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/utility.lisp and is now being defined
+         in /users/sgwoods/Abtweak96/QCSP/adt-translate.lisp
+Warning: COMMENT2, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/utility.lisp and is now being defined
+         in /users/sgwoods/Abtweak96/QCSP/adt-translate.lisp
+Warning: COMMENT3, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/utility.lisp and is now being defined
+         in /users/sgwoods/Abtweak96/QCSP/adt-translate.lisp
+Warning: NUM-TO-STRING, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/utility.lisp and is now being defined
+         in /users/sgwoods/Abtweak96/QCSP/adt-translate.lisp
+Warning: NUM-TO-LETTER, :OPERATOR was defined in
+         /users/sgwoods/Abtweak96/QCSP/utility.lisp and is now being defined
+         in /users/sgwoods/Abtweak96/QCSP/adt-translate.lisp
+T
+USER(6): USER(6): **** Noise 0100 ****
+"**** Noise 0100 ****"
+USER(7): 
+NIL
+USER(8): 
+NIL
+USER(9): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-default-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-default-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 817 msec user, 17 msec system
+; cpu time (gc)     150 msec user, 0 msec system
+; cpu time (total)  967 msec user, 17 msec system
+; real time  1,148 msec
+; space allocation:
+ 20,188 cons cells,;  161 symbols, 329,232 other bytes
+(((Q1-I ADTQ2-I) (Q1-B ADTQ2-B) (Q1-G ADTQ2-G) (Q1-A ADTQ2-A) (Q1-F ADTQ2-F)
+  (Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-I ADTQ1-I) (Q1-B ADTQ1-B) (Q1-A ADTQ1-A) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F)
+  (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(10): USER(10): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-1783960706-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-1783960706-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 650 msec user, 17 msec system
+; cpu time (gc)     0 msec user, 0 msec system
+; cpu time (total)  650 msec user, 17 msec system
+; real time  725 msec
+; space allocation:
+ 18,827 cons cells,;  166 symbols, 224,040 other bytes
+(((Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-F ADTQ2-F) (Q1-A ADTQ2-A) (Q1-B ADTQ2-B)
+  (Q1-G ADTQ2-G) (Q1-I ADTQ2-I) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A) (Q1-B ADTQ1-B)
+  (Q1-G ADTQ1-G) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I) (Q1-E ADTQ1-E)))
+USER(11): USER(11): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-6148712495-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-6148712495-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,034 msec user, 33 msec system
+; cpu time (gc)     266 msec user, 50 msec system
+; cpu time (total)  1,300 msec user, 83 msec system
+; real time  1,434 msec
+; space allocation:
+ 27,131 cons cells,;  164 symbols, 540,888 other bytes
+(((Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F)
+  (Q1-A ADTQ2-A) (Q1-G ADTQ2-G) (Q1-B ADTQ2-B) (Q1-I ADTQ2-I))
+ ((Q1-E ADTQ1-E) (Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B) (Q1-H ADTQ1-H)
+  (Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-G ADTQ1-G) (Q1-I ADTQ1-I)))
+USER(12): USER(12): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-8261581571-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-8261581571-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,333 msec user, 17 msec system
+; cpu time (gc)     117 msec user, 16 msec system
+; cpu time (total)  1,450 msec user, 33 msec system
+; real time  1,572 msec
+; space allocation:
+ 36,588 cons cells,;  175 symbols, 744,920 other bytes
+(((Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-G ADTQ2-G) (Q1-B ADTQ2-B) (Q1-I ADTQ2-I)
+  (Q1-F ADTQ2-F) (Q1-A ADTQ2-A) (Q1-C ADTQ2-C) (Q1-H ADTQ2-H))
+ ((Q1-E ADTQ1-E) (Q1-I ADTQ1-I) (Q1-B ADTQ1-B) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F)
+  (Q1-A ADTQ1-A) (Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-H ADTQ1-H)))
+USER(13): USER(13): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-4705297406-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-4705297406-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,251 msec user, 0 msec system
+; cpu time (gc)     83 msec user, 17 msec system
+; cpu time (total)  1,334 msec user, 17 msec system
+; real time  1,454 msec
+; space allocation:
+ 33,796 cons cells,;  179 symbols, 735,272 other bytes
+(((Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F)
+  (Q1-A ADTQ2-A) (Q1-G ADTQ2-G) (Q1-B ADTQ2-B) (Q1-I ADTQ2-I))
+ ((Q1-E ADTQ1-E) (Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-I ADTQ1-I) (Q1-H ADTQ1-H)
+  (Q1-B ADTQ1-B) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A)))
+USER(14): USER(14): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-6724813580-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-6724813580-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 633 msec user, 17 msec system
+; cpu time (gc)     67 msec user, 0 msec system
+; cpu time (total)  700 msec user, 17 msec system
+; real time  785 msec
+; space allocation:
+ 18,609 cons cells,;  166 symbols, 229,456 other bytes
+(((Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-F ADTQ2-F) (Q1-A ADTQ2-A) (Q1-B ADTQ2-B)
+  (Q1-G ADTQ2-G) (Q1-I ADTQ2-I) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A) (Q1-B ADTQ1-B)
+  (Q1-G ADTQ1-G) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I) (Q1-E ADTQ1-E)))
+USER(15): USER(15): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-8798969000-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-8798969000-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,317 msec user, 0 msec system
+; cpu time (gc)     33 msec user, 0 msec system
+; cpu time (total)  1,350 msec user, 0 msec system
+; real time  1,404 msec
+; space allocation:
+ 36,960 cons cells,;  181 symbols, 772,600 other bytes
+(((Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-G ADTQ2-G) (Q1-B ADTQ2-B) (Q1-F ADTQ2-F)
+  (Q1-A ADTQ2-A) (Q1-I ADTQ2-I) (Q1-H ADTQ2-H) (Q1-C ADTQ2-C))
+ ((Q1-E ADTQ1-E) (Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-I ADTQ1-I) (Q1-H ADTQ1-H)
+  (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-G ADTQ1-G) (Q1-A ADTQ1-A)))
+USER(16): USER(16): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-0805098560-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-0805098560-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,132 msec user, 16 msec system
+; cpu time (gc)     34 msec user, 0 msec system
+; cpu time (total)  1,166 msec user, 16 msec system
+; real time  1,234 msec
+; space allocation:
+ 30,159 cons cells,;  213 symbols, 508,896 other bytes
+(((Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F) (Q1-B ADTQ2-B) (Q1-G ADTQ2-G)
+  (Q1-A ADTQ2-A) (Q1-I ADTQ2-I) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-A ADTQ1-A)
+  (Q1-H ADTQ1-H) (Q1-F ADTQ1-F) (Q1-I ADTQ1-I) (Q1-G ADTQ1-G)))
+USER(17): USER(17): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-4767135635-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-4767135635-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,484 msec user, 17 msec system
+; cpu time (gc)     50 msec user, 0 msec system
+; cpu time (total)  1,534 msec user, 17 msec system
+; real time  1,604 msec
+; space allocation:
+ 40,953 cons cells,;  189 symbols, 889,208 other bytes
+(((Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-G ADTQ2-G) (Q1-A ADTQ2-A) (Q1-F ADTQ2-F)
+  (Q1-H ADTQ2-H) (Q1-B ADTQ2-B) (Q1-C ADTQ2-C) (Q1-I ADTQ2-I))
+ ((Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-B ADTQ1-B) (Q1-I ADTQ1-I)
+  (Q1-G ADTQ1-G) (Q1-H ADTQ1-H) (Q1-A ADTQ1-A) (Q1-F ADTQ1-F)))
+USER(18): USER(18): > Reload situation from existing file. < ADT-Situation/Sit-q-i2-dist1-7685437293-100 > 
+> Opened existing r/situation file. < #<CHARACTER-INPUT-FILE-STREAM
+                                        #p"/users/sgwoods/Abtweak96/QCSP/ADT-Situation/Sit-q-i2-dist1-7685437293-100" pos 0> > 
+> Opening output file/stream for : < ADT-Batch/redo-0100-out.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,233 msec user, 33 msec system
+; cpu time (gc)     50 msec user, 0 msec system
+; cpu time (total)  1,283 msec user, 33 msec system
+; real time  1,444 msec
+; space allocation:
+ 32,343 cons cells,;  173 symbols, 654,944 other bytes
+(((Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-C ADTQ2-C) (Q1-I ADTQ2-I) (Q1-H ADTQ2-H)
+  (Q1-B ADTQ2-B) (Q1-F ADTQ2-F) (Q1-G ADTQ2-G) (Q1-A ADTQ2-A))
+ ((Q1-E ADTQ1-E) (Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-H ADTQ1-H) (Q1-F ADTQ1-F)
+  (Q1-A ADTQ1-A) (Q1-B ADTQ1-B) (Q1-G ADTQ1-G) (Q1-I ADTQ1-I)))
+USER(19): ; Exiting Lisp

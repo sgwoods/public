@@ -1,0 +1,112 @@
+<HTML>
+<HEAD><TITLE>U of H Caeti Demo:Live Version</TITLE></HEAD>
+
+<BODY>
+<H1>Caeti Demo</H1>
+<H1>University of Hawaii</H1>
+
+<HR SIZE="12">
+<H2>Your requirements</H2>
+<P>Use the following questionnaire to specify your requirements.  Don't
+worry about not answering questions that aren't relevant to your plan.</P>
+
+<FORM Method="POST" ACTION="cgi-bin/run-demo.cgi">
+
+<HR>
+<H3><I>At the start of the exercise...</I></H3>
+<P>Indicate the platoon's starting formation:</P>
+<TABLE>
+<TR><TD><INPUT TYPE="radio" NAME="theStartForm" VALUE="coil">Coil</TD>
+    <TD><INPUT TYPE="radio" NAME="theStartForm"
+				VALUE="herringbone">Herringbone</TD>
+    <TD><INPUT TYPE="radio" NAME="theStartForm"
+				VALUE="halted-ctf">Halted Column</TD>
+    <TD><INPUT TYPE="radio" NAME="theStartForm"
+				VALUE="halted-wltf">Halted Wedge</TD>
+</TR>
+</TABLE>
+<P>Indicate the coordinates of the starting location:
+<INPUT TYPE="text" NAME="theStartCoords" SIZE="8" MAXLENGTH="8">
+(e.g., NK123456)</P>
+
+<HR>
+<H3><I>In the middle...</I></H3>
+<P>Indicate the drills you want to be included in the exercise (you can
+require that a drill appear more than once by entering a number in its
+text field):</P>
+<BR>
+<TABLE>
+<TR ALIGN=LEFT><TH>Battle drills</TH><TH></TH>
+	<TH ROWSPAN=8><PRE>          </PRE></TH>
+	<TH>Traveling formations</TH><TH></TH>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="vfaa">Air attack</TD>
+    <TD><INPUT TYPE="text"     NAME="vfaa-num" SIZE="2" MAXLENGTH="2"></TD>
+    <TD><INPUT TYPE="checkbox" NAME="ctf">Column</TD>
+    <TD><INPUT TYPE="text"     NAME="ctf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="cfs">Contact drill</TD>
+    <TD><INPUT TYPE="text"     NAME="cfs-num" SIZE="2" MAXLENGTH="2"></TD>
+    <TD><INPUT TYPE="checkbox" NAME="sctf">Staggered column</TD>
+    <TD><INPUT TYPE="text"     NAME="sctf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="ad">Action drill</TD>
+    <TD><INPUT TYPE="text"     NAME="ad-num" SIZE="2" MAXLENGTH="2"></TD>
+    <TD><INPUT TYPE="checkbox" NAME="wltf">Wedge</TD>
+    <TD><INPUT TYPE="text"     NAME="wltf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TH ALIGN=LEFT>Traveling techniques</TH>
+    <TD></TD>
+    <TD><INPUT TYPE="checkbox" NAME="eltf">Echelon</TD>
+    <TD><INPUT TYPE="text"     NAME="eltf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="ttm">Traveling technique</TD>
+    <TD><INPUT TYPE="text"     NAME="ttm-num" SIZE="2" MAXLENGTH="2"></TD>
+    <TD><INPUT TYPE="checkbox" NAME="vtf">Vee</TD>
+    <TD><INPUT TYPE="text"     NAME="vtf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="totm">Traveling overwatch</TD>
+    <TD><INPUT TYPE="text"     NAME="totm-num" SIZE="2" MAXLENGTH="2"></TD>
+    <TD><INPUT TYPE="checkbox" NAME="ltf">Line</TD>
+    <TD><INPUT TYPE="text"     NAME="ltf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="botm">Bounding overwatch
+    <TD><INPUT TYPE="text"     NAME="botm-num" SIZE="2" MAXLENGTH="2">
+    <TD></TD>
+    <TD></TD>
+</TR>
+</TABLE>
+
+<HR>
+<H3><I>At the end...</I></H3>
+<P>Indicate the platoon's ending formation:</P>
+<TABLE>
+<TR><TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="coil">Coil
+    <TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="herringbone">Herringbone
+    <TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="halted-ctf">Halted Column
+    <TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="halted-wltf">Halted Wedge
+</TR>
+</TABLE>
+<P>Indicate the coordinates of the ending location:
+<INPUT TYPE="text" NAME="theEndCoords" SIZE="8" MAXLENGTH="8">
+(e.g., NK123456)</P>
+
+<BR>
+<P><INPUT TYPE="SUBMIT" VALUE="Generate scenarios">
+<INPUT TYPE="RESET" VALUE="Clear this form"></P>
+
+<HR SIZE="12">
+<H2>One scenario generated for your requirements</H2>
+<P>The output will go here.</P>
+<INPUT TYPE="SUBMIT" VALUE="Show a different scenario">
+<BR>
+
+</FORM>
+
+<HR SIZE="12">
+<a href="http://spectra.eng.hawaii.edu/~pautler/Caeti/demo.html">
+Back to the Demo homepage
+</a>
+
+</BODY>
+</HTML>

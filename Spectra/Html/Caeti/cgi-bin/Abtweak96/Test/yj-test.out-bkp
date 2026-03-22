@@ -1,0 +1,21 @@
+
+theStartForm Herringbone
+theStartCoords 390175
+one-leg? on
+Leg1Tform Column
+Leg1TravT ANY
+Leg1BDrill NONE
+Leg1StopForm NONE
+two-legs? on
+Leg2Tform Wedge
+Leg2TravT Traveling_overwatch
+Leg2BDrill Contact_drill
+Leg2StopForm Halt_in_form
+three-legs? on
+Leg3Tform NONE_bounding_overwatch
+Leg3TravT Bounding_overwatch
+Leg3BDrill Air_attack
+Leg3StopForm Coil
+theEndCoords NIL
+MinDuration NIL
+MinDuration NIL

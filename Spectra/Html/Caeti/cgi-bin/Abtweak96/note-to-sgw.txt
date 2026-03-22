@@ -1,0 +1,42 @@
+Steve,
+
+I ran a test case for the planner and got the following incomplete
+termination.  Assuming that at least one of the many plans on *open*
+was still valid, I can't guess why the planner would quit.  Can you?
+
+(Please respond to my real email address.)
+
+	-dp-
+
+
+
+--------------------------------------------
+Plans violating MP:
+     invalid plans:
+Search: plan costs on *open*: 19 20 21 23 24 25 28 29 30 33 34 35 38 39 40 43 44 65 69
+
+
+***** ABTWEAK plan Terminated *****
+
+Subgoal-determine-mode: CLOSEST-TO-INITIAL
+Establisher-ranking-heuristic: DIFF-STAGE-NECE-AND-POSS
+Plan-cost-heuristic: OPERATOR-COSTS-SUM
+--- Statistics ---
+
+Total Number of Nodes Expanded: 15
+Total Number of Nodes Generated: 70
+
+Total CPU Seconds: 300.533
+
+Total Number of Abs Refinements: 0 
+
+
+ Level     Probability 
+
+ 1           0.000 
+
+ 0           0.000 
+Incomplete Termination...
+
+ ...the planner failed to find a solution.
+NIL

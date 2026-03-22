@@ -1,0 +1,20 @@
+;; Test rule-base for Infer.lsp
+
+;;;;;;;;;;;;;;;;;;;; Test 1
+
+;; input-propo: '(same-personality Fred Barney)
+
+(def-rule
+  :r1
+  '(((same-appearance ?p1 ?p2) AND
+     (same-personality ?p1 ?p2) )
+    -> (same-person ?p1 ?p2) ))
+
+(def-rule
+  :r2
+  '((same-appearance ?p1 ?p2)
+    <- (frat-brothers ?p1 ?p2) ))
+
+(def-rule :r3 '(frat-brothers Fred Barney))
+
+;;;;;;;;;;;;;;;;;;;; Test 2

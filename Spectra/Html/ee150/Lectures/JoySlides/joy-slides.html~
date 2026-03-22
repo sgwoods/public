@@ -1,0 +1,259 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Topics</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff" text="#0000af">
+
+<IMG SRC="../Images/Overhead.gif" WIDTH=146 HEIGHT=178
+     HSPACE=10 VSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1><A NAME=#top>EE150 - Fall 1996</A></H1>
+
+<H2> Lecture <BR>
+Summaries </H2>
+
+<P> This page indexes this course's lecture summaries.  It
+is organized by date.   The lecture summaries are grouped by week. 
+You can either select a particular week, which takes you to the
+lecture summaries for that week, or a particular date, which takes you
+directly to the lecture summary for that date.  
+
+<BR CLEAR=all>
+
+<B>Jump To Week:</B> [<A HREF=#week1>1</A> |
+                      <A HREF=#week2>2</A> |
+                      <A HREF=#week3>3</A> |
+                      <A HREF=#week4>4</A> |
+                      <A HREF=#week5>5</A> |
+                      <A HREF=#week6>6</A> |
+                      <A HREF=#week7>7</A> |
+                      <A HREF=#week8>8</A> |
+                      <A HREF=#week9>9</A> |
+                      <A HREF=#week10>10</A> |
+                      <A HREF=#week11>11</A> |
+                      <A HREF=#week12>12</A> |
+                      <A HREF=#week13>13</A> |
+                      <A HREF=#week14>14</A> |
+                      <A HREF=#week15>15</A> |
+                      <A HREF=#week16>16</A>]
+
+<IMG SRC="../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<A NAME="week1">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week1.html">Week 1</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week1.html#aug26">Monday, August 26th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week1.html#aug28">Wednesday, August 28th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week1.html#aug30">Friday, August 30th.</A>
+    </DL>
+
+<A NAME="week2">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week2.html">Week 2</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+         Monday, September 2nd (Holiday - labour day)
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+         <A HREF="week2.html#sep4">Wednesday, September 4th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+         <A HREF="week2.html#sep6">Friday, September 6th.</A>
+     </DL>
+
+<A NAME="week3">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week3.html">Week 3</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week3.html#sep9">Monday, September 9th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week3.html#sep11">Wednesday, September 11th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week3.html#sep13">Friday, September 13th.</A>
+    </DL>
+
+<A NAME="week4">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week4.html">Week 4</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week4.html#sep16">Monday, September 16th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week4.html#sep18">Wednesday, September 18th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week4.html#sep20">Friday, September 20th.</A>
+    </DL>
+
+<A NAME="week5">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week5.html">Week 5</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week5.html#sep23">Monday, September 23rd.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week5.html#sep25">Wednesday, September 25th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week5.html#sep27">Friday, September 27th.</A>
+    </DL>
+
+<A NAME="week6">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week6.html">Week 6</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week6.html#sep30">Monday, September 30th</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        Wednesday, October 2nd
+        (<A HREF="http:../Exams/info.html#mid1">First Midterm</A>).
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week6.html#oct4">Friday, October 4th.</A>
+    </DL>
+
+<A NAME="week7">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week7.html">Week 7</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week7.html#oct7">Monday, October 7th</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week7.html#oct9">Wednesday, October 9th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week7.html#oct11">Friday, October 11th.</A>
+    </DL>
+
+<A NAME="week8">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week8.html">Week 8</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week8.html#oct14">Monday, October 14th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week8.html#oct16">Wednesday, October 16th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week8.html#oct18">Friday, October 18th.</A>
+    </DL>
+
+<A NAME="week9">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week9.html">Week 9</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week9.html#oct21">Monday, October 21st.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week9.html#oct23">Wednesday, October 23rd.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week9.html#oct25">Friday, October 25th.</A>
+    </DL>
+
+<A NAME="week10">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week10.html">Week 10</A></A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week10.html#oct28">Monday, October 28th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week10.html#oct30">Wednesday, October 30th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week10.html#nov1">Friday, November 1st.</A>
+    </DL>
+
+<A NAME="week11">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week11.html">Week 11</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week11.html#nov4">Monday, November 4th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week11.html#nov6">Wednesday, November 6th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week11.html#nov8">Friday, November 8th.</A>
+    </DL>
+
+<A NAME="week12">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week12.html">Week 12</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        Monday, November 11th (Holiday, Veteran's Day).
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	Wednesday, November 13th
+	(<A HREF="http:../Exams/info.html#mid2">Second Midterm</A>).
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="week12.html#nov15">Friday, November 15th</A>.
+    </DL>
+
+<A NAME="week13">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week13.html">Week 13</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week13.html#nov18">Monday, November 18th</A>.
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week13.html#nov20">Wednesday, November 20th</A>.
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week13.html#nov22">Friday, November 22nd</A>.
+    </DL>
+
+<A NAME="week14">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week14.html">Week 14</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week14.html#nov25">Monday, November 25th</A>.
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week14.html#nov27">Wednesday, November 27th.</A>.
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	Friday, November 29th (Holiday, Thanksgiving).
+    </DL>
+
+<A NAME="week15">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week15.html">Week 15</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week15.html#dec2">Monday, December 2nd.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week15.html#dec4">Wednesday, December 4th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week15.html#dec6">Friday, December 6th.</A>
+    </DL>
+
+<A NAME="week16">
+<DT><IMG SRC="../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+</A>
+    <B><A HREF="week16.html">Week 16</A></B>
+    <DL>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week16.html#dec9">Monday, December 9th.</A>
+    <DT><IMG SRC="../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+	<A HREF="week16.html#dec11">Wednesday, December 11th</A> (Last Day of Class).
+    </DL>
+
+</DL>
+
+<IMG SRC="../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>[<A HREF="http:#top">Top Of Page</A> |
+    <A HREF="http:../info.html">EE150 Home Page</A>]
+
+</BODY>

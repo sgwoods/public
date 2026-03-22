@@ -1,0 +1,21 @@
+koala:/users/sgwoods/Abtweak96 > grepall "plan-cr"
+Ab-routines/ab-causal.lsp:  (append (plan-cr plan) (find-k-cr plan k))
+Ab-routines/ab-general.lsp:      (setf (plan-cr plan) (new-cr plan old-k))
+Ab-routines/ab-successors.lsp:(plan-cr plan)
+Domains/simple.lsp:(defun pcr () (plan-cr *solution*))
+Domains/simple0.lsp:(defun pcr () (plan-cr *solution*))
+Mcallester-plan/find-one-mr-conflict.lsp:  (let ((crs (plan-cr plan))
+Mcallester-plan/successors.lsp:  "returns T if and only if there is an entry of plan-cr for which
+Mcallester-plan/successors.lsp:   (plan-cr plan)
+Mcallester-plan/successors.lsp:   Returns each plan with <user-id precond (list producer-id)> added to  plan-cr."
+Mcallester-plan/successors.lsp:         (setf (plan-cr plan)
+Mcallester-plan/successors.lsp:                     (plan-cr plan)))
+Tw-routines/Plan-infer/cr-access.lsp:  (plan-cr plan))
+Tw-routines/Plan-infer/cr-access.lsp:  "returns a new plan with new-cr-element added to plan-cr."
+Tw-routines/Plan-infer/cr-access.lsp:  (setf (plan-cr plan)
+Tw-routines/Plan-infer/cr-access.lsp:   (cons (list  userid condition estid-list)(plan-cr plan)))
+Tw-routines/Plan-infer/plan-dependent.lsp:  (plan-cr plan))
+Tw-routines/Plan-infer/plan-dependent.lsp:         :cr        (plan-cr plan)
+Tw-routines/Plan-infer/plan-dependent.lsp:      (setf (plan-cr plan)
+Tw-routines/Plan-infer/plan-dependent.lsp:                  (plan-cr plan))))
+grep: QCSP/*..lisp: No such file or directory

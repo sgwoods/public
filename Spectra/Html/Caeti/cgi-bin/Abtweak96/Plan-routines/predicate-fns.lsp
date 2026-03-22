@@ -1,0 +1,94 @@
+;; Plan-routines/predicate-fns.lsp
+
+;; Written by David Pautler 1/97
+;; Updated 6/97 to use #'add-co-to-plan instead of #'equal for '=
+;;  This required adding a 'plan' param to #'predicate-fn-p
+
+(let ((pos-pred-fns (make-hash-table))
+      (neg-pred-fns (make-hash-table)) )
+  (defun make-pred-fn (pred fn &key (negation-of-pred? nil))
+    (if negation-of-pred?
+	(setf (gethash pred neg-pred-fns) fn)
+      (setf (gethash pred pos-pred-fns) fn) ))
+
+  (defun get-pred-fn (pred &key (negation-of-pred? nil))
+    (if negation-of-pred?
+	(gethash pred neg-pred-fns)
+      (gethash pred pos-pred-fns) ))
+  )
+
+;; ALL PRED-FNS MUST TAKE THE CURRENT PLAN AS THEIR FINAL PARAM, IN
+;;  ADDITION TO THEIR TYPICAL PARAMS.
+
+(make-pred-fn
+ '=
+ #'(lambda (x y plan) ;was #'equal
+     (add-co-to-plan x y plan)
+     (not (plan-invalid-p plan)) ))
+
+(make-pred-fn
+ '=
+ #'(lambda (x y plan)
+     (add-nc-to-plan x y plan)
+     (not (plan-invalid-p plan)) )
+ :negation-of-pred? t )
+
+
+
+
+
+#| the functionality of pred-fns should be shifted to the CSP engine
+(make-pred-fn
+ '<
+ #'< )
+|#
+
+
+
+
+
+;; suggestions for others: has-element-p, grounded-p, etc.
+
+(defun predicate-fn-p (prop plan)
+  "Plan-routines/predicate-fns.lsp
+   determines if a prop is true by checking whether its predicate has an
+   associated fn which is true when applied to the prop's args"
+  (declare (list prop) (type plan plan))
+
+  (if (eq 'not (first prop))
+      (or (let ((pred-fn (get-pred-fn (second prop) :negation-of-pred? t)))
+	    (and pred-fn
+		 (values (apply pred-fn (append (cddr prop) (list plan)))
+			 (not (null pred-fn)) )))
+	  (multiple-value-bind (result presence-of-fn)
+			       (predicate-fn-p (rest prop) plan)
+			       ;; If there is no pred-fn, then don't allow its
+			       ;;  absence to be turned into a T, indicating
+			       ;;  that the precond is satisfied.
+			       (values (and presence-of-fn
+					    (not result) )
+				       presence-of-fn )))
+    (let ((pred-fn (get-pred-fn (first prop))))
+      (values (and pred-fn (apply pred-fn (append (rest prop) (list plan))))
+	      (not (null pred-fn)) ))))
+
+(defun check-all-precond-predicate-fns-p (plan)
+  "Plan-routines/predicate-fns.lsp
+  checks that all preconds which could be satisfied by a pred-fn currently
+  are satisfied"
+  (declare (array plan))
+
+  (unless
+   (every #'(lambda (operator)
+	      (every #'(lambda (precond)
+			 (multiple-value-bind (result presence-of-fn)
+					      (predicate-fn-p precond plan)
+					      (or (null presence-of-fn)
+						  result )))
+		     (operator-preconditions operator) ))
+	  (plan-a plan) )
+   (when *plan-debug-mode*
+	 (format *output-stream*
+		 "~%Plan ~s is invalid according to an attached procedure"
+		 (plan-id plan) ))
+   (setf (plan-invalid-p plan) t) ))

@@ -1,0 +1,494 @@
+;;; forms-to-planner.lsp
+
+(defun test1 ()
+(demo 
+:theStartForm "Herringbone"
+:theStartCoords "390175"
+:MinDuration "60"
+:MaxDuration "180"
+:one-leg? "on"
+:Leg1Tform "Column"
+:Leg1TravT "ANY"
+:Leg1BDrill "NONE"
+:Leg1StopForm "NONE"
+:two-legs? "on"
+:Leg2Tform "Wedge"
+:Leg2TravT "Traveling_overwatch"
+:Leg2BDrill "Contact_drill"
+:Leg2StopForm "Halt_in_form"
+:three-legs? "on"
+:Leg3Tform "NONE_bounding_overwatch"
+:Leg3TravT "Bounding_overwatch"
+:Leg3BDrill "Air_attack"
+:Leg3StopForm "Coil"
+))
+
+(defun test2 ()
+(demo 
+:theStartForm "Herringbone"
+:theStartCoords "390175"
+:MinDuration "60"
+:MaxDuration "180"
+:one-leg? "on"
+:Leg1Tform "Column"
+:Leg1TravT "ANY"
+:Leg1BDrill "Contact_drill"
+:Leg1StopForm "NONE"
+:two-legs? "on"
+:Leg2Tform "NONE_bounding_overwatch"
+:Leg2TravT "Bounding_overwatch"
+:Leg2BDrill "Air_attack"
+:Leg2StopForm "Halt_in_form"
+:three-legs? "on"
+:Leg3Tform "ANY"
+:Leg3TravT "Traveling_overwatch"
+:Leg3BDrill "NONE"
+:Leg3StopForm "Coil"
+))
+
+(defun create-leg-initial-state (i-s start-pos end-pos)
+  (append i-s
+	  `((NOT firing-on White ,(gentemp "$enemy-pos")
+		 ,(gentemp "$dir-or-indir")
+		 ,start-pos ,end-pos ))))
+
+(defun demo (&key theStartForm 
+		  (theStartCoords nil)
+		  (theEndCoords nil)
+		  (one-leg? nil) 
+		  Leg1Tform 
+		  Leg1TravT 
+		  Leg1BDrill 
+		  Leg1StopForm
+		  (two-legs? nil) 
+		  Leg2Tform Leg2TravT 
+		  Leg2BDrill 
+		  Leg2StopForm
+		  (three-legs? nil) 
+		  Leg3Tform 
+		  Leg3TravT 
+		  Leg3BDrill 
+		  Leg3StopForm
+		  (MinDuration nil)
+		  (MaxDuration nil)
+		  )
+  (let* ((min-dur (and MinDuration (parse-integer MinDuration)))
+	 (max-dur (and MaxDuration (parse-integer MaxDuration)))
+	 i-state-x
+	 i-state-y
+	 (i-state-xy
+	  (cond (theStartCoords
+		 (setq i-state-x (parse-integer theStartCoords :end 3)
+		       i-state-y (parse-integer theStartCoords :start 3) )
+		 (list i-state-x i-state-y) ) ;change to dotted pair?
+		(t
+		 (gentemp "cp") )))
+	 (i-state-stat-form
+	  (cond ((equalp "Coil" theStartForm) 'coil)
+		((equalp "Herringbone" theStartForm) 'herringbone)
+		((equalp "Halted_Column" theStartForm) 'halted-col)
+		((equalp "Halted_Wedge" theStartForm) 'halted-wedge)
+		(t 'herringbone) ))
+	 (l1-tform
+	  (and one-leg?
+	       (cond ((equalp "Column" Leg1Tform) 'ctf)
+		     ((equalp "Staggered_column" Leg1Tform) 'sctf)
+		     ((equalp "Wedge" Leg1Tform) 'wltf)
+		     ((equalp "Echelon" Leg1Tform) 'eltf)
+		     ((equalp "Vee" Leg1Tform) 'vtf)
+		     ((equalp "Line" Leg1Tform) 'ltf)
+		     ((equalp "NONE_Bounding_overwatch" Leg1Tform) 'no-tf)
+		     (t 'wltf) )))
+	 (l1-tmethod
+	  (and one-leg?
+	       (cond ((equalp "Traveling_technique" Leg1TravT) 'ttm)
+		     ((equalp "Traveling_overwatch" Leg1TravT) 'totm)
+		     ((equalp "Bounding_overwatch" Leg1TravT) 'botm)
+		     (t 'ttm) )))
+	 (l1-drill
+	  (and one-leg?
+	       (cond ((equalp "Air_attack" Leg1BDrill) 'vfaa)
+		     ((equalp "Contact_drill" Leg1BDrill) 'cfcr)
+		     ((equalp "Action-wo-contact" Leg1BDrill) 'ad)
+		     (t 'nbd) ))) ;no battle drill
+	 (l1-stop-form
+	  (and one-leg?
+	       (cond ((eq 'vfaa l1-drill) 'htf)
+		     ((equalp "Coil" Leg1StopForm) 'sicoil)
+		     ((equalp "Herringbone" Leg1StopForm) 'siherr)
+		     ((equalp "Halt_in_form" Leg1StopForm) 'htf)
+		     (t 'no-stop) )))
+	 (l2-tform
+	  (and two-legs?
+	       (cond ((equalp "Column" Leg2Tform) 'ctf)
+		     ((equalp "Staggered_column" Leg2Tform) 'sctf)
+		     ((equalp "Wedge" Leg2Tform) 'wltf)
+		     ((equalp "Echelon" Leg2Tform) 'eltf)
+		     ((equalp "Vee" Leg2Tform) 'vtf)
+		     ((equalp "Line" Leg2Tform) 'ltf)
+		     ((equalp "NONE_Bounding_overwatch" Leg2Tform) 'no-tf)
+		     (t 'wltf) )))
+	 (l2-tmethod
+	  (and two-legs?
+	       (cond ((equalp "Traveling_technique" Leg2TravT) 'ttm)
+		     ((equalp "Traveling_overwatch" Leg2TravT) 'totm)
+		     ((equalp "Bounding_overwatch" Leg2TravT) 'botm)
+		     (t 'ttm) )))
+	 (l2-drill
+	  (and two-legs?
+	       (cond ((equalp "Air_attack" Leg2BDrill) 'vfaa)
+		     ((equalp "Contact_drill" Leg2BDrill) 'cfcr)
+		     ((equalp "Action-wo-contact" Leg2BDrill) 'ad)
+		     (t 'nbd) ))) ;no battle drill
+	 (l2-stop-form
+	  (and two-legs?
+	       (cond ((eq 'vfaa l2-drill) 'htf)
+		     ((equalp "Coil" Leg2StopForm) 'sicoil)
+		     ((equalp "Herringbone" Leg2StopForm) 'siherr)
+		     ((equalp "Halt_in_form" Leg2StopForm) 'htf)
+		     (t 'no-stop) )))
+	 (l3-tform
+	  (and three-legs?
+	       (cond ((equalp "Column" Leg3Tform) 'ctf)
+		     ((equalp "Staggered_column" Leg3Tform) 'sctf)
+		     ((equalp "Wedge" Leg3Tform) 'wltf)
+		     ((equalp "Echelon" Leg3Tform) 'eltf)
+		     ((equalp "Vee" Leg3Tform) 'vtf)
+		     ((equalp "Line" Leg3Tform) 'ltf)
+		     ((equalp "NONE_Bounding_overwatch" Leg3Tform) 'no-tf)
+		     (t 'wltf) )))
+	 (l3-tmethod
+	  (and three-legs?
+	       (cond ((equalp "Traveling_technique" Leg3TravT) 'ttm)
+		     ((equalp "Traveling_overwatch" Leg3TravT) 'totm)
+		     ((equalp "Bounding_overwatch" Leg3TravT) 'botm)
+		     (t 'ttm) )))
+	 (l3-drill
+	  (and three-legs?
+	       (cond ((equalp "Air_attack" Leg3BDrill) 'vfaa)
+		     ((equalp "Contact_drill" Leg3BDrill) 'cfcr)
+		     ((equalp "Action-wo-contact" Leg3BDrill) 'ad)
+		     (t 'nbd) ))) ;no battle drill
+	 (l3-stop-form
+	  (and three-legs?
+	       (cond ((eq 'vfaa l3-drill) 'htf)
+		     ((equalp "Coil" Leg3StopForm) 'sicoil)
+		     ((equalp "Herringbone" Leg3StopForm) 'siherr)
+		     ((equalp "Halt_in_form" Leg3StopForm) 'htf)
+		     (t 'no-stop) )))
+	 g-state-x
+	 g-state-y
+	 (g-state-xy
+	  (cond (theEndCoords
+		 (setq g-state-x (parse-integer theEndCoords :end 3)
+		       g-state-y (parse-integer theEndCoords :start 3) )
+		 (list g-state-x g-state-y) ) ;change to dotted pair?
+		(t
+		 (gentemp "cp") )))
+
+	 (l1-end-coord (gentemp "cp"))
+	 (l1-reqd-opids nil)
+	 (l1-i-state
+	  (and one-leg?
+	       (cons i-state-xy
+		     (cond ((find i-state-stat-form '(coil herringbone))
+			    (push 'mofsf l1-reqd-opids)
+			    (create-leg-initial-state
+			     `((in-stat-formation White ,i-state-xy
+						  ,i-state-stat-form
+						  ,(gentemp "$security")
+						  ,(gentemp "$exec-speed")
+						  ,(gentemp "$mo-speed")
+						  0.0 ))
+			     i-state-xy l1-end-coord ))
+			   ((eq 'halted-col i-state-stat-form)
+			    (push 'mofhtf l1-reqd-opids)
+			    (create-leg-initial-state
+			     `((stopped-at White ,i-state-xy 0.0)
+			       (in-trav-formation White ,i-state-xy ,i-state-xy
+						  Column ,(gentemp "$ff")
+						  ,(gentemp "$lf")
+						  ,(gentemp "$rf")
+						  ,(gentemp "$tmethod") ))
+			     i-state-xy l1-end-coord ))
+			   ((eq 'halted-wedge i-state-stat-form)
+			    (push 'mofhtf l1-reqd-opids)
+			    (create-leg-initial-state
+			     `((stopped-at White ,i-state-xy 0.0)
+			       (in-trav-formation White ,i-state-xy ,i-state-xy
+						  Wedge-left ,(gentemp "$ff")
+						  ,(gentemp "$lf")
+						  ,(gentemp "$rf")
+						  ,(gentemp "$tmethod") ))
+			     i-state-xy l1-end-coord )))
+		     )))
+	 (l1-time (gentemp "$exec-time"))
+	 (l1-g-state ;used as part of l2-i-state
+	  (and one-leg?
+	       (cons l1-end-coord
+		     (cond ((find l1-stop-form '(sicoil siherr))
+			    (push l1-stop-form l1-reqd-opids)
+			    `((in-stat-formation White ,l1-end-coord
+						 ,(if (eq 'sicoil l1-stop-form)
+						      'coil 'herringbone )
+						 ,(gentemp "$security")
+						 ,(gentemp "$exec-speed")
+						 ,(gentemp "$mo-speed")
+						 ,l1-time )))
+			   ((eq 'htf l1-stop-form)
+			    (push 'htf l1-reqd-opids)
+			    (list*
+			     `(stopped-at White ,l1-end-coord ,l1-time)
+			     (and (not (eq 'botm l1-tmethod))
+				  `((in-trav-formation
+				    White ,i-state-xy
+				    ,l1-end-coord
+				    ,(case l1-tform
+					   (ctf 'column)
+					   (sctf 'staggered-column)
+					   (wltf 'wedge-left)
+					   (eltf 'echelon-left)
+					   (vtf 'vee)
+					   (ltf 'line) )
+				    ,(gentemp "$ff")
+				    ,(gentemp "$lf")
+				    ,(gentemp "$rf")
+				    ,(gentemp "$tmethod") )))))
+			   (t
+			    (list*
+			     `(at-location White ,l1-end-coord ,l1-time)
+			     `(moving-along-leg White ,i-state-xy
+						,l1-end-coord
+						,(gentemp "$speed")
+						,(gentemp "$security")
+						,(gentemp "$method") )
+			     (and (not (eq 'botm l1-tmethod))
+				  `((in-trav-formation
+				    White ,i-state-xy
+				    ,l1-end-coord
+				    ,(case l1-tform
+					   (ctf 'column)
+					   (sctf 'staggered-column)
+					   (wltf 'wedge-left)
+					   (eltf 'echelon-left)
+					   (vtf 'vee)
+					   (ltf 'line) )
+				    ,(gentemp "$ff")
+				    ,(gentemp "$lf")
+				    ,(gentemp "$rf")
+				    ,(gentemp "$tmethod") )))))
+			   ))))
+	 (l2-reqd-opids nil)
+	 (l2-end-coord (gentemp "cp"))
+	 (l2-time (gentemp "$exec-time"))
+	 (l2-g-state ;used as part of l3-i-state
+	  (and two-legs?
+	       (cons l2-end-coord
+		     (cond ((find l2-stop-form '(sicoil siherr))
+			    (push l2-stop-form l2-reqd-opids)
+			    `((in-stat-formation White ,l2-end-coord
+						 ,(if (eq 'sicoil l2-stop-form)
+						      'coil 'herringbone )
+						 ,(gentemp "$security")
+						 ,(gentemp "$exec-speed")
+						 ,(gentemp "$mo-speed")
+						 ,l2-time )))
+			   ((eq 'htf l2-stop-form)
+			    (push 'htf l2-reqd-opids)
+			    (list*
+			     `(stopped-at White ,l2-end-coord ,l2-time)
+			      (and (not (eq 'botm l2-tmethod))
+				   `((in-trav-formation
+				     White ,l1-end-coord
+				     ,l2-end-coord
+				     ,(case l2-tform
+					    (ctf 'column)
+					    (sctf 'staggered-column)
+					    (wltf 'wedge-left)
+					    (eltf 'echelon-left)
+					    (vtf 'vee)
+					    (ltf 'line) )
+				     ,(gentemp "$ff")
+				     ,(gentemp "$lf")
+				     ,(gentemp "$rf")
+				     ,(gentemp "$tmethod") )))))
+			   (t
+			    (list*
+			     `(at-location White ,l2-end-coord ,l2-time)
+			     `(moving-along-leg White ,l1-end-coord
+						,l2-end-coord
+						,(gentemp "$speed")
+						,(gentemp "$security")
+						,(gentemp "$method") )
+			     (and (not (eq 'botm l2-tmethod))
+				  `((in-trav-formation
+				    White ,l1-end-coord
+				    ,l2-end-coord
+				    ,(case l2-tform
+					   (ctf 'column)
+					   (sctf 'staggered-column)
+					   (wltf 'wedge-left)
+					   (eltf 'echelon-left)
+					   (vtf 'vee)
+					   (ltf 'line) )
+				    ,(gentemp "$ff")
+				    ,(gentemp "$lf")
+				    ,(gentemp "$rf")
+				    ,(gentemp "$tmethod") )))))
+			   ))))
+
+	 (l3-reqd-opids nil)
+	 (l3-time (gentemp "$exec-time"))
+	 (l3-g-state
+	  (and three-legs?
+	       (cons g-state-xy
+		     (cond ((find l3-stop-form '(sicoil siherr))
+			    (push l3-stop-form l3-reqd-opids)
+			    `((in-stat-formation White ,g-state-xy
+						 ,(if (eq 'sicoil l3-stop-form)
+						      'coil 'herringbone )
+						 ,(gentemp "$security")
+						 ,(gentemp "$exec-speed")
+						 ,(gentemp "$mo-speed")
+						 ,l3-time )))
+			   ((eq 'htf l3-stop-form)
+			    (push 'htf l3-reqd-opids)
+			    (list*
+			     `(stopped-at White ,g-state-xy ,l3-time)
+			      (and (not (eq 'botm l3-tmethod))
+				   `((in-trav-formation
+				     White ,l2-end-coord
+				     ,g-state-xy
+				     ,(case l3-tform
+					    (ctf 'column)
+					    (sctf 'staggered-column)
+					    (wltf 'wedge-left)
+					    (eltf 'echelon-left)
+					    (vtf 'vee)
+					    (ltf 'line) )
+				     ,(gentemp "$ff")
+				     ,(gentemp "$lf")
+				     ,(gentemp "$rf")
+				     ,(gentemp "$tmethod") )))))
+			   ))))
+	 (additional-constraints nil)
+	 (l2-i-state
+	  (create-leg-initial-state l1-g-state l1-end-coord l2-end-coord) )
+	 (l3-i-state
+	  (create-leg-initial-state l2-g-state l2-end-coord g-state-xy) )
+	 )
+    (when min-dur
+	  (push `(> ,l3-time ,min-dur) additional-constraints) )
+    (when max-dur
+	  (push `(< ,l3-time ,max-dur) additional-constraints) )
+
+    (unless (eq 'no-tf l1-tform)
+	    (push l1-tform l1-reqd-opids) )
+    (push l1-tmethod l1-reqd-opids)
+    (push l1-drill l1-reqd-opids) ;what about action-drill/mfls??????????????
+    (push (if (eq 'botm l1-tmethod) 'mtle-bo 'mtle-nbo) l1-reqd-opids)
+    (when (find 'vfaa l1-reqd-opids)
+	  (setq l1-reqd-opids
+		(remove 'htf (remove 'sicoil (remove 'siherr l1-reqd-opids)))
+		))
+
+    (push (case l1-stop-form
+		((sicoil siherr) 'mofsf)
+		(htf 'mofhtf)
+		(t 'mfls) )
+	  l2-reqd-opids )
+    (unless (eq 'no-tf l2-tform)
+	    (push l2-tform l2-reqd-opids) )
+    (push l2-tmethod l2-reqd-opids)
+    (push l2-drill l2-reqd-opids) ;what about action-drill/mfls??????????????
+    (push (if (eq 'botm l2-tmethod) 'mtle-bo 'mtle-nbo) l2-reqd-opids)
+    (when (find 'vfaa l2-reqd-opids)
+	  (setq l2-reqd-opids
+		(remove 'htf (remove 'sicoil (remove 'siherr l2-reqd-opids)))
+		))
+
+    (push (case l2-stop-form
+		((sicoil siherr) 'mofsf)
+		(htf 'mofhtf)
+		(t 'mfls) )
+	  l3-reqd-opids )
+    (unless (eq 'no-tf l3-tform)
+	    (push l3-tform l3-reqd-opids) )
+    (push l3-tmethod l3-reqd-opids)
+    (push l3-drill l3-reqd-opids) ;what about action-drill/mfls??????????????
+    (push (if (eq 'botm l3-tmethod) 'mtle-bo 'mtle-nbo) l3-reqd-opids)
+    (when (find 'vfaa l3-reqd-opids)
+	  (setq l3-reqd-opids
+		(remove 'htf (remove 'sicoil (remove 'siherr l3-reqd-opids)))
+		))
+
+
+
+    ;; for debugging
+    (with-open-file (out-stream "Test/dp-test.out"
+				:direction :output
+				:if-exists :supersede)
+		    (format out-stream
+			    "~%Plan requirements parsed from Html form~
+               ~%~
+               ~%  Initial state: ~a~
+               ~%    1st leg required opids: ~a~
+               ~%    1st leg goal: ~a~
+               ~%~
+               ~%    2nd leg initial state: ~a~
+               ~%    2nd leg required opids: ~a~
+               ~%    2nd leg goal: ~a~
+               ~%~
+               ~%    3rd leg initial state: ~a~
+               ~%    3rd leg required opids: ~a~
+               ~%  Goal state: ~a~
+               ~%~
+               ~%  Additional constraints: ~a"
+	    l1-i-state l1-reqd-opids l1-g-state
+	    l2-i-state l2-reqd-opids l2-g-state
+	    l3-i-state l3-reqd-opids l3-g-state
+	    additional-constraints ))
+#|
+
+
+    ;; Because the system generates plans from G to I, we have to start
+    ;;  planning the exercise from its last leg.  As each leg is
+    ;;  instantiated, the binds of its plan must be passed to the next
+    ;;  leg so that start/end codes constraints ACROSS legs are maintained.
+
+    (setq *solution* nil)
+    (format t "~%=============LEG 3=========================================")
+    (plan l3-i-state
+	  l3-g-state
+	  :subgoal-determine-mode 'closest-to-initial
+	  :exist-est-heuristic 'diff-stage-nece-and-poss
+	  :required-ops (create-requireds-list l3-reqd-opids)
+	  :print-output-p t )
+    (setq *l1-sol* *solution*
+	  *solution* nil )
+
+    (format t "~%=============LEG 2=========================================")
+    (plan l2-i-state
+	  l2-g-state
+	  :subgoal-determine-mode 'closest-to-initial
+	  :exist-est-heuristic 'diff-stage-nece-and-poss
+	  :required-ops (create-requireds-list l2-reqd-opids)
+	  :print-output-p t )
+    (setq *l2-sol* *solution*
+	  *solution* nil )
+
+    (format t "~%=============LEG 1=========================================")
+    (plan l1-i-state
+	  l1-g-state
+	  :subgoal-determine-mode 'closest-to-initial
+	  :exist-est-heuristic 'diff-stage-nece-and-poss
+	  :required-ops (create-requireds-list l1-reqd-opids)
+	  :print-output-p t )
+    (setq *l3-sol* *solution*
+	  *solution* nil )
+|#
+    ;; Collect all of the unfulfilled enabling conditions of all these
+    ;;  plans, plus the additional constraints supplied by the user,
+    ;;  and pass them off to the CSP engine.
+
+    ))

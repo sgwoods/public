@@ -1,0 +1,73 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Assignment #2 Solution</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1>EE150 - Fall 1996</H1>
+
+<H2>Programming Assignment #2 <BR>
+Solution</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT> <A HREF=pa2.html#part1> <B>Part 1:</B></A>
+<DD> This solution involved typing in the
+<A HREF="../Programs/Chap1/price2.c"><B>price2.c</B></A> program in the text and then modifying it to reflect that we are using
+it for the specific task of keeping track of textbook purchases.  This meant
+changing the various strings used in the output, as well as changing the
+<TT>#define</TT>'s that described how many texts were purchased, the price,
+and the discount and tax rates.  
+
+<P> Our solution is in
+<A HREF="Solutions/2/textbooks.c"><B>textbooks.c</B></A>.
+
+<P>
+<DT> <A HREF=pa2.html#part2> <B>Part 2:</B></A>
+<DD> This part involved extending the program in the previous part to
+produce a table of output.  The key here is to use a counting a loop that
+runs from 1 to 18.  Each time through the loop, you need to have the
+calculation part of the previous program, except that you need to modify
+it to use the loop counter as the number of texts (rather than a
+constant).  You also have to add the headings and worry about how to line
+things up in columns, and add a new tax.
+
+<P> Our solution is
+<A HREF="Solutions/2/textbooks2.c"><B>textbooks2.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa2.html#part3> <B>Part 3:</B></A>
+<DD> 
+This program fits the same general pattern as the price-computing
+program: some constant definitions, some variable declarations, a set
+of calculations, and a set of <TT>printf</TT>'s to produce the output.
+
+<P> Our solution is <A HREF="Solutions/2/trip.c"><B>trip.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa2.html#part4> <B>Part 4:</B></A>
+
+<DD> This program is actually mostly a simple input-reading loop wrapped 
+around the calculations and output-generating statements of the solutions
+to the previous part.
+
+<P> Our solution is <A HREF="Solutions/2/trip2.c"><B>trip2.c</B></A>.  
+
+<P>
+<DT> <B>In Class Bonus:</B>
+
+<DD> This was simple - if it wasn't for you, it's time to do some more 
+thinking. 
+
+<P> A couple of  solutions are given in <A HREF="Solutions/2/simple.c"><B>simple.c</B></A>.  
+
+</DL>
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

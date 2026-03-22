@@ -1,0 +1,27 @@
+;; quil1-test2.lisp
+
+;; This is a test of whether the system works correctly with a MORE
+;;  COMPLETE rule and fact base than that used in quil1-test.lisp.
+
+;;(load "~sgwoods/Html/Caeti/cgi-bin/Abtweak96/Pautler/Infer/infer-utils.fasl")
+;;(load "~sgwoods/Html/Caeti/cgi-bin/Abtweak96/Pautler/UM/Quil1/quil1.fasl")
+
+;; BEGIN test input
+
+(defun t1 ()
+  (RESPOND-TO '(_is-best-plan-for_ ?plan remove-file))
+
+  (format t "~%Only correct response: (_IS-BEST-PLAN-FOR_ RM-I REMOVE-FILE)~%")
+  )
+
+(defun t2 ()
+  (RESPOND-TO '(_is-desired (NOT answer-questions)))
+
+  (format t "~%Only correct response: (_IS-BEST-PLAN-FOR_ MV-TO-TMP REMOVE-FILE)~%")
+  )
+
+(defun t3 ()
+  (RESPOND-TO '(_is-desired (NOT fill-up-tmp)))
+
+  (format t "~%Only correct response: (NOT (_HAS-RESULT_ MV-TO-TMP FILL-UP-TMP))~%")
+  )

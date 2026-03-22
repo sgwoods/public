@@ -1,0 +1,38 @@
+    SSN     PART1(5)  PART2(5) PART3(10) PART4(10)         COMMENTS 
+
+    0151       5         5          10        10           good comments
+    0514       5         5           7.5      10           comment not changed
+    0743       5         5           7.5       7.5         comment not changed
+    1080       5         5          10        10    
+    1132       5         5          10        10
+    1365       5         5           7.5       7.5         comment not changed
+    1477       5         5          10        10           good/used loops in part 4
+    1504       5         5          10        10
+    1647       5         5          10        10
+    1976       5         5           7.5       7.5         comment not changed
+    2547       5         5          10        10
+    3608       5         5          10        10           bad style:"program shows what number program this is"
+    3945       5         5           7.5       7.5         comment not changed
+    4027       5         5           7.5       7.5         comment not changed
+    4408       0         0           0         0           NOT RECEIVED
+    4792       5         5          10        10         
+    5013       5         2.5         5         5           #include(stUdio.h)& comment not changed
+    5337       5         5           7.5       7.5         comment not changed
+    5367       0         0           0         0           NOT RECEIVED
+    5757       5         5           7.5       7.5         comment not changed
+    5811       5         5          10        10           used loops correctly
+    6143       5         5          10        10           good comment
+    6345       5         5           7.5       7.5         comment not changed    
+    6867       5         5          10        10           good comments
+    7724       5         5           7.5       7.5          comment not changed
+    7745       5         5          10        10           excellent commenting/style
+    7824       5         5          10        10           excellent commenting/style
+    8216       0         0           0         0           NOT RECEIVED
+    8615       5         3.75        7.5       7.5         no comments
+    8747       5         5           7.5       7.5         comment not changed
+    8902       5         5          10        10           good comments
+    9243       5         5           7.5       7.5         comment not changed
+    9514       5         5          10        10
+    9575       5         5          10        10
+    9676       5         3.75        7.5       7.5         no comments
+

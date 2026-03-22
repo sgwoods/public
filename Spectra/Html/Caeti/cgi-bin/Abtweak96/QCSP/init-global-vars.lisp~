@@ -1,0 +1,26 @@
+;; init-global-vars.lisp
+
+;; The purpose of this file is just to avoid compiler warnings about
+;;  undeclared special vars :DP 8/97
+
+(defvar *current-template* nil)
+(defvar *internal-start-time* nil)
+(defvar *internal-end-time* nil)
+(defvar *debug* nil)
+(defvar *initial-state* nil)
+(defvar *internal-advance-start-time* nil)
+(defvar *cpu-sec-limit* nil)
+(defvar *this-check-point* nil) ;bad name
+(defvar *check-point-interval* nil)
+(defvar *debug-consis* nil)
+(defvar *backjump-count* nil)
+(defvar *nodes-visited* nil)
+(defvar *backtrack-nodes-created* nil)
+(defvar *constraint-cks* nil)
+(defvar *debug-csp* nil)
+(defvar *satisfy-p-calls* nil)
+(defvar *satisfy-p-cost* nil)
+(defvar *for-check-calls* nil)
+(defvar *for-check-cost* nil)
+(defvar *dfa-rearr-calls* nil)
+(defvar *dyn-rearr-cost* nil)

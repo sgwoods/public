@@ -1,0 +1,110 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Summaries, Week 6 </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME=#top>EE150 - Fall 1996</H1>
+
+<IMG SRC="../Images/Pages.gif" WIDTH=32 HEIGHT=32 HSPACE=10 ALT=""
+     ALIGN=left>
+
+<H2> Lecture Summaries - Week 6</H2>
+
+<BR CLEAR=all>
+
+<BLOCKQUOTE>
+<UL>
+<LI> <A HREF="#sep30">Monday, September 30th.</A>
+<LI> Wednesday, October 2nd.</A>
+     (<A HREF="http:../Exams/info.html#mid1">First Midterm</A>).
+<LI> <A HREF="#oct4">Friday, October 4th.</A>
+</UL>
+</BLOCKQUOTE>
+
+<B>Jump To</B>:
+   [<A HREF="http:lectures.html">Lecture Index</A> |
+    <A HREF="http:week5.html">Previous Week's Lectures</A> |
+    <A HREF="http:week7.html">Next Week's Lectures</A>]
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="feb12">Monday, September 30th</A></H3>
+
+Topics covered:
+<UL>
+<LI> Why we need character data types as well as numeric data types.
+<LI> How do declare character variables.
+<LI> How characters are represented.
+<LI> How we can read and write characters with
+     <TT>scanf</TT> and <TT>printf</TT>.
+<UL>
+<LI> A simple program to echo its input using <TT>scanf</TT> and 
+     <TT>printf</TT>
+     (<B><A HREF="http:Examples/6/charecho.c">charecho.c</A></B>).
+</UL>
+<LI> How input buffering works.
+<LI> How and when we use character constants.
+<LI> How we can compare characters.
+<UL>
+<LI> A program to calculate a GPA that doesn't quite work
+     (<B><A HREF="http:Examples/6/gpa.c">gpa.c</A></B>).
+</UL>
+</UL>
+
+Reading: Chapter 4.1 (through page 70).
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct4">Friday, October 4th</A></H3>
+
+Topics covered:
+<UL>
+<LI> Why newlines in the input have to be processed.
+<UL>
+<LI> Fixing our previous program to calculate GPA
+     (<B><A HREF="http:Examples/7/gpa2.c">gpa2.c</A></B>).
+</UL>
+<LI> How recognizing the newline allows to process input line-by-line.
+<UL>
+<LI> An extended version that calculates GPAs, one per input line
+      (<B><A HREF="http:Examples/7/gpa3.c">gpa3.c</A></B>).
+</UL>
+<LI> How to convert upper- to lowercase and vice versa with <TT>toupper</TT>
+     and <TT>tolower</TT>.
+<LI> Why we have to process every character in the input.
+<LI> How we can deal with unexpected/undesirable input.
+<LI> How we can improve our functions to deal with unexpected/undesirable
+     parameters.
+<UL>
+<LI> Checking for bad parameters within the function.
+<LI> Indicating bad parameters by returning special values.
+<LI> Checking for these special values in the caller.
+</UL>
+<LI> How to put all this together.
+<UL>
+<LI> Extending <TT>calculatePoints</TT> to validate its parameters
+     (<B><A HREF="http:Examples/7/gpa4.c">gpa4.c</A></B>).
+</UL>
+<LI> How to simplify complicated <TT>if</TT>s by using default values.
+<UL>
+<LI> A simplified <TT>calculatePoints</TT>
+     (<B><A HREF="http:Examples/7/gpa5.c">gpa5.c</A></B>).
+</UL>
+<LI> How to use <TT>printf</TT>'s to print debugging information.
+<UL>
+<LI> A version of our GPA-program instrumented
+     to print debugging information
+     (<B><A HREF="http:Examples/7/gpa6.c">gpa6.c</A></B>).
+</UL>
+</UL>
+
+Reading: (No new reading for this lecture).
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<BR>[<A HREF="/~sgwoods/Courses/ee150/Fall96/">EE150 Home Page</A> |
+     <A HREF="#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

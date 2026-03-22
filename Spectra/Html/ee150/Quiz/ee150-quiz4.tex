@@ -1,0 +1,33 @@
+\documentstyle[12pt,fullpage]{article}
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{EE 150 Quiz \#4}
+\author{Due: Nov 1, 1996 (in class)}
+\date{}
+\maketitle
+
+Given two arrays defined int array1[SIZE] and int array2[SIZE].  We
+know that if $i$ represents the {\em index} of a particular element
+in array1, then array1[i] represents the element itself.
+
+Write a function {\bf arrayMultiply} that takes two arrays (m1 and
+m2) as parameters, and, for all values in the arrays, sets the value 
+of each position $i$ in the m1 array  to equal the {\em product} of
+the original value in m1[i] and the value of m2[i].   The function
+should look like this ....
+
+\begin{verbatim}
+int arrayMultiply( int m1[], int m2[], SIZE )
+{
+ .... fill in here ... 
+}
+
+For example, if SIZE were 5, and the values stored in array1 were 0 1
+2 3 4, and the values stored in array2 where 9 8 7 6 5, then after a
+function call arrayMultiply( array1, array2, 5 ), array1 would contain
+0, 8, 14, 18, 20. 
+\end{verbatim}
+
+\end{document}

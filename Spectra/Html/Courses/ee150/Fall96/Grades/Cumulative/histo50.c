@@ -1,0 +1,54 @@
+/*
+ * Produce a histogram of its input values.
+ */
+#include <stdio.h>
+
+#define NUMBCKTS    4             /* reasonable number of buckets  */
+#define MINVAL      0             /* range of values is 0-100      */
+#define MAXVAL     50             /*   (assumption is test scores) */
+
+int main()
+{
+  void          fill_buckets(unsigned long buckets[],
+                             int bucket_size, int numbuckets,
+                             int minval, int maxval);
+  void          print_histogram(unsigned long buckets[],
+                                int bucket_size, int numbuckets,
+                                int minval, int maxval);
+  unsigned long buckets[NUMBCKTS];
+  int           bucket_size;
+  
+  bucket_size = (MAXVAL - MINVAL) / (NUMBCKTS - 1);
+  fill_buckets(buckets, bucket_size, NUMBCKTS, MINVAL, MAXVAL);
+  print_histogram(buckets, bucket_size, NUMBCKTS, MINVAL, MAXVAL);
+  return 0;
+}
+
+/* Place each input value in an appropriate bucket */
+
+void fill_buckets(unsigned long buckets[],
+                  int bucket_size, int numbuckets,
+                  int minval, int maxval)
+{   
+  int inrange(int min, int max, int value);
+  int next;                               /* next input value */
+  int r;                                  /* scanf return value */
+  int i;                                  /* index */
+
+  for (i = 0; i < numbuckets; i++)        /* zero out buckets */
+    buckets[i] = 0;
+  while ((r = scanf("%i", &next)) != EOF)
+    if (r != 1)
+    {
+      printf("Error while reading input values\n");
+      break;
+    }
+    else if (!inrange(minval, maxval, next))
+      printf("Out of range input value: %i\n", next);
+    else
+      buckets[(next - minval) / bucket_size]++;
+}
+
+/* Local Variables: */
+/* compile-command: "gcc -ansi -o histo50 histo50.c histoout.o utils.o" */
+/* End: */

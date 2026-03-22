@@ -1,0 +1,32 @@
+This is TeX, C Version 3.14t3 (format=lplain 91.12.11)  9 DEC 1996 10:35
+**ee150-final1
+(ee150-final1.tex
+LaTeX Version 2.09 <7 Dec 1989>
+(/extra/local/lib/tex/inputs/article.sty
+Document Style `article' <16 Mar 88>.
+(/extra/local/lib/tex/inputs/art12.sty)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+)
+(/users2/other/sgwoods/lib/tex/inputs/fullpage.sty
+Using full size pages: 'fullpage' documentstyle option
+) (/users2/other/sgwoods/lib/tex/inputs/steve.sty) (ee150-final1.aux) [1
+
+]
+[2] [3] [4] [5] [6] [7] [8] (ee150-final1.aux) ) 
+Here is how much of TeX's memory you used:
+ 176 strings out of 4463
+ 1775 string characters out of 63240
+ 31249 words of memory out of 262141
+ 2121 multiletter control sequences out of 9500
+ 19304 words of font info for 73 fonts, out of 72000 for 255
+ 14 hyphenation exceptions out of 607
+ 12i,6n,17p,168b,212s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on ee150-final1.dvi (8 pages, 7632 bytes).

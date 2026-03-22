@@ -1,0 +1,13 @@
+Allegro CL 4.2 [SPARC; R1] (9/6/94 11:02)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+> Type (load-planner)      to load planner
+>      (load-csp)          to load CSP
+>      (load-caeti)        to load both parts
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): T
+USER(2): T
+USER(3): T
+USER(4): NIL
+USER(5): ; Exiting Lisp

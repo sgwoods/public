@@ -1,0 +1,25 @@
+//
+// Template Function example
+// 
+
+#if !defined(FN_MIN_TEMPLATE)
+#define FN_MIN_TEMPLATE
+
+template<class T>
+T min( T x, T y)
+{
+  return x < y ? x : y;
+}
+
+template<class T>
+const T* minRef( const T* x, const T* y)
+{
+  return *x < *y ? x : y;
+}
+
+#endif
+
+
+/* Local Variables: */
+/* compile-command: "gcc -ansi -c template-function.cc" */
+/* End: */

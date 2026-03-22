@@ -1,0 +1,47 @@
+\documentstyle[12pt,fullpage,steve]{article}
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{EE 150 Quiz \#7}
+\author{Due: Nov 22, 1996 (in class) \\ {\large THIS QUIZ IS {\bf CLOSED} BOOK}}
+\date{}
+\maketitle
+
+\begin{enumerate}
+\item Write your name {\em and} 4-digit ID on the top of the page.
+\item Using the TABLES model, show how this program executes {\em and} what
+it prints out.
+\item Fill in the indicated comments appropriately ON THE PROGRAM.
+\end{enumerate}
+
+\begin{verbatim}
+#include <stdio.h>
+main()
+{
+  int  i = 2;  int j = 3; int k;     /*                                   */
+  int  *ptr1, *ptr2, *ptr3;          /*                                   */
+
+  ptr1 = &j, ptr2 = &i;              /*                                   */
+                                     /*                                   */
+  printf("*ptr1 = %i,  *ptr2 = %i\n", *ptr1, *ptr2);
+
+  k = *ptr1 * *ptr2;                 /*                                   */
+  printf("k = %i\n", k);            
+
+  ptr3 = &k;                         /*                                   */
+  printf("*ptr3 = %i\n", *ptr3);    
+
+  k += 5;                            /*                                   */
+  printf("Now k = %i\n", k);         
+  printf("Now *ptr3 = %i\n", *ptr3); 
+
+  *ptr3 = 15;       /*                                                     */
+  ptr2 = ptr1;      /*                                                     */
+  k = *ptr2;        /*                                                     */
+  printf("Finally k = %i\n", k);
+  printf("Finally *ptr3 = %i\n", *ptr3);
+}
+\end{verbatim}
+
+\end{document}

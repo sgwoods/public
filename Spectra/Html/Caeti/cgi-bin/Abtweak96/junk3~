@@ -1,0 +1,20 @@
+ Formatting a template from planner spatial constraints...
+     node cs: NIL
+      arc cs: NIL
+     node cs: ((CP1 NIL (2 3 4 5+) *))
+      arc cs: NIL
+     node cs: ((CP1 (PLAIN FOREST) (2 3 4 5+) *))
+      arc cs: NIL
+     node cs: ((CP1 (PLAIN FOREST) (2 3 4 5+) *))
+      arc cs: ((LEG-CLEAR (CP1 CP2)))
+     node cs: ((CP1 (PLAIN FOREST) (2 3 4 5+) *))
+      arc cs: ((LEG-CLEAR (CP1 CP2)))
+     node cs: ((CP1 (PLAIN FOREST) (2 3 4 5+) *))
+      arc cs: ((LEG-LATERAL-SPACE (CP1 CP2) (4 5+)) (LEG-CLEAR (CP1 CP2)))
+     node cs: ((CP1 (PLAIN FOREST) (2 3 4 5+) *))
+      arc cs: ((LEG-LATERAL-SPACE (CP1 CP2) (4 5+)) (LEG-CLEAR (CP1 CP2)))
+     node cs: ((CP2 (PLAIN FOREST) NIL *) (CP1 (PLAIN FOREST) (2 3 4 5+) *))
+      arc cs: ((LEG-LATERAL-SPACE (CP1 CP2) (4 5+)) (LEG-CLEAR (CP1 CP2)))
+ 
+
+

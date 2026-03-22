@@ -1,0 +1,501 @@
+;; terrain-setup.lisp
+;;
+;;  CAETI TERRAIN situation information
+;;
+(setq *terrain-setup-loaded* 'nil)
+
+;; **********************************************************************
+;; Define hash table for looking up sitobjs by location information
+
+(let ((coord-sitobj-pairs (make-hash-table :test #'equal )))
+
+  (defun reset-coord-sitobj-pairs ()
+    "Clear the hash table."
+    (clrhash coord-sitobj-pairs) )
+
+  (defun get-sitobj-from-coord (coord)
+    "Returns the sit-obj from the global situation-list which 
+       corresponds to the x y value"
+    (gethash coord coord-sitobj-pairs) )
+
+  (defun make-coord-sitobj-pair (coord sitobj)
+    "Add sitobj to the hashtable at the given coordinate"
+    (setf (gethash coord coord-sitobj-pairs) sitobj) )
+  )
+;; ---------------------------------------------------------------------------
+
+;; ***************************************************************************
+;; Functions to create random situation objects for extending terrain model
+;; ***************************************************************************
+
+(defun create-ran-situation (size-sit type size activity orient)
+  "*** This file NEED TO BE UPDATED for terrain csp use 96/12 sgw"
+  (let (
+	(newlist  nil)
+	)
+
+    (setup-proportion 
+     (reverse type) (reverse size) (reverse activity) (reverse orient))
+     
+    (dotimes (n size-sit newlist)
+      (setq newlist
+	    (append (list (ran-sit-object))
+		    newlist))) ))
+
+(defun setup-proportion (type size activity orient)
+  (setq *ran-type-lst* (create-random-lst type))
+  (setq *ran-size-lst* (create-random-lst size))
+  (setq *ran-activity-lst* (create-random-lst activity))
+  (setq *ran-orient-lst* (create-random-lst orient)) )
+
+(defun create-random-lst (prop-lst)
+  (let ( (in-prog nil )	)
+    (dolist (this prop-lst in-prog)
+      (setq in-prog (append (n-vals (first this) (second this)) in-prog)) )))
+
+(defun n-vals (what many)
+  (let ( (newlist nil) )
+    (dotimes (n many newlist)
+      (setq newlist (cons what newlist)))))
+
+(defun ran-sit-object ()
+"
+*** Needs to be updated 96/12
+
+Create a random situation object as *noise* for the Terrain CSP.
+"
+(list (create-sit-id) 
+      (random-position)
+      (ran-type) 
+      (ran-activity) 
+      (ran-orient) 
+      (ran-size) ))
+  
+(defun create-sit-id ()
+"Create unique situation identifier."
+  (gentemp "sit-gen"))
+
+(defun ran-type ()
+"Randomly select a type value."
+  (random-element *ran-type-lst*))
+
+(defun ran-activity ()
+"Randomly select an activity value."
+  (random-element *ran-activity-lst*))
+
+(defun ran-size ()
+"Randomly select a size value."
+  (random-element *ran-size-lst*))
+
+(defun ran-orient ()
+"Randomly select an orientation value."
+  (random-element *ran-orient-lst*))
+
+(defun random-element (elist)
+"Return a random element from a list."
+  (nth (random (length elist)) elist))
+
+(defun random-order (elist)
+"Re-order a list in random order"
+(if (null elist)
+    nil
+  (let (
+	(pos (random (length elist)))
+	)
+    (append (list (nth pos elist))
+	    (random-order (remove (nth pos elist) elist)) )
+    )) )
+
+(defun random-position (&optional (boundx 100) (boundy 100))
+"Generate a random x y position (x y) between boundx and boundy."
+  (let (
+	(ranx (random boundx))
+	(rany (random boundy))
+	)
+    (list ranx rany)))
+
+;; ***************************************************************************
+;; Functions to display objects
+;; ***************************************************************************
+
+(defun show (&optional (tid *template-id*) (sid *sit-object-id*))
+  (show-situation sid) 
+  (show-template tid)
+  )
+
+(defun show-template ( &optional (template-id *template-id*))
+  (let (
+	(template (get-templ-object template-id))
+	)
+
+    (if (eq template nil)
+	nil
+      (if (not (eq *output-stream* nil))
+	  (let ()
+	    (format *output-stream*
+		    "~2&***** ~A Template Description ***** ~2&" template-id)
+	    (format *output-stream*
+		    "~&~& Template Slots : ~A ~&" (length 
+						   (get-templ-slots template)))
+	    (dolist (ts (get-templ-slots template))
+	    (format *output-stream* "~&~&    Slot: ~A ~&" ts))
+	    (format *output-stream*
+		    "~&~& Constraints: ~A ~&" (length 
+					     (get-templ-constraints template)))
+	    (dolist (c (get-templ-constraints template))
+	      (format *output-stream* "~&~& Constraint: ~A ~&" c))
+	    (format *output-stream*
+		    "~&~& SCHs: ~A ~&" (length 
+					     (get-templ-cohesion-constr template)))
+	    (dolist (c (get-templ-cohesion-constr template))
+	      (format *output-stream* "~&~& SCH Constr: ~A ~&" c))
+	    ))))
+  t)
+	
+(defun show-situation ( &optional (situation-id *sit-object-id*))
+  (let (
+	(situation (get-situation situation-id *situations*))
+	)
+
+    (if (eq situation nil)
+	nil
+      (if (not (eq *output-stream* nil))
+	  (let ()
+	    (format *output-stream*
+		    "~2&***** ~A Situation Description ***** ~2&" situation-id)
+	    (format *output-stream*
+		    "~&~& Situation elements : ~A ~&" (length situation) )
+	    (dolist (sit situation)
+	      (format *output-stream* "~&~&    Element: ~A ~&" sit))
+	  
+	    ))))
+  t)
+
+(defun tcsp-set-global-values (sit-id 
+			       sit-noise 
+			       random-ident 
+			       temp-id 
+			       sch-call 
+			       rand-dist-id
+			       rand-dist-struct
+			       long-output
+			       single-line-override
+			       load-real-terrain-db	     
+			       )
+  "TCSP structure set up."
+  (let ((tcsp-err nil))
+
+    ;; Situation setup 
+    (if *terrain-realdb-loaded*
+	(setq *current-situation* 
+	      (append (first *mapndx*) (second *mapndx*) (third *mapndx*)))
+      (setq *current-situation* 
+	    (get-situation sit-id *situations* )))
+    (unless *current-situation*
+	    (setq tcsp-err t)
+	    (comment1 "Situation not found" sit-id) )
+    (setq *sit-object-id* sit-id)
+
+    ;; Distribution of situation attributes
+    (setq *random-dist-name* rand-dist-id
+	  *random-dist* rand-dist-struct )
+
+    ;; Output long option
+    (setq *long-output* long-output)
+
+    ;; Override output option
+    (setq *single-line-override* single-line-override)
+
+    ;; set flag for large terrain database load indicator
+    (setq *load-large-db* load-real-terrain-db)				     
+
+    ;; Noise addition to situation
+    ;;  Note anomaly that PREPARED elements are at the front of the
+    ;;  situation list and consequently will be at the front of the
+    ;;  variable domain lists and be selected first.  There should either
+    ;;  be the option to randomize HERE or at selection time in the various
+    ;;  search algorithm.  BEST here since then there is only one location for
+    ;;  this, HOWEVER  doing it here will result in the same order of initial
+    ;;  domain values for EVERY VARIABLE, while in the search routine if a 
+    ;;  random position were selected, the order would vary...
+    (setq *situation-noise-added* sit-noise)
+    (if (numberp sit-noise)
+	(if (> sit-noise 0)
+	    (let ((noise
+		   (create-ran-situation sit-noise
+					 (first  rand-dist-struct) ;; type
+					 (second rand-dist-struct) ;; size
+					 (third  rand-dist-struct) ;; activ
+					 (fourth rand-dist-struct) ;; orient
+					 )))
+	      (setq *current-situation* (append *current-situation*  noise))
+	      )
+	  (progn
+	    (setq tcsp-err t)
+	    (comment1 "Sit noise must be a number" sit-noise)) ))
+
+    ;; Create HashTable for all sitobjs in current situation
+    (reset-coord-sitobj-pairs)
+    (dolist ( sitobj *current-situation* )
+	    (make-coord-sitobj-pair (second sitobj) sitobj))
+  
+    ;; random-ident
+    (setq *random-ident* random-ident)
+
+    ;; Template setup
+    (set-current-template temp-id)
+    (unless *current-template*
+	    (setq tcsp-err t)
+	    (comment1 "Template not found" temp-id) )
+    (setq *template-id* temp-id)
+
+    (setq *constraint-sch-on* sch-call)    ;; separation constraints
+
+    ;; specific counters for tcsp only
+    (setq *constraint-legclr-cks* 0    ;; leg clear constraints
+	  *constraint-leglatspc-cks* 0 ;; leg lateral space constraints
+	  *constraint-xgt-cks* 0       ;; x greater than constraints
+	  *constraint-ygt-cks* 0 )     ;; y greater than constraints
+
+    ;; other specific counters
+    (setq *constraint-sep-cks* 0    ;; separation constraints
+	  *constraint-sch-cks* 0    ;; spatial cohes constraints
+	  *sch-save* 0              ;; spatial cohes savings - dom vals remv
+	  *constraint-pos-cks* 0    ;; right/left/ahead/behind constraints
+	  *constraint-med-cks* 0    ;; medial  constraints
+	  *constraint-ech-cks* 0    ;; echelon constraints
+	  *constraint-same-type-cks* 0
+	  *constraint-same-orient-cks* 0
+	  *constraint-same-activity-cks* 0
+	  *constraint-same-size-cks* 0
+
+	  *node-consistency-calls*  0  ;; cost of initial filtering
+	  *node-consistency-checks* 0
+
+	  *ts-match-type-count*     0
+	  *ts-match-radial-count* 0
+	  *ts-match-abs-loc-count*     0
+
+	  *unique-restrict-count* 0 ) ;; uniqueness rejections
+
+    (not tcsp-err) ))
+
+
+;; save versions for TCSP
+ 
+(defun save-situation ( name size )
+  "(TCSP version)
+   Save current situation for later display or review.
+   We should re-use these instead of recreating ... save a little time."
+
+  (let ((situation-file
+	 (concatenate 'string
+		      "TCSP-Situation/Sit" 
+		      "-" (string-downcase (string *sit-object-id*)) 
+		      "-" (string-downcase (string *random-dist-name*)) 
+		      "-" (string-downcase (string name))
+		      "-" (num-to-string size) ))
+	)
+    (if (probe-file situation-file)
+	nil
+      (progn
+	(setq *situation-stream*
+	      (open situation-file 
+		    :direction :output 
+		    :if-exists :overwrite
+		    :if-does-not-exist :create))
+	(write *current-situation* :stream *situation-stream*)
+	(close *situation-stream*)
+	t ))
+    ))
+
+(defun save-rand ( name )
+  "Save current random-state object for later recreation of this run."
+
+  (let ((random-file
+	 (concatenate 'string
+		      "TCSP-Random/Rnd"
+		      (string-downcase (string name)) )))
+    ;;(break "in save-rand")
+    (setq *random-stream*
+	  (open random-file 
+		:direction :output 
+		:if-exists :error
+		:if-does-not-exist :create))
+    (write *random-state* :stream *random-stream*)
+    (close *random-stream*)
+    ))
+
+(defun load-rand (name)
+  "Reload previously stored random-state object for recreation of previous run.
+   Changed Oct/94	 (nstring-downcase (string name))"
+
+  (let ((random-file
+	 (concatenate 'string
+		      "TCSP-Random/Rnd" 
+		      (string-downcase (string name)) )))
+    ;;(break "in load-rand")
+    (setq *random-state* (read (open random-file :direction :input)))
+    ))
+
+(defun unique-string ()
+  "Create a unique string identifier to be used as a pathname for a Random
+   ident file. Only return one that does not already exist."
+
+  (let ((newstr nil)
+	(unique nil) )
+    (loop while (not unique) do
+	  (setq newstr nil)
+	  (dotimes (i 10)
+		   (let ((this (random 10)))
+		     (setq newstr
+			   (concatenate 'string newstr (num-to-letter this)))))
+	  (unless (probe-file
+		   (concatenate 'string
+				"TCSP-Random/Rnd" 
+				(string-downcase (string newstr)) ))
+		  (setq unique t) ))
+    newstr ))
+
+;; gnuplot output specific to TCSP
+
+;; **************************************************
+;;
+(defun save-gnuplot ( route-xy-alist )
+  "TCSP Version
+   Output gnuplot suitable files for later display of individual situations."
+
+  (with-open-file
+   (*gnuplot-stream1*
+    "QCSP/TSit/Route-coords"
+    :direction :output 
+    :if-exists :rename-and-delete
+    :if-does-not-exist :create)
+   (format *gnuplot-stream1* "~{~%~a~10t~a~}" (apply #'append route-xy-alist))
+   ) ;with-open-file
+
+  (let ((type-minefields (select-type 'Minefield *current-situation*)) ;an xy-alist
+	(type-plains     (select-type 'Plain     *current-situation*))
+	(type-mountains  (select-type 'Mountain  *current-situation*))
+	(type-forests    (select-type 'Forest    *current-situation*))
+	)
+    (with-open-file
+     (*gnuplot-stream2*
+      "TCSP-Situation/terrain-gnuplot.gp"  ;; Labelled version of gp 
+      :direction :output 
+      :if-exists :rename-and-delete
+      :if-does-not-exist :create )
+     (format *gnuplot-stream2*
+	     "~%set xlabel \"West - East\"~
+              ~%set ylabel \"South - North\"~
+              ~%set xrange [0:10]~
+              ~%set yrange [0:10]~
+              ~%set xtics 0,1~
+              ~%set ytics 0,1~
+              ~%set nokey~
+              ~%set term postscript landscape monochrome \"Times-Roman\" 14~
+              ~%set output \"QCSP/TSit/Terrain-Map1.ps\"~
+              ~{~%set arrow from ~a,~a to ~a,~a~}~
+              ~{~%set label \"M\" at ~a,~a center~}~
+              ~{~%set label \"f\" at ~a,~a center~}~
+              ~{~%set label \"x\" at ~a,~a center~}~
+              ~{~%set label \" \" at ~a,~a center~}~
+              ~%plot \"QCSP/TSit/Route-coords\" with lines"
+	     (apply #'append                   ;; eg (3 1   4 5   4 5   6 9)
+		    (double-middle-elems route-xy-alist) )
+	     (apply #'append type-mountains)
+	     (apply #'append type-forests)
+	     (apply #'append type-minefields)
+	     (apply #'append type-plains)
+	     ) ;format
+     ) ;with-open-file
+    ) ;let
+  ) ;defun
+
+(defun double-middle-elems (list1) ;;eg '(1 2 3) -> '(1 2 2 3)
+  (let ((middle (rest (butlast list1))))
+    (if middle
+	(cons (first list1)
+	      (append
+	       (apply #'append
+		      (mapcar
+		       #'(lambda (m-e)
+			   (list m-e m-e) )
+		       middle ))
+	       (last list1) ))
+      list1 )))
+
+#|
+
+	(minefields-file  "TCSP-Situation/Minefield-coords")    ;; MINEFIELDS
+	(plains-file      "TCSP-Situation/Plain-coords")        ;; PLAINS
+	(mountains-file   "TCSP-Situation/Mountain-coords")     ;; MOUNTAINS
+	(forests-file     "TCSP-Situation/Forest-coords")       ;; FORESTS
+
+(let (
+       (minefields-file  (concatenate 'string "TCSP-Situation/.Sit" 
+			    "-" (string-downcase (string *sit-object-id*)) 
+			    "-" (string-downcase (string *random-dist-name*)) 
+			    "-" (string-downcase (string name)) 
+			    "-" (num-to-string size) "." "minefields"))           ;; MINEFIELDS
+       (plains-file     (concatenate 'string "TCSP-Situation/.Sit" 
+			    "-" (string-downcase (string *sit-object-id*)) 
+			    "-" (string-downcase (string *random-dist-name*)) 
+			    "-" (string-downcase (string name)) 
+			    "-" (num-to-string size) "." "plains"))               ;; PLAINS
+       (mountains-file  (concatenate 'string "TCSP-Situation/.Sit" 
+			    "-" (string-downcase (string *sit-object-id*)) 
+			    "-" (string-downcase (string *random-dist-name*)) 
+			    "-" (string-downcase (string name)) 
+			    "-" (num-to-string size) "." "mountains"))            ;; MOUNTAINS
+       (forests-file    (concatenate 'string "TCSP-Situation/.Sit" 
+			    "-" (string-downcase (string *sit-object-id*)) 
+			    "-" (string-downcase (string *random-dist-name*)) 
+			    "-" (string-downcase (string name)) 
+			    "-" (num-to-string size) "." "forests"))              ;; FORESTS
+)
+
+  (if (not (probe-file minefields-file))  ;; have these been created already ?
+      (progn
+	;; Minefields
+	(setq *gnuplot-stream* (open minefields-file :direction :output 
+				     :if-exists :overwrite
+				     :if-does-not-exist :create))
+	(dolist (this type-minefields)
+	  (format *gnuplot-stream* "~A~10T~A~&" (first this) (second this)) )
+	(close *gnuplot-stream*)
+
+	;; Plains
+	(setq *gnuplot-stream* (open plains-file :direction :output 
+				     :if-exists :overwrite
+				     :if-does-not-exist :create))
+	(dolist (this type-plains)
+	  (format *gnuplot-stream* "~A~10T~A~&" (first this) (second this)) )
+	(close *gnuplot-stream*)
+
+	;; Forests
+	(setq *gnuplot-stream* (open forests-file :direction :output 
+				     :if-exists :overwrite
+				     :if-does-not-exist :create))
+	(dolist (this type-forests)
+	  (format *gnuplot-stream* "~A~10T~A~&" (first this) (second this)) )
+	(close *gnuplot-stream*)
+
+	;; Mountains
+	(setq *gnuplot-stream* (open mountains-file :direction :output 
+				     :if-exists :overwrite
+				     :if-does-not-exist :create))
+	(dolist (this type-mountains)
+	  (format *gnuplot-stream* "~A~10T~A~&" (first this) (second this)) )
+	(close *gnuplot-stream*))
+    )))
+|#
+
+(setq *terrain-setup-loaded* t)
+
+
+;; DP additions 8/97
+
+(defvar *node-consistency-test-fns*
+  (list 'tcsp-matches-radial
+	'tcsp-matches-abs-loc ))

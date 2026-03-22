@@ -1,0 +1,232 @@
+\documentstyle[12pt,fullpage,steve]{article}
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{EE 150 Midterm \#2}
+\author{Nov 13, 1996}
+\date{}
+\maketitle
+
+{\bf Read First:}
+\begin{itemize}
+\item {\bf **READ** THE DIRECTIONS CAREFULLY!}
+
+\item This exam is open book, open notes, and closed neighbor!
+
+\item You have a maximum 50 minutes to complete the exam.  Hand in your paper when you are done.
+We will pick up all midterms and leave the room at 55 minutes after the hour.  
+
+\item There are 3 problems worth a total of 100 points plus a Bonus question worth 5 points.  
+Problem I is worth 3 * 15 or 45 marks, Problem II is worth 40 marks, and
+Problem III is worth 15 marks.   Be careful not to spend too much time on
+any particular problem.  {\bf If you get stuck, go on to the next
+problem.}  You can always come back to the one that is giving you
+problems.  
+
+\item As a guideline, allow about 15 minutes for each of problems I II and III,
+which leaves you a couple of minutes at the end to check your work.
+To ensure you have read these instructions, you get two more bonus points
+simply for writing your account name on the bottom of the last page of this
+exam.
+\end{itemize}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1} (45 points, 15 points each)
+ 
+Once again, show (below each program) what each of the following program
+fragments do.  To determine the answer, work through the code by hand and show
+us the output that results.  {\em You {\bf must}  show how these programs
+execute by using the  ``table'' model we have seen repeatedly in class in order
+to get full credit. }  
+
+Hint:  The table method of showing the output involves showing the time or
+execution steps on one axis (say the horizontal axis) and each variable that
+changes on the other axis (say the vertical axis).     You should show the
+output somewhere in the same table.
+
+\begin{itemize}
+\item {\bf Part 1-A}
+
+\begin{verbatim}
+main()
+{
+  int t, v = 0;
+  for (v = 10; t < 6, t > 5; v++)
+    {
+      printf(" In Loop: t= %i v= %i\n", t, v);  
+      t += 2;
+      v -= 3;
+    }
+  printf("Done: v = %i, t = %i\n", v, t);
+  return 0;
+}
+\end{verbatim}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+
+\item {\bf Part 1-B}
+
+\begin{verbatim}
+main()
+{
+  int f1 (int);
+  int j = 12;
+  int y = 15;
+  do
+    {
+      int y = 10;
+      y = f1 ( y );
+      printf("In Loop: y = %i, j = %i \n", y, j), --j;
+    }
+  while( y > 0 && j != 10 );
+  return 0;
+}
+
+int f1 ( int y ){  return y -= y; }
+\end{verbatim}
+
+%---------------------------------------------------------------------------
+\pagebreak
+\item {\bf Part 1-C}
+
+\begin{verbatim}
+main()
+{
+  int i, a = 0;
+  int A[5] = { 4, 3, 2, 1, 0};
+  for (i = 0; i < 5; i = (a += 1))
+    switch( i )
+      {
+      case 1: A[i]= 5;  break;
+      case 2: 
+      case 3: A[i] = A[ (int) i/2 ];   break;
+      case 4: A[i] = 7; break;
+      default: A[i] = A[i + 3]; break;
+      }
+  for (i = 0; i < 5; i++)
+    printf("Array A element %i is %i\n", i, A[i]); 
+
+  return 0;
+}
+\end{verbatim}
+
+\end{itemize}
+
+%---------------------------------------------------------------------------
+\pagebreak
+
+{\bf PROBLEM \#2} (40 points)
+
+Given a function, {\tt writeT}, {\em that has already
+been written for you } .  {\tt writeT} takes two arguments,
+a character, c, and a number, n, and writes out character c exactly (int)(n/3)
+times. For example, {\tt writeT('x', 9)} writes {\tt xxx}.
+<P>
+Using this function, {\em write a new function } , {\tt writeManyT},
+where the call
+\begin{verbatim}
+int stuff[5] = {9, 12, 8, 16, 1};
+writeT(stuff, 5, 6, '=');
+\end{verbatim}
+
+produces the following output:  
+\begin{verbatim}
+===xxx===0
+===xxxx===0
+===xx===2
+===xxxxx===1
+\end{verbatim}
+
+Note that the final integer on each of the preceeding lines can be calculated
+as  {\bf stuff[i] - ( (int)( stuff[i] / 3) ) * 3}.  {\bf You may assume that
+all integer values in stuff are positive.} 
+
+A sketch of the function and its expected parameters is shown below.
+Your job is to fill in its body.
+
+\begin{verbatim}
+/*
+   Display table's parameters:
+
+     a -    An array of integers.  For each array element, x, we want to 
+            printout (int)(x/3) characters 'x'.
+     n  -   The number of entries in the array
+     m  -   We may assume that m is even.  We want to printout (m/2) instances 
+            of character c before and after the  x's. 
+     c-     The character to write out as per m above
+*/
+
+writeManyT(int a[], int n, int m, char c)
+{
+... write your code here!
+}
+\end{verbatim}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+
+{\bf Write Your Solution to Problem \#2 on this Page}
+
+
+% ---------------------------------------------------------------------------
+\newpage
+
+{\bf PROBLEM \#3} (15 points)
+
+For each of the following program fragments, show an alternative (i.e. expanded
+or more straight-forward) form:
+\begin{verbatim}
+1. switch(i)
+        {
+            case 1: printf("ok");      break;
+            case 2: 
+            case 3: printf("no way");  break;
+           default: printf("ho vay");  break;
+        }
+
+
+
+
+
+
+\end{verbatim}
+
+\begin{verbatim}
+2. i++;   /* do not use post or pre-fix operators */
+
+\end{verbatim}
+
+\begin{verbatim}
+3. A ? x++ : x--;
+
+
+\end{verbatim}
+
+\begin{verbatim}
+4. int a, x = 0;
+
+\end{verbatim}
+
+\begin{verbatim}
+5. if (a *= b, a *= c, a > 10)   /* do not use comma operators */
+      printf("fred");
+   else
+      printf("sam");     
+
+
+
+
+\end{verbatim}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+
+{\bf Bonus PROBLEM \#4} (+5 extra points)
+
+Write a short paragraph about how your group will be/is  attacking the slide-5
+group problem, and in particular what your contribution is going to be.
+
+\end{document}

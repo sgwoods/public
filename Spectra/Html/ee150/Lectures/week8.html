@@ -1,0 +1,141 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Summaries, Week 8 </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME=#top>EE150 - Fall 1996</H1>
+
+<IMG SRC="../Images/Pages.gif" WIDTH=32 HEIGHT=32 HSPACE=10 ALT=""
+     ALIGN=left>
+
+<H2> Lecture Summaries - Week 8</H2>
+
+<BR CLEAR=all>
+
+<BLOCKQUOTE>
+<UL>
+<LI> <A HREF="#oct14">Monday, October 14th.</A>
+<LI> <A HREF="#oct16">Wednesday, October 16th.</A>
+<LI> <A HREF="#oct18">Friday, October 18th.</A>
+</UL>
+</BLOCKQUOTE>
+
+<B>Jump To</B>:
+   [<A HREF="http:lectures.html">Lecture Index</A> |
+    <A HREF="http:week7.html">Previous Week's Lectures</A> |
+    <A HREF="http:week9.html">Next Week's Lectures</A>]
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct14">Monday, October 14th</A></H3>
+
+Topics covered:
+<UL>
+<LI> Why programming languages provide more than one way of doing
+     things.
+<LI> Why we have shortcut operators.
+<LI> The shortcut arithmetic operators.
+<LI> The prefix and postfix increment and decrement operators.
+<LI> What happens when we use these operators inside another expression.
+<UL>
+<LI> Counting from 1 to 10 using postfix increment
+     (<B><A HREF="http:Examples/8/count1.c">count1.c</A></B>).
+<LI> Counting from 1 to 10 using prefix increment
+     (<B><A HREF="http:Examples/8/count2.c">count2.c</A></B>).
+<LI> The "blastoff" program
+     (<B><A HREF="http:Examples/8/blastoff.c">blastoff.c</A></B>).
+</UL>
+<LI> The conditional operator.
+<LI> Multiple assignments in one expression.
+<LI> An example of the use of shortcut operators.
+<UL>
+<LI> An input-averaging program without shortcuts
+     (<B><A HREF="http:../Programs/Chap3/avg.c>avg.c</A></B>, page 60).
+<LI> The same program using the shortcuts
+     (<B><A HREF="http:../Programs/Chap5/avg2.c>avg2.c</A></B>, page 119).
+</UL>
+</UL>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct16">Wednesday, October 16th</A></H3>
+
+Topics covered:
+<UL>
+<LI> What the three different types of <TT>if</TT> statements are.
+<LI> How the <TT>else-if</TT> works.
+<UL>
+<LI> Writing an <TT>if-else</TT> as a series of nested <TT>if</TT>s
+     (<B><A HREF="http:Examples/9/grade1.c">grade1.c</A></B>).
+<LI> Writing an <TT>if-else</TT> as a series of <TT>else</TT>-<TT>if</TT>s
+     (<B><A HREF="http:Examples/9/grade2.c">grade2.c</A></B>).
+</UL>
+<LI> There are always different ways to make the same decision.
+<UL>
+<LI> One way to write an <TT>if-else</TT> to assign letter grades,
+     including plus and minus
+     (<B><A HREF="http:Examples/9/grade3.c">grade3.c</A></B>).
+<LI> Another way to write <TT>if</TT>s to assign letter grades
+     (<B><A HREF="http:Examples/9/grade4.c">grade4.c</A></B>).
+</UL>
+<LI> The ambiguous <TT>if</TT> problem.
+<LI> How to use <TT>switch</TT> to select an action based on specific
+     value of variables.
+<UL>
+<LI> An example of a selection based on an <TT>else-if</TT>
+     (<B><A HREF="http:Examples/9/gpa1.c">gpa1.c</A></B>).
+<LI> An example of a selection based on an <TT>switch</TT>
+     (<B><A HREF="http:Examples/9/gpa2.c">gpa2.c</A></B>).
+</UL>
+<LI> Some crucial details about using <TT>switch</TT>.
+</UL>
+
+Reading: Chapter 6.1, 6.2, and 6.3.
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct18">Friday, October 18th</A></H3>
+
+<BLINK>NOTE: this class will be held Thursday, 8.00am in Holmes 247!</BLINK>
+
+Topics covered:
+<UL>
+<LI> Incremental program development.
+<LI> An example with a checkbook balancing program.
+  <UL>
+  <LI> Start small.  We just read/echo transactions
+       (<B><A HREF="http:Examples/9/cb1.c">cb1.c</A></B>).
+  <LI> Test and fix all bugs before moving on.  We have to read the
+       newline following the transaction code
+       (<B><A HREF="http:Examples/9/cb2.c">cb2.c</A></B>).
+  <LI> Add one simple piece of functionality add a time.  We add
+       printing the balance
+       (<B><A HREF="http:Examples/9/cb3.c">cb3.c</A></B>).
+  <LI> Do a more complex only after you are sure of the simple piece. 
+       We add handling a service charge
+       (<B><A HREF="http:Examples/9/cb4.c">cb4.c</A></B>).
+  <LI> Do similar/related actions after the similar action works.
+       We add handling checks, withdrawals, and deposits
+       (<B><A HREF="http:Examples/9/cb5.c">cb5.c</A></B>).
+  <LI> Again, add one simple piece of functionality.   We add
+       totalling the deposits
+       (<B><A HREF="http:Examples/9/cb6.c">cb6.c</A></B>).
+  <LI> Again, do similar related actions after the similar action
+       works.  We add totalling checks, withdrawals, and service
+       charges (<B><A HREF="http:Examples/9/cb7.c">cb7.c</A></B>).
+  <LI> Do the fancy stuff last!  We identify 0-count transactions
+       and print average amounts 
+       (<B><A HREF="http:Examples/9/cb8.c">cb8.c</A></B>).
+  </UL>
+</UL>
+
+Reading: (No new reading for this lecture).
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<BR>[<A HREF="/~sgwoods/Courses/ee150/Fall96/">EE150 Home Page</A> |
+     <A HREF="#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

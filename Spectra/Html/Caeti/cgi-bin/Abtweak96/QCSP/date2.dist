@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\begin{center}\begin{tabular}{c|c|c}
+\hline
+Statement Type  & Frequency & Percentage \\[1ex] \hline
+{\bf While}     & 1/22   & 4.5  \\ \hline
+{\bf Zero}      & 1/22   & 4.5  \\ \hline
+{\bf For}       & 1/22   & 4.5  \\ \hline
+{\bf Block}     & 2/22   & 9.0  \\ \hline
+{\bf Increment} & 2/22   & 9.0  \\ \hline
+{\bf Not-Equals}& 2/22   & 9.0  \\ \hline
+{\bf Print}     & 2/22   & 9.0  \\ \hline
+{\bf Assign}    & 3/22   & 13.5 \\ \hline
+{\bf Declare}   & 4/22   & 18.0 \\ \hline
+{\bf Test}      & 4/22   & 18.0 \\ \hline
+\end{tabular}\end{center}
+\caption{\label{quilici-distribution} Standard distribution of
+program statements.}
+\end{table}

@@ -1,0 +1,193 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Sample Midterm #1 Solution </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME="top">E150 - Spring 1996</A></H1>
+
+<H2>Sample Midterm #1<BR>
+Solutions</H2>
+
+You should resist the temptation to look at these
+answers until after you have first tried to solve the
+problems in the same midterm!
+
+<BR CLEAR=all>
+
+<B>Jump To Solution For Problem</B>:
+ [<A HREF=#prob1>1</A> |
+  <A HREF=#prob2>2</A> |
+  <A HREF=#prob3>3</A> |
+  <A HREF=#prob4>4</A>] <BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob1">Problem #1</A></H2>
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+2
+6
+24
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P><TT>i</TT> starts out with 1, and <TT>n</TT> with 2.  We enter
+the loop, check whether <TT>i</TT> is less than 10, which it is, then
+multiply <TT>i</TT>(1) by <TT>n</TT>(2), which results in
+<TT>i</TT> becoming 2.  We add 1 to <TT>n</TT>(2), resulting
+in <TT>n</TT> becoming 3.  We now write <TT>i</TT>(2).  
+
+<P>We go back to the test, which succeeds, and
+multiply <TT>i</TT>(2) by <TT>n</TT>(3), which results in
+<TT>i</TT> becoming 6.  We add 1 to <TT>n</TT>(3), resulting
+in <TT>n</TT> becoming 4.  We now write <TT>i</TT>(6). 
+
+<P>We go back to the test, which succeeds, and
+multiply <TT>i</TT>(6) by <TT>n</TT>(4), which results in
+<TT>i</TT> becoming 24.  We add 1 to <TT>n</TT>(4), resulting
+in <TT>n</TT> becoming 5.  We now write <TT>i</TT>(24).  
+
+<P>We go back to the test, which fails, terminating the loop.
+
+<P><A HREF="sam1.html#prob1a">The problem</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+27 9 3
+10 6 24
+</PRE></BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P>The <TT>a</TT> in <TT>main</TT> starts out with 10,
+and <TT>b</TT> in <TT>main</TT>with 6.  We then
+call <TT>weird</TT> passing it 10 and 6.
+
+<P>Within <TT>weird</TT>, its <TT>b</TT> is set to 10 and its
+<TT>c</TT> is set to 6.  We then divide its <TT>c</TT> by 2,
+resulting in <TT>c</TT> being 3.  We subtract 1 from <TT>b</TT>,
+resulting in it being 9.  And we multiply <TT>b</TT>(9) and <TT>c</TT>(3)
+together and store the result (27) in <TT>a</TT>.  We then write this
+<TT>a</TT>, <TT>b</TT>, and <TT>c</TT>.  We return 
+<TT>a</TT> - <TT>c</TT>, which is 24, and is stored in the <TT>c</TT>
+in the <TT>main</TT> program.  We then write the <TT>main</TT>'s
+<TT>a</TT>, <TT>b</TT>, and <TT>c</TT>.
+
+<P><A HREF="sam1.html#prob1b">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob2">Problem #2</A></H2>
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> There shouldn't be a semicolon at the end of the <TT>#define</TT>
+for <TT>MIN_AGE</TT>.
+<LI> The <TT>scanf</TT> is missing the ampersand in front of <TT>x</TT>.
+<LI> The comparison in the <TT>if</TT> should be greater than rather
+than not equal.
+<LI> The <TT>if</TT> should have a corresponding <TT>else</TT>
+separating the <TT>printf</TT>'s.
+</UL>
+
+<P><A HREF="sam1.html#prob2a">The problem</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> The main is missing the prototype for <TT>compute_cost</TT>.
+<LI> <TT>compute_cost</TT>'s first parameter should be a <TT>double</TT>.
+<LI> <TT>compute_cost</TT> should be declared to return a <TT>double</TT>,
+not a <TT>void</TT>.
+<LI> <TT>compute_cost</TT> needs to divide <TT>sales_tax</TT> by 100
+before using it to compute the final cost.
+</UL>
+
+<P><A HREF="sam1.html#prob2b">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob3">Problem #3</A></H2>
+
+<P> One solution for <TT>draw_triangle</TT> is:
+
+<BLOCKQUOTE><PRE>
+int draw_triangle(int max_size)
+{
+  void draw_line(int n);
+
+  int i; 
+  int sum;
+
+  sum = 0;
+  for (i = max_size; i >= 1; i = i - 1)
+  {
+    draw_line(i);
+    sum = sum + i;
+  }
+  return sum;
+}
+
+void draw_line(int n)
+{
+  int i;
+  
+  for (i = 1; i <= n; i = i + 1)
+    printf("$");
+  printf("\n");
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="sam1.html#prob3">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob4">Problem #4</A></H2>
+
+<P> One solution for this program (that takes into account that there
+might be no input at all) is:
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int value;
+  int largest;
+
+  n = scanf("%i", &largest);  
+  if (n == 1)   /* got at least one value */
+  {
+    while (scanf("%i", &value) == 1)
+    {
+      if (value > largest)
+        largest = value;
+    }
+    printf("The largest input value is %i\n", largest);
+  }
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="sam1.html#prob4">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

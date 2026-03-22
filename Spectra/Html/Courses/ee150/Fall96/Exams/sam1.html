@@ -1,0 +1,195 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Midterm #1 Sample Exam </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Midterm #1<BR>
+Sample Exam</A></H2>
+
+<B>Jump To Problem</B>:
+[<A HREF="#prob1">1</A> |
+ <A HREF="#prob2">2</A> |
+ <A HREF="#prob3">3</A> |
+ <A HREF="#prob4">4</A>]
+
+<BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> Here are some good questions taken from past EE150 midterms that
+you can use as practice for the current midterm.  A real EE150
+midterm is longer than this sample exam, so you should shoot
+for being able to do these sample questions in under 40 minutes.
+
+<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob1">Problem #1</A></H2>
+
+<P> What do each of the following main programs print?  Show the
+output BELOW the program in the space provided.  Show your work to
+the right of the program using the "boxes" approach discussed in
+class.  You get no points if you fail to draw boxes for each variable
+and show us exactly how its value changes.
+
+<H4><A NAME="prob1a">Part A</A></H4> 
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int i;  int n;
+
+  i = 1;  n = 2;
+  while (i &lt&#32 10)
+  {
+    i = i * n;
+    n = n + 1;
+    printf("%i\n", i);
+  }
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol1.html#prob1a">The solution</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int weird(int x, int y);
+
+  int a;  int b;  int c;
+
+  a = 10;  b = 6;   c = weird(a, b);
+  printf("%i %i %i\n", a, b, c);
+}
+
+int weird(int b, int c)
+{
+  int a;
+
+  c = c / 2;
+  b = b - 1;
+  a = b * c;
+  
+  printf("%i %i %i\n", a, b, c);
+  return a - c;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol1.html#prob1b">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob2">Problem #2</A></H2>
+
+<P> Show us the minimum set of changes that we must make to each of
+these programs to get them to compile successfully and run exactly
+as their comment describes.  That is, you should show us what we
+have to add, delete, or replace to make these fucntions work!  HINT:
+Each function has at least 4 mistakes.  NOTE: Assume all of these
+programs have the necessary <TT>#include</TT> for stdio.h even though
+to save space we haven't shown it.
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+ * Read a person's age (an integer) and print a message that
+ * indicates whether that age is old enough to drink legally
+ * (21 or over).
+ */
+#define MIN_AGE 21;
+
+main()
+{
+  scanf("%i", x);
+  if (x != MIN_AGE)
+   printf("%i is old enough to drink\n", x);
+  printf("%i is too young to drink\n", x);
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol1.html#prob2a">The solution</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+ * Use a function to compute the value of one purchase using a
+ * 10% sales tax rate.  If the input is 4.50, then the output
+ * should be 4.95.
+ */
+
+main()
+{
+  double amount;
+  
+  scanf("%lf", &amount);
+  printf("%f\n", compute_cost(amount, 10.0));
+}
+
+void compute_cost(int purchase_amount, double sales_tax)
+{
+  return purchase_amount + purchase_amount * sales_tax;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol1.html#prob2b">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob3">Problem #3</A></H2>
+
+Write a function, <TT>draw_triangle</TT>, that is passed a single
+value, <TT>x</TT>, and prints an upside-down right triangle that
+has both a base and height and that is <TT>x</TT> characters wide.
+The function should then return the total number of characters it
+wrote.  For example, the call:
+<BLOCKQUOTE><PRE>
+n = draw_triangle(6);
+</PRE></BLOCKQUOTE>
+would result in this output
+<BLOCKQUOTE><PRE>
+$$$$$$
+$$$$$
+$$$$
+$$$
+$$
+$
+</PRE></BLOCKQUOTE>
+and would place a 21 into <TT>n</TT>.  HINT: Your function should
+not take more than 10-12 instructions.
+
+<P><A HREF="samsol1.html#prob3">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob4">Problem #4</A></H2>
+
+Write a program to read a series of input values and print the
+largest input value.  For example, if the input is:
+<BLOCKQUOTE><PRE>
+20 40 60 10 15 80 12 50 30 12
+</PRE></BLOCKQUOTE>
+your program's output should be:
+<BLOCKQUOTE><PRE>
+The largest input value is 80.
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol1.html#prob4">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

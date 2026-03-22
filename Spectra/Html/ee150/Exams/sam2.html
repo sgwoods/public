@@ -1,0 +1,181 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Midterm #2 Sample Exam </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Midterm #2<BR>
+Sample Exam</H2>
+
+<B>Jump To Problem</B>:
+[<A HREF="#prob1">1</A> |
+ <A HREF="#prob2">2</A> |
+ <A HREF="#prob3">3</A> |
+ <A HREF="#prob4">4</A>]
+
+<BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> Here are some good questions taken from past EE150 midterms that
+you can use as practice for the current midterm.  A real EE150
+midterm is longer than this sample exam, so you should shoot
+for being able to do these sample questions in under 40 minutes.
+
+<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob1">Problem #1</A></H2>
+
+<P> What do each of the following main programs print?  Show the
+output BELOW the program in the space provided.  Show your work to
+the right of the program using the "boxes" approach discussed in
+class.  You get no points if you fail to draw boxes for each variable
+and show us exactly how its value changes.
+
+<H4><A NAME="prob1a">Part A</A></H4> 
+
+<BLOCKQUOTE><PRE>
+
+int table[8] = {87, -1, 94, 0, 80, 1, 90, 70};
+
+main()
+{
+  int i; 
+
+  for (i = 7; i &gt;= 0; i--)
+  {
+    if (table[i] &gt; 75)
+      printf("%i\n", table[i]);
+    if (table[i] &lt;= 0)
+      break;
+  }
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol2.html#prob1a">The solution</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int weird(int x, int y);
+
+  for (i = 0; i &lt; 6; i++)
+  {
+    if (i &gt;= 3 && i &lt;= 4)
+      printf("%i-a\n", i);
+    if (i &gt;= 3 || i &lt;= 4)
+      printf("%i-b\n", i);
+  }  
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol2.html#prob1b">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob2">Problem #2</A></H2>
+
+<P> Show us the minimum set of changes that we must make to each of
+these programs to get them to compile successfully and run exactly
+as their comment describes.  That is, you should show us what we
+have to add, delete, or replace to make these fucntions work!  HINT:
+Each function has 4 mistakes.  
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+ * Print the number of digits found in this program's input.
+ */
+#include &lt;stdio.h&gt;
+
+main()
+{
+  int count;
+  int c;
+  
+  c = getchar();
+  while (c != EOF)
+    if (isdigit(c) == 0)
+      count = c + 1;
+  printf("Found %i digits in input\n", count);
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol2.html#prob2a">The solution</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+ * Count the number of negative values in an array "table" that
+ * contains "n" elements.  Return this count.
+ */
+
+int count_negatives(int table[], int n)
+{
+  int count;
+  
+  count = 0;
+  for (i = n - 1; i &gt; 0; i--)
+    if (a[i] > 0)
+      count++;
+  return i;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol2.html#prob2b">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob3">Problem #3</A></H2>
+
+Write a program that takes a barchart as input and prints the
+length of each bar.  At the end, it prints the number of bars and
+the average length of each bar.  For example, here's its I/O.
+
+<BLOCKQUOTE>
+<EM>#######</EM><BR>
+<TT>7</TT><BR>
+<EM>###</EM><BR>
+<TT>3</TT><BR>
+<EM>############</EM><BR>
+<TT>12</TT><BR>
+<EM>control-D</EM><BR>
+<TT>There were 3 bars with an average length of 7.</TT>
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samsol2.html#prob3">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob4">Problem #4</A></H2>
+
+Write a function, <TT>maxvalue</TT> that returns the largest value
+in an array of <TT>n</TT> integers.  That is, the function's prototype
+looks like:
+
+<BLOCKQUOTE><PRE>
+int maxvalue(int table[], int n);
+</PRE></BLOCKQUOTE>
+
+You may assume that <TT>n</TT> will be at least 1.
+
+<P><A HREF="samsol2.html#prob4">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

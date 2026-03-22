@@ -1,0 +1,82 @@
+(defun repair-prog2 (prog Wposn)
+
+  (comment1 "prog      = " prog)
+  (comment1 "Wposn     = " Wposn)
+
+  (let* (
+	 (findBposn  (find-b prog Wposn))
+	 (x    (comment1 "findBposn = " findBposn))
+	 (moveEs     (get-es prog Wposn findBposn))
+	 (y    (comment1 "moveEs    = " moveEs))
+	 (b-id       (second (third (nth posn prog))))
+	 (z    (comment1 "b-id      = " b-id))
+	 (findEposn  (find-e prog findBposn b-id)) 
+	 (a    (comment1 "findEposn = " findEposn))
+	 (remv-es-part (remv-es (subseq prog (1+ Wposn) findEposn)))
+	 (b    (comment1 "remv-es-pt = " remv-es-part))
+	 (newTilEposn   (append  remv-es-part
+				 (list (nth findEposn prog))))
+	 (c    (comment1 "newTilEpos = " newTilEposn))
+	 (init-part    (subseq prog 0 (1+ Wposn)))
+	 (d    (comment1 "init-part  = " init-part))
+	 (remainder  (subseq prog (1+ findEposn) (length prog)))
+	 (e (comment1 "remainder = " remainder))
+	 )
+    (append init-part newTilEposn moveEs remainder)
+    ))
+    
+
+(defun remv-es (subprog)
+  (remove-if #'(lambda (x) (equal (first (third x)) 'e)) subprog))
+
+(defun get-es (prog startpos endpos)
+  (let ( (part (subseq prog startpos endpos)) )
+    (remove-if #'(lambda (x) (not (equal (first (third x)) 'e)))
+	       part)))
+
+(defun find-b (prog posn)
+  (position 'B prog :start posn 
+	    :test #'(lambda (a b) (equal (first (third b)) a))))
+
+(defun find-e (prog posn b-id)
+  (position 'E prog   :start posn 
+	    :test #'(lambda (a b) (and 
+				   (equal (first (third b)) a)
+				   (equal (second (third b)) b-id))))) 
+
+
+
+(setq x1 '( 
+	   (0  2 (a))
+	   (1  2 (b))
+	   (2  2 (w))
+	   (3  2 (x))
+	   (4  2 (e 1))
+	   (5  2 (y))
+	   (6  2 (e 2))
+	   (7  2 (z))
+	   (8  2 (b 3))
+	   (9  2 (u))
+	   (10 2 (v))
+	   (11 2 (p))
+	   (12 2 (e 3)) 
+	   (13 2 (c))
+	   (14 2 (d))
+	   ))
+
+
+(setq x2 '( 
+	   (0  2 (a))
+	   (1  2 (b))
+	   (2  2 (w))
+	   (3  2 (x))
+	   (5  2 (y))
+	   (7  2 (z))
+	   (8  2 (b 3))
+	   (9  2 (u))
+	   (10 2 (v))
+	   (11 2 (p))
+	   (12 2 (e 3)) 
+	   (13 2 (c))
+	   (14 2 (d))
+	   ))

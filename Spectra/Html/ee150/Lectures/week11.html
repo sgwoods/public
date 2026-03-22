@@ -1,0 +1,109 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Summaries, Week 11 </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME=#top>EE150 - Fall 1996</H1>
+
+<IMG SRC="../Images/Pages.gif" WIDTH=32 HEIGHT=32 HSPACE=10 ALT=""
+     ALIGN=left>
+
+<H2>Lecture Summaries - Week 11</H2>
+
+<BR CLEAR=all>
+
+<BLOCKQUOTE>
+<UL>
+<LI> <A HREF="#nov4">Monday, November 4th.</A>
+<LI> <A HREF="#nov6">Wednesday, November 6th.</A>
+<LI> <A HREF="#nov8">Friday, November 8th.</A>
+</UL>
+</BLOCKQUOTE>
+
+<B>Jump To</B>:
+   [<A HREF="http:lectures.html">Lecture Index</A> |
+    <A HREF="http:week10.html">Previous Week's Lectures</A> |
+    <A HREF="http:week12.html">Next Week's Lectures</A>]
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="nov4">Monday, November 4th</A></H3>
+
+Topics covered:
+<UL>
+<LI> Summary of different variables.
+<LI> Rules for initializing local and global variables.
+<LI> How to initialize local and global arrays.
+<LI> Why we need static local variables and how they work.
+  <UL>
+  <LI> An incorrect example of a function that counts how many times
+       it is called
+       (<B><A HREF="../Programs/Chap9/tstfnc1.c">tstfnc1.c</A></B>).
+  <LI> A fixed version using global variables.
+       (<B><A HREF="Examples/11/tstfncg.c">tstfncg.c</A></B>).
+  <LI> An even better version using static variables
+       (<B><A HREF="../Programs/Chap9/tstfnc2.c">tstfnc2.c</A></B>).
+  </UL>
+<LI> How to use <TT>extern</TT> to access globals defined in
+another file.
+<LI> How to use <TT>static</TT> to limit access to globals to
+the file in which they are defined.
+</UL>
+
+Reading: Chapter 8.3
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="nov6">Wednesday, November 6th</A></H3>
+
+Topics covered:
+<UL>
+<LI> What is a pointer.
+<LI> How pointers are represented on the computer.
+<LI> How to declare pointers.
+<LI> How to initialize a pointer.
+<LI> How to follow a pointer.
+<LI> How pointers are used to return multiple values.
+   <UL>
+   <LI> Using pointers to write a function to return the quotient
+        and remainder of the division of two values.
+        (<B><A HREF="Examples/12/div.c">div.c</A></B>).
+   </UL>
+<LI> A cookbook for transforming functions to return values
+     through pointers.
+</UL>
+
+Reading: Chapter 9.1, Chapter 14.1.
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="nov8">Friday, November 8th</A></H3>
+
+Topics covered:
+<UL>
+<LI> The idea of input and output parameters.
+<LI> A cookbook approach to returning more than one value using pointers.
+   <UL>
+   <LI> Using pointers to write a function to return the smallest
+        and largest values in an array.
+        (<B><A HREF="Examples/13/minmax1.c">minmax1.c</A></B>).
+   <LI> Using pointers to write a function to return the smallest
+        and largest values in an array (trickier version).
+        (<B><A HREF="Examples/13/minmax2.c">minmax2.c</A></B>).
+   </UL>
+<LI> How the name of an array is a pointer to its first element.
+<LI> How array subscripting really works.
+<LI> The basics of pointer arithmetic.
+<LI> Why changing an array parameter changes the array in the caller.
+</UL>
+
+Reading: Chapter 9.2.
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<BR>[<A HREF="/~sgwoods/Courses/ee150/Fall96/">EE150 Home Page</A> |
+     <A HREF="#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

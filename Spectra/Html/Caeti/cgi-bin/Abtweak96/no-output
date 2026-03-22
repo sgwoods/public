@@ -1,0 +1,197 @@
+> Here I am 2  < NIL > 
+***** OPTIONS for CSP ( (TCSP terrain-1 terrain-templ1) ) ***** 
+
+ Search Mode          : bt 
+ Node Consis Mode     : T 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : T 
+ Dynamic Rearrangement: T 
+ Advance sort option  : T 
+ Inline  sort cstr opt: RANDOM 
+ Advance sort cstr opt: NIL 
+ Backjump option      : NIL 
+ One Solution Only    : T 
+ CPU Seconds limit    : 600 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+Domain size ( INITIAL ) statistics ... 
+Max[(CP1 72)]  Min[(CP1 72)]  Avg[72.0] 
+
+Domain size ( NODE ) statistics ... 
+Max[(CP1 50)]  Min[(CP1 50)]  Avg[50.0] 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : ONE-SOLUTION 
+ No. Solutions    : 1 
+ Solutions... 
+((CP5 SIT9-3) (CP1 SIT1-6)) 
+ Node Consis. cks   : 344 
+   >Matches-type       : 144 
+   >Matches-radial     : 100 
+   >Matches-abs-loc    : 100 
+ Satisfy-p calls  : 5 
+ Satisfy-p cost   : 1 
+ Consistent calls : 201 
+ Ttl constr chks  : 238 
+    >AC     compat results: 0 
+    >AC not compat results: 0 
+    >Spatial Cohes cks: 0 
+    >Spatial Cohes savings : 0 
+    >Leg Clear cks   : 79 
+    >Leg Lat Spc cks : 77 
+    >X Greater Than cks : 0 
+    >Y Greater Than cks : 0 
+    >Separation cks   : 82 
+    >Positional cks   : 0 
+    >Medial cks       : 0 
+    >Echelon cks      : 0 
+    >Same type cks    : 0 
+    >Same orient cks  : 0 
+    >Same activity cks: 0 
+    >Same size cks    : 0 
+ BT nodes created : 4 
+ Nodes visited    : 5 
+ Forward ck cost  : 200 
+ Dyn Rearr cost   : 0 
+
+
+Advance Processing CPU Seconds: 0.167 
+Advance Sort       CPU Seconds: 0.0 
+Search             CPU Seconds: -37.833 
+Total              CPU Seconds: -37.666 
+
+> Here I am 2  < NIL > 
+***** OPTIONS for CSP ( (TCSP terrain-1 terrain-templ1) ) ***** 
+
+ Search Mode          : bt 
+ Node Consis Mode     : T 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : T 
+ Dynamic Rearrangement: T 
+ Advance sort option  : T 
+ Inline  sort cstr opt: RANDOM 
+ Advance sort cstr opt: NIL 
+ Backjump option      : NIL 
+ One Solution Only    : T 
+ CPU Seconds limit    : 600 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+Domain size ( INITIAL ) statistics ... 
+Max[(CP1 72)]  Min[(CP1 72)]  Avg[72.0] 
+
+Domain size ( NODE ) statistics ... 
+Max[(CP1 50)]  Min[(CP1 50)]  Avg[50.0] 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : ONE-SOLUTION 
+ No. Solutions    : 1 
+ Solutions... 
+((CP5 SIT9-3) (CP1 SIT1-6)) 
+ Node Consis. cks   : 344 
+   >Matches-type       : 144 
+   >Matches-radial     : 100 
+   >Matches-abs-loc    : 100 
+ Satisfy-p calls  : 5 
+ Satisfy-p cost   : 1 
+ Consistent calls : 201 
+ Ttl constr chks  : 238 
+    >AC     compat results: 0 
+    >AC not compat results: 0 
+    >Spatial Cohes cks: 0 
+    >Spatial Cohes savings : 0 
+    >Leg Clear cks   : 79 
+    >Leg Lat Spc cks : 77 
+    >X Greater Than cks : 0 
+    >Y Greater Than cks : 0 
+    >Separation cks   : 82 
+    >Positional cks   : 0 
+    >Medial cks       : 0 
+    >Echelon cks      : 0 
+    >Same type cks    : 0 
+    >Same orient cks  : 0 
+    >Same activity cks: 0 
+    >Same size cks    : 0 
+ BT nodes created : 4 
+ Nodes visited    : 5 
+ Forward ck cost  : 200 
+ Dyn Rearr cost   : 0 
+
+
+Advance Processing CPU Seconds: 0.033 
+Advance Sort       CPU Seconds: 0.0 
+Search             CPU Seconds: -50.216 
+Total              CPU Seconds: -50.183 
+
+***** OPTIONS for CSP ( (TCSP terrain-1 terrain-templ1) ) ***** 
+
+ Search Mode          : bt 
+ Node Consis Mode     : T 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : T 
+ Dynamic Rearrangement: T 
+ Advance sort option  : T 
+ Inline  sort cstr opt: RANDOM 
+ Advance sort cstr opt: NIL 
+ Backjump option      : NIL 
+ One Solution Only    : T 
+ CPU Seconds limit    : 600 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+Domain size ( INITIAL ) statistics ... 
+Max[(CP1 72)]  Min[(CP1 72)]  Avg[72.0] 
+
+Domain size ( NODE ) statistics ... 
+Max[(CP1 50)]  Min[(CP1 50)]  Avg[50.0] 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : ONE-SOLUTION 
+ No. Solutions    : 1 
+ Solutions... 
+((CP5 SIT9-3) (CP1 SIT1-6)) 
+ Node Consis. cks   : 344 
+   >Matches-type       : 144 
+   >Matches-radial     : 100 
+   >Matches-abs-loc    : 100 
+ Satisfy-p calls  : 5 
+ Satisfy-p cost   : 1 
+ Consistent calls : 201 
+ Ttl constr chks  : 238 
+    >AC     compat results: 0 
+    >AC not compat results: 0 
+    >Spatial Cohes cks: 0 
+    >Spatial Cohes savings : 0 
+    >Leg Clear cks   : 79 
+    >Leg Lat Spc cks : 77 
+    >X Greater Than cks : 0 
+    >Y Greater Than cks : 0 
+    >Separation cks   : 82 
+    >Positional cks   : 0 
+    >Medial cks       : 0 
+    >Echelon cks      : 0 
+    >Same type cks    : 0 
+    >Same orient cks  : 0 
+    >Same activity cks: 0 
+    >Same size cks    : 0 
+ BT nodes created : 4 
+ Nodes visited    : 5 
+ Forward ck cost  : 200 
+ Dyn Rearr cost   : 0 
+
+
+Advance Processing CPU Seconds: 0.017 
+Advance Sort       CPU Seconds: 0.0 
+Search             CPU Seconds: -55.683 
+Total              CPU Seconds: -55.666 
+

@@ -1,0 +1,269 @@
+
+<HEAD>
+<TITLE>EE150, Fall 1996 - Programming Assignment #2</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Fall 1996</H1>
+<H2>Programming<BR>
+Assignment #2</H2>
+
+<P> Last Update: September 11, 1996 <P>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment has several parts:
+
+<UL>
+<LI> Entering the price-computing program from the textbook and
+making several simple changes to it (just as in
+<A HREF=http:/~sgwoods/Courses/ee150/Fall96/Assignments/pa1.html>
+Assignment #1</A>,
+but with a more complicated program).<P>
+<LI> Extending this program to use a loop to produce a table of
+quantities and prices.<P>
+<LI> Writing a simple but complete program from scratch (although to
+ease the pain of writing your first program, you will complete it
+gradually, in stages).<P>
+<LI> Extending your new program to read its data from the input
+rather than having it built into the program (again, having you
+do this in stages).
+</UL>
+
+<P> The due date is: <B> Wednesday, September 18th, 1996 </B> at 6pm.
+You should expect to spend between three and six hours of
+computer time over the next two weeks, depending on how
+comfortable you are with text editing and using UNIX.  You should also
+expect to spend one to two hours of thinking time, depending on how
+much prior programming experience you have.  As usual, we will not
+accept late assignments (no matter how clever or unique the excuse is).
+So GET STARTED soon!!  Please ask the TA questions during the
+assigned TA lab times and try to avoid overloading the lab coordinators
+with "C" questions - it is not their responsibility to teach you how to
+program. 
+
+<H4> What To Do </H4>
+
+<P> <A NAME="part1"><B>Part 1</B></A>:
+Create a file containing the program <B>price2.c</B>
+(this is the price-computing program we discussed in
+<A HREF=http:/~sgwoods/Courses/ee150/Fall96/Lectures/week2.html#sep4>the lecture
+on Wednesday, September 4th</A>; also on page 13 of the text). 
+Compile this file and run the resulting executable program. 
+Make sure its output is identical to the output shown in class 
+and in the textbook.  
+
+<P> Once you are confident your program is correct, copy it into
+a new file <B>textbooks.c</B>, and modify this
+new file to compute the cost of buying 18 textbooks at 49.95, with Hawaii's
+4.0% sales tax and a 15% bookstore discount for EE students. 
+
+<P> <A NAME="part1out">Your output</A>
+should look <EM>exactly</EM> (repeat, <EM>Exactly</EM>;
+again, <EM>EXACTLY</EM>) like the following:
+<BLOCKQUOTE> <PRE>
+List price per textbook:          49.95
+List price of 18 textbooks:      899.10
+Price after 15.0% discount:      764.24
+Hawaii sales tax at 4.0%:         30.57
+Total cost of textbooks:         794.80
+</PRE> </BLOCKQUOTE>
+There are no blank lines in the output you produce.  The first output
+line should begin with <TT>List price</TT> and the last output line
+should begin with <TT>Total cost</TT>.  Also, there are also no
+blank spaces before the first characters on your output lines.  So
+"List" should be in columns 1 through 4 of the output.
+
+<P> <A NAME="part2"><B>Part 2</B></A>:
+Now copy your program into a file <B>textbooks2.c</B>. Change the program so
+that it take into account a new Federal Sales Tax of 8%.  Modify this new 
+file so that it produces <A NAME="part2out">the following output</A>:
+<BLOCKQUOTE> <PRE>
+List price per textbook:          49.95
+Discount rate:                    15.0%
+Hawaii tax rate:                   4.0%
+Federal tax rate:                  8.0%
+
+Texts      List         Discount          Total           Final
+Bought    Price            Price            Tax           Price
+ 1        49.95            42.46           5.09           47.55
+ 2        99.90            84.92          10.19           95.10
+ 3       149.85           127.37          15.28          142.66
+ 4       199.80           169.83          20.38          190.21
+ 5       249.75           212.29          25.47          237.76
+ 6       299.70           254.75          30.57          285.31
+ 7       349.65           297.20          35.66          332.87
+ 8       399.60           339.66          40.76          380.42
+ 9       449.55           382.12          45.85          427.97
+10       499.50           424.57          50.95          475.52
+11       549.45           467.03          56.04          523.08
+12       599.40           509.49          61.14          570.63
+13       649.35           551.95          66.23          618.18
+14       699.30           594.41          71.33          665.73
+15       749.25           636.86          76.42          713.29
+16       799.20           679.32          81.52          760.84
+17       849.15           721.78          86.61          808.39
+18       899.10           764.24          91.71          855.94
+</PRE> </BLOCKQUOTE>
+This output is a table of what the purchases of different numbers
+of textbooks would cost.  The biggest changes are that you now need a
+loop to run through the different numbers of textbooks, that the calculations
+of the various total prices, taxes, and so on, must be moved into the
+loop, that the calculations take into account the new tax, and that 
+the output is formatted completely differently.
+
+<P> <A NAME="part3"><B>Part 3</B></A>:
+Create a program named "trip.c" that computes your
+car's gas mileage and the cost of the gas per mile of driving.  Assume
+your car went 400.4 miles on 17.2 gallons (you know it went this far
+because you set the trip odometer at the time of your last fill up) and
+that you paid $1.739 per gallon of gas (you put super unleaded in your
+old beater Oldsmobile to keep it from dying going up hills).  
+<A NAME="part3out">Your program's output</A> should look EXACTLY
+like this:
+<BLOCKQUOTE><PRE>
+Miles driven:            400.4
+Gallons purchased:        17.2
+Miles per gallon:         23.28
+                  
+Cost per gallon:        $  1.739
+Total cost:             $ 29.91
+Cost per mile:          $  0.075
+</PRE></BLOCKQUOTE>
+
+<P> Once you get your program to produce the above output, you need to 
+extend it.  Now your program will also determine how much money you 
+could have saved if you take the bus for the same trip.  THE BUS costs
+$1.00 for every 100 miles.  Also, assume that there are additional maintenance
+costs for your car of 5 cents per mile.  Your final output should 
+look <EM>exactly</EM> like the following:
+<BLOCKQUOTE><PRE>
+Miles driven:            400.4
+Gas gallons purchased:    17.20
+Car miles per gallon:     23.28
+
+Gas cost per gallon:    $  1.739
+Car total cost:         $ 49.93
+Car cost per mile:      $  0.125
+
+Total trip bus cost:    $  4.00
+Bus cost per mile:      $  0.0100
+Bus over car saving:    $ 45.93
+</PRE></BLOCKQUOTE>
+
+<P> <A NAME="part4"><B>Part 4</B></A>:
+Copy the program from the previous part of the assignment
+into a file named "trip2.c".  Modify
+this program so that it reads the miles driven and the gallons purchased
+from its input.  For example, given this input,
+<BLOCKQUOTE>
+<EM>400.4 17.2</EM>
+</BLOCKQUOTE>
+your program should produce exactly the output shown above.  Given
+this input,
+<BLOCKQUOTE>
+<EM>1000 40.90</EM>
+</BLOCKQUOTE>
+<A NAME="part4out">your program</A> should produce
+exactly the output shown below.
+<BLOCKQUOTE><PRE>
+Miles driven:            1000.0
+Gas gallons purchased:    40.90
+Car miles per gallon:     24.45
+
+Gas cost per gallon:    $  1.739
+Car total cost:         $121.13
+Car cost per mile:      $  0.121
+
+Total trip bus cost:    $ 10.00
+Bus cost per mile:      $  0.0100
+Bus over car saving:    $111.13
+</PRE></BLOCKQUOTE>
+You can assume that the user will enter exactly two values, they
+will be in the right format, the gallons purchased will be less
+than the assumed capacity of the tank, etc...
+
+<P><A NAME="part4in">You are now almost there.</A>
+You now simply need to modify your program
+so it can read more than one set of values.  For example, if the input
+looks like this:
+<BLOCKQUOTE>
+<EM>400 17.2</EM> <BR>
+<EM>1000 40.90</EM> <BR>
+control-D
+</BLOCKQUOTE>
+your program would produce output that looks like this:
+
+<BLOCKQUOTE><PRE>
+Miles driven:            400.4
+Gas gallons purchased:    17.20
+Car miles per gallon:     23.28
+
+Gas cost per gallon:    $  1.739
+Car total cost:         $ 49.93
+Car cost per mile:      $  0.125
+
+Total trip bus cost:    $  4.00
+Bus cost per mile:      $  0.0100
+Bus over car saving:    $ 45.93
+
+Miles driven:            1000.0
+Gas gallons purchased:    40.90
+Car miles per gallon:     24.45
+
+Gas cost per gallon:    $  1.739
+Car total cost:         $121.13
+Car cost per mile:      $  0.121
+
+Total trip bus cost:    $ 10.00
+Bus cost per mile:      $  0.0100
+Bus over car saving:    $111.13
+</PRE></BLOCKQUOTE>
+
+<H4> <A NAME="suppl1"> Supplemental Note (Tuesday, September 10) </H4>
+
+Please note that standard IO (input/output) input functions such as "scanf" 
+accept data directly from the keyboard, <EM>OR</EM> from a file.  For example,
+if a program was expecting two integer values (say 5 and 10), the user could
+enter them followed by a return as prompted by the program.  However, a file
+(say "file1.dat") could also be created containing exactly and only these two
+values.   In this case one could run their program (say trip2.c compiled as
+trip2) with the following command:  "trip2 < file1.dat".  The result of this is
+that trip2 used "standard input" from the file rather than from the keyboard.
+The output would still go to the screen in this example.
+
+Thus, for the previous question, an example expecting two sets of related input
+values  would produce the output as shown if the input were given from a file.
+If the input were given from the keyboard/screen then the second set of input
+values would appear BETWEEN the first set of output and the second set of
+output. 
+
+<H4> What To Turn In </H4>
+
+<P>
+To get credit for this assignment, you must electronically turn in
+the four files you created in Parts 1 through 4: <B>textbooks.c</B>,
+<B>textbooks2.c</B>, <B>trip.c</B> and <B>trip2.c</B>.
+
+<P> <A NAME="grade">As usual, to turn in your program, you need to use
+the <TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the following (EXACT!! note the 2s2 indicating
+assignment 2 for section 2!!) command:
+<BLOCKQUOTE>
+<TT> grade -2s2,ee150 textbooks.c textbooks2.c trip.c trip2.c </TT>
+</BLOCKQUOTE>
+The <TT>-2s2</TT> tells the grade command which assignment you are
+turning in (assignment #2) and for which section, the <TT>ee150</TT> 
+tells it your class (EE150, so the programs get sent to the EE150 professor 
+and not to the professor of some other class), and the
+".c" files are the source files you are actually turning in.
+Please make sure you type in the command exactly as it shown above.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

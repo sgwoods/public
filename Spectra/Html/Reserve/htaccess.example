@@ -1,0 +1,9 @@
+AuthUserFile /X11/marca/public/auth-tutorial/examples/by-password-multiple-users/.htpasswd
+AuthGroupFile /X11/marca/public/auth-tutorial/examples/by-password-multiple-users/.htgroup
+AuthName ExampleMultipleUsers
+AuthType Basic
+
+<Limit GET>
+require group shaggy-dogs
+</Limit>
+

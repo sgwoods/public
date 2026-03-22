@@ -1,0 +1,95 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Assignment #6 Solution</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Programming Assignment #6 <BR>
+Solution</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT> <A HREF=pa6.html#part1> <B>Part 1:</B></A>
+
+<DD> The idea with this program is to start by breaking it into two
+parts: a function, <TT>readCodes</TT>, to read the codes
+and set up "before" and "after"
+arrays, and a loop that reads lines, uses another function,
+<TT>convert</TT>,
+to compute the transformation and store it into a new array, and
+a <TT>printf</TT> to dump that array.   
+
+<P> <TT>readCodes</TT> reads the line with the transformations,
+finds the blank separating them, and then copies the appropriate
+pieces to the "before" and "after" arrays.  <TT>convert</TT> takes
+the input array, the "before" and "after" arrays, and an output
+array.  It looks up
+each character in the input array in the "before" array and then
+stores the corresponding character from the "after" array into
+the output array.
+
+<P> Our solution is in <A HREF="Solutions/6/convert1.c"><B>convert1.c</B></A>.
+
+<P>
+<DT> <A HREF=pa6.html#part2> <B>Part 2:</B></A>
+
+<DD> The main program for this one is the same as before, as is the
+<TT>convert</TT> function.  The difference is that <TT>readCodes</TT>
+has to make an extra pass through the "before" and "after" arrays to
+expand the ranges they contain.  This is done by calling a new
+function, <TT>expand</TT>, on each of those arrays.  <TT>expand</TT> is
+basically a state machine that does different things depending on
+whether the last character was a dash.   If it isn't, it
+just copies the character into a new array (as long as the character
+is not a dash).  If it is, it puts all the characters represented by
+the range into the new array.
+
+<P> Our solution is in <A HREF="Solutions/6/convert2.c"><B>convert2.c</B></A>.
+
+<P>
+<DT> <A HREF=pa6.html#part3> <B>Part 3:</B></A>
+
+<DD> The key to this program is using all functions you were given to
+work with.  The first part of the program is a loop that uses
+<TT>readStudentInfo</TT> to read each group containing a name, account,
+and id and then store it in the next available entry in the table.
+At this point, the program indicates that no students have averages
+yet by setting their average to -1.
+
+<P> The second part is a loop that uses <TT>readStudentScores</TT> to read 
+IDs and scores, <TT>lookupStudent</TT> to find the table entry with the
+provided ID, <TT>computeAverage</TT> to compute the student's average,
+and a simple assignment to save the average.
+
+<P> The last part is a loop to print all the students in the table,
+along with their average (unless it's still -1, in which case it knows
+that they never had any scores read in.
+
+<P> Our solution is in <A HREF="Solutions/6/grades1.c"><B>grades1.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa6.html#part4> <B>Part 4:</B></A>
+
+<DD> Here, the primary difference is in the second part of the program.
+The scores are stored in the next row of a two-dimensional array,
+and the number of that row is stored in the <TT>score_index</TT>
+field of the structure containing that student's ID and name.
+
+<P> The other change is that when the program does to print the scores,
+it uses the <TT>score_index</TT> to tell it which row of
+the array contains those scores, and then it prints that row.
+
+<P> Our solution is in <A HREF="Solutions/6/grades2.c"><B>grades2.c</B></A>.
+
+</DL>
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

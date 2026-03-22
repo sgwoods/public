@@ -1,0 +1,138 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Summaries, Week 7 </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME=#top>EE150 - Fall 1996</H1>
+
+<IMG SRC="../Images/Pages.gif" WIDTH=32 HEIGHT=32 HSPACE=10 ALT=""
+     ALIGN=left>
+
+<H2> Lecture Summaries - Week 7</H2>
+
+<BR CLEAR=all>
+
+<BLOCKQUOTE>
+<UL>
+<LI> <A HREF="#oct7">Friday, October 7th.</A>
+<LI> <A HREF="#oct9">Wednesday, October 9th.</A>
+<LI> <A HREF="#oct11">Friday, October 11th.</A>
+</UL>
+</BLOCKQUOTE>
+
+<B>Jump To</B>:
+   [<A HREF="http:lectures.html">Lecture Index</A> |
+    <A HREF="http:week6.html">Previous Week's Lectures</A> |
+    <A HREF="http:week8.html">Next Week's Lectures</A>]
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct7">Monday, October 7th</A></H3>
+
+Topics covered:
+<UL>
+<LI> How input and output redirection works and why it's important.
+<LI> How we can also do character I/O with
+     <TT>getchar</TT> and <TT>putchar</TT>.
+<LI> What character-at-a-time input-reading loops look like with
+     <TT>getchar</TT>.
+<UL>
+<LI> A program to echo its input
+     (<B><A HREF="http:../Programs/Chap4/display.c">display.c</A></B>,
+     page 74).
+</UL> 
+<LI> Many useful programs are simple variants use character-at-a-time
+     input reading loops.
+<UL>
+<LI> A program to count its input characters
+     (<B><A HREF="http:Examples/7/charcnt.c">charcnt.c</A></B>).
+<LI> A program to count its input lines
+     (<B><A HREF="http:Examples/7/linecnt.c">linecnt.c</A></B>).
+</UL>
+<LI> How can we use state diagrams to help us implement more complex
+     character-at-a-time processing.
+<UL>
+<LI> A program to count its input words
+     (<B><A HREF="http:Examples/7/wordcnt.c">wordcnt.c</A></B>).
+</UL>
+<LI> There are a collection of useful character testing functions
+in <B>ctype.h</B>.
+</UL>
+
+Reading: Chapter 4.3, 4.4 (pages 73-79).
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct9">Wednesday, October 9th</A></H3>
+
+Topics covered:
+<UL>
+<LI> Why we write functions to handle high-level input tasks,
+     such as obtaining yes-or-no answers.
+<LI> How we use character-at-a-time input to write these functions.
+<UL>
+<LI> The <TT>yesorno</TT> function gets a yes or no answer from the user
+     (<B><A HREF="http:Examples/8/yesorno1.c">yesorno1.c</A></B>).
+<LI> A main program that uses <TT>yesorno</TT>
+     (<B><A HREF="http:Examples/8/useyn1.c">useyn1.c</A></B>).
+</UL>
+<LI> Why we have to worry about the carriage return when obtaining input.
+<UL>
+<LI> A main program that uses <TT>yesorno</TT>,
+     where it is clear it doesn't work
+     (<B><A HREF="http:Examples/8/useyn2.c">useyn2.c</A></B>).
+</UL>
+<LI> How to skip characters until the end of the line.
+<UL>
+<LI> Fixing <TT>yesorno</TT> to do this
+     (<B><A HREF="http:../Programs/Chap4/yesorno.c">yesorno.c</A></B>,
+     page 79).
+</UL>
+<LI> How to skip blanks before our input.
+<LI> How to allow multi-case input with <TT>tolower</TT> and <TT>toupper</TT>.
+<LI> Combining these new features.
+<UL>
+<LI> Extending <TT>yesorno</TT> to allow leading blanks and upper- or
+     lower-case answers
+     (<B><A HREF="http:Examples/8/yesorno2.c">yesorno2.c</A></B>).
+</UL>
+<LI> Some shortcuts in using functions.
+<UL>
+<LI> Using return values directly (as in <B>yesorno2.c</B>).
+<LI> How expressions in <TT>if</TT>s and loops are automatically
+     compared against zero.
+</UL>
+<LI> Some things to think about when using functions.
+<UL>
+<LI> Watching out for the assumptions we made when we implement a function.
+<LI> Testing a function to locate those assumptions.
+</UL>
+</UL>
+
+Reading: (No new reading for this lecture)
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct11">Friday, October 11th</A></H3>
+
+Topics covered:
+<UL>
+<LI> How <TT>scanf</TT> converts "character" numbers to integers.
+<LI> A review of C's arithmetic operators.
+<LI> What happens when we do arithmetic on characters.
+<LI> A review of C's relational operators.
+<LI> How relational operators return 0 or 1.
+<LI> The logical operators (and, or, and not).
+<LI> How to understand the behavior of logical operators with
+     truth tables.
+</UL>
+
+Reading: Chapter 5.1-5.3 (pages 91 - 100)
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<BR>[<A HREF="/~sgwoods/Courses/ee150/Fall96/">EE150 Home Page</A> |
+     <A HREF="#top">Top Of Page</A>]
+
+</BODY>

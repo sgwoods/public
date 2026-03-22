@@ -1,0 +1,78 @@
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;  DIALOG 0 (from "Forming User Models by Understanding User Feedback")
+
+;; 0-1 User: What's the best way to remove a file?
+
+;; 0-2 Advisor: Use "rm -i filename" to remove a file.  It asks for
+;;  confirmation before removing the file.
+
+;; 0-3 User: But I don't want to answer questions.
+
+;; 0-4 Advisor: Alternatively, use "mv filename /tmp" to remove a file.  It
+;;  allows you to recover a removed file.
+
+;; 0-5 User: But I don't want to fill up "/tmp".
+
+;; 0-6 Advisor: Using "mv filename /tmp" won't fill up "/tmp".  There's
+;;  a program that cleans up "/tmp".
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;  DIALOG 1 (from NSF proposal)
+
+;; 1-1 User: What's the best way to remove a file?
+
+;; 1-2 Advisor: Use "rm -i filename" to remove a file.  It asks for
+;;  confirmation before removing the file.
+
+;; 1-3 User: Why (was it designed to do that)?
+
+;; 1-4 Advisor: That prevents accidentally removing a file.
+
+;; 1-5 User: But I don't want to answer questions.
+
+;; 1-6 Advisor: Why not?
+
+;; 1-7 User: It takes too long. (= I want to avoid spending the time.)
+
+;; 1-8 Advisor: Alternatively, use "mv filename /tmp" to remove a file.  It
+;;  allows you to recover a removed file.
+
+;; 1-9 User: But I don't own "/tmp".
+
+;; 1-10 Advisor: You don't need to own a directory to move a file into it.
+
+;; 1-11 User: What about moving files to a floppy?
+
+;; 1-12 Advisor: Moving files to a floppy is slower than moving them to "/tmp".
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;  DIALOG 2 (from NSF proposal)
+
+;; 2-1 User: What's the best way to remove a file?
+
+;; 2-2 Advisor: Use "rm -i filename" to remove a file.  It asks for
+;;  confirmation before removing the file.
+
+;; 2-3 User: But I don't want to answer questions.
+
+;; 2-4 Advisor: But that doesn't take much time.
+
+;; 2-5 User: It takes too much time.
+
+;; 2-6 Advisor: Alternatively, use "mv filename /tmp" to remove a file.  It
+;;  allows you to recover a removed file.
+
+;; 2-7 User: But I don't want my files in "/tmp".
+
+;; 2-8 Advisor: You can make a directory in "/tmp" so that your files aren't
+;;  readable by other users.
+
+;; 2-9 User: That takes too much work. (= too much typing)
+
+;; 2-10 Advisor: Why (do you believe that)?
+
+;; 2-11 User: Removing a file would require typing a long file name (every
+;;  time I wanted to remove a file using that subdirectory).
+
+;; 2-12 Advisor: You can make "remove" an alias.

@@ -1,0 +1,4873 @@
+
+# This is a shell archive.  Remove anything before this line,
+# then unpack it by saving it in a file and typing "sh file".
+#
+# Wrapped by Alex Quilici <alex@makapuu> on Mon Aug 19 07:18:54 1996
+#
+# This archive contains:
+#	Examples	
+#
+
+LANG=""; export LANG
+PATH=/bin:/usr/bin:$PATH; export PATH
+
+echo mkdir - Examples
+mkdir Examples
+
+echo mkdir - Examples/8
+mkdir Examples/8
+
+echo x - Examples/8/count1.c
+cat >Examples/8/count1.c <<'@EOF'
+/*
+ * Using postfix ++ to write a counting loop (1..N).
+ */
+#include <stdio.h>
+
+#define N 10
+
+main()
+{
+  int i;
+
+  i = 1;
+  while (i <= N)
+    printf("%i\n", i++);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/8/count1.c
+
+echo x - Examples/8/count2.c
+cat >Examples/8/count2.c <<'@EOF'
+/*
+ * Using prefix ++ to write the same counting loop (1..N).
+ */
+#include <stdio.h>
+
+#define N 10
+
+main()
+{
+  int i;
+
+  i = 0;
+  while (i < N)
+    printf("%i\n", ++i);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/8/count2.c
+
+echo x - Examples/8/blastoff.c
+cat >Examples/8/blastoff.c <<'@EOF'
+/*
+ * Counting down using --
+ */
+#include <stdio.h>
+
+main()
+{
+  void countdown(int n);
+
+  countdown(10);
+  return 0;
+}
+
+void countdown(int n)
+{
+  while (n > 0)
+    printf("%i\n", n--);
+  printf("Blastoff!\n");
+}
+@EOF
+
+chmod 644 Examples/8/blastoff.c
+
+echo x - Examples/8/useyn1.c
+cat >Examples/8/useyn1.c <<'@EOF'
+/*
+ * A main program using yesorno to obtain the answer to one question.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int result;      
+
+  printf("Are you awake? ");
+  result = yesorno();
+  if (result != 0)
+    printf("That's good.\n");
+  else
+    printf("That's bad.\n");
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/8/useyn1.c
+
+echo x - Examples/8/yesorno1.c
+cat >Examples/8/yesorno1.c <<'@EOF'
+/*
+ * A first pass at a yesorno function.
+ *
+ * Does not handle the CR following the user's input correctly.
+ */
+#include <stdio.h>
+
+int yesorno()
+{
+  int c;          /* the input character */
+  int value;      /* 1 if yes, 0 if anything else */
+
+  c = getchar();
+  if (c == 'y')
+    value = 1;
+  else
+    value = 0;
+  return value;
+}
+@EOF
+
+chmod 644 Examples/8/yesorno1.c
+
+echo x - Examples/8/useyn2.c
+cat >Examples/8/useyn2.c <<'@EOF'
+/*
+ * A main program using yesorno to obtain the answer to two questions.
+ * This exposes a bug in our original yesorno.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int result;      
+
+  printf("Are you awake? ");
+  result = yesorno();
+  printf("Result: %i\n", result);
+  printf("Really? ");
+  result = yesorno();
+  printf("Result: %i\n", result);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/8/useyn2.c
+
+echo x - Examples/8/yesorno2.c
+cat >Examples/8/yesorno2.c <<'@EOF'
+/*
+ * A final pass at a yesorno function.
+ *
+ * Allows leading blanks and upper or lower case responses and
+ * ignores trailing characters.
+ */
+#include <stdio.h>
+
+#define YES 1
+#define YES 0
+
+int main()
+{
+  int yesorno(void);
+
+  printf("Enter a YES or NO answer: ");
+  if (yesorno() == YES)
+    printf("That was a YES!\n");
+  else
+    printf("That was a NO!\n");
+  return 0;
+}
+
+int yesorno(void)
+{
+  int c;          /* the input character */
+  int value;      /* 1 if yes, 0 if anything else */
+
+  c = getchar();          /* skip blanks
+  while (c == ' ')
+    c = getchar();
+
+  if (tolower(c) == 'y')
+    value = YES;
+  else
+    value = NO;
+
+  while (c != '\n')       /* skip characters until end of line */
+    c = getchar();
+  return value;
+}
+@EOF
+
+chmod 644 Examples/8/yesorno2.c
+
+chmod 755 Examples/8
+
+echo mkdir - Examples/7
+mkdir Examples/7
+
+echo x - Examples/7/gpa2.c
+cat >Examples/7/gpa2.c <<'@EOF'
+/*
+ * Print a student's GPA, reading in a set of letter grades in the 
+ * input.
+ *
+ * Semi-fixed version.   Checks for the \n.
+ */
+#include <stdio.h>
+
+main()
+{
+  int calculatePoints(char g);
+
+  char   grade;    
+  double total_points;
+  int    points;
+  int    total_grades;
+
+  total_points = 0.0;
+  total_grades = 0;
+
+  while (scanf("%c", &grade) == 1)
+  {
+    if (grade != '\n')
+    {
+      total_grades = total_grades + 1;
+      points = calculatePoints(grade);
+      total_points = total_points + points;
+    }
+  }
+  printf("%.1f\n", total_points / total_grades);
+  return 0;
+}
+
+int calculatePoints(char g)
+{
+  int p;
+
+  if (g == 'A')
+    p = 4;
+  else
+  {
+    if (g == 'B')
+      p = 3;
+    else
+    {
+      if (g == 'C')
+        p = 2;
+      else
+      {
+        if (g == 'D')
+           p = 1;
+        else
+           p = 0;
+      }
+    }
+  }
+  return p;
+}
+@EOF
+
+chmod 644 Examples/7/gpa2.c
+
+echo x - Examples/7/gpa3.c
+cat >Examples/7/gpa3.c <<'@EOF'
+/*
+ * Print a student's GPA, reading in a set of letter grades in the input.
+ * This version reads one set of students grades per line and prints the
+ * GPA after each line.
+ *
+ * Problems: Doesn't handle lower case, doesn't handle non-grades,
+ *           doesn't handle divide by zero.
+ * 
+ */
+#include <stdio.h>
+
+main()
+{
+  int calculatePoints(char g);
+
+  char   grade;    
+  double total_points;
+  int    points;
+  int    total_grades;
+
+  total_points = 0.0;
+  total_grades = 0;
+
+  while (scanf("%c", &grade) == 1)
+  {
+    if (grade != '\n')
+    {
+      total_grades = total_grades + 1;
+      points = calculatePoints(grade);
+      total_points = total_points + points;
+    }
+    else
+    {
+      printf("%.1f\n", total_points / total_grades);
+      total_grades = 0;
+      total_points = 0.0;
+    }
+  }
+  return 0;
+}
+
+int calculatePoints(char g)
+{
+  int p;
+
+  if (g == 'A')
+    p = 4;
+  else
+  {
+    if (g == 'B')
+      p = 3;
+    else
+    {
+      if (g == 'C')
+        p = 2;
+      else
+      {
+        if (g == 'D')
+           p = 1;
+        else
+           p = 0;
+      }
+    }
+  }
+  return p;
+}
+@EOF
+
+chmod 644 Examples/7/gpa3.c
+
+echo x - Examples/7/gpa4.c
+cat >Examples/7/gpa4.c <<'@EOF'
+/*
+ * Print a student's GPA, reading in a set of letter grades in the input.
+ * This version reads one set of students grades per line and prints the
+ * GPA after each line.
+ *
+ * Improved to handle lower case grades, to deal correctly with non
+ * letters, and to deal correctly with lines with no grades on them.
+ */
+#include <stdio.h>
+#include <ctype.h>
+
+main()
+{
+  int calculatePoints(char g);
+
+  char   grade;    
+  double total_points;
+  int    points;
+  int    total_grades;
+
+  total_points = 0.0;
+  total_grades = 0;
+
+  while (scanf("%c", &grade) == 1)
+  {
+    if (grade != '\n')
+    {
+      points = calculatePoints(grade);
+      if (points != -1)
+      {
+        total_grades = total_grades + 1;
+        total_points = total_points + points;
+      }
+      else
+        printf("Bad input: %c\n", grade);
+    }
+    else
+    {
+      if (total_grades != 0)  /* protect against divide by zero */
+         printf("%.1f\n", total_points / total_grades);
+      total_grades = 0;
+      total_points = 0.0;
+    }
+  }
+  return 0;
+}
+
+int calculatePoints(char g)
+{
+  int p;
+
+  g = toupper(g);       /* Make the grade uppercase */
+
+  if (g == 'A')
+    p = 4;
+  else
+  {
+    if (g == 'B')
+      p = 3;
+    else
+    {
+      if (g == 'C')
+        p = 2;
+      else
+      {
+        if (g == 'D')
+           p = 1;
+        else
+        {
+           if (g == 'F')
+             p = 0;
+           else
+             p = -1;    /* Error if it's nothing we recognize */
+        }
+      }
+    }
+  }
+  return p;
+}
+@EOF
+
+chmod 644 Examples/7/gpa4.c
+
+echo x - Examples/7/gpa5.c
+cat >Examples/7/gpa5.c <<'@EOF'
+/*
+ * Print a student's GPA, reading in a set of letter grades in the input.
+ * This version does calculatePoints more simply.
+ *
+ */
+#include <stdio.h>
+#include <ctype.h>
+
+main()
+{
+  int calculatePoints(char g);
+
+  char   grade;    
+  double total_points;
+  int    points;
+  int    total_grades;
+
+  total_points = 0.0;
+  total_grades = 0;
+
+  while (scanf("%c", &grade) == 1)
+  {
+    if (grade != '\n')
+    {
+      points = calculatePoints(grade);
+      if (points != -1)
+      {
+        total_grades = total_grades + 1;
+        total_points = total_points + points;
+      }
+      else
+        printf("Bad input: %c\n", grade);
+    }
+    else
+    {
+      if (total_grades != 0)  /* protect against divide by zero */
+         printf("%.1f\n", total_points / total_grades);
+      total_grades = 0;
+      total_points = 0.0;
+    }
+  }
+  return 0;
+}
+
+int calculatePoints(char g)
+{
+  int p;
+
+  g = toupper(g);       /* Make the grade uppercase */
+  p = -1;               /* Default is bad parameter */
+
+  if (g == 'A')
+    p = 4;
+  if (g == 'B')
+    p = 3;
+  if (g == 'C')
+    p = 2;
+  if (g == 'D')
+    p = 1;
+  if (g == 'F')
+    p = 0;
+  return p;
+}
+@EOF
+
+chmod 644 Examples/7/gpa5.c
+
+echo x - Examples/7/gpa6.c
+cat >Examples/7/gpa6.c <<'@EOF'
+/*
+ * Print a student's GPA, reading in a set of letter grades in the input.
+ * This version reads one set of students grades per line and prints the 
+ * GPA after each line.  
+ *
+ * This version is BUGGY and includes some printfs to help us track down
+ * the bug.
+ * 
+ */
+#include <stdio.h>
+
+main()
+{
+  int calculatePoints(char g);
+
+  char   grade;    
+  double total_points;
+  int    points;
+  int    total_grades;
+
+  total_points = 0.0;
+  total_grades = 0;
+
+  while (scanf("%c", &grade) == 1)
+  {
+    printf("grade is: %c\n", grade);
+    if (grade != '\n')
+    {
+      total_grades = total_grades + 1;
+      points = calculatePoints(grade);
+      total_points = total_points + points;
+      printf("points is %i\n", points);
+      printf("total_grades is %i\n", total_grades);
+      printf("total_points is %f\n", total_points);
+    }
+    else
+      printf("%.1f\n", total_points / total_grades);
+  }
+  printf("%.1f\n", total_points / total_grades);
+  return 0;
+}
+
+int calculatePoints(char g)
+{
+  int p;
+
+  if (g == 'A')
+    p = 4;
+  else
+  {
+    if (g == 'B')
+      p = 3;
+    else
+    {
+      if (g == 'C')
+        p = 2;
+      else
+      {
+        if (g == 'D')
+           p = 1;
+        else
+           p = 0;
+      }
+    }
+  }
+  return p;
+}
+@EOF
+
+chmod 644 Examples/7/gpa6.c
+
+echo x - Examples/7/charcnt.c
+cat >Examples/7/charcnt.c <<'@EOF'
+/*
+ * Count characters in the input.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int c;                                   /* next character */
+  int chars;                               /* count characters */
+
+  chars = 0;
+  while ((c = getchar()) != EOF)
+    chars = chars + 1;
+  printf("%i\n", chars);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/7/charcnt.c
+
+echo x - Examples/7/linecnt.c
+cat >Examples/7/linecnt.c <<'@EOF'
+/*
+ * Count characters and lines in the input.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int c;                                   /* next character */
+  int chars;                               /* count characters */
+  int lines;                               /* count lines */
+
+  chars = lines = 0;
+  while ((c = getchar()) != EOF)
+  {
+    chars = chars + 1;
+    if (c == '\n')
+      lines = lines + 1;
+  }
+  printf("%i %i\n", chars, lines);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/7/linecnt.c
+
+echo x - Examples/7/wordcnt.c
+cat >Examples/7/wordcnt.c <<'@EOF'
+/*
+ * Count characters, lines, and words in the input.
+ *   (Done using "state machine")
+ */
+#include <stdio.h>
+
+#define NOT_IN_WORD    0
+#define IN_WORD        1
+
+int main()
+{
+  int c;                                   /* next character */
+  int chars;                               /* count characters */
+  int lines;                               /* count lines */
+  int words;                               /* count words */
+  int state;                               /* current state */
+
+  chars = lines = words = 0;
+  state = NOT_IN_WORD;
+  while ((c = getchar()) != EOF)
+  {
+    /* This is done in every state */
+
+    chars = chars + 1;
+    if (c == '\n')
+      lines = lines + 1;
+ 
+    if (state == NOT_IN_WORD)    /* are we in NOT_IN_WORD state? */
+    {
+      if (isalpha(c) != 0)
+      {                          /* we got a letter, */
+        state = IN_WORD;         /* so change states and count new word */
+        words = words + 1;
+      }
+    }
+    else                         /* we must be in IN_WORD state */
+      if (isalpha(c) == 0)
+        state = NOT_IN_WORD;     /* got a non-letter, so change states */
+  }
+  printf("%i %i %i\n", chars, lines, words);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/7/wordcnt.c
+
+chmod 755 Examples/7
+
+echo mkdir - Examples/6
+mkdir Examples/6
+
+echo x - Examples/6/power1.c
+cat >Examples/6/power1.c <<'@EOF'
+/*
+ * A power function that works for positive exponents.
+ */
+double power(double x, int y)
+{
+  int i;          /* counter for number of multiplies */
+  double result;  /* holds the final answer */
+
+  result = 1;
+  for (i = 1; i <= y; i = i + 1)
+    result = result * x;
+  return result;
+}
+@EOF
+
+chmod 644 Examples/6/power1.c
+
+echo x - Examples/6/powmain.c
+cat >Examples/6/powmain.c <<'@EOF'
+#include <stdio.h>
+
+main()
+{
+  double power(double x, int y);
+
+  double base;
+  int exp;
+
+  scanf("%lf %i", &base, &exp);
+  printf("%f\n", power(base, exp));
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/6/powmain.c
+
+echo x - Examples/6/power2.c
+cat >Examples/6/power2.c <<'@EOF'
+/*
+ * A version of power that works for positive and negative exponents.
+ */
+double power(double x, int y)
+{
+  int i;          /* counter for number of multiplies */
+  double result;  /* holds the final answer */
+
+  result = 1;
+  if (y > 0)
+    for (i = 1; i <= y; i = i + 1)
+      result = result * x;
+  else
+    for (i = 1; i <= -y; i = i + 1)
+      result = result / x;
+  return result;
+}
+@EOF
+
+chmod 644 Examples/6/power2.c
+
+echo x - Examples/6/charecho.c
+cat >Examples/6/charecho.c <<'@EOF'
+/*
+ * Echo the input, a character at a time.
+ *
+ * Because of buffering, the input:
+ *   alex
+ * will result in the output
+ *   Read: a
+ *   Read: l
+ *   Read: e
+ *   Read: x
+ *   Read: 
+ *
+ * The last "Read" is due to the newline after the alex.
+ */
+#include <stdio.h>
+
+main()
+{
+  char c;    /* next input character */
+
+  while (scanf("%c", &c) == 1)
+    printf("Read: %c\n", c);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/6/charecho.c
+
+echo x - Examples/6/gpa.c
+cat >Examples/6/gpa.c <<'@EOF'
+/*
+ * Print a student's GPA, reading in a set of letter grades in the 
+ * input.
+ *
+ * Doesn't quite work (because if the input includes \n's, they're
+ * counted as part of the grade).
+ */
+#include <stdio.h>
+
+main()
+{
+  int calculatePoints(char g);
+
+  char   grade;    
+  double total_points;
+  int    points;
+  int    total_grades;
+
+  total_points = 0.0;
+  total_grades = 0;
+
+  while (scanf("%c", &grade) == 1)
+  {
+    total_grades = total_grades + 1;
+    points = calculatePoints(grade);
+    total_points = total_points + points;
+  }
+  printf("%.1f\n", total_points / total_grades);
+  return 0;
+}
+
+int calculatePoints(char g)
+{
+  int p;
+
+  if (g == 'A')
+    p = 4;
+  else
+  {
+    if (g == 'B')
+      p = 3;
+    else
+    {
+      if (g == 'C')
+        p = 2;
+      else
+      {
+        if (g == 'D')
+           p = 1;
+        else
+           p = 0;
+      }
+    }
+  }
+  return p;
+}
+@EOF
+
+chmod 644 Examples/6/gpa.c
+
+chmod 755 Examples/6
+
+echo mkdir - Examples/2
+mkdir Examples/2
+
+echo x - Examples/2/count.c
+cat >Examples/2/count.c <<'@EOF'
+/*
+ * A program to count from 1 to 10.
+ */
+#include <stdio.h>
+
+#define START  1          /* start with 1 */
+#define END   10          /* end at 10 */
+
+main()
+{
+  int counter;
+
+  counter = START;
+
+  while (counter <= END)
+  {
+    printf("%i\n", counter);
+    counter = counter + 1;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/2/count.c
+
+chmod 755 Examples/2
+
+echo mkdir - Examples/3
+mkdir Examples/3
+
+echo x - Examples/3/sal.c
+cat >Examples/3/sal.c <<'@EOF'
+/*
+ * Adding the taxes column to the salary table.
+ */
+#include <stdio.h>
+
+#define WAGE      8.50       
+#define TAX_RATE   .18        
+
+#define MIN_HOURS    5
+#define MAX_HOURS   40
+#define INCR_HOURS   5
+
+main()
+{
+  int hours;     
+  double salary;
+  double taxes;
+  double take_home;
+
+  printf("Hourly pay: %.2f\n", WAGE);
+  printf("Tax rate: %.2f%%\n\n", TAX_RATE);
+
+  printf("Hours\tGross Pay\t  Taxes\t\tTake Home\n");
+
+  hours = MIN_HOURS;
+  while (hours <= MAX_HOURS)
+  {
+    salary = hours * WAGE;
+    taxes = salary * TAX_RATE;
+    take_home = salary - taxes;
+    printf("%i\t%7.2f\t\t%7.2f\t\t%7.2f\n", hours, salary, taxes, take_home);
+    hours = hours + INCR_HOURS;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/sal.c
+
+echo x - Examples/3/sal.out
+cat >Examples/3/sal.out <<'@EOF'
+Hourly pay: 8.50
+Tax rate: 0.18%
+
+Hours	Gross Pay	  Taxes		Take Home
+5	  42.50		   7.65		  34.85
+10	  85.00		  15.30		  69.70
+15	 127.50		  22.95		 104.55
+20	 170.00		  30.60		 139.40
+25	 212.50		  38.25		 174.25
+30	 255.00		  45.90		 209.10
+35	 297.50		  53.55		 243.95
+40	 340.00		  61.20		 278.80
+@EOF
+
+chmod 644 Examples/3/sal.out
+
+echo x - Examples/3/sal1.c
+cat >Examples/3/sal1.c <<'@EOF'
+/*
+ * Print the initial headings of the salary table.
+ */
+#include <stdio.h>
+
+#define WAGE      8.50       
+#define TAX_RATE   .18        
+
+main()
+{
+  printf("Hourly pay: %.2f\n", WAGE);
+  printf("Tax rate: %.2f%%\n", TAX_RATE);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/sal1.c
+
+echo x - Examples/3/sal2.c
+cat >Examples/3/sal2.c <<'@EOF'
+/*
+ * Adding the hours column to the salary table.
+ */
+#include <stdio.h>
+
+#define WAGE      8.50       
+#define TAX_RATE   .18        
+
+#define MIN_HOURS    5
+#define MAX_HOURS   40
+#define INCR_HOURS   5
+
+main()
+{
+  int hours;     
+
+  printf("Hourly pay: %.2f\n", WAGE);
+  printf("Tax rate: %.2f%%\n\n", TAX_RATE);
+
+  printf("Hours\n");
+
+  hours = MIN_HOURS;
+  while (hours <= MAX_HOURS)
+  {
+    printf("%i\n", hours);
+    hours = hours + INCR_HOURS;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/sal2.c
+
+echo x - Examples/3/sal3.c
+cat >Examples/3/sal3.c <<'@EOF'
+/*
+ * Adding the salary column to the salary table.
+ */
+#include <stdio.h>
+
+#define WAGE      8.50       
+#define TAX_RATE   .18        
+
+#define MIN_HOURS    5
+#define MAX_HOURS   40
+#define INCR_HOURS   5
+
+main()
+{
+  int hours;     
+  double salary;
+
+  printf("Hourly pay: %.2f\n", WAGE);
+  printf("Tax rate: %.2f%%\n\n", TAX_RATE);
+
+  printf("Hours\tGross Pay\n");
+
+  hours = MIN_HOURS;
+  while (hours <= MAX_HOURS)
+  {
+    salary = hours * WAGE;
+    printf("%i\t%7.2f\n", hours, salary);
+    hours = hours + INCR_HOURS;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/sal3.c
+
+echo x - Examples/3/sal4.c
+cat >Examples/3/sal4.c <<'@EOF'
+/*
+ * Adding the taxes column to the salary table.
+ */
+#include <stdio.h>
+
+#define WAGE      8.50       
+#define TAX_RATE   .18        
+
+#define MIN_HOURS    5
+#define MAX_HOURS   40
+#define INCR_HOURS   5
+
+main()
+{
+  int hours;     
+  double salary;
+  double taxes;
+
+  printf("Hourly pay: %.2f\n", WAGE);
+  printf("Tax rate: %.2f%%\n\n", TAX_RATE);
+
+  printf("Hours\tGross Pay\t  Taxes\n");
+
+  hours = MIN_HOURS;
+  while (hours <= MAX_HOURS)
+  {
+    salary = hours * WAGE;
+    taxes = salary * TAX_RATE;
+    printf("%i\t%7.2f\t\t%7.2f\n", hours, salary, taxes);
+    hours = hours + INCR_HOURS;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/sal4.c
+
+echo x - Examples/3/sum.out
+cat >Examples/3/sum.out <<'@EOF'
+Value	Sum
+3	3
+4	7
+5	12
+6	18
+7	25
+@EOF
+
+chmod 644 Examples/3/sum.out
+
+echo x - Examples/3/sum1.c
+cat >Examples/3/sum1.c <<'@EOF'
+/*
+ * Print the values between START and FINISH.
+ */
+#include <stdio.h>
+
+#define START   3
+#define FINISH  7
+
+main()
+{
+  int value;
+
+  printf("Value\n");
+
+  value = START;
+  while (value <= FINISH)
+  {
+    printf("%i\n", value);
+    value = value + 1;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/sum1.c
+
+echo x - Examples/3/sum2.c
+cat >Examples/3/sum2.c <<'@EOF'
+/*
+ * Print the values between START and FINISH and their cumulative sum.
+ */
+#include <stdio.h>
+
+#define START   3
+#define FINISH  7
+
+main()
+{
+  int value;
+  int sum;
+
+  printf("Value\tSum\n");
+
+  value = START;
+  sum = 0;
+  while (value <= FINISH)
+  {
+    sum = sum + value;
+    printf("%i\t%i\n", value, sum);
+    value = value + 1;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/sum2.c
+
+echo x - Examples/3/stars1.c
+cat >Examples/3/stars1.c <<'@EOF'
+/*
+ * Write 6 rows of 3 stars.
+ */
+#include <stdio.h>
+
+#define WANTED_ROWS   3
+#define WANTED_STARS  6
+
+main()
+{
+  int rows;
+  int stars;
+
+  rows = 1;
+  while (rows <= WANTED_ROWS)
+  {
+    stars = 1;
+    while (stars <= WANTED_STARS)
+    {
+      printf("*");
+      stars = stars + 1;
+    }
+    printf("\n");
+    rows = rows + 1;
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/stars1.c
+
+echo x - Examples/3/stars2.c
+cat >Examples/3/stars2.c <<'@EOF'
+/*
+ * Rewrite of stars program using "for" loop.
+ */
+#include <stdio.h>
+
+#define WANTED_ROWS   3
+#define WANTED_STARS  6
+
+main()
+{
+  int rows;
+  int stars;
+
+  for (rows = 1; rows <= WANTED_ROWS; rows = rows + 1)
+  {
+    for (stars = 1; stars <= WANTED_STARS; stars = stars + 1)
+    {
+      printf("*");
+    }
+    printf("\n");
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/stars2.c
+
+echo x - Examples/3/stars3.c
+cat >Examples/3/stars3.c <<'@EOF'
+/*
+ * Rewrite of stars program to perform input.
+ */
+#include <stdio.h>
+
+main()
+{
+  int wanted_rows;
+  int wanted_stars;
+  int rows;
+  int stars;
+
+  printf("Desired number of rows? ");
+  scanf("%i", &wanted_rows);
+  printf("Desired number of stars in each row? ");
+  scanf("%i", &wanted_stars);
+
+  for (rows = 1; rows <= wanted_rows; rows = rows + 1)
+  {
+    for (stars = 1; stars <= wanted_stars; stars = stars + 1)
+    {
+      printf("*");
+    }
+    printf("\n");
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/stars3.c
+
+echo x - Examples/3/inputex.c
+cat >Examples/3/inputex.c <<'@EOF'
+/*
+ * Echo an input value, along with scanf's return value.
+ */
+#include <stdio.h>
+
+main()
+{
+  int i;
+  double d;
+  int n;
+
+  printf("Enter an integer and a real: ");
+  n = scanf("%i %lf", &i, &d);
+  printf("You entered %i and %.2f\n", i, d);
+  printf("Scanf returned: %i\n", n);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/inputex.c
+
+echo x - Examples/3/inputcount.c
+cat >Examples/3/inputcount.c <<'@EOF'
+/*
+ * Repeatedly read input values and count how many were read.
+ */
+#include <stdio.h>
+
+main()
+{
+  int i;
+  double d;
+  int n;
+  int count;
+
+  count = 0;
+  printf("Enter an integer and a real: ");
+  n = scanf("%i %lf", &i, &d);
+  while (n == 2)
+  {
+    printf("You entered %i and %.2f\n", i, d);
+    count = count + 1;
+    printf("Enter an integer and a real: ");
+    n = scanf("%i %lf", &i, &d);
+  }
+  printf("You entered a total of %i values.\n", count);
+  printf("Aloha.  I quit!\n");
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/inputcount.c
+
+echo x - Examples/3/inputecho.c
+cat >Examples/3/inputecho.c <<'@EOF'
+/*
+ * Repeatedly read input values.
+ */
+#include <stdio.h>
+
+main()
+{
+  int i;
+  double d;
+  int n;
+
+  printf("Enter an integer and a real: ");
+  n = scanf("%i %lf", &i, &d);
+  while (n == 2)
+  {
+    printf("You entered %i and %.2f\n", i, d);
+    printf("Enter an integer and a real: ");
+    n = scanf("%i %lf", &i, &d);
+  }
+  printf("Aloha.  I quit!\n");
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/3/inputecho.c
+
+chmod 755 Examples/3
+
+echo mkdir - Examples/4
+mkdir Examples/4
+
+echo x - Examples/4/discount1.c
+cat >Examples/4/discount1.c <<'@EOF'
+/*
+ * A version of our cost-computing program that allows the items
+ * and list price to be read in, and the discount rate computed
+ * automatically.
+ */
+#include <stdio.h>
+
+main()
+{
+  int    items;
+  double list_price;
+  double total_price;          
+  double discount_rate;      
+  double discount_price;      
+
+  scanf("%i %lf", &items, &list_price);
+
+  if (items >= 10)   /* bigger discount for 10 or more items */
+    discount_rate = .20;
+  else
+    discount_rate = .10;
+
+  total_price = items * list_price;
+  discount_price = total_price - total_price * discount_rate;
+
+  printf("List price per item:\t\t%7.2f\n", list_price);
+  printf("List price of %i items:\t\t%7.2f\n", items, total_price);
+  printf("Price after %.1f%% discount:\t%7.2f\n",
+         discount_rate * 100, discount_price);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/4/discount1.c
+
+echo x - Examples/4/discount2.c
+cat >Examples/4/discount2.c <<'@EOF'
+/*
+ * A version of our cost-computing program that allows the items
+ * and list price to be read in, and the discount rate computed
+ * automatically.  This version has a more complex discount.
+ */
+#include <stdio.h>
+
+main()
+{
+  int    items;
+  double list_price;
+  double total_price;          
+  double discount_rate;      
+  double discount_price;      
+
+  scanf("%i %lf", &items, &list_price);
+
+  if (items >= 100)        /* biggest discount for 100 or more items */
+    discount_rate = .33;
+  else  
+  {       /* we know we have < 100 items here */
+    if (items >= 10)       /* ok discount rate for 10 - 99 items */
+      discount_rate = .20;
+    else  /* we know we have < 10 items here */
+      discount_rate = .10;
+  }
+
+  total_price = items * list_price;
+  discount_price = total_price - total_price * discount_rate;
+
+  printf("List price per item:\t\t%7.2f\n", list_price);
+  printf("List price of %i items:\t\t%7.2f\n", items, total_price);
+  printf("Price after %.1f%% discount:\t%7.2f\n",
+         discount_rate * 100, discount_price);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/4/discount2.c
+
+echo x - Examples/4/grade.c
+cat >Examples/4/grade.c <<'@EOF'
+/*
+ * Read score and tell student whether passed or failed.
+ */
+#include <stdio.h>
+
+main()
+{
+  int score;
+
+  scanf("%i", &score);
+  if (score >= 70)
+    printf("Yahoo.  You passed!\n");
+  else
+    printf("How sad.  You failed!\n");
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/4/grade.c
+
+echo x - Examples/4/oneinput.c
+cat >Examples/4/oneinput.c <<'@EOF'
+/*
+ * Read input and print, printing an error message if the input is bad.
+ */
+#include <stdio.h>
+
+main()
+{
+  int i;
+  double d;
+  int n;
+
+  printf("Enter an integer and a real: ");
+  n = scanf("%i %lf", &i, &d);
+  if (n == 2)
+    printf("You entered %i and %.2f\n", i, d);
+  else
+    printf("You only entered %i values.\n", n);
+  printf("Aloha.  I quit!\n");
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/4/oneinput.c
+
+echo x - Examples/4/grade2.c
+cat >Examples/4/grade2.c <<'@EOF'
+/*
+ * Read score and tell student whether passed or failed.
+ */
+#include <stdio.h>
+
+main()
+{
+  int score;
+  int n;
+
+  n = scanf("%i", &score);
+  while (n == 1)
+  {
+    if (score >= 70)
+      printf("Yahoo.  You passed!\n");
+    else
+      printf("How sad.  You failed!\n");
+    n = scanf("%i", &score);
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/4/grade2.c
+
+echo x - Examples/4/avg.c
+cat >Examples/4/avg.c <<'@EOF'
+/*
+ * Print the average of the input scores.
+ */
+#include <stdio.h>
+
+main()
+{
+   int values;
+   double sum;
+   int n;
+   int score;
+   double avg;
+
+   values = 0;
+   sum = 0;
+   n = scanf("%i", &score);
+   while (n == 1)
+   { 
+     values = values + 1;
+     sum = sum + score;
+     n = scanf("%i", &score);
+   }
+   if (values != 0)
+     avg = sum / values;
+   else
+     avg = 0;
+   printf("The average is %.1f\n", avg);
+   return 0;
+}
+@EOF
+
+chmod 644 Examples/4/avg.c
+
+echo x - Examples/4/bar.c
+cat >Examples/4/bar.c <<'@EOF'
+/*
+ * Simple bar-chart producer.
+ */
+#include <stdio.h>
+
+main()
+{
+  void drawLine(int length);   
+
+  int count;
+  int n;
+
+  n = scanf("%i", &count);
+  while (n == 1)
+  { 
+    drawLine(count);
+    n = scanf("%i", &count);
+  } 
+  return 0;
+}
+
+void drawLine(int length)
+{
+  int i;
+
+  for (i = 1; i <= length; i = i + 1)
+    printf("*");
+  printf("\n");
+}
+@EOF
+
+chmod 644 Examples/4/bar.c
+
+echo x - Examples/4/grade3.c
+cat >Examples/4/grade3.c <<'@EOF'
+/*
+ * Read score and tell student whether passed or failed.
+ */
+#include <stdio.h>
+
+main()
+{
+  int score;
+  int n;
+
+  n = scanf("%i", &score);
+  while (n == 1)
+  {
+    if (score >= 70)
+      printf("Yahoo.  You passed!\n");
+    else
+      printf("How sad.  You failed!\n");
+    n = scanf("%i", &score);
+  }
+  if (n != EOF)
+    printf("There seems to be an error in the input.  I quit!\n");
+  else
+    printf("See ya later!\n");
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/4/grade3.c
+
+echo x - Examples/4/hollowbox2.c
+cat >Examples/4/hollowbox2.c <<'@EOF'
+/*
+ * Draw a hollow box of the specified size (without using functions);
+ */
+#include <stdio.h>
+
+main()
+{
+  void drawHollowBox(int h, int w);   
+
+  int height;
+  int width;
+  int i;
+  int j;
+
+  scanf("%i %i", &height, &width);
+  for (i = 1; i <= width; i = i + 1)
+    printf("*");
+  printf("\n");
+  for (i = 1; i <= height - 2; i = i + 1)
+  {
+    printf("*");
+    for (j = 1; j <= width - 2; j = j + 1)
+      printf(" ");
+    printf("*");
+    printf("\n");
+  }
+  for (i = 1; i <= width; i = i + 1)
+    printf("*");
+  printf("\n");
+  return 0;
+}
+
+void drawEndPoints(int length)
+{
+  void drawSpaces(int n);
+
+  printf("*");
+  drawSpaces(length - 2);
+  printf("*");
+  printf("\n");
+}
+
+void drawSpaces(int n)
+{
+  int i;
+
+  for (i = 1; i <= n; i = i + 1)
+    printf(" ");
+}
+@EOF
+
+chmod 644 Examples/4/hollowbox2.c
+
+echo x - Examples/4/hollowbox1.c
+cat >Examples/4/hollowbox1.c <<'@EOF'
+/*
+ * Draw a hollow box of the specified size (using functions).
+ */
+#include <stdio.h>
+
+main()
+{
+  void drawHollowBox(int h, int w);   
+
+  int height;
+  int width;
+
+  scanf("%i %i", &height, &width);
+  drawHollowBox(height, width);
+  return 0;
+}
+
+void drawHollowBox(int h, int w)
+{
+  void drawLine(int length);
+  void drawEndPoints(int length);
+
+  int i;
+
+  drawLine(w);
+  for (i = 1; i <= h - 2; i = i + 1)
+    drawEndPoints(w);
+  drawLine(w);
+}
+
+void drawLine(int length)
+{
+  int i;
+
+  for (i = 1; i <= length; i = i + 1)
+    printf("*");
+  printf("\n");
+}
+
+void drawEndPoints(int length)
+{
+  void drawSpaces(int n);
+
+  printf("*");
+  drawSpaces(length - 2);
+  printf("*");
+  printf("\n");
+}
+
+void drawSpaces(int n)
+{
+  int i;
+
+  for (i = 1; i <= n; i = i + 1)
+    printf(" ");
+}
+@EOF
+
+chmod 644 Examples/4/hollowbox1.c
+
+echo x - Examples/4/filledbox.c
+cat >Examples/4/filledbox.c <<'@EOF'
+/*
+ * Draw a filled box of the specified size.
+ */
+#include <stdio.h>
+
+main()
+{
+  void drawFilledBox(int h, int w);   
+
+  int height;
+  int width;
+
+  scanf("%i %i", &height, &width);
+  drawFilledBox(height, width);
+  return 0;
+}
+
+void drawFilledBox(int h, int w)
+{
+  void drawLine(int length);
+
+  int i;
+
+  for (i = 1; i <= h; i = i + 1)
+    drawLine(w);
+}
+
+void drawLine(int length)
+{
+  int i;
+
+  for (i = 1; i <= length; i = i + 1)
+    printf("*");
+  printf("\n");
+}
+@EOF
+
+chmod 644 Examples/4/filledbox.c
+
+chmod 755 Examples/4
+
+echo mkdir - Examples/5
+mkdir Examples/5
+
+echo x - Examples/5/hollowbox3.c
+cat >Examples/5/hollowbox3.c <<'@EOF'
+/*
+ * Draw a hollow box of the specified size and print out the number
+ * of stars drawing the hollow box required.
+ */
+#include <stdio.h>
+
+main()
+{
+  int drawHollowBox(int h, int w);   
+
+  int height;
+  int width;
+  int stars_written;
+
+  scanf("%i %i", &height, &width);
+  stars_written = drawHollowBox(height, width);
+  printf("Drawing this box required writing %i stars\n", stars_written);
+  return 0;
+}
+
+int drawHollowBox(int h, int w)
+{
+  void drawLine(int length);
+  void drawEndPoints(int length);
+
+  int i;
+  int stars;
+
+  drawLine(w);
+  for (i = 1; i <= h - 2; i = i + 1)
+    drawEndPoints(w);
+  drawLine(w);
+  stars = w + w + (h - 2) * 2;
+  return stars;
+}
+
+void drawLine(int length)
+{
+  int i;
+
+  for (i = 1; i <= length; i = i + 1)
+    printf("*");
+  printf("\n");
+}
+
+void drawEndPoints(int length)
+{
+  void drawSpaces(int n);
+
+  printf("*");
+  drawSpaces(length - 2);
+  printf("*");
+  printf("\n");
+}
+
+void drawSpaces(int n)
+{
+  int i;
+
+  for (i = 1; i <= n; i = i + 1)
+    printf(" ");
+}
+@EOF
+
+chmod 644 Examples/5/hollowbox3.c
+
+echo x - Examples/5/intrate7.c
+cat >Examples/5/intrate7.c <<'@EOF'
+/*
+ * A final version of our interest rate program that both
+ * repeatedly reads values and makes use of a set of functions.
+ */
+#include <stdio.h>
+
+main()
+{
+  double intrate;                        /* interest rate */
+  double balance;                        /* balance at year's end */
+  int    period;                         /* length of period */
+  int    n;                              /* number of values read */
+  void   print_balances(double intrate, double balance, int period);
+
+  printf("Enter interest rate, principal, and period: ");
+  while ((n = scanf("%lf %lf %i", &intrate, &balance, &period)) == 3)
+  {
+    print_balances(intrate, balance, period);
+    printf("\nEnter interest rate, principal, and period: ");
+  }
+  if (n == EOF)
+    printf("\n");
+  else
+    printf("I expected three values.  I quit!\n");
+  return 0;
+}
+
+void print_balances(double intrate, double balance, int period)
+{
+  int    year;
+  void   display_values(double yrly_pct, double start_bal);
+  double year_end_balance(double intrate, double monthly_bal);
+
+  display_values(intrate * 100, balance);
+  printf("Year   Balance\n");
+  for (year = 1; year <= period; year = year + 1)
+    printf("%4i   $ %7.2f\n",
+           year, balance = year_end_balance(intrate, balance));
+}
+@EOF
+
+chmod 644 Examples/5/intrate7.c
+
+chmod 755 Examples/5
+
+echo mkdir - Examples/9
+mkdir Examples/9
+
+echo x - Examples/9/grade1.c
+cat >Examples/9/grade1.c <<'@EOF'
+/*
+ * Grading program using "nested-if"s.  The braces aren't
+ * necessary since we have only one statement inside each if
+ * and inside each else.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int score;
+
+  while (scanf("%i", &score) == 1)
+  {
+    if (score >= 90)
+      printf("A");
+    else
+    {
+      if (score >= 80)
+        printf("B");
+      else
+      {
+        if (score >= 70)
+          printf("C");
+        else
+        {
+          if (score >= 60)
+            printf("D");
+          else
+            printf("F");
+        }
+      }
+    }
+    putchar('\n');
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/grade1.c
+
+echo x - Examples/9/grade2.c
+cat >Examples/9/grade2.c <<'@EOF'
+/*
+ * Grading program using "else-if"s.  The braces from the
+ * previous example have been removed (since only one action
+ * is happening in each "if".
+ */
+#include <stdio.h>
+
+int main()
+{
+  int score;
+
+  while (scanf("%i", &score) == 1)
+  {
+    if (score >= 90)
+      printf("A");
+    else if (score >= 80)
+      printf("B");
+    else if (score >= 70)
+      printf("C");
+    else if (score >= 60)
+      printf("D");
+    else
+      printf("F");
+    putchar('\n');
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/grade2.c
+
+echo x - Examples/9/grade3.c
+cat >Examples/9/grade3.c <<'@EOF'
+/*
+ * Grading program using "else-if"s, but extended to do "+'s" and "-'s".
+ *
+ * This version treats each different grade (A+, A, etc...) as a separate
+ * action.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int score;
+
+  while (scanf("%i", &score) == 1)
+  {
+    if (score >= 97)
+      printf("A+");
+    else if (score >= 93)
+      printf("A");
+    else if (score >= 90)
+      printf("A-");
+    else if (score >= 87)
+      printf("B+");
+    else if (score >= 83)
+      printf("B");
+    else if (score >= 80)
+      printf("B-");
+    else if (score >= 77)
+      printf("C+");
+    else if (score >= 73)
+      printf("C");
+    else if (score >= 70)
+      printf("C-");
+    else if (score >= 67)
+      printf("D+");
+    else if (score >= 64)
+      printf("D");
+    else if (score >= 60)
+      printf("D-");
+    else
+      printf("F");
+    putchar('\n');
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/grade3.c
+
+echo x - Examples/9/grade4.c
+cat >Examples/9/grade4.c <<'@EOF'
+/*
+ * Grading program using "else-if"s, but extended to do "+'s" and "-'s".
+ *
+ * This version treats each different grade (A+, A, etc...) as a separate
+ * action.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int score;
+
+  while (scanf("%i", &score) == 1)
+  {
+    if (score >= 90)
+    {
+      printf("A");
+      if (score >= 97)
+        printf("+");
+      if (score < 93)
+        printf("-");
+    }
+    else if (score >= 80)
+    {
+      printf("B");
+      if (score >= 87)
+        printf("+");
+      if (score < 83)
+        printf("-");
+    }
+    else if (score >= 70)
+    {
+      printf("C");
+      if (score >= 77)
+        printf("+");
+      if (score < 73)
+        printf("-");
+    }
+    else if (score >= 60)
+    {
+      printf("D");
+      if (score >= 67)
+        printf("+");
+      if (score < 63)
+        printf("-");
+    }
+    else
+      printf("F");
+    putchar('\n');
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/grade4.c
+
+echo x - Examples/9/gpa1.c
+cat >Examples/9/gpa1.c <<'@EOF'
+/* 
+ * Print grade points for grade, written using else-if.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int c;
+  int points;
+
+  while ((c = getchar()) != EOF)
+    if (c != '\n')
+    {
+      if (c == 'A')
+        points = 4;
+      else if (c == 'B')
+        points = 3;
+      else if (c == 'C')
+        points = 2;
+      else if (c == 'D')
+        points = 1;
+      else
+        points = 0;
+      printf("%i\n", points);
+    }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/gpa1.c
+
+echo x - Examples/9/cb1.c
+cat >Examples/9/cb1.c <<'@EOF'
+/*
+ * First pass at checkbook balancer.
+ *
+ * Has bug: Prints out "Bad Code" for \n's!
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                  /* next input character */
+
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+         printf("Balance\n");
+         break;
+      case 'c':
+         printf("Check\n");
+         break;
+      case 'd':
+         printf("Deposit\n");
+         break;
+      case 's':
+         printf("Service charge\n");
+         break;
+      case 'w':
+         printf("Withdrawal\n");
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb1.c
+
+echo x - Examples/9/gpa2.c
+cat >Examples/9/gpa2.c <<'@EOF'
+/* 
+ * Print grade points for grade, written using else-if.
+ */
+#include <stdio.h>
+
+int main()
+{
+  int c;
+  int points;
+
+  while ((c = getchar()) != EOF)
+    if (c != '\n')
+    {
+      switch (c)
+      {
+        case 'A':  points = 4;
+                   break;
+        case 'B':  points = 3;
+                   break;
+        case 'C':  points = 2;
+                   break;
+        case 'D':  points = 1;
+                   break;
+        default:   points = 0;
+      }
+      printf("%i\n", points);
+    }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/gpa2.c
+
+echo x - Examples/9/cb2.c
+cat >Examples/9/cb2.c <<'@EOF'
+/*
+ * Next pass at checkbook balancer.
+ *
+ * Fixes bug by skipping over trailing newlines.
+ * Also, allows upper case.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                  /* next input character */
+
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance\n");
+         break;
+      case 'c':
+      case 'C':
+         printf("Check\n");
+         break;
+      case 'd':
+      case 'D':
+         printf("Deposit\n");
+         break;
+      case 's':
+      case 'S':
+         printf("Service charge\n");
+         break;
+      case 'w':
+      case 'W':
+         printf("Withdrawal\n");
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb2.c
+
+echo x - Examples/9/fcb1.c
+cat >Examples/9/fcb1.c <<'@EOF'
+/*
+ * Start adding a better interface.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+
+  int    deposits;           /* deposit count */
+  int    checks;             /* check count */
+  int    charges;            /* charge count */
+  int    withdrawals;        /* withdrawal count */
+  double total_deposits;     /* deposit total */
+  double total_checks;       /* checks total */
+  double total_charges;      /* charges total */
+  double total_withdrawals;  /* withdrawals total */
+
+  int getNextNonBlank();     /* NEW FUNCTION */
+
+  balance = 0.0;
+  deposits = checks = withdrawals = charges = 0;
+  total_deposits = total_checks = total_charges = total_withdrawals = 0.0;
+
+  /* THE ONE CHANGE IS IN THE LINE BELOW */
+  while ((c = getNextNonBlank()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         scanf("%i %lf", &number, &amount);
+         printf("Check %i is %.2f\n", number, amount);
+         balance -= amount;
+         checks++;
+         total_checks += amount;
+         break;
+      case 'd':
+      case 'D':
+         scanf("%lf", &amount);
+         printf("Deposit is %.2f\n", amount);
+         balance += amount;
+         deposits++;
+         total_deposits += amount;
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         charges++;
+         total_charges += amount;
+         break;
+      case 'w':
+      case 'W':
+         scanf("%lf", &amount);
+         printf("Withdrawal is %.2f\n", amount);
+         balance -= amount;
+         withdrawals++;
+         total_withdrawals += amount;
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+
+  /* Summary Info */
+ 
+  if (deposits == 0)
+    printf("No deposits\n");
+  else
+    printf("%i deposits for %.2f (avg: %.2f)\n",
+           deposits, total_deposits, total_deposits / deposits);
+
+  if (checks == 0)
+    printf("No checks\n");
+  else
+    printf("%i checks for %.2f (avg: %.2f)\n", 
+           checks, total_checks, total_checks / checks);
+
+  if (withdrawals == 0)
+    printf("No withdrawals\n");
+  else
+    printf("%i withdrawals for %.2f (avg: %.2f)\n",
+            withdrawals, total_withdrawals, total_withdrawals/withdrawals);
+
+  if (charges == 0)
+    printf("No charges\n");
+  else
+    printf("%i charges for %.2f (avg: %.2f)\n", charges, total_charges);
+
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+
+/* CODE FOR OUR NEW FUNCTION */
+
+int getNextNonBlank()
+{
+  int c;
+
+  c = getchar();         /* skip over blanks */
+  while (c == ' ')
+    c = getchar();
+  return c;              /* return first non-blank */
+}
+@EOF
+
+chmod 644 Examples/9/fcb1.c
+
+echo x - Examples/9/cb3.c
+cat >Examples/9/cb3.c <<'@EOF'
+/*
+ * Now just add correct processing for "Balance" command.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                  /* next input character */
+  double balance;         /* hold running balance */
+
+  balance = 0.0;
+
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         printf("Check\n");
+         break;
+      case 'd':
+      case 'D':
+         printf("Deposit\n");
+         break;
+      case 's':
+      case 'S':
+         printf("Service charge\n");
+         break;
+      case 'w':
+      case 'W':
+         printf("Withdrawal\n");
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb3.c
+
+echo x - Examples/9/cb4.c
+cat >Examples/9/cb4.c <<'@EOF'
+/*
+ * Now add correct processing for "Service Charge".
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                  /* next input character */
+  double balance;         /* hold running balance */
+  double amount;          /* amount of transaction */
+
+  balance = 0.0;
+
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         printf("Check\n");
+         break;
+      case 'd':
+      case 'D':
+         printf("Deposit\n");
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         break;
+      case 'w':
+      case 'W':
+         printf("Withdrawal\n");
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb4.c
+
+echo x - Examples/9/cb5.c
+cat >Examples/9/cb5.c <<'@EOF'
+/*
+ * Now add processing for remaining transactions.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                  /* next input character */
+  double balance;         /* hold running balance */
+  double amount;          /* amount of transaction */
+  int    number;          /* check number */
+
+  balance = 0.0;
+
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         scanf("%i %lf", &number, &amount);
+         printf("Check %i is %.2f\n", number, amount);
+         balance -= amount;
+         break;
+      case 'd':
+      case 'D':
+         scanf("%lf", &amount);
+         printf("Deposit is %.2f\n", amount);
+         balance += amount;
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         break;
+      case 'w':
+      case 'W':
+         scanf("%lf", &amount);
+         printf("Withdrawal is %.2f\n", amount);
+         balance -= amount;
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb5.c
+
+echo x - Examples/9/cb6.c
+cat >Examples/9/cb6.c <<'@EOF'
+/*
+ * Add summary information about final balance and deposits.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+  int    deposits;           /* deposit count */
+  double total_deposits;     /* deposit total */
+
+  balance = 0.0;
+  deposits = 0;  total_deposits = 0.0;
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         scanf("%i %lf", &number, &amount);
+         printf("Check %i is %.2f\n", number, amount);
+         balance -= amount;
+         break;
+      case 'd':
+      case 'D':
+         scanf("%lf", &amount);
+         printf("Deposit is %.2f\n", amount);
+         balance += amount;
+         deposits++;
+         total_deposits += amount;
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         break;
+      case 'w':
+      case 'W':
+         scanf("%lf", &amount);
+         printf("Withdrawal is %.2f\n", amount);
+         balance -= amount;
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+
+  /* Summary Info */
+ 
+  printf("%i deposits for %.2f\n", deposits, total_deposits);
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb6.c
+
+echo x - Examples/9/cb7.c
+cat >Examples/9/cb7.c <<'@EOF'
+/*
+ * Add rest of the summary information.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+
+  int    deposits;           /* deposit count */
+  int    checks;             /* check count */
+  int    charges;            /* charge count */
+  int    withdrawals;        /* withdrawal count */
+  double total_deposits;     /* deposit total */
+  double total_checks;       /* checks total */
+  double total_charges;      /* charges total */
+  double total_withdrawals;  /* withdrawals total */
+
+  balance = 0.0;
+  deposits = checks = withdrawals = charges = 0;
+  total_deposits = total_checks = total_charges = total_withdrawals = 0.0;
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         scanf("%i %lf", &number, &amount);
+         printf("Check %i is %.2f\n", number, amount);
+         balance -= amount;
+         checks++;
+         total_checks += amount;
+         break;
+      case 'd':
+      case 'D':
+         scanf("%lf", &amount);
+         printf("Deposit is %.2f\n", amount);
+         balance += amount;
+         deposits++;
+         total_deposits += amount;
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         charges++;
+         total_charges += amount;
+         break;
+      case 'w':
+      case 'W':
+         scanf("%lf", &amount);
+         printf("Withdrawal is %.2f\n", amount);
+         balance -= amount;
+         withdrawals++;
+         total_withdrawals += amount;
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+
+  /* Summary Info */
+ 
+  printf("%i deposits for %.2f\n", deposits, total_deposits);
+  printf("%i checks for %.2f\n", checks, total_checks);
+  printf("%i withdrawals for %.2f\n", withdrawals, total_withdrawals);
+  printf("%i charges for %.2f\n", charges, total_charges);
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb7.c
+
+echo x - Examples/9/cb8.c
+cat >Examples/9/cb8.c <<'@EOF'
+/*
+ * Add rest of the summary information.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+
+  int    deposits;           /* deposit count */
+  int    checks;             /* check count */
+  int    charges;            /* charge count */
+  int    withdrawals;        /* withdrawal count */
+  double total_deposits;     /* deposit total */
+  double total_checks;       /* checks total */
+  double total_charges;      /* charges total */
+  double total_withdrawals;  /* withdrawals total */
+
+  balance = 0.0;
+  deposits = checks = withdrawals = charges = 0;
+  total_deposits = total_checks = total_charges = total_withdrawals = 0.0;
+  while ((c = getchar()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         scanf("%i %lf", &number, &amount);
+         printf("Check %i is %.2f\n", number, amount);
+         balance -= amount;
+         checks++;
+         total_checks += amount;
+         break;
+      case 'd':
+      case 'D':
+         scanf("%lf", &amount);
+         printf("Deposit is %.2f\n", amount);
+         balance += amount;
+         deposits++;
+         total_deposits += amount;
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         charges++;
+         total_charges += amount;
+         break;
+      case 'w':
+      case 'W':
+         scanf("%lf", &amount);
+         printf("Withdrawal is %.2f\n", amount);
+         balance -= amount;
+         withdrawals++;
+         total_withdrawals += amount;
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   /* pick up the trailing newline */
+  }
+
+  /* Summary Info */
+ 
+  if (deposits == 0)
+    printf("No deposits\n");
+  else
+    printf("%i deposits for %.2f (avg: %.2f)\n",
+           deposits, total_deposits, total_deposits / deposits);
+
+  if (checks == 0)
+    printf("No checks\n");
+  else
+    printf("%i checks for %.2f (avg: %.2f)\n", 
+           checks, total_checks, total_checks / checks);
+
+  if (withdrawals == 0)
+    printf("No withdrawals\n");
+  else
+    printf("%i withdrawals for %.2f (avg: %.2f)\n",
+            withdrawals, total_withdrawals, total_withdrawals/withdrawals);
+
+  if (charges == 0)
+    printf("No charges\n");
+  else
+    printf("%i charges for %.2f (avg: %.2f)\n", charges, total_charges);
+
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/9/cb8.c
+
+echo x - Examples/9/fcb2.c
+cat >Examples/9/fcb2.c <<'@EOF'
+/*
+ * Fix the problems with printing multiple errors for bad transaction
+ * codes.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+
+  int    deposits;           /* deposit count */
+  int    checks;             /* check count */
+  int    charges;            /* charge count */
+  int    withdrawals;        /* withdrawal count */
+  double total_deposits;     /* deposit total */
+  double total_checks;       /* checks total */
+  double total_charges;      /* charges total */
+  double total_withdrawals;  /* withdrawals total */
+
+  int getNextNonBlank();
+
+  balance = 0.0;
+  deposits = checks = withdrawals = charges = 0;
+  total_deposits = total_checks = total_charges = total_withdrawals = 0.0;
+
+  while ((c = getNextNonBlank()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         scanf("%i %lf", &number, &amount);
+         printf("Check %i is %.2f\n", number, amount);
+         balance -= amount;
+         checks++;
+         total_checks += amount;
+         break;
+      case 'd':
+      case 'D':
+         scanf("%lf", &amount);
+         printf("Deposit is %.2f\n", amount);
+         balance += amount;
+         deposits++;
+         total_deposits += amount;
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         charges++;
+         total_charges += amount;
+         break;
+      case 'w':
+      case 'W':
+         scanf("%lf", &amount);
+         printf("Withdrawal is %.2f\n", amount);
+         balance -= amount;
+         withdrawals++;
+         total_withdrawals += amount;
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+   
+    /* HERE IS THE CHANGE.
+
+       This now has to skip characters until it hits the newline */
+
+    c = getchar();   
+    while (c != '\n')
+      c = getchar();
+  }
+
+  /* Summary Info */
+ 
+  if (deposits == 0)
+    printf("No deposits\n");
+  else
+    printf("%i deposits for %.2f (avg: %.2f)\n",
+           deposits, total_deposits, total_deposits / deposits);
+
+  if (checks == 0)
+    printf("No checks\n");
+  else
+    printf("%i checks for %.2f (avg: %.2f)\n", 
+           checks, total_checks, total_checks / checks);
+
+  if (withdrawals == 0)
+    printf("No withdrawals\n");
+  else
+    printf("%i withdrawals for %.2f (avg: %.2f)\n",
+            withdrawals, total_withdrawals, total_withdrawals/withdrawals);
+
+  if (charges == 0)
+    printf("No charges\n");
+  else
+    printf("%i charges for %.2f (avg: %.2f)\n", charges, total_charges);
+
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+
+int getNextNonBlank()
+{
+  int c;
+
+  c = getchar();         /* skip over blanks */
+  while (c == ' ')
+    c = getchar();
+  return c;              /* return first non-blank */
+}
+@EOF
+
+chmod 644 Examples/9/fcb2.c
+
+echo x - Examples/9/fcb3.c
+cat >Examples/9/fcb3.c <<'@EOF'
+/*
+ * Fix deposits to write an error message if the user doesn't enter
+ * the correct amount.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+
+  int    deposits;           /* deposit count */
+  int    checks;             /* check count */
+  int    charges;            /* charge count */
+  int    withdrawals;        /* withdrawal count */
+  double total_deposits;     /* deposit total */
+  double total_checks;       /* checks total */
+  double total_charges;      /* charges total */
+  double total_withdrawals;  /* withdrawals total */
+
+  int getNextNonBlank();
+
+  balance = 0.0;
+  deposits = checks = withdrawals = charges = 0;
+  total_deposits = total_checks = total_charges = total_withdrawals = 0.0;
+
+  while ((c = getNextNonBlank()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         scanf("%i %lf", &number, &amount);
+         printf("Check %i is %.2f\n", number, amount);
+         balance -= amount;
+         checks++;
+         total_checks += amount;
+         break;
+      case 'd':
+      case 'D':
+         if (scanf("%lf", &amount) != 1) 
+           printf("Bad deposit amount\n");
+         else
+         {
+           printf("Deposit is %.2f\n", amount);
+           balance += amount;
+           deposits++;
+           total_deposits += amount;
+         }
+         break;
+      case 's':
+      case 'S':
+         scanf("%lf", &amount);
+         printf("Service charge is %.2f\n", amount);
+         balance -= amount;
+         charges++;
+         total_charges += amount;
+         break;
+      case 'w':
+      case 'W':
+         scanf("%lf", &amount);
+         printf("Withdrawal is %.2f\n", amount);
+         balance -= amount;
+         withdrawals++;
+         total_withdrawals += amount;
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   
+    while (c != '\n')
+      c = getchar();
+  }
+
+  /* Summary Info */
+ 
+  if (deposits == 0)
+    printf("No deposits\n");
+  else
+    printf("%i deposits for %.2f (avg: %.2f)\n",
+           deposits, total_deposits, total_deposits / deposits);
+
+  if (checks == 0)
+    printf("No checks\n");
+  else
+    printf("%i checks for %.2f (avg: %.2f)\n", 
+           checks, total_checks, total_checks / checks);
+
+  if (withdrawals == 0)
+    printf("No withdrawals\n");
+  else
+    printf("%i withdrawals for %.2f (avg: %.2f)\n",
+            withdrawals, total_withdrawals, total_withdrawals/withdrawals);
+
+  if (charges == 0)
+    printf("No charges\n");
+  else
+    printf("%i charges for %.2f (avg: %.2f)\n", charges, total_charges);
+
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+
+int getNextNonBlank()
+{
+  int c;
+
+  c = getchar();         /* skip over blanks */
+  while (c == ' ')
+    c = getchar();
+  return c;              /* return first non-blank */
+}
+@EOF
+
+chmod 644 Examples/9/fcb3.c
+
+echo x - Examples/9/fcb4.c
+cat >Examples/9/fcb4.c <<'@EOF'
+/*
+ * Fix the other transactions to write errors if they are not given
+ * the correct input.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+
+  int    deposits;           /* deposit count */
+  int    checks;             /* check count */
+  int    charges;            /* charge count */
+  int    withdrawals;        /* withdrawal count */
+  double total_deposits;     /* deposit total */
+  double total_checks;       /* checks total */
+  double total_charges;      /* charges total */
+  double total_withdrawals;  /* withdrawals total */
+
+  int getNextNonBlank();
+
+  balance = 0.0;
+  deposits = checks = withdrawals = charges = 0;
+  total_deposits = total_checks = total_charges = total_withdrawals = 0.0;
+
+  while ((c = getNextNonBlank()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         if (scanf("%i %lf", &number, &amount) != 2)
+           printf("Bad check number or amount\n");
+         else
+         {
+           printf("Check %i is %.2f\n", number, amount);
+           balance -= amount;
+           checks++;
+           total_checks += amount;
+         }
+         break;
+      case 'd':
+      case 'D':
+         if (scanf("%lf", &amount) != 1) 
+           printf("Bad deposit amount\n");
+         else
+         {
+           printf("Deposit is %.2f\n", amount);
+           balance += amount;
+           deposits++;
+           total_deposits += amount;
+         }
+         break;
+      case 's':
+      case 'S':
+         if (scanf("%lf", &amount) != 1) 
+           printf("Bad service charge amount\n");
+         else
+         {
+           printf("Service charge is %.2f\n", amount);
+           balance -= amount;
+           charges++;
+           total_charges += amount;
+         }
+         break;
+      case 'w':
+      case 'W':
+         if (scanf("%lf", &amount) != 1) 
+           printf("Bad withdrawal amount\n");
+         else
+         {
+           printf("Withdrawal is %.2f\n", amount);
+           balance -= amount;
+           withdrawals++;
+           total_withdrawals += amount;
+         }
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+    c = getchar();   
+    while (c != '\n')
+      c = getchar();
+  }
+
+  /* Summary Info */
+ 
+  if (deposits == 0)
+    printf("No deposits\n");
+  else
+    printf("%i deposits for %.2f (avg: %.2f)\n",
+           deposits, total_deposits, total_deposits / deposits);
+
+  if (checks == 0)
+    printf("No checks\n");
+  else
+    printf("%i checks for %.2f (avg: %.2f)\n", 
+           checks, total_checks, total_checks / checks);
+
+  if (withdrawals == 0)
+    printf("No withdrawals\n");
+  else
+    printf("%i withdrawals for %.2f (avg: %.2f)\n",
+            withdrawals, total_withdrawals, total_withdrawals/withdrawals);
+
+  if (charges == 0)
+    printf("No charges\n");
+  else
+    printf("%i charges for %.2f (avg: %.2f)\n", charges, total_charges);
+
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+
+int getNextNonBlank()
+{
+  int c;
+
+  c = getchar();         /* skip over blanks */
+  while (c == ' ')
+    c = getchar();
+  return c;              /* return first non-blank */
+}
+@EOF
+
+chmod 644 Examples/9/fcb4.c
+
+echo x - Examples/9/fcb5.c
+cat >Examples/9/fcb5.c <<'@EOF'
+/*
+ * Using the "null statement" short cut.
+ */
+#include<stdio.h>
+
+main()
+{
+  int c;                     /* next input character */
+  double balance;            /* hold running balance */
+  double amount;             /* amount of transaction */
+  int    number;             /* check number */
+
+  int    deposits;           /* deposit count */
+  int    checks;             /* check count */
+  int    charges;            /* charge count */
+  int    withdrawals;        /* withdrawal count */
+  double total_deposits;     /* deposit total */
+  double total_checks;       /* checks total */
+  double total_charges;      /* charges total */
+  double total_withdrawals;  /* withdrawals total */
+
+  int getNextNonBlank();
+
+  balance = 0.0;
+  deposits = checks = withdrawals = charges = 0;
+  total_deposits = total_checks = total_charges = total_withdrawals = 0.0;
+
+  while ((c = getNextNonBlank()) != EOF)
+  {
+    switch(c)
+    { 
+      case 'b': 
+      case 'B': 
+         printf("Balance is %.2f\n", balance);
+         break;
+      case 'c':
+      case 'C':
+         if (scanf("%i %lf", &number, &amount) != 2)
+           printf("Bad check number or amount\n");
+         else
+         {
+           printf("Check %i is %.2f\n", number, amount);
+           balance -= amount;
+           checks++;
+           total_checks += amount;
+         }
+         break;
+      case 'd':
+      case 'D':
+         if (scanf("%lf", &amount) != 1) 
+           printf("Bad deposit amount\n");
+         else
+         {
+           printf("Deposit is %.2f\n", amount);
+           balance += amount;
+           deposits++;
+           total_deposits += amount;
+         }
+         break;
+      case 's':
+      case 'S':
+         if (scanf("%lf", &amount) != 1) 
+           printf("Bad service charge amount\n");
+         else
+         {
+           printf("Service charge is %.2f\n", amount);
+           balance -= amount;
+           charges++;
+           total_charges += amount;
+         }
+         break;
+      case 'w':
+      case 'W':
+         if (scanf("%lf", &amount) != 1) 
+           printf("Bad withdrawal amount\n");
+         else
+         {
+           printf("Withdrawal is %.2f\n", amount);
+           balance -= amount;
+           withdrawals++;
+           total_withdrawals += amount;
+         }
+         break;
+      default: 
+         printf("Bad code: %c\n", c);
+         break;
+    }
+
+    while ( (c = getchar()) != '\n')
+      ;
+  }
+
+  /* Summary Info */
+ 
+  if (deposits == 0)
+    printf("No deposits\n");
+  else
+    printf("%i deposits for %.2f (avg: %.2f)\n",
+           deposits, total_deposits, total_deposits / deposits);
+
+  if (checks == 0)
+    printf("No checks\n");
+  else
+    printf("%i checks for %.2f (avg: %.2f)\n", 
+           checks, total_checks, total_checks / checks);
+
+  if (withdrawals == 0)
+    printf("No withdrawals\n");
+  else
+    printf("%i withdrawals for %.2f (avg: %.2f)\n",
+            withdrawals, total_withdrawals, total_withdrawals/withdrawals);
+
+  if (charges == 0)
+    printf("No charges\n");
+  else
+    printf("%i charges for %.2f (avg: %.2f)\n", charges, total_charges);
+
+  printf("Final balance: %.2f\n", balance);
+
+  return 0;
+}
+
+int getNextNonBlank()
+{
+  int c;
+
+  while ( (c = getchar()) == ' ')
+    ;    /* skip over blanks */
+  return c;              /* return first non-blank */
+}
+@EOF
+
+chmod 644 Examples/9/fcb5.c
+
+chmod 755 Examples/9
+
+echo mkdir - Examples/11
+mkdir Examples/11
+
+echo x - Examples/11/counter1.c
+cat >Examples/11/counter1.c <<'@EOF'
+/*
+ * A program to count the number of each test score in the input.
+ */
+#include <stdio.h>
+
+int counters[101];     /* 0 .. 100 */
+
+main()
+{
+  void updateCounters();
+  void printCounters();
+
+  updateCounters();
+  printCounters();
+  return 0;
+}
+
+void updateCounters()
+{
+  int score;
+
+  while (scanf("%i", &score) == 1)
+    if (score >= 0 && score <= 100)
+      counters[score]++;
+}
+
+void printCounters()
+{
+  int i;
+
+  for (i = 100; i >= 0; i--)
+    if (counters[i] != 0)
+      printf("%i (%i)\n", i, counters[i]);
+}
+@EOF
+
+chmod 644 Examples/11/counter1.c
+
+echo x - Examples/11/counter2.c
+cat >Examples/11/counter2.c <<'@EOF'
+/*
+ * A program to count the number of each test score in the input.
+ * This time we've redone it without the global variable.
+ */
+#include <stdio.h>
+
+main()
+{
+  void zeroCounters(int t[], int max);
+  void updateCounters(int t[], int max);
+  void printCounters(int t[], int max);
+
+  int counters[101];     /* 0 .. 100 */
+
+  zeroCounters(counters, 100);
+  updateCounters(counters, 100);
+  printCounters(counters, 100);
+  return 0;
+}
+
+void zeroCounters(int t[], int max)
+{
+  int i;
+
+  for (i = 0; i <= max; i++)
+    t[i] = 0;
+}
+
+void updateCounters(int t[], int max)
+{
+  int score;
+
+  while (scanf("%i", &score) == 1)
+    if (score >= 0 && score <= max)
+      t[score]++;
+}
+
+void printCounters(int t[], int max)
+{
+  int i;
+
+  for (i = max; i >= 0; i--)
+    if (t[i] != 0)
+      printf("%i (%i)\n", i, t[i]);
+}
+@EOF
+
+chmod 644 Examples/11/counter2.c
+
+echo x - Examples/11/tstfncg.c
+cat >Examples/11/tstfncg.c <<'@EOF'
+/*
+ * Keep a count of times function is called (using globals).
+ */
+#include <stdio.h>
+
+int main()
+{
+  void testfunc(void);
+
+  testfunc(); testfunc(); testfunc();
+  return 0;
+}
+
+int cnt = 0;    
+
+void testfunc(void)
+{
+  printf("testfunc call #%i\n", ++cnt);
+}
+@EOF
+
+chmod 644 Examples/11/tstfncg.c
+
+chmod 755 Examples/11
+
+echo mkdir - Examples/10
+mkdir Examples/10
+
+echo x - Examples/10/arrayex.c
+cat >Examples/10/arrayex.c <<'@EOF'
+/*
+ * An example of creating an array, zeroing its elements, assigning
+ * values to a few elements, and then printing all array elements.
+ */
+#include <stdio.h>
+
+#define ELEMENTS 10
+
+int main()
+{
+  int a[ELEMENTS];     /* make a 10 element array */
+  int i;
+
+  for (i = 0; i <= ELEMENTS - 1; i++)
+    a[i] = 0;         /* zero each element */
+
+  a[2]= 17;           /* put a 17 in the third element */
+  a[4]= 30;           /* put a 30 in the fourth element */
+  
+  for (i = 0; i <= ELEMENTS - 1; i++)
+    printf("%i\n", a[i]);         /* print each element */
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/10/arrayex.c
+
+echo x - Examples/10/arrayrev.c
+cat >Examples/10/arrayrev.c <<'@EOF'
+/*
+ * An example of reading all of the input into an array, then printing
+ * it in reverse order.
+ */
+#include <stdio.h>
+
+#define ELEMENTS 100   
+
+int main()
+{
+  int a[ELEMENTS];     /* room for 100 elements */
+  int count;           /* how many values are actually in the array */
+  int value;           /* next input value */
+  int i;              
+
+  count = 0;
+  while (scanf("%i", &value) == 1)
+  {
+    a[count] = value;  /* save value into an array */
+    count++;
+  }
+
+  for (i = count - 1; i >= 0; i--)
+    printf("%i\n", a[i]);         /* print each element, backwards */
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/10/arrayrev.c
+
+echo x - Examples/10/arrayavg.c
+cat >Examples/10/arrayavg.c <<'@EOF'
+/*
+ * An example of printing all values in the input that are larger than
+ * the average.
+ */
+#include <stdio.h>
+
+#define ELEMENTS 100   
+
+int main()
+{
+  int a[ELEMENTS];     /* room for 100 elements */
+  int count;           /* how many values are actually in the array */
+  int value;           /* next input value */
+  int i;              
+  int sum;
+  double avg;
+
+  /* read in values; just like before */
+
+  count = 0;
+  while (scanf("%i", &value) == 1)
+  {
+    a[count] = value;  /* save value into an array */
+    count++;
+  }
+
+  /* run through array computing sum */
+
+  sum = 0;
+  for (i = 0; i <= count - 1; i++)
+    sum += a[i];
+  avg = (count > 0) ? (double) sum / count : 0.0;
+
+  /* print larger than average values in array */
+
+  for (i = 0; i <= count - 1; i++)
+    if (a[i] > avg)
+      printf("%i\n", a[i]);
+
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/10/arrayavg.c
+
+echo x - Examples/10/printfor.c
+cat >Examples/10/printfor.c <<'@EOF'
+/*
+ * Print an array of any number of elements.
+ */
+#include <stdio.h>
+
+#define ELEMENTS 10
+
+main()
+{
+  void print_array(int a[], int n);
+
+  int table[ELEMENTS];
+
+  table[0] = 0; table[1] = 10; table[2] = 20;
+  table[3] = 30; table[4] = 40; table[5] = 50;
+  table[6] = 60; table[7] = 70; table[8] = 80;
+  table[9] = 90;
+
+  print_array(table, ELEMENTS);
+}
+
+void print_array(int a[], int n)
+{
+  int i;
+
+  for (i = 0; i < n; i++)
+    printf("%i\n", a[i]);
+}
+@EOF
+
+chmod 644 Examples/10/printfor.c
+
+echo x - Examples/10/print10.c
+cat >Examples/10/print10.c <<'@EOF'
+/*
+ * Print an array of exactly 10 elements.
+ */
+#include <stdio.h>
+
+#define ELEMENTS 10
+
+main()
+{
+  void print_array(int a[ELEMENTS]);
+
+  int table[ELEMENTS];
+
+  table[0] = 0; table[1] = 10; table[2] = 20;
+  table[3] = 30; table[4] = 40; table[5] = 50;
+  table[6] = 60; table[7] = 70; table[8] = 80;
+  table[9] = 90;
+
+  print_array(table);
+  return 0;
+}
+
+void print_array(int a[ELEMENTS])
+{
+  int i;
+
+  for (i = 0; i < ELEMENTS; i++)
+    printf("%i\n", a[i]);
+}
+@EOF
+
+chmod 644 Examples/10/print10.c
+
+echo x - Examples/10/printback.c
+cat >Examples/10/printback.c <<'@EOF'
+/*
+ * Print an array of any number of elements in reverse order.
+ */
+#include <stdio.h>
+
+void print_array_backwards(int a[], int n)
+{
+  int i;
+
+  for (i = n - 1; i >= 0; i--)
+    printf("%i\n", a[i]);
+}
+@EOF
+
+chmod 644 Examples/10/printback.c
+
+echo x - Examples/10/testparm.c
+cat >Examples/10/testparm.c <<'@EOF'
+/*
+ * Demonstrate how array parameters work.
+ */
+#include <stdio.h>
+
+main()
+{
+  void testfunc(int a[], int n);
+
+  int table[5];
+  int x;
+  int i;
+ 
+  table[0] = table[1] = table[2] = table[3] = table[4] = 0;
+  x = 20;
+  testfunc(table, x);
+  
+  for (i = 0; i < 5; i++)
+    printf("table[%i]=%i\n", i, table[i]);
+  printf("x=%i\n", x);
+  return 0;
+}
+
+void testfunc(int a[], int n)
+{
+  a[0] = 100;       /* changes table[0] */
+  a[2] = 50;        /* changes table[2] */
+  n = 15;           /* doesn't change x */
+}
+@EOF
+
+chmod 644 Examples/10/testparm.c
+
+echo x - Examples/10/readem.c
+cat >Examples/10/readem.c <<'@EOF'
+/*
+ * Read values into an array up until an error or EOF.  Return the
+ * number of values read in.
+ */
+#include <stdio.h>
+
+int fill_array(int a[], int n)
+{
+  int count;
+  int value;
+  
+  while (scanf("%i", &value) == 1)
+  {
+    a[count] = value;
+    count++;
+  }
+  return count;
+}
+@EOF
+
+chmod 644 Examples/10/readem.c
+
+echo x - Examples/10/inputrev.c
+cat >Examples/10/inputrev.c <<'@EOF'
+/*
+ * Reverse input.
+ */
+
+#define ELEMENTS 100
+
+main()
+{
+  int fill_array(int a[], int n);
+  void print_array_backwards(int a[], int n);
+
+  int table[ELEMENTS];
+  int n;
+  
+  n = fill_array(table, ELEMENTS);
+  print_array_backwards(table, n);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/10/inputrev.c
+
+echo x - Examples/10/readem2.c
+cat >Examples/10/readem2.c <<'@EOF'
+/*
+ * Read values into an array up until an error, EOF, or we run out
+ * of space in the array.  We just quietly stop reading if we run out
+ * of space.
+ */
+#include <stdio.h>
+
+int fill_array(int a[], int n)
+{
+  int count;
+  int value;
+
+  count = 0;
+  while (scanf("%i", &value) == 1 && count < n)
+  {
+    a[count] = value;
+    count++;
+  }
+  return count;
+}
+@EOF
+
+chmod 644 Examples/10/readem2.c
+
+echo x - Examples/10/readem3.c
+cat >Examples/10/readem3.c <<'@EOF'
+/*
+ * Read values into an array up until an error, EOF, or we run out
+ * of space in the array.  We just quietly stop reading if we run out
+ * of space.
+ *
+ * This version uses break.
+ */
+#include <stdio.h>
+
+int fill_array(int a[], int n)
+{
+  int count;
+  int value;
+  
+  count = 0;
+  while (scanf("%i", &value) == 1)
+  {
+    if (count >= n)
+      break;
+
+    a[count++] = value;
+  }
+  return count;
+}
+@EOF
+
+chmod 644 Examples/10/readem3.c
+
+echo x - Examples/10/readem4.c
+cat >Examples/10/readem4.c <<'@EOF'
+/*
+ * Read values into an array up until an error, EOF, or we run out
+ * of space in the array.  We just quietly stop reading if we run out
+ * of space.
+ *
+ * This version uses a for instead of a while.
+ */
+#include <stdio.h>
+
+int fill_array(int a[], int n)
+{
+  int count;
+  int value;
+  
+  for (count = 0; scanf("%i", &value) == 1; count++)
+  {
+    if (count >= n)
+      break;
+
+    a[count] = value;
+  }
+  return count;
+}
+@EOF
+
+chmod 644 Examples/10/readem4.c
+
+echo x - Examples/10/readem5.c
+cat >Examples/10/readem5.c <<'@EOF'
+/*
+ * Read values into an array up until an error, EOF, or we run out
+ * of space in the array.  We just quietly stop reading if we run out
+ * of space.
+ *
+ * This version is the most concise version.
+ */
+#include <stdio.h>
+
+int fill_array(int a[], int n)
+{
+  int count;
+  int value;
+  
+  for (count = 0; scanf("%i", &value) == 1 && count < n; count++)
+    a[count] = value;
+  return count;
+}
+@EOF
+
+chmod 644 Examples/10/readem5.c
+
+echo x - Examples/10/insert.c
+cat >Examples/10/insert.c <<'@EOF'
+/*
+ * The main program for insertion sort.
+ *
+ * [This program assumes there is enough room in table_insert.]
+ */
+#include <stdio.h>
+
+#define MAX_ELEMENTS 100
+
+int main()
+{
+  void table_insert(int a[], int n, int item);
+
+  int table[MAX_ELEMENTS];
+  int count;
+  int value;
+  int i;
+
+  count = 0;
+  while (scanf("%i", &value) == 1)
+  {
+    table_insert(table, count, value);
+    count++;
+  }
+
+  for (i = 0; i < count; i++)
+    printf("%i\n", table[i]);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/10/insert.c
+
+echo x - Examples/10/tabinsert.c
+cat >Examples/10/tabinsert.c <<'@EOF'
+/*
+ * The insertion function itself.
+ */
+void table_insert(int a[], int num, int value)
+{
+  int i;
+
+  for (i = num; i > 0 && value < a[i - 1]; i--)
+     a[i] = a[i - 1];
+  a[i] = value;
+}
+@EOF
+
+chmod 644 Examples/10/tabinsert.c
+
+chmod 755 Examples/10
+
+echo mkdir - Examples/12
+mkdir Examples/12
+
+echo x - Examples/12/div.c
+cat >Examples/12/div.c <<'@EOF'
+/*
+ * Writing and using a function to return the quotient and
+ * remainder through pointers.
+ */
+
+#include <stdio.h>
+
+main()
+{
+  void divide(int x, int y, int *quotptr, int *remptr);
+
+  int val1, val2;
+  int quotient, remainder;
+
+  scanf("%i %i", &val1, &val2);   /* read values */
+  divide(val1, val2, &quotient, &remainder);
+  printf("%i/%i=%i, %i%%%i=%i\n", val1, val2, quotient,
+                                  val1, val2, remainder);
+  return 0;
+}
+
+void divide(int x, int y, int *quotptr, int *remptr)
+{
+  *quotptr = x / y;
+  *remptr = x % y;
+}
+@EOF
+
+chmod 644 Examples/12/div.c
+
+chmod 755 Examples/12
+
+echo mkdir - Examples/13
+mkdir Examples/13
+
+echo x - Examples/13/minmax1.c
+cat >Examples/13/minmax1.c <<'@EOF'
+/*
+ * Find the largest and smallest values in an array.
+ */
+#include <stdio.h>
+
+main()
+{
+  void minmax(int a[], int n, int *smallptr, int *largeptr);
+  int table[10] = {17, 92, 85, 78, 65, 87, 14, 19, 56, 79};
+  int smallest, largest;
+  
+  minmax(table, 10, &smallest, &largest);
+  printf("The smallest value is %i\n", smallest);
+  printf("The largest value is %i\n", largest);
+
+  return 0;
+}
+
+void minmax(int a[], int n, int *smallptr, int *largeptr)
+{
+  int i;
+  int small, large;
+
+  small = large = a[0];
+  for (i = 1; i < n; i++)
+  {
+    if (a[i] < small)
+      small = a[i];
+    if (a[i] > large)
+      large = a[i];
+  }
+  *smallptr = small;
+  *largeptr = large;
+}
+@EOF
+
+chmod 644 Examples/13/minmax1.c
+
+echo x - Examples/13/minmax2.c
+cat >Examples/13/minmax2.c <<'@EOF'
+/*
+ * Find the largest and smallest values in an array using a different
+ * approach.
+ */
+#include <stdio.h>
+#include <limits.h>
+
+main()
+{
+  void minmax(int a[], int n, int *smallptr, int *largeptr);
+  int table[10] = {17, 92, 85, 78, 65, 87, 14, 19, 56, 79};
+  int smallest, largest;
+  
+  minmax(table, 10, &smallest, &largest);
+  printf("The smallest value is %i\n", smallest);
+  printf("The largest value is %i\n", largest);
+
+  return 0;
+}
+
+void minmax(int a[], int n, int *smallptr, int *largeptr)
+{
+  int i;
+  int small, large;
+
+  small = INT_MAX;
+  large = INT_MIN;
+  for (i = 0; i < n; i++)
+  {
+    if (a[i] < small)
+      small = a[i];
+    if (a[i] > large)
+      large = a[i];
+  }
+  *smallptr = small;
+  *largeptr = large;
+}
+@EOF
+
+chmod 644 Examples/13/minmax2.c
+
+echo x - Examples/13/makearray.c
+cat >Examples/13/makearray.c <<'@EOF'
+/*
+ * Create an array, set it to zero, and print it.
+ */
+#include <stdio.h>
+#include <stdlib.h>     /* for malloc */
+
+main()
+{
+  void printValues(int a[], int n);
+  int *table;           
+  int n;
+  
+  scanf("%i", &n);     /* number of values to create */
+  table = malloc(n * sizeof(int));
+  if (table == 0)
+    printf("Couldn't create an array of %i elements\n", n);
+  else
+  {
+    int i;
+
+    for (i = 0; i < n; i++)     /* set all the values to 21 */
+      table[i] = 21;
+    printValues(table, n);
+  }
+  return 0;
+}
+
+void printValues(int a[], int n)
+{
+  int i;
+
+  for (i = 0; i < n; i++)
+    printf("%i\n", a[i]);
+}
+@EOF
+
+chmod 644 Examples/13/makearray.c
+
+echo x - Examples/13/getline.c
+cat >Examples/13/getline.c <<'@EOF'
+/*
+ * A function to get a line of input.  Slightly simplified from
+ * the program in the book.
+ */
+#include <stdio.h>
+
+/*
+ * Parameters:
+ *   Line is an already allocated character array.
+ *   Max is the size of the array minus 1 (to leave room for
+ *      the null character).
+ */
+int getline(char line[], int max)
+{
+  int c;
+  int count = 0;
+
+  while ((c = getchar()) != '\n' && c != EOF)
+    if (count < max)
+    {
+      line[count] = c;
+      count++;
+    }
+  line[count] = '\0';
+  if (count == 0 && c == EOF)   /* EOF first character */
+    return -1;
+
+  return count;                 /* Otherwise return count */
+}
+@EOF
+
+chmod 644 Examples/13/getline.c
+
+echo x - Examples/13/linenum.c
+cat >Examples/13/linenum.c <<'@EOF'
+/*
+ * Line number input.
+ */
+#include <stdio.h>
+
+#define MAXLINE 80
+
+main()
+{
+  int getline(char line[], int max);
+ 
+  char inputline[MAXLINE + 1];
+  int linecount = 0;
+
+  while (getline(inputline, MAXLINE) != -1)
+    printf("%i %s\n", ++linecount, inputline);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/13/linenum.c
+
+chmod 755 Examples/13
+
+echo mkdir - Examples/14
+mkdir Examples/14
+
+echo x - Examples/14/putline.c
+cat >Examples/14/putline.c <<'@EOF'
+/*
+ * A function to print a string on a line by itself (the equivalent
+ * of printf("%s", string);
+ */
+#include <stdio.h>
+
+main()
+{  
+  void printline(char s[]);
+
+  printline("alex");
+  printline("was");
+  printline("here");
+}
+
+void printline(char s[])
+{
+  int i;
+
+  for (i = 0; s[i] != '\0'; i++)
+    putchar(s[i]);
+  putchar('\n');
+}
+@EOF
+
+chmod 644 Examples/14/putline.c
+
+echo x - Examples/14/strcmp.c
+cat >Examples/14/strcmp.c <<'@EOF'
+/*
+ * An incorrect version of the strcmp function
+ */
+int strcmp(char s1[], char s2[])
+{
+  int i;
+
+  for (i = 0; s1[i] != '\0'; i++)
+    if (s1[i] != s2[i])
+      return 1;      /* different */
+  return 0;          /* made it, so same */
+}
+@EOF
+
+chmod 644 Examples/14/strcmp.c
+
+echo x - Examples/14/testit.c
+cat >Examples/14/testit.c <<'@EOF'
+/*
+ * Test function/program for strcmp.
+ */
+#include <stdio.h>
+
+main()
+{
+  void teststrcmp(char s1[], char s2[], int expres);
+
+  teststrcmp("anthony", "alex", 1);
+  teststrcmp("alex", "anthony", 1);
+  teststrcmp("whatever", "something", 1);
+  teststrcmp("something", "whatever", 1);
+  teststrcmp("alex", "alex", 0);
+  teststrcmp("", "", 0);
+  teststrcmp("a", "at", 1);
+  teststrcmp("at", "a", 1);
+}
+
+void teststrcmp(char s1[], char s2[], int expres)
+{
+  int res = strcmp(s1, s2);
+
+  if (res != expres)
+    printf("strcmp(\"%s\",\"%s\") failed with result %i (expected: %i)\n",
+           s1, s2, res, expres);
+}
+@EOF
+
+chmod 644 Examples/14/testit.c
+
+echo x - Examples/14/findchar.c
+cat >Examples/14/findchar.c <<'@EOF'
+/*
+ * Return a character's position within a string.
+ */
+int findCharacter(char s[], char c)
+{
+  int i;
+
+  for (i = 0; s[i] != '\0'; i++)
+    if (s[i] == c)
+      return i;
+  return -i;
+}
+@EOF
+
+chmod 644 Examples/14/findchar.c
+
+echo x - Examples/14/printlast.c
+cat >Examples/14/printlast.c <<'@EOF'
+/*
+ * Print just the last name.
+ */
+#include <stdio.h>
+
+#define MAXLINE 80
+
+main()
+{
+  int getline(char s[], int m);
+
+  char name[MAXLINE + 1];
+  while (getline(name, MAXLINE) != -1)
+  {
+    int blank = findCharacter(name, ' ');
+
+    if (blank == -1)
+      printf("No blank in name.\n");
+    else
+      printf("%s\n", &name[blank + 1]);
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/14/printlast.c
+
+echo x - Examples/14/strcmp2.c
+cat >Examples/14/strcmp2.c <<'@EOF'
+/*
+ * A fixed version of strcmp.
+ */
+int strcmp(char s1[], char s2[])
+{
+  int i;
+
+  for (i = 0; s1[i] != '\0'; i++)
+    if (s1[i] != s2[i])
+      return 1;      /* different */
+
+  if (s2[i] != '\0')
+    return 1;        /* different */
+  return 0;          /* made it, so same */
+}
+@EOF
+
+chmod 644 Examples/14/strcmp2.c
+
+echo x - Examples/14/convert.c
+cat >Examples/14/convert.c <<'@EOF'
+/*
+ * Print just the first name without modifying the string to print.
+ */
+#include <stdio.h>
+#include <string.h>
+
+#define MAXLINE 80
+
+main()
+{
+  int getline(char s[], int m);
+
+  char name[MAXLINE + 1];      /* first name first */
+  char newname[MAXLINE + 1];   /* last name first */
+
+  while (getline(name, MAXLINE) != -1)
+  {
+    int blank = findCharacter(name, ' ');
+
+    if (blank == -1)
+      printf("No blank in name.\n");
+    else
+    {
+      strcpy(newname, &name[blank + 1]);   /* copy last name to first /
+      strcat(newname, ", ");               /* add , and space */
+      strncat(newname, name, blank);       /* copy up to blank to temp */
+      printf("%s\n", newname);             /* then print temp */
+    }
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/14/convert.c
+
+echo x - Examples/14/strcmp3.c
+cat >Examples/14/strcmp3.c <<'@EOF'
+/*
+ * Another fixed version of the strcmp function
+ */
+int strcmp(char s1[], char s2[])
+{
+  int i;
+
+  for (i = 0; s1[i] == s2[i]; i++)
+    if (s1[i] == '\0')
+      return 0;      /* same */
+
+  return 1;          /* made it, so same */
+}
+@EOF
+
+chmod 644 Examples/14/strcmp3.c
+
+echo x - Examples/14/printfirst.c
+cat >Examples/14/printfirst.c <<'@EOF'
+/*
+ * Print just the first name.
+ */
+#include <stdio.h>
+
+#define MAXLINE 80
+
+main()
+{
+  int getline(char s[], int m);
+
+  char name[MAXLINE + 1];
+  while (getline(name, MAXLINE) != -1)
+  {
+    int blank = findCharacter(name, ' ');
+
+    if (blank == -1)
+      printf("No blank in name.\n");
+    else
+    {
+      name[blank] = '\0';
+      printf("%s\n", name);
+      name[blank] = ' ';     /* put blank back, just to be nice */
+    }
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/14/printfirst.c
+
+echo x - Examples/14/printfirst2.c
+cat >Examples/14/printfirst2.c <<'@EOF'
+/*
+ * Print just the first name without modifying the string to print.
+ */
+#include <stdio.h>
+#include <string.h>
+
+#define MAXLINE 80
+
+main()
+{
+  int getline(char s[], int m);
+
+  char name[MAXLINE + 1];
+  char temp[MAXLINE + 1];
+
+  while (getline(name, MAXLINE) != -1)
+  {
+    int blank = findCharacter(name, ' ');
+
+    if (blank == -1)
+      printf("No blank in name.\n");
+    else
+    {
+      strncpy(temp, name,blank);  /* copy up to blank in temp */
+      printf("%s\n", temp);       /* then print temp */
+    }
+  }
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/14/printfirst2.c
+
+echo x - Examples/14/printdate.c
+cat >Examples/14/printdate.c <<'@EOF'
+/*
+ * Example of passing a structure as a paramter.
+ */
+#include <stdio.h>
+
+struct date
+{
+  int month;
+  int day;
+  int year;
+};
+
+main()
+{
+  void print_date(struct date d);
+  struct date today = { 4, 19, 1996 };
+
+  print_date(today);
+  return 0;
+}
+
+void print_date(struct date d)
+{
+  if (d.month < 10)
+    printf(" ");
+  printf("%i/", d.month);
+  if (d.day < 10)             /* so dates are always xx/xx/year */
+    printf("0");
+  printf("%i/", d.day);
+  printf("%2i\n", d.year - 1900);
+}
+@EOF
+
+chmod 644 Examples/14/printdate.c
+
+echo x - Examples/14/updatedate.c
+cat >Examples/14/updatedate.c <<'@EOF'
+/*
+ * Example of passing a structure as a paramter.
+ */
+#include <stdio.h>
+
+struct date
+{
+  int month;
+  int day;
+  int year;
+};
+
+main()
+{
+  void print_date(struct date d);
+  void update_date(struct date *dptr);
+  struct date today = { 4, 30, 1996 };
+
+  printf("Today is:    "); print_date(today);
+  update_date(&today);
+  printf("Tomorrow is: "); print_date(today);
+  return 0;
+}
+
+void print_date(struct date d)
+{
+  if (d.month < 10)
+    printf(" ");
+  printf("%i/", d.month);
+  if (d.day < 10)             /* so dates are always xx/xx/year */
+    printf("0");
+  printf("%i/", d.day);
+  printf("%2i\n", d.year - 1900);
+}
+
+void update_date(struct date *dptr)
+{
+  int lastDayOfMonth(int month, int day);
+
+  if (dptr->month == 12 && dptr->day == 31)
+  {
+    dptr->year++;
+    dptr->month = dptr->day = 1;
+  }
+  else if (lastDayOfMonth(dptr->month, dptr->day))
+  {
+    dptr->month++;
+    dptr->day = 1;
+  }
+  else
+    dptr->day++;
+}
+
+/* Is it last day of month?  Doesn't handle leap years! */
+
+int lastDayOfMonth(int month, int day)
+{ 
+  int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+  return day == days[month - 1];
+}
+@EOF
+
+chmod 644 Examples/14/updatedate.c
+
+chmod 755 Examples/14
+
+echo mkdir - Examples/15
+mkdir Examples/15
+
+echo x - Examples/15/student.c
+cat >Examples/15/student.c <<'@EOF'
+/*
+ * An example of a structure containing arrays.
+ *
+ * Read and print student, assuming no errors.  (Assumes getline and
+ * readValues from assignment #5.)
+ */
+#include <stdio.h>
+
+#define MAX_NAME_LEN 40
+#define MAX_SCORES   10
+
+struct student
+{
+  char name[MAX_NAME_LEN + 1];
+  int  scores[MAX_SCORES];
+  int  num;
+};
+
+main()
+{
+  int getline(char line[], int max);
+  int readValues(int scores[], int expected);
+  void printStudent(struct student s);
+
+  struct student s;
+
+  getline(s.name, MAX_NAME_LEN);
+  s.num = readValues(s.scores, MAX_SCORES);
+  printStudent(s);
+  return 0;
+}
+
+void printStudent(struct student x)
+{
+  printf("%s\n", x.name);
+  printValues(x.scores, x.num);
+}
+@EOF
+
+chmod 644 Examples/15/student.c
+
+echo x - Examples/15/payroll.c
+cat >Examples/15/payroll.c <<'@EOF'
+/*
+ * An example of arrays of structures.
+ */
+#include <stdio.h>
+
+struct employee
+{
+  int empno;
+  double payrate;
+};
+
+main()
+{
+  int lookup(struct employee t[], int n, int targetno);
+
+  struct employee emptable[5] =
+    { {23, 10.50}, {51, 4.75}, {74, 8.75}, {85, 12.40}, {26, 18.10} };
+  int nextemp, nexthours;
+  int pos;
+
+  while (scanf("%i %i", &nextemp, &nexthours) == 2)
+  {
+    pos = lookup(emptable, 5, nextemp);
+    if (pos != -1) 
+      printf("%i: %.2f\n", nextemp, nexthours * emptable[pos].payrate);
+    else
+      printf("%i: not found\n", nextemp);
+  }
+  return 0;
+}
+
+int lookup(struct employee t[], int n, int targetno)
+{
+  int i;
+
+  for (i = 0; i < n; i++)
+    if (t[i].empno == targetno)
+      return i;
+  return -1;
+}
+@EOF
+
+chmod 644 Examples/15/payroll.c
+
+echo x - Examples/15/init1d.c
+cat >Examples/15/init1d.c <<'@EOF'
+/*
+ * Initializing a one-dimensional array.
+ */
+#include <stdio.h>
+
+#define MAXELEMENTS 1000
+
+int bigArray[MAXELEMENTS];
+
+main()
+{
+  void initArray(int a[], int n);
+
+  initArray(bigArray, MAXELEMENTS);
+  return 0;
+}
+
+void initArray(int a[], int n)
+{
+  int i;
+ 
+  for (i = 0; i < n; i++)
+    a[i] = 0;
+}
+@EOF
+
+chmod 644 Examples/15/init1d.c
+
+echo x - Examples/15/tictac.c
+cat >Examples/15/tictac.c <<'@EOF'
+/*
+ * Tic-tac-toe monitoring game.
+ */
+
+#define BOARD_SIZE 3
+
+main()
+{
+  void initBoard(char b[][BOARD_SIZE], int rows);
+  int makeMove(char b[][BOARD_SIZE], char piece, int row, int col);
+  char printBoard(char b[][BOARD_SIZE], int rows);
+  int fullBoard(char b[][BOARD_SIZE]);
+  int winningBoard(char b[][BOARD_SIZE], char piece);
+
+  char board[BOARD_SIZE][BOARD_SIZE];       /* board */
+  char piece;
+  int row, col;
+ 
+  initBoard(board, BOARD_SIZE);
+  while (printf("Move (piece, row, col)? "),
+         scanf("%c %i %i", &piece, &row, &col) == 3)
+  {
+    int c=getchar();  /* grab CR at end of line */
+
+    if (makeMove(board, piece, row, col))
+    {
+      printBoard(board, BOARD_SIZE);
+      if (fullBoard(board))
+      {
+        printf("It's a draw\n");
+        break;
+      }
+      if (winningBoard(board, piece))
+      {
+        printf("%c wins\n", piece);
+        break;
+      }
+    }
+  }
+  return 0;
+}
+
+int makeMove(char b[][BOARD_SIZE], char piece, int row, int col)
+{
+  if (row > BOARD_SIZE || row <= 0 || col > BOARD_SIZE || col <= 0 ||
+      b[row - 1][col - 1] != ' ')
+    return 0;    /* can't move there */
+  b[row - 1][col - 1] = piece;
+  return 1;
+}
+
+void initBoard(char b[][BOARD_SIZE], int rows)
+{
+  int r, c;
+
+  for (r = 0; r < rows; r++)
+    for (c = 0; c < BOARD_SIZE; c++)
+      b[r][c] = ' ';
+}
+
+char printBoard(char b[][BOARD_SIZE], int rows)
+{
+  int r, c;
+
+  for (r = 0; r < rows; r++)
+  {
+    for (c = 0; c < BOARD_SIZE; c++)
+      putchar(b[r][c]);
+    putchar('\n');
+  }
+}
+
+int fullBoard(char b[][BOARD_SIZE])
+{
+  int r, c;
+
+  for (r = 0; r < BOARD_SIZE; r++)
+    for (c = 0; c < BOARD_SIZE; c++)
+      if (b[r][c] == ' ')
+        return 0;  /* board not full */
+  return 1;   /* board is full */
+}
+
+int winningBoard(char b[][BOARD_SIZE], char piece)
+{
+  int winningLine(char b[][BOARD_SIZE], char piece, int row, int col,
+                  int rinc, int cinc);
+  int r, c;
+
+  for (r = 0; r < BOARD_SIZE; r++)              /* Check Rows */
+    if (winningLine(b, piece, r, 0, 0, 1))
+      return 1;
+  for (c = 0; c < BOARD_SIZE; c++)              /* Check Cols */
+    if (winningLine(b, piece, 0, c, 1, 0))
+      return 1;
+
+  return winningLine(b, piece, 0, 0, 1, 1) || 
+         winningLine(b, piece, 0, BOARD_SIZE - 1, 1, -1);
+}
+
+int winningLine(char b[][BOARD_SIZE], char piece, int nextrow, int nextcol,
+                int rowinc, int colinc)
+{
+  int i;
+
+  for (i = 0; i < BOARD_SIZE; i++, nextrow += rowinc, nextcol += colinc)
+    if (b[nextrow][nextcol] != piece)
+      return 0;
+  return 1;
+}
+@EOF
+
+chmod 644 Examples/15/tictac.c
+
+echo x - Examples/15/init2d.c
+cat >Examples/15/init2d.c <<'@EOF'
+/*
+ * Initializing a two-dimensional array using array subscripting.
+ */
+#include <stdio.h>
+
+#define MAXROWS 1000
+#define MAXCOLS 1000
+
+int bigArray[MAXROWS][MAXCOLS];
+
+main()
+{
+  void init2dArray(int a[][MAXCOLS], int rows);
+
+  init2dArray(bigArray, MAXROWS);
+  return 0;
+}
+
+void init2dArray(int a[][MAXCOLS], int rows)
+{
+  int r,c;
+ 
+  for (r = 0; r < rows; r++)
+    for (c = 0; c < MAXCOLS; c++)
+      a[r][c] = 0;
+}
+@EOF
+
+chmod 644 Examples/15/init2d.c
+
+echo x - Examples/15/init1d2.c
+cat >Examples/15/init1d2.c <<'@EOF'
+/*
+ * Initializing a one-dimensional array using pointers.
+ */
+#include <stdio.h>
+
+#define MAXELEMENTS 1000
+
+int bigArray[MAXELEMENTS];
+
+main()
+{
+  void initArray(int a[], int n);
+
+  initArray(bigArray, MAXELEMENTS);
+  return 0;
+}
+
+void initArray(int a[], int n)
+{
+  int *p;
+  int *endp;
+ 
+  endp = &a[n - 1];
+  for (p = &a[0]; p <= endp; p++)
+    *p = 0;
+}
+@EOF
+
+chmod 644 Examples/15/init1d2.c
+
+echo x - Examples/15/init2d2.c
+cat >Examples/15/init2d2.c <<'@EOF'
+/*
+ * Initializing a two-dimensional array using pointers.
+ */
+#include <stdio.h>
+
+#define MAXROWS 1000
+#define MAXCOLS 1000
+
+int bigArray[MAXROWS][MAXCOLS];
+
+main()
+{
+  void init2dArray(int a[][MAXCOLS], int rows);
+
+  init2dArray(bigArray, MAXROWS);
+  return 0;
+}
+
+void init2dArray(int a[][MAXCOLS], int rows)
+{
+  int *p;
+  int *endp;
+
+  endp = &a[rows - 1][MAXCOLS - 1];
+  for (p = &a[0][0]; p <= endp; p++)
+    *p = 0;
+}
+@EOF
+
+chmod 644 Examples/15/init2d2.c
+
+chmod 755 Examples/15
+
+echo mkdir - Examples/16
+mkdir Examples/16
+
+echo x - Examples/16/strdup.c
+cat >Examples/16/strdup.c <<'@EOF'
+/*
+ * Dynamically allocate a copy of a string.
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *strdup(char s[])
+{
+  char *ptr;
+
+  ptr = malloc(strlen(s) + 1);
+  if (ptr != NULL)
+    strcpy(ptr, s);
+  return ptr;
+}
+@EOF
+
+chmod 644 Examples/16/strdup.c
+
+echo x - Examples/16/savestrs.c
+cat >Examples/16/savestrs.c <<'@EOF'
+/* 
+ * Read strings into a structure field.
+ */
+#include <stdio.h>
+
+#define MAXLINE 80
+#define ENTRIES 50
+
+struct student
+{
+  char *name;
+};
+
+main()
+{
+  struct student table[ENTRIES];
+  char *strdup(char s[]);
+  char inputline[MAXLINE + 1];
+  int n = 0;
+  int i;
+
+  while (getline(inputline, MAXLINE) != -1)
+    table[n++].name = strdup(inputline);
+  for (i = 0; i < n; i++)
+    printf("%s\n", table[i].name);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/16/savestrs.c
+
+echo x - Examples/16/inprev.c
+cat >Examples/16/inprev.c <<'@EOF'
+/* 
+ * Reverse input (strings)
+ */
+#include <stdio.h>
+
+#define MAXLINE 80
+#define ENTRIES 50
+
+main()
+{
+  char *table[ENTRIES];
+  char *strdup(char s[]);
+  char inputline[MAXLINE + 1];
+  int n = 0;
+  int i;
+
+  while (getline(inputline, MAXLINE) != -1)
+    table[n++] = strdup(inputline);
+  for (i = n - 1; i >= 0; i--)
+    printf("%s\n", table[i]);
+  return 0;
+}
+@EOF
+
+chmod 644 Examples/16/inprev.c
+
+chmod 755 Examples/16
+
+chmod 755 Examples
+
+exit 0

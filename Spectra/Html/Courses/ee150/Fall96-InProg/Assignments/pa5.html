@@ -1,0 +1,381 @@
+
+<HEAD>
+<TITLE>EE150, Spring 1996 - Programming Assignment #5</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1><A NAME=top>EE150 - Spring 1996</A></H1>
+<H2>Programming<BR>
+Assignment #5</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment is designed to give you experience with
+arrays, pointers, and strings.
+
+<P> As you should now be used to, this assignment will give
+you experience both with using pre-written functions to solve
+a problem (again, functions that I've written), as well as 
+additional experience in writing your own functions.
+
+<P> The due date is: <B> Friday, April 12th, 1996 </B> at 6pm.
+You should expect to spend between six to twelve hours of
+computer time over the next three weeks.  You should also
+expect to spend one to two hours of thinking time, depending on how
+much prior programming experience you have.  As usual, we will not
+accept late assignments (no matter how entertaining the excuse).
+
+<H4> What To Do </H4>
+
+<P> <B><A NAME=part1>Part 1</A></B>:
+Create a file named <B>scores1.c</B>.  This program will read
+in grading information (weights and the grading scale) and 
+individual student test scores, and will print the weighted average
+for each student, along with the students grade. 
+
+<P> The input is of the following form:
+<UL>
+<LI> The number of assignments in the course so far. <P>
+<LI> The weights (a number between 0 and 100) for each
+assignment.   A weight of 40, for example, means that 
+assignment is 40% of the course grade.  There should be
+as many weights as there are assignments. <P>
+<LI> The minimum score necessary for each grade (A, B,
+C, and D).  That means there are 4 minimums.  The minimum
+for an F is automatically assumed to be 0 and is not provided
+as input. <P>
+<LI> The scores for each student, where each student will
+have the same number of scores as there are assignments and
+weights.
+</UL>
+
+<P> Here is some sample input and output.
+<BLOCKQUOTE>
+<EM> 5 </EM> <BR>
+<EM> 20 40 10 5 25 </EM> <BR>
+<EM> 90 80 70 60 </EM> <BR>
+<BR>
+<EM> 100 100 100 100 100 </EM> <BR>
+<TT> 100.00 A </TT> <BR>
+<EM> 80   82  84  81  87 </EM> <BR>
+<TT> 83.00 B </TT> <BR>
+<EM> 90   95  85  70 100 </EM> <BR>
+<TT> 93.00 A </TT> <BR>
+<EM> 50    0  75  50  60 </EM> <BR>
+<TT> 35.00 F </TT> <BR>
+<EM> 67   75  58  62  66 </EM> <BR>
+<TT> 68.80 D </TT> <BR>
+<EM> 85   70  60  65  80 </EM> <BR>
+<TT> 74.25 C </TT> <BR>
+</BLOCKQUOTE>
+
+<P> The first line says there are 5 assignments.  The second line
+says the first assignment is worth 20%, the second assignment is
+worth 40%, the third assignment is worth 10%, the fourth assignment
+is worth 5%, and the last assignment is worth 25%.  The third line
+says that the course is using the traditional grading scale: 9)% for
+an A, 80% for a B, 70% for a C, and 60% for a D.  The remaining lines
+are the scores for each student: all 100's for the first student;
+80, 82, 84, 81, and 87 for the next student, and so on.
+
+<P> The output follows each students scores.  The first student got
+a 100.00 weighted average, which is an A, according to the provided
+grading scale.  The next student got a weighted average of 83,
+which is computed by calculating the weighted sum 
+(20*80 + 40*82 + 10*84 + 5*81 + 25*87) and dividing it by 100.
+
+<P> For this part, you can assume the user will be well-behaved.
+That is, you may assume that the input will be in an
+appropriate format (i.e., there will be no garbage in the input,
+you will have a reasonable number of assignments, the weights
+will add up to 100, there will be the right number of scores for
+each student, and so on.)  You can assume the user will enter no
+more than 10 for the number of assignments, but that there may
+be an infinite class size (e.g, you don't know how many different
+student scores will be entered).
+
+<P> To help you implement this program, we have provided a source
+file, <A HREF=Solutions/5/tables.c>tables.c</A>,
+which contains a collection of
+potentially useful functions.  For this assignment, you should take
+advantage of <TT>readValues</TT>, which reads <EM>n</EM> values into
+an array and returns the number of items it successfully read.  For
+debugging, we have provided a function <TT>printValues</TT>, which
+prints the first <EM>n</EM> values in an array.  As with the
+previous assignments, you will compile this source file, then compile
+your program, and then finally link the resulting object modules
+together to form an executable.
+As a result, you get to pretend the functions in this file are part
+of the language, like <TT>printf</TT> and <TT>scanf</TT>.  
+
+<P> This time, in addition, we have also provided a header file,
+<A HREF=Solutions/5/tables.h>tables.h</A>, which contains the prototypes for
+the various functions.  You should use copy this file over to
+your machine and then use
+<BLOCKQUOTE><PRE>
+#include "tables.h"
+</PRE></BLOCKQUOTE>
+to include the prototypes it contains.
+ 
+<P> You must use separate compilation, and simply link
+these files in with your source.  Do not copy the functions into
+your source file.  That's because the grading program will
+automatically try to link the functions in <B>tables.c</B>
+in with your program.
+
+
+<P><B><A NAME=part2>Part 2</A></B>:
+This part of the program is to extend your program to
+ensure that it behaves sensibly even if the user provides
+invalid input and to provide some additional summary
+information after all the input has been processed.
+Before starting this part, copy your solution to Part 1 into
+a file named <B>scores2.c</B>.
+
+<P> There are a variety of mistakes the user can make in providing
+the input to this program.  Your program's job is to detect these
+mistakes and if it finds any of them, it should print an error
+message and stop.  Here are the list of things to check
+for and the error message to print.  You should check for them in
+this order.
+
+<UL>
+<LI> Garbage or EOF when trying to read the number of assignments. <P>
+<BLOCKQUOTE><PRE>
+Can't read the number of assignments.
+</PRE></BLOCKQUOTE>
+
+<LI> A number of assignments greater than the maximum allowed number
+of assignments (10 for this program). <P>
+<BLOCKQUOTE><PRE>
+Too many assignments (X).  Can only handle 10.
+</PRE></BLOCKQUOTE>
+The <TT>X</TT> in parentheses should be replaced with the actual
+number provided. <P>
+
+<LI> Fewer weights provided than assignments.
+<BLOCKQUOTE><PRE>
+Can't read expected number of weights.
+</PRE></BLOCKQUOTE>
+
+<LI> Weights do not add up to 100.
+<BLOCKQUOTE><PRE>
+Weights sum to X rather than 100.
+</PRE></BLOCKQUOTE>
+The <TT>X</TT> in this output should be replaced with
+what the weights sum to. <P>
+
+<LI> Not being able to read the minimum scores for each grade.
+<BLOCKQUOTE><PRE>
+Can't read minimum scores for grades.
+</PRE></BLOCKQUOTE>
+
+<LI> A problem reading the scores for a given student.  When you
+go to read those scores, you should either hit end of file or
+read all the scores you expect (one for each assignment).
+<BLOCKQUOTE><PRE>
+Can't read scores for student X.
+</PRE></BLOCKQUOTE>
+The <TT>X</TT> in this output should be replaced by a count of
+students read so far (1 for the first student, 2 for the second
+student, and so on). <P>
+</UL>
+
+In addition, you will also extend the program to produce some
+summary information after the last student is read.  (This is
+only produced if there are no errors.)   The summary information
+appears after the last student's average and grade are printed,
+and includes the number of students getting each grade (unless
+there are no students with that grade, in which neither the grade
+nor the number of students is printed).
+
+Here's some example input:
+<BLOCKQUOTE><PRE>
+5
+20 40 10 5 25
+90 80 70 60
+
+100 100 100 100 100
+100  90  92  95  87
+90   95  85  70 100
+90   90  93  89 100
+67   75  58  62  66
+85   70  60  65  80
+</PRE></BLOCKQUOTE>
+Here's the output when we place this input in a file and run
+our program with its input redirected to come from that file.
+<BLOCKQUOTE><PRE>
+100.00 A
+91.70 A
+93.00 A
+92.75 A
+68.80 D
+74.25 C
+
+There are 6 students.
+A: 4
+C: 1
+D: 1
+</PRE></BLOCKQUOTE>
+
+<P><B><A NAME=part3>Part 3</A></B>:
+This part is to extend the grading program to print the averages
+in sorted order, as well as to handle any number of assignments
+for each student.  Before doing this part, copy your solution
+to the previous part into <B>scores3.c</B>.
+
+<P> In particular, the input now not only specifies how many assignments
+there are, but how many students.   The program now dynamically
+allocates the arrays that hold the weights and each student's
+scores.  In addition, the program requires a dynamically allocated
+array of doubles to hold each students average.  
+
+<P> Here is some example input:
+
+<BLOCKQUOTE><PRE>
+5 10
+20 40 10 5 25
+90 80 70 60
+
+100 100 100 100 100
+100  90  92  95  87
+90   95  85  70 100
+90   90  93  89 100
+67   75  58  62  66
+85   70  60  65  80
+</PRE></BLOCKQUOTE>
+For this input, the program's output is:
+<BLOCKQUOTE><PRE>
+100.00 A
+93.00 A
+92.75 A
+91.70 A
+74.25 C
+68.80 D
+
+There are 6 students.
+A: 4
+C: 1
+D: 1
+</PRE></BLOCKQUOTE>
+ 
+<P> Notice that the input is printed in sorted order, with the
+highest scores first, and the lowest scores last.  
+
+<P> In addition, notice that the first line of input says there
+will be 5 assignments, and 10 students.  If more than 10 students
+are provided in the input, print a message before the output above
+that states
+<BLOCKQUOTE><PRE>
+Only first X students processed.
+</PRE></BLOCKQUOTE>
+where the <TT>X</TT> is replaced with the expected number of students.
+
+<P> One last change is that now if there is a problem reading in
+the number of assignments or the number of students, the program
+should print this error message.
+
+<BLOCKQUOTE><PRE>
+Can't read the number of assignments and students.
+</PRE></BLOCKQUOTE>
+
+<P> The <B>tables.c</B> file provides a function to insert a value
+in the correct place in a table of <TT>double</TT>s, so you should
+use that to help construct the needed sorted array of averages.
+
+<P><B><A NAME=part4>Part 4</A></B>: 
+
+This part is to let the user use text as an alternate way to
+describe the weights and grading, and to print the minimum and
+maximum scores.
+Before doing this part, copy your solution
+to the previous part into <B>scores4.c</B>.
+
+<P> The first change is to allow the user to use "equal" as
+an optional way to specify that each assignment should be
+equally weighted.  That is, instead of entering the weights,
+the user just puts the word equal on a line by itself.  If
+there are 5 assignments, this results in each assignment having
+a weight of 20.  If there's no way to have equal integer weights,
+the program can simply print the message about the weights summing
+to something other than 100.  If the user enters anything else,
+the program should print 
+<BLOCKQUOTE><PRE>
+Unknown weight request: xxxxxx.
+</PRE></BLOCKQUOTE>
+where the <TT>xxxxx</TT> is replaced with the string the user
+actually entered.  (Of course, the user can alternatively enter
+the weights with values, just like before.)
+
+<P> The other change is to allow the user to use "standard" as
+an optional way to specify the grading scale, just like "equal"
+for weights.  With "standard", an A is 90, a B is 80, a C is 70,
+and a D is 60.  There should be similar error message to the
+one above if there's a problem, but it should print
+
+<BLOCKQUOTE><PRE>
+Unknown grade request: xxxxxx.
+</PRE></BLOCKQUOTE>
+
+<P> The final task is to print the highest and lowest scores.
+
+<P> Here's input that takes advantage of the newly added
+messages.
+<BLOCKQUOTE><PRE>
+5 10
+equal
+standard
+
+100 100 100 100 100
+100  90  92  95  87
+90   95  85  70 100
+90   90  93  89 100
+67   75  58  62  66
+85   70  60  65  80
+</PRE></BLOCKQUOTE>
+And here's the resulting output.
+<BLOCKQUOTE><PRE>
+100.00 A
+92.80 A
+92.40 A
+88.00 B
+72.00 C
+65.60 D
+
+There are 6 students.
+A: 3
+B: 1
+C: 1
+D: 1
+
+Highest: 100.00
+Lowest: 65.60
+</PRE></BLOCKQUOTE>
+
+<H4> What To Turn In </H4>
+
+<P> To get credit for this assignment, you must electronically turn in
+the four files you created in Parts 1 through 4: <B>scores1.c</B>,
+<B>scores2.c</B>, <B>scores3.c</B>, and <B>scores4.c</B>.
+
+<P> <A NAME="grade">As usual, to turn in your program, you need to use
+the <TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the command:
+<BLOCKQUOTE>
+<TT> grade -5,ee150 scores1.c scores2.c scores3.c scores4.c </TT>
+</BLOCKQUOTE>
+The <TT>-5</TT> tells the grade command which assignment you are
+turning in (assignment #5), the <TT>ee150</TT> tells it your class (EE150,
+so the programs get sent to the EE150 professor and not to the professor
+of some other class), and the
+".c" files are the source files you are actually turning in.
+Please make sure you type in the command exactly as it shown above.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

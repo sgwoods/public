@@ -1,0 +1,14 @@
+
+
+(mofsf wltf ttm mtle-nbo sicoil)
+
+	    (tcsp :template-id "users-terrain-template"
+		  :situation-id "real-terrain-db"              
+		  :load-real-terrain-db t)
+
+("users-terrain-template"
+	(CP2 (PLAIN FOREST) (4 5+) *) 
+	(CP1 (PLAIN FOREST) (2 3 4 5+) *))
+ ((LEG-LATERAL-SPACE (CP1 CP2) (4 5+)) (LEG-CLEAR (CP1 CP2))) NIL)
+
+

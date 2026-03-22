@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo Display figure for $1 ...
+ghostview -landscape /users/sgwoods/Abtweak96/QCSP/TCSP-Situation/$1.ps &
+echo done.
+wait

@@ -1,0 +1,637 @@
+
+<TITLE>EE150, Spring 1996 - Assignment #5, Questions and Answers </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../../Images/QandA.gif"
+     HEIGHT=132 WIDTH=162 HSPACE=10 ALT="" ALIGN=right>
+
+<H1>EE150 - Spring 1996</H1>
+
+<H2>Programming Assignment #5 <BR>
+Questions and Answers </H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Input <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi1">
+      I just don't get it.  How am I supposed to read the input?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi2">
+      Do we care about the format of the input?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi3">
+      How do we detect "missing" input values?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi4">
+      Do we assume all scores are integers?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi5">
+      Is it an error if the user hits control-D as the very first input?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi6">
+      Can the number of assignments be 0 (or even negative)?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi7">
+      What should the program do if there are too few weights but
+      the right number of grades?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi8">
+      What do we do if the user types in "5junk" for the number of
+      assignments?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi9">
+      For Part 4, is any answer beginning with "e" the same as "equal"
+      and beginning with "s" the same as "standard"?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi10">
+      Can the input be a real number?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi11">
+      Do we stop reading input after we encounter an input error?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi12">
+      How do we read in the words for Part 4?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi13">
+      For Part 2, do we have to store all the averages into an array?
+      </A><P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi14">
+      For Part 4, do we have to worry about upper- and lower-case characters
+      for "equal" and "standard"?
+      </A><P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi15">
+      For Part 4, do we have to worry about spaces before the words
+      "equal" and "standard"?
+      </A><P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi16">
+      For Part 4, do we only read words for the weights and the grading
+      scale or are we still supposed to handle numbers?
+      </A><P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi17">
+      What do we do if the user doesn't enter any student scores?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi18">
+      What should our programs do if we hit EOF when we're reading the
+      first student's scores?
+      </A><P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi19">
+      For Part 3, I don't understand what we're suppposed to do if there
+      are more students than there are supposed to be?
+      </A><P>
+  </DL>
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Error Messages <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qe1">
+      What should the error message be if we hit EOF in the middle
+      of reading the weights?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qe2">
+      When do we produce the error message "Can't read expected number of
+      weights"?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qe3">
+      For part 3, when exactly do we produce the error message 
+      "Processing only XXX students"?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qe4">
+      For parts 3 and 4, we no longer have to worry about the
+      error message about there being more than 10 assignments, right?
+      </A> <P>
+  <DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Processing <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp1">
+      How do I determine the grade for a given weighted score?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp2">
+      How do I produce the summary information?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp3">
+      Can we assume the minimum scores are 90, 80, 70, 60, and 0?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp4">
+      How come when I print the weighted average it comes out 68.00 
+      instead of 68.60?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qp5">
+      When I read "equal" for the weights, how do I calculate the values
+      to put in the table of weights?
+      </A><P>
+  </DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Arrays <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qa1">
+       How do I return an array from a function?
+      </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qa2">
+      What does the error message "Pointers not compatible" mean when
+      I'm passing array parameters?
+      </A> <P>
+  </DL>
+
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Functions <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qf1">
+      How do we use <TT>insertDoubleValue</TT>?
+      </A><P>
+  </DL>
+</DL>
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi1">
+I just don't get it.  How am I supposed to read the input?
+</A></H4>
+
+<P> You should use <TT>readValues</TT>.  You give it an array and tell
+it how many values to read.  It then tries to read that number of values,
+stopping if it encounters garbage or the end of the input.
+
+<P> It always returns the number of values read, or -1 if it encounters
+the end of the input (EOF).  That means that if there is garbage in
+the input, its return value will be less than the number of values
+you asked it to read.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi2">
+Do we care about the format of the input?
+</A></H4>
+
+<P> No.  It's perfectly reasonable for the user to have any amount of
+blank space or blank lines between input values.  For example,
+it is perfectly legal for the weights to look like this:
+
+<BLOCKQUOTE><PRE>
+10 20
+
+30 30
+
+10
+</PRE></BLOCKQUOTE>
+
+<P> The input in the example was formatted the way it was to make
+it easy to read, but the input does not have to be broken up into
+lines or to have a blank line before the scores.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi3">
+How do we detect "missing" input values?
+</A></H4>
+
+<P> An input value is "missing" if you hit EOF when you go to read it.
+For example, if you try to read 5 weights and you find only 1 weight
+and then EOF, you are missing the remaining weights.  
+
+<P> But assuming you read input using <TT>readValues</TT>, as far
+as program is concerned, an input value is missing if <TT>readValues</TT>
+returns something other than the number of values you were trying to
+read.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi4">
+Do we assume all scores are integers?
+</A></H4>
+
+<P> As far as your program's processing is concerned the
+answer is "yes".  This means you can declare integer arrays to hold
+the weights, the minimum scores for grades, and the scores you read
+in for a given student.   If the user actually enters non-integer
+input, the <TT>readValues</TT> function will detect an error and
+return a value indicating that an error took place.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi5">
+Is it an error if the user hits control-D as the very first input?
+</A></H4>
+
+<P> Yes.  The result should be the error message about being unable
+to read the number of assignments.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi6">
+Can the number of assignments be 0 (or even negative)?
+</A></H4>
+
+<P> No.  You can assume the user will enter a positive number for
+the number of assignments.  (It would be easy to add a check to ensure
+it is not negative or zero, but you don't have to, as we won't test
+your program with that input.)
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi7">
+What should the program do if there are too few weights, but
+the right number of grades?
+</A></H4>
+
+<P> I guess you are talking about input like this:
+<BLOCKQUOTE>
+5
+20 10 15
+90 80 70 60
+</BLOCKQUOTE>
+The thing is, in this case there are 5 weights in your input:
+<BLOCKQUOTE>
+20 10 15 90 80
+</BLOCKQUOTE>
+They just have to be spread out on two lines.
+Then there are two scores 70 60.  So the error message, in this case,
+should be about the weights not summing to 100.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi8">
+What do we do if the user types in "5falksj" for the number of
+assignments?
+</A></H4>
+
+<P> Well, 5 would be the number of assignments and should be
+successfully read in.  But whatever we're reading after the
+number of assignments, such as the weights, will be
+read incorrectly (since there will be an error when we try to
+read the first weight).
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi9">
+For Part 4, is any answer beginning with "e" the same as "equal"
+and beginning with "s" the same as "standard"?
+</A></H4>
+
+<P> No, you need to read in the entire string.  An input like "something"
+is not "standard" and should cause an error message to be printed.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi10">
+Can the input be a real number?
+</A></H4>
+
+<P> No.  If there's a real number, it's going to cause an error.
+For example, if the input was 6.6 10, then when you call <TT>readValues</TT>,
+it'll read the first 6 correctly and return a 1.  The reason is that
+the . in .6 will cause it to fail to return the second number.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi11">
+Do we stop reading input after we encounter an input error?
+</A></H4>
+
+<P> Yes.  As soon as you detect an input error, you write an error message
+and terminate the program (without writing the summary information).
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi12">
+How do we read in the words for Part 4?
+</A></H4>
+
+<P> Start by trying to read in the weights with <TT>readValues</TT>. 
+If it returns a 0, that means that it thinks there is garbage (non-numeric
+characters) on the line rather than numbers.  In that case, you can read
+the characters into a character array with the <TT>getline</TT> function.
+That will read the entire line into the array.    
+
+<P> This also works for reading in the grading scale.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi13">
+For Part 2, do we have to store all the averages into an array?
+</A></H4>
+
+<P> No.  The example I/O assumes that the input is in a file and the
+program is run with the input redirected.   It then shows the output 
+that would result from that input.  
+
+<P> If you run the program and type in the input from the keyboard, 
+you should see the average and the grade after each student's scores,
+just like in Part 1.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi14">
+For Part 4, do we have to worry about upper- and lower-case characters
+for "equal" and "standard"?
+</A> </H4>
+
+<P> You need only check for the lower-case versions of the words.  Any
+uppercase (e.g., EQUAL) or mixed case (e.g., Equal) word will result
+in the error message about "unknown weights" or "unknown grading minimum".
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi15">
+For Part 4, do we have to worry about spaces before the words
+"equal" and "standard"?
+</A> </H4>
+
+<P> No.  I'm always going to place the word at the beginning of line
+for testing.  
+
+<P> However, you should use <TT>getline</TT> to read in the word
+and then simply treat the whole line as the word (so leading or
+trailing spaces will cause the string comparisons with "equal" or
+"standard" to say the strings differ).
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi16">
+For Part 4, do we only read words for the weights and
+the grading scale or are we still supposed to handle numbers?
+</A></H4>
+
+<P> You have to handle both.  You first try to read the input with
+<TT>readValues</TT>.  If that fails, then you try to read the input
+wtih <TT>getline</TT>.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi17">
+What do we do if the user doesn't enter any student scores?
+</A></H4>
+
+<P> If you encounter EOF when you go to read the first score, you
+do not write any kind of error message.  You just execute your normal
+code (e.g., printing out the summary information).  If you encounter
+garbage (<TT>readValues</TT> returns less than the number of assignments),
+then you write an error message about being unable to read the scores
+for student #1 (like you would for any other student).
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi18">
+What should our programs do if we hit EOF when we're reading the
+first student's scores?
+</A></H4>
+
+<P> Your program doesn't do anything special if there are 0 students.
+For Part 1, there's just no output.   For the later parts, it'll write
+the "There are 0 students" message, but that's it.   (The right behavior
+should just "fall out"; it doesn't require any extra work.)
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi19">
+For Part 3, I don't understand what we're suppposed to do if there
+are more students than there are supposed to be?
+</A></H4>
+
+<P> This question is asking what to do if there are, say 20 students, 
+but the first line of the input promised only 10.
+
+<P> The idea is that your input reading loop stores the averages 
+of the first 10 students into the array.   When it reads the 11th,
+it prints the error message about "too many students", and leaves
+the input reading loop.  You then do the normal processing, printing
+the averages you actually did compute and so on.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qe1">
+What should the error message be if we hit EOF in the middle
+of reading the weights?
+</A> </H4>
+
+<P> It should be the message about "Can't read expected number of weights".
+It should not be "The sum of weights doesn't add to 100".  Do not sum the
+weights until you are sure you have read the expected number of weights.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qe2">
+When do we produce the error message "Can't read expected number of
+weights"?
+</A> </H4>
+
+<P> Conceptually you produce this message when you try to read the weights
+and you encounter EOF or garbage.
+
+<P> From a programming perspective, you care only about the return value
+of <TT>readValues</TT>.  If it is not -1 and it's not how many
+values you expected, then you write an error message.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qe3">
+For part 3, when exactly do we produce the error message 
+"Processing only XXX students"?
+</A> </H4>
+
+<P> The first line of the input says how many students you expect to
+read.  If you read more than that, you produce this error message,
+and ignore all remaining scores.
+
+<P> This means you need to keep count of the students you read and
+update it each time you successfully read a student.  
+
+<P> You should treat this message like a warning and still print out
+the summary information.  The catch is that you only produce the 
+summary for the students you successfully read and stored in the array.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qe4">
+For parts 3 and 4, we no longer have to worry about the error message
+about there being more than 10 assignments, right?
+</A></H4>
+
+<P> Correct.  You are now using <TT>malloc</TT> to allocate space for
+all the arrays that can vary in size, so whatever number of assignments
+the user types in is alright (we are assuming the user won't type in
+0 or a negative number).
+
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp1">
+How do I determine the grade for a given weighted score?
+</A></H4>
+
+<P> We talked about this in class.  To determine that 85.67 is a B,
+for example, you need to do several things.  You should have an array
+containing the minimum scores for the various grades, where the
+first element is the minimum score for an A, the next element is a
+minimum score for a B, and so on (e.g., 90, 80, 70, etc...).  You 
+also need to have a table containing the grades themselves, where
+the first element is an 'A', the next is a 'B', and so on.  You
+then take the weighted average and search the table to find the first
+value greater than the weighted average.  The position of that
+element corresponds to the position in the table of grades that
+contains the desired grade.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp2">
+How do I produce the summary information?
+</A></H4>
+
+<P> There are two parts to the summary information.
+
+<P> The first is a count of the number of students.  That's easy--each
+time you successfully call <TT>readValues</TT> to read one student's
+scores, you need to update a counter.
+
+<P> The second is the counts of each grade.  The ideal way to do this
+is to have an array of counters.  You then update <TT>counters[0]</TT>
+when you assign a student an A,
+<TT>counters[1]</TT> when you assign a student a B,
+and so on.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp3">
+Can we assume the minimum scores are 90, 80, 70, 60, and 0?
+</A></H4>
+
+<P> Absolutely not.  You are reading those values in, so they could
+be whatever values the user entered (although you may
+assume that they are entered in descending order).  You should
+read them into an array and then search the array in order to
+assign the scores.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp4">
+How come when I print the weighted average it comes out 68.00 
+instead of 68.60?
+</A></H4>
+
+<P> The best guess is that you calculate the average using
+integer division.  That is, it is likely you did:
+<BLOCKQUOTE><PRE>
+long sum;
+double result;
+
+result = sum/100;
+</PRE></BLOCKQUOTE>
+This gives the wrong result it's going to do integer division
+on the <TT>sum</TT>.  Instead you need to do either:
+<BLOCKQUOTE><PRE>
+result = (double) sum / 100;
+</PRE></BLOCKQUOTE>
+or
+<BLOCKQUOTE><PRE>
+result = sum / 100.0;
+</PRE></BLOCKQUOTE>
+Either of these cause the division to be done using reals,
+rather than integers.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qp5">
+When I read "equal" for the weights, how do I calculate the values
+to put in the table of weights?
+</A></H4>
+
+<P> The correct thing to do is to use integer division to
+divide 100 by the total number of assignments and put
+the resulting value into the weights array.   Make
+sure you then add the weights together to see if they
+sum to 100.
+
+<P> For example, if you have three assignments, put 100/3,
+or 33 into each weight.  When you sum them together, it
+comes out to 99, which should result in "Weights do not
+sum to 100." error message.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qa1">
+How do I return an array from a function?
+</A></H4>
+
+<P> You can't return an array from a function. You need to pass the
+array as a parameter and then the function can fill the array. 
+This is what is done by <TT>readValues</TT>, so you
+can use it as a model.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qa2">
+What does the error message "Pointers not compatible" mean when
+I'm passing array parameters?
+</A></H4>
+
+<P> It most likely means that you are trying to pass an array of one
+type to a function that expects an array of another type (e.g., passing
+<TT>readValues</TT> an array of <TT>double</TT>s when 
+<TT>readValues</TT> expects an array of <TT>int</TT>s.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf1">
+How do we use <TT>insertDoubleValue</TT> (for part III)?
+</A></H4>
+
+<P> See Chapter 8 of the textbook, page 159.  The function
+<TT>table_insert</TT>
+in that program is very similar to <TT>insertDoubleValue</TT>, the primary
+difference being that insertDoubleValue works with <TT>double</TT>s
+rather than <TT>int</TT>s.
+
+<P> In addition, I've revised the <B>tables.c</B> on the web so that it
+now describes the <TT>insertDoubleValue</TT>'s parameters in more detail.
+
+<P> The main idea is that to use <TT>table_insert</TT> in the book,
+you need to pass it an array, a counter that says
+how many items are in the array, and the value you want to insert.
+<TT>insertDoubleValue</TT> is exactly the same.  You have to pass
+it an array of <TT>double</TT>s, a counter of the elements you've
+put in the array so far (so this has to start at 0, and then is
+incremented after you put each value in the array), and the particular
+value you want to place in the array (which for this problem is the
+average score you've computed).
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

@@ -1,0 +1,7 @@
+
+
+(mofsf wltf ttm mtle-nbo sicoil)
+
+	    (tcsp :template-id "users-terrain-template"
+		  :situation-id "real-terrain-db"              
+		  :load-real-terrain-db t)

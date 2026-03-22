@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo Drawing and Display figure for $1 ...
+
+/users/sgwoods/Abtweak96/QCSP/TSit/drawl-tex $1
+
+echo Now display figure using ghostview ...
+ghostview -landscape /users/sgwoods/Abtweak96/QCSP/TSit/$1.ps &
+
+wait

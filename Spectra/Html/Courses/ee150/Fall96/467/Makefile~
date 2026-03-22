@@ -1,0 +1,51 @@
+# Makefile 
+# Steve Woods
+# Copyright (C) 1996 Steven Woods
+#
+
+GCC = g++
+GCCOPTS		=	-DDEBUG_ON=1 -Wall -g -c 
+
+HOME	=	/users2/other/sgwoods/C++/
+
+default:	main
+
+###########################################################################
+
+Steve:		Steve.o
+Steve.o:	Steve.cc Steve.h
+		$(GCC) $(GCCOPTS) Steve.cc
+
+OBJECTS = 	Steve.o
+
+###########################################################################
+
+
+main:		main.cc $(OBJECTS)
+		g++ -Wall -g -o main \
+			$(OBJECTS) main.cc
+
+clean:	
+	rm -f $(OBJECTS)
+
+###########################################################################
+
+main-array:	main-array.cc array-template.o
+		g++ -Wall -g -o main-array \
+			array-template.o main-array.cc
+
+array-template.o:	array-template.cc
+		$(GCC) $(GCCOPTS) array-template.cc
+
+###########################################################################
+
+
+
+
+
+
+
+
+
+
+

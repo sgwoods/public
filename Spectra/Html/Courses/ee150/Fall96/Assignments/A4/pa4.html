@@ -1,0 +1,184 @@
+
+<HEAD>
+<TITLE>EE150, Fall 1996 - Programming Assignment #4</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Fall 1996</H1>
+<H2>Programming<BR>
+Assignment #4</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment is designed to give you experience with
+character processing, binary numbers, and C's various operators and 
+statement types.
+
+<P> As with the previous assignment, this assignment will give
+you  experience in writing your own functions.
+
+<P> The due date is: <B> Friday, Nov. 1th, 1996 </B> at 6pm.
+You should expect to spend between six to nine hours of
+computer time over the next two weeks.  You should also
+expect to spend one to two hours of thinking time, depending on how
+much prior programming experience you have.  As usual, we will not
+accept late assignments (no matter how entertaining the excuse).
+
+<H4> What To Do </H4>
+
+<P> <B><A NAME=part1>Part 1</A></B>: Create a file named <B>base1.c</B>.  This
+program will read in a binary number and print
+the result of converting this number to decimal number.
+Here is the sample input and output for our solution. 
+The <EM>italics</EM> are our input, the <TT>monospace
+font</TT> is computer output.
+
+<BLOCKQUOTE>
+<EM>1001  </EM> <BR>
+<TT> 1001 is 9 </TT> <BR>
+</BLOCKQUOTE>
+
+<P> You can assume that the user will be well-behaved, that
+the user will always enter the input in the form of a digit character , some more spaces, and a carriage return.
+
+
+<P><B><A NAME=part2>Part 2</A></B>:
+Now that your program works on the basics, this part of the program<b> base2.c</b>
+is to extend your program to ensure that it reads in some binary numbers
+with some spaces seperating them and print their decimal values.
+
+<P> <A NAME=part2errout>Here is some example input and output</A>.
+
+<BLOCKQUOTE>
+<EM>  1001   01    10   10001 </EM><BR>
+<TT>  9, 1, 2, 17 </TT> <BR>
+<p>
+<EM> 0001 0101 100 000 </EM><BR>
+<TT>  1, 5 , 4 , 0 </TT> <BR>
+<p>
+<EM>  111 0010 100 1000 </EM><BR>
+<TT>  7 , 2 , 4 , 8 </TT> <BR>
+</BLOCKQUOTE>
+
+<P><B><A NAME=part3>Part 3</A></B>:
+For this part you will be given a main() function which calls two functions (called <B>  BinToDec(char c),  getNondelimiter() </B>)to help you to sovle the above problem.What you should do is to write two functions' files  (called <B>BinToDec.c and getNondelimiter.c</B>) that
+converts the binary number into decimal number and get the first digit
+character of every binary number.
+   
+<p>  In this part,the any two of the binary numbers will be seperated not only
+by space but also by valid delimiters(i.e. " "  ","  ";"  ".")
+
+<p>Here's some sample I/O.
+<BLOCKQUOTE>
+<EM>...,  1011,01;1000  101  ..100.00</EM><BR>
+<TT>  11,1,8,5,4,0,</TT><BR>
+<p>
+<EM> 0001,1010. . 100 ; 10</EM><BR>
+<TT>  1, 10 , 4 , 2</TT><BR>
+<p>
+<EM>. 110, 01. 01</EM><BR>
+<TT>  6 , 1 , 1</TT><BR>
+</BLOCKQUOTE>
+
+Here's the main function:
+<pre>
+   #include<stdio.h>
+   
+   main()
+  {
+   int BinToDec(char c);
+   char getNondelimiter();
+   char c;
+   int n,END;
+
+    printf("Please input the binary numbers(press return to exit): \n");
+/* get the first digit character then convert the binary number*/
+     while(END!=1 && (c=getNondelimiter())!='\n')
+   {
+
+       n=BinToDec(c);
+    if(n<0)
+      {
+       n=(-1)*n;
+       END=1;
+       }
+     printf(" %i  ",n);
+    }          
+  }
+
+</pre>
+ 
+<P>
+ Your functions should like this:
+<pre>
+  /*
+    read and return the next non-delimiter on the current line( or the
+first non-delimiter if it is called before any character
+  */
+    char getNondelimiter()
+   {
+    ...
+    }
+
+  /*
+    read a binary number from the second character and get the first character
+ through parameter.Then return the decimal value or return the negative value
+ when this binary number followed by a '\n'
+  */
+    int BinToDec(char c)
+   {
+    ...
+    }
+</pre>
+<p>
+You may assume that your program is given binary numbers and valid delimiters
+as input, so you don't have to worry about error checking.
+
+ <p>
+ 
+<P><B><A NAME=part4>Part 4</A></B>: Copy the program from the
+previous part of the assignment into a file named <B>caculate.c</B>. 
+Now you'll need to extend it to do addition and multiplication .
+
+<P> The following I/O shows you the necessary additions to this program.
+
+<BLOCKQUOTE>
+<em> 100 *   10 +  001 + 1010 </em><BR>
+<TT>  4 * 2 + 1 + 10 = 19 </TT><BR>
+<P>
+<em> 1001 + 10 * 1111 *   01 + 01 </em><BR>
+<TT>  9 + 2 * 15 * 1 + 1 = 40 </TT><BR>
+</BLOCKQUOTE>
+<p> you can assume the user is well-behaved and will enter some spaces 
+ between operator and operand 
+
+<H4> What To Turn In </H4>
+
+<P>
+To get credit for this assignment, you must electronically turn in
+the five files you created in Parts 1 through 4: <B>base1.c</B>,
+<B>base2.c</B>, <B>BinToDec.c</B> , <B>getNondelimiter.c</B> and
+<b>caculate.c.</b>
+
+<P> <A NAME="grade">As usual, to turn in your program, you need to use
+the <TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the command:
+<BLOCKQUOTE>
+<TT> grade -4s2,ee150 base1.c base2.c BinToDec.c getNondelimiter.c
+    caculate.c </TT>
+</BLOCKQUOTE>
+The <TT>-4</TT> tells the grade command which assignment you are
+turning in (assignment #4), the <TT>ee150</TT> tells it your class (EE150,
+so the programs get sent to the EE150 professor and not to the professor
+of some other class), and the
+".c" files are the source files you are actually turning in.
+Please make sure you type in the command exactly as it shown above.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

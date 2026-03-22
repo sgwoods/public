@@ -1,0 +1,52 @@
+
+;; Lists within propos must be represented as coll's, not list-of's or
+;;  conjunctions, for this code to work.
+
+
+(def-pred-fn
+  '<
+  'EVAL
+  #'(lambda (arg1 arg2 codes-pairs noncodes-alist)
+      (declare (list codes-pairs noncodes-alist))
+
+      (values
+       (progn
+	 (setq arg1 (instantiate arg1 codes-pairs)
+	       arg2 (instantiate arg2 codes-pairs) )
+	 (and (numberp arg1)
+	      (numberp arg2)
+	      (< arg1 arg2) ))
+       codes-pairs
+       noncodes-alist
+       nil nil nil )))
+
+(def-pred-fn
+  '_contains-unsatisfieds_
+  'EVAL
+  #'(lambda (arg1 arg2 codes-pairs noncodes-alist &aux (unsatisfieds nil))
+      (declare (list codes-pairs noncodes-alist unsatisfieds)
+	       (array unsat-var) )
+
+      (mapc-1
+       #'(lambda (propo1 &aux (node1 (make-node :propo propo1)))
+	   (multiple-value-bind
+	    (satisfied? codes-pairs1 noncodes-alist1)
+
+	    (backchain-2 (make-node :propo propo1)
+			 *facts* *facts*
+			 (get-relevant-rule-nodes node1
+						  :antes? nil :all-rules? t )
+			 nil codes-pairs noncodes-alist nil 0 )
+	    (if satisfied?
+		(setq codes-pairs codes-pairs1
+		      noncodes-alist noncodes-alist1 )
+	      (push propo1 unsatisfieds) )))
+       arg1 )
+      (values
+       t
+       (cons (cons arg2 unsatisfieds) codes-pairs)
+       noncodes-alist
+       nil nil nil )))
+
+
+;; How much larger must 'search-depth' be?

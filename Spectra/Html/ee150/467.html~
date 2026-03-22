@@ -1,0 +1,40 @@
+<HEAD>
+<TITLE>University of Hawaii, EE467, Fall 1996</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff" text="#0000af">
+
+<IMG SRC="Images/Programmer.gif" WIDTH=191 HEIGHT=141 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE467- Supplemental Examples c/o Dr.Steve Woods</H1>
+
+<P> <B>Lecturer</B>:
+<A HREF=http://spectra.eng.hawaii.edu/~sgwoods>Steven Woods</A>
+(<A HREF=mailto:sgwoods@spectra.eng.hawaii.edu>sgwoods@spectra.eng.hawaii.edu</A>)
+
+<P> <B>Examples</B>:
+<UL>
+<li> November 22:  467 Project 2 utility corrections for <a href="./467/string.C"><b>string.C</b></a>, <a href="./467/str_inl.h"><b>str_inl.h</ab></a>, and <a href="string.h"><b>string.h</b></a>.  Corrections: (1) String operator= in String.c, (2) String::Put inline in str_inl.h.
+<li>  
+<li> <a href="./467/array-template.cc">Source code for Array Template</a> and <a href="./467/main-array.cc">main program  instantiating and using it</a>.
+<li> <a href="./467/template-function.cc">Source code for Template Function Example (min)</a>, and <a href="./467/main-template.cc">main program  instantiating and using it</a>.
+<li> <a href="467/Makefile">Makefile</a> to compile all of the junk in this directory.
+<li>
+<li> Source example for Overloading of "==" and ">>" is found in 
+<a href="467/Steve.h">Steve.h</a>, <a href="467/Steve.cc">Steve.cc</a>, 
+<a href="467/main.cc">main.cc</a>.
+<li> Note that a variation on the previous example ensures that "<<" is
+ not treated as a class member function (or friend) - in this case, "<<"
+ is a regular function.  This is what was intended in class.  The new
+ definitions are given in <a href="467/Steve1.h">Steve1.h</a>, and 
+ <a href="467/Steve1.cc">Steve1.cc</a>. 
+</UL>
+
+<IMG SRC="Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>[<A HREF=http://spectra.eng.hawaii.edu/>EE Home Page</A> |
+ <A HREF=http://www.eng.hawaii.edu/>College of Engineering Home Page</A> |
+ <A HREF=http://www.hawaii.edu/uhinfo.html>University of Hawaii Home Page</A>]
+
+</BODY>

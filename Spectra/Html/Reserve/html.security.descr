@@ -1,0 +1,249 @@
+
+
+Mosaic User Authentication Tutorial
+
+Marc Andreessen 
+National Center for Supercomputing Applications 
+University of Illinois at Urbana-Champaign 
+marca@ncsa.uiuc.edu 
+
+
+
+Introduction
+
+This tutorial surveys the current methods in NCSA Mosaic for X version 2.0 and NCSA httpd for restricting
+access to documents. The tutorial also walks through setup and use of these methods. 
+
+Mosaic 2.0 and NCSA httpd allow access restriction based on several criteria: 
+
+   Username/password-level access authorization. 
+   Rejection or acceptance of connections based on Internet address of client. 
+   A combination of the above two methods. 
+
+This tutorial is based heavily on work done by Ari Luotonen at CERN and Rob McCool at NCSA. In particular,
+Ari wrote the client-side code currently in Mosaic 2.0, and Rob wrote NCSA httpd. 
+
+
+
+Getting Started
+
+Before you can explore access authorization, you need to install NCSA httpd 1.0a5 or later on a Unix machine
+under your control, or get write access to one or more directories in a filespace already being served by NCSA
+httpd. 
+
+You also need to be running Mosaic for X version 2.0 or later, or another browser known to support
+HTTP/1.0-based authentication. 
+
+
+
+Prepared Examples
+
+Following are several examples of the range of access authorization capabilities available through Mosaic and
+NCSA httpd. The examples are served from a system at NCSA. 
+
+Simple protection by password. 
+
+   This document is accessible only to user fido with password bones. 
+
+   Important Note: There is no correspondence between usernames and passwords on specific Unix
+   systems (e.g. in an /etc/passwd file) and usernames and passwords in the authentication schemes
+   we're discussing for use in the Web. As illustrated in the examples, Web-based authentication uses
+   similar but wholly distinct password files; a user need never have an actual account on a given Unix
+   system in order to be validated for access to files being served from that system and protected with
+   HTTP-based authentication. 
+
+Protection by password; multiple users allowed. 
+
+   This document is accessible to user rover with password bacon and user jumpy with password 
+   kibbles. 
+
+Protection by network domain. 
+
+   This document is only accessible to clients running on machines inside domain ncsa.uiuc.edu. 
+
+   Note for non-NCSA readers: The .htaccess file used in this case is as follows: 
+
+           
+
+   AuthUserFile /dev/null
+   AuthGroupFile /dev/null
+   AuthName ExampleAllowFromNCSA
+   AuthType Basic
+
+   <Limit GET>
+   order deny,allow
+   deny from all
+   allow from .ncsa.uiuc.edu
+   </Limit>
+
+           
+
+Protection by network domain -- exclusion. 
+
+   This document is accessible to clients running on machines anywhere but inside domain 
+   ncsa.uiuc.edu. 
+
+   Note for NCSA readers: The .htaccess file used in this case is as follows: 
+
+           
+
+   AuthUserFile /dev/null
+   AuthGroupFile /dev/null
+   AuthName ExampleDenyFromNCSA
+   AuthType Basic
+
+   <Limit GET>
+   order allow,deny
+   allow from all
+   deny from .ncsa.uiuc.edu
+   </Limit>
+
+           
+
+
+
+General Information
+
+There are two levels at which authentication can work: per-server and per-directory. This tutorial primarily
+covers per-directory authentication. See the NCSA httpd docs for information on per-server authentication. 
+
+Per-directory authentication means that users with write access to part of the filesystem that is being served can
+control access to their files as they wish. They need not have root access on the system or write access to the
+server's primary config files. 
+
+Access control for a given directory is controlled by a file named .htaccess that resides in that directory.
+The server reads this file on each access to a document in that directory (or documents in subdirectories). 
+
+
+
+By-Password Authentication: Step By Step
+
+So let's suppose you want to restrict files in a directory called turkey to username pumpkin and password 
+pie. Here's what to do: 
+
+  Create a file called .htaccess in directory turkey that looks like this: 
+
+        
+
+AuthUserFile /otherdir/.htpasswd
+AuthGroupFile /dev/null
+AuthName ByPassword
+AuthType Basic
+
+<Limit GET>
+require user pumpkin
+</Limit>
+
+        
+
+Note that the password file will be in another directory (/otherdir). 
+
+Also note that in this case there is no group file, so we specify /dev/null (the standard Unix way to say "this
+file doesn't exist"). 
+
+AuthName can be anything you want. AuthType should always currently be Basic. 
+
+  Create the password file /otherdir/.htpasswd. 
+
+The easiest way to do this is to use the htpasswd program distributed with NCSA httpd. Do this: 
+
+        
+
+htpasswd -c /otherdir/.htpasswd pumpkin
+
+        
+
+Type the password -- pie -- twice as instructed. 
+
+Check the resulting file to get a warm feeling of self-satisfaction; it should look like this: 
+
+        
+
+pumpkin:y1ia3tjWkhCK2
+
+        
+
+That's all. Now try to access a file in directory turkey -- Mosaic should demand a username and password,
+and not give you access to the file if you don't enter pumpkin and pie. If you are using a browser that doesn't
+handle authentication, you will not be able to access the document at all. 
+
+
+
+How Secure Is It?
+
+The password is passed over the network not encrypted but not as plain text -- it is "uuencoded". Anyone
+watching packet traffic on the network will not see the password in the clear, but the password will be easily
+decoded by anyone who happens to catch the right network packet. 
+
+So basically this method of authentication is roughly as safe as telnet-style username and password security
+-- if you trust your machine to be on the Internet, open to attempts to telnet in by anyone who wants to try,
+then you have no reason not to trust this method also. 
+
+
+
+Multiple Usernames/Passwords
+
+If you want to give access to a directory to more than one username/password pair, follow the same steps as for
+a single username/password with the following additions: 
+
+  Add additional users to the directory's .htpasswd file. 
+
+Use the htpasswd command without the -c flag to additional users; e.g.: 
+
+        
+
+htpasswd /otherdir/.htpasswd peanuts
+htpasswd /otherdir/.htpasswd almonds
+htpasswd /otherdir/.htpasswd walnuts
+
+        
+
+  Create a group file. 
+
+Call it /otherdir/.htgroup and have it look something like this: 
+
+        
+
+my-users: pumpkin peanuts almonds walnuts
+
+        
+
+... where pumpkin, peanuts, almonds, and walnuts are the usernames. 
+
+  Then modify the .htaccess file in the directory to look like this: 
+
+        
+
+AuthUserFile /otherdir/.htpasswd
+AuthGroupFile /otherdir/.htgroup
+AuthName ByPassword
+AuthType Basic
+
+<Limit GET>
+require group my-users
+</Limit>
+
+        
+
+Note that AuthGroupFile now points to your group file and that group my-users (rather than individual
+user pumpkin) is now required for access. 
+
+That's it. Now any user in group my-users can use his/her individual username and password to gain access
+to directory turkey. 
+
+
+
+This Tutorial Isn't Finished Yet...
+
+Watch this space. 
+
+
+
+For More Information
+
+In the NCSA httpd documentation, there is reference information on access authorization. 
+
+CERN has extensive documentation on HTTP-based authentication. 
+
+
+

@@ -1,0 +1,30 @@
+A few reactions upon finishing a first pass at representing the two
+new dialogs:
+
+1) The current version of the algorithm does not use the beliefs it
+infers early in a dialog to shape what it does later in a dialog.
+For example, early in one dialog the user establishes that he does
+not want to use "rm -i" because he doesn't want to answer questions.
+Later in that same dialog, however, when the system is representing
+the fact that the user does not want to use "mv filename /tmp", the
+representation says that the user's preferred plan is "rm -i".
+How did that happen?!
+
+2) Perhaps the Advisor should not ask "Why?" every time it cannot
+guess the reason for a stmt (or can't choose among several).
+Instead, it might look for alternative plans first and ask "Why?"
+only if the answer would help it to tell which of the alternatives
+would meet the user's objection better.
+
+
+
+
+
+2) In the first new dialog, the Advisor asks the User to explain why
+he "doesn't want to answer questions".
+
+
+, but later it does not ask
+why the user "doesn't want to take the time ('it takes too long')".
+
+2) The meaning of 'not-desirable' changes from rule to rule.

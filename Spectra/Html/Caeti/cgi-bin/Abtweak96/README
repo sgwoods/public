@@ -1,0 +1,17 @@
+This version of the planner has been modified by Steven Woods 
+
+Changes
+
+1. Oct 24/96  created new domain CAETI
+2. Oct 24/96  adapated all three planners (T/A/M) to allow for the
+   insistence of use of new operators rather than existing ones for
+   a domain-dependent subset of planning operators.  This set is defined
+   in the domain definition.
+3. Oct 29/96  repaired use of "existing-only" in all three planners to 
+   EXCLUDE new operators as establishers when set.
+
+by David Pautler:
+4. Nov 13/96  added global var *dp-debug* to toggle debug stmts
+   preferred by DP.  This is a disjoint set of format stmts from
+   those used by Steve, and :debug-mode is left NIL during their
+   use.

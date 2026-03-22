@@ -1,0 +1,277 @@
+
+<HEAD>
+<TITLE>EE150, Spring 1996 - Programming Assignment #4</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Spring 1996</H1>
+<H2>Programming<BR>
+Assignment #4</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment is designed to give you experience with
+character processing, binary numbers, and C's various operators and 
+statement types.
+
+<P> As with the previous assignment, this assignment will give
+you experience both with using pre-written functions to solve
+a problem (again, functions that I've written), as well as 
+additional experience in writing your own functions.
+
+<P> The due date is: <B> Friday, March 15th, 1996 </B> at 6pm.
+You should expect to spend between six to nine hours of
+computer time over the next two weeks.  You should also
+expect to spend one to two hours of thinking time, depending on how
+much prior programming experience you have.  As usual, we will not
+accept late assignments (no matter how entertaining the excuse).
+
+<H4> What To Do </H4>
+
+<P> <B><A NAME=part1>Part 1</A></B>: Create a file named <B>base1.c</B>.  This
+program will read in an operator and a pair of binary numbers and print
+the result of applying this operator to those numbers.
+Here is the sample input and output for our solution. 
+The <EM>italics</EM> are our input, the <TT>monospace
+font</TT> is computer output.
+
+<BLOCKQUOTE>
+<EM> + 1001 1101 </EM> <BR>
+<TT> 1001 (9) + 1101 (13) = 10110 (22) </TT> <BR>
+<EM> + 111111 000101 </EM> <BR>
+<TT> 111111 (63) + 101 (5) = 1000100 (68) </TT> <BR>
+<EM> - 10101 1010 </EM> <BR>
+<TT> 10101 (21) - 1010 (10) = 1011 (11) </TT> <BR>
+<EM> - 10010 11111 </EM> <BR>
+<TT> 10010 (18) - 11111 (31) = -1101 (-13) </TT> <BR>
+<EM> * 110 101 </EM> <BR>
+<TT> 110 (6) * 101 (5) = 11110 (30) </TT> <BR>
+<EM> * 00010 110101 </EM> <BR>
+<TT> 10 (2) * 110101 (53) = 1101010 (106) </TT> <BR>
+<EM> / 10101 11 </EM> <BR>
+<TT> 10101 (21) / 11 (3) = 111 (7) </TT> <BR>
+<EM> / 10101 100 </EM> <BR>
+<TT> 10101 (21) / 100 (4) = 101 (5) </TT> <BR>
+<EM>control-d</EM>
+</BLOCKQUOTE>
+
+<P> You can assume that the user will be well-behaved, that
+the user will always enter the input in the form of an operator,
+some number of spaces, a binary number, some more spaces, another
+binary number, and a carriage return.
+the times will always be valid, and that the second time will
+always be after the first.
+
+<P> You should build this program based on the functions in the file 
+<A HREF=/~alex/Courses/EE150/Spring96/Assignments/Solutions/4/helpers.c>
+helpers.c</A>.
+The idea is that you will compile this source file, then compile
+your program, and finally link the resulting object modules together
+to form an executabl.
+As a result, you get to pretend the functions in this file are part
+of the language, like <TT>printf</TT> and <TT>scanf</TT>.  
+ 
+<P> You will find the following functions quite useful:
+
+<BLOCKQUOTE><PRE>
+long getNumInBase(int base, char follow)
+</PRE>
+
+<BLOCKQUOTE>
+<P> <TT>getNumInBase</TT> takes a desired <TT>base</TT> (such as
+2 for binary) and the character we expect to follow the number.
+It reads a number entered in that base and returns its value in base 10.  
+The number is allowed to be preceded by an arbitrary number of spaces.
+The function returns the value in that base or a negative number
+if there's any kind of error (such as a digit not
+in the base, or the number not terminated by the follow character).
+For example, given this input,
+<BLOCKQUOTE><PRE>
+1111   11101
+</PRE></BLOCKQUOTE>
+the following call:
+<BLOCKQUOTE><PRE>
+n = getNumInBase(2, ' ');
+</PRE></BLOCKQUOTE>
+will place 15 (the base 2 equivalent of 1111) into n, reading those
+characters.  The blank tells it to verify that the 1111 is in fact
+followed by a blank and to read than blank.
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<BLOCKQUOTE><PRE>
+void putNumInBase(long value, int base);
+</PRE>
+
+<BLOCKQUOTE>
+<P> <TT>putNumInBase</TT> takes a value and a base to write it in,
+and displays that value in that base.  So the call
+<BLOCKQUOTE><PRE>
+putNumInBase(15, 2);
+</PRE></BLOCKQUOTE>
+prints <TT>1111</TT> (the base 2 equivalent of 15).
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<P> Some of the other functions in the <B>helpers.c</B> file may
+prove useful as well.  However, you'll need to examine the source
+to determine exactly what else you can use from that source file.
+
+<P> You must use separate compilation, and simply link
+these files in with your source.  Do not copy the functions into
+your source file.  That's because the grading program will
+automatically try to link the functions in <B>helpers.c</B>
+in with your program.
+
+<P><B><A NAME=part2>Part 2</A></B>:
+Now that your program works on the basics, this part of the program
+is to extend your program to ensure that it behaves sensibly
+even if the user provides invalid input.  Begin by copying your
+program into <B>base2.c</B> and then extending it to check
+for any of the following errors:
+<UL>
+<LI> an invalid operator 
+<LI> a bad first operand
+<LI> a bad second operand
+<LI> a missing second operand
+<LI> garbage immediately following the first operand.
+<LI> garbage immediately following the second operand.
+<LI> attempting to divide by zero.  
+</UL>
+
+<P> <A NAME=part2errout>Here is some example input and output</A>.
+
+<BLOCKQUOTE>
+<EM>b 10 10</EM><BR>
+<TT>Bad operator: b.</TT> <BR>
+<EM>+ 20 10</EM> <BR>
+<TT>First operand is bad.</TT> <BR>
+<EM>+</EM> <BR>
+<TT>First operand is missing.</TT> <BR>
+<EM>+ 10junk 20</EM> <BR>
+<TT>First operand followed by garbage.</TT> <BR>
+<EM>+ 10 20</EM> <BR>
+<TT>Second operand is bad.</TT> <BR>
+<EM>+ 10</EM> <BR>
+<TT>Second operand is missing.</TT> <BR>
+<EM>+ 10 10junk</EM> <BR>
+<TT>Second operand followed by garbage.</TT> <BR>
+<EM>+ 20 20</EM> <BR>
+<TT>First operand is bad.</TT> <BR>
+<EM>/ 10 0</EM><BR>
+<TT>Attempted division by zero.</TT>
+</BLOCKQUOTE>
+
+<P> To do this part, you need to understand the various return
+values from <TT>getNumInBase</TT>.  They are:
+
+<UL>
+<LI>
+-1 if it hits something other than an appropriate digit for the base 
+it is trying to read.
+<LI>
+-2 if the number is missing (it hits a return rather than the number).
+<LI>
+-3 if we hit a newline after the number but expected something else.
+<LI>
+-4 if we didn't hit a newline when we expected one
+</UL>
+
+<P><B><A NAME=part3>Part 3</A></B>:
+For this part you will write a program (called <B>prime1.c</B>) that
+reads in two values and print all the prime numbers between them. 
+A prime number is a number divisible only by 1 and itself.
+
+Here's some sample I/O.
+<BLOCKQUOTE>
+<EM>16 34</EM><BR>
+<TT>17</TT><BR>
+<TT>19</TT><BR>
+<TT>23</TT><BR>
+<TT>29</TT><BR>
+<TT>31</TT><BR>
+</BLOCKQUOTE>
+
+<P>
+If there are no prime numbers between the given values, do not
+produce any output.
+
+<P>
+You may assume that your program is given two non-negative numbers
+as input, so you don't have to worry about error checking.
+
+<P><B><A NAME=part4>Part 4</A></B>: Copy the program from the
+previous part of the assignment into a file named <B>prime2.c</B>. 
+Now you'll need to extend it to have a nice user interface.
+
+<P> The following I/O shows you the necessary additions to this program.
+
+<BLOCKQUOTE>
+<TT>Do you want me to find some primes? </TT> <EM>yes</EM> <BR>
+<TT>Enter range: </TT> <EM>10 20</EM><BR>
+<TT>Do you want me to print them in ascending order? </TT> <EM>y</EM><BR>
+<TT> 11 </TT><BR>
+<TT> 13 </TT><BR>
+<TT> 17 </TT><BR>
+<TT> 19 </TT><BR>
+<TT> Do you want me to find some more primes? </TT> <EM>y</EM> <BR>
+<TT> Enter range: </TT> <EM> 20 10 </EM><BR>
+<TT> Do you want me to print them in descending order? </TT> <EM>n</EM><BR>
+<TT> 11 </TT><BR>
+<TT> 13 </TT><BR>
+<TT> 17 </TT><BR>
+<TT> 19 </TT><BR>
+<TT> Do you want me to find some more primes? </TT> <EM>y</EM><BR>
+<TT> Enter range: </TT> <EM> 20 10 </EM><BR>
+<TT> Do you want me to print them in descending order? </TT> <EM>y</EM><BR>
+<TT> 19 </TT><BR>
+<TT> 17 </TT><BR>
+<TT> 13 </TT><BR>
+<TT> 11 </TT><BR>
+<TT> Do you want me to find some more primes? </TT> <EM>Y</EM><BR>
+<TT> Enter range: </TT> <EM>30 40</EM><BR>
+<TT> Do you want me to print them in ascending order? </TT> <EM>n</EM><BR>
+<TT> 37 </TT><BR>
+<TT> 31 </TT><BR>
+<TT> Do you want me to find some more primes?</TT> <EM>y</EM><BR>
+<TT> Enter range: </TT> <EM>32 36</EM> <BR>
+<TT> Do you want me to print them in ascending order?</TT> <EM>y</EM><BR>
+<TT> There are no primes between 32 and 36.</TT> <BR>
+<TT> Do you want me to find some more primes? </TT> <EM>no</EM><BR>
+</BLOCKQUOTE>
+
+<P> If the user enters a control-d anywhere, your program should
+quietly terminate at that point.  You should also quietly terminate,
+if the user provides garbage when you are reading the input.
+
+<P> You should allow the user to type spaces in front of the yes or no
+responses, and treat any response beginning with a y or Y as a yes.
+
+<H4> What To Turn In </H4>
+
+<P>
+To get credit for this assignment, you must electronically turn in
+the four files you created in Parts 1 through 4: <B>base1.c</B>,
+<B>base2.c</B>, <B>prime1.c</B> and <B>prime2.c</B>.
+
+<P> <A NAME="grade">As usual, to turn in your program, you need to use
+the <TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the command:
+<BLOCKQUOTE>
+<TT> grade -4,ee150 base1.c base2.c prime1.c prime2.c </TT>
+</BLOCKQUOTE>
+The <TT>-4</TT> tells the grade command which assignment you are
+turning in (assignment #3), the <TT>ee150</TT> tells it your class (EE150,
+so the programs get sent to the EE150 professor and not to the professor
+of some other class), and the
+".c" files are the source files you are actually turning in.
+Please make sure you type in the command exactly as it shown above.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

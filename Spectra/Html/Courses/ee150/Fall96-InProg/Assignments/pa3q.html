@@ -1,0 +1,392 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Assignment #3, Questions and Answers </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+
+<IMG SRC="../../Images/QandA.gif"
+     HEIGHT=132 WIDTH=162 HSPACE=10 ALT="" ALIGN=right>
+
+<H1>EE150 - Spring 1996</H1>
+
+<H2>Programming Assignment #3 <BR>
+Questions and Answers </H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+The Time Processing Program: Input- and Processing-Related Questions <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi1">
+           How can we read the times (10:31)?  Is the colon a mistake?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi2">
+           Do we always read exactly four different sets of times?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi3">
+           Is the number of minutes for an average trip always an integer?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi4">
+           What does input "garbage" look like?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi5">
+           What do we do if there is more than one error in an input line?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi6">
+           Do we have to prompt for input?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi7">
+           Do we count the lines with errors when we print the average
+           trip length?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qia1">
+           How do I compute the largest or smallest trip lengths?
+           </A> <P>
+  </DL>
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+The Number-Printing Program: Input- and Processing-Related Questions <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi8">
+           Can we assume the height and width are odd numbers?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi9">
+           Can we assume that there will be only one pair of values
+           entered (a single height and width)?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi10">
+           What should our program do if the
+           user enters garbage instead of the height and width?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi11">
+           Can we assume the height and width are going to be five
+           or larger?
+           </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi12">
+           In <B>numbers1.c</B>, do we read input
+           for the height and width or define constants?</A><P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+      <A HREF="http:#qi13">
+           Can I make <B>numbers1.c</B> and <B>numbers2.c</B> 
+           repeatedly read input values?</A><P>
+  </DL>
+<DT><IMG SRC="../../Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  Questions about Functions <P>
+  <DL>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  <A HREF="http:#qf1">
+       What exactly does it mean to use the functions in 
+       <B>timeutils.c</B>?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  <A HREF="http:#qf2">
+       How do I get a copy of <B>timeutils.c</B> onto Wiliki?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  <A HREF="http:#qf3">
+       How do I use all of the functions in <B>timeutils.c</B>?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  <A HREF="http:#qf4">
+       Can we write our own functions?
+       </A> <P>
+  <DT><IMG SRC="../../Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+  <A HREF="http:#qf5">
+       Do we need write separate functions for each
+       numbers (like makeOne, makeTwo, etc...)?</A><P>
+  </DL>
+</DL>
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi1">How can we read the times (10:31)?  Is the
+colon a mistake?
+</A></H4>
+
+<P> No, the colon is not a mistake.  
+
+<P> The way to read this is to take advantage of a feature
+of <TT>scanf</TT> we haven't talked about yet: if you put any
+characters other than spaces or formatting codes between the
+double quotes, <TT>scanf</TT> expects those characters to be
+present in the input.  For example, if you write
+<BLOCKQUOTE>
+scanf("%i,%i", &var1, &var2);
+</BLOCKQUOTE>
+the <TT>scanf</TT>will expect input to read two numbers with
+a comma in between them.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi2">Do we always read exactly four different 
+sets of times?</A></H4>
+
+<P> No, you should be able to read any number of different sets
+of times, where the input is terminated by the user entering a
+<EM>control-d</EM>.
+
+<P> The <EM>control-d</EM> wasn't shown on the original version of the
+handout, although we have now added it to
+<A HREF="http:/~alex/Courses/EE150/Spring96/Assignments/pa3.html#part2out>
+the output in Part 2</A> shown in the handout
+to clarify what your program is supposed to do.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi3">Is the number of minutes for an average trip
+always an integer?</A></H4>
+
+<P>Yes.  You can compute it simply by adding up the total number of
+minutes all of the trips take and dividing it by the number of trips.
+If you divide two integers, the result is an integer, and the fractional
+part of the answer is thrown away (e.g., 33/10 is 3).  You
+need not worry about trying to round this value.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi4">What does input "garbage" look like?
+</A></H4>
+
+<P> The term "garbage" means any kind of input you weren't looking
+for.  So if the user types anything else that two pairs of colon-separated
+numbers (or EOF, when the user is done with input), that's garbage. 
+That could be typing letters instead of numbers, failing to provide
+the colons, anything.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi5">What do we do if there is more than
+one error in an input line?</A></H4>
+
+<P> First, if you can't read both input times correctly,
+you exit the program printing the "Couldn't read times" message
+(so even if you read the first time correctly, you don't bother
+checking it's validity).
+
+<P> Second, assuming you could read both input times correctly,
+you first validate the starting time.  If there's an error,
+you print the "Invalid starting time" message, and don't bother
+to check the finishing time (so if the starting time and ending
+time are both invaild, you only write a message about the
+bad starting time).
+
+<P> Finally, assuming the starting time was valid, you should
+check the ending time.  And if there's an error, you print
+the "Invalid ending time" message.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi6">Do we have to prompt for input?</A></H4>
+
+<P>No.  Do not prompt for input.  When you run your program the
+input and output should look exactly like that on the handout
+for assignment #3.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi7">Do we count the lines with errors when we print
+the average trip length?</A></H4>
+
+<P>If there are any errors at all in the input, you do not print
+the average trip length.  That means that if any error occurs, you
+need to set a variable to remember that it happened, and the you
+have to check that variable before computing and printing the
+average.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4> <A NAME="qi8">Can we assume the height and
+width are odd numbers?</A></H4>
+
+<P> Yes and no.
+
+<P> The assignment description states that you can assume the <EM>height</EM>
+the user enters will be an odd number.  However, you cannot assume
+that the <EM>width</EM> will be odd. 
+
+<P> What that means, in practice, is that we will not test your program
+with an even height.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4> <A NAME="qia1">How do I compute the largest or
+smallest trip lengths?</A></H4>
+
+<P> See <A HREF="/~alex/Courses/EE150/Spring96/Exams/samsol1.html#prob4">
+the answer to sample exam question number four</A> for
+an example of how to find the largest number in the input.
+You can use variants on this technique to compute the largest
+and smallest trip lengths.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi9">Can we assume that there will
+be only one pair of values entered (a single height and width)?<A></H4>
+
+<P> Yes, the user will only enter one pair of numbers (e.g., 5 7) each
+time they run the program.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi10">What should our program do if the
+user enters garbage instead of the height and width?</A></H4>
+
+<P> Just have your program quietly quit.  But we will only be testing
+your program with legitimate input values.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi11">Can we assume the height and width
+are going to be five or larger?</A></H4>
+
+<P>
+Yes and no.
+
+<P>
+You can assume the height will be at least five, but the width
+can be as low as three.  We will not be testing it with a
+smaller height or width.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi12">In <B>numbers1.c</B>, do we read input
+for the height and width or define constants?</A></H4>
+
+<P>You need to read a single width and height for both
+<B>numbers1.c</B> and <B>numbers2.c</B>.  The primary difference
+between the two files, is that <B>numbers1.c</B> just prints the
+0, 1, and 7 with whatever size the user specified, while <B>numbers2.c</B>
+prints 0 through 9.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qi13">Can I make <B>numbers1.c</B> and
+<B>numbers2.c</B> repeatedly read input values?</A></H4>
+
+<P>We are going to test these programs by giving them a single pair
+of input values.  So it's alright
+if you have an input-reading loop, but it's not required.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf1">What exactly does it mean to use
+the functions in <B>timeutils.c</B>?
+</A></H4>
+
+<P> The idea is that you copy this file over to Wiliki.  You
+can then write your main program (and any other functions you need)
+in the source file <B>time1.c</B>.  When you are ready to make your
+executable, you compile <B>time1.c</B> and <B>timeutils.c</B>
+into object modules and then link them together.
+
+<P> At the end, you turn in only <B>time1.c</B> and we will
+automatically compile and link it with our own <B>timeutils.c</B>.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf2">How do I get a copy of <B>timeutils.c</B> onto
+Wiliki?</A></H4>
+
+<P> Click on the name <B>timeutils.c</B> in the handout
+for
+<A HREF="http:/~alex/Courses/EE150/Spring96/Assignments/pa3.html#timeutils">Assignment #3</A>.  When that file is displayed in your web browser, select
+the "Save as" entry of the "File" menu.  You can then save the displayed
+page into the file name of your choice.  Once you have done that, you can
+transfer that file from whatever machine you are running your web browser
+(see the handout on 
+<A HREF="http:/~alex/Courses/Help/transfer.html">how to transfer files
+to and from Wiliki</A> for information on how to do that).
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf3">How do I use all of the functions in
+<B>timeutils.c</B></A></H4>
+
+<P>That's the key part of this assignment.  What you have to do is
+figure out how to call them, what parameters they expect, and what
+they return.  The comments and the function header help a bit.  For example,
+<BLOCKQUOTE><PRE>
+/* Compute the difference between start_hour_of_day:start_minute_of_hour
+   and end_hour_of_day:end_minute_of_hour */
+
+int timeDifference(int start_hour_of_day,
+                   int start_minute_of_hour,
+                   int end_hour_of_day,
+                   int end_minute_of_hour)
+</PRE></BLOCKQUOTE>
+The header says that this function takes four integers and returns an
+integer.  The comment says what those four integers it takes and the
+integer it returns represents.  
+
+<P>So now you can write a little main program to see what it does.
+The main program just consists of a bunch of calls to this function,
+passing it different values and printing its return value.
+
+<BLOCKQUOTE><PRE>
+/*
+ * Try out the timeDifference function.
+ */
+#include &ltstdio.h&gt
+
+main()
+{
+  int timeDifference(int start_hour_of_day,
+                     int start_minute_of_hour,
+                     int end_hour_of_day,
+                     int end_minute_of_hour);
+
+  printf("timeDifference(10,20,12,15) returns %i",
+         timeDifference(10,20,12,15));
+  printf("timeDifference(0,0,2,0) returns %i",
+         timeDifference(0,0,2,0));
+  printf("timeDifference(12,0,14,30) returns %i",
+         timeDifference(12,0,14,30));
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P> When you enter and run this little test program, you'll start to
+see what the <TT>timeDifference</TT> function does.  You need to write
+a similar program to test each of the other functions we have provided
+for you, so that you can begin to understand those functions, as well.
+
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf4">Can we write our own functions?</A></H4>
+
+<P>
+Yes, and you are encouraged to do so, as you'll find it quite
+convenient to write some functions on top of the ones I provided. 
+Just be careful that you don't write functions that <EM>replace</EM>
+the function you have been given.   And do not attempt to redefine
+or change the functions we gave you.
+
+<IMG SRC="../../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><H4><A NAME="qf5">Do we need write separate functions for each
+numbers (like makeOne, makeTwo, etc...)?</A></H4>
+
+<P> You don't have to define functions like these, but you'll find
+that doing so makes your program much easier to read and debug.
+The tradeoff is that all these functions will make your program
+somewhat longer.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

@@ -1,0 +1,123 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Summaries, Week 10 </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME=#top>EE150 - Fall 1996</H1>
+
+<IMG SRC="../Images/Pages.gif" WIDTH=32 HEIGHT=32 HSPACE=10 ALT=""
+     ALIGN=left>
+
+<H2>Lecture Summaries - Week 10</H2>
+
+<BR CLEAR=all>
+
+<BLOCKQUOTE>
+<UL>
+<LI> <A HREF="#oct28">Monday, October 28th.</A>
+<LI> <A HREF="#oct30">Wednesday, October 30th.</A>
+<LI> <A HREF="#nov1">Friday, November 1st.</A>
+</UL>
+</BLOCKQUOTE>
+
+<B>Jump To</B>:
+   [<A HREF="http:lectures.html">Lecture Index</A> |
+    <A HREF="http:week9.html">Previous Week's Lectures</A> |
+    <A HREF="http:week11.html">Next Week's Lectures</A>]
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct28">Monday, October 28th</A></H3>
+
+Topics covered:
+<UL>
+<LI> What happens when we use a bad array subscript.
+<LI> How preventing accessing beyond the end of an array
+     often involves leaving a loop early.
+<LI> How to use a logical AND to leave the loop early.
+     <UL>
+     <LI> An example of an improved input-reading function
+          (<B><A HREF="http:Examples/10/readem2.c">readem2.c</A></B>).
+     </UL>
+<LI> How to use the <TT>break</TT> statement to leave loops early.
+     <UL>
+     <LI> An example of an input-reading function using <TT>break</TT>
+          (<B><A HREF="http:Examples/10/readem3.c">readem3.c</A></B>).
+     </UL>
+<LI> How the <TT>for</TT> loop can do more than count up or down.
+     <UL>
+     <LI> An example of our input-reading function redone using <TT>for</TT>
+          (<B><A HREF="http:Examples/10/readem4.c">readem4.c</A></B>).
+     <LI> A very concise version of our input-reading function
+          using <TT>for</TT>
+          (<B><A HREF="http:Examples/10/readem5.c">readem5.c</A></B>).
+     </UL>
+<LI> What sorting is and what it has to do with arrays.
+<LI> What insertion sort is and how it works.
+<LI> How we implement insertion sort.
+     <UL>
+     <LI> A main program assuming <TT>table_insert</TT> exists to put
+          elements in their correct place
+          (<B><A HREF="http:Examples/10/insert.c">insert.c</A></B>).
+     <LI> The <TT>table_insert</TT> function
+          elements in their correct place
+          (<B><A HREF="http:Examples/10/tabinsert.c">tabinsert.c</A></B>).
+     </UL>
+</UL>
+
+Reading: Chapter 7.3
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct30">Wednesday, October 30th</A></H3>
+
+Topics covered:
+<UL>
+<LI> How lifetime, visibility, and initialization are three important
+properties of variables.
+<LI> How we describe local variables in terms of these properties.
+<LI> How we describe function parameters in terms of these properties.
+<LI> What variables local to a ``block'' are.
+<LI> How we can initialize all local variables when we declare them.
+<LI> How initializing variables when we declare them prevents the
+common mistake of failing to initialize them.
+<LI> How we can declare more than one variable at a time.
+<LI> What global variables are and how we declare them.
+<LI> Describing global variables in terms of their lifetime, visbility,
+and initial values.
+</UL>
+
+Reading: Chapter 8.1 and 8.2
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="nov1">Friday, November 1st</A></H3>
+
+Topics covered:
+<UL>
+<LI> Using global variables.
+  <UL>
+  <LI> An example program to count and print the different scores
+       in its input
+       (<B><A HREF="http:Examples/11/counter1.c">counter1.c</A></B>).
+  </UL>
+<LI> The trade-offs in using global variables versus passing
+values as parameters.
+  <UL>
+  <LI> That same example program rewritten without global variables.
+       (<B><A HREF="http:Examples/11/counter2.c">counter2.c</A></B>).
+  </UL>
+<LI> Using global function prototypes.
+<LI> Why and how to create and use our own header files.
+</UL>
+
+Reading: Chapter 8.5
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<BR>[<A HREF="/~sgwoods/Courses/ee150/Fall96/">EE150 Home Page</A> |
+     <A HREF="#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

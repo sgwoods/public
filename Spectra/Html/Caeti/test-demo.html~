@@ -1,0 +1,197 @@
+<HTML>
+<HEAD><TITLE>U of H Caeti Demo:Live Version</TITLE></HEAD>
+
+<BODY>
+<H1>Caeti Demo</H1>
+<H1>University of Hawaii</H1>
+
+<HR SIZE="12">
+<H2>Your requirements</H2>
+<P>Use the following questionnaire to specify your requirements.  Don't
+worry about not answering questions that aren't relevant to your plan.</P>
+
+<FORM Method="POST" ACTION="cgi-bin/run-demo.cgi">
+
+<HR>
+<H3><I>At the start of the exercise...</I></H3>
+<P>Start in the stationary formation:
+<SELECT NAME="theStartForm">
+<OPTION SELECTED>Coil
+<OPTION>Herringbone
+<OPTION VALUE="Halted_Column">Halted Column
+<OPTION VALUE="Halted_Wedge">Halted Wedge
+</SELECT>
+at map grid location NK
+<INPUT TYPE="text" NAME="theStartCoords" SIZE="6" MAXLENGTH="6">
+(e.g., 390175)</P>
+
+<HR>
+<H3><I>In the middle...</I></H3>
+<P>Check the number of legs you want in the exercise, and specify any
+drills you want to appear in those legs:</P>
+<BR>
+<TABLE>
+<TR>	<TH>How many legs?</TH>
+	<TH>Traveling formation</TH>
+	<TH>Traveling technique</TH>
+	<TH>Battle drill</TH>
+	<TH>Stopping formation</TH>
+</TR>
+<TR>	<TH><INPUT TYPE="checkbox" NAME="one-leg?"></TH>
+	<TD>
+	<SELECT NAME="Leg1Tform">
+	<OPTION>ANY
+	<OPTION>Column
+	<OPTION VALUE="Staggered_column">Staggered column
+	<OPTION SELECTED>Wedge
+	<OPTION>Echelon
+	<OPTION>Vee
+	<OPTION>Line
+	<OPTION VALUE="NONE_Bounding_overwatch">NONE (Bound. overw.)
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg1TravT">
+	<OPTION>ANY
+	<OPTION SELECTED VALUE="Traveling_technique">Traveling technique
+	<OPTION VALUE="Traveling_overwatch">Traveling overwatch
+	<OPTION VALUE="Bounding_overwatch">Bounding overwatch
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg1BDrill">
+	<OPTION SELECTED>NONE
+	<OPTION VALUE="Air_attack">Air attack
+	<OPTION VALUE="Contact_drill">Contact drill
+	<OPTION VALUE="Action_wo_contact">Action w/o contact
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg1StopForm">
+	<OPTION SELECTED>NONE
+	<OPTION>Coil
+	<OPTION>Herringbone
+	<OPTION VALUE="Halted_column">Halted Column
+	<OPTION VALUE="Halted_wedge">Halted Wedge
+	</SELECT>
+	</TD>
+</TR>
+<TR>	<TH><INPUT TYPE="checkbox" NAME="two-legs?"></TH>
+	<TD>
+	<SELECT NAME="Leg2Tform">
+	<OPTION>ANY
+	<OPTION>Column
+	<OPTION VALUE="Staggered_column">Staggered column
+	<OPTION SELECTED>Wedge
+	<OPTION>Echelon
+	<OPTION>Vee
+	<OPTION>Line
+	<OPTION VALUE="NONE_bounding_overwatch">NONE (Bound. overw.)
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg2TravT">
+	<OPTION>ANY
+	<OPTION SELECTED VALUE="Traveling_technique">Traveling technique
+	<OPTION VALUE="Traveling_overwatch">Traveling overwatch
+	<OPTION VALUE="Bounding_overwatch">Bounding overwatch
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg2BDrill">
+	<OPTION SELECTED>NONE
+	<OPTION VALUE="Air_attack">Air attack
+	<OPTION VALUE="Contact_drill">Contact drill
+	<OPTION VALUE="Action_wo_contact">Action w/o contact
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg2StopForm">
+	<OPTION SELECTED>NONE
+	<OPTION>Coil
+	<OPTION>Herringbone
+	<OPTION VALUE="Halted_Column">Halted Column
+	<OPTION VALUE="Halted_Wedge">Halted Wedge
+	</SELECT>
+	</TD>
+</TR>
+<TR>	<TH><INPUT TYPE="checkbox" NAME="three-legs?"></TH>
+	<TD>
+	<SELECT NAME="Leg3Tform">
+	<OPTION>ANY
+	<OPTION>Column
+	<OPTION VALUE="Staggered_column">Staggered column
+	<OPTION SELECTED>Wedge
+	<OPTION>Echelon
+	<OPTION>Vee
+	<OPTION>Line
+	<OPTION VALUE="NONE_bounding_overwatch">NONE (Bound. overw.)
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg3TravT">
+	<OPTION>ANY
+	<OPTION SELECTED VALUE="Traveling_technique">Traveling technique
+	<OPTION VALUE="Traveling_overwatch">Traveling overwatch
+	<OPTION VALUE="Bounding_overwatch">Bounding overwatch
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg3BDrill">
+	<OPTION SELECTED>NONE
+	<OPTION VALUE="Air_attack">Air attack
+	<OPTION VALUE="Contact_drill">Contact drill
+	<OPTION VALUE="Action_wo_contact">Action w/o contact
+	</SELECT>
+	</TD><TD>
+	<SELECT NAME="Leg3StopForm">
+	<OPTION SELECTED>NONE
+	<OPTION>Coil
+	<OPTION>Herringbone
+	<OPTION VALUE="Halted_column">Halted Column
+	<OPTION VALUE="Halted_wedge">Halted Wedge
+	</SELECT>
+	</TD>
+</TR>
+</TABLE>
+
+<P>May we insert extra legs, if the terrain won't allow a shorter solution?</P>
+<TABLE>
+<TR>
+<TD><INPUT TYPE="checkbox" VALUE="NotBefore1">Not before leg 1</TD>
+<TD><INPUT TYPE="checkbox" VALUE="NotBetween1and2">Not between legs 1 & 2</TD>
+<TD><INPUT TYPE="checkbox" VALUE="NotBetween2and3">Not between legs 2 & 3</TD>
+<TD><INPUT TYPE="checkbox" VALUE="NotAfter3">Not after leg 3</TD>
+</TR>
+</TABLE>
+
+<HR>
+<H3><I>At the end...</I></H3>
+<P>End in the stationary formation:
+<SELECT NAME="theEndForm">
+<OPTION SELECTED>Coil
+<OPTION>Herringbone
+<OPTION VALUE="Halted_column">Halted Column
+<OPTION VALUE="Halted_wedge">Halted Wedge
+</SELECT>
+at map grid location NK
+<INPUT TYPE="text" NAME="theEndCoords" SIZE="6" MAXLENGTH="6">
+(e.g., 420280)</P>
+
+<P>In minutes, what is the minimum time
+<INPUT TYPE="text" NAME="MinDuration" SIZE="3" MAXLENGTH="3">
+and maximum time
+<INPUT TYPE="text" NAME="MaxDuration" SIZE="3" MAXLENGTH="3">
+that this exercise<BR>
+should be allowed to take?</P>
+
+<BR>
+<P><INPUT TYPE="SUBMIT" VALUE="Generate scenario">
+<INPUT TYPE="RESET" VALUE="Clear this form"></P>
+
+</FORM>
+
+<HR SIZE="12">
+<H2>The scenario generated for your requirements</H2>
+<P>The output will go here.</P>
+<BR>
+
+<HR SIZE="12">
+<a href="http://spectra.eng.hawaii.edu/~pautler/Caeti/demo.html">
+Back to the Demo homepage
+</a>
+
+</BODY>
+</HTML>

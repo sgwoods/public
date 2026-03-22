@@ -1,0 +1,74 @@
+; output-solution-information outputs the information of the 
+; planning session, including the total number of states expanded, etc.
+
+(defun output-solution-information ()
+  "output function upon termination."
+  
+  (when *print-output-p*
+	(format *output-stream* 
+		"~%~
+                 ~%***** ~A plan Terminated *****~
+		 ~%~
+                 ~%Subgoal-determine-mode: ~A~
+                 ~%Establisher-ranking-heuristic: ~A~
+		 ~%Plan-cost-heuristic: ~A~
+		 ~%--- Statistics ---~
+		 ~%~
+                 ~%Total Number of Nodes Expanded: ~D~
+		 ~%Total Number of Nodes Generated: ~D~
+		 ~%~
+                 ~%Total CPU Seconds: ~D~%~%"
+		*planner-mode*
+		*subgoal-determine-mode*
+		*exist-est-heuristic*
+		*heuristic-mode*
+		*num-expanded*
+		*num-generated*
+		(/ (- (get-internal-run-time)
+		      *internal-start-time*)
+		   (* 1.0 internal-time-units-per-second) ))
+	(if *drp-mode*
+	    (drp-solution-information) )
+	(cond ((plan-p *solution*)
+	       (format *output-stream*
+		       "Solution --- in (operator1 operator2) pairs:~&" )
+	       (show-ops *solution*) )
+	      (t (format *output-stream* "Incomplete Termination...")) )))
+
+
+
+
+;-------- Debugging routines  (cur)
+
+(defun cur ()
+  "output planning information."
+
+  (format *output-stream* 
+	  "~&~&***** Planner-Mode ***** ~A ~&~
+	       Subgoal-determine-mode: ~A ~&~&~
+	       Heuristic-mode: ~A ~&~&~
+	       Monotonic Property Used: ~A ~&~&"
+	  *planner-mode*
+	  *subgoal-determine-mode*
+	  *heuristic-mode*
+	  *mp-mode* )
+  (when *mp-mode* 
+	(format *output-stream* 
+		"Monotonic Property Pruned: ~A ~&~&~
+		 Left-Wedge-mode: ~A ~&~&~
+		 Downward Refinement Property Mode: ~A ~&~&~
+		 --- Statistics ---~&~&~
+		 Total Number of Nodes Expanded: ~D ~&~&~
+		 Total Number of Nodes Generated: ~D ~&~&~
+		 Total CPU Seconds: ~D ~2&~
+		 Size of Open List: ~D ~&~&"
+		*mp-pruned*
+		*left-wedge-mode*
+		*drp-mode*
+		*num-expanded*
+		*num-generated*
+		(/ (- (get-internal-run-time)
+		      *internal-start-time*)
+		   (* 1.0 internal-time-units-per-second) )
+		(length-of-open) )))
+

@@ -1,0 +1,38 @@
+                First       Last
+     SIN        Name     
+
+ 0   0151       Peter       Winter                      
+ 1   0514       Ryan        Tanaka                       
+ 2   0743       Scott       Fukuji                      
+ 3   1080       Greg        Kodani                       
+ 4   1132       Kelly       Yuen                    
+ 5   1365       Laurel      Hirokane                   
+ 6   1477       Tao         Zheng                         
+ 7   1504       Rebecca     Longstreth           
+ 8   1647       Alexander   Vergara              
+ 9   1976       Ryan        Mock                         
+10   2547       Donnell     Nguyen                    
+11   3608       Jacqueline  Toribio             
+12   3945       Fang        Fang                         
+13   4027       Veera       Bhatiasevi                  
+14   4408       Wade        Watanabe                     
+15   4792       Daniel      Manestar                   
+16   5013       Ti          Southichack                    
+17   5337       Mark        Omoto                        
+18   5367       Eugene      Boudreault                 
+19   5757       Tyler       Dierks                    
+20   5811       Chris       Dixon                       
+21   6143       Ryan        Gonzalez                     
+22   6345       Allan       Pagba                   
+23   6867       Marmelyn    David                    
+24   7724       Keping      Cao                        
+25   7745       Peter       Yuen                        
+26   7824       Mian        Zhao                         
+27   8216       Jianxin     Wang                      
+28   8615       Christopher Cha                   
+29   8747       Malia       Le                          
+30   8902       Federico    Combes Jr.               
+31   9243       Ming        Zhang                        
+32   9514       Michael     Ferido            
+33   9575       Jason       Horiuchi                    
+34   9676       Gregory     Schofield            

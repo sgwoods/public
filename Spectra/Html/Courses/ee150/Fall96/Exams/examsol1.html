@@ -1,0 +1,260 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Midterm #1 Solutions</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME=top>EE150 - Spring 1996</A></H1>
+
+<H2>Midterm #1 (2/14/96)<BR>
+Solutions</H2>
+
+<BR CLEAR=all>
+
+<B>Jump To Solution For Problem</B>:
+ [<A HREF=#prob1>1</A> |
+  <A HREF=#prob2>2</A> |
+  <A HREF=#prob3>3</A> |
+  <A HREF=#prob4>4</A>] <BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob1"><H2>Problem #1</H2></A>
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+1 10 5
+6
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P> <TT>dostuff</TT> is passed three values: 1, 10, and 5.  1
+goes into its parameter <TT>n</TT>, 10 goes into its parameter
+<TT>o</TT>, and 5 goes into its parameter <TT>m</TT>.  <TT>dostuff</TT>
+prints these values and computes its return value of 1 + 10 - 5,
+which is 6.  That's returned to the main program, which stores
+it in <TT>p</TT> and then prints <TT>p</TT>.
+
+<P><A HREF="mid1.html#prob1a">The problem</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+Hello 2
+Hello 4
+Goodbye 8
+Goodbye 16
+</PRE> </BLOCKQUOTE>
+
+<P> Here's the reason why.
+
+<P> <TT>n</TT> is set to 1 before the loop.  The loop then tests
+whether <TT>n</TT> is less than 16, which it is, so we go through
+the loop.  This involves multiplying <TT>n</TT> by 2, which sets
+it to 2.  We then test whether that's less than 8, which it is,
+so we write the Hello and <TT>n's</TT>'value (2).
+
+<P> We now do the test again (which verifies that <TT>n</TT> is
+less than 16), so we go through the loop again, which multiplies
+<TT>n</TT> by 2, setting it to 4, which is still less than 8,
+so we write Hello and 4. 
+
+<P> We do the test again, which is true again (since <TT>n</TT>
+is 4, which is less than 16), so we multiply <TT>n</TT>, which
+sets it to 2, giving us 8.  Now the <TT>if</TT> will do the <TT>else</TT>
+part, printing Goodbye and 8.  
+
+<P> Once again, we do the loop test, which is still true, so we
+multiply <TT>n</TT> by 2 again, which
+sets it to 16.  Now the <TT>if</TT> does the <TT>else</TT>
+again, printing Goodbye and 16.
+
+<P> Now we do the loop test, but <TT>n</TT> is 16, which causes
+the loop to terminate.
+
+<P><A HREF="mid1.html#prob1b">The problem</A>.<P>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+5
+3
+1
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P><TT>i</TT> starts out with 5.  We do the test of 
+the loop, which checks whether <TT>i</TT> is non-negative,
+which it is,
+and then do the body of the loop, the <TT>printf</TT>, which writes
+<TT>i</TT>'s value (5).  We then subtract 2 from <TT>i</TT>,
+which sets <TT>i</TT> to 3.  
+
+<P> We do the test again, and then the body
+of the loop, which prints <TT>i</TT>'s value (3), and subtract 2 from
+<TT>i</TT>, setting it to 1.  
+
+<P> We then do the test again, then execute the body of the loop,
+printing <TT>i</TT>(1), and the subtraction, which sets <TT>i</TT>
+to -1.
+
+<P> Now when we do the test, it's no longer true that <TT>i</TT>
+is non-negative, so we terminate the loop.
+
+<P><A HREF="mid1.html#prob1c">The problem</A>.<P>
+
+<H4><A NAME="prob1d">Part D</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+13,4,5,15
+</PRE> </BLOCKQUOTE>
+
+<P> <TT>m</TT>'s value is computed by taking 2 times 3 (6) adding
+that to 5 (giving 11) and then adding 2 to it, which gives us 13.
+Remember, C multiplies
+and divides before doing addition and subtraction).
+
+<P> <TT>n</TT>'s value is set to the result of computing 5 times 2
+(which is 10) minus the result of computing 3 times 2 (which is 6).
+
+<P> <TT>q</TT>'s value is set to 5.
+
+<P> <TT>p</TT>'s value is
+the result of <TT>q</TT> plus 10, which is 15.
+
+<P><A HREF="mid1.html#prob1d">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob2"><H2>Problem #2</H2></A>
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> The declaration of <TT>sum</TT> should instead be declaring
+<TT>sum_of_evens</TT> (we have to declare a variable
+before we use it).
+<LI> We need to initialize <TT>sum_of_evens</TT> to 0 (all
+variables have to be given a value before we use them).
+<LI> The loop should be incrementing <TT>i</TT> by 2 each
+time, not 1 (so that <TT>i</TT> gets set to 10, 12, 14, 16, 18,
+and 20).
+<LI> We want to update the <TT>sum_of_evens</TT>
+by adding <TT>i</TT> to it, not 1.
+</UL>
+
+<P><A HREF="mid1.html#prob2a">The problem</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> The <TT>while</TT> should not have the semicolon following
+the test in parentheses (we use the semicolon to terminate 
+declarations, assignments, and function calls).
+<LI> <TT>p</TT> is used as integer, so it needs to be declared
+as <TT>int</TT> rather than a <TT>double</TT> (we have to declare
+variables to match how we plan to use them).
+<LI> The loop test should be greater than or equal 2, not less
+than or equal to 2 (otherwise we'll never go through the loop).
+<LI> The <TT>printf</TT> has to come before the assignment (otherwise
+we won't write the 16).
+</UL>
+
+<P><A HREF="mid1.html#prob2b">The problem</A>.<P>
+
+<H4><A NAME="prob2c">Part C</A></H4>
+
+<P> The changes are:
+<UL>
+<LI> Value needs to be declared as an <TT>int</TT> (all variables
+must be declared).
+<LI> The <TT>scanf</TT> is missing the ampersand in front
+of <TT>value</TT> (<TT>scanf</TT> needs the ampersand in front of
+all variables we pass it).
+<LI> The <TT>while</TT> should be comparing <TT>scanf</TT>'s return
+value with 1, not 0 (input-reading loops compare <TT>scanf</TT>'s
+return value with the number of values they are trying to read).
+<LI> The <TT>printf</TT> should write <TT>min</TT>, since that is the
+value we are trying to remember.
+</UL>
+
+<P><A HREF="mid1.html#prob2c">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob3"><H2>Problem #3</H2></A>
+
+<P> One possible solution is:
+
+<BLOCKQUOTE><PRE>
+#include <stdio.h>
+
+main()
+{
+  int count_a;
+  int count_all;
+  int score;
+
+  count_a = count_all = 0;
+  while (scanf("%i", &score) == 1)
+  {
+    count_all = count_all + 1;
+    if (score >= 90)
+      count_a = count_a + 1;
+  }
+  percent_a = (count_a * 100) / count_all;
+  printf("%i%% of the students (%i out of %i) got A's", 
+         (count_a * 100) / count_all, count_a, count_all);
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="mid1.html#prob3">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob4"><H2>Problem #4</H2></A>
+
+<P> The key to this solution is using the function, <TT>drawFilledBox</TT>,
+that you are allowed to assume already exists.  Because that function
+does the hard work, all you have to do is repeatedly call it, passing
+it the desired height and width of each box you want to write.
+
+<BLOCKQUOTE><PRE>
+void drawBoxes(int m)
+{
+  void drawFilledBox(int h, int w);
+
+  int i;
+
+  for (i = 1; i <= m; i++)
+  {
+    drawFilledBox(i, i);
+    printf("\n");
+  }
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="mid1.html#prob4">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">E150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>
+

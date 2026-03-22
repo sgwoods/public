@@ -1,0 +1,222 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Midterm #1</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME="top">EE150 - Fall 1996</A></H1>
+
+<H2>Midterm #2 (11/13/96)</H2>
+
+<B>Jump To Problem</B>:
+[<A HREF="#prob1">1</A> |
+ <A HREF="#prob2">2</A> |
+ <A HREF="#prob3">3</A> |
+ <A HREF="#prob4">4</A>]
+
+<BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This exam is open book, open notes, and closed neighbor!
+
+<P> You have a maximum 50 minutes to complete the exam.  Hand in your paper when you are done.
+We will pick up all midterms and leave the room at 55 minutes after the hour.  
+
+<P> There are 3 problems worth a total of 100 points plus a Bonus question worth 5 points.  
+Problem I is worth 3 * 15 or 45 marks, Problem II is worth 40 marks, and
+Problem III is worth 15 marks.   Be careful not to spend too much time on
+any particular problem.  <B> If you get stuck, go on to the next
+problem.</B>  You can always come back to the one that is giving you
+problems.  As a guideline, allow about 15 minutes for each of problems I II and III,
+which leaves you a couple of minutes at the end to check your work.
+To ensure you have read these instructions, you get two more bonus points
+simply for writing your account name on the bottom of the last page of this exam.
+
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="probl">PROBLEM #1</A> (45 points, 15 points each)</H3>
+ 
+<P> Once again, show what each of the following program fragments do.  To determine
+the answer, work through the code by hand and show us the output that
+results.  <EM>You <b>must</b> show how these programs execute by using the 
+``table'' model we have seen repeatedly in class in order to get full credit.</EM>
+<P>
+Hint:  The table method of showing the output involves showing the time or
+execution steps on one axis (say the horizontal axis) and each variable that
+changes on the other axis (say the vertical axis).     You should show the
+output somewhere in the same table.
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int t, v = 0;
+  for (v = 10; t < 6, t > 5; v++)
+    {
+      printf(" In Loop: t= %i v= %i\n", t, v);  
+      t += 2;
+      v -= 3;
+    }
+  printf("Done: v = %i, t = %i\n", v, t);
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob1a">The solution</A>.<P>
+<p>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int f1 (int);
+  int j = 12;
+  int y = 15;
+  do
+    {
+      int y = 10;
+      y = f1 ( y );
+      printf("In Loop: y = %i, j = %i \n", y, j), --j;
+    }
+  while( y > 0 && j != 10 );
+  return 0;
+}
+
+int f1 ( int y ){  return y -= y; }
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob1b">The solution</A>.<P>
+<p>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int i, a = 0;
+  int A[5] = { 4, 3, 2, 1, 0};
+  for (i = 0; i < 5; i = (a += 1))
+    switch( i )
+      {
+      case 1: A[i]= 5;  break;
+      case 2: 
+      case 3: A[i] = A[ (int) i/2 ];   break;
+      case 4: A[i] = 7; break;
+      default: A[i] = A[i + 3]; break;
+      }
+  for (i = 0; i < 5; i++)
+    printf("Array A element %i is %i\n", i, A[i]); 
+
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob1c">The solution</A>.<P>
+<p>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="prob2">PROBLEM #2</A> (40 points)</H3>
+
+<P> Given a function, <TT>writeT</TT>, <EM>that has already
+been written for you</EM>.  <TT>writeT</TT> takes two arguments,
+a character, c, and a number, n, and writes out character c exactly (int)(n/3)
+times. For example, <TT>writeT('x', 9)</TT> writes <TT>xxx</TT>. 
+<P>
+Using this function, <EM>write a new function</EM>, <TT>writeManyT</TT>,
+where the call
+<BLOCKQUOTE><PRE>
+int stuff[5] = {9, 12, 8, 16, 1};
+writeT(stuff, 5, 6, '=');
+</PRE></BLOCKQUOTE>
+produces the following output:  
+<BLOCKQUOTE><PRE>
+===xxx===0
+===xxxx===0
+===xx===2
+===xxxxx===1
+</PRE></BLOCKQUOTE>
+Note that the final integer on each of the preceeding lines can be calculated
+as  <b>stuff[i] - ( (int)( stuff[i] / 3) ) * 3 </b>.  <b>You may assume that
+all integer values in stuff are positive.</b>
+
+<P>
+A sketch of the function and its expected parameters is shown below.
+Your job is to fill in its body.
+
+<BLOCKQUOTE><PRE>
+/*
+   Display table's parameters:
+
+     a -    An array of integers.  For each array element, x, we want to 
+            printout (int)(x/3) characters 'x'.
+     n  -   The number of entries in the array
+     m  -   We may assume that m is even.  We want to printout (m/2) instances 
+            of character c before and after the  x's. 
+     c-     The character to write out as per m above
+*/
+
+writeManyT(int a[], int n, int m, char c)
+{
+... write your code here!
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="examsol2.html#prob2">The solution</A>.<P>
+<p>
+
+<H3><A NAME="prob3">PROBLEM #3</A> (15 points)</H3>
+
+For each of the following program fragments, show an alternative (i.e. expanded
+or more straight-forward) form:
+<BLOCKQUOTE><PRE>
+1. switch(i)
+	{
+            case 1: printf("ok");      break;
+            case 2: 
+            case 3: printf("no way");  break;
+           default: printf("ho vay");  break;
+	}
+</PRE></BLOCKQUOTE>
+<p>
+<BLOCKQUOTE><PRE>
+2. i++;   /* do not use post or pre-fix operators */
+</PRE></BLOCKQUOTE>
+<p>
+<BLOCKQUOTE><PRE>
+3. A ? x++ : x--;
+</PRE></BLOCKQUOTE>
+<p>
+<BLOCKQUOTE><PRE>
+4. int a, x = 0;
+</PRE></BLOCKQUOTE>
+<p>
+<BLOCKQUOTE><PRE>
+5. if (a *= b, a *= c, a > 10)   /* do not use comma operators */
+      printf("fred");
+   else
+      printf("sam");	 
+</PRE></BLOCKQUOTE>
+<p>
+
+<P><A HREF="examsol2.html#prob3">The solution</A>.<P>
+<p>
+
+<H3><A NAME="prob4">BONUS: PROBLEM #4</A> (+5 extrapoints)</H3>
+
+Write a short paragraph about how your group will be/is  attacking the slide-5
+group problem, and in particular what your contribution is going to be.
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

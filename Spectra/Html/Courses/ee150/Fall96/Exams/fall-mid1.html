@@ -1,0 +1,332 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Midterm #1</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME="top">EE150 - Fall 1996</A></H1>
+
+<H2>Midterm #1 (10/2/96)</H2>
+
+<B>Jump To Problem</B>:
+[<A HREF="#prob1">1</A> |
+ <A HREF="#prob2">2</A> |
+ <A HREF="#prob3">3</A> |
+ <A HREF="#prob4">4</A>]
+
+<BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This exam is a total of 6 pages, including this one.  It is open
+book, open notes, and closed neighbor!  Unless noted, write your answers on
+the blank pages at the end of the exam.  Hand in all exam papers given you.
+
+<P> You have 50 minutes to complete the exam.  We will pick up all
+midterms and leave the room at 55 minutes after the hour. 
+
+<P> There are 4 problems worth a total of 100 points.  The problems are
+almost equally weighted.  Be careful not to spend too much time on
+any particular problem.  <B> If you get stuck, go on to the next
+problem.</B>  You can always come back to the one that is giving you
+problems.  As a guideline, allow about 12 minutes per problem,
+which leaves you a couple of minutes at the end to check your work.
+To ensure you have read these instructions, you get two bonus
+points simply for writing your account name on the bottom of the
+last page of this exam.
+
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="probl">PROBLEM #1</A> (24 points, 6 points each)</H3>
+ 
+<P> Tell us what each of the following program fragments do.  To determine
+the answer, work through the code by hand and show us the output that
+results.  <EM>You must show how these programs execute with the
+``tables'' model discussed in class in order to get credit.</EM>
+Hint:  A table method of showing the output involves showing the time or
+execution steps on one axis (say the horizontal axis) and each variable that
+changes on the other axis (say the vertical axis).  Hint 2: It wouldn't hurt,
+after the table, to explain your reasoning if you feel your table is
+not clear.
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int a;  int b;   int c;   int p;
+  int dostuff(int,int,int);
+
+  a = 1;  b = a * 3;  c = b - a + 5;  p = dostuff(a, b, c);
+  printf("xx: %i\n", p);
+  a = b + p;
+  printf("xx: %i\n", a);
+  printf("xx: %i\n", b);
+}
+
+int dostuff(int c, int a, int b)
+{
+  printf("yy: %i,%i,%i\n", a, b, c);
+  return a + b * c;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-examsol1.html#prob1a">The solution</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  double n;
+  int m; int p;
+
+  n = 96;
+  while (n &gt;&#32; 13)
+  {
+    n = n / 2;
+    if (n &lt;&#32; 35)
+      printf("Okay %4.1f\n",  n);
+    else
+      printf("No way %5.2f\n", n);
+  }
+m = n + 1 + 0.51;
+printf("O vay %i\n", n);
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-examsol1.html#prob1b">The solution</A>.<P>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int i;
+  double b;
+  int c;  int j;
+  int change (int);
+  
+  b = (int) (13.4 + 12.54);
+  c = b * 0.5;  
+  j = c - 5;
+
+  printf("b=%4.2f, c=%i, j=%i\n", b,c,j);
+
+  b = change( j );
+
+  printf("b=%4.2f, j=%i\n", b,j);
+
+  for (i = c; i &gt;= 0; i = i - j)
+    printf("lp i=%i\n", i);
+
+  printf("dn i=%i\n", i);
+}
+
+int change ( int j )
+{ 
+  j = j * 2; 
+  return (int) (j * 2.0); 
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-examsol1.html#prob1c">The solution</A>.<P>
+
+<H4><A NAME="prob1d">Part D</A></H4>
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  int m; int q;
+  q = m;
+  printf("%i\n", q);
+
+  m = 5 + 2 * 3 + 2;
+  m = 5 * 2 - 3 * 2;
+  m = (q == m) + 10;
+  printf("%i\n", m);
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-examsol1.html#prob1d">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="prob2">PROBLEM #2</A> (24 points, 12 points each)</H3>
+
+<P> Each of the following programs have a comment that says what they
+are supposed to do.  But they don't do what they're supposed to do!
+Show us the minimal set of changes necessary to make these programs do
+what their comment claims that they do.   That is, mark up the
+programs to make them work!
+
+<P> Note that errors can either by <tt>syntactic</tt> (that is, problems 
+with the format of the C code, or <tt>semantic</tt> (that is, problem with
+how the C code meets the problem requirements.
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* 
+   Sum two times each of the even numbers between START and FINISH together
+   with three times each of the odd numbers between START and FINISH
+
+   Important Hint: <TT>#define A B</tt> results in a replacement of any A
+   with B before the program is compiled.
+*/
+
+#include &lt;stdio.h&gt;
+
+#define START  5
+#define FINISH 8
+#define T2 thrice
+#define T1 twice
+
+int main()
+{
+  int i;  
+  int sum_even;  
+  int sum_odd;
+
+  int even(int x);
+  int twice(int x);                       
+
+  for (i = START; i <= FINISH; i = i + 1)
+    {
+      if (even(i))
+          sum_even = sum_even + T2(i);
+      else
+          sum_odd  = sum_odd  + T1(i);
+    }
+  total = sum_even + sum_odd;
+  printf("%i\n", total);
+}
+
+int even(int x)
+{
+  /* This function determines whether a number is odd or even
+     by dividing by two - if there is a remainder, the number
+     must be odd */
+
+  double ck;
+  ck =  (double) (x / 2.0) - (int) (x / 2);
+  if (ck > 0.0) 
+    return 0;
+  else return 1;
+} 
+
+int odd(int x)
+{
+  /* A simpler way to determine even/odd */
+  return ((x % 2) == 1);
+} 
+
+int twice ( int x )
+{ 
+  return 2 * x; 
+}
+
+int thrice ( int x )
+{ 
+  int twice(int x);
+  return twice(x) + x;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-examsol1.html#prob2a">The solution</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<BLOCKQUOTE><PRE>
+/* Print powers of 2 forwards from 0 through FINISH followed by
+   the total.  That is, for FINISH = 7,  output should be: 
+   1 2 4 8 16 32 64 128 = 255 */ 
+
+#include &lt;stdio.h&gt;
+
+#define FINISH 7
+
+main()
+{
+  double count; 
+  double p;
+  double total;
+
+  total = 0;                             
+  count = 0;
+
+  p = 1;
+  while (p &lt;<= FINISH) 
+  {
+    printf("%i ", p);
+    total = total + p;
+    p = p + 2;     
+    count = count + 1;
+  }
+
+  printf(" = %i\n", count); 
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-examsol1.html#prob2b">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="prob3">PROBLEM #3</A> (26 points)</H3>
+
+<P> Write a program that reads a set of scores and prints the percentage
+of the class that got A's, where an A is 90 or better, as well as the
+total number of A's and the total number of students.  For example,
+if the input is:
+<BLOCKQUOTE>
+80 90 57.0 95 30 75
+</BLOCKQUOTE>
+the output should be:
+<BLOCKQUOTE>
+33% of the students (2 out of 6) got A's.
+</BLOCKQUOTE>
+Do not worry about handling input errors, but you MUST use at least a 
+ function in your solution that has a prototype that looks like:
+<BLOCKQUOTE><PRE>
+int classify_got_A( double grade );
+</PRE></BLOCKQUOTE>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P><A HREF="fall-examsol1.html#prob3">The solution</A>.<P>
+
+<H3><A NAME="prob4">PROBLEM #4</A> (26 points: 13 x 2)</H3>
+
+Imagine a function like the following ...
+<BLOCKQUOTE><PRE>
+int Fbig(int i)
+</PRE></BLOCKQUOTE>
+This function takes an integer (i) and returns an integer.  Fbig(1) = 1 means
+that Fbig returns 1 if it is passed a one.  Similarly, Fbig(2) = 2, Fbig(3) =
+6, Fbig(4) = 24, Fbig(5) = 120.  Fbig is a very simple function to define.
+Assume that Fbig is defined for you.
+Write a function, <TT>inputValues</TT>, that inputs integers from the 
+standard input until an EOF (ctrl-d) is input, and prints out the 
+Fbig value in a statement like:
+<BLOCKQUOTE><PRE>
+Fbig of x is y.
+</BLOCKQUOTE></PRE>  
+where y = Fbig(x).
+
+<P>If you get done the first part, write a version of the function Fbig.  
+Hint: you  might be able to write it in about 4 lines.  Hint 2: 
+Fbig(n) = n * n-1 * ... * 1.   
+
+<P><A HREF="fall-examsol1.html#prob4">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

@@ -1,0 +1,31 @@
+Script started on Tue Sep 10 11:36:48 1996
+% ./trip2
+400 17.2
+Miles driven:		 400.0
+Gas gallons purchased:	  17.20
+Car miles per gallon:	  23.26
+
+Gas cost per gallon:  	$  1.739
+Car total cost:       	$ 49.91
+Car cost per mile:    	$  0.125
+
+Total trip bus cost: 	$  4.00
+Bus cost per mile: 	$  0.0100
+Bus over car saving: 	$ 45.91
+
+1000 40.90
+Miles driven:		 1000.0
+Gas gallons purchased:	  40.90
+Car miles per gallon:	  24.45
+
+Gas cost per gallon:  	$  1.739
+Car total cost:       	$121.13
+Car cost per mile:    	$  0.121
+
+Total trip bus cost: 	$ 10.00
+Bus cost per mile: 	$  0.0100
+Bus over car saving: 	$111.13
+
+% exit
+
+script done on Tue Sep 10 11:37:23 1996

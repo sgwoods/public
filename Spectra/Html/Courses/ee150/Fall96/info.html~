@@ -1,0 +1,186 @@
+<HEAD>
+<TITLE>University of Hawaii, EE150, Fall 1996</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff" text="#0000af">
+
+<IMG SRC="Images/Programmer.gif" WIDTH=191 HEIGHT=141 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Fall 1996</H1>
+
+<H2> An Introduction to <BR>
+     Computer Programming <BR>
+     Using C </H2>
+
+<P> <B>Lecturer</B>:
+<A HREF=http://spectra.eng.hawaii.edu/~sgwoods>Steven Woods</A>
+(<A HREF=mailto:sgwoods@spectra.eng.hawaii.edu>sgwoods@spectra.eng.hawaii.edu</A>)
+
+<P> <B>Current Announcements</B>:
+<UL>
+<li> December 4: Check out the group page for demo times and for a description of
+what your report should contain for assignment 6. 
+<li> December 4: Demos are Thursday at 2.30 - 4.00.  All groups  have an appointment.
+If you miss it you get 0 on the demo part of assignment 6.  There will be NO EXCEPTIONS.   
+<li> <blink>December 6:</blink> Cumulative grades incl Midterm 2, Assign 5, and Quiz 8 are <a href="Grades/Cumulative/fall96-all.txt"><b>available</b></a>. A graph is also available showing the class <a href="Grades/Cumulative/fall96-all-graph.txt"><b><blink>distribution</blink></b></a> 
+to date.  The current cumulative course total is out of a maximum of 70.  If
+you are on the low side of the graph (ie below 33) you are in extreme
+danger of failing this course.  If you are just above this category you are on the
+bubble and should bear down to make sure you pass.  The final and assignment 6 are your last chance so make some effort! 
+<li>
+<li> The <a href="Assignments/pa5.html"><b>group project</b></a>:  See the <a href="./groups.html"><b>GROUP PAGE</b></a> for group-related or project-related announcements, questions, and answers. 
+<li> Quizzes (as given in class, no solutions) are now available
+<a href="quizes.html"><b>online</b></a> for your  review.  Quiz <a
+href="Grades/Items/quizzes.txt"><b>grades</b></a> are also available up to and
+including Quiz 7.     If you want your quizzes back, stop by during office hours. 
+<li> 
+<li> Check out my comments on the final in the <a href="description.html#final"><b>syllabus</b></a>. It's never to early to start preparing for it.
+<li> Grade weights have been slightly adjusted.  Final is 15%, Assign 5 (part 1
+of project) is worth 12%, and Assign  6 (part 2 of project including a demo) is
+worth 15%.  Midterm 2 is worth 10% (like Midterm 1)  Quizes are worth 3-4%
+each - for a combined total of 16% or so when all is said and done.
+As before, except in very specific (i.e. medical) circumstances, there will be
+no make-up chances for missed quizes in class.   
+<li>
+<li> Check this out!  Compile and run <a href="Assignments/Samples/obfuscate.c"><b>obfuscate.c</b></a>. Do try to avoid code like this in assignments.
+<li> As you should know, the TA's name is "Yu".  He is available at the following <a href="./ta-times.txt"><b>times</b></a>.  Note he is available a lot more
+often than Dr Woods.
+<li> Assignment 3 questions and answers are posted <a href="./Assignments/pa3q.html"><b>separately</b></a>. 
+<li> <b>Please Note:</b> I have received at least one anonymous email from an ee150 student. I strongly suggest that the sender annotate any email communication with his/her name
+in the future.  Anonymous email is something of a bad idea.
+<li> Midterm 1 solutions and grades are now available.  See <A HREF=Exams/info.html>Exams</A>.   I have some important comments about exams you <a href="Exams/comments.html">MUST READ</a>.
+<li> Assignment cheating will not be tolerated. See my comments on this matter in <a href="cheat.txt"><b>here</b></a>.
+<li> The solution to Mini-Assignment three is posted - check it out.  You MUST
+ understand what is going on for the midterm.
+<li>
+<li> 467 students click <a href="467.html">here</a>.
+</UL>
+
+
+<BR CLEAR=ALL>
+
+<B>Jump To</B>: [<A HREF=Lectures/lectures.html>Lecture Notes</A> |
+		<A HREF=Lectures/JoySlides/joy-slides.html>Joy of C Lecture Slides</A> |
+                 <A HREF=Assignments/info.html>Assignments</A> |
+                 <A HREF=Exams/info.html>Exams</A>] <BR>
+
+<IMG SRC="Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+<BR>
+
+<DL>
+<DT><IMG SRC="Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+    <B> What is this course about? </B>
+    <DL>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=description.html>
+        The course syllabus.
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=Lectures/lectures.html>
+        Overviews of each lecture (including all example programs).
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=Lectures/allprogs.shar>
+        The complete set of example programs (in shell archive format).
+        </A>
+    </DL> <P>
+
+<DT><IMG SRC="Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+    <B> Who else is taking it? </B>
+    <DL>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=students.html>
+        List of students and their e-mail addresses.
+        </A>
+    </DL> <P>
+
+<DT><IMG SRC="Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+    <B> What do we do in this course? </B>
+    <DL>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=dates.html>
+        Due dates and examination times.
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=Assignments/info.html>
+        Programming assignments.
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=Exams/info.html>
+        Midterms and final exams
+        </A>
+    </DL> <P>
+
+<DT><IMG SRC="Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+    <B> How am I doing compared to every one else? </B>
+    <DL>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=Grades/Items/info.html>
+        Score summaries for assignments and exams.
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=Grades/Cumulative/info.html>
+        Cumulative score summaries.
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF=Grades/questions.html>
+        Questions and answers about grades and grading.
+        </A>
+    </DL> <P>
+
+<DT><IMG SRC="Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+    <B> How do I ...? </B>
+    <DL>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="http:/~alex/Courses/Help/accounts.html">
+        Obtain a class account on "Wiliki"?
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="http:/~alex/Courses/Help/wiliki.html">
+        Get things done on "Wiliki"?
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="http:/~alex/Courses/Help/compiling.html">
+        Get my C program to compile and execute on "Wiliki"?
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="http:/~alex/Courses/Help/outside.html">
+        Use machines other than "Wiliki"?
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="http:/~alex/Courses/Help/grade.html">
+        Use the <TT>grade</TT> command?
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="./Questions/style.html">
+        Write readable C Programs?
+        </A>
+    </DL> <P>
+
+<DT><IMG SRC="Images/YellowBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="*">
+    <B> Anything else of interest? </B>
+    <DL>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="./ta-times.txt">
+        Schedule of Yu Zhang, TA for EE 150 Questions and/or Tutoring.
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="//www.eng.hawaii.edu/~hkn/tutor.html">
+        Schedule of HKN Free tutoring.
+        </A>
+    <DT><IMG SRC="Images/BlueBall.gif" WIDTH=14 HEIGHT=14 HSPACE=1 ALT="o">
+        <A HREF="http:/~alex/Courses/Humor/info.html">
+        Some computer humor.
+        </A>
+    </DL> <P>
+</DL>
+
+<IMG SRC="Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+<a href="../ee150ip/"><IMG SRC="Images/QuestionMark.gif" WIDTH=10 HEIGHT=10 HSPACE=1 ALIGN=right></a>
+
+<P>[<A HREF=http://spectra.eng.hawaii.edu/>EE Home Page</A> |
+ <A HREF=http://www.eng.hawaii.edu/>College of Engineering Home Page</A> |
+ <A HREF=http://www.hawaii.edu/uhinfo.html>University of Hawaii Home Page</A>]
+
+</BODY>

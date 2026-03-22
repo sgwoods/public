@@ -1,0 +1,68 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Assignment #2 Solution</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1>EE150 - Spring 1996</H1>
+
+<H2>Programming Assignment #2 <BR>
+Solution</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT> <A HREF=pa2.html#part1> <B>Part 1:</B></A>
+<DD> This solution involved typing in the
+<A HREF="../Programs/Chap1/price2.c"><B>price2.c</B></A> program in the text and then modifying it to reflect that we are using
+it for the specific task of keeping track of a video purchases.  This meant
+changing the various strings used in the output, as well as changing the
+<TT>#define</TT>'s that described how many videos were purchased, the price,
+and the discount and tax rates.  
+
+<P> Our solution is in
+<A HREF="Solutions/2/videos.c"><B>videos.c</B></A>.
+Because of the confusion in the assignment about how many spaces
+appeared between the columns, we will be giving full credit even if the
+columns are off by one from what we wanted.  
+
+<P>
+<DT> <A HREF=pa2.html#part2> <B>Part 2:</B></A>
+<DD> This part involved extending the program in the previous part to
+produce a table of output.  The key here is to use a counting a loop that
+runs from 1 to 12.  Each time through the loop, you need to have the
+calculation part of the previous program, except that you need to modify
+it to use the loop counter as the number of videos (rather than a
+constant).  You also have to add the headings and worry about how to line
+things up in columns.
+
+<P> Our solution is
+<A HREF="Solutions/2/videos2.c"><B>videos2.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa2.html#part3> <B>Part 3:</B></A>
+<DD> 
+This program fits the same general pattern as the price-computing
+program: some constant definitions, some variable declarations, a set
+of calculations, and a set of <TT>printf</TT>'s to produce the output.
+
+<P> Our solution is <A HREF="Solutions/2/gas.c"><B>gas.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa2.html#part4> <B>Part 4:</B></A>
+
+<DD> This program is actually just a simple input-reading loop wrapped 
+around the calculations and output-generating statements of the solutions
+to the previous part.
+
+<P> Our solution is <A HREF="Solutions/2/gas2.c"><B>gas2.c</B></A>.  
+
+</DL>
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<TITLE>
+U of H Caeti Demo
+</TITLE>
+</HEAD>
+
+<BODY>
+<H1>Caeti Demo</H1>
+<H1>University of Hawaii</H1>
+
+<HR>
+<H2>Overview</H2>
+This is a tool for developing Army tank platoon exercises.  You can specify
+as little as a few drills to be included in an exercise, and our system will
+do the work of finding paths through terrain, placing enemy units, and
+writing OPORDs and exercise tables for a <I>complete</I> exercise that
+conforms to your requirements.  You can also specify particular subregions
+of terrain and particular assembly areas to be used.
+
+<P>Once the system has generated a scenario from your requirements, you can
+tweak the scenario by altering your requirements.</P>
+
+<HR>
+<H2>Your requirements</H2>
+Use the following questionnaire to specify your requirements.  Don't
+worry about not answering questions that aren't relevant to your plan.
+
+<FORM Method=POST ACTION="../cgi/-in/uncgi/test-cgi">
+
+<H3><I>At the start of the exercise...</I></H3>
+Indicate the platoon's starting formation:
+<TABLE>
+<TR><TD><INPUT TYPE="radio" NAME="theStartForm" VALUE="coil">Coil</TD>
+    <TD><INPUT TYPE="radio" NAME="theStartForm"
+				VALUE="halted-ctf">Halted Column</TD>
+</TR>
+<TR><TD><INPUT TYPE="radio" NAME="theStartForm"
+				VALUE="herringbone">Herringbone</TD>
+    <TD><INPUT TYPE="radio" NAME="theStartForm"
+				VALUE="halted-wltf">Halted Wedge</TD>
+</TR>
+</TABLE>
+Indicate the coordinates of the starting location:
+<INPUT TYPE="text" NAME="theStartCoords" SIZE="8" MAXLENGTH="8">
+
+<H3><I>In the middle...</I></H3>
+Indicate the drills you want to be included in the exercise (you can
+require that a drill appear more than once by entering a number in its
+text field):
+<UL>
+<LI><B>Battle drills</B>
+<TABLE>
+<TR><TD><INPUT TYPE="checkbox" NAME="vfaa">Air attack
+    <TD><INPUT TYPE="text"     NAME="vfaa-num" SIZE="2" MAXLENGTH="2">
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="cfs">Contact drill
+    <TD><INPUT TYPE="text"     NAME="cfs-num" SIZE="2" MAXLENGTH="2">
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="ad">Action drill
+    <TD><INPUT TYPE="text"     NAME="ad-num" SIZE="2" MAXLENGTH="2">
+</TR>
+</TABLE>
+<LI><B>Traveling techniques</B>
+<TABLE>
+<TR><TD><INPUT TYPE="checkbox" NAME="ttm">Traveling technique
+    <TD><INPUT TYPE="text"     NAME="ttm-num" SIZE="2" MAXLENGTH="2">
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="totm">Traveling overwatch
+    <TD><INPUT TYPE="text"     NAME="totm-num" SIZE="2" MAXLENGTH="2">
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="botm">Bounding overwatch
+    <TD><INPUT TYPE="text"     NAME="botm-num" SIZE="2" MAXLENGTH="2">
+</TR>
+</TABLE>
+<LI><B>Traveling formations</B>
+<TABLE>
+<TR><TD><INPUT TYPE="checkbox" NAME="ctf">Column</TD>
+    <TD><INPUT TYPE="text"     NAME="ctf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="sctf">Staggered column</TD>
+    <TD><INPUT TYPE="text"     NAME="sctf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="wltf">Wedge</TD>
+    <TD><INPUT TYPE="text"     NAME="wltf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="eltf">Echelon</TD>
+    <TD><INPUT TYPE="text"     NAME="eltf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="vtf">Vee</TD>
+    <TD><INPUT TYPE="text"     NAME="vtf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+<TR><TD><INPUT TYPE="checkbox" NAME="ltf">Line</TD>
+    <TD><INPUT TYPE="text"     NAME="ltf-num" SIZE="2" MAXLENGTH="2"></TD>
+</TR>
+</TABLE>
+</UL>
+
+<H3><I>At the end...</I></H3>
+<P>Indicate the platoon's ending formation:</P>
+<TABLE>
+<TR><TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="coil">Coil
+    <TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="halted-ctf">Halted Column
+</TR>
+<TR><TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="herringbone">Herringbone
+    <TD><INPUT TYPE="radio" NAME="theEndForm" VALUE="halted-wltf">Halted Wedge
+</TR>
+</TABLE>
+<P>Indicate the coordinates of the ending location:
+<INPUT TYPE="text" NAME="theEndCoords" SIZE="8" MAXLENGTH="8"></P>
+
+</FORM>
+
+<HR>
+<H2>Scenario generated for your requirements</H2>
+The output will go here.
+
+<HR>
+<ADDRESS>
+If you would like more information about this project, please
+contact <a href="mailto:alex@wiliki.eng.hawaii.edu">Alex Quilici</a>.  If
+you encounter any problems with this demo, please
+contact <a href="mailto:pautler@punaluu.eng.hawaii.edu">David Pautler</a>
+or <a href="mailto:sgwoods@makaha.eng.hawaii.edu">Steve Woods</a>.<BR>
+<BR>
+Department of Electrical Engineering<BR>
+University of Hawaii - Manoa<BR>
+Holmes Hall 480<BR>
+2540 Dole Street<BR>
+Honolulu, HI 96822<BR>
+808-956-9735 (Alex's business and voicemail)<BR>
+808-956-7154 (David and Steve's business and voicemail)<BR>
+808-956-3427 (fax)<BR>
+<BR>
+Last updated April 23, 1997
+</ADDRESS>
+
+</BODY>
+</HTML>

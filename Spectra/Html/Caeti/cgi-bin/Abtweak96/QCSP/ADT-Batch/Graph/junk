@@ -1,0 +1,13 @@
+*Font:	-*-prestige-medium-r-normal-*-128-*
+*FontList:	-*-swiss 742-bold-r-normal-*-140-*-p-100-*
+*XmText*FontList:	-*-prestige-medium-r-normal-*-128-*
+*XmTextField*FontList:	-*-prestige-medium-r-normal-*-128-*
+*background:	#9D008FF583C1
+*foreground:	#FFFFFFFFFFFF
+*systemFont:	-*-swiss 742-bold-r-normal-*-140-*-p-100-*
+*ttyModes:	erase ^H intr ^C kill ^U start ^Q stop ^S swtch ^@
+*userFont:	-*-prestige-medium-r-normal-*-128-*
+Vuestyle.timeoutScale:	5
+Vuewm*HighResHighColor*One*backdrop*image:	@/usr/lib/X11/bitmaps/Vuebackdrops/Foreground
+hpterm*backgroundIsSelect:	True
+hpterm*makeColors:	shadow

@@ -1,0 +1,342 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Solution To Sample Final</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Solution<BR>
+To Sample Final</H2>
+
+You should resist the temptation to look at these answers
+until after you have first tried to solve the problems.
+
+<BR CLEAR=all>
+
+<B>Jump To Solution For Problem</B>:
+ [<A HREF=#prob1>1</A> |
+  <A HREF=#prob2>2</A> |
+  <A HREF=#prob3>3</A> |
+  <A HREF=#prob4>4</A> |
+  <A HREF=#prob5>5</A>] <BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob1">Problem #1</A></H2>
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<P> The first thing you do to trace the code is start by examining
+what the parameters look like after the example call:
+<BLOCKQUOTE><PRE>
+         +------------------------------------------+
+x:       | 31 | 17 | 26 | 9 | 6 | 17 | 19 | 17  ... |
+         +------------------------------------------+
+old: 17
+new: 40
+stop: 9
+</PRE> </BLOCKQUOTE>
+In addition, there is a local variable <TT>i</TT>.
+
+<P> You now execute the loop, which sets <TT>i</TT> to 0
+and then checks whether <TT>x[i]</TT> (<TT>x[0]</TT>), which is
+31, is greater than <TT>stop</TT>, which is 9.  It is, so it enters
+the loop, compares <TT>x[0]</TT> with <TT>old</TT>, which is 40,
+finds that they are different, and so sets <TT>x[0]</TT> to
+<TT>new</TT>, which is 40.     
+
+<P> The next time through the loop,
+the loop test compares <TT>x[1]</TT> with <TT>stop</TT>
+and finds that 17 is greater than 9, so it enters the loop,
+compares <TT>x[1]</TT> with <TT>old</TT>, and finds that 17 is 
+equal to 17, and the array doesn't change.
+
+<P> The next time through the loop, <TT>x[2]</TT>
+is again greater than <TT>stop</TT>
+(26 is greater than 9) so it goes through the loop, and winds up
+setting this element to 40 (like it did with the first element).
+
+<P> Finally, <TT>x[3]</TT> is equal to <TT>stop</TT>, so the loop
+stops executing, and the function returns <TT>i</TT>, which is 3.
+
+<P><A HREF="samfinal.html#prob1a">The problem</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<P> Since the function returned 3 and 3 is assigned to <TT>n</TT>,
+the code writes a 3.
+
+<P><A HREF="samfinal.html#prob1a">The problem</A>.<P>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<P> The 1st and 3rd elements were modified, so the table looks like:
+
+<BLOCKQUOTE><PRE>
+         +------------------------------------------+
+x:       | 40 | 17 | 40 | 9 | 6 | 17 | 19 | 17  ... |
+         +------------------------------------------+
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob1c">The problem</A>.<P>
+
+<H4><A NAME="prob1d">Part D</A></H4>
+
+<P> Clearly the loop test is wrong.   What we want to do is process
+the <TT>stop</TT> elements.  That means, <TT>i</TT> should go from
+0 up to <TT>stop</TT>.  So in line 5, the loop test should be
+<TT>i</TT> &lt; <TT>stop</TT>.  
+
+<P> Another problem is that we are changing exactly the wrong set of
+elements.  The <TT>if</TT> test in line 6 is also wrong, where it
+is comparing <TT>x[i] != old</TT>, but should instead be
+checking whether <TT>x[i] == old</TT>.  
+
+<P> Finally, the return value should be a count of changes, not just
+the index.  So we need a count.  This involves insert a declaration
+and initialization of the count before line 4:
+<BLOCKQUOTE><PRE>
+int count = 0;
+</PRE></BLOCKQUOTE>
+It involves updating the <TT>count</TT> in the <TT>if</TT>, which
+means changing the then part of the <TT>if</TT> to look like:
+<BLOCKQUOTE><PRE>
+{
+  count++;
+  x[i] = new;
+}
+</PRE></BLOCKQUOTE>
+And it means changing line 8 to return <TT>count</TT>
+instead of <TT>i</TT>.
+
+<P><A HREF="samfinal.html#prob1d">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob2">Problem #2</A></H2>
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<P> One solution is:
+<BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+main()
+{
+  int c;
+  int n, i;
+
+  while ((c = getchar()) != EOF)
+  {
+    if (isdigit(c))
+    {
+      n = c - '0';
+      c = getchar();    /* get character after digit */
+    }
+    else
+      n = 1;
+    for (i = 1; i &lt;= n; i++)
+      putchar(c);
+  }
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob2">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob3">Problem #3</A></H2>
+
+<P> One solution is the following:
+
+<BLOCKQUOTE><PRE>
+int removeBlanks(char s[])
+{
+  int count = 0;
+  int j = 0;
+
+  for (i = 0; s[i] != '\0'; i++)
+    if (s[i] != ' ')   
+      s[j++] = s[i];
+  s[j] = '\0';
+  return j;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob3">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob4">Problem #4</A></H2>
+
+<H4><A NAME="prob4a">Part A</A></H4>
+
+<P> One solution is the following:
+
+<BLOCKQUOTE><PRE>
+int findWord(struct entry table[], int n, char *rapword)
+{
+  int isSameString(char *str1, char *str2);
+
+  int i;
+
+  for (i = 0; i &lt; n; i++)
+    if (isSameString(table[i].word, rapword))
+      return i;
+  return -1;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob4a">The problem</A>.<P>
+
+<H4><A NAME="prob4b">Part B</A></H4>
+
+<P> One solution is the following (using <TT>getline</TT> from the
+textbook):
+
+<BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+
+#define MAXLEN 80
+ 
+main()
+{
+  int getline(char line[], int n);
+  int findWord(struct entry table[], int n, char *word);
+
+  char word[MAXLEN + 1];
+  int pos;
+
+  while(getline(word, MAXLEN) != -1)
+  {
+    if ((pos = findWord(dictionary, MAXWORDS, word)) == -1)
+      printf("unknown word!\n");
+    else
+      printf("%s\n", dictionary[pos]);
+  }
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob4b">The problem</A>.<P>
+
+<H2><A NAME="prob5">Problem #5</A></H2>
+
+<H4><A NAME="prob5a">Part A</A></H4>
+
+<P> One solution is:
+
+<BLOCKQUOTE><PRE>
+void makeCounts(int counters[], int n)
+{
+  int c;
+  int index;
+
+  for (index = 0; index &lt; n; index++)    /* zero counters */
+    counters[index] = 0;
+
+  while ((c = getchar()) != EOF)            /* read chars and */
+    if (c &gt;= 'A' && c &lt;= 'F')         /* update appropriate counter */
+    {
+      index = c - 'A';
+      counters[index]++;
+    }
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob5a">The problem</A>.<P>
+
+<H4><A NAME="prob5b">Part B</A></H4>
+
+<P> One solution is:
+
+<BLOCKQUOTE><PRE>
+void blankOut(char table[MAXROWS][MAXCOLS], int r, int c)
+{
+  int row, col;
+
+  for (row = 0; row &lt; r; row++)
+    for (col = 0; col &lt; c; col++)
+      table[row][col] = ' ';
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob5b">The problem</A>.<P>
+
+<H4><A NAME="prob5c">Part C</A></H4>
+
+<P> One solution is:
+
+<BLOCKQUOTE><PRE>
+void placeStars(char table[MAXROWS][MAXCOLS], int counters[], int n)
+{
+  int row, col;
+
+  for (col = 0; col &lt; n; col++)
+    for (row = 0; row &lt; counters[col]; row++)
+      tables[row][col] = '*';
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob5c">The problem</A>.<P>
+
+<H4><A NAME="prob5d">Part D</A></H4>
+
+<P> One solution is:
+
+<BLOCKQUOTE><PRE>
+void printHisto(char table[MAXROWS][MAXCOLS], int r, int c)
+{
+  int row, col;
+
+  printf("A B C D E F\n");
+  for (row = 0; row &lt; r; row++)
+  {
+    for (col = 0; col &lt; c; col++)
+      printf("%c ", table[row][col]);
+    printf("\n");
+  }
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob5c">The problem</A>.<P>
+
+<H4><A NAME="prob5d">Part E</A></H4>
+
+<P> This part is just a set of function prototypes and function calls!
+
+<BLOCKQUOTE><PRE>
+main()
+{
+  void makeCounts(int counters[], int n);
+  void blankOut(char table[MAXROWS][MAXCOLS], int r, int c);
+  void placeStars(char table[MAXROWS][MAXCOLS], int counters[], int n);
+  void printHisto(char table[MAXROWS][MAXCOLS], int r, int c);
+
+  char output_table[MAXROWS][MAXCOLS];
+  int grade_counters[MAXCOLS];
+
+  makeCounts(grade_counters, MAXCOLS);   /* Set up counters */
+  blankOut(output_table);                /* Blank out table */
+  placeStars(output_table, grade_counters, MAXCOLS);   /* Set up table */
+  printHisto(output_table, MAXROWS, MAXCOLS
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinal.html#prob5e">The problem</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+a='lsp'
+
+grep -i 'cons op' *.$a
+grep -i 'cons op' Ab-routines/*.$a
+grep -i 'cons op' Domains/*.$a
+grep -i 'cons op' Mcallester-plan/*.$a
+grep -i 'cons op' My-routines/*.$a
+grep -i 'cons op' Plan-routines/*.$a
+grep -i 'cons op' Search-routines/*.$a
+grep -i 'cons op' Tw-routines/*.$a
+grep -i 'cons op' Tw-routines/Conf-infer/*.$a
+grep -i 'cons op' Tw-routines/Plan-infer/*.$a
+grep -i 'cons op' Tw-routines/Succ/*.$a
+
+b='.lisp'
+
+grep -i 'cons op' QCSP/*.$b
+
+
+
+
+
+

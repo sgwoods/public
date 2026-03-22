@@ -1,0 +1,503 @@
+
+<HEAD>
+<TITLE>EE150, Fall 1996 - Programming Assignment #3</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Fall 1996</H1>
+<H2>Programming<BR>
+Assignment #3</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment has two goals:
+
+<UL>
+<LI> 
+To give you experience with using pre-written functions to solve
+a problem (in this case, these are functions that I've written and
+am requiring you to use as part of your program). <P>
+
+<LI>
+To give you experience with writing your own functions. <P>
+</UL>
+
+<P> The due date is: <B> Wednesday, October 18th, 1996 </B> at 6pm.
+You should expect to spend between six to eight hours of
+computer time over the next two weeks.  You should also
+expect to spend one to two hours of thinking time, depending on how
+much prior programming experience you have.  As usual, we will not
+accept late assignments (no matter how entertaining the excuse).
+
+<H4> What To Do </H4>
+
+<P> <B><A NAME=part1>Part 1</A></B>: Create a file named <B>time1.c</B>.  This
+program will read in a flight's starting and ending times (provided in
+military or twenty-four hour time) and print the length of
+the trip.   Here is the sample input and output for our
+solution.  The <EM>italics</EM> are our input, the <TT>monospace
+font</TT> is computer output.
+
+<BLOCKQUOTE>
+<EM>10:15 11:30</EM> <BR>
+<TT>Trip #0 was 1 hours, 15 minutes (75 minutes).</TT> <BR>
+<EM>3:45 14:20</EM> <BR>
+<TT>Trip #1 was 10 hours, 35 minutes (635 minutes).</TT> <BR>
+<EM>18:30 23:15</EM> <BR>
+<TT>Trip #2 was 4 hours, 45 minutes (285 minutes).</TT> <BR>
+<EM>control-d</EM>
+</BLOCKQUOTE>
+
+<P> You can assume that the user will be well-behaved, that
+the times will always be valid, and that the second time will
+always be after the first.
+
+<P> You should build this program based on the functions in the file 
+<A HREF=/~sgwoods/Courses/ee150/Fall96/Assignments/Solutions/3/timeutils.c>
+timeutils.c</A>.
+The idea is that you will compile this source file, then compile
+your program, and finally link the resulting object modules together
+to form an executable (as we will be discussing how to do in class). 
+As a result, you get to pretend the functions in this file are part
+of the language, like <TT>printf</TT> and <TT>scanf</TT>.
+
+<P> In particular, you will find the following functions to be
+very useful in accomplishing this part.
+
+<BLOCKQUOTE><PRE>
+int timeDifference(int start_hour_of_day, int start_minute_of_hour,
+                   int end_hour_of_day, int end_minute_of_hour);
+</PRE>
+
+<BLOCKQUOTE>
+<P> <TT>timeDifference</TT> takes two times (each in the form of an hour
+and a minute) and returns the number of minutes between them.  For example,
+<BLOCKQUOTE><PRE>
+n = timeDifference(10,15,14,30);
+</PRE></BLOCKQUOTE>
+puts <TT>255</TT> into <TT>n</TT>.  If the second time precedes the
+first, you'll get a negative number.
+</BLOCKQUOTE>
+
+<PRE>
+int timeIntoMinutes(int hour_of_day, int minute_of_hour);
+</PRE>
+
+<BLOCKQUOTE>
+<P> <TT>timeIntoMinutes</TT> takes an hour and a minute and returns 
+how many minutes total are in that number of hours and minutes.
+For example,
+<BLOCKQUOTE><PRE>
+n = timeIntoMinutes(3,30);
+</PRE></BLOCKQUOTE>
+puts <TT>210</TT> into <TT>n</TT>.
+</BLOCKQUOTE>
+
+<PRE>
+int timeHour(int minute_of_day);
+int timeMinute(int minute_of_day);
+</PRE>
+
+<BLOCKQUOTE>
+<P> <TT>timeHour</TT> takes a number of minutes since midnight and
+returns the actual hour of the day.  <TT>timeMinute</TT> takes a number
+of minutes since midnight and returns the actual minute within that
+hour.  For example, 
+<BLOCKQUOTE><PRE>
+x = timeHour(210);
+y = timeMinute(210);
+</PRE></BLOCKQUOTE>
+places a <TT>3</TT> into <TT>x</TT> and a <TT>30</TT> into <TT>y</TT>.
+</BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+<P> Once you are confident your program processes the reasonable input
+correctly, you need to modify it to handle the case where the flight's
+ending time precedes it's starting time.  We will interpret this
+case to mean that the flight ended the next day (e.g., a 11:00pm flight
+from Honolulu to LA arrives at 5:15am the next day).  So your
+program should be to produce the following output:
+
+<BLOCKQUOTE>
+<EM>22:00 23:30</EM> <BR>
+<TT>Trip #0 was 1 hours, 30 minutes (90 minutes).</TT> <BR>
+<EM>22:00 3:45 </EM> <BR>
+<TT>Trip #1 was 5 hours, 45 minutes (345 minutes).</TT> <BR>
+</BLOCKQUOTE>
+
+<P> The last aspect of this part is making sure your program
+behaves sensibly if the user provides invalid input.  The cases
+you need to check for are any garbage when you try to read a time,
+and for a starting or ending time that's invalid (an hour greater
+than 23 or less than 0, and a minute greater than 59 or less than 0).
+Here's an example that illustrates what your program is to do.
+<BLOCKQUOTE>
+<EM>25:15 12:45</EM> <BR>
+<TT>ERROR: Invalid starting time for trip #0</TT> <BR>
+<EM>12:45 25:15</EM> <BR>
+<TT>ERROR: Invalid ending time for trip #1</TT> <BR>
+<EM>21:98 11:78</EM> <BR>
+<TT>ERROR: Invalid starting time for trip #2</TT> <BR>
+<EM>some garbage</EM> <BR>
+<TT>ERROR: Could not read times for trip #3.</TT> <BR>
+</BLOCKQUOTE>
+Notice that if your program encounters garbage, it stops, but 
+if it has a bad time (a time with illegal hours or minutes),
+it prints an error message but keeps going to process the next value.
+
+You will find the following functions from
+<A HREF=/~sgwoods/Courses/ee150/Fall96/Solutions/3/timeutils.c>
+timeutils.c</A>.
+helpful here:
+
+<BLOCKQUOTE>
+<PRE>
+int timeIsBefore(int first_hour, int first_minute,
+                 int second_hour, int second_minute)
+</PRE>
+
+<BLOCKQUOTE>
+<P> <TT>timeIsBefore</TT> takes two times (each in the form of an hour
+and a minute) and returns a 1 if the first time is before the second
+and a 0 otherwise.  For example,
+<BLOCKQUOTE><PRE>
+n = timeIsBefore(10,15,14,30);
+</PRE></BLOCKQUOTE>
+puts a <TT>1</TT> into <TT>n</TT>, but
+<BLOCKQUOTE><PRE>
+n = timeIsBefore(14,30,10,15);
+</PRE></BLOCKQUOTE>
+puts a <TT>0</TT> into <TT>n</TT>.
+</BLOCKQUOTE>
+
+<PRE>
+int timeIsValid(int hour_of_day, int minute_of_hour)
+</PRE>
+
+<BLOCKQUOTE>
+<P> <TT>timeIsValid</TT> takes an hour and a minute and
+returns a 1 if they are both legal (the hour is between 0 and 23
+and the minute is between 0 and 59).  For example,
+<BLOCKQUOTE><PRE>
+n = timeIsValid(12,59);
+</PRE></BLOCKQUOTE>
+puts a <TT>1</TT> into <TT>n</TT>, but
+<BLOCKQUOTE><PRE>
+n = timeIsValid(25,16);
+</PRE></BLOCKQUOTE>
+puts a <TT>0</TT> into <TT>n</TT>.
+</BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+<P><B><A NAME=part2>Part 2</A></B>:
+Now copy your solution to the first part into a file <B>time2.c</B>.
+In this stage, you will modify this program to produce information
+about the average trip length, the length of the longest and shortest
+trips, and the total time spent travelling.  This information is
+printed after all input has been read and processed and is only
+printed if there were no input errors.  
+<A NAME="part2out">Here's an example:</A>
+
+<BLOCKQUOTE>
+<EM>10:15 16:30</EM> <BR>
+<TT> Trip #0 was 6 hours, 15 minutes (375 minutes). </TT> <BR>
+<EM>21:30 22:45</EM> <BR>
+<TT> Trip #1 was 1 hours, 15 minutes (75 minutes). </TT> <BR>
+<EM>22:15 5:30</EM> <BR>
+<TT> Trip #2 was 7 hours, 15 minutes (435 minutes). </TT> <BR>
+<EM>8:00 14:00</EM> <BR>
+<TT> Trip #3 was 6 hours, 0 minutes (360 minutes). </TT> <BR>
+<EM>control-d</EM> <BR>
+<TT> Average trip was 5 hours, 11 minutes (311 minutes). </TT> <BR>
+<TT> Longest trip was 7 hours, 15 minutes (435 minutes). </TT> <BR>
+<TT> Shortest trip was 1 hours, 15 minutes (75 minutes). </TT> <BR>
+<TT> Total time was 20 hours, 45 minutes (1245 minutes). </TT> <BR>
+</BLOCKQUOTE>
+
+<P><B><A NAME=part3>Part 3</A></B>:
+For this part you will write a series of functions
+that you will start putting together to solve what at first appears
+to be a difficult high-level problem.  The final
+result is going to be a program that reads a pair of values and
+then prints big block numbers with that height and width (the first
+value is the height, the second value is the width).   
+<A NAME="part3out">Here's a
+sample run of the program (the first line is input, everything
+else is output).</A>
+
+<BLOCKQUOTE><PRE>
+5 5
+xxxxx
+x   x
+x   x
+x   x
+xxxxx
+
+    x
+    x
+    x
+    x
+    x
+
+xxxxx
+    x
+xxxxx
+x    
+xxxxx
+
+xxxxx
+    x
+xxxxx
+    x
+xxxxx
+
+x   x
+x   x
+xxxxx
+    x
+    x
+
+xxxxx
+x    
+xxxxx
+    x
+xxxxx
+
+xxxxx
+x    
+xxxxx
+x   x
+xxxxx
+
+xxxxx
+    x
+    x
+    x
+    x
+
+xxxxx
+x   x
+xxxxx
+x   x
+xxxxx
+
+xxxxx
+x   x
+xxxxx
+    x
+xxxxx
+</PRE> </BLOCKQUOTE>
+
+<P> <A NAME="part3out2">
+Here's another sample run of the program, with a different input
+(again, the first line is the input, the remaining lines are the output).</A>
+
+<BLOCKQUOTE><PRE>
+7 7
+xxxxxxx
+x     x
+x     x
+x     x
+x     x
+x     x
+xxxxxxx
+
+      x
+      x
+      x
+      x
+      x
+      x
+      x
+
+xxxxxxx
+      x
+      x
+xxxxxxx
+x      
+x      
+xxxxxxx
+
+xxxxxxx
+      x
+      x
+xxxxxxx
+      x
+      x
+xxxxxxx
+
+x     x
+x     x
+x     x
+xxxxxxx
+      x
+      x
+      x
+
+xxxxxxx
+x      
+x      
+xxxxxxx
+      x
+      x
+xxxxxxx
+
+xxxxxxx
+x      
+x      
+xxxxxxx
+x     x
+x     x
+xxxxxxx
+
+xxxxxxx
+      x
+      x
+      x
+      x
+      x
+      x
+
+xxxxxxx
+x     x
+x     x
+xxxxxxx
+x     x
+x     x
+xxxxxxx
+
+xxxxxxx
+x     x
+x     x
+xxxxxxx
+      x
+      x
+xxxxxxx
+</PRE> </BLOCKQUOTE>
+
+<P> This may seem like quite a job, but if you build this as a series
+of functions, you'll find it's straightforward.  We will start by giving
+you the following two functions:
+
+<BLOCKQUOTE> <PRE>
+void drawLine(int length)
+{
+  int i;
+
+  for (i = 0; i &lt;&#32; length; i++)
+    printf("x");
+  printf("\n");
+}
+
+void drawBlanks(int n)
+{
+  int i;
+
+  for (i = 0; i &lt;&#32; n; i++)
+    printf(" ");
+}
+</PRE> </BLOCKQUOTE>
+
+<P> <TT>drawLine</TT> takes a number of <TT>x</TT>'s to write and
+writes them, followed by a newline.  <TT>drawBlanks</TT> is similar,
+except its parameter is a number of spaces to write and it doesn't
+write a newline.  With <TT>drawLine</TT> we can write
+pieces of most of the numbers, like the top and bottom of the 0,
+the top, middle, and bottom of the 2, 3, 5, 6, 8, and 9.
+
+<P> So consider writing the 0.  You also need to write a variety
+of lines where each line contains an <TT>x</TT>, a number of blanks,
+and another <TT>x</TT>.  Write a function, <TT>drawEndPoints</TT>,
+that takes the length of a line and the number of lines you want
+to write, and uses them to write these lines.  For example,
+<TT>drawEndPoints(5, 3)</TT> should produce the following output:
+<BLOCKQUOTE><PRE>
+x   x
+x   x
+x   x
+</PRE> </BLOCKQUOTE>
+Hint: To write it, think about how you could use <TT>drawBlanks</TT>
+to write the blanks in each line.
+
+<P> Now consider the 1 (and, in fact, the 7).  It's similar to the 0,
+but to write it, we need to write spaces before the <TT>x</TT> on each
+line.   So write
+a function, <TT>drawRightEndPoints</TT>, that takes the same
+parameters as <TT>drawEndPoints</TT>, except that it writes lines
+like those we need for the 1.  For example,
+<TT>drawRightEndPoints(5, 3)</TT> should produce this output:
+<BLOCKQUOTE><PRE>
+    x
+    x
+    x
+</PRE> </BLOCKQUOTE>
+
+<P> Given these functions, you can now easily write the
+functions <TT>drawZero</TT>, <TT>drawOne</TT>, and <TT>drawSeven</TT>
+to take care of 3 of the 10 digits we need to write.  Do so and
+test them and you are done with this part.  Name the source file
+holding all of this information <B>numbers1.c</B>.
+
+<P><B><A NAME=part4>Part 4</A></B>: Copy the program from the
+previous part of the assignment into a file named <B>numbers2.c</B>.  Now
+you'll need to finish the last set of numbers.  Without writing any
+new functions, you can write the functions, <TT>drawThree</TT>, 
+<TT>drawFour</TT>, <TT>drawEight</TT>, and <TT>drawNine</TT> to write
+the 3, 4, 8, and 9 respectively.  (The trick here is figuring
+how to calculate the correct value to pass to your
+<TT>drawEndPoints</TT> and <TT>drawRightEndPoints</TT> functions.)
+
+<P> To handle the remaining values, you need to write a function
+that we can use to write the top part of the 5, and the 
+bottom part of the 2 and 6.   This function, <TT>drawLeftEndPoints</TT>,
+takes the same arguments as its companion drawing functions, and
+produces a series of lines containing only a single "x" at the start of
+each line.
+For example, <TT>drawLeftEndPoints(5, 3)</TT> should produce this output:
+<BLOCKQUOTE><PRE>
+x
+x
+x
+</PRE> </BLOCKQUOTE>
+(Actually, this function doesn't need to take the length of the line,
+but to make it look just like the other functions, we might as well
+write it to take the same parameters.)  Given this you can write
+the last three functions: <TT>drawTwo</TT>, <TT>drawFive</TT>,
+and <TT>drawSix</TT>.
+
+<P> Now you have one final task.  Write the final version of
+the main program that can read the desired height and width to use
+for all the numbers and then calls the number drawing functions in
+order.  To make things simple, you can assume that the user will
+always enter an <EM>odd</EM> number for the height.
+
+<H4> What To Turn In </H4>
+
+<P>
+To get credit for this assignment, you must electronically turn in
+the four files you created in Parts 1 through 4: <B>time1.c</B>,
+<B>time2.c</B>, <B>numbers1.c</B> and <B>numbers2.c</B>.
+
+<P> <A NAME="grade">As usual, to turn in your program, you need to use
+the <TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the command:
+<BLOCKQUOTE>
+<TT> grade -3,ee150 time1.c time2.c numbers1.c numbers2.c </TT>
+</BLOCKQUOTE>
+The <TT>-3</TT> tells the grade command which assignment you are
+turning in (assignment #3), the <TT>ee150</TT> tells it your class (EE150,
+so the programs get sent to the EE150 professor and not to the professor
+of some other class), and the
+".c" files are the source files you are actually turning in.
+Please make sure you type in the command exactly as it shown above.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

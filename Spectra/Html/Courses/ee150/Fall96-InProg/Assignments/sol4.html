@@ -1,0 +1,64 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Assignment #4 Solution</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Programming Assignment #4 <BR>
+Solution</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT> <A HREF=pa4.html#part1> <B>Part 1:</B></A>
+<DD> This solution essentially involved writing an input-reading loop
+like that of the checkbook example we did in class, and within the
+loop, calling the <TT>getNumInBase</TT> with the right arguments for
+reading in the operands, using a <TT>switch</TT> to implement the
+operators, and then 
+calling <TT>putNumInBase</TT> to write the values correctly.
+
+<P> Our solution is in <A HREF="Solutions/4/base1.c"><B>base1.c</B></A>.
+
+<P>
+<DT> <A HREF=pa4.html#part2> <B>Part 2:</B></A>
+<DD> The key thing here is to capture all of the error handling in
+a couple of new functions, one for reading the first operand and
+notifying the user about any errors in trying to do, and the other for 
+doing a similar task with the second operand.
+
+<P> Our solution is <A HREF="Solutions/4/base2.c"><B>base2.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa4.html#part3> <B>Part 3:</B></A>
+<DD> 
+
+The key here is to write one function to determine whether a number is
+prime, and another function that then calls this function for each
+value in a range of numbers.
+
+<P> Our solution is <A HREF="Solutions/4/prime1.c"><B>prime1.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa4.html#part4> <B>Part 4:</B></A>
+
+<DD> 
+This program extends the previous program significantly.  The key is
+to write separate functions for printing primes in ascending and descending
+order.   The main program then calls the appropriate function with
+the appropriate arguments depending on how the user answers the
+various questions.
+
+<P> Our solution is <A HREF="Solutions/4/prime2.c"><B>prime2.c</B></A>.  
+
+</DL>
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

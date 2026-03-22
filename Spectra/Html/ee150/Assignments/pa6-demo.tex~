@@ -1,0 +1,68 @@
+
+
+EE150 Demo CheckList :	Total Marks Possible = 25
+---------------------------------------------------------------------------
+
+1. Can players chooses color (b/w) of playing pieces.
+
+2. Can players decide which player goes first.
+
+3. Does the Move input make sense and correspond to the gameboard.
+
+4. Does the game proceed normally - ie alternate players, alternate colors,
+ right color  for right player, etc.
+
+5. Can you call up the rules?  Can you get a (shorter) help menu?
+
+6. Does the game detect  a simple win - 
+   5 in a row
+   5 in a colum
+   5 in a diagonal
+
+7. The board must NOT be square - ie it must be displayed on an angle like
+ the "real" game.
+
+8. If Player X runs out of chips does he get to use Player Y's chip for his
+ turn ?    
+
+9. Do chips slide out the bottom ok?  
+
+10. Does the chip count work correctly  when slides do or do not happen?
+
+11. When you "slide" spaces should NOT slide - verify.
+
+12. Can you break the game with bad input ?  
+
+... bonus
+
+A. Does the automatic player option work?
+
+B. How does the automatic player work? 
+
+C. Try a game and see if it works.
+
+D. Ask if there are any other options or features they would like to show off.
+
+Style to check ...
+---------------------------------------------------------------------------
+
+1. Board looks good.
+
+2. Bad moves not allowed.  
+
+3. Error checking handled nicely.
+
+4.
+
+
+Questions to be asked to the group ... do the answers make sense, if not why? 
+---------------------------------------------------------------------------
+
+1. Ask, then check:  What does the game do in the case where both players win?
+
+2. Ask only: Does the game detect a case in which no one wins.  How?
+
+3. Who did what?  Ask a question to each member about how his/her section
+ works ?
+
+4. Who merged it all together?  What problems did they have ?  

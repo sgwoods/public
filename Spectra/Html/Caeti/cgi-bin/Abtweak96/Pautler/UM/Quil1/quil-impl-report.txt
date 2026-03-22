@@ -1,0 +1,237 @@
+Report on Implementing the UM system
+described in Quilici's "Forming User Models"
+
+September 3, 1997
+David Pautler
+
+I. Changes in Representation
+
+       (_not-desirable ?e) is now (_is-desired (NOT ?e))
+      (_prevents_ ?e1 ?e2) is now (_has-result_ ?e1 (NOT ?e2))
+(_not-results-in_ ?e1 ?e2) is now (NOT (_has-result ?e1 ?e2))
+  (_not-prevents_ ?e1 ?e2) is now (NOT (_has-result_ ?e1 (NOT ?e2)))
+
+(not-exists_where_ ?plan (?constraint1 AND ?constraint2))
+is now (NOT (?constraint1 AND ?constraint2)) where ?c1 and ?c2
+can be assumed to mention ?plan already.
+This new NOT clause is usually satisfied by 'negation by failure'
+(a variant of the Closed World Assumption); that is, an attempt is
+made to prove the propo within the NOT, and if the attempt fails
+the whole NOT propo is assumed to be true.
+
+Some rules had mentioned P and P', indicating that the bindings of
+these two variables should not be allowed to corefer.  This restriction
+has been implemented as a NOT= predicate that has an attached procedure
+(which in turn adds to whatever noncodesignation "alist" of bindings it
+was passed).
+
+As an example of how all these changes work together, consider how
+ER-9 was changed from:
+
+((_is-best-plan-for_ ?P ?G) <-
+ ((_results-in_ ?P ?G) AND
+  ((_not-results-in_ ?P ?E) AND
+   ((_not-desirable ?E) AND
+    (not-exists_where_ ?P2 ((_results-in_ ?P2 ?G) AND
+                            (_not-results-in_ ?P2 ?E) ))))))
+to:
+((_is-best-plan-for_ ?P ?G) <-
+ ((_has-result_ ?P ?G) AND
+  ((NOT (_has-result_ ?P ?Side-effect)) AND
+   ((_is-desired (NOT ?Side-effect)) AND
+    (NOT ((NOT= ?P2 ?P1) AND
+          ((_has-result_ ?P2 ?G) AND
+           (NOT (_has-result_ ?P2 ?Side-effect)) )))))))
+           
+This new form subsumes both the old ER-9 and the old ER-12 (which used
+'_prevents_').  Six of the 30 rules were subsumed by new versions
+
+(Also, it appears that the original 30 did not cover all logical
+possibilities -- there are more 'results' rules than 'enables' rules,
+for example).
+
+
+II. Changes in Data Structures
+
+It's not clear whether the old structures used backptrs or not, but the
+new version does.  One way or another, we need to be able to get from
+the propos representing antecedents and consequents back to the rules
+which 'contain' them (to establish a focus space path, for example).
+
+The original writeup mentions 'contradicts', 'shared', 'explains', and
+'instance' links.  It's not clear whether those links are simple ptrs
+or special data structures, but I have implemented them as ptrs (except
+that I don't use 'shared' links at all, the 'explains' link is implemented
+as a data structure for rules, and 'instance' is actually a combination of
+an 'instance-of' ptr on one belief and an 'instances' list on the belief
+pointed to).  Each propo, whether fact, antecedent, or consequent, is
+embedded in a 'node' (or "belief") structure that has fields for
+'propo', 'container', 'instance-of', 'instances', and 'contradicts'.
+For antecedents and consequents, the 'container' field points to the
+embedding rule.  Rules have two fields, 'antes' and 'conseqs', which are
+both lists of nodes.
+
+
+III. Changes in the Rule Base
+
+The original writeup said that there were instantiated rules in the KB
+from the start, and that the system would try to reuse these.  The current
+implementation has no instantiated rules in the rule base, and even when
+it does instantiate a rule the rule is not added to the rule base (but its
+antes and conseqs are added to the advisor and user models, and since the
+'container' ptr maintains a connection to the whole rule, the whole rule
+is still accessible from those models).
+
+I suspect that a special marker was used to indicate which of the antes
+of an instantiated rule should be mentioned as a "supporting argument"
+for advisor recommendations.  It's not clear from the original writeup
+how to compute these supporting arguments, and the current implementation
+doesn't have a solution of its own.
+
+Also, there are very few beliefs in the advisor model that compare plans
+as "better" or "best".  The few that are present have been added to make
+scoring work as expected for the example.  (This lack of comparative
+beliefs is one consequence of not having instantiated rules in the KB.)
+
+
+IV. Changes in Procedures
+
+A. Clarification: Following tradition in AI, any (and only) input propos
+   that contain variables are assumed to represent user queries, instead of
+   user statements about universals (e.g., "All plans are best for removing
+   files").  Input propos that contain no vars are assumed to be user comments,
+   instead of user queries about the truth of an instantiated belief.
+	
+B. Changes to the algorithm description given on p. 31:
+   1. In step 3, change "negation of advisor belief" to "contradiction
+      of advisor belief in the focus space" (also change "beliefs in the
+      user model" to "user beliefs in the focus space").
+   2. In step 4, it's suggested that all the antecedents of a rule must
+      be supported before the rule is added to list S; actually, an attempt
+      is made to support each one, but support isn't essential; the purpose
+      of finding support is to instantiate the rule as much as possible;
+      any unsupported antes will be added to the user model as assumptions.
+   3. In step 5, it's suggested again that all antes must be supported, but
+      again all that's needed for instantiation is a 'good faith effort'.
+   4. In step 6, it's not necessary to weed any rules after setting U=S+F.
+      Previous steps already did the necessary weeding, and it is impossible
+      to get some of the other cases mentioned in this step (if you really
+      followed the algorithm).
+   
+C. The scoring example on p. 35 can be confusing.  Here's my attempt at a
+   clarification.
+   1. The 'coupling factor' is the percentage of antes and conseqs ("beliefs")
+      in the candidate explanation that match something in the *user* model,
+      not the whole dialog model as stated in the paper (the 'agreement
+      factor' is the percentage matching the advisor model, so using the
+      whole dialog model for the coupling factor would involve double-counting).
+   2. At the start of a session, the user model is empty, so any beliefs
+      that count toward the coupling factor must be either explicit user
+      comments or uncontested advisor beliefs added as assumptions to the user
+      model.  This points out an error in the example -- the 'more desirable'
+      belief is neither a user comment nor part of a previous explanation, so
+      it can't really be in the user model right now, and thus can't count
+      toward the coupling factor.
+
+D. Later parts of the algorithm described in the body of the paper
+   1. After you have a rule connecting user input to something in the focus
+      space, push-new the antecedents of that rule as (assumed) user beliefs
+      into the focus space.
+   2. While generating a response:
+      a) The user's portion of the focus space is reset to NIL only when
+         the advisor picks out a mistake in the user's reasoning or the
+         advisor gives a justification for a previous comment of his.  The
+         other kind of response, providing an alternate recommendation,
+         jumps past whatever the user just said to the original user query
+         in connecting itself to the dialog model, so resetting the user's
+         part of the focus space would eliminate the opportunity to check
+         which of the advisor's last statements were uncontested and thus
+         acceptable as additions to the user model in the next few steps.
+      b) The original writeup says that only responses that have not been
+         given before are returned.  It's not clear whether the context of
+         the response was important in determining whether it could be given
+         again.  The current implementation does not check whether a response
+         has been given before.
+   3. Although the response is what is returned by the overall system,
+      some bookkeeping is done between determining the response and returning
+      it.  This bookkeeping involves updating the focus space and
+      updating the user model.  It involves these steps:
+      a) Reset the advisor's part of the focus space to NIL.
+      b) The response will always be a conseq node; take an ante of the same
+         instantiated rule as a starting point for a path toward the node
+         representing the user's query, which will cross rule structures,
+         'contradicts' links, and 'instance-of' links.  You'll be starting
+         on the advisor's side of the focus-space-to-be-constructed.
+         (See 'update-focus-spaces' in 'quil1.lsp' for algorithm.)
+      c) If the user just made a comment rather than a query, consider all
+         the beliefs in *old-advisor-focus-space* (the last thing the advisor
+         said + support for it) for inclusion in the user model.  Any advisor
+         belief that doesn't contradict something in the user's focus space
+         (indicated by a 'contradicts' ptr or by calling 'contradiction-p'),
+         or that isn't a conseq of a rule with an antecedent that contradicts,
+         should be added to the user model.  For example, given user focus
+         space (U0 !U1 U2) and *old-advisor-focus-space* (!U0 U1 B1 B2 B3 B4
+         B5 B6 B7) from instantiated rule(s) (!U0+B1->B2) and (B3+B4->U1) and
+         (B5+B6->B7), you should add only (B1 B3 B4 B5 B6 B7) to the user
+         model (although B3 and B4 are questionable).
+         We have not considered whether such things as supports for B1 or
+         conclusions from B7 should also be added to the user model, or
+         whether conclusions from B2 should be excluded.
+      d) Push-new all beliefs in the user's focus space into the user model.
+      e) Push-new all beliefs in the advisor's focus space into the advisor
+         model unless these beliefs are part of an alternate recommendation
+         (which the advisor doesn't really believe is "better" or "best").
+      f) Set *old-advisor-focus-space* to the current advisor focus space so
+         you won't lose it when you reset the advisor's focus space in (a),
+         construct a new one in (b) but then need the old one in (c).
+         
+Additions 9/18/97
+
+1) Because the explanations in S and F do not have to be completely
+   supported, there may be some antecedents with uninstantiated vars.
+   I've added a 1/(1+ num-uninstand-vars) multiplier to the scoring fn.
+
+2) A syntactic rule was coming up as the favored explanation for user
+   comment (1-5), so I have restricted the search for explanations to
+   non-syntactic rules, although the full set of rules is available as
+   potential supports once a set of candidate explanations is formed.
+   
+   An example of a syntactic rule is:
+   
+   (_is-desired (NOT (NOT ?e))) <- (_is-desired ?e)
+   
+   I added all the syntactic rules myself, as part of conflating several
+   of the old rules into single rules, so this doesn't affect the
+   original knowledge base.
+   
+3) I've added a search depth bound of 2 levels for backchaining, because
+   that's all we appear to use, and search was going in silly directions.
+   
+4) There appears to be an error in the explanation algorithm in that if
+   the highest scoring explanation is not in S, then S is thrown away
+   and not included in the candidate rankings when the chains in F are
+   extended by one link.  I now keep track of old Ss and their scores.
+   
+5) Also, when the consequents of candidates in F are used to grow those
+   chains so that they might eventually connect to the advisor focus space,
+   the scores for those candidates were being dumped so that a chain was
+   being scored only on its latest link.  My first attempted fix of this
+   was to keep the old scores and add new scores to them, but adding isn't
+   the right fn because it only makes scores bigger and longer chains are
+   not necessarily better explanations (often, the opposite).  It now seems
+   that the best solution is to keep the components of the old score so that
+   the TOTAL number of couplings in the chain can be divided by the TOTAL
+   number of antecedents in the chain, and similarly for agreements and
+   uninstantiated vars.  This solution is now implemented.
+   
+6) The explanation algorithm says that one of the two kinds of explanations
+   is to connect user input to something in the user focus space (something
+   the user previously said or we inferred from what he said).  The rationale
+   for this was the idea that users might try to justify one comment with
+   a later comment.  However, this has caused a problem when trying to
+   explain (1-5) because I was getting several explanations relating
+   "don't want to fill up /tmp" to "don't want to be asked before file removed",
+   and these explanations were scoring the same as the explanation we
+   really want.  I don't allow this kind of explanation anymore.
+   
+END OF REPORT

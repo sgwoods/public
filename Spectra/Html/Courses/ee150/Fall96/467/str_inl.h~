@@ -1,0 +1,59 @@
+
+// Inline functions for String class
+//
+
+//
+// Destructor and helper function to implement it
+//
+inline void String::CleanUp()
+  { delete [] data; }
+
+inline String::~String()
+  { CleanUp(); }
+
+      
+//
+// Length (number of characters without the null)
+//
+inline int String::Length() const
+  { return len; }
+
+// 
+// Get and change specified character, along with helper
+//
+inline bool String::ValidIndex(int i) const
+  { return i >= 0 && i < size; }
+
+inline char String::Get(int i) const
+  { return ValidIndex(i) ? data[i] : '\0'; }
+
+inline void String::Put(int i, char c) 
+  { if (ValidIndex(i)) c = data[i]; }
+
+//
+// Comparison operators.  Almost all are optimized as direct calls
+//   to strcmp.
+//
+inline bool String::operator==(const String& s) const
+  { return len == s.len && strcmp(data, s.data) == 0; }
+
+inline bool String::operator!=(const String& s) const
+  { return !operator==(s); }
+
+inline bool String::operator<(const String& s) const
+  { return strcmp(data, s.data) < 0; }
+
+inline bool String::operator<=(const String& s) const
+  { return strcmp(data, s.data) <= 0; }
+
+inline bool String::operator>(const String& s) const
+  { return strcmp(data, s.data) > 0; }
+
+inline bool String::operator>=(const String& s) const
+  { return strcmp(data, s.data) >= 0; }
+
+//
+// Output operator just dumps the entire internal string.
+//
+inline ostream& operator<<(ostream& out, const String &s)
+  { return out << s.data; }

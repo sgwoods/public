@@ -1,0 +1,144 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Summaries, Week 9 </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME=#top>EE150 - Fall 1996</H1>
+
+<IMG SRC="../Images/Pages.gif" WIDTH=32 HEIGHT=32 HSPACE=10 ALT=""
+     ALIGN=left>
+
+<H2>Lecture Summaries - Week 9</H2>
+
+<BR CLEAR=all>
+
+<BLOCKQUOTE>
+<UL>
+<LI> <A HREF="#oct21">Monday, October 21st.</A>
+<LI> <A HREF="#oct23">Wednesday, October 23rd.</A>
+<LI> <A HREF="#oct25">Friday, October 25th.</A>
+</UL>
+</BLOCKQUOTE>
+
+<B>Jump To</B>:
+   [<A HREF="http:lectures.html">Lecture Index</A> |
+    <A HREF="http:week8.html">Previous Week's Lectures</A> |
+    <A HREF="http:week10.html">Next Week's Lectures</A>]
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct21">Monday, October 21st</A></H3>
+
+Topics covered:
+<UL>
+<LI> Summary of incremental program development.
+<LI> A methodology for dealing with bugs.
+     <UL>
+     <LI> Locate your mistaken assumption by explaining how the
+          program behaved as it did.
+     <LI> Fix it by making the assumption true or rewriting
+          the code to relax that assumption.
+     </UL>
+<LI> A review of how to write functions.
+<LI> What makes a good user interface (flexibilty, error detection,
+     and error notification).
+<LI> An example of applying these techniques to give the checkbook
+     balancing program a nice interface.
+  <UL>
+  <LI> Add allowing leading blanks
+       (<B><A HREF="http:Examples/9/fcb1.c">fcb1.c</A></B>).
+  <LI> Finding and fixing a bug in handling bad transaction codes
+       correctly
+       (<B><A HREF="http:Examples/9/fcb2.c">fcb2.c</A></B>).
+  <LI> Fixing one transaction to print errors if bad
+       (<B><A HREF="http:Examples/9/fcb3.c">fcb3.c</A></B>).
+  <LI> Fixing the remaining transactions
+       (<B><A HREF="http:Examples/9/fcb4.c">fcb4.c</A></B>).
+  </UL>
+<LI> The null statement.
+  <UL>
+  <LI> Simplifying our checkbook program.
+       (<B><A HREF="http:Examples/9/fcb5.c">fcb5.c</A></B>).
+  </UL>
+</UL>
+
+Reading: Chapter 6.6 (pages 140-141)
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct23">Wednesday, October 23rd</A></H3>
+
+Topics covered:
+<UL>
+<LI> Why we need to store collections of data.
+<LI> What arrays and array elements are.
+<LI> How we declare array variables and use array indexes.
+<LI> Why variable array indexes are so useful.
+<LI> How we "traverse" arrays.
+     <UL> 
+     <LI> An example of zeroing out all array elements, assigning some
+          values, and then printing the array 
+          (<B><A HREF="http:Examples/10/arrayex.c">arrayex.c</A></B>).
+     </UL>
+<LI> How we read array elements.
+     <UL> 
+     <LI> An example of reversing the input.
+          (<B><A HREF="http:Examples/10/arrayrev.c">arrayrev.c</A></B>).
+     </UL>
+<LI> A methodology for writing array-traversing code.
+<LI> Why many other problems require arrays.
+     <UL> 
+     <LI> An example of printing out scores larger than the average
+          (<B><A HREF="http:Examples/10/arrayavg.c">arrayavg.c</A></B>).
+     </UL>
+</UL>
+
+Reading: Chapter 7.1
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="oct25">Friday, Octobre 25th</A></H3>
+
+Topics covered:
+<UL>
+<LI> Passing array parameters to functions.
+<LI> How to write functions that can handle a single size of array.
+     <UL>
+     <LI> An example function to print an array of 10 elements
+          (<B><A HREF="http:Examples/10/print10.c">print10.c</A></B>).
+     </UL>
+<LI> How to extend these functions to handle any size array.
+     <UL>
+     <LI> An example function to print an array of any number of elements
+          from front to back
+          (<B><A HREF="http:Examples/10/printfor.c">printfor.c</A></B>).
+     <LI> And an example printing from back to front
+          (<B><A HREF="http:Examples/10/printhack.c">printback.c</A></B>).
+     </UL>
+<LI> How array parameters are not copies but names.
+     <UL>
+     <LI> An example program to verify that changing an array parameter
+          changes the value you in the caller
+          (<B><A HREF="http:Examples/10/testparm.c">testparm.c</A></B>).
+     <LI> An example function to read in an array of values
+          (<B><A HREF="http:Examples/10/readem.c">readem.c</A></B>).
+     </UL>
+<LI> How writing functions that manipulate arrays makes life easy.
+     <UL>
+     <LI> Our input-reversal program redone using functions.
+          (<B><A HREF="http:Examples/10/inputrev.c">inputrev.c</A></B>).
+     </UL>
+<LI> Why we have to be very careful not to let array indices get out
+     of range.
+</UL>
+
+Reading: Chapter 7.2.
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<BR>[<A HREF="/~sgwoods/Courses/ee150/Fall96/">EE150 Home Page</A> |
+     <A HREF="#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

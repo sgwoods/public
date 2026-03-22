@@ -1,0 +1,43 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Quizes</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff" text="#0000af">
+
+<IMG SRC="./Images/ComputerRead.gif" WIDTH=186 HEIGHT=136 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1><A NAME=top>EE150 - Fall 1996</A></H1>
+
+<H2>Quizes<BR>
+In-Class</H2>
+
+<P> <B>Current Announcements</B>:
+<UL>
+<li> Solutions will not be posted on-line for in-class quizes.  Problems should
+be discussed in class or during office hours with the instructor. 
+<li> The quizzes are posted in POSTSCRIPT format.  These can be viewed in the
+2nd floor lab (on unix workstations) or can be saved and printed as postscript
+in the labs.  If you have difficulties, ask the lab coordinator.
+</UL>
+<P>
+
+<IMG SRC="./Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+<BR>
+
+<UL>
+<li> <a href="Quiz/ee150-quiz0.ps">Quiz 0</a>.
+<li> <a href="Quiz/ee150-quiz1.ps">Quiz 1</a>.  <a href="quiz1.c"> Quiz 1 source</a>.
+<li> <a href="Quiz/ee150-quiz2.ps">Quiz 2</a>.
+<li> <a href="Quiz/ee150-quiz3.ps">Quiz 3</a>.
+<li> <a href="Quiz/ee150-quiz4.ps">Quiz 4</a>.
+<li> <a href="Quiz/ee150-quiz5.ps">Quiz 5</a>.  <a href="quiz5.c"> Quiz 5 source</a>.
+<li> <a href="Quiz/ee150-quiz6.ps">Quiz 6</a>.
+<li> <a href="Quiz/ee150-quiz7.ps">Quiz 7</a>.  <a href="quiz7.c"> Quiz 7 source</a>.
+<li> <a href="Quiz/ee150-quiz8.ps">Quiz 8</a>.  <a href="quiz8.c"> Quiz 8 source</a>.
+</UL>
+
+<IMG SRC="./Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+<a href="../../ee150ip/fall96-class.txt"><IMG SRC="./Images/QuestionMark.gif" WIDTH=10 HEIGHT=10 HSPACE=1 ALIGN=right></a>
+
+</BODY>

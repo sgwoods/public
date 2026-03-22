@@ -1,0 +1,98 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Assignment #5 Solution</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Programming Assignment #5 <BR>
+Solution</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlueBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<DL>
+<DT> <A HREF=pa5.html#part1> <B>Part 1:</B></A>
+<DD> The key to this solution is writing the main loop to read in the
+scores.  For the purpose of this loop, we use <TT>readValues</TT> 
+to read input just like we read input with <TT>scanf</TT>: we have
+a <TT>while</TT> that calls the function and compares its return
+value with the number of items we were trying to read.
+
+<P> It is also very useful to write and use a pair of functions.
+<TT>computeWeightedAverage</TT> takes the student's scores and the
+weights and returns the weighted avg.  <TT>assignGrades</TT> takes
+the average and the minimum scores for each grade, uses a search
+to determine the index of the appropriate minimum score, and then
+uses that index into an array of letter grades to locate the
+specific grade to print.
+
+<P> Our solution is in <A HREF="Solutions/5/scores1.c"><B>scores.c</B></A>.
+
+<P>
+<DT> <A HREF=pa5.html#part2> <B>Part 2:</B></A>
+<DD> Tackling this problem involved several changes.  The first is to
+call functions to handle reading the number of assignments,
+weights, and grading scale and verifying that they are acceptable.  Our
+solution does thi sby calling three functions <TT>obtainAssignments</TT>,
+<TT>obtainWeights</TT>, and <TT>obtainGrades</TT>.  Only if all of
+these are successful do we do the rest of the main.
+
+<P> The second change is to add counters for the number of students
+and for each of the different grades.  The grade counters are done as
+a single array and initialized to zero with <TT>assignValues</TT>.  They
+are then updated each time we assign a grade to a student.
+
+<P> The last change is to update the input-reading loop so that
+it remember how many scores each <TT>readValues</TT> read.  At the
+end of the loop we test this value to determine whether we processed
+all the scores.  Only if we are successful do we print the summary info.
+
+<P> Our solution is in <A HREF="Solutions/5/scores2.c"><B>scores2.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa5.html#part3> <B>Part 3:</B></A>
+<DD> There were several changes to make here.  One is that to replace
+the function to obtain the number of assignments with a function that
+obtains both the number of assignments and the maximum numbre of
+students.  
+
+<P> The next change is to use <TT>malloc</TT> to allocate the arrays
+that are dependent on these values.  This involves changing the original
+array declaration to a pointer, then calling malloc to allocate the space.
+The rest of the program doesn't have to change.
+
+<P> Another change is within the input-reading loop.  It now has to
+use <TT>insertDoubleValue</TT> to place the average it computes in
+the correct position in the array.  And it has to exit the loop early
+if it runs out of array entries into which it can store the next
+average.
+
+<P> The final change is an additional function to print all of the
+averages and their grades.  This function works by running through
+the sorted array of averages.
+
+<P> Our solution is in <A HREF="Solutions/5/scores3.c"><B>scores3.c</B></A>.  
+
+<P>
+<DT> <A HREF=pa5.html#part4> <B>Part 4:</B></A>
+
+<DD> There were two major changes to make here.  One is to change
+the function for obtaining the weights to use <TT>getline</TT> to
+read the line if <TT>readValues</TT> claims there are no values on
+the line.  You have to make a similar change to the function to
+obtain the minimum scores for the grades.  The other change is
+to print the highest and lowest values, but that simply involves
+printing the array's first and last elements.
+
+<P> Our solution is in <A HREF="Solutions/5/scores4.c"><B>scores4.c</B></A>.  
+
+</DL>
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

@@ -1,0 +1,49 @@
+From jupiter.drev.dnd.ca!vezina Tue Jun 28 10:37:33 1994
+Received: from cc.drev.dnd.ca ([131.132.32.2]) by logos.uwaterloo.ca with SMTP id <168383>; Tue, 28 Jun 1994 10:37:30 -0400
+Received: from pleiades.drev.dnd.ca by cc.drev.dnd.ca (4.1/SMI-4.0)
+	id AA14477; Tue, 28 Jun 94 10:35:18 EDT
+Received: by pleiades.drev.dnd.ca (5.0/SMI-SVR4)
+	id AA01354; Tue, 28 Jun 1994 10:34:28 +0500
+Date: Tue, 28 Jun 1994 01:34:28 -0400
+From: vezina@jupiter.drev.dnd.ca (Guy Vezina)
+Message-Id: <9406281434.AA01354@pleiades.drev.dnd.ca>
+To: sgwoods@logos.uwaterloo.ca
+Subject: Re: Howdy
+X-Sun-Charset: US-ASCII
+Content-Length: 975
+Status: OR
+
+Here are the files that you should need:
+
+---------------------------------------
+pleiades:[~/http/conf] more the-users 
+vezina:$%^$^$#
+bill:$^$#%^#$%^
+ed:$%@#%$^
+-------------------------------------------
+pleiades:[~/http/conf] more the-groups 
+the-all: vezina bill ed
+-----------------------------------------
+pleiades:[~/http/conf] more .htaccess
+AuthUserFile /cc/users/vezina/http/conf/the-users
+AuthGroupFile /cc/users/vezina/http/conf/the-groups
+AuthName THE-PAGE
+AuthType Basic
+<Limit GET>
+order deny,allow
+deny from all
+allow from jupiter.drev.dnd.ca
+allow from pleiades
+-------------------------------------------------------
+
+Then all you have to do is to place the file .htaccess into the
+directories with the information you want to protect (I make software
+links to the file in .../conf but you could copy it as well)
+
+Other files that may be important and that can be found in http/conf
+                  access.conf httpd.conf
+
+
+Let me know how it goes
+--guy
+

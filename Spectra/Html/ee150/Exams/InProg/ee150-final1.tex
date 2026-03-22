@@ -1,0 +1,188 @@
+\documentstyle[12pt,fullpage,steve]{article}
+\setcounter{page}{1}
+
+\begin{document}
+
+\title{EE 150 Final Exams : Part I \\ {\bf OPEN BOOK}}
+\author{Monday, December 9 1996}
+\date{}
+\maketitle
+
+\begin{itemize}
+\item {\bf Name:}
+\item {\bf Student Id Number:}
+\end{itemize} 
+
+{\bf Read First:}
+\begin{enumerate}
+\item [A.] {\bf **READ** THE DIRECTIONS CAREFULLY!}
+\item [B.] Any materials including your text and notes may be consulted
+during the exam at your discretion. 
+\item [C.] You have a maximum of 50 minutes to complete the exam.  The exam
+paper will be picked up from your desk (do not get up) at the end of
+the alloted time.
+\item [D.] There are 2 problems worth a total of 50 points, the first
+is worth 35 points and the second is worth 15.  Be careful not to
+spend too much time on any particular problem.  {\bf If you get stuck,
+go on to the next problem}.  You can always come back to the one that
+is giving you problems.   
+\item [E.] Write all answers, including any scratch paper or rough 
+notes on the pages given you.
+\item [F.] If you split the exam paper, write your student id number
+on each and every page.
+\end{enumerate}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1} (35 points)
+
+As part of your new job at a software company, your are told that you
+must write a {\em function} in C which can take the address of an
+array of integers (the last element of which is negative 9999), and
+which returns a double equal to the average of the numbers in the
+array.  
+
+Sounds easy so far, but then you are told that you must also 
+return the {\bf addresses} of the minimum value in the array, the maximum
+value in the array, and the value in the array nearest to the average
+value (i.e. the median).  Unfortunately your boss hates the symbols
+``[`` and ``]'' and has told you to never use them in functions {\em you}
+write.
+
+{\bf Hint 1:}  If you want to define a pointer to a pointer to an
+integer, you would say int **a.  This is done in the main program
+below for the prototype for {\em processArray}.  You would only need
+this notation in your function header.
+ 
+{\bf Hint 2:} A {\em correct} test program and output are given below:
+\begin{verbatim}
+#include <stdio.h>
+#define ASIZE 13
+
+main()
+{
+  int  A[ASIZE] = {2, 7, 1, 3, 4, 9, 5, 6, 8, 10, 55, -19, -9999};
+  int *minimum;    /* minimum points to minimum value of array A */ 
+  int *maximum;    /* maximum points to maximum value of array A */ 
+  int *median;     /* median  points to median  value of array A */ 
+  double average;  /* average contains the average value of array A */ 
+
+  double processArray(int *, int **, int **, int **);   
+
+  average = processArray(A, &minimum, &maximum, &median);
+
+  printf("The value of A[8]  is   8, and the address is %p\n", &A[8]);
+  printf("The value of A[10] is -19, and the address is %p\n", &A[10]);
+  printf("The value of A[11] is  55, and the address is %p\n\n", &A[11]);
+
+  printf("Array Average = %5.2f\n", average);
+  printf("Array Minimum = %i at addr %p\n", *minimum, minimum);
+  printf("Array Maximum = %i  at addr %p\n", *maximum, maximum);
+  printf("Array Median  = %i   at addr %p\n", *median,  median);
+  return 0;
+}
+\end{verbatim}
+
+The output from the given test program is shown on the next page.
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1} (Continued ....)
+
+The output from the given test program is shown below.
+\begin{verbatim}
+The value of A[8]  is   8, and the address is f7fff530
+The value of A[10] is -19, and the address is f7fff538
+The value of A[11] is  55, and the address is f7fff53c
+ 
+Array Average =  7.83
+Array Minimum = -19 at addr f7fff53c
+Array Maximum = 55  at addr f7fff538
+Array Median  = 8   at addr f7fff530
+\end{verbatim}
+
+Write your solution below.  Explicitly state any assumptions you make.
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1} (This Page for Continued Solution)
+
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#1} (This Page for Continued Solution)
+ 
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#2} (15 points)
+
+This new job really is a pain.  You have replaced a previous programmer
+who never wrote a comment in 10 years of C programming.   You are
+given a program by your boss (who is still mad about your previous
+assignment) and told to {\bf re-write} it so that it is more readable, shows
+some better style, has meaningful comments and does the same thing as
+it does now.  He doesn't know what it does and neither does anyone
+else, but it is important that you don't change the way it works!
+
+The program you are given is as follows.
+\begin{verbatim}
+#include<stdio.h>
+main()
+{
+  int *L;  int *p;
+  int s, i,j, ror, rand; 
+
+  scanf("%i",&s);
+  if((L = (int *) malloc(s * s * sizeof(int))) == NULL) return -1;
+  p = L;
+  for(i=0;i<s;i++) 
+    for(j=0;j<s;j++) {
+      scanf("%i",p);
+      if ( (*p < 0) || (*p > 1) ) return -2;
+      p++; }
+  
+  p = L;
+  for(i=0;i<s;i++) {
+      for(j=0;j<s;j++) 
+        printf("%i",*p++);
+      printf("\n"); }
+
+  p = L;
+  for(i=0;i<s;i++) {
+    ror  = 0;  rand = 1;
+    for(j=0;j<s;j++) {
+      ror  = ror  || *p;
+      rand = rand && *p++; }
+    printf("Row %i:  ROR = %i, RAND = %i\n", i, ror, rand); }
+}
+\end{verbatim}
+
+{\bf continued on next page ...}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#2} (Continued ....)
+
+For Problem 2, 
+\begin{enumerate}
+\item First, show the output of the program given the input:
+\begin{verbatim}
+3 0 1 1 1 0 1 1 1 1 
+\end{verbatim}
+\item And Second: re-write the program on this and the following page
+including better style, comments and whatever else you think would
+make the program easier to understand.  Include a comment at the beginning of
+the program(s) which briefly summarizes what the program does.
+
+\end{enumerate}
+
+% ---------------------------------------------------------------------------
+\pagebreak
+{\bf PROBLEM \#2} (Continued ....)
+
+\end{document}
+
+/* Local Variables: */
+/* compile-command: "latex ee150-final1" */
+/* End: */

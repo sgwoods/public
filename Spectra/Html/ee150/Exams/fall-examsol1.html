@@ -1,0 +1,387 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Midterm #1 Solutions</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/Magic.gif" WIDTH=92 HEIGHT=125
+     ALIGN=right HSPACE=10 ALT="">
+
+<H1><A NAME=top>EE150 - Fall 1996</A></H1>
+
+<H2>Midterm #1 (10/2/96)<BR>
+Solutions</H2>
+
+<BR CLEAR=all>
+
+<B>Jump To Solution For Problem</B>:
+ [<A HREF=#prob1>1</A> |
+  <A HREF=#prob2>2</A> |
+  <A HREF=#prob3>3</A> |
+  <A HREF=#prob4>4</A>] <BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob1"><H2>Problem #1</H2></A>
+
+<H4><A NAME="prob1a">Part A</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+Main:
+A 1 ....... 13
+B 3 .......
+C 7 .......
+P call1=10
+
+DoStuff/call1:
+C 1
+A 3 
+B 7
+returns 3 + (7 * 1) = 10
+
+Output:
+yy: 3,7,1
+xx: 10
+xx: 13
+xx: 3
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<P> <TT>dostuff</TT> is passed three values: 1, 3, and 7.  1
+goes into its parameter <TT>c</TT>, 3 goes into its parameter
+<TT>a</TT>, and 7 goes into its parameter <TT>b</TT>.  <TT>dostuff</TT>
+prints these values and computes its return value of 3 + 7 * 1,
+which is 10.  That's returned to the main program, which stores
+it in <TT>p</TT> and then prints <TT>p</TT>, changes the variable <TT>a</tt> to
+equal <TT>b</tt> plus <TT>p</tt> (3 + 10) or 13, and then prints  out 
+<TT>a</tt> and <TT>b </tt> 
+
+<P><A HREF="fall-mid1.html#prob1a">The problem</A>.
+<A HREF="Fall-Mid1/fm1a.c">The code</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+No way 48.00
+Okay 24.0
+Okay 12.0
+O vay 1076363264      <- unknown or print double as integer is fine
+</PRE> </BLOCKQUOTE>
+
+<P> Here's the reason why.
+
+<P> <TT>n</TT> is set to 96.0 (floating point) before the loop.  The loop then tests whether <TT>n</TT> is greater than 13.0, which it is, so we go through
+the loop.  This involves dividing <TT>n</TT> by 2.0, which sets
+it to 48.0.  We then test whether that's less than 35., which it is not,
+so we write the No way and <TT>n's</TT>'value (48.0) in a floating point field of 4 with one decimal point or 48.0.
+
+<P> We now do the test again (which verifies that <TT>n</TT> is
+greater than 13), so we go through the loop again, which divides
+<TT>n</TT> by 2, setting it to 24.0, which is now less than 35,
+so we write Okay and 24.0 in a field of 5 with two decimal points or 24.00. 
+
+<P> We do the test again, which is true again (since <TT>n</TT>
+is 24.0, which is greater than 13), so we divide <TT>n</TT> by 2 which
+gives us 12.0.  Now the <TT>if</TT> will do the <TT>then</TT>
+part, printing Okay and 12.0.  
+
+<P> Once again, we do the loop test, which is now false, and integer <tt>m</tt> is assigned to 12.0 + 1 + 0.51.  This expression is evaluated in floating
+ point as 13.51 and truncated to 13 for assignment to the integer.  The
+ final printf is now executed printing O vay and a double value 13.0
+ as an integer - it would be fine to say you didnt know what would happen.
+
+<P><A HREF="fall-mid1.html#prob1b">The problem</A>.
+<A HREF="Fall-Mid1/fm1b.c">The code</A>.<P>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+b=25.00, c=12, j=7
+b=28.00, j=7
+lp i=12
+lp i=5
+dp i=-2
+</PRE> </BLOCKQUOTE>
+
+<P> Here is the reason why.
+
+<TT></TT>
+<P><TT>b</TT> starts out with an integer cast of 25 following the floating
+point expression evaluating to 25.94.  Since <TT>b</TT> is a floating point
+number, it is given the value 25.0. <TT>c</TT> is assigned the value of 12, and
+<TT>j</TT> the value of 7.  Next the values of <TT>b</TT>, <TT>c</TT> and
+<TT>j</TT> are printed.  A function call to <TT>change</TT> with parameter 7
+results in an assignment to <TT>b</TT>  of 28.0.  once again some values are
+printed.  Finally we encounter the loop which commences with the counter
+<TT>i</TT> set to the value of <TT>c</TT> which is 12.  The printf in the loo
+prints out the value of <TT>i</TT> the first time which is 12.
+
+<P> As we do the loop again, the value of the counter <TT>i</TT> is decremented
+by the value of <TT>j</TT> which is 7, giving 5.  The body
+of the loop now prints <TT>i</TT>'s value (5), and then we again subtract 7
+from <TT>i</TT>, setting it to -2.  
+
+<P> Now when we do the test, it's no longer true that <TT>i</TT>
+is non-negative, so we terminate the loop.  Finally, the value of i is printed
+outside the loop as -2.
+
+<P><A HREF="fall-mid1.html#prob1c">The problem</A>.
+<A HREF="Fall-Mid1/fm1c.c">The code</A>.<P>
+
+<H4><A NAME="prob1d">Part D</A></H4>
+
+<P> The output is:
+<BLOCKQUOTE><PRE>
+0     <- an unknown value wuld be ok since the value is not initialized
+10
+</PRE> </BLOCKQUOTE>
+
+<P> <TT>q</TT>'s value is originally set as the value of <TT>m</TT> but
+<TT>m</TT> has not been set yet - basically <TT>q</TT> is unknown, probably 0.
+<TT>m</TT> is assigned a value of 13 and then assigned again a value of 4.
+Recall that the operator == returns true (1) or false (0), both integers.
+Evaluating the expression (q == m) works out as 0 since <TT>q</TT>  and
+<TT>m</TT> are not equivalent, and thus <TT>m</TT> is assigned 0 + 10 or 10. 
+Finally, <TT>m</TT> is printed.
+
+<P><A HREF="fall-mid1.html#prob1d">The problem</A>.
+<A HREF="Fall-Mid1/fm1d.c">The code</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob2"><H2>Problem #2</H2></A>
+
+<H4><A NAME="prob2a">Part A</A></H4>
+
+<P> The changes are as follows:
+
+<BLOCKQUOTE><PRE>
+/* 
+   Sum the two times each of the even numbers between START and FINISH together
+   with three times each of the odd numbers between START and FINISH
+*/
+
+#include &lt;stdio.h&gt;
+
+#define START  5
+#define FINISH 8
+#define T1 thrice                          /* 1 defined T1 and T2 backwards */
+#define T2 twice
+
+int main()
+{
+  int i;  
+  int sum_even;  
+  int sum_odd;
+  int total;                               /* 2 forgot to define total */
+
+  int even(int x);
+  int twice(int x);                       
+  int thrice(int x);                       /* 3 forgot thrice prototype */
+
+  sum_even = 0;   sum_odd = 0;             /* 4 forgot to initialize sums */
+
+  for (i = START; i <= FINISH; i = i + 1)
+    {
+      if (even(i))
+          sum_even = sum_even + T2(i);
+      else
+          sum_odd  = sum_odd  + T1(i);
+    }
+  total = sum_even + sum_odd;
+  printf("%i\n", total);
+
+  return 0;
+}
+
+int even(int x)
+{
+  double ck;
+  ck =  (double) (x / 2.0) - (int) (x / 2);
+  if (ck > 0.0) 
+    return 0;
+  else return 1;
+} 
+
+int twice ( int x )
+{ 
+  return 2 * x; 
+}
+
+int thrice ( int x )
+{ 
+  int twice(int x);
+  return twice(x) + x;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-mid1.html#prob2a">The problem</A>.
+<A HREF="Fall-Mid1/fm2a.c">The code</A>.<P>
+
+<H4><A NAME="prob2b">Part B</A></H4>
+
+<P> The changes are as follows:
+
+<PRE><BLOCKQUOTE>
+/* Print powers of 2 forwards from 0 through FINISH followed by
+   the total.  That is, for FINISH = 7,  output should be: 
+   1 2 4 8 16 32 64 128 = 255 */ 
+
+#include &lt;stdio.h&gt;
+
+#define FINISH 7
+
+main()
+{
+  int count;                             /* 1 all variables should be ints */
+  int p;
+  int total;
+
+  total = 0;                             
+  count = 0;
+
+  p = 1;
+  while (count &lt;= FINISH)           /* 2 actually we should check count */
+  {                                    /* 3 also &lt;&lt;= should be &lt;= */
+    printf("%i ", p);
+    total = total + p;
+    p = p * 2;                         /* 4 powers means mult by 2 not add */
+    count = count + 1;
+  }
+
+  printf(" = %i\n", total);           /* 5 print out the total not count */
+  return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-mid1.html#prob2b">The problem</A>.
+<A HREF="Fall-Mid1/fm2b.c">The code</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob3"><H2>Problem #3</H2></A>
+
+<P> One possible solution is:
+
+<BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+
+main()
+{
+  int count_a;
+  int count_all;
+  int percent_a;
+  double score;
+  int classify_got_A( double grade );    /* prototype */
+
+  count_a = count_all = 0;
+  while (scanf("%lf", &score) == 1)      /* input fl pt grade */
+  {
+    count_all = count_all + 1;
+    if ( classify_got_A(score) )         /* function call */
+      count_a = count_a + 1;
+  }
+  percent_a = (count_a * 100) / count_all; 
+  printf("%i%% of the students (%i out of %i) got A's", 
+         percent_a, count_a, count_all);
+
+  return 0;
+}
+
+/*
+  This function returns 0 if the grade is less than 90, 1 if greater than 90
+*/
+int classify_got_A( double grade )          /* function definition */
+{
+   if (grade &gt;= 90)
+     return 1;
+   else return 0;
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-mid1.html#prob3">The problem</A>.
+<A HREF="Fall-Mid1/fm3.c">The code</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<A NAME="prob4"><H2>Problem #4</H2></A>
+
+<P> The first part of Problem 4 should have been straightforward - simply
+use the function given to do the hard math stuff.  You should have put your
+input reading loop into a function since that is what the question asked
+for.
+
+<P> The second part of Problem 4 was a pretty tough question.  Look up the
+recursive functions section of the Joy of C text.  Does factorial look a lot
+like Fbig?  It is quite possible to write Fbig using a loop (while or for)
+rather than by calling itself. 
+
+<BLOCKQUOTE><PRE>
+#include &lt;stdio.h&gt;
+
+#include <stdio.h>
+
+main()     /* you didn't really need a main program, just the function 
+               inputValues for the first part, and just Fbig for the
+               second part */
+{
+  void inputValues();     /* prototype */
+  
+  inputValues();          /* function call */
+
+  return 0;               /* return something */
+}
+
+void inputValues()        /* function definition */
+{
+  int result; int i; int val;
+  int Fbig(int);
+
+  while (scanf("%i", &val) == 1)
+  {
+    result = Fbig(val);
+    printf("Fbig of %i is %i.\n", val, result);
+  }  
+}
+
+/* straightforward but longer solution */
+int Fbig(int i)              /* function definition */
+{ 
+  int j;
+  int sofar;
+
+  sofar = 1; 
+  for (j = i; j > 1; j = j - 1)    /* iterate from i, i-1, ... down to 1 
+  {
+    sofar = sofar * j;             /* keep a multiplying total
+  }
+ return sofar; 
+}
+
+/* ALTERNATE: simple to write but tricky to figure out solution */
+int Fbig(int i)              /* function definition */
+{
+  if (i <= 1)
+    return 1;
+  else return i * Fbig(i - 1); 
+}
+
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="fall-mid1.html#prob4">The problem</A>.
+<A HREF="Fall-Mid1/fm4.c">The code</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">E150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>
+

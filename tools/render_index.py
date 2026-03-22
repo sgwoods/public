@@ -30,6 +30,13 @@ PROJECT_DESCRIPTIONS = {
     "phd-renovation": "Public project page for the restored PhD program-understanding codebase.",
     "mmath-renovation": "Public project page for reviving the AbTweak thesis code and documentation.",
 }
+LEGACY_SPECTRA = {
+    "title": "Old Research Archive Recovery",
+    "description": "Recovered entry point for the historical Spectra research site, including preserved publication, course, bibliography, reserve, and raw research-artifact archives.",
+    "page_path": "Spectra/Html/index-spectra.html",
+    "last_updated": "March 22, 2026",
+    "last_addition": "Research Artifacts Archive",
+}
 
 
 @dataclass
@@ -114,6 +121,20 @@ def render_project_card(project: ProjectStatus) -> str:
                     </div>
                     <div class="links">
                         {" ".join(buttons)}
+                    </div>
+                </article>"""
+
+
+def render_legacy_card() -> str:
+    return f"""                <article class="card">
+                    <h3>{html.escape(LEGACY_SPECTRA["title"])}</h3>
+                    <p>{html.escape(LEGACY_SPECTRA["description"])}</p>
+                    <div class="detailList">
+                        <div><strong>Last update</strong> {html.escape(LEGACY_SPECTRA["last_updated"])}</div>
+                        <div><strong>Last addition</strong> {html.escape(LEGACY_SPECTRA["last_addition"])}</div>
+                    </div>
+                    <div class="links">
+                        {render_button(LEGACY_SPECTRA["page_path"], "Open archive")}
                     </div>
                 </article>"""
 
@@ -389,6 +410,13 @@ def render() -> str:
 {project_cards}
             </div>
             <p class="footer">This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
+        </section>
+
+        <section class="panel">
+            <h2>Recovered Legacy Archives</h2>
+            <div class="grid">
+{render_legacy_card()}
+            </div>
         </section>
     </main>
 </body>

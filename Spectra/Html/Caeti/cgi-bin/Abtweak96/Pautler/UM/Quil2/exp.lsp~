@@ -1,0 +1,55 @@
+
+;; RM
+(def-fact
+  '(_has-influence_ Result
+		    (rm_from_ ?file ?dir)
+		    (file_removed-from_ ?file ?dir) ))
+(def-fact
+  '(_has-desirability_for_
+    (_in-role_ (file_removed-from_ ?file ?dir) Result)
+    8 Advisor) ) ;should be -8 normally
+(def-fact
+  '(_has-influence_ Enable ((_has-dir-write-permission User)
+			    (_types-about_chars-for_ User 8 (rm_from_ ?file ?dir)) )
+		    (rm_from_ ?file ?dir) ))
+(def-fact '(_has-dir-write-permission User))
+(def-fact
+  '(_has-desirability_for_
+    (_in-role_ (_types-about_chars-for_ ?person ?N ?action) Enable)
+    (/ (- ?N) 5)
+    ?person )) ;can't be 'Advisor' due to other mention
+
+;; RM -I
+(def-fact
+  '(_has-influence_ Result (rm-i_from_ ?file ?dir) ((file_removed-from_ ?file ?dir) . (user-queried-before_ (file_removed-from_ ?file ?dir)))) )
+(def-fact ;should be derived from desire to avoid accidental removal
+  '(_has-desirability_for_ (_in-role_ (user-queried-before_ (file_removed-from_ ?file ?dir)) Result) 5 Advisor) )
+(def-fact
+  '(_has-influence_ Enable ((_has-dir-write-permission User)
+			    (_types-about_chars-for_ User 11 (rm-i_from_ ?file ?dir)) )
+		    (rm-i_from_ ?file ?dir) ))
+
+;; MV TO /TMP
+(def-fact
+  '(_has-influence_ Result (mv_from_to-dir_ ?file ?dir Slash-tmp) ((file_removed-from_ ?file ?dir) . file-in-tmp)) )
+(def-fact ;should be derived from desire to avoid accidental removal
+  '(_has-desirability_for_ (_in-role_ file-in-tmp Result) 0 Advisor) )
+(def-fact
+  '(_has-influence_ Enable ((_has-dir-write-permission User)
+			    (_types-about_chars-for_ User 12 (mv_from_to-dir_ ?file ?dir Slash-tmp)) )
+		    (mv_from_to-dir_ ?file ?dir Slash-tmp) ))
+
+;; MV TO FLOPPY
+(def-fact
+  '(_has-influence_ Result (mv_from_to-dir_ ?file ?dir (root-of (floppy-for ?file))) ((file_removed-from_ ?file ?dir) . file-on-floppy)) )
+(def-fact ;should be derived from desire to avoid accidental removal
+  '(_has-desirability_for_ (_in-role_ file-on-floppy Result) 0 Advisor) )
+(def-fact
+  '(_has-influence_ Enable ((_has_in-hand User Unassigned-floppy)
+			    (_types-about_chars-for_ User 14 (mv_from_to-dir_ ?file ?dir (root-of (floppy-for ?file)))) )
+		    (mv_from_to-dir_ ?file ?dir (root-of (floppy-for ?file))) ))
+(def-fact
+  '(_has-desirability_for_ (_in-role_ (_has_in-hand ?person Unassigned-floppy)
+				      Enable )
+			   -5
+			   ?person ))

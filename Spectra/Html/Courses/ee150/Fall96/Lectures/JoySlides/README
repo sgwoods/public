@@ -1,0 +1,27 @@
+
+This directory contains the Postscript source files for the
+transparency masters for the Joy of C.  There is one Postscript
+file for each of the 22 chapters in the text.  These files are
+organized in the obvious way: chap01.ps contains the masters
+for Chapter 1, chap02.ps contains the masters for Chapter 2,
+and so on.
+
+Each file is between 20-40 pages, depending on the length of
+the chapter.  
+
+We are always interested in new programming examples and figures that
+instructors find useful for their classes.  If you create anything
+for your class that you think would be generally useful, please 
+send mail describing them to alex@wiliki.eng.hawaii.edu.  If
+they're done in LaTeX, we'll be glad to do the work of tuning them
+to our slide format and making them generally available in future
+releases of these transparency masters.  
+
+
+
+PUBLISHER-REQUIRED NASTY COPYRIGHT NOTICE:
+
+These transparency masters are copyrighted by John Wiley & Sons,
+1993.  They are made available to instructors for the express
+purpose of aiding their teaching of any course that uses the
+Joy of C as a class textbook.   

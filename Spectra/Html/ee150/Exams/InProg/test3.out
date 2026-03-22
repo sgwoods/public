@@ -1,0 +1,24 @@
+Found loc_min = 5 at f7fff58c
+Found loc_max = 5 at f7fff588
+Found loc_min = 2 at f7fff58c
+Found loc_min = 1 at f7fff58c
+Found loc_max = 9 at f7fff588
+Found loc_max = 10 at f7fff588
+Found loc_max = 55 at f7fff588
+Found loc_min = -19 at f7fff58c
+Debug: loc_min is -19 at f7fff58c
+Debug: loc_max is 55 at f7fff588
+Debug: count is 12
+Debug: run_total is 91
+Debug: loc_avg is  7.00
+
+Loop2a Debug: best diff  2.00 found for *ptr = 5 at f7fff590
+              best diff  2.00 found best_val = 5 at f7fff584
+Loop2a Debug: best diff  0.00 found for *ptr = 7 at f7fff5a8
+              best diff  0.00 found best_val = 7 at f7fff584
+Loop2 Done: best diff is  0.00 for value 7 at f7fff584
+
+Array Average =  7.00
+Array Minimum = -19 at f7fff5bc
+Array Maximum = 55 at f7fff5b8
+Array Median  = 7 at f7fff5a8

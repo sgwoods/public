@@ -1,0 +1,12 @@
+
+
+
+(set x v) = 
+
+ T iff component x produces variable v  ie  v = 5
+ F otherwise
+
+(get x v) = 
+
+ T iff component x uses variable v   ie  a = v + 3
+ F otherwise 

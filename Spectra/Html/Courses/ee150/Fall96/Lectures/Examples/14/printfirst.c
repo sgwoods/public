@@ -1,0 +1,27 @@
+/*
+ * Print just the first name.
+ */
+#include <stdio.h>
+
+#define MAXLINE 80
+
+main()
+{
+  int getline(char s[], int m);
+
+  char name[MAXLINE + 1];
+  while (getline(name, MAXLINE) != -1)
+  {
+    int blank = findCharacter(name, ' ');
+
+    if (blank == -1)
+      printf("No blank in name.\n");
+    else
+    {
+      name[blank] = '\0';
+      printf("%s\n", name);
+      name[blank] = ' ';     /* put blank back, just to be nice */
+    }
+  }
+  return 0;
+}

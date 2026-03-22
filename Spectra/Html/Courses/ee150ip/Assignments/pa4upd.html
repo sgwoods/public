@@ -1,0 +1,61 @@
+
+<HEAD>
+<TITLE>EE150, Spring 1996 - Programming Assignment #4 Updates</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/ComputerBug.gif" WIDTH=183 HEIGHT=85 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1>EE150 - Spring 1996</H1>
+<H2>Programming Assignment #4 <BR>
+Updates</H2>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> The original output showing the various errors to be detected
+by the base arithmetic program had one mistake where the error message
+was on the same line as the problematic input (which made things
+totally confusing).  That part looked originally like this:
+<BLOCKQUOTE>
+<EM>+</EM> 
+<TT>First operand is missing.</TT> <BR>
+</BLOCKQUOTE>
+That was incorrect.  It should instead look like this:
+<BLOCKQUOTE>
+<EM>+</EM>  <BR>
+<TT>First operand is missing.</TT> <BR>
+</BLOCKQUOTE>
+The handout now contains 
+<A HREF="http:pa4.html#part2errout>
+the corrected output</A>.
+
+<P> The original handout mistakenly asked you to create a program called
+<B>prime.c</B> but then showed a <TT>grade</TT> command
+turning in a program named <B>prime1.c</B>.   
+You should create <B>prime1.c</B>, not <B>prime.c</B>.
+
+<P> In addition, the original <TT>grade</TT> command example had
+the wrong file names (they were left over from the previous assignment).
+The correct <TT>grade</TT> command for turning in this assignment
+should be:
+
+<BLOCKQUOTE>
+<TT> grade -4,ee150 base1.c base2.c prime1.c prime2.c </TT>
+</BLOCKQUOTE>
+
+<P> The original output for the prime number program has a mistake.  At
+one point the user enters a "y" in response to the question "Do you
+want the primes in ascending order?".  But the output shown corresponds
+to a "n" answer.  Here's the fixed version of that part of the example I/O.
+
+<BLOCKQUOTE>
+<TT> Enter range: </TT> <EM>30 40</EM><BR>
+<TT> Do you want me to print them in ascending order? </TT> <EM>n</EM><BR>
+<TT> 37 </TT><BR>
+<TT> 31 </TT><BR>
+</BLOCKQUOTE>
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

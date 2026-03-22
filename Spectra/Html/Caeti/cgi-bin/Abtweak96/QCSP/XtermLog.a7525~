@@ -1,0 +1,222 @@
+:cf QCSP/utility.lisp
+; --- Compiling file /users2/other/sgwoods/Html/Caeti/cgi-bin/Abtweak96/QCSP/utility.lisp ---
+; Compiling CU
+;  Note: tail merging call to LOAD
+; Compiling SET-GLOBALS
+Warning: Symbol *ERROR* declared special
+Warning: Symbol *REPAIR-KEY* declared special
+Warning: Symbol *INPUT-FILE* declared special
+Warning: Symbol *RAW-VARIABLES* declared special
+Warning: Symbol *VARIABLES* declared special
+Warning: Symbol *VAR-ORDER* declared special
+Warning: Symbol *VAR-ORDER-NOTE* declared special
+Warning: Symbol *NUMBER-OF-UNITS* declared special
+Warning: Symbol *DOMAIN-NAME* declared special
+Warning: Symbol *BACKTRACK* declared special
+Warning: Symbol *SEARCH-MODE* declared special
+Warning: Symbol *GSAT* declared special
+Warning: Symbol *QUILICI* declared special
+Warning: Symbol *NODE-CONSIS* declared special
+Warning: Symbol *NODE-TYPE-CONSIS* declared special
+Warning: Symbol 3B declared special
+Warning: Symbol *NODE-FORCE-ALL* declared special
+Warning: Symbol *ARC-CONSIS* declared special
+Warning: Symbol *SORT-CONST* declared special
+Warning: Symbol *ADV-SORT-CONST* declared special
+Warning: Symbol 8B declared special
+Warning: Symbol *ONE-SOLUTION-ONLY* declared special
+Warning: Symbol *DEBUG-Q* declared special
+Warning: Symbol *DEBUG-NODE* declared special
+Warning: Symbol 13B declared special
+Warning: Symbol *FILE-OUTPUT* declared special
+Warning: Symbol *WHOLE-FILE-NAME* declared special
+Warning: Symbol *UNIX* declared special
+Warning: Symbol *NODE-CONSIS-DECISION* declared special
+Warning: Symbol *CONSTRAINT-FAIL* declared special
+Warning: Symbol *ARC-CONSTRAINT-FAIL* declared special
+Warning: Symbol *NODE-CONSISTENCY-CHECKS* declared special
+Warning: Symbol *NODE-CONSISTENCY-CKS-OK* declared special
+Warning: Symbol *NODE-TYPE-CONSISTENCY-CHECKS* declared special
+Warning: Symbol *NODE-TYPE-CONSISTENCY-CK-OK* declared special
+Warning: Symbol *NODE-TYPE-CONSISTENCY-CK-FAIL* declared special
+Warning: Symbol *DYN-REARR-CALLS* declared special
+Warning: Symbol *SOLUTION-SET* declared special
+; Compiling EXPLAIN
+;  Note: tail merging call to SHOW-CONS-FAIL
+; Compiling RECORD-FAIL
+Warning: Symbol *CONSTRAINT-FAIL* declared special
+; Compiling SHOW-CONS-FAIL
+Warning: Symbol *ARC-CONSTRAINT-FAIL* declared special
+Warning: Symbol *CONSTRAINT-FAIL* declared special
+; Compiling RECORD-NODE-FAIL
+Warning: Symbol *NODE-CONSIS-DECISION* declared special
+; Compiling EXPLAIN-NODE-FAIL
+Warning: Symbol *NODE-CONSIS-DECISION* declared special
+; Compiling ABORT-FAIL
+;  Note: tail merging call to FORMAT
+; Compiling SHOW-NODE-FAIL
+Warning: Symbol *NODE-CONSIS-DECISION* declared special
+; Compiling VAR-SET-CHARACTERIZE
+Warning: Symbol *SINGLE-LINE-OVERRIDE* declared special
+; Compiling GET-VAR-LENGTHS
+; Compiling MAX-VAR-DOMAIN-SIZE
+; Compiling MIN-VAR-DOMAIN-SIZE
+; Compiling AVG-VAR-DOMAIN-SIZE
+;  Note: tail merging call to EXCL::/_2OP
+; Compiling L
+;  Note: tail merging call to LOAD
+; Compiling C
+;  Note: tail merging call to COMPILE-ALL
+; Compiling LM
+;  Note: tail merging call to LOAD
+; Compiling LA
+;  Note: tail merging call to LOAD
+; Compiling LYJA
+;  Note: tail merging call to LOAD
+; Compiling LQUEENS
+;  Note: tail merging call to LOAD
+; Compiling LMPR
+;  Note: tail merging call to LOAD
+; Compiling LTCSP
+;  Note: tail merging call to LOAD
+; Compiling CREATE-NODE-ID
+Warning: Symbol *LAST-NODE* declared special
+; Compiling RESET-NODE-ID
+Warning: Symbol *LAST-NODE* declared special
+; Compiling SHOW-OPTIONS
+Warning: Symbol *SINGLE-LINE-OVERRIDE* declared special
+Warning: Symbol *DOMAIN-NAME* declared special
+Warning: Symbol *DOMAIN-LOADED* declared special
+Warning: Symbol *SIT-OBJECT-ID* declared special
+Warning: Symbol *SITUATION-NOISE-ADDED* declared special
+Warning: Symbol *TEMPLATE-ID* declared special
+Warning: Symbol *RANDOM-DIST-NAME* declared special
+Warning: Symbol *SEARCH-MODE* declared special
+Warning: Symbol *NODE-CONSIS* declared special
+Warning: Symbol *NODE-TYPE-CONSIS* declared special
+Warning: Symbol *NODE-FORCE-ALL* declared special
+Warning: Symbol *ARC-CONSIS* declared special
+Warning: Symbol *SORT-CONST* declared special
+Warning: Symbol *ADV-SORT-CONST* declared special
+Warning: Symbol *ONE-SOLUTION-ONLY* declared special
+Warning: Symbol *RANDOM-IDENT* declared special
+Warning: Symbol *CONSTRAINT-SCH-ON* declared special
+Warning: Symbol *REPAIR-KEY* declared special
+Warning: Symbol *INPUT-FILE* declared special
+Warning: Symbol *WHOLE-FILE-NAME* declared special
+;  Note: tail merging call to FORMAT
+; Compiling RL
+;  Note: tail merging call to LOAD
+; Compiling DOC
+;  Note: tail merging call to DOCUMENTATION
+; Compiling SHOW-BT-STATE
+; Compiling SHOW-STATE
+Warning: Symbol PAR-OUT declared special
+;  Note: tail merging call to FORMAT
+; Compiling COMMENT
+;  Note: tail merging call to FORMAT
+; Compiling COMMENT1
+;  Note: tail merging call to FORMAT
+; Compiling COMMENT1S
+;  Note: tail merging call to FORMAT
+; Compiling COMMENT2
+;  Note: tail merging call to FORMAT
+; Compiling COMMENT3
+; Compiling COMMENT4
+; Compiling COMMENT5
+; Compiling COMMENT6
+; Compiling SHOW-DIST
+Warning: Symbol *RANDOM-DIST* declared special
+; Compiling WRITE-SINGLE-HEADER
+; Compiling SHOW-SOLUTION
+Warning: Symbol *SOLUTION-SET* declared special
+Warning: Symbol *SINGLE-LINE-OVERRIDE* declared special
+Warning: Symbol *RECALL-AVG-VAR-LEN* declared special
+Warning: Symbol *VARIABLES* declared special
+Warning: Symbol *RECALL-ADV-PROC-TIME* declared special
+Warning: Symbol *RECALL-SEARCH-TIME* declared special
+Warning: Symbol *RECALL-TOTAL-TIME* declared special
+Warning: Symbol *RECALL-ADV-SORT-TIME* declared special
+Warning: Symbol *SUPPRESS-SINGLE-LINE* declared special
+Warning: Symbol *LONG-OUTPUT* declared special
+Warning: Symbol *SEARCH-MODE* declared special
+Warning: Symbol *NODE-CONSIS* declared special
+Warning: Symbol *ARC-CONSIS* declared special
+Warning: Symbol *RANDOM-IDENT* declared special
+Warning: Symbol *NODE-CONSISTENCY-CHECKS* declared special
+Warning: Symbol *SORT-CONST* declared special
+Warning: Symbol *ADV-SORT-CONST* declared special
+Warning: Symbol *REPAIR-KEY* declared special
+Warning: Symbol *NODE-TYPE-CONSIS* declared special
+Warning: Symbol *NODE-TYPE-CONSISTENCY-CHECKS* declared special
+Warning: Symbol *FILE-OUTPUT* declared special
+;  Note: tail merging call to FORMAT
+;  Note: tail merging call to SHOW-SOLUTION1
+; Compiling SHOW-SOLUTION1
+Warning: Symbol *FILE-OUTPUT* declared special
+Warning: Symbol *LONG-OUTPUT* declared special
+Warning: Symbol *SOLUTION-SET* declared special
+Warning: Symbol *SEARCH-MODE* declared special
+Warning: Symbol *NODE-CONSIS* declared special
+Warning: Symbol *NODE-CONSISTENCY-CHECKS* declared special
+Warning: Symbol *NODE-TYPE-CONSISTENCY-CHECKS* declared special
+Warning: Symbol *NODE-TYPE-CONSISTENCY-CK-OK* declared special
+Warning: Symbol *NODE-TYPE-CONSISTENCY-CK-FAIL* declared special
+Warning: Symbol *DOMAIN-LOADED* declared special
+Warning: Symbol *SCH-SAVE* declared special
+;  Note: tail merging call to FORMAT
+; Compiling SHOW-BACKMARK
+; Compiling SHOW-BM-BT-STATE
+;  Note: tail merging call to FORMAT
+; Compiling SHOW-BM-VISIT-STATE
+;  Note: tail merging call to FORMAT
+; Compiling NUM-TO-STRING
+;  Note: tail merging call to NUM-TO-LETTER
+;  Note: tail merging call to EXCL::CONCAT-TO-SIMPLE-STRING
+; Compiling NUM-TO-LETTER
+; Compiling SELECT-TYPE
+;  Note: tail merging call to EXCL::APPEND_2OP
+;  Note: doing tail merge
+; Compiling SELECT-ALL-TYPE
+;  Note: tail merging call to EXCL::APPEND_2OP
+;  Note: tail merging call to SELECT-ALL-TYPE
+; Compiling SELECT-ALL-LOC
+;  Note: tail merging call to EXCL::APPEND_2OP
+;  Note: tail merging call to SELECT-ALL-LOC
+; Compiling LIST-ELEMENT-POS
+; Compiling CONSTRAINT-EXISTS-P
+; Compiling IN-RANGE
+; Compiling MEMBER-COUNT
+;  Note: tail merging call to MEMBER-COUNT-FN
+; Compiling MEMBER-COUNT-FN
+;  Note: doing tail merge
+; Compiling GEN-NUMS-TO
+; Compiling REMOVE-NUMS
+; Compiling   (:INTERNAL REMOVE-NUMS 0)
+; While compiling REMOVE-NUMS:
+;  Note: tail merging call to REMOVE-IF
+; Compiling GET-ORIG-NUMS
+; Compiling GET-ORIG-NUMS2
+; Compiling REMOVE-DEST-NUM
+; Compiling   (:INTERNAL REMOVE-DEST-NUM 0)
+; Compiling GET-LINE-NUMBER
+; Compiling GET-SPECIFIC-LINE
+;  Note: doing tail merge
+; Compiling GET-MAX
+;  Note: doing tail merge
+;  Note: doing tail merge
+; Compiling REMOVE-VAR
+; Compiling   (:INTERNAL REMOVE-VAR 0)
+; While compiling REMOVE-VAR:
+;  Note: tail merging call to REMOVE-IF
+; Writing fasl file "/users2/other/sgwoods/Html/Caeti/cgi-bin/Abtweak96/QCSP/utility.fasl"
+Warning: No IN-PACKAGE form seen in
+         /users2/other/sgwoods/Html/Caeti/cgi-bin/Abtweak96/QCSP/utility.lisp.
+         (Allegro Presto will be ineffective when loading a file having no
+         IN-PACKAGE form.)
+; Fasl write complete
+Warning: While compiling in #<The COMMON-LISP-USER package>, the following
+         undefined functions were referenced:
+         (COMPILE-ALL GET-TEMPL-CONSTRAINTS RELOAD-VALUES GET-AVG-VAR-LEN
+          GET_U RANDOM-POSITION)
+USER(18): 

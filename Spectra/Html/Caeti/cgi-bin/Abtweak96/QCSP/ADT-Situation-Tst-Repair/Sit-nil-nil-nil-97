@@ -1,0 +1,12 @@
+;; "97"
+
+(
+(ADTQ1-C (57 300) (WHILE RESULT))
+(|sit-gen1889| (58 304) (FOR |var-name1894| 7 6))
+    (|begin-sid1892| (59 305) (BEGIN |block1891|))
+    	(ADTQ1-D (60 310) (BEGIN BLOCK1))
+	(|sit-gen1844| (61 313) (ASSIGN FIRSTARRAYC FIRSTINT |var-name1836|))
+      	(FIX (0 0) (END BLOCK1))
+    (|sit-gen1956| (102 579) (PRINT |var-name1946|))
+    (FIX (0 0) (END |block1891|))
+)

@@ -1,0 +1,325 @@
+;; infer.lsp
+;; An inference engine - written by David Pautler 8/97
+;; Some code is based on unifier code in AIP by Charniak et al.
+
+
+;; load infer-utils.lsp first
+
+
+;; Rules should use this syntax:
+;;    ((A and (B and (C and D))) -> (E and (F and G)))
+
+(defvar *fc-rule-base-alist* nil) ;a FIFO list - rule ordering can be important
+(defvar *bc-rule-base-alist* nil) ;a FIFO list
+(defvar *background-facts-alist* nil) ;a FIFO list
+
+(defvar *halt-predicate* 'halt) ;inferring a propo w/this pred stops inference
+
+(defvar *open-list* nil) ;propos that will be used as triggers for inference
+(defvar *completions-list* nil) ;propos that have already been used for inf.
+
+(defun reset-dbs ()
+  (setq *fc-rule-base-alist* nil
+	*bc-rule-base-alist* nil
+	*background-facts-alist* nil )
+  'dbs-reset )
+
+(defun def-rule (tag propo)
+  (declare (symbol tag) (list propo))
+
+  (case (second propo)
+	(->
+	 (push-end (cons tag (standardize-vars propo))
+		   *fc-rule-base-alist* ))
+	(<-
+	 (push-end (cons tag (standardize-vars propo))
+		   *bc-rule-base-alist* ))
+	(IMPLY ;the rule is written in FC form, but it can also be used for BC
+	 (let ((rule (standardize-vars propo)))
+	   (push-end (cons tag (list (first rule) '-> (third rule)))
+		     *fc-rule-base-alist* )
+	   (push-end (cons tag (list (third rule) '<- (first rule)))
+		     *bc-rule-base-alist* )))
+	(t
+	 (push-end (cons tag (standardize-vars propo))
+		   *background-facts-alist* ))))
+
+
+;;;;;;;;;;;;;;;;;;;; INFERENCE
+
+(defun INFER-FROM (input-propo                                 ;command-line fn
+		   &key (search-mode 'BFS) (negation-by-failure? t)
+		   (verbose? nil) )
+  (declare (list input-propo) (symbol search-mode)
+	   (atom negation-by-failure? verbose?) )
+
+  (setq input-propo (standardize-vars input-propo))
+  (if (eq 'AND (second input-propo))
+      (progn (infer-1 (first input-propo) search-mode negation-by-failure?
+		      verbose? )
+	     (infer-1 (third input-propo) search-mode negation-by-failure?
+		      verbose? ))
+    (infer-1 input-propo search-mode negation-by-failure? verbose?) ))
+
+(defun infer-1 (input-propo search-mode negation-by-failure? verbose?)
+  (declare (list input-propo) (symbol search-mode)
+	   (atom negation-by-failure? verbose?) )
+
+  (enact-propo input-propo nil)
+  (let ((halt-predicate-seen? nil)
+	trigger-propo )
+    (setq *open-list* (list input-propo))
+    (do ()
+	((or (endp *open-list*)
+	     halt-predicate-seen? )
+	 (if verbose?
+	     (display-conclusions input-propo)
+	   'done ))
+	(setq trigger-propo (pop *open-list*))
+	(mapc
+	 #'(lambda (tag-rule-pair ;tag of pair not used here
+		    &aux (rule (cdr tag-rule-pair))
+		    rule-conseqs )
+	     (multiple-value-bind
+	      (match? codes-pairs1 noncodes-alist1 unproven-antes)
+
+	      (match-trigger-to-rule trigger-propo
+				     (first rule) ;antes
+				     nil   ;codes-pairs
+				     nil ) ;noncodes-alist
+	      (when (and match?
+			 (progn
+			   (multiple-value-setq
+			    (match? codes-pairs1 noncodes-alist1)
+
+			    (prove-1 (form-conjunct unproven-antes)
+				     codes-pairs1
+				     noncodes-alist1
+				     negation-by-failure? ))
+			   match? ))
+		    (setq rule-conseqs
+			  (instantiate (third rule) codes-pairs1)
+			  halt-predicate-seen?
+			  (add-conseqs-to-open-list
+			   rule-conseqs ;nonlocal updating
+			   search-mode
+			   codes-pairs1 ))
+		    ))) ;lambda
+	 *fc-rule-base-alist* )
+	(push-end trigger-propo *completions-list*) )))
+
+(defun form-conjunct (propos &key (len (length propos)))
+  (case len
+	(0 nil)
+	(1 (first propos))
+	(2 (list (first propos) 'AND (second propos)))
+	(t (list (first propos)
+		 'AND
+		 (form-conjunct (rest propos) :len (1- len)) ))))
+
+(defun enact-propo (propo codes-pairs &aux pred-fn)
+  (declare (list propo codes-pairs) (function pred-fn))
+
+  (when (setq pred-fn (get-pred-fn (first propo) 'ACTION))
+	(apply pred-fn (append (rest propo) (list codes-pairs))) ))
+
+(defun match-trigger-to-rule (trigger-propo rule-antes
+					    codes-pairs noncodes-alist)
+  (declare (list trigger-propo rule-antes codes-pairs noncodes-alist))
+
+  (if (eq 'AND (second rule-antes))
+      (multiple-value-bind                            ;v no UAs if head matches
+       (head-ante-match? codes-pairs1 noncodes-alist1 unproven-antes)
+
+       (match-trigger-to-rule trigger-propo (first rule-antes)
+			      codes-pairs noncodes-alist )
+       (if head-ante-match?
+	   (values t codes-pairs1 noncodes-alist1 (cddr rule-antes))
+	 (multiple-value-bind
+	  (tail-antes-match? codes-pairs1 noncodes-alist1 unproven-antes)
+
+	  (match-trigger-to-rule trigger-propo (third rule-antes)
+				 codes-pairs noncodes-alist )
+	  (if tail-antes-match?
+	      (values t codes-pairs1 noncodes-alist1
+		      (cons (first rule-antes) unproven-antes) )
+	    (values nil codes-pairs noncodes-alist nil) )))) ;then clause
+    (multiple-value-bind                                     ;else clause
+     (unify? codes-pairs1)
+
+     (unify trigger-propo
+	    rule-antes ;perhaps it's not a conjunction of antes
+	    codes-pairs
+	    noncodes-alist )
+     (if unify?
+	 (values t codes-pairs1 noncodes-alist nil)
+       (values nil codes-pairs noncodes-alist nil) ))))
+
+
+(defun PROVE (assertion &key (negation-by-failure? t))         ;command-line fn
+  (prove-1 (standardize-vars assertion) nil nil negation-by-failure?) )
+
+(defun prove-1 (rule-antes codes-pairs noncodes-alist negation-by-failure?)
+  (declare (list rule-antes codes-pairs noncodes-alist)
+	   (atom negation-by-failure?) )
+
+  (if (eq 'AND (second rule-antes))
+      (do ((untried-completions *completions-list*       untried-completions)
+	   (untried-facts       *background-facts-alist* untried-facts)
+	   (untried-rules       *bc-rule-base-alist*     untried-rules)
+	   (satisfied1? nil satisfied1?)
+	   (satisfied2? nil satisfied2?)
+	   (codes-pairs1 nil codes-pairs1)
+	   (noncodes-alist1 nil noncodes-alist1) )
+	  ((or satisfied2?
+	       (not (or untried-completions
+			untried-facts
+			untried-rules )))
+	   (values satisfied2? codes-pairs1 noncodes-alist1) )
+	  (multiple-value-setq
+	   (satisfied1? codes-pairs1 noncodes-alist1
+			untried-completions untried-facts untried-rules)
+
+	   (backchain (first rule-antes)
+		      untried-completions untried-facts untried-rules
+		      codes-pairs noncodes-alist negation-by-failure? ))
+	  (multiple-value-setq
+	   (satisfied2? codes-pairs1 noncodes-alist1)
+
+	   (and satisfied1?
+		(prove-1 (third rule-antes) codes-pairs1 noncodes-alist1
+			 negation-by-failure? ))))
+    (multiple-value-bind
+     (satisfied? codes-pairs1 noncodes-alist1) ;ignore untried's returned
+
+     (backchain rule-antes
+		*completions-list* *background-facts-alist*
+		*bc-rule-base-alist*
+		codes-pairs noncodes-alist negation-by-failure? )
+     (if satisfied?
+	 (values t codes-pairs1 noncodes-alist1)
+       (and negation-by-failure?
+	    (eq 'NOT (first rule-antes))
+	    (values (null (prove-1 (second rule-antes)
+				   codes-pairs
+				   noncodes-alist
+				   negation-by-failure? ))
+		    codes-pairs          ;return original binds for NBF success
+		    noncodes-alist ))))))
+
+(defun backchain (unproven-ante untried-completions untried-facts untried-rules
+				codes-pairs noncodes-alist negation-by-failure?
+				&aux pred-fn satisfied? codes-pairs1
+				noncodes-alist1 unused-conseqs unproven-antes
+				codes-pairs2 noncodes-alist2 )
+  (declare (function pred-fn) (atom negation-by-failure? satisfied?)
+	   (list unproven-ante untried-completions untried-facts untried-rules
+		 codes-pairs noncodes-alist codes-pairs1 noncodes-alist1
+		 codes-pairs2 noncodes-alist2 unused-conseqs unproven-antes ))
+
+  (cond ((setq pred-fn (get-pred-fn (first unproven-ante) 'EVAL))
+	 (apply pred-fn
+		(append (rest unproven-ante)
+			(list codes-pairs)
+			(list noncodes-alist) )))
+	((do ((untried-cs1 untried-completions (cdr untried-cs1))
+	      (satisfied? nil satisfied?) )
+	     ((or satisfied?
+		  (null untried-cs1) )
+	      (setq untried-completions untried-cs1)
+	      satisfied? )
+	     (multiple-value-setq
+	      (satisfied? codes-pairs1)
+
+	      (unify unproven-ante (car untried-cs1)
+		     codes-pairs noncodes-alist )))
+	 (values t codes-pairs1 noncodes-alist
+		 untried-completions untried-facts untried-rules ))
+	((do ((untried-fs1 untried-facts (cdr untried-fs1))
+	      (satisfied? nil satisfied?) )
+	     ((or satisfied?
+		  (null untried-fs1) )
+	      (setq untried-facts untried-fs1)
+	      satisfied? )
+	     (multiple-value-setq
+	      (satisfied? codes-pairs1)
+	      ;;                     v fact of tag-fact pair
+	      (unify unproven-ante (cdar untried-fs1)
+		     codes-pairs noncodes-alist )))
+	 (values t codes-pairs1 noncodes-alist
+		 nil untried-facts untried-rules ))
+	((do ((untried-rs1 untried-rules (cdr untried-rs1))
+	      (satisfied? nil satisfied?) )
+	     ((or satisfied?
+		  (null untried-rs1) )
+	      (setq untried-rules untried-rs1)
+	      satisfied? )
+	     (multiple-value-bind                     ;v these conseqs ignored
+	      (satisfied1? codes-pairs1 noncodes-alist1 unused-conseqs)
+	      ;;                     v rule ante's of tag-rule pair
+	      (match-trigger-to-rule unproven-ante
+				     (first (cdar untried-rs1))
+				     codes-pairs
+				     noncodes-alist )
+	      (when satisfied1?
+		    (setq unproven-antes (third (cdar untried-rs1)))
+
+		    ;;Note that only one conseq is used, and none are added to
+		    ;; *completions-list* (yet) -- and I believe they
+		    ;; definitely should not be added to *open-list* because
+		    ;; they should not trigger FCing.
+
+		    (multiple-value-setq
+		     (satisfied? codes-pairs2 noncodes-alist2)
+
+		     (prove-1 unproven-antes codes-pairs1 noncodes-alist1
+			      negation-by-failure? )))))
+	 (values t codes-pairs2 noncodes-alist2
+		 nil nil untried-rules ))
+
+	(t nil) ))
+
+(defun add-conseqs-to-open-list (conseq search-mode codes-pairs)
+  (declare (list conseq codes-pairs) (symbol search-mode))
+
+  (cond ((atom conseq)
+	 (error "The consequent, ~a, should be a propo" conseq) )
+	((eq 'AND (second conseq))
+	 (case search-mode
+	       (BFS (push-end (first conseq) *open-list*))
+	       (DFS (push     (first conseq) *open-list*))
+	       (t (error "Traverse mode must be BFS or DFS")) )
+	 (enact-propo (first conseq) codes-pairs)
+	 ;;v Add all conseqs before quitting due to halt-predicate
+	 (or (add-conseqs-to-open-list (third conseq) search-mode codes-pairs)
+	     (eq *halt-predicate* (first (first conseq))) ))
+	(t
+	 (case search-mode
+	       (BFS (push-end conseq *open-list*))
+	       (DFS (push     conseq *open-list*))
+	       (t (error "Traverse mode must be BFS or DFS")) )
+	 (enact-propo conseq codes-pairs)
+	 (eq *halt-predicate* (first conseq)) )))
+
+
+;;;;;;;;;;;;;;;;;;;; OUTPUT FNS
+
+(defvar index-to-end-of-old 0)
+
+  (defun forget () ;for starting new inf threads
+    (setq *completions-list* nil
+	  index-to-end-of-old 0 ))
+
+  (defun display-conclusions (input-propo &aux conclusions num-concls)
+    (incf index-to-end-of-old) ;to skip over input-propo
+    (setq conclusions (subseq *completions-list* index-to-end-of-old)
+	  num-concls (length conclusions) )
+    (format t
+	    "~%~%From the input-propo: ~s~
+               ~%came ~a conclusions:~
+             ~{~%                      ~s~%~}"
+	    input-propo
+	    num-concls
+	    conclusions )
+    (incf index-to-end-of-old num-concls)
+    num-concls )

@@ -1,0 +1,26 @@
+# TESTING FILE ONLY
+
+set xlabel "West - East"
+set ylabel "South - North"
+set xrange [0:10]
+set yrange [0:10]
+set xtics 0,1
+set ytics 0,1
+# set key 100,115
+set nokey 
+set term postscript landscape monochrome "Times-Roman" 14
+set output "Terrain-Map1.ps"
+
+#set label "M" at 10,10 left #center
+set arrow from 3,1 to 6,9
+
+plot ".mountains" with points, ".forests" with points, ".route" with lines
+
+#green is diamonds; purple is plusses; red is squares; yellow is x's;
+# blue is triangles; orange is 8-point crosses
+#plot ".green" title "Type 1", ".purple" title "Type 2", ".red" title "Type 3", ".yellow" title "Type 4", ".blue" title "Type 5", ".orange" title "Type 6"
+
+
+
+
+

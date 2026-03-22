@@ -1,0 +1,235 @@
+/*
+ This program calculates grades given an input file of marks available,
+   percentage allocation and student grades
+*/
+
+#define STUDENTS 29
+
+main()
+{
+
+  double a1t, a2t, a3t, a4t, a5t, a6t, qt =0.0;
+  double m1t, m2t, ft =0.0;
+  char string1[40];   char string2[40]; 
+
+  double a1r, a2r, a3r, a4r, a5r, a6r, qr = 0.0;
+  double m1r, m2r, fr = 0.0;
+
+  int student;
+  int studentid;
+  double sa1, sa2, sa3, sa4, sa5, sa6, sq = 0.0;
+  double sm1, sm2, sf =0.0;
+
+  double cp1, cp2, cp3, cp4, cp5, cp6, cpq, cpm1, cpm2, cpf;
+
+  double total_a1 =0.0; 
+  double total_a2 =0.0; 
+  double total_a3 =0.0;
+  double total_a4 =0.0; 
+  double total_a5 =0.0; 
+  double total_a6 = 0.0;
+  double total_q  = 0.0;
+  double total_m1 =0.0;
+  double total_m2 =0.0;
+  double total_final = 0.0;
+  double total_final_exam = 0.0;
+  double total_final_grade = 0.0;
+
+  double avg_a1 =0.0; 
+  double avg_a2 =0.0;
+  double avg_a3 =0.0;
+  double avg_a4 =0.0;
+  double avg_a5 =0.0;
+  double avg_a6 =0.0;
+  double avg_q  =0.0;
+  double avg_m1 =0.0;
+  double avg_m2 =0.0;
+  double avg_final = 0.0;
+  double avg_final_exam = 0.0;
+  double avg_final_grade = 0.0;
+
+  double max_a1 =0.0; 
+  double max_a2 =0.0;
+  double max_a3 =0.0;
+  double max_a4 =0.0;
+  double max_a5 =0.0;
+  double max_a6 =0.0;
+  double max_q  =0.0;
+  double max_m1 =0.0;
+  double max_m2 =0.0;
+  double max_final = 0.0;
+  double max_final_exam = 0.0;
+  double max_final_grade = 0.0;
+
+  double min_a1 =99.0; 
+  double min_a2 =99.0;
+  double min_a3 =99.0;
+  double min_a4 =99.0;
+  double min_a5 =99.0;
+  double min_a6 =99.0;
+  double min_q  =99.0;
+  double min_m1 =99.0;
+  double min_m2 =99.0;
+  double min_final = 99.0;
+  double min_final_exam = 99.0;
+  double min_final_grade = 99.0;
+
+  double final_grade = 0.0;
+
+  double total_poss = 0.0;
+
+  double credit_points( double total_poss, double weight, double score);
+
+  /* output header information */
+
+/*
+   printf("       Sid         A1     A2     A3     A4     A5     A6     QZ     M1      M2    Final    Grade So Far\n\n");
+*/
+
+  /* scan  in the total possible marks on assigns and exams */
+  scanf("%s     %lf   %lf   %lf   %lf   %lf   %lf   %lf   %lf   %lf   %lf", 
+	string1, &a1t, &a2t, &a3t, &a4t, &a5t, &a6t, &qt, &m1t, &m2t, &ft);
+
+  /* scan  in the relative weighting  of assigns and exams */
+  scanf("%s     %lf   %lf   %lf   %lf   %lf   %lf   %lf    %lf   %lf   %lf", 
+	string2, &a1r, &a2r, &a3r, &a4r, &a5r, &a6r, &qr,   &m1r, &m2r, &fr);	
+
+  total_poss = 
+    credit_points( a1t, a1r, a1t) +
+      credit_points( a2t, a2r, a2t) +
+	credit_points( a3t, a3r, a3t) +
+	  credit_points( a4t, a4r, a4t) +
+	    credit_points( a5t, a5r, a5t) +
+	      credit_points( a6t, a6r, 0) +
+	      credit_points( qt ,  qr, qt) +
+		credit_points( m1t, m1r, m1t ) +
+		  credit_points( m2t, m2r, m2t ) +
+		   credit_points( ft, fr, ft );
+
+/*
+  printf("%s            %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %5.1f   %5.1f   %5.1f\n", 
+	 string1, a1t,  a2t,  a3t,  a4t,  a5t,  a6t,  qt,  m1t,  m2t,  ft);
+
+  printf("%s          %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %5.1f   %5.1f   %5.1f   %5.1f\n\n", 
+	 string2, a1r, a2r, a3r,  a4r,  a5r,  a6r,  qr, m1r,  m2r,  fr, total_poss);	
+*/
+
+  /* scan in a student line and produce final grade-to-date */
+  for(student=0;student<STUDENTS;student=student+1)
+    {
+      scanf("%d         %lf   %lf   %lf   %lf   %lf   %lf   %lf   %lf   %lf   %lf", 
+	    &studentid, &sa1, &sa2, &sa3, &sa4, &sa5, &sa6, &sq, &sm1, &sm2, &sf);
+
+      cp1 = credit_points( a1t, a1r, sa1 );
+      cp2 = credit_points( a2t, a2r, sa2 );
+      cp3 = credit_points( a3t, a3r, sa3 );
+      cp4 = credit_points( a4t, a4r, sa4 );
+      cp5 = credit_points( a5t, a5r, sa5 );
+      cp6 = credit_points( a6t, a6r, sa6 );
+      cpq = credit_points( qt, qr, sq );
+      cpm1 = credit_points( m1t, m1r, sm1 );
+      cpm2 = credit_points( m2t, m2r, sm2 );
+      cpf = credit_points( ft, fr, sf );
+      final_grade = cp1 + cp2 + cp3 + cp4 +cp5 + cp6 + cpq + cpm1 + cpm2 + cpf;
+
+/*
+      printf("%2d    %4d       %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %5.1f   %5.1f   %5.1f   %5.1f\n",
+	    student, studentid, sa1,   sa2,    sa3,    sa4,    sa5,    sa6,    sq,     sm1,    sm2,    sf,  final_grade);
+*/
+
+/* HIST OUTPUT - 1 value only per student */
+      printf("%5.0f\n", final_grade);
+
+      if (sa1 > max_a1) max_a1 = sa1; 
+      if (sa2 > max_a2) max_a2 = sa2; 
+      if (sa3 > max_a3) max_a3 = sa3; 
+      if (sa4 > max_a4) max_a4 = sa4; 
+      if (sa5 > max_a5) max_a5 = sa5; 
+      if (sa6 > max_a6) max_a6 = sa6; 
+      if (sq  > max_q)  max_q  = sq; 
+      if (sm1 > max_m1) max_m1 = sm1; 
+      if (sm2 > max_m2) max_m2 = sm2; 
+      if (sf  > max_final_exam) max_final_exam = sf; 
+      if (final_grade > max_final_grade) max_final_grade = final_grade;
+
+      if (sa1 < min_a1 && sa1 != 0) min_a1 = sa1; 
+      if (sa2 < min_a2 && sa2 != 0) min_a2 = sa2; 
+      if (sa3 < min_a3 && sa3 != 0) min_a3 = sa3; 
+      if (sa4 < min_a4 && sa4 != 0) min_a4 = sa4; 
+      if (sa5 < min_a5 && sa5 != 0) min_a5 = sa5; 
+      if (sa6 < min_a6 && sa6 != 0) min_a6 = sa6; 
+      if (sq  < min_q  && sq  != 0) min_q  = sq; 
+      if (sm1 < min_m1 && sm1 != 0) min_m1 = sm1; 
+      if (sm2 < min_m2 && sm2 != 0) min_m2 = sm2; 
+      if (sf  < min_final_exam && sf != 0) min_final_exam = sf;
+      if (final_grade < min_final_grade && final_grade != 0) min_final_grade = final_grade;
+
+      total_a1 = total_a1 + sa1;     
+      total_a2 = total_a2 + sa2;     
+      total_a3 = total_a3 + sa3;
+      total_a4 = total_a4 + sa4;     
+      total_a5 = total_a5 + sa5;   
+      total_a6 = total_a6 + sa6;
+      total_q  = total_q  + sq;
+      total_m1 = total_m1 + sm1;     
+      total_m2 = total_m2 + sm2;     
+      total_final_exam = total_final_exam + sf;
+      total_final_grade = total_final_grade + final_grade;
+
+    }
+  
+  if (min_a1 == 99.0) min_a1 = 0; 
+  if (min_a2 == 99.0) min_a2 = 0; 
+  if (min_a3 == 99.0) min_a3 = 0; 
+  if (min_a4 == 99.0) min_a4 = 0; 
+  if (min_a5 == 99.0) min_a5 = 0; 
+  if (min_a6 == 99.0) min_a6 = 0; 
+  if (min_q  == 99.0) min_q  = 0; 
+  if (min_m1 == 99.0) min_m1 = 0; 
+  if (min_m2 == 99.0) min_m2 = 0; 
+  if (min_final_exam == 99.0) min_final_exam = 0;
+
+  avg_a1 = total_a1 / STUDENTS;
+  avg_a2 = total_a2 / STUDENTS;
+  avg_a3 = total_a3 / STUDENTS;
+  avg_a4 = total_a4 / STUDENTS;
+  avg_a5 = total_a5 / STUDENTS;
+  avg_a6 = total_a6 / STUDENTS;
+  avg_q  = total_q  / STUDENTS;
+  avg_m1 = total_m1 / STUDENTS;
+  avg_m2 = total_m2 / STUDENTS;
+  avg_final_exam = total_final_exam / STUDENTS;
+  avg_final_grade = total_final_grade / STUDENTS;
+
+/*
+  printf("\n");
+
+  printf("%s    %s       %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %5.1f   %5.1f   %5.1f   %5.1f\n",
+	  "  ", "AVGs",      avg_a1, avg_a2, avg_a3, avg_a4, avg_a5, avg_a6, avg_q, avg_m1, avg_m2, avg_final_exam, 
+	  avg_final_grade);
+
+  printf("%s    %s       %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %5.1f   %5.1f   %5.1f   %5.1f\n",
+	  "  ", "MAXs",      max_a1, max_a2, max_a3, max_a4, max_a5, max_a6, max_q, max_m1, max_m2, max_final_exam, 
+	  max_final_grade);
+
+  printf("%s    %s       %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %4.1f   %5.1f   %5.1f   %5.1f   %5.1f\n",
+	  "  ", "MINs",      min_a1, min_a2, min_a3, min_a4, min_a5, min_a6, min_q, min_m1, min_m2, min_final_exam, 
+	  min_final_grade);
+*/
+
+}  /* end of main */
+
+
+double credit_points( double total_poss, double weight, double score)
+{
+  double credit;
+
+  credit = (score / total_poss)  * weight;
+
+  return credit;
+} 
+
+/* Local Variables: */
+/* compile-command: "gcc -ansi -o hist-calc hist-calc.c -lm" */
+/* End: */
+

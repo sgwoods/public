@@ -1,0 +1,34 @@
+READ THIS!!  EE150 Academic Guidelines
+
+Cheating or plagarism is a serious academic offense.  It can lead very
+quickly to a failed grade and permanent record on your transcript,
+or even expulsion from University.
+
+Acceptable Help:
+
+Discussing approaches to problems is acceptable.  Seeking tutor
+or student assistance with concepts is acceptable.  I have office
+hours to help with your problems - I also am open to making an
+appointment to discuss anything at all. 
+
+Not-Acceptable Help:
+
+Having a tutor debug your code is not acceptable.  Having another
+student debug your code is not acceptable.  Sharing code is not
+acceptable in any form.  Showing your solutions to others in EE150 is not
+acceptable.  
+
+During the course of reviewing solutions to Assignment (mini) 3 it has
+become obvious that sharing of code (exact code) has already become 
+a problem.  As assignments increase in complexity and difficulty such
+cheating will become even more obvious.  After the midterm I will
+have an excellent idea of each students' ability and fudged
+assignments will stand out.
+
+In a word - don't cheat - I will *not* be in any way lenient with
+anyone caught cheating or sharing solutions to assignments.  It is
+unfair to those students who do not cheat to tolerate any such behaviour.
+
+September 28, 1996
+Dr. Steven Woods
+ 

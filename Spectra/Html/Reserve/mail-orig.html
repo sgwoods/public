@@ -1,0 +1,42 @@
+<TITLE>ERROR and HELP</TITLE>
+<H2>Error in parameters to http://www.fwi.uva.nl/cgi-bin/mail_form</H2>
+Report:<CODE> mail recipient address was left empty</CODE>
+<HR>
+Usage: <CODE>http://www.fwi.uva.nl/cgi-bin/mail_form?parameters</CODE>
+<P>
+The parameters are separated by ampersand (<CODE>&amp;</CODE>)
+characters and should not contain spaces or equal
+(<CODE>=</CODE>) characters other than for assignments (see below).
+<P>
+Possible parameters are:<BR>
+<CODE>sendto=</CODE><EM>email_address</EM><BR>
+<CODE>sendsubj=</CODE><EM>subject</EM><BR>
+<CODE>gotourl=</CODE><EM>url</EM><P>
+<CODE>sendto</CODE> and <CODE>gotourl</CODE> are essential.
+Leaving either empty will result in mail not being sent.
+If the <CODE>sendsubj</CODE> is left empty, one is filled in.
+Other fields will be left unmodified and will be listed in
+the mailed message body.
+<P>Example:<BR>
+<CODE>http://www.fwi.uva.nl/cgi-bin/mail_form?sendto=sgwoods@logos.uwaterloo.ca&amp;gotourl=http://www.fwi.uva.nl/</CODE>
+<HR>
+For use in forms, look at the source of this example:
+<FORM METHOD=PUT ACTION="http://www.fwi.uva.nl/cgi-bin/mail_form">
+<INPUT TYPE="hidden" NAME="sendto" VALUE="sgwoods@logos.uwaterloo.ca">
+<INPUT TYPE="hidden" NAME="sendsubj" VALUE="Join mailing list">
+<INPUT TYPE="hidden" NAME="gotourl" VALUE="http://www.fwi.uva.nl/">
+Subscribe to our mailinglist!<P>
+Receiving mail address:
+<INPUT SIZE=32 NAME="receiveat" VALUE="sgwoods@logos.uwaterloo.ca">
+<BR>Join list:
+<SELECT NAME="listname">
+<OPTION>alphabet
+<OPTION SELECTED>democracy
+<OPTION>republic
+</SELECT><P>
+<INPUT TYPE="submit" VALUE="Mail to me (sgwoods)">
+<INPUT TYPE="reset" VALUE="Reset">
+</FORM><HR>
+View the script <A HREF=/cgi-bin/mail_form?code=show>code</A>.<BR>
+If you encounter problems please mail <EM>sgwoods@logos.uwaterloo.ca</EM>.
+<HR><A HREF=/about/><ADDRESS>www@fwi.uva.nl</ADDRESS></A>

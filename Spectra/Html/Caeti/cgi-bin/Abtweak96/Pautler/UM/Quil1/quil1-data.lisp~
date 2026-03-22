@@ -1,0 +1,270 @@
+;; Quil1-data.lisp
+
+(reset-dbs-1)
+
+;; BEGIN explanation rules
+;; These are the rules from Alex's dissertation work, as listed in
+;;  "Forming User Models by Understanding User Feedback".
+
+;; This file replaces the _prevents_
+;;  pred that Alex used with _has-result_(NOT).  This change in
+;;  preds makes it clear that some rules are subsumed by others here,
+;;  and we have removed such redundancy when we have noticed it.
+
+;; Ontology:
+;;  Events can have several possible causes, but only one enabler.
+;;  Causal and enabling relations can be either immediate or transitive.
+;;  An event cannot be both an enabler and a cause of another event.
+
+(def-rule-1
+  :er1
+  '((_is-desired ?event1) IMPLIED-BY
+    ((_has-result_ ?event1 ?event2) AND
+     (_is-desired ?event2) )))
+
+(def-rule-1
+  :er2
+  '((_is-desired ?event1) IMPLIED-BY
+    ((_enables_ ?event1 ?event2) AND
+     (_is-desired ?event2) )))
+
+;;ER3 subsumed by ER1
+
+(def-rule-1
+  :er4
+  '((_is-desired (NOT ?event1)) IMPLIED-BY
+    ((_has-result_ ?event1 ?event2) AND
+     (_is-desired (NOT ?event2)) )))
+
+(def-rule-1
+  :er5
+  '((_is-desired (NOT ?event2)) IMPLIED-BY
+    ((_enables_ ?event1 ?event2) AND
+     (_is-desired (NOT ?event1)) )))
+
+(def-rule-1
+  :er6
+  '((_is-desired ?event1) IMPLIED-BY
+    ((_has-result_ ?event1 (NOT ?event2)) AND
+     (_is-desired ?event2) )))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; finding best plans
+
+(def-rule-1
+  :er7
+  '((_is-best-plan-for_ ?plan1 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     (NOT ((NOT= ?plan2 ?plan1) AND
+	   (_has-result_ ?plan2 ?goal) )))))
+
+(def-rule-1
+  :er8
+  '((_is-best-plan-for_ ?plan1 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT= ?side-effect ?goal) AND
+      ((_has-result_ ?plan1 ?side-effect) AND
+       ((_is-desired ?side-effect) AND
+	(NOT ((NOT= ?plan2 ?plan1) AND
+	      ((_has-result_ ?plan2 ?goal) AND
+	       (_has-result_ ?plan2 ?side-effect) )))))))))
+
+(def-rule-1
+  :er9
+  '((_is-best-plan-for_ ?plan1 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT (_has-result_ ?plan1 ?side-effect)) AND
+      ((_is-desired (NOT ?side-effect)) AND
+       (NOT ((NOT= ?plan2 ?plan1) AND
+	     ((_has-result_ ?plan2 ?goal) AND
+	      (NOT (_has-result_ ?plan2 ?side-effect)) ))))))))
+
+(def-rule-1
+  :er10
+  '((_is-best-plan-for_ ?plan1 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT (_enables_ ?plan1 ?side-eventuality)) AND
+      ((_is-desired (NOT ?side-eventuality)) AND
+       (NOT ((NOT= ?plan2 ?plan1) AND
+	     ((_has-result_ ?plan2 ?goal) AND
+	      (NOT (_enables_ ?plan2 ?side-eventuality)) ))))))))
+
+;;ER11 subsumed by ER8
+
+;;ER12 subsumed by ER9
+
+
+;;;;;;;;;;;;;;;;;;;; plan comparisons
+
+(def-rule-1
+  :er13
+  '((_is-better-plan-than_for_ ?plan1 ?plan2 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     (NOT (_has-result_ ?plan2 ?goal)) )))
+
+(def-rule-1
+  :er14
+  '((_is-better-plan-than_for_ ?plan1 ?plan2 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT= ?side-effect ?goal) AND
+      ((_has-result_ ?plan1 ?side-effect) AND
+       ((_is-desired ?side-effect) AND
+	((_has-result_ ?plan2 ?goal) AND
+	 (NOT (_has-result_ ?plan2 ?side-effect)) )))))))
+
+(def-rule-1
+  :er15
+  '((_is-better-plan-than_for_ ?plan1 ?plan2 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT (_has-result_ ?plan1 ?side-effect)) AND
+      ((_is-desired (NOT ?side-effect)) AND
+       ((_has-result_ ?plan2 ?goal) AND
+	(_has-result_ ?plan2 ?side-effect) ))))))
+
+(def-rule-1
+  :er16
+  '((_is-better-plan-than_for_ ?plan1 ?plan2 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((NOT (_enables_ ?plan1 ?side-eventuality)) AND
+      ((_is-desired (NOT ?side-eventuality)) AND
+       ((_has-result_ ?plan2 ?goal) AND
+	(_enables_ ?plan2 ?side-eventuality) ))))))
+
+(def-rule-1
+  :er17
+  '((_is-better-plan-than_for_ ?plan1 ?plan2 ?goal) IMPLIED-BY
+    ((_has-result_ ?plan1 ?goal) AND
+     ((_has-result_ ?plan1 (NOT ?side-effect)) AND
+      ((_is-desired (NOT ?side-effect)) AND
+       ((_has-result_ ?plan2 ?goal) AND
+	(_has-result_ ?plan2 ?side-effect) )))))) ;its diff with ER14
+
+;;ER18 is subsumed by ER15
+
+
+;;;;;;;;;;;;;;;;;;;;;;;
+
+(def-rule-1 ;causal transitivity
+  :er19
+  '((_has-result_ ?event1 ?event3) IMPLIED-BY
+    ((_has-result_ ?event1 ?event2) AND
+     (_has-result_ ?event2 ?event3) )))
+
+(def-rule-1
+  :er20
+  '((NOT (_has-result_ ?event1 ?event3)) IMPLIED-BY
+    ((NOT (_has-result_ ?event1 ?event2)) AND
+     (_has-result_ ?event2 ?event3) )))
+
+(def-rule-1
+  :er21
+  '((NOT (_has-result_ ?event1 ?event2)) IMPLIED-BY
+    (_has-result_ ?event1 (NOT ?event2)) ))
+
+(def-rule-1 ;not a commonsensical fact
+  :er22
+  '((NOT (_has-result_ ?event1 ?event3)) IMPLIED-BY
+    ((NOT (_has-result_ ?event1 (NOT ?event2))) AND
+     (_has-result_ ?event2 (NOT ?event3)) )))
+
+(def-rule-1
+  :er23
+  '((_enables_ ?event1 ?event3) IMPLIED-BY
+    ((_has-result_ ?event1 ?event2) AND
+     ((_enables_ ?event2 ?event3) AND
+      (NOT ((NOT= ?event4 ?event1) AND
+	    (_has-result_ ?event4 ?event2) ))))))
+
+(def-rule-1
+  :er24
+  '((NOT (_enables_ ?event1 ?event3)) IMPLIED-BY
+    ((NOT (_enables_ ?event1 ?event2)) AND
+     (_has-result_ ?event2 ?event3) )))
+
+(def-rule-1
+  :er25
+  '((NOT (_enables_ ?event1 ?event2)) IMPLIED-BY
+    (_has-result_ ?event1 ?event2) ))
+
+(def-rule-1
+  :er26
+  '((_has-result_ ?event1 (NOT ?event3)) IMPLIED-BY
+    ((_has-result_ ?event1 (NOT ?event2)) AND
+     (_enables_ ?event2 ?event3) )))
+
+;;ER27 subsumed by ER19
+
+;;ER28 subsumed by ER22
+
+;;ER29 subsumed by ER21
+
+(def-rule-1
+  :er30
+  '((NOT (_has-result_ ?event1 (NOT ?event2))) IMPLIED-BY
+    (_enables_ ?event1 ?event2) ))
+
+
+;; explanation rules added by DP 8/97 to make up for rules removed due to
+;;  being subsumed
+
+(def-rule-1
+  :er31
+  '((_is-desired (NOT (NOT ?event))) IMPLIED-BY (_is-desired ?event)) )
+
+(def-rule-1
+  :er32
+  '((_has-result_ ?event1 (NOT (NOT ?event2))) IMPLIED-BY
+    (_has-result_ ?event1 ?event2) ))
+
+(def-rule-1 ;not yet needed, but added for completeness
+  :er33
+  '((_enables_ ?event1 (NOT (NOT ?event2))) IMPLIED-BY
+    (_enables_ ?event1 ?event2) ))
+
+(def-rule-1 ;not yet needed, but added for completeness
+  :er34
+  '((_has-result_ (NOT (NOT ?event1)) ?event2) IMPLIED-BY
+    (_has-result_ ?event1 ?event2) ))
+
+(def-rule-1 ;not yet needed, but added for completeness
+  :er35
+  '((_enables_ (NOT (NOT ?event1)) ?event2) IMPLIED-BY
+    (_enables_ ?event1 ?event2) ))
+
+
+;; END explanation rules ; BEGIN initial advisor model
+
+(def-fact '(_has-result_ rm remove-file))
+(def-fact '(NOT (_has-result_ rm ask-before-remove)))
+(def-fact '(NOT (_has-result_ rm recoverable-file)))
+
+(def-fact '(_has-result_ rm-i remove-file))
+(def-fact '(_has-result_ rm-i ask-before-remove))
+(def-fact '(NOT (_has-result_ rm-i recoverable-file)))
+(def-fact '(NOT (_has-result_ rm-i fill-up-tmp)))
+
+(def-fact '(_has-result_ ask-before-remove answer-questions))
+(def-fact '(_has-result_ ask-before-remove (NOT accidental-file-removal)))
+
+(def-fact '(_has-result_ mv-to-tmp remove-file))
+(def-fact '(_has-result_ mv-to-tmp file-in-tmp))
+(def-fact '(_has-result_ mv-to-tmp recoverable-file))
+(def-fact '(NOT (_has-result_ mv-to-tmp ask-before-remove)))
+(def-fact '(NOT (_has-result_ mv-to-tmp fill-up-tmp)))
+(def-fact '(NOT (_has-result_ mv-to-tmp (NOT clean-up-program))))
+
+(def-fact '(_enables_ writeable-parent remove-file))
+(def-fact '(NOT (_enables_ own-file remove-file)))
+
+(def-fact '(_has-result_ clean-up-program (NOT fill-up-tmp)))
+(def-fact '(_has-result_ clean-up-program cleaned-up-tmp))
+
+;(def-fact '(_is-best-plan-for_ rm-i remove-file))
+;(def-fact '(_is-better-plan-than_for_ rm-i rm remove-file))
+;(def-fact '(_is-better-plan-than_for_ rm-i mv-to-tmp remove-file))
+
+(def-fact '(_is-desired recoverable-file))
+(def-fact '(_is-desired ask-before-remove))
+(def-fact '(_is-desired (NOT accidental-file-removal)))
+(def-fact '(_is-desired (NOT fill-up-tmp)))
+
+;; END initial advisor model

@@ -1,0 +1,95 @@
+(defun test3 () ;for LEG 3
+  (plan '(cp35
+	  (STOPPED-AT WHITE cp35 $exec-time36)
+	  (NOT FIRING-ON WHITE $enemy-pos48 $dir-or-indir49
+	       cp35 cp24))
+	'(cp24
+	  (IN-STAT-FORMATION WHITE cp24 COIL $security43 $exec-speed44
+			     $mo-speed45 $exec-time42))
+	:subgoal-determine-mode 'closest-to-initial
+	:exist-est-heuristic 'diff-stage-nece-and-poss
+	:required-ops (create-requireds-list
+		       '(MTLE-NBO NBD TOTM WLTF MOFHTF SICOIL) )
+	:print-output-p t
+	:plan-debug-mode t ))
+
+(defun test4 () ;for LEG 2
+  (plan '(cp25
+	  (AT-LOCATION WHITE cp25 $exec-time31)
+	  (MOVING-ALONG-LEG WHITE (390 175) cp25 $speed32
+			    $security33 $method34)
+	  (in-trav-formation white (390 175) cp25 column $ff1 $lf1 $rf1 $tm1)
+	  (NOT FIRING-ON WHITE $enemy-pos46 $dir-or-indir47
+	       cp25 cp35))
+	'(cp35
+	  (STOPPED-AT WHITE cp35 $exec-time36) )
+	:subgoal-determine-mode 'closest-to-initial
+	:exist-est-heuristic 'diff-stage-nece-and-poss
+	:required-ops (create-requireds-list
+		       '(MTLE-BO VFAA BOTM MFLS) )
+	:print-output-p t
+	:plan-debug-mode t ))
+
+(defun test5 () ;for LEG 1
+  (plan '((390 175)
+	  (IN-STAT-FORMATION WHITE (390 175) HERRINGBONE $security26
+			     $exec-speed27 $mo-speed28 0.0)
+	  (NOT FIRING-ON WHITE $enemy-pos29 $dir-or-indir30 (390 175)
+	       cp25))
+	'(cp25
+	  (AT-LOCATION WHITE cp25 $exec-time31)
+	  (MOVING-ALONG-LEG WHITE (390 175) cp25 $speed32 $security33
+			    $method34)
+	  (in-trav-formation white (390 175) cp25 column $ff1 $lf1 $rf1 $tm1))
+	:subgoal-determine-mode 'closest-to-initial
+	:exist-est-heuristic 'diff-stage-nece-and-poss
+	:required-ops (create-requireds-list
+		       '(MTLE-NBO CFCR TTM CTF MOFSF) )
+	:print-output-p t
+	:plan-debug-mode t ))
+
+
+
+
+
+
+
+
+
+
+
+
+
+#| ;old leg tests
+(plan '((390 175)
+                  (IN-STAT-FORMATION WHITE (390 175) HERRINGBONE $security1
+                   $exec-speed2 $mo-speed3 0.0)
+                  (NOT FIRING-ON WHITE $enemy-pos4 $dir-or-indir5 $start6
+                       $end7))
+        '($cp8 (AT-LOCATION WHITE $cp8 $exec-time9)
+                   (MOVING-ALONG-LEG WHITE (390 175) $cp8 $speed10 $security11
+                    $method12))
+        :subgoal-determine-mode 'closest-to-initial
+        :exist-est-heuristic 'diff-stage-nece-and-poss
+        :required-ops (create-requireds-list '(mtle-nbo nbd ttm ctf mofsf))
+        :print-output-p t
+        :plan-debug-mode t )
+
+(plan `($cp13
+	(STOPPED-AT WHITE $cp13 $exec-time14)
+	(IN-TRAV-FORMATION WHITE $cp8 $cp13 $tf15 $ff16 $lf17 $rf18
+			   $tmethod19 )
+	(NOT firing-on White ;ideally, this would 'flow forward'
+	     ,(gentemp "$enemy-pos")           ;from l1-i-state
+	     ,(gentemp "$dir-or-indir")
+	     ,(gentemp "$start") ,(gentemp "$end") ))
+      '($cp0
+	(IN-STAT-FORMATION WHITE $cp0 COIL $security21 $exec-speed22
+			   $mo-speed23 $exec-time20 ))
+        :subgoal-determine-mode 'closest-to-initial
+        :exist-est-heuristic 'diff-stage-nece-and-poss
+        :required-ops (create-requireds-list
+		       '(MTLE-BO nbd BOTM MOFHTF SICOIL) ) ;vfaa
+        :print-output-p t
+        :plan-debug-mode t )
+|#

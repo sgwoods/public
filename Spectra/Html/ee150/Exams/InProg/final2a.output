@@ -1,0 +1,40 @@
+Table Before:
+Table at 0 is 31
+Table at 1 is 17
+Table at 2 is 26
+Table at 3 is 9
+Table at 4 is 6
+Table at 5 is 17
+Table at 6 is 19
+Table at 7 is 17
+Table at 8 is 21
+Table at 9 is 17
+Table at 10 is 96
+Table at 11 is 108
+Table at 12 is 61
+Table at 13 is 19
+Table at 14 is 17
+Replace Call: old = 17, new = 40, stop = 9
+Replace Loop: i = 1, x[i] = 17
+Replace Loop: i = 2, x[i] = 26
+Replace New : i = 2, x[i] = 40
+Replace Loop: i = 3, x[i] = 9
+Replace New : i = 3, x[i] = 40
+Replace Return value is i = 4
+Table After:
+Table at 0 is 31
+Table at 1 is 17
+Table at 2 is 40
+Table at 3 is 40
+Table at 4 is 6
+Table at 5 is 17
+Table at 6 is 19
+Table at 7 is 17
+Table at 8 is 21
+Table at 9 is 17
+Table at 10 is 96
+Table at 11 is 108
+Table at 12 is 61
+Table at 13 is 19
+Table at 14 is 17
+Final n value = 4

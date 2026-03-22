@@ -1,0 +1,121 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - C Style Guide </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1>EE150 - Fall 1996</H1>
+
+<H2> C Programming <BR>
+Style Guidelines</H2>
+
+<HR>
+
+<H2>Introduction</H2>
+
+<P> One question that comes up every semester is: Must the programs we
+write look like the programs in the course textbook?  That is,
+do we have to indent programs in the same way, 
+use the same long variable names, and so on?
+
+<P> The short answer is: Yes!  
+
+<P> The longer answer, however, is, well, not exactly.
+
+<P> The basic rule is that your programs must be easy to read.  Things
+like consistent indentation make programs easier to read.   If you
+indent like we do (and, in general, layout your programs like we do),
+you'll find your programs are as easy to read as ours.  However,
+we realize that not everyone has the same sense of aesthetics as
+we do.  So, we are not fascists about how our programs look, but
+we are picky.  If we get confused in trying to understand your
+programs, we're going to take off points (and your program grade
+is based in part on how readable your programs are).
+
+<H2>Some Guidelines</H2>
+
+<P>
+Here are some of the guidelines we use in determining how to grade
+your program for "readability":
+
+<UL>
+<LI>
+Most importantly - comment your programs.  A comment shoudl be in place
+for every function explaining it's purpose and use.  Strange bits of code
+deserve a comment as well.  Variables name comments/descriptions are 
+helpful.  On the other hand, you MUST try to not clutter your programs
+excessively - place your comments consistently and carefully.  Make sure
+they are readable in terms of spacing and english usage. 
+<LI>
+The indentation must be consistent.  The textbook programs are 
+consistent.  But code like this is not:
+<BLOCKQUOTE><PRE>
+  z = 10;
+y = 15;
+    x = y + z;
+</PRE> </BLOCKQUOTE>
+
+<LI>
+You should indent complex constructs like <TT>while</TT> and <TT>for</TT>
+loops.  There are a variety of schemes for indenting.  The textbook's
+scheme is fine, as is this one,
+<BLOCKQUOTE><PRE>
+i = 0;
+while (i < N) {
+  printf("%i\n", i);
+  i = i + 1;
+}
+</PRE> </BLOCKQUOTE>
+and this one,
+<BLOCKQUOTE><PRE>
+i = 0;
+while (i < N)
+  {
+    printf("%i\n", i);
+    i = i + 1;
+  }
+</PRE> </BLOCKQUOTE>
+Of course, you can feel to use more than two spaces if you like. <P>
+
+<LI>
+When a statement is too long to fit on a line, you should break up
+at punctuation characters.  For example, you can break up a long
+<TT>printf</TT> like this:
+<BLOCKQUOTE><PRE>
+printf(".....formatting string......",
+       variable-1, variable-2)
+</PRE> </BLOCKQUOTE>
+or like this:
+<BLOCKQUOTE><PRE>
+printf(".....formatting string......",
+       variable-1,
+       variable-2)
+</PRE> </BLOCKQUOTE>
+Again, here you have to use your judgement. <P>
+
+<LI>
+It's helpful to have blank lines separating different parts of 
+your program, just to break up the instructions on the page.  Our
+tendency is to stick blank lines between each group of related
+statements.  But at a minimum you want blank lines before the start
+of each function definition (like before <TT>main</TT>) and between
+the variable declarations and the statements. <P>
+
+<LI>
+Variable names should reflect their usage.  If you can't look at
+a variable and figure out what it's used for, you need a new name.
+A name like <TT>discount_price</TT> is fine, <TT>dp</TT> is not. <P>
+
+</UL>
+
+<P>
+Your goal should be to avoid the mistakes shown above.  If you do,
+you are likely to get full credit.
+
+<P>
+One last thing.  This style guide will be expanded as we show more
+and more C constructs, so you might want to check back here before
+starting each assignment to see what we have added.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

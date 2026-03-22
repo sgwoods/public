@@ -1,0 +1,143 @@
+;***************************************************************************
+; CAETI sample operators
+;***************************************************************************
+
+;
+; operators (adapted from gtsp-movement-ops.txt with some changes)
+;
+
+(setq mfls (make-operator
+	    :opid 'mfls
+	    :name '(move-from-leg-start  $group $loc $leg1 $leg2 
+					 $speed $security)
+	    :cost 1
+	    :preconditions '(
+			     (at-location      $group $loc)
+			     (moving-along-leg $group $leg1 
+					       $speed $security)
+			     (filter-leg-start $leg2 $loc)
+			     (filter-leg-end   $leg1 $loc)
+			     (filter-oriented-from $leg2 Forward $leg1)
+			     (filter-order-given-to $group $leg-start
+						    MoveThrough $tform $method)
+			     )
+	    :effects       '(
+			     (started-on-leg $group $leg2)
+			     (not moving-along-leg $group $leg1 
+				  $speed $security) 
+			     (not at-location $group $loc)
+			     (start-form-and-method-ordered $leg-start
+					    MoveThrough $tform $method)
+			     )
+	    ))
+
+
+(setq mofsf (make-operator
+	    :opid 'mofsf
+	    :name '(move-out-from-stat-form 
+		    $group  $sform $security $exec-speed  $mv-out-speed 
+		    $tform $method $leg $leg-start
+		    )
+	    :cost 1
+	    :preconditions '(
+			     (in-stat-formation $group $leg-start $sform 
+						$security $exec-speed 
+						$mv-out-speed)
+			     (filter-clear $leg)
+			     (filter-leg-start $leg $leg-start)
+			     (filter-order-given-to $group  $leg-start 
+						    MoveFrom $tform $method)
+			     )
+	    :effects       '(
+			     (started-on-leg $group $leg)
+			     (not in-stat-formation $group $leg-start $sform
+						$security $exec-speed 
+						$mv-out-speed)
+			     (start-form-and-method-ordered  $leg-start
+			                      MoveFrom $tform $method)
+			     )
+	    ))
+
+
+(setq cmf (make-operator
+	    :opid 'cmf
+	    :name (column-moving-formation 
+		   $group $leg $start $method $loc
+		   )
+	    :cost 1
+	    :preconditions '(
+			     (started-on-leg $group $leg)
+			     (start-form-and-method-orderd
+ 			                $start Column $method $loc)
+			     (filter-leg-lateral-space $leg 1+)
+			     )
+	    :effects       '(
+			     (in-trav-formation $group $leg Column
+ 				F-fire-mod L-fire-mod R-fire-mod)
+			     (form-and-method-ordered 
+			      Column $method $loc)
+			     ))) 
+
+(setq ttm (make-operator
+	    :opid 'ttm
+	    :name (traveling-technique-of-movement
+		   $group $leg $tform $loc)
+		   )
+	    :cost 1
+	    :preconditions '(
+			     (filter-clear $leg)
+			     (started-on-leg $group $leg)
+			     (in-trav-formation $group $leg $tform
+				F-fire-mod L-fire-mod R-fire-mod)		
+			     )
+	    :effects       '(
+			     (moving-along-leg $group $leg 
+					       Speed-good Security-good)
+			     (not started-on-leg $group $leg)
+			     (method-ordered Trav-overw $loc)
+			     )))
+
+(setq x (make-operator
+	    :opid '
+	    :name '
+
+	    :cost 1
+	    :preconditions '(
+
+			     )
+	    :effects       '(
+
+			     )))
+
+(setq *operators* (list
+		   mfls
+		   cmf
+		   ttm
+		   ))
+;
+; initial state
+;
+(setq initial '( 
+		(filter-leg-start $a $b)
+		(filter-clear $c)
+		(filter-order-given-to $d $e $f $g $h)
+		(filter-leg-end   $j $k)
+		(filter-oriented-from $l $m $n)
+		(filter-leg-lateral-space $o)
+		
+		))
+;
+; goal state
+;
+(setq goal '(
+
+	     ))
+
+
+;; ---------------------------------------------------------------------------
+;; Testing below
+;; ---------------------------------------------------------------------------
+
+(defun lcs () (load "Domains/caeti-simple"))
+(defun pm () (plan initial goal :planner-mode 'mr))
+(defun pcr () (plan-cr *solution*))

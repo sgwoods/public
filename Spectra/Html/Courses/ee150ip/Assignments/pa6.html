@@ -1,0 +1,389 @@
+
+<HEAD>
+<TITLE>EE150, Spring 1996 - Programming Assignment #6</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<IMG SRC="../Images/BullDozer2.gif" WIDTH=185 HEIGHT=110 HSPACE=10 ALT=""
+     ALIGN=right>
+
+<H1><A NAME=top>EE150 - Spring 1996</A></H1>
+<H2>Programming <BR>
+Assignment #6</H2>
+
+<BR CLEAR=all>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> This assignment is divided into several parts.  The first two
+parts give you experience with strings and more experience with
+functions.   The other two parts give you experience with
+structures and two-dimensional arrays.
+
+<P> The due date is: <B> Thursday, May 2nd, 1996 </B> at 6pm.
+You should expect to spend around ten hours of
+computer time over the next two weeks or so.  As usual, we will
+not accept late assignments.
+
+<H4> What To Do </H4>
+
+<P> <B><A NAME=part1>Part 1</A></B>:
+Create a file named <B>convert1.c</B>.  This program transforms
+its input according to a tranformation scheme defined on the
+first line of input.  To explain this, here's some example input
+and output:
+
+<BLOCKQUOTE>
+<EM> abcde bcead </EM> <BR>
+<EM> alex was here </EM> <BR>
+<TT> bldx wbs hdrd </TT> <BR>
+<EM> a better example </EM> <BR>
+<TT> b cdttdr dxbmpld </TT> <BR>
+</BLOCKQUOTE>
+
+<P> The first line of the input consists of two parts: a list
+of characters and then a list of replacement characters.  The
+idea is that we replace every instance of the i'th character
+in the initial list with the i'th character in the replacement 
+list.  In this case, that means replace every "a" with a "b",
+every "b" with a "c", every "c" with an "e", every "d" with
+an "a", and every "e" with a "d".
+
+<P> The program then reads the remaining lines of input and
+then writes what they look like after the substitutions have
+been made.  So "alex was here" becomes "bldx wbs hdrd", after
+substituting for the "a" and the "e".  When no substitution is
+defined for a character, the program just passes it through to
+the output unchanged.  Similarly, "a better example" gets
+transformed into "b cdttdr dxbmpld".
+
+<P> So essentially your task is to write a program that reads the
+transformation information and then enters a loop that reads
+each input line, transforms it, and outputs the result.
+
+<P> Why write a program like this?  Because it's a simple version
+of an encryption program.   Encrypting a file encodes it in
+such a way that it is unreadable unless the person has a code
+to decrypt it.  In this case, we are using a very simple (and
+easy to break) method of encryption.  If we wanted to,
+once we have transformed the input to output, we can get the
+original back by specifying the reverse transformation (giving
+a first line of "bcead abcde" and the input "bldx wbs hdrd" will
+give us "alex was here" as the output).
+
+<P> In this part, you also need to check for certain errors.
+Here are examples of those errors and the error messages you need
+to produce (any error is fatal).
+
+<UL>
+<LI> EOF when trying to read the conversion tables.
+
+<BLOCKQUOTE>
+<EM> ^D </EM> <BR>
+<TT> Missing conversion tables. </TT>
+</BLOCKQUOTE>
+
+<LI> No blank on the first line (or an immediate return character).
+<BLOCKQUOTE>
+<EM> whatever </EM> <BR>
+<TT> Missing blank. </TT>
+</BLOCKQUOTE>
+
+<LI> Different numbers of text characters and replacement text.
+<BLOCKQUOTE>
+<EM> alex whatever </EM> <BR>
+<TT> Can't map "alex" to "whatever". </TT>
+</BLOCKQUOTE>
+This can also happen if the second is longer than the first:
+<BLOCKQUOTE>
+<EM> whatever alex </EM> <BR>
+<TT> Can't map "whatever" to "alex". </TT>
+</BLOCKQUOTE>
+
+</UL>
+
+<P> Any characters in the input that are not in the transformation
+list are passed through to the output untransformed.  (And although 
+we haven't shown it, the transformations can contain any characters
+other than a blank, including upper and lower case characters,
+punctuation, and so on.)
+
+<P> To help you implement this program, we have provided a source
+file, <A HREF=Solutions/6/helpers.c>helpers.c</A>,
+which contains a collection of
+potentially useful functions.  We have also provided a header file,
+<A HREF=Solutions/6/helpers.h>helpers.h</A>, which contains the
+prototypes for the various functions.  You should use copy this
+file over to your machine and then use
+<BLOCKQUOTE><PRE>
+#include "helpers.h"
+</PRE></BLOCKQUOTE>
+to include the prototypes it contains.
+
+<P> You should write this program as a series of small functions.  It
+has been deliberately designed to be extremely difficult if you do not
+try to write it as a series of small functions or if you avoid the
+functions we have already provided for you.  This will be especially
+true when you tackle Part 2.  If you try to write it
+as a single lengthy main program, our estimate is that you can expect
+to spend double or triple the 5-6 hours it will take to write if
+you use the functions we have provided for you and you carefully
+build the program from small pieces.
+ 
+<P> You must use separate compilation, and simply link
+these files in with your source.  Do not copy the functions into
+your source file, and do not include <B>helpers.c</B> in your
+source file.  That's because the grading program will
+automatically try to link the functions in <B>helpers.c</B>
+in with your program.
+
+<P><B><A NAME=part2>Part 2</A></B>:
+The second part is to allow the user to specify ranges as part
+of the transformation description on the first line and do some
+additional error checking.  This program is called <B>convert2.c</B>.
+
+<P> A range is a letter, a dash, and another letter.  For example,
+"a-d" is a range representing the letters "abcd" and
+"a-z" is a range representing the entire alphabet.  The idea
+is that the user can now specify transformations like this
+<BLOCKQUOTE>
+<EM>a-z n-za-m</EM>
+</BLOCKQUOTE>
+as a shortcut over specifying every letter in the transformations.
+<BLOCKQUOTE>
+<EM>abcdefghijklmnopqrstuvwxyz nopqrstuvwxyzabcdefghijklm</EM>
+</BLOCKQUOTE>
+The lengthier version is called the "expanded" character range.
+
+<P> Here is some sample input and output:
+<BLOCKQUOTE>
+<EM> a-z n-za-m </EM> <BR>
+<EM> alex was here </EM> <BR>
+<TT> nyrk jnf urer </TT> <BR>
+<EM> ee150 is great </EM> <BR>
+<TT> rr150 vf terng </TT> <BR>
+<EM> nyrk jnf urer </EM> <BR>
+<TT> alex was here </TT>
+</BLOCKQUOTE>
+This particular tranformation has the effect of rotating all
+the characters in the input by 13.  What's neat about it is
+that you can apply the transformation once to get the scrambled
+version of your initial input, then apply it again to restore
+the original.
+
+<P> In adding the "ranges", you now have a new set of errors to
+check for.  These all assume that you received two input items
+on the first line.  If you only received one (or none),
+the error message will say there's no blank and you won't check
+for problems with dashes.
+
+<UL>
+<LI> A dash at the start or end of the line.
+
+<BLOCKQUOTE>
+<EM> -alex whatever </EM> <BR>
+<TT> Dash at start or finish in "-alex". </TT>
+</BLOCKQUOTE>
+
+<LI> More than one dash in a row.
+
+<BLOCKQUOTE>
+<EM> abbcd d--m</EM> <BR>
+<TT> Back to back dashes in "d--m". </TT>
+</BLOCKQUOTE>
+
+<LI> The second character in the range coming before the first.
+
+<BLOCKQUOTE>
+<EM> d-a d-m</EM> <BR>
+<TT> Illegal range in "d-a". </TT>
+</BLOCKQUOTE>
+
+<LI> The same character showing up more than once in the transformation
+(including characters that appear in multiple ranges).
+
+<BLOCKQUOTE>
+<EM> a-db-f a-m </EM> <BR>
+<TT> Duplicate letters in "a-db-f". </TT>
+</BLOCKQUOTE>
+</UL>
+
+<P> The very last error to check for is whether or not
+there are the same number of characters in the resulting
+expanded transformation (this is the "can't map..." error
+message from Part 1).
+
+<P><B><A NAME=part3>Part 3</A></B>:
+
+Create a file named <B>grades1.c</B>.  This program is another
+grading program.  The idea here is that the program's input
+is broken into two parts: a set of lines that provide the student's
+account name, full name, and id, followed by a set of lines that
+provide the scores for each student.  The program reads this input
+and produces output sorted by the student average.  Here is some
+sample input.
+
+<BLOCKQUOTE><PRE>
+3
+rahul
+Rahul Chattergy
+1045
+kuh
+Tony Kuh
+1078
+lin
+Shu Lin
+1091
+yee
+James Yee
+1031
+vinod
+Vinod Malhotra
+1090
+guehara
+Greg Uehara
+1095
+.
+1090
+100
+100
+100
+1045
+90
+80
+70
+1095
+90
+90
+85
+1078
+70
+80
+90
+</PRE></BLOCKQUOTE>
+
+<P> The first line of the input is the number of assignments.  The next
+part of the input consists of three lines for each student.  The first
+line is their e-mail account, the second line is their name, and the
+last line is their id.  This part of the input is terminated with a
+period on a line by itself.  After the period is another set of lines for
+each student, where the first line is the student id, and the next set
+of lines (one per assignment) is the student's score on the various
+assignments.
+
+<P> Here is the output for this input:
+<BLOCKQUOTE><PRE>
+Vinod Malhotra (vinod) - 100
+Greg Uehara (guehara) - 88
+Rahul Chattergy (rahul) - 80
+Tony Kuh (kuh) - 80
+Shu Lin (lin) - no input scores
+James Yee (yee) - no input scores
+</PRE></BLOCKQUOTE>
+It consists of the full name of the student, the account name, and
+the average score.  It is sorted by average, and if we didn't 
+read scores for any student, that have "no input scores" printed instead
+of their average.  The students with no input scores are printed last.
+
+<P> You need to check for the following errors:
+
+<UL>
+<LI> Not being able to read the first line with the assignments.
+<BLOCKQUOTE><PRE>
+Can't read number of assignments.  
+</PRE></BLOCKQUOTE>
+<LI> Any sort of problem reading in the initial name, account name,
+and id.  
+<BLOCKQUOTE><PRE>
+Problem in reading student information into table.
+</PRE></BLOCKQUOTE>
+<LI> Reading in an id and scores when there's no student with that id.
+<BLOCKQUOTE><PRE>
+No student with id: XX
+</PRE></BLOCKQUOTE>
+</UL>
+
+<P> If you try to do this from scratch, it's a huge and difficult
+program.  However, we have provided you with plenty of functions
+that will greatly reduce the time it takes you to complete this
+part.  They are in the source file,
+<A HREF=Solutions/6/student.c>student.c</A>.
+We have also provided a header file,
+<A HREF=Solutions/6/student.h>student.h</A>, which contains the
+prototypes for the various functions, along with the definition of
+a <TT>struct student</TT> type that you will find especially useful.
+You should use copy these files over to your machine and then use
+<BLOCKQUOTE><PRE>
+#include "student.h"
+</PRE></BLOCKQUOTE>
+to use the functions.  These functions include things such as reading
+in all the information for a student, printing an array of students
+in a form suitable for debugging, sorted an array of students by
+average, computing the average of an array, reading a score that's
+on a line by itself, and more.
+
+<P><B><A NAME=part4>Part 4</A></B>: 
+
+This program will extend the previous part to also print the scores
+for each student, along with the average.   You should start by
+copying <B>grades1.c</B> into a <B>grades2.c</B>.
+
+The input to this part is the same, but the output differs.  For
+the previous sample input, the output should be:
+
+<BLOCKQUOTE><PRE>
+Vinod Malhotra (vinod) 100
+  [100,100,100]
+Greg Uehara (guehara) 88
+  [90,90,85]
+Rahul Chattergy (rahul) 80
+  [90,80,70]
+Tony Kuh (kuh) 80
+  [70,80,90]
+Shu Lin (lin) - no input scores
+James Yee (yee) - no input scores
+</PRE></BLOCKQUOTE>
+
+<P> The only difference is that each student's scores follow that
+student.  The catch is that <EM>you</EM> are not allowed to modify the
+definition of a <TT>struct student</TT> to do this assignment.  
+
+<P> The way your program should work is now read each set of student
+scores into a row within the two-dimensional array.  The scores for
+the first student go into the first row, the second for the second
+student go into the second row, and so on.  You now must store the
+row number of the array where you put a student's scores in the 
+structure representing that student (but not the scores themselves).
+We have conveniently added a new field to the <TT>struct student</TT>
+to hold this value.   (We have also added some new helpful functions
+to <B><A HREF=Solutions/6/student.h>student.h</A></B>
+and <B><A HREF=Solutions/6/student.c>student.c</A>,</B>,
+so you should retrieve the latest versions of the files.)
+
+<P> Your program behaves substantially the same way as before, except
+that after sorting the scores by average, you need to print not only
+the information in the student structure, but also the scores stored
+in the row corresponding to that student.
+
+<H4> What To Turn In </H4>
+
+<P> To get credit for this assignment, you must electronically turn in
+the four files you created in Parts 1 through 4: <B>convert1.c</B>,
+<B>convert2.c</B>, <B>grades1.c</B>, and <B>grades2.c</B>.
+
+<P> <A NAME="grade">As usual, to turn in your program, you need to use
+the <TT>grade</TT> command on wiliki.  For this assignment, you should
+turn in your program using the command:
+<BLOCKQUOTE>
+<TT> grade -6,ee150 convert1.c convert2.c grades1.c grades2.c</TT>
+</BLOCKQUOTE>
+The <TT>-6</TT> tells the grade command which assignment you are
+turning in (assignment #6), the <TT>ee150</TT> tells it your class (EE150,
+so the programs get sent to the EE150 professor and not to the professor
+of some other class), and the
+".c" files are the source files you are actually turning in.
+Please make sure you type in the command exactly as it shown above.
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

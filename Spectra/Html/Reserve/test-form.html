@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE> Test Form</TITLE>
+<H1> Test Form</H1>
+</HEAD>
+
+<BODY>
+<FORM METHOD=POST ACTION="./cgi-bin/test.cgi">
+
+<strong> Select the type of gripe: </strong>
+<SELECT NAME="gripe-type">
+<OPTION SELECTED> Software
+<OPTION> Hardware
+<OPTION> Sytek
+<OPTION> Macintosh Hardware
+<OPTION> Macintosh Software
+</SELECT>
+
+ <P> <P>
+
+<STRONG>Enter a Subject for your gripe:</STRONG><BR>
+<EM> (Shell chars must be properly escaped)</EM><BR>
+
+<TEXTAREA NAME="subject" ROWS=1 COLS=60></TEXTAREA><P>
+
+<STRONG>Enter the text of your gripe:</STRONG><BR>
+
+<TEXTAREA NAME="text" ROWS=10 COLS=60></TEXTAREA><P>
+
+<HR>
+<H2> Info to be included in the text of the gripe (Optional):</H2>
+<EM> The following is useful in case the server is not able to determine your return mail address (e.g., if you are on a Macintosh).</EM><BR>
+your name:
+<TEXTAREA NAME="name" ROWS=1 COLS=25></TEXTAREA><BR>
+extension:
+<TEXTAREA NAME="phone" ROWS=1 COLS=5></TEXTAREA><BR>
+e-mail :
+<TEXTAREA NAME="email" ROWS=1 COLS=40></TEXTAREA><BR>
+</HR>
+
+Press <INPUT TYPE="submit" VALUE="submit">, or press
+<INPUT TYPE="reset" VALUE="clear"> to restart.
+
+</FORM>
+
+<BODY>

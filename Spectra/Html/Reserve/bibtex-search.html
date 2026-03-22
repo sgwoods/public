@@ -1,0 +1,70 @@
+<!DOCTYPE htmlplus PUBLIC "-//Internet/RFC xxxx//EN">
+<HTMLPLUS>
+<HEAD>
+<TITLE>Agent BibTeX Files Search</TITLE>
+</HEAD>
+<BODY>
+
+<H1><IMG SRC="http://www.cs.bham.ac.uk/~amw/images/agent.gif" ALT="Agent" ALIGN=top>
+BibTeX Files Search</H1>
+
+<P>This is an experminental search mechanism for the agent bibliography files.
+
+<HR>
+<FORM METHOD="POST" ACTION="http://www.cs.bham.ac.uk/~amw/cgi-bin/bibsearch.pl">
+
+<INPUT TYPE="hidden" NAME="header" VALUE="~amw/templates/agent.header">
+<INPUT TYPE="hidden" NAME="footer" VALUE="~amw/templates/agent.footer">
+
+<B>Search Term:  </B>
+<INPUT NAME="term">
+
+<P><B>Search Fields:</B>
+<SELECT NAME="field">
+<OPTION VALUE="all"> All
+<OPTION VALUE="author"> Author
+<OPTION VALUE="title"> Title
+</SELECT>
+
+<P><B>Search Type:</B>
+<SELECT NAME="type">
+<OPTION VALUE="exact"> Exact Words
+<OPTION VALUE="substr"> Substrings
+<OPTION VALUE="regexp"> Regular Expression
+</SELECT>
+
+<P><B>Search Files:</B>
+<DL>
+<DD> <INPUT TYPE="checkbox" NAME="files" VALUE="~amw/agents/bibtex/online.html" CHECKED>
+Online
+<DD> <INPUT TYPE="checkbox" NAME="files" VALUE="~amw/agents/bibtex/offline.html" CHECKED>
+Offline
+</DL>
+
+<P><INPUT TYPE="submit" VALUE="Submit Query">
+<INPUT TYPE="reset" VALUE="Reset Query">
+<P>
+
+</FORM>
+
+<HR>
+Searches performed by
+<CODE><A HREF="http://www.cs.bham.ac.uk/~amw/perl/index.html">bibsearch.pl</A></CODE>.
+
+<HR>
+<A HREF="http://www.cs.bham.ac.uk/~amw/info.html"><IMG SRC="http://www.cs.bham.ac.uk/~amw/images/sinfo.gif" ALT="info" ALIGN=MIDDLE></A>
+<A HREF="http://www.cs.bham.ac.uk/~amw/index.html"><IMG SRC="http://www.cs.bham.ac.uk/~amw/images/shome.gif" ALT="home " ALIGN=middle></A>
+<IMG SRC="http://www.cs.bham.ac.uk/~amw/images/sgrey.gif" ALT=" " ALIGN=middle>
+
+<A HREF="http://www.cs.bham.ac.uk/~amw/agents"><IMG SRC="http://www.cs.bham.ac.uk/~amw/images/sagent.gif" ALT="agents " ALIGN=middle></A>
+<A HREF="http://www.cs.bham.ac.uk/~amw/socstr"><IMG SRC="http://www.cs.bham.ac.uk/~amw/images/ssocstr.gif" ALT="socstr " ALIGN=middle></A>
+<HR>
+
+<ADDRESS><A HREF="http://www.cs.bham.ac.uk/~amw/me.html">Andy...</A></ADDRESS>
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>
+
+
+
+
+

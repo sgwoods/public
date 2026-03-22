@@ -1,0 +1,32 @@
+
+#include <stdio.h>
+main()
+{
+int a; int b; int c; int d; int i;
+int table[5];
+
+i = 0,  a = 1,  b = a++,  c = 2 + --a; 
+b * c;  d = 10, d /= b;
+
+for(;d > 0;)
+    printf("Loop %i D is ... %i\n", i, d), d -= 2, table[i] = d, i++;
+
+    printf("Table position 4 is ... %i\n", table[4]);
+
+a = (a += b);             printf("A is ... %i\n", a);
+d = (a == 3) ? 99 : 33;   printf("D is ... %i\n", d); 
+if ( (d == 99), (d != 99) )
+  printf("Stupid Commas\n");
+else
+  printf("Commas are fun\n");
+a = 6, b = 10;            d = (c = a + b) + (a == b) + (9 == 1);
+printf("C is tricky, but D is ... %i\n", d);   
+
+if (b > a) goto badidea;
+else { printf("Missed badidea!\n");
+       goto goodidea; }
+	
+badidea:   printf("Gotos are bad for you!\n");
+goodidea:  printf("Go away Gotos!\n");
+}
+

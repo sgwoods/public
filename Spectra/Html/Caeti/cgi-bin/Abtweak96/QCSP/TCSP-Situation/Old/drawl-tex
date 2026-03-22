@@ -1,0 +1,18 @@
+#!/bin/sh
+
+echo Drawing figure for $1 ...
+
+echo Copy hidden type descriptions to common files ...
+cp /users/sgwoods/Abtweak96/QCSP/TSit/.$1.g /users/sgwoods/Abtweak96/QCSP/TSit/.green
+cp /users/sgwoods/Abtweak96/QCSP/TSit/.$1.p /users/sgwoods/Abtweak96/QCSP/TSit/.purple
+cp /users/sgwoods/Abtweak96/QCSP/TSit/.$1.r /users/sgwoods/Abtweak96/QCSP/TSit/.red
+cp /users/sgwoods/Abtweak96/QCSP/TSit/.$1.y /users/sgwoods/Abtweak96/QCSP/TSit/.yellow
+echo done
+
+echo Running gnuplot for creation of figure ...
+/usr/local/bin/gnuplot < /users/sgwoods/Abtweak96/QCSP/TSit/gnuplot.drawl-tex
+echo done 
+
+echo Copying figure to /users/sgwoods/Abtweak96/QCSP/TSit/$1.ps
+cp /users/sgwoods/Abtweak96/QCSP/TSit/.maprep /users/sgwoods/Abtweak96/QCSP/TSit/$1.ps
+echo done

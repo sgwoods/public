@@ -1,0 +1,6 @@
+#!/bin/csh
+cd Abtweak96   
+ 
+nice time /extra/acl4.2/bin/cl <\
+       	     /users2/other/sgwoods/Html/Caeti/cgi-bin/DemoDir/demo.lisp      
+

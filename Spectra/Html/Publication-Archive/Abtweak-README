@@ -1,0 +1,77 @@
+***************************************************************************
+
+ Please note this directory is the current home of AbTweak.  
+ better to use the home page at
+ http://www.lpaig.uwaterloo.ca/abtweak
+
+***************************************************************************
+
+README
+
+Abtweak related material is outlined below. For more information 
+please contact Steven Woods at sgwoods@logos.uwaterloo.ca.
+
+PLEASE let me know if you FTP a copy of the planner (or one of the papers) so
+that I can maintain a  list of people who may be using it.  I will be letting
+these people know of future releases or related papers that may become
+available.
+
+Last update to this directory: June 28/94
+
+
+1) Abtweak in Common Lisp, including current (albeit brief) user manual
+   - implementation   Steven Woods and Qiang Yang
+   - original concept Qiang Yang, Josh Tenenberg
+
+   Tested on Allegro, Kyoto, Lucid (Sun)
+   Foreign versions known include: MacLisp 
+
+-rw-r--r--  1 sgwoods    128228 Jun 29 11:56 Abtweak93.zip
+
+2) Brief paper on Abtweak and results		evaluate.ps
+   "Evaluating the Utility of Goal Protection and Search Strategies in 
+     Abstract Planning"   Unpublished.
+    - Steven Woods, Qiang Yang, and Josh Tenenberg    January, 1991
+
+-rw-r--r--  1 sgwoods    299956 Nov  7  1992 abtweak-conf.ps
+
+3) Journal length paper on Abtweak and results	UWTR-91.65.ps
+   "Abstraction in Nonlinear Planning"  
+   Also known as University of Waterloo Technical Report CS-92-32.  This & 
+   other UW tech reports available on ftp from cs-archive.uwaterloo.ca.
+   - Qiang Yang, Josh Tenenberg, Steven Woods   
+
+  NOTE NEW VERSION APPEARS COMPUTATIONAL INTELLIGENCE JOURNAL, 1996.
+
+ftp://cs-archive.uwaterloo.ca/cs-archive/CS-91-65
+
+3.5) Revised Journal length paper submitted for publication May, 1993.
+    "Abstraction in Nonlinear Planning"
+     Currently unpublished, available via request to sgwoods@logos.uwaterloo.ca
+     only.  This is a major revised and enhanced version of (3).
+    - Qiang Yang, Josh Tenenberg, Steven Woods
+
+4) Masters Thesis				UWTR-91.17.ps
+   "An Implementation and Evaluation of a Hierarchical Nonlinear Planner"
+   - Steven Woods    April, 1991
+   Also known as University of Waterloo Technical Report CS-91-17.  This & 
+   other UW tech reports available on ftp from dragon.uwaterloo.ca, directory 
+   cs-archive.
+
+ftp://cs-archive.uwaterloo.ca/cs-archive/CS-91-17
+
+5) Chapman overview paper			chapman.ps
+   This paper is an overview of the work of David Chapman for TWEAK, with
+   some observations and comments.  Unpublished.
+   - Steven Woods   November, 1989
+
+-rw-r--r--  1 sgwoods    191065 Nov  7  1992 chapman.ps
+
+NOTE...
+
+For an introduction into what AbTweak is, refer to Yang and Tenenberg's work
+in AbTweak: Abstracting a Nonlinear, Least Commitment Planner, in 
+Proceedings of the AAAI90. 
+
+And of course, for even more background refer to David Chapman's work,
+Planning for Conjunctive Goals, in AI Journal volume 32, pages 333-377, 1987. 

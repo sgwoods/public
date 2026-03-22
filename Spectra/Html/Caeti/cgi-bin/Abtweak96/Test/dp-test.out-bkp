@@ -1,0 +1,34 @@
+
+Plan requirements parsed from Html form
+
+  Initial state: ((390 175)
+                  (IN-STAT-FORMATION WHITE (390 175) HERRINGBONE $security2213
+                   $exec-speed2214 $mo-speed2215 0.0)
+                  (NOT FIRING-ON WHITE $enemy-pos2216 $dir-or-indir2217
+                       (390 175) cp2212))
+    1st leg required opids: (MTLE-NBO CFCR TTM CTF MOFSF)
+    1st leg goal: (cp2212 (AT-LOCATION WHITE cp2212 $exec-time2218)
+                   (MOVING-ALONG-LEG WHITE (390 175) cp2212 $speed2219
+                    $security2220 $method2221)
+                   (IN-TRAV-FORMATION WHITE (390 175) cp2212 COLUMN $ff2222
+                    $lf2223 $rf2224 $tmethod2225))
+
+    2nd leg initial state: (cp2212 (AT-LOCATION WHITE cp2212 $exec-time2218)
+                            (MOVING-ALONG-LEG WHITE (390 175) cp2212
+                             $speed2219 $security2220 $method2221)
+                            (IN-TRAV-FORMATION WHITE (390 175) cp2212 COLUMN
+                             $ff2222 $lf2223 $rf2224 $tmethod2225)
+                            (NOT FIRING-ON WHITE $enemy-pos2232
+                                 $dir-or-indir2233 cp2212 cp2226))
+    2nd leg required opids: (MTLE-BO VFAA BOTM MFLS)
+    2nd leg goal: (cp2226 (STOPPED-AT WHITE cp2226 $exec-time2227))
+
+    3rd leg initial state: (cp2226 (STOPPED-AT WHITE cp2226 $exec-time2227)
+                            (NOT FIRING-ON WHITE $enemy-pos2234
+                                 $dir-or-indir2235 cp2226 cp2211))
+    3rd leg required opids: (MTLE-NBO NBD TOTM WLTF MOFHTF SICOIL)
+  Goal state: (cp2211
+               (IN-STAT-FORMATION WHITE cp2211 COIL $security2229
+                $exec-speed2230 $mo-speed2231 $exec-time2228))
+
+  Additional constraints: ((< $exec-time2228 180) (> $exec-time2228 60))

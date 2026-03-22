@@ -1,0 +1,474 @@
+---------------------------------------------------------------------------
+ABTWEAK FTP, USERS SUMMARY
+---------------------------------------------------------------------------
+"AI Program Library <mgiven@dsac.dla.mil>"
+# sent them mail pointing out implementation of ABTWEAK.
+# DID NOT receive a reply.
+
+"Ira D. Baxter           <baxter@SLCS.SLB.COM>"
+# got : Planner, thesis
+# says: interest in thesis 
+# work: planning to guide transformational implemenation process
+# SEE also:I am interested in how designs are used in the context of software
+# maintenance. Consequently I have a particular proposal for design capture and
+# reuse; the "design" consists of an instantiated plan.   (SEE MAIL)
+
+"Ian Green        <img@engineering.cambridge.ac.uk>"
+Ian Green                                   Department of Engineering
+img@eng.cam.ac.uk                           University of Cambridge
+[+44] 223 33 2639                           Cambridge CB2 1PZ, England
+# got:  All
+# says:
+
+"Randy B. Osborne <ran@scs.carleton.ca>" 
+# got : Planner
+# says:
+
+"Jim Blythe       <Jim_Blythe@B.GP.CS.CMU.ED>"
+# got : All
+# says: works with Knoblock / Prodigy
+# work: implementing the abstraction part of a new, non-linear version of Prodigy
+#      releasing a version of Prodigy 4.0 with abstraction hopefully this semester (fall)
+
+"Subbarao Kambhampati  <rao@sunrise.Stanford.EDU>"
+# got : All
+# says:
+
+"Dan Weld           <weld@cs.washington.edu>"
+# got : Papers/thesis
+# says:
+
+"Robin Drogemuller  <csrd@groper.jcu.edu.au>"
+Lecturer in Building
+Dept. of Civil & Systems Engineering
+James Cook University of North Queensland
+Townsville 4811 Queensland Australia
+# got : Planner, advise of extensions, papers
+# says:
+
+"David Carlisle <carlisle@computer-science.manchester.ac.uk>"
+ Computer Science Department
+                                    Manchester University
+                                    Oxford Road
+                                    Manchester
+                                    England
+                                    M13 9PL
+# got : Planner
+# says:
+
+"Mike Barley          <barley@atc.boeing.com>"
+# got : Planner, thesis
+# says:
+
+"Hans Tallis        <tallis@starbase.MITRE.ORG>"
+# got : Planner, 
+# says:    trouble printing paper.2.ps
+
+"Berthe Y. Choueiry <choueiry%liasun1.epfl.ch@CUNYVM.CUNY.EDU>"
+LIA, CM1-618 (MA), DI, Ecole Polytechnique Federale de Lausanne, Ecublens
+CH-1015 Lausanne, Switzerland
+Voice: +41-21- 693 52 77 Fax: +41-21- 693 52 25
+# got : ALL
+# says:
+
+"John Gennari       <gennari@cs.wisc.edu>"
+ teaching grad seminar at UW-Madison,
+# got : Planner
+# says: I plan on using a planning system ... for the final programming project. 
+
+"Martin Schweitzer  <martin@matilda.vut.edu.au>"
+# got : Thesis as example, at VUT 
+# says:   We are interested in an example thesis to present to students doing
+# their Masters in Computers   
+
+"CHAN Namkiu        <chan@imaisun.tutics.tut.ac.jp>"
+# got : Small paper version
+# says:
+
+"Holger Mueller     <mueller@ira.uka.de>"
+Institut fuer Programmstrukturen und Datenorganisation
+Universitaet Karlsruhe
+W-7500 Karlsruhe, FRG
+# got : Planner
+# says: I have read your news posting with great interest, since I am trying to
+# collect planners from different research groups at the moment. 
+# SEE FOLLOWUP MAIL on planners they are collecting
+# summary:  Otherwise I could send you a list of all groups which let us have a
+# planner so that you could ask them.
+
+"Sjur Jonas Vestli  <vestli@ifr.ethz.ch>"
+# got : ALL
+
+"David Day          <day@linus.mitre.org>"
+-------------------------------------------------------------------------
+   David S. Day      Email: Day@linus.MITRE.Org            (617) 271-8390
+   MS K302/ The MITRE Corporation/ Burlington Road/ Bedford MA 01730/ USA
+-------------------------------------------------------------------------
+# got : ALL
+# says:  I will write to you again when I get around to playing with it.
+
+"Kees d'Huy         <dhuy@cs.vu.nl>"
+Free University Amsterdam
+Department of computer science
+Artificial Intelligence            
+De Boelelaan 1081
+1081 HV Amsterdam
+The Netherlands
+# got : Papers
+# says: I have readt your article in the comp.ai news group about your work on
+# planning. I'm currently working on a thesis about Knowledge based planning
+# based on the work of Mcdermott, Dean and Firby. In simple words it will be a
+# combination of their TMM (time map manager) and HTS (Heuristic Task
+# scheduler)  Topics will be (beside implementation): - truth maintenance,
+#					- Domain (knowledge) representation
+#                                       - Research concerning making a new
+#                                         plan after receiving new info.
+#                                         You won't have to start all over.
+#                                       - Speed up possibilities like
+#                                         gating (split time maps) and 
+#                                         parallellization.
+
+"Brian Mayoh        <bmayoh@daimi.aau.dk>"
+# got : Planner
+
+"Hany Tolba         <Hany.Tolba@loria.fr>"
+***************************************************************************
+*  Hany TOLBA					E.M. tolba@loria.crin.fr  *
+*	CRIN  Campus Scientifique		Tel: (33) 83912000	  *
+*	BP 239						Ext. 3047	  *
+*	54506 Vandoeuvre-Les-Nancy					  *
+*	FRANCE								  *
+***************************************************************************
+# got : Thesis, paper
+# says: I am a phd student working on temoral reasoning and in fact 
+	the second part of my research is to use TR in planing and
+	scheduling problems. I am really intersted in your work and
+	may be I'll join later for a detailed discution about it.
+	Until then my best regades.
+
+"Martin Reinders    <martin@swi.psy.uva.nl>"
+# got : Planner and Paper
+
+"Michael Carroll  <BR.MJC%RLG@Forsythe.Stanford.EDU>"
+Michael Carroll                        br.mjc@forsythe.stanford.edu
+Research Libraries Group               br.mjc@rlg.bitnet
+1200 Villa Street                      415-691-2223 (voice)
+Mountain View, CA 94041-1100           415-964-0943 (fax)
+U.S.A.
+# got :  ALL
+# says: I'm with the Research Libraries Group, a Stanford affiliate, and we're
+starting work on an Archives & Museums Information System.  Some aspects
+of this relate to planning, though at the moment it looks as though the
+user will construct the plan and the system will primarily monitor
+execution and perhaps aid in replanning.
+# also : keep me informed
+
+"George Williams    <george@hsvaic.boeing.com>"
+Boeing Computer Services   Internet: george@hsvaic.boeing.com
+POBox 240002, M/S JY-58    UUCP: ...!uw-beaver!bcsaic!hsvaic!george
+Huntsville AL 35824-6402   Phone: 205+464-4968 FAX: 205+464-4930 BTN: 464-4968
+# got : ALL 
+# says:  As you requested, I am letting you know that I have downloaded a copy of
+the AbTweak files for our AI center.  We have some planning work inhouse
+and I am going to pass this software on to them, as they cannot ftp.
+
+"Ikuto Ishizuka     <Ikuto_Ishizuka@A.NL.CS.CMU.EDU>"
+Ikuto Ishizuka
+Visiting Researcher, Center for Machine Translation, CMU
+ish@cs.cmu.edu
+# got : thesis
+
+"Al Reich           <reich@austin.lockheed.com>"
+Lockheed - Austin Division
+P.O. Box 17100
+Austin, Texas 78760-7100
+USA
+(512) 386-4178
+# got : Planner
+
+"Eric JACOPIN       <jacopin@laforia.ibp.fr>"
+LAFORIA, Boite 169, Tour 46-00, 2ieme etage,
+Universite Paris 6, 4, place Jussieu,
+75252 PARIS Cedex 05, FRANCE.                          AI is a bag of tricks.
+# got : ALL
+
+"Yoshiaki OKUBO     <yoshiaki@sys.titech.ac.jp>"
+(Ph.M. student)
+Dept. of Systems Science,
+Graduate School of Science and Engineering at Nagatsuta
+Tokyo Institute of Technology
+# got :  thesis, planner
+# says: I am also studying planning with abstraction.
+
+"Joseph Deluca      <jad@uci0.mitre.org>"
+
+# got :
+# says:
+# work:
+
+"Luc Lamontagtne    <luc@quebec.drev.dnd.ca>"
+Command and Control Division
+DREV
+Courcelette, Quebec 
+# got : Uncertain
+
+"Amedeo Napoli      <napoli@lmias3.u-strasbg.fr>"
+LMIAS
+Universite Louis Pasteur
+Institut Le Bel
+4 rue Blaise Pascal
+67000 STRASBOURG
+FRANCE
+# got : Thesis
+
+"John Anderson      <andersj@silver.cs.umanitoba.ca>"
+Computer Science			(204) 474-8313
+University of Manitoba, Winnipeg MB
+Canada R3T 2N2
+# got : Planner, ported to Mac IIx.
+# says:   We actually intend
+to use the planner in two ways.  First, I am helping my supervisor teach a 
+grad course on intelligent agents, and I thought it would make a good example
+of a basic (sorry!) planning system.  It'll also be useful as an example for ou
+our symbolic computing course here.  Actually, there's a third reason here too
+(I sound like the Spanish Inquisitor from Monty Python: No! Four! Four reasons!)
+My thesis is on using constructed plans to guide improvised behavior, so It 
+may prove useful there as well.
+
+"Jalal Maleki       <jma@ida.liu.se>"
+# got : ALL
+
+"Lothar Simon       <simon@forwiss.uni-erlangen.de>"
+FORWISS
+Bavarian Research Institute for Knowledge-Based Systems
+Am Weichselgarten 7, 8520 Erlangen, Germany
+# got : ALL 
+
+"Ole Jakob Mengshoel" <Ole.J.Mengshoel@delab.sintef.no>" \
+Ole> I would appreciate to be put on your list of AbTweak users.  My
+Ole> interests 
+Ole> are in the following areas:  Knowledge acquisition and Representation 
+Ole> of time (besides planning in itself of course).  If you have any 
+Ole> comments or ideas on these things, they are of course appreciated. 
+
+25 June 92 ::
+ Lattice comments (replied July 21)
+
+John Allen <allen@wittgenstein.arc.nasa.gov>
+John A. Allen                                                 Sterling Software
+Allen@ptolemy.arc.nasa.gov                            NASA Ames Research Center
+(415)604-4856
+AI research Branch
+MS 269-2
+NASA Ames Research Center    Health nuts are going to feel real stupid someday,
+Moffett Field, CA            lying in hospitals dying of nothing.
+                 94035                               --Redd Foxx
+
+
+What I should have said is that I've picked up a copy of your masters
+thesis.
+
+ Eithan Ephrati (tantush@cs.huji.ac.il).
+
+	I've just "ftp"ed the entire "pub/steve" directory. I'm a Phd
+student at the Hebrw Uni. (cs dept.) currently working on multi-agent
+planning and negotiation (DAI). I intend (with the help of some other
+students here) to use abtweak a testbed for some of our multi-agent
+planning ideas. Any additional information and advice concerning your
+planner will be appreciated.
+
+
+Jong Gyun Lim <lim@shadow.cs.columbia.edu>
+
+I am a 4th year phd student working on content planning for natural
+language generation at Columbia University with prof. Kathy McKeown.  As
+part of my program for the dissertation work, I had to write a simple
+domain planner, and I was suggested by prof. Diane Litman at our university
+to take a look at your program.  I have just ftp'ed the files, and while
+reading the README file, I noticed that you wanted to be informed about the
+users.  
+
+Now I shall go back to the remainder of the README file and the rest of the
+documents and the programs, and I will surely like to talk to you more
+about your program as I use it.
+
+Thomas E. Rothenfluh <rothen@cis.ohio-state.edu>
+
+Obeying your wish I am herewith informing you that I downloaded your
+Abtweak stuff.  I am contributing to a software package which attempts
+to teach advanced AI concepts to students.  Besides other stuff
+(Machine Learning etc.), we currently have a version of STRIPS and
+TWEAK implemented and are looking into similar approaches.  If we gain
+insights from studying your material, we'd be happy to let you know
+(if you are interested).
+
+edward@iti.gov.sg (Edward Lim)
+
+   I have obtained a copy of ABTWEAK and letting you know that I have
+done so.  Pls do put me on your list of folks who hv got it so that I
+can informed of any future developments.
+
+leonard@nssdcs.gsfc.nasa.gov (Leonard Dickens)   Fri, 24 Jul 92 17:24:16 -0400
+
+Hi.  I ftp'ed Abtweak a few days ago with an eye toward using it for a
+image processing planner we are developing here.  After running the
+planner on some of the small test problems, it seemed kinda slow to me
+(60 sec for the 3 ring hanoi problem.)  When I ran abtweak through the
+profiler, I found there was one function (transitive-test-before-p)
+that took almost all of the processor time.  So I reprogrammed it in
+two different ways; the first seems to be faster (about 15 sec) on
+small examples and also a bit neater; whereas the second is based on
+what I think is a better algorithm, although it seems to be taking a
+little longer (18 sec or so).  Anyway, here they are.  If I have the
+inclination and time I might write a graph sweep-and-mark algorithm to
+improve this business even more.
+
+David Joslin <joslin@pogo.isp.pitt.edu>
+ Please add me to your mailing list. 
+
+Detlef Kuepper          Tel. +497531 88-2361, FAX -3065 or -2601
+Universitaet Konstanz
+Fakultaet fuer Verwaltungswissenschaft
+Postfach 55 60 - D73                                     Universitaetsstrasse 10
+D-78434 Konstanz                                         D-78464 Konstanz
+Germany
+Internet: kuepper@inf-wiss.uni-konstanz.de
+
+Nigel Devnani <ndevnani@mic.dundee.ac.uk>
+University of Dundee, Scotland, U.K.
+
+dohsaka@atom.ntt.jp (Kohji Dohsaka)
+Kohji DOHSAKA
+NTT Basic Research Laboratories (JAPAN)
+dohsaka@atom.ntt.jp
+
+Bill Bynum
+Departemnt of Computer Science
+College of William & Mary
+P.O. Box 8795
+Williamsburg, VA 23187
+telephone: (804) 221 3456
+email: bynum@cs.wm.edu
+
+Prof. Hikmet Senay                              Phone: +1 202 994-5910
+Dept. of Elect. Eng. & Comp. Sci.               Fax: +1 202 994-0227
+The George Washington University                Email: senay@seas.gwu.edu
+Washington, DC 20052, USA
+
+Steve Maldony, (maldony@astro.ocis.temple.edu)
+
+jssloka@monet.uwaterloo.ca (Scott Sloka)
+
+dgb@minster.york.ac.uk (Derek)
+
+barrett@cs.washington.edu (Tony Barrett)
+
+Juite Wang <juwang@icaen.uiowa.edu>
+
+jpopyack@mcs.drexel.edu (Jeff Popyack)
+
+higeo Matsubara (research scientist)
+(E-mail:matubara@cslab.kecl.ntt.jp)
+Toru Ishida (senior research scientist, supervisor)
+NTT Communication Science Laboratories
+2 Hikaridai, Seika-cho, Soraku-gun, Kyoto, 619-02, JAPAN
+Phone: +81 7749 5 1821  Facsimile: +81 7749 5 1839
+
+Jaeho Lee <jaeho@engin.umich.edu>
+
+Fabrice R. Noreils
+Research Scientist
+Alcatel Alsthom Recherche
+Route de Nozay
+91460 Marcoussis - France
+email:  noreils@aar.alcatel-alsthom.fr
+
+kewasiel@cs.amherst.edu
+
+David Chia,
+RMIT.
+rfedc@caesar.se.rmit.oz.au
+
+
+
+## ***************************************************************************
+
+
+## mailing list for all above ::
+
+alias abtweak-mail    "Ira D. Baxter           <baxter@SLCS.SLB.COM>" \
+"Detlef Kuepper"    <kuepper@inf-wiss.uni-konstanz.de> \
+"Nigel Devnani"     <ndevnani@mic.dundee.ac.uk> \
+"Kohji Dohsaka"     <dohsaka@atom.ntt.jp>  \
+"Bill Bynum"        <bynum@cs.wm.edu> \
+"Hikmet Senay"      <senay@seas.gwu.edu> \
+"Steve Maldony"     <maldony@astro.ocis.temple.edu> \
+"Scott Sloka"       <jssloka@monet.uwaterloo.ca> \
+"Derek"             <dgb@minster.york.ac.uk> \
+"Tony Barrett"      <barrett@cs.washington.edu> \
+"Juite Wang"        <juwang@icaen.uiowa.edu> \
+"Jeff Popyack"      <jpopyack@mcs.drexel.edu> \
+"Higeo Matsubara"   <matubara@cslab.kecl.ntt.jp> \
+"Jaeho Lee"         <jaeho@engin.umich.edu> \
+"Fabrice R. Noreils"  <noreils@aar.alcatel-alsthom.fr> \
+""                   <kewasiel@cs.amherst.edu> \
+"David Chia"         <rfedc@caesar.se.rmit.oz.au> \
+"Ole Jakob Mengshoel <Ole.J.Mengshoel@delab.sintef.no>" \
+"Eithan Ephrati     <tantush@cs.huji.ac.il>" \
+"John Allen         <allen@wittgenstein.arc.nasa.gov>" \
+"Ian Green          <img@engineering.cambridge.ac.uk>" \
+"Randy B. Osborne   <ran@scs.carleton.ca>"   \
+"Jim Blythe         <Jim_Blythe@B.GP.CS.CMU.ED>"  \
+"Subbarao Kambhampati <rao@sunrise.Stanford.EDU>"  \
+"Dan Weld           <weld@cs.washington.edu>"  \
+"Robin Drogemuller  <csrd@groper.jcu.edu.au>"  \
+"David Carlisle     <carlisle@computer-science.manchester.ac.uk>"  \
+"Mike Barley        <barley@atc.boeing.com>"  \
+"Hans Tallis        <tallis@starbase.MITRE.ORG>"  \
+"Berthe Y. Choueiry <choueiry%liasun1.epfl.ch@CUNYVM.CUNY.EDU>"  \
+"John Gennari       <gennari@cs.wisc.edu>"  \
+"Martin Schweitzer  <martin@matilda.vut.edu.au>"  \
+"CHAN Namkiu        <chan@imaisun.tutics.tut.ac.jp>"  \
+"Holger Mueller     <mueller@ira.uka.de>"  \
+"Sjur Jonas Vestli  <vestli@ifr.ethz.ch>"  \
+"David Day          <day@linus.mitre.org>"  \
+"Kees d'Huy         <dhuy@cs.vu.nl>"  \
+"Brian Mayoh        <bmayoh@daimi.aau.dk>"  \
+"Hany Tolba         <Hany.Tolba@loria.fr>"  \
+"Martin Reinders    <martin@swi.psy.uva.nl>"  \
+"Michael Carroll    <BR.MJC%RLG@Forsythe.Stanford.EDU>"  \
+"George Williams    <george@hsvaic.boeing.com>"  \
+"Ikuto Ishizuka     <Ikuto_Ishizuka@A.NL.CS.CMU.EDU>"  \
+"Al Reich           <reich@austin.lockheed.com>"  \
+"Eric JACOPIN       <jacopin@laforia.ibp.fr>"  \
+"Yoshiaki OKUBO     <yoshiaki@sys.titech.ac.jp>"  \
+"Joseph Deluca      <jad@uci0.mitre.org>"  \
+"Luc Lamontagtne    <luc@quebec.drev.dnd.ca>"  \
+"Amedeo Napoli      <napoli@lmias3.u-strasbg.fr>"  \
+"John Anderson      <andersj@silver.cs.umanitoba.ca>"  \
+"Jalal Maleki       <jma@ida.liu.se>"  \
+"Lothar Simon       <simon@forwiss.uni-erlangen.de>"  \
+"Jong Gyun Lim      <lim@shadow.cs.columbia.edu>" \
+"Thomas E. Rothenfluh <rothen@cis.ohio-state.edu>" \
+"Edward Lim         <edward@iti.gov.sg>"
+
+
+## SUMMARY By Institution, country
+
+USA Universities	16
+USA Companies		8	Boeing(2),Mitre(3),Lockheed,NASA
+Canada Universities	5
+Canada Research		1	DREV
+Japan			4
+France			4
+German 			3
+Great Britain		3
+Australia		3
+Netherlands/Holland	2
+Scotland		1
+Norway			1
+Italy			1
+China			1
+Denmark			1
+Sweden			1
+Other (.sg)		1

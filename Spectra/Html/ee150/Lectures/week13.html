@@ -1,0 +1,118 @@
+<HEAD>
+<TITLE>EE150, Fall 1996 - Lecture Summaries, Week 13 </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff"> 
+
+<H1><A NAME=#top>EE150 - Fall 1996</H1>
+
+<IMG SRC="../Images/Pages.gif" WIDTH=32 HEIGHT=32 HSPACE=10 ALT=""
+ALIGN=left>
+
+<H2>Lecture Summaries - Week 13</H2>
+
+<BR CLEAR=all>
+
+<BLOCKQUOTE>
+<UL>
+<LI> <A HREF="#nov18">Monday, November 18th.</a>
+<LI> <A HREF="#nov20">Wednesday, November 20th.</a>
+<LI> <A HREF="#nov22">Friday, November 22nd.</a>
+</UL>
+</BLOCKQUOTE>
+
+<B>Jump To</B>:
+[<A HREF="http:lectures.html">Lecture Index</A> |
+<A HREF="http:week12.html">Previous Week's Lectures</A> |
+<A HREF="http:week14.html">Next Week's Lectures</A>]
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H3><A NAME="nov18">Monday, November 18th</A></H3>
+
+Topics covered:
+<UL>
+<LI> What is a string.
+<LI> How we create strings.
+<LI> How to read characters into a string with <TT>scanf</TT>.
+<LI> How to read a line into a string with <TT>getline</TT>.
+   <UL>
+   <LI> Implementing <TT>getline</TT>
+        (<B><A HREF="Examples/13/getline.c">getline.c</A></B>).
+   <LI> Using <TT>getline</TT> to line number the input
+        (<B><A HREF="Examples/13/linenum.c">linenum.c</A></B>).
+   </UL>
+<LI> How to compare string with <TT>strcmp</TT>.
+</UL>
+
+Reading: Chapter 10.1, 10.2, and 10.3
+
+<H3><A NAME="nov20">Wednesday, November 20th</A></H3>
+
+Topics covered:
+<UL>
+<LI> Why we terminate strings with a null character.
+<LI> How we pass strings as parameters.
+   <UL>
+   <LI> Writing a function to write a string on a line by itself
+        without using <TT>printf</TT>
+        (<B><A HREF="Examples/14/putline.c">putline.c</A></B>).
+   </UL>
+<LI> Writing functions to deal with more than one string at a time.
+   <UL>
+   <LI> An initial version of <TT>strcmp</TT> (this one has a bug)
+        (<B><A HREF="Examples/14/strcmp.c">strcmp.c</A></B>).
+   </UL>
+<LI> How to hand-check functions.
+<LI> How to write testing programs.
+   <UL>
+   <LI> An example program to test our initial <TT>strcmp</TT> function
+        (<B><A HREF="Examples/14/testit.c">testit.c</A></B>).
+   <LI> One way to fix <TT>strcmp</TT>
+        (<B><A HREF="Examples/14/strcmp2.c">strcmp2.c</A></B>).
+   <LI> Another way to fix <TT>strcmp</TT>
+        (<B><A HREF="Examples/14/strcmp3.c">strcmp3.c</A></B>).
+   </UL>
+</UL>
+
+Reading: Chapter 10.4.
+
+<H3><A NAME="nov22">Friday, November 22nd</A></H3>
+
+Topics covered:
+<UL>
+<LI> What sequential search is and why it's useful.
+<LI> How to search a string for a particular character.
+   <UL>
+   <LI> The function <TT>findCharacter</TT>
+        (<B><A HREF="Examples/14/findchar.c">findchar.c</A></B>).
+   </UL>
+<LI> How to use pointers to access substrings.
+   <UL>  
+   <LI> Printing an ending part of a string with <TT>printf</TT>
+        (<B><A HREF="Examples/14/printlast.c">printlast.c</A></B>).
+   <LI> Printing a beginning part of a string with <TT>printf</TT>
+        (<B><A HREF="Examples/14/printfirst.c">printfirst.c</A></B>).
+   </UL>
+<LI> How to use some new standard library functions (<TT>strcpy</TT>, 
+     <TT>strcat</TT>, <TT>strncpy</TT>, <TT>strncat</TT>).
+   <UL>
+   <LI> A clean way to print the beginning part of a string with
+        <TT>printf</TT>
+        (<B><A HREF="Examples/14/printfirst2.c">printfirst2.c</A></B>).
+   <LI> Converting a string that's first name last to last name first
+        (<B><A HREF="Examples/14/convert.c">convert.c</A></B>).
+   </UL>
+<LI> How using existing functions often saves us a great deal of
+     work, even when they don't do exactly what we want them to.
+</UL>
+
+Reading: Chapter 10.4.
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<BR>[<A HREF="/~sgwoods/Courses/ee150/Fall96/">EE150 Home Page</A> |
+     <A HREF="#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>

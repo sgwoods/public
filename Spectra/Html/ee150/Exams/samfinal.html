@@ -1,0 +1,349 @@
+<HEAD>
+<TITLE>EE150, Spring 1996 - Sample Final Exam </TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1><A NAME="top">EE150 - Spring 1996</A></H1>
+
+<H2>Sample<BR>
+Final Exam</H2>
+
+<B>Jump To Problem</B>:
+[<A HREF="#prob1">1</A> |
+ <A HREF="#prob2">2</A> |
+ <A HREF="#prob3">3</A> |
+ <A HREF="#prob4">4</A> |
+ <A HREF="#prob5">5</A>]
+
+<BR>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P> Here are some good questions taken from past EE150 finals that
+you can use as practice for the upcoming final.  The real EE150
+will be just like this sample final in terms of length, so you should
+be able to complete all of these questions in under two hours.
+
+<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob1">Problem #1</A></H2>
+
+<P> Below is a C function named <TT>replace</TT>.  <B>It doesn't work
+like it supposed to.</B>
+
+<BLOCKQUOTE><PRE>
+1.   int replace(int x[], int old, int new, int stop)
+2.   {
+3.      int i;
+4.    
+5.      for (i = 0; x[i] &gt; stop; i++)
+6.        if (x[i] != old)
+7.          x[i] = new;
+8.      return i;
+9.   }
+</PRE></BLOCKQUOTE>
+
+<P> What it is supposed to do is this: run through the
+first <TT>stop</TT> elements of array <TT>x</TT>,
+replacing each element that contains the value <TT>old</TT>
+with the value <TT>new</TT>.  It is then supposed to return
+the number of elements it modified.  So, for example, suppose
+<TT>table</TT>was array of <TT>int</TT>s that was initialized
+this way:
+<BLOCKQUOTE><PRE>
+int table[] =
+  {31, 17, 26, 9, 6, 17, 19, 17, 21, 17, 96, 108, 61, 19, 17};
+</PRE></BLOCKQUOTE>
+Then the code:
+<BLOCKQUOTE><PRE>
+n = replace(table, 17, 40, 9);
+printf("%i\n", n);
+</PRE></BLOCKQUOTE>
+should have written a 3 and changed table to look like:
+<BLOCKQUOTE><PRE>
+   31, 40, 26, 9, 6, 40, 19, 17, 21, 17, 96, 108, 61, 19, 17
+</PRE></BLOCKQUOTE>
+That is, it should have run through the first 9 elements of <TT>table</TT>,
+changing each 17 to a 40.  But it doesn't!  
+
+<H4><A NAME="prob1a">Part A</A></H4> 
+
+<P> So what does it do?  Trace through the code using the "boxes"
+method shown in class.
+
+<P><A HREF="samfinalsol.html#prob1a">The solution</A>.<P>
+
+<H4><A NAME="prob1b">Part B</A></H4>
+
+<P> What does this code actually write for the value of <TT>n</TT>?
+
+<P><A HREF="samfinalsol.html#prob1b">The solution</A>.<P>
+
+<H4><A NAME="prob1c">Part C</A></H4>
+
+<P> What does <TT>table</TT> look like what the function is all done?
+
+<P><A HREF="samfinalsol.html#prob1c">The solution</A>.<P>
+
+<H4><A NAME="prob1d">Part D</A></H4>
+
+<P> What do we have to do to fix <TT>replace</TT>?  Either show us
+a fixed version of the function or tell us exactly what lines we must
+change and what the changes are.
+
+<P><A HREF="samfinalsol.html#prob1d">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob2">Problem #2</A></H2>
+
+<P> Write a program tha tprints its input onto its output, but with a
+twist.  Its input consists of a series of digit/character pairs, such
+as <TT>2x</TT> or <TT>4y</TT>.  Each time your program reads a pair,
+it writes the character the digit numbre of times.  So <TT>2x</TT>
+turns into <TT>xx</TT> on the output.   If it encounters a character
+without a digit preceding it, it writes the character once.  Here's
+some sample I/O:
+
+<BLOCKQUOTE>
+<EM>3x4yt5z</EM><BR>
+<TT>xxxyyyytzzzzz</TT><BR>
+<EM>2a7u</EM><BR>
+<TT>aauuuuuuu</TT>
+</BLOCKQUOTE>
+
+HINT: Read the input a character at a time and do different things
+depending on whether or not the character is a number.
+
+<P><A HREF="samfinalsol.html#prob2">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob3">Problem #3</A></H2>
+
+Write a function, <TT>removeBlanks</TT>, that takes a string, removes
+all of the blanks from it, and returns the number of non-blanks 
+remaining in the string.  For example, suppose you had a character
+array <TT>s</TT> that was declared and initialized as follows:
+<BLOCKQUOTE><PRE>
+char s[30] = { ' ', ' ', 'a', 'l', 'e', 'x', ' ', ' ', ' ', ' ',
+               'w', 'a', 's', ' ', ' ', 'h', 'e', 'r', 'e', ' ', 
+               ' ', '\0' };
+</PRE></BLOCKQUOTE>
+These lines:
+<BLOCKQUOTE><PRE>
+t = removeBlanks(s);
+printf("%i, %s\n", t, s);
+</PRE></BLOCKQUOTE>
+would produce this output:
+<BLOCKQUOTE><PRE>
+10, alexwashere
+</PRE></BLOCKQUOTE>
+HINT: Think about how you would copy one array into another.  Then
+think about how you would avoid copying certain characters.
+
+<P><A HREF="samfinalsol.html#prob3">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob4">Problem #4</A></H2>
+
+Assume you have the following defined for you:
+<BLOCKQUOTE><PRE>
+struct entry
+{
+  char *word;
+  char *meaning;
+};
+
+struct entry dictionary[MAXWORDS] =
+{ {"phat",  "excellent"},
+  {"chill", "relax"},
+  {"wack",  "lame"},
+  {"props", "praise"},
+  {"fly",   "attractive"},
+  {"dis",   "disrespect"} }
+</PRE></BLOCKQUOTE>
+Also assume that there's a function called <TT>isSameString</TT> that
+takes two strings as parameters and returns a 1 if they are the same
+and a 0 if they are different.  (That is, feel free to use this function
+if you are overcome with the desire to compare strings.)
+
+<H4><A NAME="prob4a">Part A</A></H4>
+
+<P> Write a function, <TT>findWord</TT> that is passed the dictionary,
+the number of entries it contains, and a string containing a word
+in "rap".  The function should return the subscript of the entry
+containing that word or -1 if it can't find it.
+
+Here's a template for <TT>findWord</TT>:
+
+<BLOCKQUOTE><PRE>
+int findWord(struct entry table[], int n, char *rapword)
+{
+
+
+
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinalsol.html#prob4a">The solution</A>.<P>
+
+<H4><A NAME="prob4b">Part B</A></H4>
+
+<P> Write a program to read input words (in "rap"), one per line,
+and print their formal English equivalent on the next line.  If it
+can't find a word, it should print "unknown word!".  Here's some
+sample I/O.
+<BLOCKQUOTE>
+<EM>chill</EM> <BR>
+<TT>relax</TT> <BR>
+<EM>phat</EM>  <BR>
+<TT>excellent</TT> <BR>
+<EM>killer</EM> <BR>
+<TT>unknown word!</TT> <BR>
+<EM>fly</EM> <BR>
+<TT>attractive</TT> 
+</BLOCKQUOTE>
+You MUST use the <TT>findWord</TT> function from the previous
+part.  You MAY use any function that exists in the text that you
+find useful for solving this problem.
+
+<P><A HREF="samfinalsol.html#prob4b">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<H2><A NAME="prob5">Problem #5</A></H2>
+
+This problem has you write a program that produces a <EM>vertical</EM>
+histogram of its input.  If the program's input was:
+<BLOCKQUOTE><PRE>
+A B D D
+F C
+B B C D D A
+</PRE></BLOCKQUOTE>
+it's output would be
+<BLOCKQUOTE><PRE>
+A B C D E F
+* * * *   *
+* * * *
+  *   *
+      *
+</PRE></BLOCKQUOTE>
+Do not panic.  You will do this problem as a series of functions
+and then put them together in a short main program at the end.
+
+<H4><A NAME="prob5a">Part A</A></H4>
+
+<P> Write a function, <TT>makeCounts</TT>, that takes an array of
+counters and the number of counters, and updates the appropriate
+counter for each letter.  It should ignore other characters.  If
+counters is an array of 6 elements, and we have the input above,
+the call <TT>makeCounts(counters)</TT> will wind up with the array
+having the value <TT>2 3 2 4 0 1</TT> (there are 2 A's, 3 B's, 2 C's,
+4 D's, 0 E's and 1 F in the same intput).
+
+<P>HINT: Read the input one character at a time.  Ignore any character
+that isn't a grade.
+
+<BLOCKQUOTE><PRE>
+void makeCounts(int counters[], int n)
+{
+
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinalsol.html#prob5a">The solution</A>.<P>
+
+<H4><A NAME="prob5b">Part B</A></H4>
+
+<P> Write a function, <TT>blankOut</TT> that takes a two-dimensional
+array of characters containing <TT>r</TT> rows and <TT>c</TT> columns
+and sets every one of its elements to a blank.
+
+HINT: A two-dimensional array of characters is exactly like a
+two-dimensional array of integers, except that its elements are 
+characters rather than integers.
+
+<BLOCKQUOTE><PRE>
+void blockOut(char table[MAXROWS][MAXCOLS], int r, int c)
+{
+
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinalsol.html#prob5b">The solution</A>.<P>
+
+<H4><A NAME="prob5c">Part C</A></H4>
+
+<P> Write a function, <TT>placeStars</TT>, that taeks a two-dimensional
+array of characters, an array of counters, and the number of
+counters.  It puts stars in the array in the appropriate place.
+The rows of the two-dimensional array correspond to rows of the output
+(the first row of the array corresponds to the first row of the 
+histogram's output).  So for the input above, if the two-dimensional
+array is named <TT>table</TT>:
+<BLOCKQUOTE>
+<TT>table[0][0]</TT> and <TT>table[1][0]</TT> gets stars because
+there are 2 A's.
+</BLOCKQUOTE>
+<BLOCKQUOTE>
+<TT>table[0][1]</TT>, <TT>table[1][1]</TT>, and <TT>table[2][1]</TT>
+gets stars because there are 3 B's.
+</BLOCKQUOTE>
+HINT: Draw a picture of the two-dimensional array you want to create
+for the input above.
+
+<BLOCKQUOTE><PRE>
+void placeStars(char table[MAXROWS][MAXCOLS], int counters[], int n)
+{
+
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinalsol.html#prob5c">The solution</A>.<P>
+
+<H4><A NAME="prob5d">Part D</A></H4>
+
+<P> Write a function to print the two-dimensional array in the form
+of a vertical histogram.  Its passed the two-dimensional array of
+blanks and stars, along with the number of rows and columns in
+that array.
+
+<BLOCKQUOTE><PRE>
+void printHisto(char table[MAXROWS][MAXCOLS], int r, int c)
+{
+
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinalsol.html#prob5d">The solution</A>.<P>
+
+<H4><A NAME="prob5e">Part E</A></H4>
+
+<BLOCKQUOTE><PRE>
+#define MAXROWS      20    /* # of rows in two-dimensional array */
+#define MAXCOLS      6     /* # of columns in two-dimensional array */
+main()
+{
+  char output_table[MAXROWS][MAXCOLS];
+  int grade_counters[MAXCOLS];
+
+
+}
+</PRE></BLOCKQUOTE>
+
+<P><A HREF="samfinalsol.html#prob5e">The solution</A>.<P>
+
+<IMG SRC="../Images/BlackBar.gif" WIDTH=520 HEIGHT=3 HSPACE=1 ALT="------">
+
+<P>
+[<A HREF="http:../info.html">EE150 Home Page</A> |
+ <A HREF="http:info.html">EE150 Exam Information Page</A> |
+ <A HREF="http:#top">Top Of Page</A>]
+
+<script src="/public/Spectra/Html/archive-mark.js"></script>
+</body>
