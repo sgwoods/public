@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "project_id": "aurora-galactica",
+  "active": true,
+  "display_name": "Aurora Galactica",
+  "project_page_path": "aurora-galactica.html",
+  "repo_url": "https://github.com/sgwoods/Codex-Test1",
+  "dashboard_url": "https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html",
+  "experience_url": "https://sgwoods.github.io/Aurora-Galactica/",
+  "repo_pushed_at": "2026-03-23T11:42:44-04:00",
+  "status_generated_at": "2026-03-23T15:43:06Z",
+  "status_label": "Current release",
+  "status_value": "0.5.0-alpha.1",
+  "focus_label": "Current focus",
+  "focus_value": "Polished four-stage 1.0 slice"
+}
