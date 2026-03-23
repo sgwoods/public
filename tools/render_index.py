@@ -22,7 +22,7 @@ DATA_DIR = ROOT / "data" / "projects"
 OUTPUT = ROOT / "index.html"
 LOCAL_TZ = ZoneInfo("America/Toronto")
 PROJECT_ORDER = [
-    "codex-test1",
+    "aurora-galactica",
     "phd-renovation",
     "mmath-renovation",
 ]
@@ -42,11 +42,11 @@ ACTIVITY_PROJECTS = [
         "project_id": "phd-renovation",
     },
     {
-        "label": "Galaga",
+        "label": "Aurora",
         "repo_path": Path("/Users/stevenwoods/Documents/Codex-Test1"),
         "ref": "origin/main",
         "css_class": "activitySegment--galaga",
-        "project_id": "codex-test1",
+        "project_id": "aurora-galactica",
     },
 ]
 LEGACY_SPECTRA = {

@@ -39,13 +39,19 @@ status manifests.
 
 ## Status Manifest Ownership
 
-Each active project owns exactly one file under `data/projects/`.
+Each active project owns exactly one canonical file under `data/projects/`.
+Legacy compatibility aliases may exist, but they must stay inactive so they do
+not create duplicate homepage entries.
 
-Current expected files:
+Current canonical files:
 
-- `data/projects/codex-test1.json`
+- `data/projects/aurora-galactica.json`
 - `data/projects/phd-renovation.json`
 - `data/projects/mmath-renovation.json`
+
+Current compatibility alias files:
+
+- `data/projects/codex-test1.json`
 
 Only the owning project may write its file.
 
@@ -56,14 +62,14 @@ Each project must write one JSON object with this exact structure:
 ```json
 {
   "schema_version": "1.0",
-  "project_id": "codex-test1",
+  "project_id": "aurora-galactica",
   "active": true,
-  "display_name": "Codex-Test1 game project",
+  "display_name": "Aurora Galactica",
   "description": "One-sentence homepage summary for this project.",
-  "project_page_path": "codex-test1.html",
+  "project_page_path": "aurora-galactica.html",
   "repo_url": "https://github.com/sgwoods/Codex-Test1",
-  "dashboard_url": "https://sgwoods.github.io/Codex-Test1/release-dashboard.html",
-  "experience_url": "https://sgwoods.github.io/Codex-Test1/",
+  "dashboard_url": "https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html",
+  "experience_url": "https://sgwoods.github.io/Aurora-Galactica/",
   "repo_pushed_at": "2026-03-21T19:57:53Z",
   "status_generated_at": "2026-03-21T20:01:28Z",
   "status_label": "Current release",
@@ -128,8 +134,9 @@ Each project's automation may do the following:
 2. Generate or refresh its own dashboard.
 3. Generate or refresh its own public project page.
 4. Compute its current public status values.
-5. Write only its own JSON file in `data/projects/`.
-6. Commit only if that JSON file changed.
+5. Write its canonical JSON file in `data/projects/`, and optionally refresh any
+   inactive legacy alias files that point at the same public experience.
+6. Commit only if those owned files changed.
 
 ## Forbidden Actions
 
@@ -177,7 +184,7 @@ project own only factual state.
 
 ## Project-Specific Guidance
 
-Codex-Test1 should publish:
+Aurora Galactica should publish:
 
 - repo URL
 - dashboard URL
@@ -203,7 +210,7 @@ MMath renovation should publish:
 When a project updates its homepage status manifest, prefer a commit message
 like:
 
-- `Update public status manifest for Codex-Test1`
+- `Update public status manifest for Aurora Galactica`
 - `Update public status manifest for phd-renovation`
 - `Update public status manifest for mmath-renovation`
 
