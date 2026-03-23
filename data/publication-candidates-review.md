@@ -4,6 +4,36 @@ This file tracks publication and patent candidates that have been reviewed for p
 
 ## Source Reviews
 
+### ResearchGate profile review
+
+- Source:
+  - https://www.researchgate.net/profile/Steven-Woods
+- Status: reviewed
+- What we found:
+  - ResearchGate was a productive discovery source for missing publication and patent candidates, but the final inclusion decisions needed to be confirmed against canonical sources such as Google Patents, dblp, DOI records, publisher pages, and archival PDFs.
+  - The reviewed candidate set from ResearchGate has now been fully triaged.
+- Outcome summary:
+  - Added to the active bibliography:
+    - Program plan recognition for year 2000 tools
+    - Program plan matching: experiments with a constraint-based approach
+    - The Perils and Joys of Reconstructing Architectures
+    - Preface
+    - Identification of areas of interest on a web page
+    - System and method for funneling user responses in an internet voice portal system to determine a desired item or service
+    - Region classification based on regional distribution information
+    - Associating advertisements and game data in a flash-based gaming environment
+    - Overlay content in a gaming environment
+    - Apparatus and method for service-enabling computer programs
+    - Interstitial advertising in a gaming environment
+    - Service and messaging infrastructure to support creation of distributed, peer-to-peer applications with a service-oriented architecture
+    - System and method for providing content, applications, services and digital media to users in a peer-to-peer network
+  - Deferred:
+    - Beyond Web Search Services
+  - Rejected:
+    - Special issue: Program comprehension (IWPC 99). Papers of the international workshop, Pittsburgh, PA, USA, 1999
+- Recommendation:
+  - Treat ResearchGate as a useful discovery queue, but continue to require canonical-source verification before adding anything to the active bibliography.
+
 ### LinkedIn profile review
 
 - Source:
