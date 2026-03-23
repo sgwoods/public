@@ -7,6 +7,7 @@ import html
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import quote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -277,6 +278,26 @@ def secondary_link(entry: BibEntry) -> tuple[str, str] | None:
     return None
 
 
+def researchgate_link(entry: BibEntry) -> tuple[str, str] | None:
+    explicit = latex_to_text(entry.fields.get("researchgate_url", ""))
+    if explicit:
+        return explicit, "ResearchGate"
+
+    doi = latex_to_text(entry.fields.get("doi", ""))
+    title = latex_to_text(entry.fields.get("title", ""))
+    author = latex_to_text(entry.fields.get("author", ""))
+
+    query_parts = [part for part in (doi, title, author) if part]
+    if not query_parts:
+        return None
+
+    query = " ".join(query_parts[:2]) if doi else " ".join(query_parts[:2])
+    return (
+        f"https://www.researchgate.net/search/publication?q={quote(query)}",
+        "ResearchGate",
+    )
+
+
 def archive_link(entry: BibEntry, field: str) -> tuple[str, str] | None:
     url = latex_to_text(entry.fields.get(field, ""))
     if not url:
@@ -324,6 +345,7 @@ def render_entry(entry: BibEntry) -> str:
     year = html.escape(latex_to_text(entry.fields.get("year", "")))
     primary = primary_link(entry)
     secondary = secondary_link(entry)
+    researchgate = researchgate_link(entry)
     archive_pdf = archive_link(entry, "archive_pdf")
     archive_ps = archive_link(entry, "archive_ps")
     archive_landing = archive_link(entry, "archive_landing")
@@ -334,6 +356,9 @@ def render_entry(entry: BibEntry) -> str:
         links.append(render_button_link(href, label))
     if secondary:
         href, label = secondary
+        links.append(render_button_link(href, label, ghost=True))
+    if researchgate:
+        href, label = researchgate
         links.append(render_button_link(href, label, ghost=True))
 
     archive_links: list[str] = []
@@ -429,7 +454,7 @@ def render_page(entries: list[BibEntry]) -> str:
         <section class="panel">
             <div class="notePanel">
                 <strong>Source of truth:</strong> This page is rebuilt from <code>public/data/publications.bib</code>.
-                Canonical publisher or DOI links remain primary, while recovered Spectra archive PS/PDF artifacts are surfaced here when they are available.
+                Canonical publisher or DOI links remain primary, recovered Spectra archive PS/PDF artifacts are surfaced here when they are available, and ResearchGate buttons open either a stored record URL or a title/DOI search on ResearchGate for that entry.
             </div>
         </section>
 
