@@ -2,6 +2,21 @@
 
 This file tracks publication and patent candidates that have been reviewed for possible inclusion in the public bibliography but are not yet accepted into the active site.
 
+## Source Reviews
+
+### LinkedIn profile review
+
+- Source:
+  - https://www.linkedin.com/in/stevenwoods/
+- Status: reviewed
+- What we found:
+  - The public LinkedIn profile was useful as a discovery pointer, but it did not provide a stable, uniquely citable set of publication and patent records beyond the items already reviewed from canonical sources.
+  - The candidate material surfaced through LinkedIn overlaps the same publication and patent families already reviewed elsewhere.
+  - LinkedIn visibility varies by viewer and login state, so it is not a reliable bibliographic source of record for final citation details.
+- Recommendation:
+  - Treat LinkedIn as a discovery hint only.
+  - Use canonical sources such as DOI records, publisher pages, dblp, and Google Patents for actual inclusion decisions.
+
 ## Accepted
 
 ### Preface
