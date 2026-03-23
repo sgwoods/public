@@ -56,6 +56,51 @@
         };
     }
 
+    function projectTimestamp(project, field) {
+        const value = project && project[field] ? Date.parse(project[field]) : NaN;
+        return Number.isNaN(value) ? 0 : value;
+    }
+
+    function dedupeProjects(projects) {
+        const latestByRepo = new Map();
+        const passthrough = [];
+
+        for (const project of projects) {
+            const key = (project.repo_url || "").trim().toLowerCase();
+            if (!key) {
+                passthrough.push(project);
+                continue;
+            }
+
+            const existing = latestByRepo.get(key);
+            if (!existing) {
+                latestByRepo.set(key, project);
+                continue;
+            }
+
+            const candidateTuple = [
+                projectTimestamp(project, "status_generated_at"),
+                projectTimestamp(project, "repo_pushed_at"),
+                project.project_id || "",
+            ];
+            const existingTuple = [
+                projectTimestamp(existing, "status_generated_at"),
+                projectTimestamp(existing, "repo_pushed_at"),
+                existing.project_id || "",
+            ];
+
+            if (
+                candidateTuple[0] > existingTuple[0] ||
+                (candidateTuple[0] === existingTuple[0] && candidateTuple[1] > existingTuple[1]) ||
+                (candidateTuple[0] === existingTuple[0] && candidateTuple[1] === existingTuple[1] && candidateTuple[2] > existingTuple[2])
+            ) {
+                latestByRepo.set(key, project);
+            }
+        }
+
+        return [...passthrough, ...latestByRepo.values()];
+    }
+
     function renderButton(href, label) {
         return `<a class="button" href="${href}">${label}</a>`;
     }
@@ -154,7 +199,7 @@
         }
 
         try {
-            const projects = await loadProjectManifests(config);
+            const projects = dedupeProjects(await loadProjectManifests(config));
             projects.sort(projectSortFactory(config));
 
             if (grid) {

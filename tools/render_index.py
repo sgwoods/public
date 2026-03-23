@@ -68,6 +68,7 @@ class ProjectStatus:
     dashboard_url: str | None
     experience_url: str | None
     repo_pushed_at: datetime
+    status_generated_at: datetime
     status_label: str
     status_value: str
     focus_label: str
@@ -108,6 +109,7 @@ def load_project(path: Path) -> ProjectStatus:
         dashboard_url=payload.get("dashboard_url"),
         experience_url=payload.get("experience_url"),
         repo_pushed_at=parse_datetime(payload["repo_pushed_at"]),
+        status_generated_at=parse_datetime(payload["status_generated_at"]),
         status_label=payload["status_label"],
         status_value=payload["status_value"],
         focus_label=payload["focus_label"],
@@ -119,6 +121,33 @@ def sort_key(project: ProjectStatus) -> tuple[int, str]:
     if project.project_id in PROJECT_ORDER:
         return (PROJECT_ORDER.index(project.project_id), project.display_name.lower())
     return (len(PROJECT_ORDER), project.display_name.lower())
+
+
+def dedupe_projects(projects: list[ProjectStatus]) -> list[ProjectStatus]:
+    latest_by_repo: dict[str, ProjectStatus] = {}
+    passthrough: list[ProjectStatus] = []
+
+    for project in projects:
+        key = project.repo_url.strip().lower()
+        if not key:
+            passthrough.append(project)
+            continue
+        existing = latest_by_repo.get(key)
+        if existing is None:
+            latest_by_repo[key] = project
+            continue
+        if (
+            project.status_generated_at,
+            project.repo_pushed_at,
+            project.project_id,
+        ) > (
+            existing.status_generated_at,
+            existing.repo_pushed_at,
+            existing.project_id,
+        ):
+            latest_by_repo[key] = project
+
+    return passthrough + list(latest_by_repo.values())
 
 
 def render_button(href: str, label: str) -> str:
@@ -325,6 +354,8 @@ def render() -> str:
         key=sort_key,
     )
     projects = [project for project in projects if project.active]
+    projects = dedupe_projects(projects)
+    projects.sort(key=sort_key)
     if not projects:
         raise SystemExit("No active project manifests found.")
 
