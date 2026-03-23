@@ -26,11 +26,6 @@ PROJECT_ORDER = [
     "phd-renovation",
     "mmath-renovation",
 ]
-PROJECT_DESCRIPTIONS = {
-    "codex-test1": "Public project page for the Neo Galaga Tribute web application.",
-    "phd-renovation": "Public project page for the restored PhD program-understanding codebase.",
-    "mmath-renovation": "Public project page for reviving the AbTweak thesis code and documentation.",
-}
 ACTIVITY_PROJECTS = [
     {
         "label": "Abtweak",
@@ -67,6 +62,7 @@ LEGACY_SPECTRA = {
 class ProjectStatus:
     project_id: str
     display_name: str
+    description: str | None
     project_page_path: str
     repo_url: str
     dashboard_url: str | None
@@ -106,6 +102,7 @@ def load_project(path: Path) -> ProjectStatus:
     return ProjectStatus(
         project_id=payload["project_id"],
         display_name=payload["display_name"],
+        description=payload.get("description"),
         project_page_path=payload["project_page_path"],
         repo_url=payload["repo_url"],
         dashboard_url=payload.get("dashboard_url"),
@@ -117,14 +114,6 @@ def load_project(path: Path) -> ProjectStatus:
         focus_value=payload["focus_value"],
         active=bool(payload["active"]),
     )
-
-
-def project_description(project: ProjectStatus) -> str:
-    return PROJECT_DESCRIPTIONS.get(
-        project.project_id,
-        "Public project page synced from its repository status manifest.",
-    )
-
 
 def sort_key(project: ProjectStatus) -> tuple[int, str]:
     if project.project_id in PROJECT_ORDER:
@@ -277,6 +266,7 @@ def render_activity_chart() -> str:
 
 
 def render_project_card(project: ProjectStatus) -> str:
+    description = project.description or "Public project page synced from its repository status manifest."
     buttons = [
         render_button(project.project_page_path, "Open project page"),
         render_button(project.repo_url, "Open repository"),
@@ -287,7 +277,7 @@ def render_project_card(project: ProjectStatus) -> str:
         buttons.insert(2, render_button(project.experience_url, "Open live experience"))
     return f"""                <article class="card" data-project-card="{html.escape(project.project_id)}">
                     <h3>{html.escape(project.display_name)}</h3>
-                    <p>{html.escape(project_description(project))}</p>
+                    <p>{html.escape(description)}</p>
                     <div class="detailList">
                         <div><strong>Last repo update</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>
                         <div><strong>{html.escape(project.status_label)}</strong> {html.escape(project.status_value)}</div>
@@ -344,7 +334,6 @@ def render() -> str:
         "repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main",
         "fallback_manifest_paths": [f"data/projects/{path.name}" for path in sorted(DATA_DIR.glob("*.json"))],
         "project_order": PROJECT_ORDER,
-        "project_descriptions": PROJECT_DESCRIPTIONS,
     }
     project_manifest_config_json = json.dumps(project_manifest_config).replace("</", "<\\/")
 

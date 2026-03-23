@@ -59,6 +59,7 @@ Each project must write one JSON object with this exact structure:
   "project_id": "codex-test1",
   "active": true,
   "display_name": "Codex-Test1 game project",
+  "description": "One-sentence homepage summary for this project.",
   "project_page_path": "codex-test1.html",
   "repo_url": "https://github.com/sgwoods/Codex-Test1",
   "dashboard_url": "https://sgwoods.github.io/Codex-Test1/release-dashboard.html",
@@ -82,6 +83,8 @@ Each project must write one JSON object with this exact structure:
   - `true` if the project should appear on the homepage
 - `display_name`
   - Text used for the homepage entry
+- `description`
+  - One-sentence homepage summary used for the project card body
 - `project_page_path`
   - Relative path to the project page in the `public` repo
 - `repo_url`

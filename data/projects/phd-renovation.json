@@ -3,6 +3,7 @@
   "project_id": "phd-renovation",
   "active": true,
   "display_name": "PhD renovation project",
+  "description": "Public project page for the restored PhD program-understanding codebase.",
   "project_page_path": "phd-renovation.html",
   "repo_url": "https://github.com/sgwoods/phd-renovation",
   "dashboard_url": "https://sgwoods.github.io/public/phd-renovation-dashboard.html",

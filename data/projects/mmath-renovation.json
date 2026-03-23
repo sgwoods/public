@@ -3,6 +3,7 @@
   "project_id": "mmath-renovation",
   "active": true,
   "display_name": "Masters of Mathematics renovation project",
+  "description": "Public project page for reviving the AbTweak thesis code and documentation.",
   "project_page_path": "mmath-renovation.html",
   "repo_url": "https://github.com/sgwoods/mmath-renovation",
   "dashboard_url": "https://sgwoods.github.io/public/mmath-renovation-release-dashboard.html",

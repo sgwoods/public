@@ -69,8 +69,7 @@
     }
 
     function renderProjectCard(project, config) {
-        const description = (config.project_descriptions && config.project_descriptions[project.project_id]) ||
-            "Public project page synced from its repository status manifest.";
+        const description = project.description || "Public project page synced from its repository status manifest.";
         const buttons = [
             renderButton(escapeHtml(project.project_page_path), "Open project page"),
         ];

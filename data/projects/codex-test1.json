@@ -3,6 +3,7 @@
   "project_id": "codex-test1",
   "active": true,
   "display_name": "Aurora Galactica",
+  "description": "Public project page for the Aurora Galactica web application.",
   "project_page_path": "codex-test1.html",
   "repo_url": "https://github.com/sgwoods/Codex-Test1",
   "dashboard_url": "https://sgwoods.github.io/Codex-Test1/release-dashboard.html",
