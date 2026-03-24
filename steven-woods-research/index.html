@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Woods Research Working Repository</title>
+    <link rel="stylesheet" href="../assets/public-site.css">
+    <style>
+        :root {
+            --bg: #0f1118;
+            --bg2: #1d2f45;
+            --panel-bg: rgba(16, 20, 29, 0.76);
+            --panel-glow: rgba(104, 205, 255, 0.18);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(196, 225, 255, 0.14);
+            --panel-border: rgba(124, 181, 255, 0.22);
+            --text: #f3f7ff;
+            --muted: #c8d6ea;
+            --muted-strong: #f5fbff;
+            --accent: #7cb5ff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(124, 181, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.14), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        .workflowGrid,
+        .statusGrid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: rgba(124, 181, 255, 0.18);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .workflowCard h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main class="shell shell--narrow">
+        <section class="hero">
+            <div class="heroTop">
+                <div>
+                    <span class="eyebrow">Working Repository</span>
+                    <h1>Steven Woods Research</h1>
+                </div>
+                <a class="heroHomeLink" href="../steven-woods-research.html">Back to project page</a>
+            </div>
+            <p class="lead">
+                Working repository for the person-centric archive covering Steven Woods' public appearances,
+                profile material, awards, and cross-company media record. New material lands in
+                <code>incoming/</code>, then moves into the research ledger and historic lanes once it is dated
+                and understood.
+            </p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Intake Folder</span>
+                    <span class="metaValue">incoming/</span>
+                    <div class="metaNote">Unsorted interview, profile, and press materials start here.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Historic Folder</span>
+                    <span class="metaValue">historic/</span>
+                    <div class="metaNote">Preserved HTML, source captures, decks, and artifacts live here.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Current State</span>
+                    <span class="metaValue">Research pass active</span>
+                    <div class="metaNote">The public-record archive now has a reviewed source ledger and local source captures.</div>
+                </div>
+            </div>
+            <div class="links">
+                <a class="button" href="../steven-woods-research.html">Summary project page</a>
+                <a class="button button--ghost" href="../index.html">Public index</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Repository Workflow</h2>
+            <div class="workflowGrid">
+                <article class="card workflowCard">
+                    <h3><span class="chip">01</span> Capture</h3>
+                    <p>Drop raw interviews, podcasts, profile pages, talk listings, and related media here first so nothing gets lost during early research.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/steven-woods-research/incoming/</code></div>
+                        <div><strong>Use</strong> staging and first-pass processing</div>
+                    </div>
+                </article>
+                <article class="card workflowCard">
+                    <h3><span class="chip">02</span> Review</h3>
+                    <p>Extract dates, titles, contexts, archive status, and whether each item is a public appearance, profile, or third-party media mention.</p>
+                    <div class="detailList">
+                        <div><strong>Core tasks</strong> identify, date, classify, cross-link</div>
+                        <div><strong>Result</strong> source-manifest entries and review notes</div>
+                    </div>
+                </article>
+                <article class="card workflowCard">
+                    <h3><span class="chip">03</span> Preserve</h3>
+                    <p>Store local copies and structured summaries so the person-centric archive remains usable even when older public links disappear or drift.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/steven-woods-research/historic/</code></div>
+                        <div><strong>Types</strong> source captures, decks, notes, archive metadata</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Working Notes</h2>
+            <div class="statusGrid">
+                <article class="card">
+                    <h3>Media review ledger</h3>
+                    <p>The reviewed source set is tracked centrally so the archive can distinguish approved appearances from secondary or deferred items.</p>
+                    <div class="links">
+                        <a class="button" href="research/media-sources-review.md">Open review file</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Local source captures</h3>
+                    <p>Archived HTML copies and feed metadata are preserved locally to keep the archive stable even when source sites change.</p>
+                    <div class="links">
+                        <a class="button" href="historic/artifacts/archive-html/">Open source captures</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Coordination exports</h3>
+                    <p>This project exports the manifest and handoff files needed to flow Steven-centric summaries up to the top-level public hub.</p>
+                    <div class="links">
+                        <a class="button" href="project-manifest.json">Project manifest</a>
+                        <a class="button button--ghost" href="source-manifest.json">Source manifest</a>
+                        <a class="button button--ghost" href="public-handoff.json">Public handoff</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

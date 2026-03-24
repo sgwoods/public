@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_id": "steven-woods-research",
+  "handoff_generated_at": "2026-03-24T23:50:00Z",
+  "items_for_public": [
+    {
+      "source_id": "src-steven-2023-riddick-show",
+      "reason": "Important long-form podcast interview",
+      "recommended_section": "media-appearances",
+      "summary": "Riddick Show podcast episode with exact date, duration, and public audio metadata."
+    },
+    {
+      "source_id": "src-steven-2023-research-discovery-days-keynote",
+      "reason": "Major recent keynote appearance",
+      "recommended_section": "media-appearances",
+      "summary": "Waterloo Research Discovery Days keynote with direct YouTube recording."
+    },
+    {
+      "source_id": "src-steven-2021-usask-alumni-profile",
+      "reason": "Strong profile source for awards and long-term career framing",
+      "recommended_section": "profiles-and-recognition",
+      "summary": "University of Saskatchewan alumni feature with retrospective company and award framing."
+    }
+  ],
+  "open_questions": [
+    {
+      "question": "Tighten the event context for the 2012 SlideShare keynote deck."
+    },
+    {
+      "question": "Continue verifying exact original hosts for older Quack-era profile articles."
+    }
+  ]
+}

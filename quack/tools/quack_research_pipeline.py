@@ -39,7 +39,7 @@ SOURCE_MANIFEST_PATH = ROOT / "source-manifest.json"
 PUBLIC_HANDOFF_PATH = ROOT / "public-handoff.json"
 PUBLIC_PROJECT_CARD_MANIFEST_PATH = PUBLIC_ROOT / "data" / "projects" / "quack-com.json"
 PROJECT_PAGE_OUTPUT = PUBLIC_ROOT / "quack-com.html"
-MEDIA_SOURCES_REVIEW = PUBLIC_ROOT / "data" / "media-appearances" / "media-sources-review.md"
+MEDIA_SOURCES_REVIEW = PUBLIC_ROOT / "steven-woods-research" / "research" / "media-sources-review.md"
 
 NOW = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 

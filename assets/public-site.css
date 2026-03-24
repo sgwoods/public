@@ -440,6 +440,21 @@ code {
     background: linear-gradient(180deg, rgba(255, 214, 107, 0.96), rgba(233, 157, 62, 0.96));
 }
 
+.activitySegment--steven,
+.activityLegendSwatch.activitySegment--steven {
+    background: linear-gradient(180deg, rgba(124, 181, 255, 0.96), rgba(76, 129, 224, 0.96));
+}
+
+.activitySegment--quack,
+.activityLegendSwatch.activitySegment--quack {
+    background: linear-gradient(180deg, rgba(255, 176, 82, 0.96), rgba(219, 116, 50, 0.96));
+}
+
+.activitySegment--kinitos,
+.activityLegendSwatch.activitySegment--kinitos {
+    background: linear-gradient(180deg, rgba(98, 214, 202, 0.96), rgba(39, 166, 162, 0.96));
+}
+
 .activityTotal,
 .activityLabel {
     text-align: center;

@@ -25,10 +25,11 @@ PROJECT_ORDER = [
     "aurora-galactica",
     "phd-renovation",
     "mmath-renovation",
+    "steven-woods-research",
     "quack-com",
     "kinitos-neoedge",
 ]
-ACTIVITY_PROJECTS = [
+CODING_ACTIVITY_PROJECTS = [
     {
         "label": "Abtweak",
         "repo_path": Path("/Users/stevenwoods/mmath-renovation"),
@@ -49,6 +50,38 @@ ACTIVITY_PROJECTS = [
         "ref": "origin/main",
         "css_class": "activitySegment--galaga",
         "project_id": "aurora-galactica",
+    },
+]
+RESEARCH_ACTIVITY_PROJECTS = [
+    {
+        "label": "Steven",
+        "repo_path": ROOT,
+        "ref": "HEAD",
+        "api_ref": "main",
+        "css_class": "activitySegment--steven",
+        "project_id": "steven-woods-research",
+        "pathspecs": ["steven-woods-research", "steven-woods-research.html"],
+        "repo": "public",
+    },
+    {
+        "label": "Quack",
+        "repo_path": ROOT,
+        "ref": "HEAD",
+        "api_ref": "main",
+        "css_class": "activitySegment--quack",
+        "project_id": "quack-com",
+        "pathspecs": ["quack", "quack-com.html"],
+        "repo": "public",
+    },
+    {
+        "label": "Kinitos / NeoEdge",
+        "repo_path": ROOT,
+        "ref": "HEAD",
+        "api_ref": "main",
+        "css_class": "activitySegment--kinitos",
+        "project_id": "kinitos-neoedge",
+        "pathspecs": ["kinitos-neoedge", "kinitos-neoedge.html"],
+        "repo": "public",
     },
 ]
 LEGACY_ARCHIVES = [
@@ -197,18 +230,28 @@ def current_week_start(today: date | None = None) -> datetime:
     return datetime.combine(start_date, time.min, tzinfo=LOCAL_TZ)
 
 
-def weekly_commit_count(repo_path: Path, ref: str, start: datetime, end: datetime) -> int:
+def git_rev_list_count(
+    repo_path: Path,
+    ref: str,
+    start: datetime,
+    end: datetime,
+    pathspecs: list[str] | None = None,
+) -> int:
+    command = [
+        "git",
+        "-C",
+        str(repo_path),
+        "rev-list",
+        "--count",
+        f"--since={git_datetime(start)}",
+        f"--before={git_datetime(end)}",
+        ref,
+    ]
+    if pathspecs:
+        command.extend(["--", *pathspecs])
+
     result = subprocess.run(
-        [
-            "git",
-            "-C",
-            str(repo_path),
-            "rev-list",
-            "--count",
-            f"--since={git_datetime(start)}",
-            f"--before={git_datetime(end)}",
-            ref,
-        ],
+        command,
         check=True,
         capture_output=True,
         text=True,
@@ -216,19 +259,20 @@ def weekly_commit_count(repo_path: Path, ref: str, start: datetime, end: datetim
     return int(result.stdout.strip() or "0")
 
 
-def load_activity_weeks(num_weeks: int = 8) -> list[ActivityWeek]:
+def load_activity_weeks(projects: list[dict[str, Any]], num_weeks: int = 8) -> list[ActivityWeek]:
     start = current_week_start() - timedelta(weeks=num_weeks - 1)
     weeks: list[ActivityWeek] = []
     for offset in range(num_weeks):
         week_start = start + timedelta(weeks=offset)
         week_end = week_start + timedelta(weeks=1)
         counts: dict[str, int] = {}
-        for project in ACTIVITY_PROJECTS:
-            counts[project["project_id"]] = weekly_commit_count(
+        for project in projects:
+            counts[project["project_id"]] = git_rev_list_count(
                 project["repo_path"],
                 project["ref"],
                 week_start,
                 week_end,
+                project.get("pathspecs"),
             )
         weeks.append(ActivityWeek(start=week_start, counts=counts))
     return weeks
@@ -252,46 +296,56 @@ def format_week_label(value: datetime) -> str:
     return value.astimezone(LOCAL_TZ).strftime("%b %-d")
 
 
-def render_activity_chart() -> str:
-    weeks = load_activity_weeks()
+def render_activity_chart(
+    *,
+    chart_id: str,
+    title: str,
+    lead: str,
+    projects: list[dict[str, Any]],
+    metric_label: str,
+) -> str:
+    weeks = load_activity_weeks(projects)
     ceiling = nice_upper_bound(max(week.total for week in weeks))
     midpoint = ceiling // 2
     chart_config = {
+        "chart_id": chart_id,
         "generated_at": datetime.now(LOCAL_TZ).isoformat(),
         "weeks": [week.start.isoformat() for week in weeks],
+        "metric_label": metric_label,
         "projects": [
             {
                 "label": project["label"],
                 "project_id": project["project_id"],
-                "repo": project["repo_path"].name,
-                "ref": "main",
+                "repo": project.get("repo", project["repo_path"].name),
+                "ref": project.get("api_ref", project["ref"].replace("origin/", "")),
+                "paths": project.get("pathspecs", []),
             }
-            for project in ACTIVITY_PROJECTS
+            for project in projects
         ],
     }
     legend = []
-    for project in ACTIVITY_PROJECTS:
+    for project in projects:
         total = sum(week.counts[project["project_id"]] for week in weeks)
         legend.append(
             f"""                <div class="activityLegendItem">
                     <span class="activityLegendSwatch {project["css_class"]}"></span>
-                    <span><strong>{html.escape(project["label"])}</strong> <span data-activity-legend-total="{project["project_id"]}">{total}</span> commits in the last 8 weeks</span>
+                    <span><strong>{html.escape(project["label"])}</strong> <span data-activity-legend-total="{project["project_id"]}">{total}</span> {html.escape(metric_label)} in the last 8 weeks</span>
                 </div>"""
         )
 
     columns = []
     for week in weeks:
         segments = []
-        for project in ACTIVITY_PROJECTS:
+        for project in projects:
             count = week.counts[project["project_id"]]
             height = (count / ceiling) * 100
             segments.append(
-                f"""                                <span class="activitySegment {project["css_class"]}" data-activity-project="{project["project_id"]}" style="height: {height:.2f}%;" title="{html.escape(project["label"])}: {count} commits"></span>"""
+                f"""                                <span class="activitySegment {project["css_class"]}" data-activity-project="{project["project_id"]}" style="height: {height:.2f}%;" title="{html.escape(project["label"])}: {count} {html.escape(metric_label)}"></span>"""
             )
         columns.append(
             f"""                    <div class="activityWeek" data-activity-week="{week.start.isoformat()}">
                         <div class="activityColumn">
-                            <div class="activityStack" aria-label="{html.escape(format_week_label(week.start))}: {week.total} total commits">
+                            <div class="activityStack" aria-label="{html.escape(format_week_label(week.start))}: {week.total} total {html.escape(metric_label)}">
 {chr(10).join(segments)}
                             </div>
                         </div>
@@ -302,9 +356,9 @@ def render_activity_chart() -> str:
 
     chart_config_json = json.dumps(chart_config).replace("</", "<\\/")
 
-    return f"""        <section class="panel" data-activity-chart>
-            <h2>Recent Project Activity</h2>
-            <p class="lead">Weekly commit counts on <code>origin/main</code> for the last 8 weeks across the three main project lines: Abtweak, CSP, and Galaga.</p>
+    return f"""        <section class="panel" data-activity-chart data-activity-chart-id="{chart_id}">
+            <h2>{html.escape(title)}</h2>
+            <p class="lead">{html.escape(lead)}</p>
             <div class="activityChart">
                 <div class="activityYAxis" aria-hidden="true">
                     <span data-activity-axis="top">{ceiling}</span>
@@ -323,7 +377,7 @@ def render_activity_chart() -> str:
 {chr(10).join(legend)}
             </div>
             <p class="footer" data-activity-status>Rendered from local repository history and refreshed from GitHub when the page loads.</p>
-            <script id="activity-chart-config" type="application/json">{chart_config_json}</script>
+            <script id="activity-chart-config-{chart_id}" type="application/json">{chart_config_json}</script>
         </section>"""
 
 
@@ -420,7 +474,7 @@ def render() -> str:
     <script src="assets/public-index.js" defer></script>
 </head>
 <body>
-    <!-- Generated by tools/render_index.py from data/projects/*.json -->
+    <!-- Generated by tools/render_index.py from data/projects/*.json and */project-manifest.json -->
     <main class="shell">
         <section class="hero">
             <span class="eyebrow">Public Index</span>
@@ -480,7 +534,21 @@ def render() -> str:
             </div>
         </section>
 
-{render_activity_chart()}
+{render_activity_chart(
+    chart_id="coding",
+    title="Recent Coding Activity",
+    lead="Weekly commit counts on origin/main for the last 8 weeks across the three software project lines: Abtweak, CSP, and Aurora.",
+    projects=CODING_ACTIVITY_PROJECTS,
+    metric_label="commits",
+)}
+
+{render_activity_chart(
+    chart_id="research",
+    title="Recent Research Archive Activity",
+    lead="Weekly path-scoped commit counts in the public archive repo for the last 8 weeks across the Steven Woods, Quack, and Kinitos / NeoEdge research lines.",
+    projects=RESEARCH_ACTIVITY_PROJECTS,
+    metric_label="commits",
+)}
 
 {render_style_guide_note()}
     </main>

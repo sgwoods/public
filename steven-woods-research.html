@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Woods Public Record Project</title>
+    <link rel="stylesheet" href="assets/public-site.css">
+    <style>
+        :root {
+            --bg: #10131b;
+            --bg2: #233a56;
+            --panel-bg: rgba(16, 20, 29, 0.76);
+            --panel-glow: rgba(124, 181, 255, 0.18);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(196, 225, 255, 0.14);
+            --panel-border: rgba(124, 181, 255, 0.22);
+            --button-bg: rgba(124, 181, 255, 0.18);
+            --button-border: rgba(124, 181, 255, 0.32);
+            --button-bg-ghost: rgba(255, 255, 255, 0.05);
+            --text: #f3f7ff;
+            --muted: #c8d6ea;
+            --muted-strong: #f5fbff;
+            --accent: #7cb5ff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(124, 181, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.14), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        .tagRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(196, 225, 255, 0.14);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 14px;
+        }
+
+        .timelineStep {
+            position: relative;
+            padding: 18px 18px 18px 22px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(196, 225, 255, 0.12);
+        }
+
+        .timelineStep::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 16px;
+            bottom: 16px;
+            width: 4px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(124, 181, 255, 0.92), rgba(98, 214, 202, 0.92));
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <section class="hero">
+            <div class="heroTop">
+                <span class="eyebrow">Public Project Page</span>
+                <a class="heroHomeLink" href="https://sgwoods.github.io/public">Steven Woods</a>
+            </div>
+            <h1>Steven Woods Public Record Project</h1>
+            <p class="lead">
+                Deep research archive for Steven Woods' talks, interviews, podcasts, profiles, awards,
+                and cross-company public record. This project is the canonical person-centric archive
+                that complements the Quack and Kinitos / NeoEdge company archives without replacing them.
+            </p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Current Phase</span>
+                    <span class="metaValue">Active research archive</span>
+                    <div class="metaNote">The project now has a reviewed source ledger, manifest exports, and preserved source captures.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Timeline Span</span>
+                    <span class="metaValue">1987 to 2026</span>
+                    <div class="metaNote">Coverage currently runs from early academic roots through current archive and Inovia-era sources.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Current Focus</span>
+                    <span class="metaValue">Public appearances, profile sources, and cross-company media organization</span>
+                    <div class="metaNote">Current work is organizing the person-centric record and linking it cleanly to the company archives.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Updated</span>
+                    <span class="metaValue">March 24, 2026</span>
+                    <div class="metaNote">Project summary synced to the latest reviewed source set and local preservation work.</div>
+                </div>
+            </div>
+            <div class="tagRow" aria-label="Archive themes">
+                <span class="tag">Interviews</span>
+                <span class="tag">Podcasts</span>
+                <span class="tag">Talks and keynotes</span>
+                <span class="tag">Profiles and awards</span>
+                <span class="tag">Cross-company media</span>
+            </div>
+            <div class="links">
+                <a class="button" href="steven-woods-research/">Open working repository</a>
+                <a class="button" href="steven-woods-research/source-manifest.json">Open source manifest</a>
+                <a class="button button--ghost" href="steven-woods-research/research/media-sources-review.md">Open review ledger</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Current State</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Person-centric archive is now separate</h3>
+                    <p>The Steven Woods research stream now has its own project structure rather than living as a loose top-level scratch area. That keeps it parallel to Quack and Kinitos / NeoEdge while preserving the top-level public hub as summary-only.</p>
+                </article>
+                <article class="card">
+                    <h3>Source review is organized by type</h3>
+                    <p>The current ledger separates public appearances, profile pages, Google-era mentions, Quack-era media, and Kinitos / NeoEdge media so sources can be summarized in the right context.</p>
+                </article>
+                <article class="card">
+                    <h3>Local preservation is underway</h3>
+                    <p>HTML captures and feed metadata for key interviews, talks, and profile pages are now preserved locally so the archive stays useful when original links drift or disappear.</p>
+                </article>
+                <article class="card">
+                    <h3>Company archives remain authoritative for company depth</h3>
+                    <p>This project keeps the Steven-centric interpretation of overlapping sources, while Quack and Kinitos / NeoEdge remain the canonical company-deep archives for their own timelines and artifacts.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Public Timeline</h2>
+            <div class="timeline">
+                <article class="timelineStep">
+                    <h3>Early academic and entrepreneurial roots</h3>
+                    <p>The current source set already ties Steven Woods to the University of Saskatchewan and University of Waterloo, then into early company-building work that later surfaces in Quack, Kinitos, NeoEdge, Google Canada, and Inovia profiles.</p>
+                </article>
+                <article class="timelineStep">
+                    <h3>Public speaking and alumni recognition</h3>
+                    <p>The archive now includes public talks, keynote appearances, lecture listings, alumni recognition pages, and career retrospectives across Waterloo and Saskatchewan sources.</p>
+                </article>
+                <article class="timelineStep">
+                    <h3>Cross-company media continuity</h3>
+                    <p>One of the archive's main jobs is to connect company-specific phases without flattening them: Quack and AOL, Kinitos and NeoEdge, Google Canada, and later venture/investor work all appear in a single person-centric record here.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Featured Source Lanes</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Talks, interviews, and podcasts</h3>
+                    <p>Includes the Riddick Show episode, Waterloo event recordings, Google-era interviews, and public lecture listings.</p>
+                    <div class="links">
+                        <a class="button" href="steven-woods-research/research/media-sources-review.md">Open reviewed list</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Profiles and recognition</h3>
+                    <p>Includes alumni profiles, award pages, institutional biographies, and transition-focused profile pieces such as the Inovia announcement.</p>
+                    <div class="links">
+                        <a class="button" href="https://alumni.usask.ca/get-involved/achieve/2021/woods.php">USask alumni profile</a>
+                        <a class="button button--ghost" href="https://uwaterloo.ca/math/profiles/steven-woods">Waterloo profile</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Company-era media context</h3>
+                    <p>Overlapping Quack, Kinitos / NeoEdge, Google Canada, and Inovia sources are summarized here for the Steven-centric record and then linked back out to the deeper company archives when needed.</p>
+                    <div class="links">
+                        <a class="button" href="quack-com.html">Open Quack archive</a>
+                        <a class="button button--ghost" href="kinitos-neoedge.html">Open Kinitos / NeoEdge archive</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

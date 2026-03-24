@@ -1,0 +1,431 @@
+{
+  "schema_version": "1.0",
+  "project_id": "steven-woods-research",
+  "sources": [
+    {
+      "source_id": "src-steven-2023-riddick-show",
+      "title": "Steven Woods - Partner and Chief Technology Officer, Inovia Capital",
+      "source_type": "appearance",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Long-form podcast interview with exact publication date, duration, and public audio metadata.",
+      "date": {
+        "display": "May 1, 2023",
+        "sort": "2023-05-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947",
+        "archive_local": "historic/artifacts/archive-html/apple-riddick-show.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["podcast", "interview", "inovia", "appearance"],
+      "status": "approved",
+      "notes": "Feed metadata and direct audio URL are preserved locally."
+    },
+    {
+      "source_id": "src-steven-2023-cscan-collaboration-talk",
+      "title": "Models of University/Industry Collaboration - What Works and What Doesn't",
+      "source_type": "appearance",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Public talk listing that captures Steven Woods speaking on university and industry collaboration.",
+      "date": {
+        "display": "2023",
+        "sort": "2023-01-01",
+        "precision": "year"
+      },
+      "urls": {
+        "canonical": "https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/",
+        "archive_local": "historic/artifacts/archive-html/cscan-university-industry-collaboration.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["talk", "cs-can", "appearance", "university-industry"],
+      "status": "approved",
+      "notes": "Recording still to be confirmed."
+    },
+    {
+      "source_id": "src-steven-2021-entrepreneurial-computer-scientist",
+      "title": "The entrepreneurial computer scientist",
+      "source_type": "appearance",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "University of Waterloo lecture listing with exact date and a strong career-summary description.",
+      "date": {
+        "display": "January 20, 2021",
+        "sort": "2021-01-20",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://uwaterloo.ca/math/lecture?page=1",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["waterloo", "lecture", "appearance"],
+      "status": "approved",
+      "notes": "Useful for the public-speaking timeline."
+    },
+    {
+      "source_id": "src-steven-2023-uwaterloo-entrepreneurship-impact",
+      "title": "Entrepreneurship and Impact Series - April 2023, Steven Woods",
+      "source_type": "appearance",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Waterloo appearance with a direct video recording and concise retrospective framing.",
+      "date": {
+        "display": "April 2023",
+        "sort": "2023-04-01",
+        "precision": "month"
+      },
+      "urls": {
+        "canonical": "https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "archive_web": "https://www.youtube.com/watch?v=L64GbHRcsFQ"
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["waterloo", "video", "appearance", "entrepreneurship"],
+      "status": "approved",
+      "notes": "Event page includes the direct YouTube recording."
+    },
+    {
+      "source_id": "src-steven-2023-research-discovery-days-keynote",
+      "title": "Research Discovery Days 2023: Steven Woods",
+      "source_type": "appearance",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Recent keynote appearance with direct YouTube access and preserved event context.",
+      "date": {
+        "display": "November 2, 2023",
+        "sort": "2023-11-02",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.youtube.com/watch?v=C_HIi0IKK90",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-research-discovery-days.html",
+        "archive_web": "https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days"
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["keynote", "waterloo", "youtube", "appearance"],
+      "status": "approved",
+      "notes": "Combine the YouTube recording with the Waterloo event page in summary use."
+    },
+    {
+      "source_id": "src-steven-2017-google-waterloo-uw-community",
+      "title": "Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community",
+      "source_type": "appearance",
+      "company_context": "Google Canada",
+      "person_relevance": "Useful public talk connecting Steven Woods, Google Waterloo, and University of Waterloo community ties.",
+      "date": {
+        "display": "2017",
+        "sort": "2017-01-01",
+        "precision": "year"
+      },
+      "urls": {
+        "canonical": "https://www.youtube.com/watch?v=3cDnlKwbtTY",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["youtube", "google", "waterloo", "appearance"],
+      "status": "approved",
+      "notes": "Likely tied to the 2017 Cheriton Research Symposium."
+    },
+    {
+      "source_id": "src-steven-2003-usask-sorenson-lecture",
+      "title": "P.G. Sorenson Lecture: Dr. Steven Woods, CEO of Kinitos, Inc.",
+      "source_type": "appearance",
+      "company_context": "Kinitos",
+      "person_relevance": "Early formal university lecture documenting Steven Woods during the Kinitos phase.",
+      "date": {
+        "display": "2003",
+        "sort": "2003-01-01",
+        "precision": "year"
+      },
+      "urls": {
+        "canonical": "https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php",
+        "archive_local": "historic/artifacts/archive-html/usask-pg-sorenson-lectures.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["kinitos", "lecture", "usask", "appearance"],
+      "status": "approved",
+      "notes": "Also relevant to the Kinitos archive, but person-centric treatment lives here."
+    },
+    {
+      "source_id": "src-steven-2013-springboard-google-canada-interview",
+      "title": "A Conversation With Steven Woods, Engineering Director At Google Canada",
+      "source_type": "appearance",
+      "company_context": "Google Canada",
+      "person_relevance": "Direct interview source centered on Steven Woods during the Google Canada phase.",
+      "date": {
+        "display": "January 30, 2013",
+        "sort": "2013-01-30",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://springboardatlantic.ca/a-conversation-with-steven-woods-engineering-director-at-google-canada/",
+        "archive_local": "historic/artifacts/archive-html/springboard-google-canada-interview.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["interview", "google", "appearance"],
+      "status": "approved",
+      "notes": "Good Google-era interview anchor."
+    },
+    {
+      "source_id": "src-steven-2021-usask-alumni-profile",
+      "title": "Steven Woods - Alumni and Friends",
+      "source_type": "profile",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Strong profile source for awards, background, and retrospective company framing.",
+      "date": {
+        "display": "2021",
+        "sort": "2021-01-01",
+        "precision": "year"
+      },
+      "urls": {
+        "canonical": "https://alumni.usask.ca/get-involved/achieve/2021/woods.php",
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "award", "usask"],
+      "status": "approved",
+      "notes": "Important retrospective profile."
+    },
+    {
+      "source_id": "src-steven-2010-uwaterloo-jw-graham-profile",
+      "title": "Steven Woods | Mathematics | University of Waterloo",
+      "source_type": "profile",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "University profile tied to the J.W. Graham Medal and public recognition.",
+      "date": {
+        "display": "2010 era",
+        "sort": "2010-01-01",
+        "precision": "year"
+      },
+      "urls": {
+        "canonical": "https://uwaterloo.ca/math/profiles/steven-woods",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-jw-graham-profile.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "waterloo", "award"],
+      "status": "approved",
+      "notes": "Good recognition anchor."
+    },
+    {
+      "source_id": "src-steven-2021-inovia-welcome-profile",
+      "title": "Inovia Welcomes Two World-Class Partners: Krista Skalde Joins as Chief Talent Officer and Steven Woods as Chief Technology Officer",
+      "source_type": "profile",
+      "company_context": "Inovia",
+      "person_relevance": "First-party profile source documenting the transition from Google Canada to Inovia.",
+      "date": {
+        "display": "July 23, 2021",
+        "sort": "2021-07-23",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/",
+        "archive_local": "historic/artifacts/archive-html/inovia-welcomes-steven-woods.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "inovia", "transition"],
+      "status": "approved",
+      "notes": "Strong transition/profile source."
+    },
+    {
+      "source_id": "src-steven-2012-slideshare-keynote-deck",
+      "title": "Steven Woods Keynote presentation",
+      "source_type": "appearance",
+      "company_context": "cross-company",
+      "person_relevance": "Presentation deck connected to Steven Woods public speaking, with event context still being tightened.",
+      "date": {
+        "display": "October 3, 2012",
+        "sort": "2012-10-03",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346",
+        "archive_local": "historic/artifacts/archive-html/slideshare-steven-woods-keynote.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["slides", "keynote", "presentation"],
+      "status": "approved",
+      "notes": "Keep as a deck/presentation item with partial event context."
+    },
+    {
+      "source_id": "src-steven-2013-google-innovation-nation",
+      "title": "Innovation Nation - Canada's Cutting Edge Campus",
+      "source_type": "media-mention",
+      "company_context": "Google Canada",
+      "person_relevance": "Google Canada blog feature quoting Steven Woods on talent and university ties.",
+      "date": {
+        "display": "February 25, 2013",
+        "sort": "2013-02-25",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://canada.googleblog.com/2013/02/innovation-nation-canadas-cutting-edge.html",
+        "archive_local": "historic/artifacts/archive-html/google-canada-innovation-nation.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "media", "profile"],
+      "status": "approved",
+      "notes": "Good Google-era media mention."
+    },
+    {
+      "source_id": "src-steven-2010-google-lang-tannery",
+      "title": "Google - Lang Tannery",
+      "source_type": "media-mention",
+      "company_context": "Google Canada",
+      "person_relevance": "Short local news item quoting Steven Woods on Google Waterloo's HQ move.",
+      "date": {
+        "display": "August 11, 2010",
+        "sort": "2010-08-11",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://kitchener.citynews.ca/2010/08/11/google-lang-tannery/",
+        "archive_local": "historic/artifacts/archive-html/citynews-google-lang-tannery.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "waterloo", "media"],
+      "status": "approved",
+      "notes": "Short but useful local-media anchor."
+    },
+    {
+      "source_id": "src-steven-2016-google-engineering-hq",
+      "title": "It's our biggest unboxing ever! Introducing Google Canada's new engineering HQ",
+      "source_type": "media-mention",
+      "company_context": "Google Canada",
+      "person_relevance": "Official Google feature around the Waterloo engineering HQ and Steven Woods' Google Canada leadership context.",
+      "date": {
+        "display": "January 14, 2016",
+        "sort": "2016-01-14",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://blog.google/intl/en-ca/company-news/inside-google/its-our-biggest-unboxing-ever/",
+        "archive_local": "historic/artifacts/archive-html/google-canada-unboxing-2016.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "waterloo", "hq", "media"],
+      "status": "approved",
+      "notes": "Strong Google-era feature page."
+    },
+    {
+      "source_id": "src-steven-2000-internetnews-aol-cap",
+      "title": "Another Feather In AOL's Cap",
+      "source_type": "media-mention",
+      "company_context": "Quack.com",
+      "person_relevance": "Useful Steven-facing source for the Quack.com AOL acquisition.",
+      "date": {
+        "display": "August 31, 2000",
+        "sort": "2000-08-31",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.internetnews.com/it-management/another-feather-in-aols-cap/",
+        "archive_local": "historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["quack", "aol", "acquisition", "media"],
+      "status": "approved",
+      "notes": "Person-centric summary is here; company-deep interpretation belongs in the Quack archive."
+    },
+    {
+      "source_id": "src-steven-2000-sfgate-earful-of-internet",
+      "title": "EARFUL OF INTERNET / Voice portals read news and other information via phone to users on the go",
+      "source_type": "media-mention",
+      "company_context": "Quack.com",
+      "person_relevance": "Strong market-context piece for the Quack era.",
+      "date": {
+        "display": "May 25, 2000",
+        "sort": "2000-05-25",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php",
+        "archive_local": "historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["quack", "voice-portal", "media"],
+      "status": "approved",
+      "notes": "Useful broader market framing."
+    }
+  ]
+}

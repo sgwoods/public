@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "project_id": "steven-woods-research",
+  "active": true,
+  "display_name": "Steven Woods Public Record Project",
+  "description": "Deep research archive for Steven Woods' talks, interviews, profiles, awards, and cross-company public record.",
+  "person_context": "This project is the canonical deep archive for Steven Woods' public-facing biography, media appearances, and cross-company source record.",
+  "project_page_url": "https://sgwoods.github.io/public/steven-woods-research.html",
+  "repo_url": null,
+  "timeline_span": {
+    "start_year": 1987,
+    "end_year": 2026,
+    "label": "Public record from University of Saskatchewan through current archive work"
+  },
+  "repo_pushed_at": "2026-03-24T23:50:00Z",
+  "status_generated_at": "2026-03-24T23:50:00Z",
+  "status_label": "Current phase",
+  "status_value": "Active research archive",
+  "focus_label": "Current focus",
+  "focus_value": "Public appearances, profile sources, and cross-company media organization",
+  "current_focus": "Public appearances, profile sources, and cross-company media organization",
+  "notable_items": [
+    {
+      "label": "Media sources review",
+      "url": "https://sgwoods.github.io/public/steven-woods-research/research/media-sources-review.md"
+    },
+    {
+      "label": "Riddick Show episode metadata",
+      "url": "https://sgwoods.github.io/public/steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml"
+    },
+    {
+      "label": "Waterloo Entrepreneurship and Impact appearance",
+      "url": "https://www.youtube.com/watch?v=L64GbHRcsFQ"
+    },
+    {
+      "label": "Research Discovery Days 2023 keynote",
+      "url": "https://www.youtube.com/watch?v=C_HIi0IKK90"
+    }
+  ],
+  "featured_source_ids": [
+    "src-steven-2023-riddick-show",
+    "src-steven-2023-research-discovery-days-keynote",
+    "src-steven-2021-usask-alumni-profile",
+    "src-steven-2013-springboard-google-canada-interview",
+    "src-steven-2003-usask-sorenson-lecture"
+  ]
+}

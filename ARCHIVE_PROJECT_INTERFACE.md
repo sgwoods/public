@@ -1,36 +1,42 @@
 # Archive Project Interface
 
-Purpose: define how independent company-history archive projects coordinate with the top-level `public` site.
+Purpose: define how independent archive projects coordinate with the top-level `public` site.
 
 This document applies to projects such as:
 
+- `steven-woods-research`
 - `quack`
 - `kinitos-neoedge`
 
-The top-level site is the Steven Woods hub. The company archive projects are the deep historical archives.
+The top-level site is the Steven Woods hub shell. The archive projects are the deep historical archives.
 
 ## Ownership model
 
 Use this split consistently:
 
-- `public` owns the person-centric hub
-- each archive project owns its company-centric deep history
+- `public` owns the top-level shell, navigation, and cross-project summary
+- `steven-woods-research` owns the canonical person-centric deep archive
+- each company archive project owns its company-centric deep history
 
 That means:
 
-- `public` presents Steven Woods, his background, career phases, active archive projects, and cross-company summaries
+- `public` presents Steven Woods, his background, career phases, active archive projects, and cross-project summaries
+- `steven-woods-research` presents the detailed person-centric record: talks, interviews, profiles, awards, and cross-company media
 - each archive project presents the detailed company story, artifacts, demos, code, press, timelines, and recovery notes for that company
 
 ## Canonical roles
 
 `public` is canonical for:
 
-- Steven Woods overview
-- person-level biography and background
-- cross-company career timeline
 - top-level navigation
 - shared visual style
-- high-level summaries of the company archives
+- high-level summaries of the archive projects
+
+`steven-woods-research` is canonical for:
+
+- person-level biography and background
+- talks, interviews, podcasts, profiles, and awards
+- cross-company career timeline and person-centric source interpretation
 
 An archive project is canonical for:
 
@@ -46,7 +52,8 @@ Duplication is allowed only when the context differs.
 
 Allowed:
 
-- `public`: short, Steven-centric summary
+- `public`: short hub summary and navigation
+- `steven-woods-research`: short or medium person-centric interpretation
 - archive project: full, company-centric detail
 
 Not allowed:
@@ -364,4 +371,4 @@ New discoveries that matter to Steven Woods broadly should be pushed through tha
 
 Use this sentence as the governing principle:
 
-`public` owns Steven-centric presentation. Archive projects own company-centric depth.
+`public` owns the hub shell. `steven-woods-research` owns person-centric depth. Company archives own company-centric depth.

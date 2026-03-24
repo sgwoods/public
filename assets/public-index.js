@@ -324,9 +324,12 @@
         return counts;
     }
 
-    async function fetchProjectCounts(project, sinceIso, weekStarts, weekEnds) {
-        const commitDates = [];
+    async function fetchCommitDatesForPath(project, sinceIso, path) {
+        const commitDates = new Map();
         let url = `https://api.github.com/repos/sgwoods/${project.repo}/commits?sha=${encodeURIComponent(project.ref)}&since=${encodeURIComponent(sinceIso)}&per_page=100`;
+        if (path) {
+            url += `&path=${encodeURIComponent(path)}`;
+        }
 
         while (url) {
             const response = await fetch(url, {
@@ -339,15 +342,31 @@
             }
             const payload = await response.json();
             for (const commit of payload) {
+                const sha = commit?.sha;
                 const authoredAt = commit?.commit?.author?.date;
-                if (authoredAt) {
-                    commitDates.push(new Date(authoredAt));
+                if (sha && authoredAt) {
+                    commitDates.set(sha, new Date(authoredAt));
                 }
             }
             url = nextLink(response.headers.get("link"));
         }
 
-        return bucketCounts(commitDates, weekStarts, weekEnds);
+        return commitDates;
+    }
+
+    async function fetchProjectCounts(project, sinceIso, weekStarts, weekEnds) {
+        const paths = Array.isArray(project.paths) && project.paths.length > 0 ? project.paths : [null];
+        const dateMaps = await Promise.all(paths.map((path) => fetchCommitDatesForPath(project, sinceIso, path)));
+        const mergedDates = new Map();
+        for (const dateMap of dateMaps) {
+            for (const [sha, date] of dateMap.entries()) {
+                if (!mergedDates.has(sha)) {
+                    mergedDates.set(sha, date);
+                }
+            }
+        }
+
+        return bucketCounts(Array.from(mergedDates.values()), weekStarts, weekEnds);
     }
 
     function renderActivityData(chart, config, weeks, message) {
@@ -396,7 +415,7 @@
             if (stack) {
                 const labelNode = weekNode.querySelector(".activityLabel");
                 const labelText = labelNode ? labelNode.textContent : `Week ${index + 1}`;
-                stack.setAttribute("aria-label", `${labelText}: ${week.total} total commits`);
+                stack.setAttribute("aria-label", `${labelText}: ${week.total} total ${config.metric_label || "commits"}`);
             }
 
             const segmentNodes = Array.from(weekNode.querySelectorAll("[data-activity-project]"));
@@ -405,7 +424,7 @@
                 const count = week.counts[projectId] || 0;
                 const height = ceiling > 0 ? (count / ceiling) * 100 : 0;
                 segmentNode.style.height = `${height.toFixed(2)}%`;
-                segmentNode.title = `${projectLabels.get(projectId) || projectId}: ${count} commits`;
+                segmentNode.title = `${projectLabels.get(projectId) || projectId}: ${count} ${config.metric_label || "commits"}`;
             }
         });
 
@@ -418,9 +437,9 @@
         }
     }
 
-    async function initActivityChart() {
-        const chart = document.querySelector("[data-activity-chart]");
-        const config = parseJsonScript("activity-chart-config");
+    async function initActivityChart(chart) {
+        const chartId = chart.getAttribute("data-activity-chart-id");
+        const config = parseJsonScript(`activity-chart-config-${chartId}`);
         if (!chart || !config) {
             return;
         }
@@ -433,7 +452,7 @@
         const statusNode = chart.querySelector("[data-activity-status]");
 
         if (statusNode) {
-            statusNode.textContent = "Refreshing recent GitHub commit activity for Abtweak, CSP, and Galaga...";
+            statusNode.textContent = `Refreshing recent GitHub ${config.metric_label || "commit"} activity for ${config.projects.map((project) => project.label).join(", ")}...`;
         }
 
         try {
@@ -460,5 +479,7 @@
     }
 
     initProjectManifestCards();
-    initActivityChart();
+    document.querySelectorAll("[data-activity-chart]").forEach((chart) => {
+        initActivityChart(chart);
+    });
 })();
