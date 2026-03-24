@@ -61,11 +61,58 @@
         return Number.isNaN(value) ? 0 : value;
     }
 
+    function normalizeProject(payload) {
+        const timelineLabel = payload?.timeline_span?.label || null;
+        return {
+            ...payload,
+            project_page_href: payload.project_page_url || payload.project_page_path || "",
+            repo_url: payload.repo_url || null,
+            person_context: payload.person_context || null,
+            timeline_label: timelineLabel,
+            status_label: payload.status_label || "Current phase",
+            status_value: payload.status_value || timelineLabel || "Archive project",
+            focus_label: payload.focus_label || "Current focus",
+            focus_value: payload.focus_value || payload.current_focus || "Archive organization",
+        };
+    }
+
+    function projectRank(project) {
+        return [
+            projectTimestamp(project, "status_generated_at"),
+            projectTimestamp(project, "repo_pushed_at"),
+            project.person_context ? 1 : 0,
+            project.repo_url ? 1 : 0,
+            project.project_id || "",
+        ];
+    }
+
     function dedupeProjects(projects) {
+        const latestById = new Map();
+        for (const rawProject of projects) {
+            const project = normalizeProject(rawProject);
+            const existing = latestById.get(project.project_id);
+            if (!existing) {
+                latestById.set(project.project_id, project);
+                continue;
+            }
+
+            const candidateTuple = projectRank(project);
+            const existingTuple = projectRank(existing);
+            if (
+                candidateTuple[0] > existingTuple[0] ||
+                (candidateTuple[0] === existingTuple[0] && candidateTuple[1] > existingTuple[1]) ||
+                (candidateTuple[0] === existingTuple[0] && candidateTuple[1] === existingTuple[1] && candidateTuple[2] > existingTuple[2]) ||
+                (candidateTuple[0] === existingTuple[0] && candidateTuple[1] === existingTuple[1] && candidateTuple[2] === existingTuple[2] && candidateTuple[3] > existingTuple[3]) ||
+                (candidateTuple[0] === existingTuple[0] && candidateTuple[1] === existingTuple[1] && candidateTuple[2] === existingTuple[2] && candidateTuple[3] === existingTuple[3] && candidateTuple[4] > existingTuple[4])
+            ) {
+                latestById.set(project.project_id, project);
+            }
+        }
+
         const latestByRepo = new Map();
         const passthrough = [];
 
-        for (const project of projects) {
+        for (const project of latestById.values()) {
             const key = (project.repo_url || "").trim().toLowerCase();
             if (!key) {
                 passthrough.push(project);
@@ -116,7 +163,7 @@
     function renderProjectCard(project, config) {
         const description = project.description || "Public project page synced from its repository status manifest.";
         const buttons = [
-            renderButton(escapeHtml(project.project_page_path), "Open project page"),
+            renderButton(escapeHtml(project.project_page_href), "Open project page"),
         ];
 
         if (project.dashboard_url) {
@@ -125,16 +172,28 @@
         if (project.experience_url) {
             buttons.push(renderButton(escapeHtml(project.experience_url), "Open live experience"));
         }
-        buttons.push(renderButton(escapeHtml(project.repo_url), "Open repository"));
+        if (project.repo_url) {
+            buttons.push(renderButton(escapeHtml(project.repo_url), "Open repository"));
+        }
+
+        const details = [
+            `<div><strong>Last repo update</strong> ${escapeHtml(formatLocalDate(project.repo_pushed_at))}</div>`,
+            project.timeline_label ? `<div><strong>Archive span</strong> ${escapeHtml(project.timeline_label)}</div>` : "",
+            `<div><strong>${escapeHtml(project.status_label)}</strong> ${escapeHtml(project.status_value)}</div>`,
+            `<div><strong>${escapeHtml(project.focus_label)}</strong> ${escapeHtml(project.focus_value)}</div>`,
+        ].filter(Boolean);
+
+        const personContext = project.person_context
+            ? `<p class="footer">${escapeHtml(project.person_context)}</p>`
+            : "";
 
         return `                <article class="card" data-project-card="${escapeHtml(project.project_id)}">
                     <h3>${escapeHtml(project.display_name)}</h3>
                     <p>${escapeHtml(description)}</p>
                     <div class="detailList">
-                        <div><strong>Last repo update</strong> ${escapeHtml(formatLocalDate(project.repo_pushed_at))}</div>
-                        <div><strong>${escapeHtml(project.status_label)}</strong> ${escapeHtml(project.status_value)}</div>
-                        <div><strong>${escapeHtml(project.focus_label)}</strong> ${escapeHtml(project.focus_value)}</div>
+                        ${details.join("")}
                     </div>
+                    ${personContext}
                     <div class="links">
                         ${buttons.join(" ")}
                     </div>
@@ -174,10 +233,16 @@
 
     async function loadProjectManifests(config) {
         try {
-            const manifestUrls = await fetchManifestList(config);
+            const manifestUrls = [
+                ...(await fetchManifestList(config)),
+                ...((config.supplemental_manifest_paths || []).map((path) => path)),
+            ];
             return await fetchManifestPayloads(manifestUrls);
         } catch (error) {
-            const fallbackUrls = (config.fallback_manifest_paths || []).map((path) => path);
+            const fallbackUrls = [
+                ...((config.fallback_manifest_paths || []).map((path) => path)),
+                ...((config.supplemental_manifest_paths || []).map((path) => path)),
+            ];
             return fetchManifestPayloads(fallbackUrls);
         }
     }

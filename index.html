@@ -21,12 +21,12 @@
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Tracked Projects</span>
-                    <span class="metaValue" data-project-count>3</span>
+                    <span class="metaValue" data-project-count>5</span>
                     <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Repository Work Last Updated</span>
-                    <span class="metaValue" data-project-last-updated>March 23, 2026</span>
+                    <span class="metaValue" data-project-last-updated>March 24, 2026</span>
                     <div class="metaNote">Computed from the latest `repo_pushed_at` value across active project manifests.</div>
                 </div>
             </div>
@@ -59,10 +59,9 @@
                     <h3>Aurora Galactica</h3>
                     <p>Public project page synced from its repository status manifest.</p>
                     <div class="detailList">
-                        <div><strong>Last repo update</strong> March 23, 2026</div>
-                        <div><strong>Current release</strong> 0.5.0-alpha.1</div>
-                        <div><strong>Current focus</strong> Polished four-stage 1.0 slice</div>
+                        <div><strong>Last repo update</strong> March 23, 2026</div><div><strong>Current release</strong> 0.5.0</div><div><strong>Current focus</strong> Polished four-stage 1.0 slice</div>
                     </div>
+
                     <div class="links">
                         <a class="button" href="aurora-galactica.html">Open project page</a> <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html">Open dashboard</a> <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/">Open live experience</a> <a class="button" href="https://github.com/sgwoods/Codex-Test1">Open repository</a>
                     </div>
@@ -71,10 +70,9 @@
                     <h3>PhD renovation project</h3>
                     <p>Public project page for the restored PhD program-understanding codebase.</p>
                     <div class="detailList">
-                        <div><strong>Last repo update</strong> March 23, 2026</div>
-                        <div><strong>Current build line</strong> 1.0.0</div>
-                        <div><strong>Current focus</strong> Intake + cleanup</div>
+                        <div><strong>Last repo update</strong> March 23, 2026</div><div><strong>Current build line</strong> 1.0.0</div><div><strong>Current focus</strong> Intake + cleanup</div>
                     </div>
+
                     <div class="links">
                         <a class="button" href="phd-renovation.html">Open project page</a> <a class="button" href="https://sgwoods.github.io/public/phd-renovation-dashboard.html">Open dashboard</a> <a class="button" href="https://github.com/sgwoods/phd-renovation">Open repository</a>
                     </div>
@@ -83,17 +81,40 @@
                     <h3>Masters of Mathematics renovation project</h3>
                     <p>Public project page for reviving the AbTweak thesis code and documentation.</p>
                     <div class="detailList">
-                        <div><strong>Last repo update</strong> March 22, 2026</div>
-                        <div><strong>Current release</strong> 1.0.0-rc.1</div>
-                        <div><strong>Current focus</strong> Hanoi-4 extension benchmark</div>
+                        <div><strong>Last repo update</strong> March 22, 2026</div><div><strong>Current release</strong> 1.0.0-rc.1</div><div><strong>Current focus</strong> Hanoi-4 extension benchmark</div>
                     </div>
+
                     <div class="links">
                         <a class="button" href="mmath-renovation.html">Open project page</a> <a class="button" href="https://sgwoods.github.io/public/mmath-renovation-release-dashboard.html">Open dashboard</a> <a class="button" href="https://sgwoods.github.io/public/mmath-renovation-remote-experiments.html">Open live experience</a> <a class="button" href="https://github.com/sgwoods/mmath-renovation">Open repository</a>
                     </div>
                 </article>
+                <article class="card" data-project-card="quack-com">
+                    <h3>Quack.com Archive Project</h3>
+                    <p>Collection of memories, demos, artifacts, press, and recovered code from the Quack.com era.</p>
+                    <div class="detailList">
+                        <div><strong>Last repo update</strong> March 24, 2026</div><div><strong>Archive span</strong> Quack.com era</div><div><strong>Current phase</strong> Quack.com era</div><div><strong>Current focus</strong> Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press</div>
+                    </div>
+
+                    <p class="footer">Steven Woods co-founded Quack.com, an early interactive voice assistant company acquired by AOL in 2000.</p>
+                    <div class="links">
+                        <a class="button" href="https://sgwoods.github.io/public/quack/">Open project page</a>
+                    </div>
+                </article>
+                <article class="card" data-project-card="kinitos-neoedge">
+                    <h3>Kinitos / NeoEdge Networks Archive</h3>
+                    <p>Deep archive for the Kinitos origin story and the later NeoEdge Networks era, covering documents, demos, artifacts, and recovered code.</p>
+                    <div class="detailList">
+                        <div><strong>Last repo update</strong> March 24, 2026</div><div><strong>Archive span</strong> Kinitos founding through NeoEdge acquisition era</div><div><strong>Current phase</strong> Kinitos founding through NeoEdge acquisition era</div><div><strong>Current focus</strong> Blue Noodle wind-down, investor trail, MostFun, Double Fusion asset-path, and archived site-capture research</div>
+                    </div>
+
+                    <p class="footer">Steven Woods co-founded Kinitos in 2002 after AOL and later co-founded NeoEdge Networks; this archive is the canonical deep history for that company line.</p>
+                    <div class="links">
+                        <a class="button" href="https://sgwoods.github.io/public/kinitos-neoedge/">Open project page</a>
+                    </div>
+                </article>
             </div>
             <p class="footer" data-project-status>This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
-            <script id="project-manifest-config" type="application/json">{"repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main", "fallback_manifest_paths": ["data/projects/aurora-galactica.json", "data/projects/codex-test1.json", "data/projects/mmath-renovation.json", "data/projects/phd-renovation.json"], "project_order": ["aurora-galactica", "phd-renovation", "mmath-renovation"]}</script>
+            <script id="project-manifest-config" type="application/json">{"repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main", "fallback_manifest_paths": ["data/projects/aurora-galactica.json", "data/projects/codex-test1.json", "data/projects/kinitos-neoedge.json", "data/projects/mmath-renovation.json", "data/projects/phd-renovation.json", "data/projects/quack-com.json"], "supplemental_manifest_paths": ["kinitos-neoedge/project-manifest.json", "quack/project-manifest.json"], "project_order": ["aurora-galactica", "phd-renovation", "mmath-renovation", "quack-com", "kinitos-neoedge"]}</script>
         </section>
 
         <section class="panel">
@@ -205,13 +226,13 @@
                     </div>
                     <div class="activityWeek" data-activity-week="2026-03-23T00:00:00-04:00">
                         <div class="activityColumn">
-                            <div class="activityStack" aria-label="Mar 23: 29 total commits">
+                            <div class="activityStack" aria-label="Mar 23: 57 total commits">
                                 <span class="activitySegment activitySegment--abtweak" data-activity-project="mmath-renovation" style="height: 0.44%;" title="Abtweak: 1 commits"></span>
                                 <span class="activitySegment activitySegment--csp" data-activity-project="phd-renovation" style="height: 0.00%;" title="CSP: 0 commits"></span>
-                                <span class="activitySegment activitySegment--galaga" data-activity-project="aurora-galactica" style="height: 12.44%;" title="Aurora: 28 commits"></span>
+                                <span class="activitySegment activitySegment--galaga" data-activity-project="aurora-galactica" style="height: 24.89%;" title="Aurora: 56 commits"></span>
                             </div>
                         </div>
-                        <div class="activityTotal" data-activity-total>29</div>
+                        <div class="activityTotal" data-activity-total>57</div>
                         <div class="activityLabel">Mar 23</div>
                     </div>
                     </div>
@@ -228,11 +249,11 @@
                 </div>
                 <div class="activityLegendItem">
                     <span class="activityLegendSwatch activitySegment--galaga"></span>
-                    <span><strong>Aurora</strong> <span data-activity-legend-total="aurora-galactica">146</span> commits in the last 8 weeks</span>
+                    <span><strong>Aurora</strong> <span data-activity-legend-total="aurora-galactica">174</span> commits in the last 8 weeks</span>
                 </div>
             </div>
             <p class="footer" data-activity-status>Rendered from local repository history and refreshed from GitHub when the page loads.</p>
-            <script id="activity-chart-config" type="application/json">{"generated_at": "2026-03-23T13:03:09.522431-04:00", "weeks": ["2026-02-02T00:00:00-05:00", "2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00", "2026-03-23T00:00:00-04:00"], "projects": [{"label": "Abtweak", "project_id": "mmath-renovation", "repo": "mmath-renovation", "ref": "main"}, {"label": "CSP", "project_id": "phd-renovation", "repo": "phd-renovation", "ref": "main"}, {"label": "Aurora", "project_id": "aurora-galactica", "repo": "Codex-Test1", "ref": "main"}]}</script>
+            <script id="activity-chart-config" type="application/json">{"generated_at": "2026-03-24T19:30:38.040427-04:00", "weeks": ["2026-02-02T00:00:00-05:00", "2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00", "2026-03-23T00:00:00-04:00"], "projects": [{"label": "Abtweak", "project_id": "mmath-renovation", "repo": "mmath-renovation", "ref": "main"}, {"label": "CSP", "project_id": "phd-renovation", "repo": "phd-renovation", "ref": "main"}, {"label": "Aurora", "project_id": "aurora-galactica", "repo": "Codex-Test1", "ref": "main"}]}</script>
         </section>
 
         <section class="panel">

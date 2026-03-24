@@ -25,6 +25,8 @@ PROJECT_ORDER = [
     "aurora-galactica",
     "phd-renovation",
     "mmath-renovation",
+    "quack-com",
+    "kinitos-neoedge",
 ]
 ACTIVITY_PROJECTS = [
     {
@@ -49,13 +51,16 @@ ACTIVITY_PROJECTS = [
         "project_id": "aurora-galactica",
     },
 ]
-LEGACY_SPECTRA = {
-    "title": "Old Research Archive Recovery",
-    "description": "Recovered entry point for the historical Spectra research site, including preserved publication, course, bibliography, reserve, and raw research-artifact archives.",
-    "page_path": "Spectra/Html/index-spectra.html",
-    "last_updated": "March 22, 2026",
-    "last_addition": "Research Artifacts Archive",
-}
+LEGACY_ARCHIVES = [
+    {
+        "title": "Old Research Archive Recovery",
+        "description": "Recovered entry point for the historical Spectra research site, including preserved publication, course, bibliography, reserve, and raw research-artifact archives.",
+        "page_path": "Spectra/Html/index-spectra.html",
+        "last_updated": "March 22, 2026",
+        "last_addition": "Research Artifacts Archive",
+        "button_label": "Open archive",
+    },
+]
 
 
 @dataclass
@@ -63,8 +68,8 @@ class ProjectStatus:
     project_id: str
     display_name: str
     description: str | None
-    project_page_path: str
-    repo_url: str
+    project_page_href: str
+    repo_url: str | None
     dashboard_url: str | None
     experience_url: str | None
     repo_pushed_at: datetime
@@ -73,6 +78,8 @@ class ProjectStatus:
     status_value: str
     focus_label: str
     focus_value: str
+    person_context: str | None
+    timeline_label: str | None
     active: bool
 
 
@@ -100,20 +107,30 @@ def format_local_date(value: datetime) -> str:
 
 def load_project(path: Path) -> ProjectStatus:
     payload: dict[str, Any] = json.loads(path.read_text())
+    timeline_span = payload.get("timeline_span") or {}
+    project_page_href = payload.get("project_page_url") or payload.get("project_page_path")
+    if not project_page_href:
+        raise SystemExit(f"Missing project page link in {path}")
+    status_label = payload.get("status_label") or "Current phase"
+    status_value = payload.get("status_value") or timeline_span.get("label") or "Archive project"
+    focus_label = payload.get("focus_label") or "Current focus"
+    focus_value = payload.get("focus_value") or payload.get("current_focus") or "Archive organization"
     return ProjectStatus(
         project_id=payload["project_id"],
         display_name=payload["display_name"],
         description=payload.get("description"),
-        project_page_path=payload["project_page_path"],
-        repo_url=payload["repo_url"],
+        project_page_href=project_page_href,
+        repo_url=payload.get("repo_url") or None,
         dashboard_url=payload.get("dashboard_url"),
         experience_url=payload.get("experience_url"),
         repo_pushed_at=parse_datetime(payload["repo_pushed_at"]),
         status_generated_at=parse_datetime(payload["status_generated_at"]),
-        status_label=payload["status_label"],
-        status_value=payload["status_value"],
-        focus_label=payload["focus_label"],
-        focus_value=payload["focus_value"],
+        status_label=status_label,
+        status_value=status_value,
+        focus_label=focus_label,
+        focus_value=focus_value,
+        person_context=payload.get("person_context"),
+        timeline_label=timeline_span.get("label"),
         active=bool(payload["active"]),
     )
 
@@ -123,12 +140,28 @@ def sort_key(project: ProjectStatus) -> tuple[int, str]:
     return (len(PROJECT_ORDER), project.display_name.lower())
 
 
+def project_rank(project: ProjectStatus) -> tuple[datetime, datetime, int, int, str]:
+    return (
+        project.status_generated_at,
+        project.repo_pushed_at,
+        int(bool(project.person_context)),
+        int(bool(project.repo_url)),
+        project.project_id,
+    )
+
+
 def dedupe_projects(projects: list[ProjectStatus]) -> list[ProjectStatus]:
+    latest_by_id: dict[str, ProjectStatus] = {}
+    for project in projects:
+        existing = latest_by_id.get(project.project_id)
+        if existing is None or project_rank(project) > project_rank(existing):
+            latest_by_id[project.project_id] = project
+
     latest_by_repo: dict[str, ProjectStatus] = {}
     passthrough: list[ProjectStatus] = []
 
-    for project in projects:
-        key = project.repo_url.strip().lower()
+    for project in latest_by_id.values():
+        key = (project.repo_url or "").strip().lower()
         if not key:
             passthrough.append(project)
             continue
@@ -296,38 +329,46 @@ def render_activity_chart() -> str:
 
 def render_project_card(project: ProjectStatus) -> str:
     description = project.description or "Public project page synced from its repository status manifest."
-    buttons = [
-        render_button(project.project_page_path, "Open project page"),
-        render_button(project.repo_url, "Open repository"),
-    ]
+    buttons = [render_button(project.project_page_href, "Open project page")]
     if project.dashboard_url:
         buttons.insert(1, render_button(project.dashboard_url, "Open dashboard"))
     if project.experience_url:
         buttons.insert(2, render_button(project.experience_url, "Open live experience"))
+    if project.repo_url:
+        buttons.append(render_button(project.repo_url, "Open repository"))
+    details = [
+        f"<div><strong>Last repo update</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>",
+        f"<div><strong>{html.escape(project.status_label)}</strong> {html.escape(project.status_value)}</div>",
+        f"<div><strong>{html.escape(project.focus_label)}</strong> {html.escape(project.focus_value)}</div>",
+    ]
+    if project.timeline_label:
+        details.insert(1, f"<div><strong>Archive span</strong> {html.escape(project.timeline_label)}</div>")
+    person_context = ""
+    if project.person_context:
+        person_context = f'\n                    <p class="footer">{html.escape(project.person_context)}</p>'
     return f"""                <article class="card" data-project-card="{html.escape(project.project_id)}">
                     <h3>{html.escape(project.display_name)}</h3>
                     <p>{html.escape(description)}</p>
                     <div class="detailList">
-                        <div><strong>Last repo update</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>
-                        <div><strong>{html.escape(project.status_label)}</strong> {html.escape(project.status_value)}</div>
-                        <div><strong>{html.escape(project.focus_label)}</strong> {html.escape(project.focus_value)}</div>
+                        {"".join(details)}
                     </div>
+{person_context}
                     <div class="links">
                         {" ".join(buttons)}
                     </div>
                 </article>"""
 
 
-def render_legacy_card() -> str:
+def render_legacy_card(archive: dict[str, str]) -> str:
     return f"""                <article class="card">
-                    <h3>{html.escape(LEGACY_SPECTRA["title"])}</h3>
-                    <p>{html.escape(LEGACY_SPECTRA["description"])}</p>
+                    <h3>{html.escape(archive["title"])}</h3>
+                    <p>{html.escape(archive["description"])}</p>
                     <div class="detailList">
-                        <div><strong>Last update</strong> {html.escape(LEGACY_SPECTRA["last_updated"])}</div>
-                        <div><strong>Last addition</strong> {html.escape(LEGACY_SPECTRA["last_addition"])}</div>
+                        <div><strong>Last update</strong> {html.escape(archive["last_updated"])}</div>
+                        <div><strong>Last addition</strong> {html.escape(archive["last_addition"])}</div>
                     </div>
                     <div class="links">
-                        {render_button(LEGACY_SPECTRA["page_path"], "Open archive")}
+                        {render_button(archive["page_path"], archive["button_label"])}
                     </div>
                 </article>"""
 
@@ -347,10 +388,8 @@ def render_style_guide_note() -> str:
 
 def render() -> str:
     projects = sorted(
-        (
-            load_project(path)
-            for path in sorted(DATA_DIR.glob("*.json"))
-        ),
+        [load_project(path) for path in sorted(DATA_DIR.glob("*.json"))]
+        + [load_project(path) for path in sorted(ROOT.glob("*/project-manifest.json"))],
         key=sort_key,
     )
     projects = [project for project in projects if project.active]
@@ -364,6 +403,9 @@ def render() -> str:
     project_manifest_config = {
         "repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main",
         "fallback_manifest_paths": [f"data/projects/{path.name}" for path in sorted(DATA_DIR.glob("*.json"))],
+        "supplemental_manifest_paths": [
+            f"{path.parent.name}/{path.name}" for path in sorted(ROOT.glob("*/project-manifest.json"))
+        ],
         "project_order": PROJECT_ORDER,
     }
     project_manifest_config_json = json.dumps(project_manifest_config).replace("</", "<\\/")
@@ -434,7 +476,7 @@ def render() -> str:
         <section class="panel">
             <h2>Recovered Legacy Archives</h2>
             <div class="grid">
-{render_legacy_card()}
+{chr(10).join(render_legacy_card(archive) for archive in LEGACY_ARCHIVES)}
             </div>
         </section>
 
