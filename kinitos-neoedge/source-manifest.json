@@ -1,0 +1,1009 @@
+{
+  "schema_version": "1.0",
+  "project_id": "kinitos-neoedge",
+  "sources": [
+    {
+      "source_id": "src-kinitos-2003-usask-pg-sorenson-lecture",
+      "title": "P.G. Sorenson Lecture: Dr. Steven Woods, CEO of Kinitos, Inc.",
+      "source_type": "appearance",
+      "company_context": "Kinitos",
+      "person_relevance": "Official University of Saskatchewan lecture page documenting Steven Woods as CEO of Kinitos in 2003, useful for Steven's public-appearance timeline.",
+      "date": {
+        "display": "2003",
+        "sort": "2003-01-01",
+        "precision": "year"
+      },
+      "urls": {
+        "canonical": "https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "kinitos",
+        "lecture",
+        "appearance",
+        "usask",
+        "steven-woods"
+      ],
+      "status": "approved",
+      "notes": "Official university page says Woods left AOL in May 2002 to co-found Kinitos and was serving as CEO by the 2003 lecture."
+    },
+    {
+      "source_id": "src-kinitos-2004-internetnews-microsoft-sneak-peek",
+      "title": "Microsoft Offers Sneak Peek to Developers",
+      "source_type": "media-mention",
+      "company_context": "Kinitos",
+      "person_relevance": "Useful for Kinitos product context, but not a strong standalone Steven-centric source for the top-level hub.",
+      "date": {
+        "display": "March 11, 2004",
+        "sort": "2004-03-11",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.internetnews.com/developer/microsoft-offers-sneak-peek-to-developers/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "kinitos",
+        "microsoft",
+        "smart-client",
+        "enterprise-software",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "InternetNews coverage of DevDay 2004 names Kinitos' Smart Client Application Management software as a Microsoft-aligned example."
+    },
+    {
+      "source_id": "src-kinitos-2005-microsoft-experience-capital-markets-partners",
+      "title": "Microsoft Experience Capital Markets Is Supported by More Than 20 Leading Solution Partners",
+      "source_type": "press-release",
+      "company_context": "Kinitos",
+      "person_relevance": "Official Microsoft source confirming Kinitos' product positioning in the enterprise application-management phase of Steven Woods' post-AOL company-building work.",
+      "date": {
+        "display": "June 21, 2005",
+        "sort": "2005-06-21",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://news.microsoft.com/2005/06/21/microsoft-experience-capital-markets-is-supported-by-more-than-20-leading-solution-partners/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "kinitos",
+        "microsoft",
+        "enterprise-software",
+        "smart-client",
+        "press-release"
+      ],
+      "status": "approved",
+      "notes": "Microsoft lists Kinitos as a solution partner and describes its on-demand application delivery, update control, usage insight, and error reaction capabilities."
+    },
+    {
+      "source_id": "src-neoedge-2007-gamespot-bushnell-joins-board",
+      "title": "Bushnell joins NeoEdge board",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Good NeoEdge-era milestone, but mainly company-specific rather than Steven-centric.",
+      "date": {
+        "display": "May 22, 2007",
+        "sort": "2007-05-22",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.gamespot.com/articles/bushnell-joins-neoedge-board/1100-6171273/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "games",
+        "board",
+        "mostfun",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "GameSpot reports NeoEdge was founded in 2002, had 40 employees, had Alex Terry as CEO, and was operating MostFun.com in beta."
+    },
+    {
+      "source_id": "src-neoedge-2008-gamesbeat-neomom-product-tastes",
+      "title": "NeoEdge Networks launches NeoMOM to measure product tastes",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Helpful for NeoEdge product and audience history, but not yet a top-level Steven-hub item.",
+      "date": {
+        "display": "December 22, 2008",
+        "sort": "2008-12-22",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://gamesbeat.com/neoedge-networks-launches-neomom-to-measure-product-tastes/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "games",
+        "adtech",
+        "research",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "GamesBeat says NeoEdge's NeoMOM initiative drew on a network of more than 50 publishers, more than 500 games, and over 20 million players."
+    },
+    {
+      "source_id": "src-neoedge-2009-gamesbeat-raises-4m",
+      "title": "NeoEdge raises $4M for in-game video ads from game-focused VC firm",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Important company-financing milestone, though still more company-specific than Steven-centric.",
+      "date": {
+        "display": "September 29, 2009",
+        "sort": "2009-09-29",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://gamesbeat.com/neoedge-raises-4m-for-in-game-video-ads-from-game-focused-vc-firm/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "funding",
+        "games",
+        "adtech",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "GamesBeat reports a $4M round, 470 games across more than 50 publishers, and distribution on outlets such as Big Fish Games and Yahoo Games."
+    },
+    {
+      "source_id": "src-neoedge-2009-gamesbeat-offspring-merger",
+      "title": "Game ad firm NeoEdge merges with game developer, hires new CEO",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Useful later-stage company-history source, but not yet a Steven-hub candidate.",
+      "date": {
+        "display": "November 19, 2009",
+        "sort": "2009-11-19",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://gamesbeat.com/game-ad-firm-neoedge-merges-with-game-developer-hires-new-ceo/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "offspring",
+        "merger",
+        "games",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "GamesBeat covers the Offspring merger, Lesley Mansford becoming CEO, and NeoEdge's continued ad-tech focus alongside new game development."
+    },
+    {
+      "source_id": "src-neoedge-2010-gamesbeat-raises-3m",
+      "title": "NeoEdge raises $3M for ad platform for games",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Additional business-history source for NeoEdge's later funding and partner footprint; not yet for Steven-centric surfacing.",
+      "date": {
+        "display": "December 21, 2010",
+        "sort": "2010-12-21",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://gamesbeat.com/neoedge-raises-3m-for-ad-platform-for-games/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "funding",
+        "games",
+        "adtech",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "GamesBeat reports MMV Financial funding, more than 100 million monthly video ad impressions, and partnerships with Yahoo Games and iWin."
+    },
+    {
+      "source_id": "src-neoedge-2011-gamedeveloper-double-fusion-acquisition",
+      "title": "Double Fusion Expands Its In-Game Advertising With NeoEdge Acquisition",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Important closing-era company milestone that may matter to the top-level Steven career timeline in summary form.",
+      "date": {
+        "display": "December 15, 2011",
+        "sort": "2011-12-15",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.gamedeveloper.com/business/double-fusion-expands-its-in-game-advertising-with-neoedge-acquisition",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "acquisition",
+        "double-fusion",
+        "games",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "Game Developer reports Double Fusion's acquisition of NeoEdge and frames it as an expansion into casual and social in-game advertising."
+    },
+    {
+      "source_id": "src-mostfun-2007-gamezebo-try-before-you-buy",
+      "title": "MostFun.com shakes up try-before-you-buy",
+      "source_type": "media-mention",
+      "company_context": "MostFun Games / NeoEdge Networks",
+      "person_relevance": "Helpful for the MostFun experiment inside NeoEdge, but too company-specific for direct Steven-hub surfacing.",
+      "date": {
+        "display": "July 2007",
+        "sort": "2007-07-01",
+        "precision": "month"
+      },
+      "urls": {
+        "canonical": "https://www.gamezebo.com/news/mostfun-com-shakes-up-try-before-you-buy/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "mostfun",
+        "neoedge",
+        "games",
+        "adtech",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "Gamezebo describes MostFun as offering around 130 premium casual titles free with a small number of TV-quality video ads."
+    },
+    {
+      "source_id": "src-neoedge-2008-yahoo-ad-supported-online-gaming",
+      "title": "Yahoo! Announces Ad-Supported Online Gaming",
+      "source_type": "press-release",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Strong official evidence for the NeoEdge/Yahoo Games partnership era, though still more company-specific than Steven-centric.",
+      "date": {
+        "display": "July 10, 2008",
+        "sort": "2008-07-10",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.altaba.com/news-releases/news-release-details/yahoo-announces-ad-supported-online-gaming",
+        "archive_local": null,
+        "archive_web": "https://www.newmediawire.com/news/yahoo-announces-ad-supported-online-gaming-3076097"
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "yahoo",
+        "games",
+        "adtech",
+        "press-release"
+      ],
+      "status": "approved",
+      "notes": "Yahoo's announcement includes a substantial company description for NeoEdge, naming its NeoARM and NeoAds technology and scale within the Yahoo Games rollout."
+    },
+    {
+      "source_id": "src-blue-noodle-2010-uspto-trademark-filing",
+      "title": "BLUE NOODLE INC. trademark filing in USPTO Official Gazette",
+      "source_type": "artifact",
+      "company_context": "Blue Noodle / NeoEdge Networks",
+      "person_relevance": "Useful legal/brand artifact for the Blue Noodle phase, but not a Steven-hub source.",
+      "date": {
+        "display": "March 15, 2011 gazette; filed March 19, 2010",
+        "sort": "2010-03-19",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.uspto.gov/web/trademarks/tmog/20110315_OG.pdf",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "blue-noodle",
+        "trademark",
+        "games",
+        "artifact",
+        "legal"
+      ],
+      "status": "approved",
+      "notes": "Official USPTO gazette shows BLUE NOODLE INC. filing for downloadable and online game-related entertainment services, supporting the Blue Noodle games/studio phase."
+    },
+    {
+      "source_id": "src-blue-noodle-2011-adtechdaily-clickstrip-gdc",
+      "title": "Blue Noodle Premiers New Video Ad-Bar, Clickstrip, at Game Developers Conference",
+      "source_type": "media-mention",
+      "company_context": "Blue Noodle / NeoEdge Networks",
+      "person_relevance": "Strong evidence of the Blue Noodle rebrand and product direction, but company-specific rather than Steven-centric.",
+      "date": {
+        "display": "March 10, 2011",
+        "sort": "2011-03-10",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://adtechdaily.com/2011/03/10/blue-noodle-premiers-new-video-ad-bar-clickstrip-at-game-developers-conference/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "blue-noodle",
+        "neoedge",
+        "games",
+        "adtech",
+        "gdc"
+      ],
+      "status": "approved",
+      "notes": "Ad Tech Daily says Blue Noodle was formerly NeoEdge and positions Clickstrip plus Yahoo Games, iWin, and RedAtoms partnerships as part of the 2011 strategy."
+    },
+    {
+      "source_id": "src-blue-noodle-2011-fortune-mmv-financial-trouble",
+      "title": "Exclusive: MMV Financial in trouble",
+      "source_type": "media-mention",
+      "company_context": "Blue Noodle / NeoEdge Networks",
+      "person_relevance": "Context for the lender side of Blue Noodle's collapse, but not for top-level Steven surfacing.",
+      "date": {
+        "display": "July 18, 2011",
+        "sort": "2011-07-18",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://fortune.com/2011/07/18/exclusive-mmv-financial-in-trouble/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "blue-noodle",
+        "mmv-financial",
+        "funding",
+        "lender",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "Fortune reports MMV Financial had closed U.S. offices and stopped writing new business shortly before the Blue Noodle asset crisis."
+    },
+    {
+      "source_id": "src-blue-noodle-2011-fortune-investor-immorality",
+      "title": "Investor immorality: The strange case of Blue Noodle",
+      "source_type": "media-mention",
+      "company_context": "Blue Noodle / NeoEdge Networks",
+      "person_relevance": "Important end-of-company narrative for the archive, but too company-specific and messy for direct Steven-hub use.",
+      "date": {
+        "display": "August 17, 2011",
+        "sort": "2011-08-17",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://fortune.com/2011/08/17/investor-immorality-the-strange-case-of-blue-noodle/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "blue-noodle",
+        "neoedge",
+        "funding",
+        "wind-down",
+        "press"
+      ],
+      "status": "approved",
+      "notes": "Fortune says Blue Noodle had also been known as NeoEdge Networks and GWN, defaulted on debt, had assets seized by MMV, and had a deal in principle to sell assets to Double Fusion."
+    },
+    {
+      "source_id": "src-double-fusion-2011-adtechdaily-major-expansion-neoedge-assets",
+      "title": "Major Expansion at In-Gaming Ad Leader Double Fusion",
+      "source_type": "media-mention",
+      "company_context": "Double Fusion acquisition of NeoEdge assets",
+      "person_relevance": "Useful closing-stage company source and possible career-timeline context, but not yet a headline Steven-hub item beyond summary use.",
+      "date": {
+        "display": "December 29, 2011",
+        "sort": "2011-12-29",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://adtechdaily.com/2011/12/29/major-expansion-at-in-gaming-ad-leader-double-fusion/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "double-fusion",
+        "neoedge",
+        "acquisition",
+        "assets",
+        "adtech"
+      ],
+      "status": "approved",
+      "notes": "Ad Tech Daily explicitly frames the deal as an acquisition of NeoEdge's assets and says those assets added 100M+ monthly impressions plus Canadian distribution."
+    },
+    {
+      "source_id": "src-mostfun-2007-wayback-homepage-game-player",
+      "title": "MostFun Games homepage (archived March 20, 2007)",
+      "source_type": "artifact",
+      "company_context": "MostFun Games / NeoEdge Networks",
+      "person_relevance": "Useful deep-archive evidence for the MostFun experiment and its NeoEdge integration, but too company-specific for direct Steven-hub surfacing.",
+      "date": {
+        "display": "March 20, 2007 snapshot",
+        "sort": "2007-03-20",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "http://www.mostfun.com/",
+        "archive_local": "historic/artifacts/archive-html/mostfun-homepage-2007-03-20-wayback.html",
+        "archive_web": "https://web.archive.org/web/20070320003605/http://www.mostfun.com/"
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "mostfun",
+        "neoedge",
+        "wayback",
+        "artifact",
+        "games",
+        "distribution"
+      ],
+      "status": "approved",
+      "notes": "Archived MostFun homepage promotes the MostFun Game Player, routes downloads through ub.neoedge.com, and includes a visible 'Powered by NeoEdge' footer badge."
+    },
+    {
+      "source_id": "src-neoedge-2007-wayback-homepage-patent-pending-delivery",
+      "title": "NeoEdge homepage (archived February 5, 2007)",
+      "source_type": "artifact",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Strong official site evidence for NeoEdge's own product positioning, but better kept in the deep archive than the Steven-centric hub.",
+      "date": {
+        "display": "February 5, 2007 snapshot",
+        "sort": "2007-02-05",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "http://www.neoedge.com/",
+        "archive_local": "historic/artifacts/archive-html/neoedge-homepage-2007-02-05-wayback.html",
+        "archive_web": "https://web.archive.org/web/20070205060706/http://www.neoedge.com/"
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "wayback",
+        "artifact",
+        "adtech",
+        "delivery",
+        "games"
+      ],
+      "status": "approved",
+      "notes": "Archived NeoEdge homepage describes patent-pending delivery and advertising technology plus unique dynamic ad insertion and multiple ad placement modes."
+    },
+    {
+      "source_id": "src-mostfun-2008-wayback-homepage-game-network",
+      "title": "MostFun.com Game Network - Free Unlimited Premium Games (archived April 7, 2008)",
+      "source_type": "artifact",
+      "company_context": "MostFun Games / NeoEdge Networks",
+      "person_relevance": "Good direct evidence of MostFun's mature product framing and NeoEdge integration, but still company-specific.",
+      "date": {
+        "display": "April 7, 2008 snapshot",
+        "sort": "2008-04-07",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "http://www.mostfun.com/",
+        "archive_local": "historic/artifacts/archive-html/mostfun-homepage-2008-04-07-wayback.html",
+        "archive_web": "https://web.archive.org/web/20080407075007/http://www.mostfun.com/"
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "mostfun",
+        "neoedge",
+        "wayback",
+        "artifact",
+        "neoarm",
+        "games"
+      ],
+      "status": "approved",
+      "notes": "Archived MostFun homepage advertises 100+ free premium games, uses DetailsNeoARM.aspx links, and carries a NeoEdge Networks copyright notice."
+    },
+    {
+      "source_id": "src-neoedge-2008-wayback-homepage-marketplace",
+      "title": "NeoEdge homepage (archived March 15, 2008)",
+      "source_type": "artifact",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Useful archive evidence for NeoEdge's three-sided market framing, but not a top-level Steven-hub source.",
+      "date": {
+        "display": "March 15, 2008 snapshot",
+        "sort": "2008-03-15",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "http://www.neoedge.com/",
+        "archive_local": "historic/artifacts/archive-html/neoedge-homepage-2008-03-15-wayback.html",
+        "archive_web": "https://web.archive.org/web/20080315212257/http://www.neoedge.com/"
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "wayback",
+        "artifact",
+        "adtech",
+        "mostfun",
+        "neoarm"
+      ],
+      "status": "approved",
+      "notes": "Archived NeoEdge homepage frames the business across advertisers, partner websites, and game publishers, and links Game of the Week directly into a MostFun NeoARM detail page."
+    },
+    {
+      "source_id": "src-blue-noodle-2011-wayback-homepage-casual-social",
+      "title": "BlueNoodle homepage (archived February 8, 2011)",
+      "source_type": "artifact",
+      "company_context": "Blue Noodle / NeoEdge Networks",
+      "person_relevance": "Strong official site artifact for the Blue Noodle phase, but mainly for company-history interpretation rather than the Steven hub.",
+      "date": {
+        "display": "February 8, 2011 snapshot",
+        "sort": "2011-02-08",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "http://www.bluenoodle.com/",
+        "archive_local": "historic/artifacts/archive-html/bluenoodle-homepage-2011-02-08-wayback.html",
+        "archive_web": "https://web.archive.org/web/20110208165000/http://www.bluenoodle.com/"
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "blue-noodle",
+        "neoedge",
+        "wayback",
+        "artifact",
+        "adtech",
+        "social-games"
+      ],
+      "status": "approved",
+      "notes": "Archived Blue Noodle homepage calls the company the leading ad platform for casual games, describes casual and social game advertising, and highlights developer monetization plus the MMV financing headline."
+    },
+    {
+      "source_id": "src-neoedge-ip-2008-google-patents-interstitial-advertising-chain",
+      "title": "US20080207328A1 - Interstitial advertising in a gaming environment",
+      "source_type": "artifact",
+      "company_context": "NeoEdge Networks / Blue Noodle / Double Fusion IP chain",
+      "person_relevance": "Important legal artifact because it names Steven Woods as an inventor and shows a concrete IP-transfer chain from NeoEdge into Double Fusion, but it is still better handled as archive detail than top-level hub copy.",
+      "date": {
+        "display": "Patent filed February 23, 2007; assignment chain updated through November 2, 2011",
+        "sort": "2011-11-02",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://patents.google.com/patent/US20080207328A1/en",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "blue-noodle",
+        "double-fusion",
+        "patent",
+        "ip",
+        "steven-woods",
+        "legal"
+      ],
+      "status": "approved",
+      "notes": "Google Patents shows a NeoEdge patent naming Steven Woods and Kelly Slough as inventors, with legal events tracing assignment to NeoEdge, later lender interests, Blue Noodle name-change handling, and eventual assignment into Double Fusion in 2011."
+    },
+    {
+      "source_id": "src-neoedge-ip-2010-google-patents-distraction-free-content-chain",
+      "title": "US20100175058A1 - System for providing distraction-free content in a flash-based gaming environment",
+      "source_type": "artifact",
+      "company_context": "NeoEdge Networks / Blue Noodle / Double Fusion IP chain",
+      "person_relevance": "Strong legal artifact for the Blue Noodle-era Flash advertising technology and its transfer path into Double Fusion, though mainly useful inside the deep company archive.",
+      "date": {
+        "display": "Patent filed August 24, 2009; assignment chain updated through November 2, 2011",
+        "sort": "2011-11-02",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://patents.google.com/patent/US20100175058A1/en",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "blue-noodle",
+        "double-fusion",
+        "patent",
+        "flash",
+        "ip",
+        "legal"
+      ],
+      "status": "approved",
+      "notes": "Google Patents records the NeoEdge to Blue Noodle to Double Fusion assignment path for a Flash-game advertising patent family, reinforcing that the 2011 transaction involved concrete IP assets as well as network distribution."
+    },
+    {
+      "source_id": "src-kinitos-neoedge-2023-waterloo-rdd-founding-innovation-keynote",
+      "title": "Math and Computing Research Discovery Days: Founding Innovation Keynote: Steven Woods",
+      "source_type": "appearance",
+      "company_context": "Kinitos and NeoEdge Networks",
+      "person_relevance": "Official University of Waterloo page that concisely places Steven Woods as co-founder of Quack.com, Kinitos, and NeoEdge Networks, useful for the Steven hub's career overview.",
+      "date": {
+        "display": "April 2023",
+        "sort": "2023-04-01",
+        "precision": "month"
+      },
+      "urls": {
+        "canonical": "https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "kinitos",
+        "neoedge",
+        "waterloo",
+        "appearance",
+        "steven-woods"
+      ],
+      "status": "approved",
+      "notes": "Official Waterloo event page says Woods co-founded Quack.com, Kinitos, and NeoEdge Networks and built teams across Silicon Valley and the Waterloo-Toronto corridor."
+    },
+    {
+      "source_id": "src-blue-noodle-2006-gaebler-funding-round",
+      "title": "Blue Noodle 6/30/2006 Capital Raise",
+      "source_type": "profile",
+      "company_context": "NeoEdge Networks / Blue Noodle",
+      "person_relevance": "Useful for the investor trail, but this is a later venture database summary rather than a strong primary historical source.",
+      "date": {
+        "display": "June 30, 2006",
+        "sort": "2006-06-30",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.gaebler.com/VC-Funding-9CA4B75F-4611-46EA-8023-BA4C6F14A3C9-Blue-Noodle-06-30-2006",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "blue-noodle",
+        "neoedge",
+        "funding",
+        "vimac",
+        "jefferson"
+      ],
+      "status": "deferred",
+      "notes": "Gaebler/VentureDeal reports a $5.485M 2006 round from Jefferson Corner Group and VIMAC Ventures; keep as supporting evidence until corroborated by contemporaneous sources."
+    },
+    {
+      "source_id": "src-blue-noodle-2009-gaebler-funding-round",
+      "title": "Blue Noodle 9/29/2009 Capital Raise",
+      "source_type": "profile",
+      "company_context": "NeoEdge Networks / Blue Noodle",
+      "person_relevance": "Useful investor-trail evidence, but later-database quality keeps it out of the top-level hub.",
+      "date": {
+        "display": "September 29, 2009",
+        "sort": "2009-09-29",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.gaebler.com/VC-Funding-2B95D8C5-FF27-4A64-A55E-09A8AE90DBA4-Blue-Noodle-09-29-2009",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "blue-noodle",
+        "neoedge",
+        "funding",
+        "games",
+        "investors"
+      ],
+      "status": "deferred",
+      "notes": "Gaebler/VentureDeal reports a $4M venture round and says the proceeds were for advertising-services growth and acquisition of premium casual game titles."
+    },
+    {
+      "source_id": "src-neoedge-2026-crunchbase-funding-profile",
+      "title": "NeoEdge Networks - Crunchbase Company Profile & Funding",
+      "source_type": "profile",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Useful current funding summary for archive coordination, but not a primary historical source and not suitable for direct Steven-hub use.",
+      "date": {
+        "display": "Current database profile accessed March 24, 2026",
+        "sort": "2026-03-24",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.crunchbase.com/organization/neoedge-networks",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "funding",
+        "investors",
+        "crunchbase",
+        "profile"
+      ],
+      "status": "deferred",
+      "notes": "Crunchbase usefully names four rounds and the investor set, but it is a present-day aggregation rather than contemporaneous reporting."
+    },
+    {
+      "source_id": "src-neoedge-2008-cnet-yahoo-ad-supported-games",
+      "title": "Yahoo to offer ad-supported online games",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Potential Steven Woods relevance during the NeoEdge / Yahoo Games partnership era; keep out of the top-level hub until role and context are confirmed.",
+      "date": {
+        "display": "July 10, 2008",
+        "sort": "2008-07-10",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.cnet.com/tech/services-and-software/yahoo-to-offer-ad-supported-online-games/",
+        "archive_local": null,
+        "archive_web": "https://www.techmeme.com/080710/p89"
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "games",
+        "adtech",
+        "press",
+        "yahoo"
+      ],
+      "status": "deferred",
+      "notes": "Direct CNET page not yet captured locally; Techmeme snapshot confirms the title and date cluster."
+    },
+    {
+      "source_id": "src-neoedge-2008-adweek-yahoo-bolsters-ad-supported-games",
+      "title": "Yahoo! Bolsters Ad-Supported Games",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Useful NeoEdge-era company coverage, but not yet strong enough for top-level Steven-centric surfacing.",
+      "date": {
+        "display": "July 10, 2008",
+        "sort": "2008-07-10",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.adweek.com/brand-marketing/yahoo-bolsters-ad-supported-games-96328/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "games",
+        "adtech",
+        "press",
+        "yahoo"
+      ],
+      "status": "deferred",
+      "notes": "Tracked as part of the Yahoo Games / NeoEdge discovery cluster; local capture still pending."
+    },
+    {
+      "source_id": "src-neoedge-2008-betanews-yahoo-free-ad-supported-games",
+      "title": "Yahoo to offer free ad-supported games",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Potentially useful for Steven-linked NeoEdge context, but not yet ready for the top-level hub.",
+      "date": {
+        "display": "July 10, 2008",
+        "sort": "2008-07-10",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://betanews.com/2008/07/10/yahoo-to-offer-free-ad-supported-games/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "games",
+        "adtech",
+        "press",
+        "yahoo"
+      ],
+      "status": "deferred",
+      "notes": "Tracked as related coverage of the Yahoo Games rollout using NeoEdge-delivered ads."
+    },
+    {
+      "source_id": "src-neoedge-2008-campaign-yahoo-sony-ad-funded-games",
+      "title": "Yahoo, Sony extend ad-funded games offerings",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Follow-on NeoEdge-era coverage with possible Steven relevance, but still in review.",
+      "date": {
+        "display": "July 11, 2008",
+        "sort": "2008-07-11",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.campaignlive.co.uk/article/yahoo-sony-extend-ad-funded-games-offerings/831158",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "games",
+        "adtech",
+        "press",
+        "yahoo",
+        "sony"
+      ],
+      "status": "deferred",
+      "notes": "Tracked as follow-on trade coverage connected to the same NeoEdge / Yahoo Games cluster."
+    },
+    {
+      "source_id": "src-neoedge-2008-techmeme-yahoo-games-free-games-startups",
+      "title": "Yahoo Games shifts to free games in alliance with two game ad start-ups",
+      "source_type": "media-mention",
+      "company_context": "NeoEdge Networks",
+      "person_relevance": "Secondary aggregation only; useful for tracing contemporaneous coverage but not appropriate for top-level surfacing.",
+      "date": {
+        "display": "July 10, 2008",
+        "sort": "2008-07-10",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.techmeme.com/080710/p89",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "kinitos-neoedge",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "neoedge",
+        "games",
+        "adtech",
+        "press",
+        "yahoo",
+        "aggregation"
+      ],
+      "status": "deferred",
+      "notes": "Useful as a verification bridge for the July 10, 2008 coverage cluster and the blocked CNET page."
+    }
+  ]
+}

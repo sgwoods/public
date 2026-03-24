@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "project_id": "kinitos-neoedge",
+  "active": true,
+  "display_name": "Kinitos / NeoEdge Networks Archive",
+  "description": "Deep archive for the Kinitos origin story and the later NeoEdge Networks era, covering documents, demos, artifacts, and recovered code.",
+  "person_context": "Steven Woods co-founded Kinitos in 2002 after AOL and later co-founded NeoEdge Networks; this archive is the canonical deep history for that company line.",
+  "project_page_url": "https://sgwoods.github.io/public/kinitos-neoedge.html",
+  "repo_url": "",
+  "timeline_span": {
+    "start_year": 2002,
+    "end_year": 2011,
+    "label": "Kinitos founding through NeoEdge acquisition era"
+  },
+  "repo_pushed_at": "2026-03-24T23:45:00Z",
+  "status_generated_at": "2026-03-24T23:45:00Z",
+  "current_focus": "Blue Noodle wind-down, investor trail, MostFun, Double Fusion asset-path, and archived site-capture research",
+  "notable_items": [
+    {
+      "label": "Research pass: March 24, 2026",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/incoming/research-pass-2026-03-24.md"
+    },
+    {
+      "label": "Research pass: endgame and investor trail",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/incoming/research-pass-2026-03-24-endgame.md"
+    },
+    {
+      "label": "Research pass: archived site captures",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/incoming/research-pass-2026-03-24-site-captures.md"
+    },
+    {
+      "label": "Source manifest",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/source-manifest.json"
+    }
+  ],
+  "featured_source_ids": [
+    "src-mostfun-2008-wayback-homepage-game-network",
+    "src-blue-noodle-2011-wayback-homepage-casual-social",
+    "src-neoedge-ip-2008-google-patents-interstitial-advertising-chain"
+  ]
+}

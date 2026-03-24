@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "project_id": "quack-com",
+  "active": true,
+  "display_name": "Quack.com Archive Project",
+  "description": "Collection of memories, demos, artifacts, press, and recovered code from the Quack.com era.",
+  "person_context": "Steven Woods co-founded Quack.com, an early interactive voice assistant company acquired by AOL in 2000.",
+  "project_page_url": "https://sgwoods.github.io/public/quack-com.html",
+  "repo_url": null,
+  "timeline_span": {
+    "start_year": 1998,
+    "end_year": 2000,
+    "label": "Quack.com era"
+  },
+  "repo_pushed_at": "2026-03-24T23:34:41Z",
+  "status_generated_at": "2026-03-24T23:34:41Z",
+  "current_focus": "Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press",
+  "notable_items": [
+    {
+      "label": "EARFUL OF INTERNET / Voice portals read news and other information via phone to users on the go",
+      "url": "https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php"
+    },
+    {
+      "label": "Another Feather In AOL's Cap",
+      "url": "https://www.internetnews.com/it-management/another-feather-in-aols-cap"
+    },
+    {
+      "label": "US6687734B1 - System and method for determining if one web site has the same information as another web site",
+      "url": "https://patents.google.com/patent/US6687734B1/en"
+    },
+    {
+      "label": "US20060149633A1 - System and method for advertising with an internet voice portal",
+      "url": "https://patents.google.com/patent/US20060149633A1"
+    }
+  ],
+  "featured_source_ids": [
+    "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php",
+    "src-quack-2000-another-feather-in-aols-cap",
+    "src-quack-2004-en",
+    "src-quack-2006-us20060149633a1",
+    "src-quack-2014-jeromy-carriere",
+    "src-quack-2023-uwaterloo-entrepreneurship-impact"
+  ],
+  "status_label": "Current phase",
+  "status_value": "Active research archive",
+  "focus_label": "Current focus"
+}

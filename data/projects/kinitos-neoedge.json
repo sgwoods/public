@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "project_id": "kinitos-neoedge",
+  "active": true,
+  "display_name": "Kinitos / NeoEdge Networks Archive Project",
+  "description": "Public project page for collecting, verifying, and organizing Kinitos and NeoEdge Networks company history, demos, artifacts, and recovered code.",
+  "project_page_path": "kinitos-neoedge.html",
+  "repo_url": "",
+  "dashboard_url": null,
+  "experience_url": null,
+  "repo_pushed_at": "2026-03-24T23:15:00Z",
+  "status_generated_at": "2026-03-24T23:15:00Z",
+  "status_label": "Current phase",
+  "status_value": "Active research archive",
+  "focus_label": "Current focus",
+  "focus_value": "Site captures, investor trail, and Double Fusion IP path"
+}

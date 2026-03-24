@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "project_id": "quack-com",
+  "handoff_generated_at": "2026-03-24T23:34:41Z",
+  "items_for_public": [
+    {
+      "source_id": "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php",
+      "reason": "This broader voice-portal feature helps place Steven Woods' Quack.com work in its 2000 market context.",
+      "recommended_section": "public-appearances",
+      "summary": "Broader voice-portal coverage naming Quack.com as a key company in the space. Well-attributed source with clear provenance and a local archive copy."
+    },
+    {
+      "source_id": "src-quack-2000-another-feather-in-aols-cap",
+      "reason": "Steven Woods co-founded Quack.com and this source covers the AOL acquisition.",
+      "recommended_section": "career-timeline",
+      "summary": "InternetNews coverage of the Quack/AOL acquisition. Well-attributed source with clear provenance and a local archive copy."
+    },
+    {
+      "source_id": "src-quack-2004-en",
+      "reason": "Patent record documenting Quack-era inventorship by Steven Woods and Jeromy Carriere.",
+      "recommended_section": "public-appearances",
+      "summary": "Patent source useful for product/data architecture and later assignee history through AOL and Facebook/Meta. Strong official or institutional source with clear date and provenance."
+    },
+    {
+      "source_id": "src-quack-2006-us20060149633a1",
+      "reason": "Patent record that helps document Steven Woods' role in Quack's voice-portal IP portfolio.",
+      "recommended_section": "public-appearances",
+      "summary": "Patent source showing Quack product and advertising architecture details plus inventor list. Strong official or institutional source with clear date and provenance."
+    },
+    {
+      "source_id": "src-quack-2014-jeromy-carriere",
+      "reason": "Waterloo profile that helps connect Quack's founder story to the University of Waterloo alumni network.",
+      "recommended_section": "public-appearances",
+      "summary": "Useful key-individual and Waterloo relationship source for Jeromy Carriere's Quack connection. Strong official or institutional source with clear date and provenance."
+    },
+    {
+      "source_id": "src-quack-2023-uwaterloo-entrepreneurship-impact",
+      "reason": "Public appearance profile describing Steven Woods' entrepreneurial path and Quack.com's 2000 AOL acquisition.",
+      "recommended_section": "public-appearances",
+      "summary": "Later public-facing retrospective source with a concise company summary. Well-attributed source with clear provenance and a local archive copy."
+    }
+  ],
+  "open_questions": [
+    {
+      "question": "Quack remains staged inside the public repo, so the archive repo URL is still unset."
+    },
+    {
+      "question": "Some investor-outcome and Waterloo brain-drain claims still need stronger primary sourcing."
+    }
+  ]
+}

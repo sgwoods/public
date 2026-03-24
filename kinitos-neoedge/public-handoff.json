@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "project_id": "kinitos-neoedge",
+  "handoff_generated_at": "2026-03-24T22:30:00Z",
+  "items_for_public": [
+    {
+      "source_id": "src-kinitos-2003-usask-pg-sorenson-lecture",
+      "reason": "Official Kinitos-era public appearance while Steven Woods was CEO.",
+      "recommended_section": "public-appearances",
+      "summary": "University of Saskatchewan page records a 2003 P.G. Sorenson lecture by Steven Woods while he was CEO of Kinitos and notes he left AOL in May 2002 to co-found the company."
+    },
+    {
+      "source_id": "src-kinitos-neoedge-2023-waterloo-rdd-founding-innovation-keynote",
+      "reason": "Official recent university page that neatly summarizes Steven Woods' connection to Quack.com, Kinitos, and NeoEdge Networks.",
+      "recommended_section": "career-overview",
+      "summary": "University of Waterloo's 2023 Research Discovery Days page describes Steven Woods as co-founder of Quack.com, Kinitos, and NeoEdge Networks and highlights the cross-border teams he built."
+    },
+    {
+      "source_id": "src-neoedge-2011-gamedeveloper-double-fusion-acquisition",
+      "reason": "Potentially useful closing milestone for a short Steven career-timeline summary of the NeoEdge era.",
+      "recommended_section": "career-timeline",
+      "summary": "Game Developer reported Double Fusion's December 15, 2011 acquisition of NeoEdge, marking a clear late-stage milestone for the company line."
+    }
+  ],
+  "open_questions": [
+    {
+      "question": "Confirm whether the top-level hub wants only official institutional pages for Steven-facing career summaries, or whether trade-press milestone items like the 2011 acquisition should also be surfaced."
+    },
+    {
+      "question": "Capture a local or archived copy of the CNET Yahoo Games article before promoting that 2008 cluster beyond deferred status."
+    },
+    {
+      "question": "Patent assignment records now confirm that at least some NeoEdge / Blue Noodle intellectual-property assets passed into Double Fusion in 2011, but longer-term public evidence of product or brand use inside Double Fusion is still thin."
+    },
+    {
+      "question": "No distinct pre-2006 Kinitos-only funding source has been verified yet; current investor history appears only in later NeoEdge/Blue Noodle financing summaries."
+    }
+  ]
+}

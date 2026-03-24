@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinitos / NeoEdge Networks Working Repository</title>
+    <link rel="stylesheet" href="../assets/public-site.css">
+    <style>
+        :root {
+            --bg: #140d08;
+            --bg2: #20313a;
+            --panel-bg: rgba(22, 14, 10, 0.74);
+            --panel-glow: rgba(255, 190, 92, 0.18);
+            --card-bg: rgba(255, 248, 236, 0.06);
+            --card-border: rgba(255, 224, 185, 0.12);
+            --panel-border: rgba(255, 192, 120, 0.22);
+            --button-bg: rgba(98, 214, 202, 0.16);
+            --button-border: rgba(98, 214, 202, 0.30);
+            --button-bg-ghost: rgba(255, 255, 255, 0.04);
+            --text: #fff7ea;
+            --muted: #dcc9b1;
+            --muted-strong: #fff1d8;
+            --accent: #ffb052;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(255, 176, 82, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.18), transparent 30%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        .workflowGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .workflowCard h3,
+        .laneCard h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: rgba(255, 176, 82, 0.18);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .statusGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .statusCard {
+            padding: 18px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--card-border);
+        }
+
+        .statusCard strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--muted-strong);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <main class="shell shell--narrow">
+        <section class="hero">
+            <div class="heroTop">
+                <div>
+                    <span class="eyebrow">Working Repository</span>
+                    <h1>Kinitos / NeoEdge Networks</h1>
+                </div>
+                <a class="heroHomeLink" href="../kinitos-neoedge.html">Back to project page</a>
+            </div>
+            <p class="lead">
+                Document intake and curation workspace for the Kinitos / NeoEdge Networks archive project.
+                New material lands in <code>incoming/</code>, gets processed here, and then moves into
+                <code>historic/</code> folders organized by type.
+            </p>
+            <div class="meta">
+                <div class="metaCard" id="incoming">
+                    <span class="metaLabel">Intake Folder</span>
+                    <span class="metaValue">incoming/</span>
+                    <div class="metaNote">Raw finds arrive here before classification and cleanup.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Historic Folder</span>
+                    <span class="metaValue">historic/</span>
+                    <div class="metaNote">Processed material is preserved here by type.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Current State</span>
+                    <span class="metaValue">Research pass in progress</span>
+                    <div class="metaNote">The archive now includes source timeline work, investor leads, patent-chain evidence, archived site captures, and locally preserved HTML artifacts for NeoEdge, MostFun, and Blue Noodle.</div>
+                </div>
+            </div>
+            <div class="links">
+                <a class="button" href="../kinitos-neoedge.html">Summary project page</a>
+                <a class="button button--ghost" href="../index.html">Public index</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Repository Workflow</h2>
+            <div class="workflowGrid">
+                <article class="card workflowCard">
+                    <h3><span class="chip">01</span> Incoming documents</h3>
+                    <p>Drop unsorted captures, scans, PDFs, screenshots, notes, and short campaign files into the intake folder first so nothing gets lost while we are still identifying what it is.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/incoming/</code></div>
+                        <div><strong>Use</strong> staging, first-pass processing, and research-campaign notes</div>
+                    </div>
+                </article>
+                <article class="card workflowCard">
+                    <h3><span class="chip">02</span> Process and classify</h3>
+                    <p>As each document is understood, we extract dates, context, and summaries, then decide which historic lane it belongs in.</p>
+                    <div class="detailList">
+                        <div><strong>Core tasks</strong> identify, date, summarize, categorize</div>
+                        <div><strong>Result</strong> durable archive-ready material</div>
+                    </div>
+                </article>
+                <article class="card workflowCard">
+                    <h3><span class="chip">03</span> Historic archive</h3>
+                    <p>Settled material moves into typed folders that can later support public exhibits, timelines, and demo reconstructions.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/historic/</code></div>
+                        <div><strong>Types</strong> memories, demos, artifacts, code</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Historic Lanes</h2>
+            <div class="grid">
+                <article class="card laneCard">
+                    <h3>Memories</h3>
+                    <p>Interviews, recollections, milestone notes, and narrative fragments that preserve the human story around the company.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/historic/memories/</code></div>
+                    </div>
+                </article>
+                <article class="card laneCard">
+                    <h3>Demos</h3>
+                    <p>Curated video leads, reconstructed experiences, recordings, and presentation material that help the original work feel tangible again.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/historic/demos/</code></div>
+                    </div>
+                </article>
+                <article class="card laneCard">
+                    <h3>Artifacts</h3>
+                    <p>Primary-source documents such as scans, screenshots, press material, diagrams, and archived company records.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/historic/artifacts/</code></div>
+                    </div>
+                </article>
+                <article class="card laneCard">
+                    <h3>Code</h3>
+                    <p>Recovered source, technical notes, dependency clues, and restoration experiments needed for preservation or replay.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/historic/code/</code></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Working Notes</h2>
+            <div class="statusGrid">
+                <article class="statusCard">
+                    <strong>Archive scope</strong>
+                    <p>This repository is designed to preserve both the original Kinitos identity and the later NeoEdge Networks refocus without flattening that transition.</p>
+                </article>
+                <article class="statusCard">
+                    <strong>Shared guidance</strong>
+                    <p>Use the shared incoming-artifact playbook and template to keep document processing consistent across archive projects.</p>
+                </article>
+                <article class="statusCard">
+                    <strong>Next step</strong>
+                    <p>Start dropping raw documents into <code>incoming/</code>, then promote them into the historic lanes as their context becomes clear.</p>
+                </article>
+                <article class="statusCard">
+                    <strong>Tracked source leads</strong>
+                    <p>Maintain a lightweight lead list for articles, archived site gaps, and named follow-up campaigns even before we have a local capture or a full summary.</p>
+                    <div class="links">
+                        <a class="button" href="incoming/document-leads.md">Open lead tracker</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>Research pass</strong>
+                    <p>The research notes now act as campaign files for the base timeline, the endgame and investor trail, and direct archived site captures from company-era pages.</p>
+                    <div class="links">
+                        <a class="button" href="incoming/research-pass-2026-03-24.md">Open first pass</a>
+                        <a class="button button--ghost" href="incoming/research-pass-2026-03-24-endgame.md">Open endgame pass</a>
+                        <a class="button button--ghost" href="incoming/research-pass-2026-03-24-site-captures.md">Open site-capture pass</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>Coordination exports</strong>
+                    <p>This archive publishes the contract files used to coordinate with the top-level Steven Woods hub without duplicating company-specific interpretation there.</p>
+                    <div class="links">
+                        <a class="button" href="project-manifest.json">Project manifest</a>
+                        <a class="button button--ghost" href="source-manifest.json">Source manifest</a>
+                        <a class="button button--ghost" href="public-handoff.json">Public handoff</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinitos / NeoEdge Networks Archive Project</title>
+    <link rel="stylesheet" href="assets/public-site.css">
+    <style>
+        :root {
+            --bg: #140d08;
+            --bg2: #233641;
+            --panel-bg: rgba(20, 15, 10, 0.74);
+            --panel-glow: rgba(255, 188, 86, 0.16);
+            --card-bg: rgba(255, 248, 241, 0.05);
+            --card-border: rgba(255, 226, 191, 0.14);
+            --panel-border: rgba(255, 205, 147, 0.18);
+            --button-bg: rgba(106, 214, 202, 0.16);
+            --button-border: rgba(106, 214, 202, 0.28);
+            --button-bg-ghost: rgba(255, 255, 255, 0.04);
+            --text: #fff8ee;
+            --muted: #ddc8b4;
+            --muted-strong: #fff0db;
+            --accent: #ffbc56;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+        }
+
+        body {
+            font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(255, 188, 86, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(106, 214, 202, 0.16), transparent 30%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        }
+
+        .tagRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 226, 191, 0.14);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .timelineStep {
+            position: relative;
+            padding: 18px 18px 18px 22px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 226, 191, 0.12);
+        }
+
+        .timelineStep::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 16px;
+            bottom: 16px;
+            width: 4px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(255, 188, 86, 0.92), rgba(106, 214, 202, 0.92));
+        }
+
+        .quote {
+            margin: 0;
+            padding: 18px 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 226, 191, 0.12);
+            color: var(--muted-strong);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .quote strong {
+            color: var(--text);
+        }
+
+        .listCard {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .listCard li + li {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <section class="hero">
+            <div class="heroTop">
+                <span class="eyebrow">Public Project Page</span>
+                <a class="heroHomeLink" href="https://sgwoods.github.io/public">Steven Woods</a>
+            </div>
+            <h1>Kinitos / NeoEdge Networks Archive Project</h1>
+            <p class="lead">
+                Public summary page for the deep archive covering the company line that began as Kinitos,
+                evolved into NeoEdge Networks, passed through the Blue Noodle phase, and ultimately ended
+                in the 2011 Double Fusion asset and IP transfer story. The project now has active source
+                research, archived site captures, investor and funding notes, and a contract-based handoff
+                path back to the top-level Steven Woods hub.
+            </p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Current Phase</span>
+                    <span class="metaValue">Active research archive</span>
+                    <div class="metaNote">The project has moved past setup into source verification, site capture, and archive coordination work.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Timeline Span</span>
+                    <span class="metaValue">2002 to 2011</span>
+                    <div class="metaNote">Current coverage runs from Kinitos founding through the Double Fusion acquisition era.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Current Focus</span>
+                    <span class="metaValue">Endgame and site captures</span>
+                    <div class="metaNote">Current work centers on MostFun, Blue Noodle, investor history, and the Double Fusion IP path.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Updated</span>
+                    <span class="metaValue">March 24, 2026</span>
+                    <div class="metaNote">Summary page synced to the latest manifest, research notes, and source review.</div>
+                </div>
+            </div>
+            <div class="tagRow" aria-label="Archive themes">
+                <span class="tag">Company history</span>
+                <span class="tag">Archived websites</span>
+                <span class="tag">Funding trail</span>
+                <span class="tag">IP transfer</span>
+                <span class="tag">Code preservation</span>
+            </div>
+            <div class="links">
+                <a class="button" href="kinitos-neoedge/">Open working repository</a>
+                <a class="button" href="kinitos-neoedge/source-manifest.json">Open source manifest</a>
+                <a class="button button--ghost" href="kinitos-neoedge/incoming/research-pass-2026-03-24-site-captures.md">Open site-capture pass</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Current State</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Company arc is now visible</h3>
+                    <p>The archive no longer treats Kinitos and NeoEdge as disconnected names. The current material shows a usable line from the 2002 Kinitos founding into NeoEdge's ad-supported games business and then into the Blue Noodle endgame.</p>
+                </article>
+                <article class="card">
+                    <h3>MostFun is real and documented</h3>
+                    <p>Archived MostFun pages now show a real NeoEdge-operated consumer game network with its own Game Player, catalog pages, NeoARM-linked detail pages, and direct NeoEdge branding.</p>
+                </article>
+                <article class="card">
+                    <h3>Double Fusion IP path is stronger</h3>
+                    <p>The archive now has both trade-press acquisition coverage and patent-assignment evidence showing that at least some NeoEdge / Blue Noodle intellectual-property assets moved into Double Fusion in 2011.</p>
+                </article>
+                <article class="card">
+                    <h3>Contract boundary is in place</h3>
+                    <p>This project acts as the canonical deep company archive, while only short Steven-relevant summaries are nominated upward through the archive coordination handoff files.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Archive Timeline</h2>
+            <div class="timeline">
+                <article class="timelineStep">
+                    <h3>2002 to 2005: Kinitos</h3>
+                    <p>Kinitos appears in official and press material as the post-AOL company Steven Woods co-founded, with evidence from the 2003 University of Saskatchewan lecture page and Microsoft-linked enterprise software coverage in 2004 and 2005.</p>
+                    <div class="links">
+                        <a class="button button--ghost" href="https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php">Usask lecture page</a>
+                        <a class="button button--ghost" href="https://news.microsoft.com/2005/06/21/microsoft-experience-capital-markets-is-supported-by-more-than-20-leading-solution-partners/">Microsoft source</a>
+                    </div>
+                </article>
+                <article class="timelineStep">
+                    <h3>2007 to 2008: NeoEdge and MostFun</h3>
+                    <p>By 2007 and 2008, NeoEdge's archived site and MostFun's own captured pages show a three-sided model spanning advertisers, partner websites, and game publishers, plus a consumer-facing free premium game network delivered through NeoEdge technology.</p>
+                    <div class="links">
+                        <a class="button button--ghost" href="https://web.archive.org/web/20070205060706/http://www.neoedge.com/">NeoEdge 2007 capture</a>
+                        <a class="button button--ghost" href="https://web.archive.org/web/20080407075007/http://www.mostfun.com/">MostFun 2008 capture</a>
+                    </div>
+                </article>
+                <article class="timelineStep">
+                    <h3>2010 to 2011: Blue Noodle</h3>
+                    <p>The Blue Noodle phase is now visible in both trade coverage and archived company pages. The February 8, 2011 capture presents Blue Noodle as the leading ad platform for casual and social games and highlights both developer monetization and MMV financing.</p>
+                    <div class="links">
+                        <a class="button button--ghost" href="https://web.archive.org/web/20110208165000/http://www.bluenoodle.com/">Blue Noodle 2011 capture</a>
+                        <a class="button button--ghost" href="https://adtechdaily.com/2011/03/10/blue-noodle-premiers-new-video-ad-bar-clickstrip-at-game-developers-conference/">AdTech Daily</a>
+                    </div>
+                </article>
+                <article class="timelineStep">
+                    <h3>2011: Collapse, asset sale, and IP transfer</h3>
+                    <p>Fortune's August 17, 2011 Blue Noodle report, December 2011 acquisition coverage, and Google Patents assignment records together give the clearest current public account of the company's final phase and the transfer of assets into Double Fusion.</p>
+                    <div class="links">
+                        <a class="button button--ghost" href="https://fortune.com/2011/08/17/investor-immorality-the-strange-case-of-blue-noodle/">Fortune</a>
+                        <a class="button button--ghost" href="https://patents.google.com/patent/US20080207328A1/en">Patent chain</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Where To Look</h2>
+            <div class="links">
+                <a class="button" href="kinitos-neoedge/">Working repository</a>
+                <a class="button" href="kinitos-neoedge/project-manifest.json">Project manifest</a>
+                <a class="button" href="kinitos-neoedge/source-manifest.json">Source manifest</a>
+                <a class="button" href="kinitos-neoedge/public-handoff.json">Public handoff</a>
+                <a class="button" href="kinitos-neoedge/incoming/research-pass-2026-03-24.md">First research pass</a>
+                <a class="button" href="kinitos-neoedge/incoming/research-pass-2026-03-24-endgame.md">Endgame pass</a>
+                <a class="button" href="kinitos-neoedge/incoming/research-pass-2026-03-24-site-captures.md">Site-capture pass</a>
+                <a class="button button--ghost" href="kinitos-neoedge/incoming/document-leads.md">Lead tracker</a>
+            </div>
+            <p class="footer">The public project page is intentionally summary-level. The detailed interpretation, source coordination, and open research questions live inside the archive project itself.</p>
+        </section>
+
+        <section class="panel">
+            <h2>Archive Workflow</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>1. Intake</h3>
+                    <p>Raw article leads, archived HTML captures, screenshots, funding references, notes, and short campaign files land in the archive intake lane before being classified or summarized.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/incoming/</code></div>
+                        <div><strong>Use</strong> staging, source review, research-note drafting, and follow-up campaign tracking</div>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>2. Source review</h3>
+                    <p>Each source gets a stable <code>source_id</code>, a status of approved, deferred, or rejected, a canonical URL, and a short note explaining why it matters to the company history.</p>
+                    <div class="detailList">
+                        <div><strong>Files</strong> <code>project-manifest.json</code>, <code>source-manifest.json</code>, <code>public-handoff.json</code></div>
+                        <div><strong>Outcome</strong> stable coordination between archive detail and top-level public summary</div>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>3. Historic archive</h3>
+                    <p>Once material is understood, it can be preserved in the historic tree by type so later exhibits, technical reconstructions, and narrative pages do not have to start from scratch.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/kinitos-neoedge/historic/</code></div>
+                        <div><strong>Types</strong> memories, demos, artifacts, code</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Active Questions</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Pre-2006 Kinitos funding</h3>
+                    <p>No distinct Kinitos-only funding source has been firmly verified yet. The clearest investor trail currently begins in the later NeoEdge / Blue Noodle period.</p>
+                </article>
+                <article class="card">
+                    <h3>Yahoo Games cluster</h3>
+                    <p>The 2008 Yahoo / NeoEdge rollout is well-supported as a source cluster, but the blocked CNET article still needs a better archive capture before that branch is fully closed.</p>
+                </article>
+                <article class="card">
+                    <h3>Post-2011 product continuity</h3>
+                    <p>We can now show that IP moved into Double Fusion, but we still do not have strong later public evidence of NeoEdge-branded or MostFun-branded products continuing there.</p>
+                </article>
+                <article class="card">
+                    <h3>Next capture targets</h3>
+                    <p>The best next technical targets are the NeoEdge partner and publisher pages, MostFun <code>DetailsNeoARM.aspx</code> pages, and additional Blue Noodle team or news captures from the 2010-2011 window.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Working Note</h2>
+            <p class="quote">
+                <strong>Current read:</strong> this project has crossed from setup into real historical reconstruction.
+                The strongest current evidence now combines official pages, archived company websites, funding coverage,
+                and patent assignment records into one coherent archive spine.
+            </p>
+            <div class="links">
+                <a class="button" href="kinitos-neoedge/">Open working repository</a>
+                <a class="button button--ghost" href="index.html">Back to public index</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

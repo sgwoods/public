@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "project_id": "quack-com",
+  "generated_at": "2026-03-24T23:34:41Z",
+  "events": [
+    {
+      "event_id": "evt-quack-1999-initial-financing",
+      "date": {
+        "display": "1999",
+        "sort": "1999-11-01"
+      },
+      "date_confidence": "supported",
+      "description": "Quack completed its initial financing round with a named investor syndicate.",
+      "source_ids": [
+        "src-quack-1999-vc-buzz-246-55-million-in-todays-deals"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2000-lycos-partnership",
+      "date": {
+        "display": "May 22, 2000",
+        "sort": "2000-05-22"
+      },
+      "date_confidence": "supported",
+      "description": "Lycos and Quack announced a voice-enabled portal partnership built on Quack's voice-to-Internet technology.",
+      "source_ids": [
+        "src-quack-2000-lycos-quack-com-launch-new-portal"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2000-voice-portal-market-context",
+      "date": {
+        "display": "May 25, 2000",
+        "sort": "2000-05-25"
+      },
+      "date_confidence": "supported",
+      "description": "Voice-portal coverage positioned Quack within the fast-expanding 2000 market.",
+      "source_ids": [
+        "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2000-aol-acquisition",
+      "date": {
+        "display": "2000",
+        "sort": "2000-08-31"
+      },
+      "date_confidence": "supported",
+      "description": "Third-party deal coverage reinforces the AOL acquisition and Quack's geographic footprint.",
+      "source_ids": [
+        "src-quack-2000-aol-gets-vocal-buys-quack-com-4185-html"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2000-post-acquisition-market-view",
+      "date": {
+        "display": "September 1, 2000",
+        "sort": "2000-09-01"
+      },
+      "date_confidence": "supported",
+      "description": "Post-acquisition commentary framed Quack as both a voice portal play and a talent acquisition in a crowded market.",
+      "source_ids": [
+        "src-quack-2000-if-it-walks-like-a-duck-quack-com"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2000-aol-by-phone",
+      "date": {
+        "display": "2000",
+        "sort": "2000-10-01"
+      },
+      "date_confidence": "supported",
+      "description": "AOL by Phone became part of the AOL Anywhere strategy using Quack technology and SpeechWorks voice recognition.",
+      "source_ids": [
+        "src-quack-2000-aol-formalizes-anywhere-strategy"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2002-case-study-published",
+      "date": {
+        "display": "February 2002",
+        "sort": "2002-02-27"
+      },
+      "date_confidence": "supported",
+      "description": "Ivey case-study publication documented Quack's financing pressure and strategic direction questions.",
+      "source_ids": [
+        "src-quack-2002-view"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2004-same-info-patent-grant",
+      "date": {
+        "display": "February 3, 2004",
+        "sort": "2004-02-03"
+      },
+      "date_confidence": "supported",
+      "description": "Grant of a Quack-related patent around identifying the same information across websites.",
+      "source_ids": [
+        "src-quack-2004-en"
+      ]
+    },
+    {
+      "event_id": "evt-quack-2006-advertising-patent-publication",
+      "date": {
+        "display": "July 6, 2006",
+        "sort": "2006-07-06"
+      },
+      "date_confidence": "supported",
+      "description": "Publication of a Quack-related advertising-with-an-internet-voice-portal patent application.",
+      "source_ids": [
+        "src-quack-2006-us20060149633a1"
+      ]
+    }
+  ]
+}

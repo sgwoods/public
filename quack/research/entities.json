@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0",
+  "project_id": "quack-com",
+  "generated_at": "2026-03-24T23:34:41Z",
+  "entities": [
+    {
+      "entity_id": "person-steven-woods",
+      "name": "Steven Woods",
+      "type": "person",
+      "aliases": [
+        "Steven Gregory Woods",
+        "Steve Woods"
+      ],
+      "roles": [
+        "co-founder",
+        "CTO",
+        "entrepreneur"
+      ],
+      "relationship": "Co-founded Quack.com and anchors the Steven-centric public handoff.",
+      "source_ids": [
+        "src-quack-2000-another-feather-in-aols-cap",
+        "src-quack-2000-aol-gets-vocal-buys-quack-com-4185-html",
+        "src-quack-2004-en",
+        "src-quack-2006-us20060149633a1",
+        "src-quack-2021-usask-alumni-profile",
+        "src-quack-2021-woods-php",
+        "src-quack-2023-uwaterloo-entrepreneurship-impact",
+        "src-quack-2026-quack-com",
+        "src-quack-2026-steven-woods"
+      ]
+    },
+    {
+      "entity_id": "person-alex-quilici",
+      "name": "Alex Quilici",
+      "type": "person",
+      "aliases": [
+        "Alexander Quilici"
+      ],
+      "roles": [
+        "co-founder",
+        "CEO"
+      ],
+      "relationship": "Co-founded Quack.com and served as chief executive.",
+      "source_ids": [
+        "src-quack-2000-another-feather-in-aols-cap",
+        "src-quack-2000-aol-gets-vocal-buys-quack-com-4185-html",
+        "src-quack-2006-us20060149633a1",
+        "src-quack-2026-quack-com"
+      ]
+    },
+    {
+      "entity_id": "person-jeromy-carriere",
+      "name": "Jeromy Carriere",
+      "type": "person",
+      "aliases": [
+        "Steven Jeromy Carriere",
+        "Jeromy Carri\u00e8re"
+      ],
+      "roles": [
+        "co-founder",
+        "architect"
+      ],
+      "relationship": "Co-founded Quackware / Quack.com and later Kinitos.",
+      "source_ids": [
+        "src-quack-2004-en",
+        "src-quack-2006-us20060149633a1",
+        "src-quack-2014-jeromy-carriere",
+        "src-quack-2026-quack-com"
+      ]
+    },
+    {
+      "entity_id": "person-qiang-yang",
+      "name": "Qiang Yang",
+      "type": "person",
+      "aliases": [],
+      "roles": [
+        "academic advisor"
+      ],
+      "relationship": "University of Waterloo advisor in the background story around Steven Woods.",
+      "source_ids": []
+    },
+    {
+      "entity_id": "person-ted-leonsis",
+      "name": "Ted Leonsis",
+      "type": "person",
+      "aliases": [],
+      "roles": [
+        "AOL executive"
+      ],
+      "relationship": "Associated with AOL's broader voice and AOL Anywhere push after the acquisition.",
+      "source_ids": [
+        "src-quack-2000-another-feather-in-aols-cap"
+      ]
+    },
+    {
+      "entity_id": "org-quack",
+      "name": "Quack.com",
+      "type": "organization",
+      "aliases": [
+        "Quackware"
+      ],
+      "roles": [
+        "voice portal company"
+      ],
+      "relationship": "Canonical company archive subject.",
+      "source_ids": [
+        "src-quack-2000-another-feather-in-aols-cap",
+        "src-quack-2000-aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+        "src-quack-2000-aol-formalizes-anywhere-strategy",
+        "src-quack-2000-aol-gets-vocal-buys-quack-com-4185-html",
+        "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php",
+        "src-quack-2000-if-it-walks-like-a-duck-quack-com",
+        "src-quack-2000-lycos-quack-com-launch-new-portal",
+        "src-quack-2001-the-net-finds-its-voice-html",
+        "src-quack-2002-view",
+        "src-quack-2006-us20060149633a1",
+        "src-quack-2021-usask-alumni-profile",
+        "src-quack-2021-woods-php",
+        "src-quack-2023-uwaterloo-entrepreneurship-impact",
+        "src-quack-2026-quack-com"
+      ]
+    },
+    {
+      "entity_id": "org-speechworks",
+      "name": "SpeechWorks",
+      "type": "organization",
+      "aliases": [
+        "SpeechWorks International"
+      ],
+      "roles": [
+        "speech recognition partner"
+      ],
+      "relationship": "Technology partner / stack component in the Quack and AOL by Phone story.",
+      "source_ids": [
+        "src-quack-2000-another-feather-in-aols-cap",
+        "src-quack-2000-aol-formalizes-anywhere-strategy",
+        "src-quack-2000-if-it-walks-like-a-duck-quack-com",
+        "src-quack-2000-speechworks-calling-on-investors"
+      ]
+    },
+    {
+      "entity_id": "org-aol",
+      "name": "America Online",
+      "type": "organization",
+      "aliases": [
+        "AOL",
+        "AOL Interactive",
+        "AOL Inc.",
+        "Netscape"
+      ],
+      "roles": [
+        "acquirer"
+      ],
+      "relationship": "Acquired Quack.com in 2000 and integrated Quack technology into AOL by Phone / AOL Anywhere.",
+      "source_ids": [
+        "src-quack-2000-another-feather-in-aols-cap",
+        "src-quack-2000-aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+        "src-quack-2000-aol-formalizes-anywhere-strategy",
+        "src-quack-2000-aol-gets-vocal-buys-quack-com-4185-html",
+        "src-quack-2000-if-it-walks-like-a-duck-quack-com",
+        "src-quack-2001-the-net-finds-its-voice-html",
+        "src-quack-2004-en",
+        "src-quack-2021-usask-alumni-profile",
+        "src-quack-2021-woods-php",
+        "src-quack-2023-uwaterloo-entrepreneurship-impact",
+        "src-quack-2026-quack-com"
+      ]
+    },
+    {
+      "entity_id": "org-lycos",
+      "name": "Lycos",
+      "type": "organization",
+      "aliases": [
+        "Lycos Inc."
+      ],
+      "roles": [
+        "portal partner"
+      ],
+      "relationship": "Partnered with Quack on a voice-accessed portal initiative in 2000.",
+      "source_ids": [
+        "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php",
+        "src-quack-2000-if-it-walks-like-a-duck-quack-com",
+        "src-quack-2000-lycos-quack-com-launch-new-portal"
+      ]
+    },
+    {
+      "entity_id": "org-uwaterloo",
+      "name": "University of Waterloo",
+      "type": "organization",
+      "aliases": [
+        "Waterloo",
+        "Faculty of Mathematics"
+      ],
+      "roles": [
+        "talent pipeline",
+        "institutional context"
+      ],
+      "relationship": "Important institutional context for founders, alumni ties, and later Waterloo-Toronto talent narrative.",
+      "source_ids": [
+        "src-quack-2014-jeromy-carriere",
+        "src-quack-2021-usask-alumni-profile",
+        "src-quack-2021-woods-php",
+        "src-quack-2023-uwaterloo-entrepreneurship-impact",
+        "src-quack-2026-quack-com",
+        "src-quack-2026-steven-woods"
+      ]
+    },
+    {
+      "entity_id": "org-usask",
+      "name": "University of Saskatchewan",
+      "type": "organization",
+      "aliases": [
+        "USask"
+      ],
+      "roles": [
+        "retrospective source"
+      ],
+      "relationship": "Retrospective alumni profile source for the Quack era.",
+      "source_ids": [
+        "src-quack-2021-usask-alumni-profile",
+        "src-quack-2021-woods-php",
+        "src-quack-2023-uwaterloo-entrepreneurship-impact"
+      ]
+    },
+    {
+      "entity_id": "org-sei",
+      "name": "Software Engineering Institute",
+      "type": "organization",
+      "aliases": [
+        "SEI",
+        "Carnegie Mellon Software Engineering Institute"
+      ],
+      "roles": [
+        "pre-Quack background context"
+      ],
+      "relationship": "Background institutional context connecting founders to pre-Quack work.",
+      "source_ids": [
+        "src-quack-2000-another-feather-in-aols-cap",
+        "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php",
+        "src-quack-2001-the-net-finds-its-voice-html",
+        "src-quack-2002-feature11q02-cfm",
+        "src-quack-2021-usask-alumni-profile",
+        "src-quack-2021-woods-php"
+      ]
+    },
+    {
+      "entity_id": "org-bid-com",
+      "name": "Bid.com",
+      "type": "organization",
+      "aliases": [
+        "Bid.Com International Inc.",
+        "Bid.com International"
+      ],
+      "roles": [
+        "shareholder"
+      ],
+      "relationship": "Named shareholder in the AOL acquisition coverage with a disclosed stock outcome.",
+      "source_ids": [
+        "src-quack-1999-vc-buzz-246-55-million-in-todays-deals",
+        "src-quack-2000-another-feather-in-aols-cap",
+        "src-quack-2000-aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982"
+      ]
+    },
+    {
+      "entity_id": "org-e-lab",
+      "name": "e-Lab Technology Ventures",
+      "type": "organization",
+      "aliases": [],
+      "roles": [
+        "investor"
+      ],
+      "relationship": "Named in Quack's initial financing coverage.",
+      "source_ids": [
+        "src-quack-1999-vc-buzz-246-55-million-in-todays-deals"
+      ]
+    },
+    {
+      "entity_id": "org-jefferson-partners",
+      "name": "Jefferson Partners",
+      "type": "organization",
+      "aliases": [
+        "Jefferson Partners Technology Fund LP"
+      ],
+      "roles": [
+        "investor"
+      ],
+      "relationship": "Named in Quack's initial financing and later cited in secondary investment-outcome references.",
+      "source_ids": [
+        "src-quack-1999-vc-buzz-246-55-million-in-todays-deals",
+        "src-quack-2026-steven-woods"
+      ]
+    },
+    {
+      "entity_id": "org-hdl-capital",
+      "name": "HDL Capital",
+      "type": "organization",
+      "aliases": [
+        "HDL Capital Corporation"
+      ],
+      "roles": [
+        "investor"
+      ],
+      "relationship": "Named in Quack's initial financing coverage and secondary history references.",
+      "source_ids": [
+        "src-quack-1999-vc-buzz-246-55-million-in-todays-deals"
+      ]
+    },
+    {
+      "entity_id": "org-rbc-elab",
+      "name": "Royal Bank of Canada e-Lab Technology Ventures",
+      "type": "organization",
+      "aliases": [
+        "Royal Bank of Canada",
+        "RBC e-Lab Technology Ventures"
+      ],
+      "roles": [
+        "investor"
+      ],
+      "relationship": "Named as part of the initial financing round in press coverage.",
+      "source_ids": [
+        "src-quack-1999-vc-buzz-246-55-million-in-todays-deals",
+        "src-quack-2023-uwaterloo-entrepreneurship-impact"
+      ]
+    }
+  ]
+}

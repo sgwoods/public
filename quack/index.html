@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quack.com Working Repository</title>
+    <link rel="stylesheet" href="../assets/public-site.css">
+    <style>
+        :root {
+            --bg: #110d0b;
+            --bg2: #203040;
+            --panel-bg: rgba(18, 12, 9, 0.74);
+            --panel-glow: rgba(255, 176, 82, 0.18);
+            --card-bg: rgba(255, 248, 236, 0.06);
+            --card-border: rgba(255, 224, 185, 0.12);
+            --panel-border: rgba(255, 192, 120, 0.22);
+            --button-bg: rgba(98, 214, 202, 0.16);
+            --button-border: rgba(98, 214, 202, 0.3);
+            --button-bg-ghost: rgba(255, 255, 255, 0.04);
+            --text: #fff7ea;
+            --muted: #dcc9b1;
+            --muted-strong: #fff1d8;
+            --accent: #ffb052;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(255, 176, 82, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.18), transparent 30%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        .workflowGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .workflowCard h3,
+        .laneCard h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: rgba(255, 176, 82, 0.18);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .statusGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .statusCard {
+            padding: 18px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--card-border);
+        }
+
+        .statusCard strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--muted-strong);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .checkpointList {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .checkpointList li + li {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main class="shell shell--narrow">
+        <section class="hero">
+            <div class="heroTop">
+                <div>
+                    <span class="eyebrow">Working Repository</span>
+                    <h1>Quack.com</h1>
+                </div>
+                <a class="heroHomeLink" href="../quack-com.html">Back to project page</a>
+            </div>
+            <p class="lead">
+                Document intake and curation workspace for the Quack.com archive project.
+                New material lands in <code>incoming/</code>, gets processed here, and then moves into
+                <code>historic/</code> folders organized by type.
+            </p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Intake Folder</span>
+                    <span class="metaValue">incoming/</span>
+                    <div class="metaNote">Raw finds arrive here before classification and cleanup.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Historic Folder</span>
+                    <span class="metaValue">historic/</span>
+                    <div class="metaNote">Processed material is preserved here by type.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Current State</span>
+                    <span class="metaValue">Ready for first document drops</span>
+                    <div class="metaNote">The basic repository structure now matches the intended workflow.</div>
+                </div>
+            </div>
+            <div class="links">
+                <a class="button" href="../index.html">Public index</a>
+                <a class="button button--ghost" href="../data/media-appearances/media-sources-review.md">Source review</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Repository Workflow</h2>
+            <div class="workflowGrid">
+                <article class="card workflowCard">
+                    <h3><span class="chip">01</span> Incoming documents</h3>
+                    <p>Drop unsorted captures, scans, PDFs, screenshots, and notes into the intake folder first so nothing gets lost while we are still identifying what it is.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/quack/incoming/</code></div>
+                        <div><strong>Use</strong> staging and first-pass processing</div>
+                    </div>
+                </article>
+                <article class="card workflowCard">
+                    <h3><span class="chip">02</span> Process and classify</h3>
+                    <p>As each document is understood, we extract dates, context, and summaries, then decide which historic lane it belongs in.</p>
+                    <div class="detailList">
+                        <div><strong>Core tasks</strong> identify, date, summarize, categorize</div>
+                        <div><strong>Result</strong> durable archive-ready material</div>
+                    </div>
+                </article>
+                <article class="card workflowCard">
+                    <h3><span class="chip">03</span> Historic archive</h3>
+                    <p>Settled material moves into typed folders that can later support public exhibits, timelines, and demo reconstructions.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/quack/historic/</code></div>
+                        <div><strong>Types</strong> memories, demos, artifacts, code</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Historic Lanes</h2>
+            <div class="grid">
+                <article class="card laneCard">
+                    <h3>Memories</h3>
+                    <p>Interviews, recollections, milestone notes, and narrative fragments that preserve the human story around the company.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/quack/historic/memories/</code></div>
+                    </div>
+                </article>
+                <article class="card laneCard">
+                    <h3>Demos</h3>
+                    <p>Reconstructed experiences, audio flows, and presentation material that help the original product feel tangible again.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/quack/historic/demos/</code></div>
+                    </div>
+                </article>
+                <article class="card laneCard">
+                    <h3>Artifacts</h3>
+                    <p>Primary-source documents such as screenshots, scans, press coverage, diagrams, and photos.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/quack/historic/artifacts/</code></div>
+                    </div>
+                </article>
+                <article class="card laneCard">
+                    <h3>Code</h3>
+                    <p>Recovered source, technical notes, dependency clues, and restoration experiments needed for preservation or replay.</p>
+                    <div class="detailList">
+                        <div><strong>Folder</strong> <code>public/quack/historic/code/</code></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Source Anchors In This Repo</h2>
+            <div class="statusGrid">
+                <article class="statusCard">
+                    <strong>Media review</strong>
+                    <p>Curated Quack.com and AOL-era source list with notes about what has already been archived locally and what still needs capture.</p>
+                    <div class="links">
+                        <a class="button" href="../data/media-appearances/media-sources-review.md">Open review file</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>2021 alumni profile</strong>
+                    <p>Contains a Quack.com team photo caption and retrospective sale/product framing that help seed the historic timeline.</p>
+                    <div class="links">
+                        <a class="button" href="../data/media-appearances/archive-html/usask-alumni-profile-2021.html">Open local capture</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>Entrepreneurship profile</strong>
+                    <p>Provides a concise retrospective summary describing Quack.com as a pioneering interactive voice assistant acquired in 2000.</p>
+                    <div class="links">
+                        <a class="button" href="../data/media-appearances/archive-html/uwaterloo-entrepreneurship-impact-series.html">Open local capture</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Shared Intake Method</h2>
+            <div class="grid">
+                <article class="card laneCard">
+                    <h3>Cross-project artifact analysis</h3>
+                    <p>Quack and Kinitos / NeoEdge now share the same first-pass method for analyzing incoming historical material so provenance, dates, and archive-lane decisions stay consistent.</p>
+                    <div class="detailList">
+                        <div><strong>Playbook</strong> <code>public/data/shared/incoming-artifact-analysis-playbook.md</code></div>
+                        <div><strong>Template</strong> <code>public/data/shared/incoming-artifact-analysis-template.md</code></div>
+                    </div>
+                    <div class="links">
+                        <a class="button" href="../data/shared/incoming-artifact-analysis-playbook.md">Open playbook</a>
+                        <a class="button button--ghost" href="../data/shared/incoming-artifact-analysis-template.md">Open template</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Working Layout</h2>
+            <p class="lead">The repository now matches the intended intake-to-history flow.</p>
+            <div class="codeLike">public/quack/
+|- index.html
+|- README.md
+|- incoming/
+`- historic/
+   |- memories/
+   |- demos/
+   |- artifacts/
+   `- code/</div>
+            <p class="footer">As documents are processed, the historic tree can grow exhibit pages, timelines, and more detailed inventories.</p>
+        </section>
+
+        <section class="panel">
+            <div class="notePanel">
+                <span class="microLabel">Next Repository Pass</span>
+                <ol class="checkpointList">
+                    <li>Start dropping raw captures into <code>incoming/</code>.</li>
+                    <li>Create the first classified summaries as material moves into <code>historic/</code>.</li>
+                    <li>Add dedicated exhibit pages once a historic lane has enough material to tell a coherent story.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

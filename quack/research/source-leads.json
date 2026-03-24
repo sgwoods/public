@@ -1,0 +1,1824 @@
+{
+  "schema_version": "1.0",
+  "project_id": "quack-com",
+  "generated_at": "2026-03-24T23:34:41Z",
+  "leads": [
+    {
+      "lead_id": "lead-src-quack-2021-usask-alumni-profile",
+      "key": "title:steven-woods-alumni-and-friends-university-of-saskatchewan",
+      "canonical_url": null,
+      "title_hint": "Steven Woods - Alumni and Friends | University of Saskatchewan",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "profile",
+      "person_relevance_hint": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
+      "notes_hint": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy.",
+      "date_hint": "2021",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": null,
+      "discovered_from": [
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "profile",
+        "retrospective",
+        "acquisition"
+      ],
+      "existing_local_paths": [
+        "/Users/stevenwoods/GitPages/public/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+      ],
+      "timeline_event": null,
+      "entity_mentions_hint": [],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": "no-canonical-url"
+      },
+      "analysis": {
+        "title": "Steven Woods - Alumni and Friends | University of Saskatchewan",
+        "description": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy.",
+        "date": {
+          "display": "2021",
+          "sort": "2021-01-01",
+          "precision": "year"
+        },
+        "source_type": "profile",
+        "entities": [
+          "person-steven-woods",
+          "org-usask"
+        ],
+        "archive_local": null,
+        "canonical_url": null,
+        "source_id": "src-quack-2021-usask-alumni-profile"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "profile",
+          "retrospective",
+          "acquisition"
+        ],
+        "person_relevance": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
+        "notes": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-src-quack-2021-usask-alumni-profile",
+      "key": "title:university-of-saskatchewan-alumni-profile-2021-quack-retrospective",
+      "canonical_url": null,
+      "title_hint": "University of Saskatchewan alumni profile (2021 Quack retrospective)",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "profile",
+      "person_relevance_hint": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
+      "notes_hint": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit.",
+      "date_hint": "2021",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": null,
+      "discovered_from": [
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "profile",
+        "retrospective",
+        "acquisition"
+      ],
+      "existing_local_paths": [
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/usask-alumni-profile-2021.html"
+      ],
+      "timeline_event": null,
+      "entity_mentions_hint": [],
+      "state": "classified",
+      "duplicate_of": "src-quack-2021-usask-alumni-profile",
+      "fetch": {
+        "status": "local-copy",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "shared_local": "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Steven Woods - Alumni and Friends | University of Saskatchewan",
+        "description": "Search the USask Search Benefits and travel Alumni Benefits Alumni Travel Class notes Class Notes Share your story In Memoriam Get involved Alumni Achievement Awards Events Golden Grads Homecoming Regional Networks Reunions Senate Silver Grads USask Calgary Hub Volunteer Alumni Leadership Alumni Association Alumni Advisory Board Contact us Alumni Email Contact us Update contact information Transcripts Green and White Alumni News Donate now Dr. Steven Woods is a 2021 recipient of the USask Lifetime Achievement Award. This award recognizes a graduate for an outstanding lifetime of accomplishments and contributions to the social, cultural and economic well-being of society. The University of Saskatchewan is recognizing the incredible achievements of Dr. Steven Woods (BSc\u201987, PhD), one of the recipients of our Alumni Lifetime Achievement Award. By Leslie-Ann Schlosser",
+        "date": {
+          "display": "2021",
+          "sort": "2021-01-01",
+          "precision": "year"
+        },
+        "source_type": "profile",
+        "entities": [
+          "person-steven-woods",
+          "org-quack",
+          "org-aol",
+          "org-uwaterloo",
+          "org-usask",
+          "org-sei"
+        ],
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "canonical_url": null,
+        "source_id": "src-quack-2021-usask-alumni-profile"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "rejected",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "profile",
+          "retrospective",
+          "acquisition"
+        ],
+        "person_relevance": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
+        "notes": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Duplicate lead resolved to an existing source record."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-src-quack-2023-uwaterloo-entrepreneurship-impact",
+      "key": "https://uwaterloo.ca/math/alumni-friends/entrepreneurship-impact-series",
+      "canonical_url": "https://uwaterloo.ca/math/alumni-friends/entrepreneurship-impact-series",
+      "title_hint": "University of Waterloo Entrepreneurship Impact Series: Steven Woods",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "appearance",
+      "person_relevance_hint": "Public appearance profile describing Steven Woods' entrepreneurial path and Quack.com's 2000 AOL acquisition.",
+      "notes_hint": "Later public-facing retrospective source with a concise company summary.",
+      "date_hint": "April 2023",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "waterloo-and-canada",
+      "discovered_from": [
+        "source-manifest",
+        "search-pack:waterloo-and-canada"
+      ],
+      "tags_hint": [
+        "quack",
+        "appearance",
+        "retrospective",
+        "voice-portal",
+        "waterloo"
+      ],
+      "existing_local_paths": [
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "/Users/stevenwoods/GitPages/public/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
+      ],
+      "timeline_event": null,
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "org-uwaterloo"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "local-copy",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "shared_local": "quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Entrepreneurship and Impact Series | Math Innovation | University of Waterloo",
+        "description": "The Math Innovation Office is hosting a speaker series featuring successful entrepreneurs with backgrounds in math and computer science to share their stories.",
+        "date": {
+          "display": "April 2023",
+          "sort": "2023-01-01",
+          "precision": "year"
+        },
+        "source_type": "appearance",
+        "entities": [
+          "person-steven-woods",
+          "org-quack",
+          "org-aol",
+          "org-uwaterloo",
+          "org-usask",
+          "org-rbc-elab"
+        ],
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "canonical_url": "https://uwaterloo.ca/math/alumni-friends/entrepreneurship-impact-series",
+        "source_id": "src-quack-2023-uwaterloo-entrepreneurship-impact"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "approved",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "appearance",
+          "retrospective",
+          "voice-portal",
+          "waterloo"
+        ],
+        "person_relevance": "Public appearance profile describing Steven Woods' entrepreneurial path and Quack.com's 2000 AOL acquisition.",
+        "notes": "Later public-facing retrospective source with a concise company summary. Well-attributed source with clear provenance and a local archive copy."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-risking-it-all-for-dot-com-gold-in-california",
+      "key": "https://web.archive.org/web/20070806021124/http://www.digitalmooselounge.com/press/press_5.htm",
+      "canonical_url": "https://web.archive.org/web/20070806021124/http://www.digitalmooselounge.com/press/press_5.htm",
+      "title_hint": "Risking it all for dot-com gold in California",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "Potentially useful profile material on Steven Woods' Quack period, but current evidence is only a secondary archived citation.",
+      "notes_hint": "Cited in secondary biographies as a Steve/Quack profile article; needs direct archive verification.",
+      "date_hint": "archived 2007 capture of older article",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": null,
+      "discovered_from": [
+        "media-sources-review",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "press",
+        "profile"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Risking it all for dot-com gold in California",
+        "description": "Cited in secondary biographies as a Steve/Quack profile article; needs direct archive verification.",
+        "date": {
+          "display": "archived 2007 capture of older article",
+          "sort": "2007-01-01",
+          "precision": "approximate"
+        },
+        "source_type": "media-mention",
+        "entities": [],
+        "archive_local": null,
+        "canonical_url": "https://web.archive.org/web/20070806021124/http://www.digitalmooselounge.com/press/press_5.htm",
+        "source_id": "src-quack-2007-press-5-htm"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "press",
+          "profile"
+        ],
+        "person_relevance": "Potentially useful profile material on Steven Woods' Quack period, but current evidence is only a secondary archived citation.",
+        "notes": "Cited in secondary biographies as a Steve/Quack profile article; needs direct archive verification. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-the-net-finds-its-voice",
+      "key": "https://www.computerworld.com/article/1575186/the-net-finds-its-voice.html",
+      "canonical_url": "https://www.computerworld.com/article/1575186/the-net-finds-its-voice.html",
+      "title_hint": "The Net Finds Its Voice",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "This source helps contextualize Steven Woods' Quack.com era.",
+      "notes_hint": "Voice portal feature coverage from the post-exit period, useful as broader Quack market context.",
+      "date_hint": "2001",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": null,
+      "discovered_from": [
+        "media-sources-review",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "press"
+      ],
+      "existing_local_paths": [
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/computerworld-net-finds-voice-2001.html",
+        "/Users/stevenwoods/GitPages/public/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html"
+      ],
+      "timeline_event": null,
+      "entity_mentions_hint": [],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "local-copy",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": "historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "shared_local": "quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "The \u2018Net finds its voice",
+        "description": "This article contains external content from ${platformName}. To view the content, we request your permission. Show external content from ${platformName} By clicking on \\u201cShow external content from ${platformName}\\u201d I agree that the content will be displayed to me. This allows personal data to be transmitted to ${platformName} and other third parties. You can find more information about this in our data protection declaration and ${platformName} \\u2019s Privacy Policy. \",\"german_overlay_message\":\" Externer Inhalt von ${platformName} An dieser Stelle hat die Redaktion einen zum Inhalt des Artikels passenden externen Inhalt von ${platformName} platziert. Damit dieser angezeigt werden kann, ben\\u00f6tigen wir Ihre Zustimmung. Externen Inhalt von ${platformName} anzeigen Mit einem Klick auf \\\"Externe Inhalte von ${platformName} anzeigen\\\" erkl\\u00e4re ich mich damit einverstanden, dass mir der Inhalt angezeigt wird. Dadurch k\\u00f6nnen personenbezogene Daten an ${platformName} und andere Drittanbieter \\u00fcbermittelt werden. Mehr Informationen dazu finden Sie in unserer Datenschutzerkl\\u00e4rung und unter ${platformName} \\u2019s. \",\"sweden_overlay_message\":\" Externt inneh\\u00e5ll fr\\u00e5n ${platformName} Den h\\u00e4r artikeln inneh\\u00e5ller externt inneh\\u00e5ll fr\\u00e5n ${platformName}. F\\u00f6r att se inneh\\u00e5llet ber vi om ditt tillst\\u00e5nd. Visa externt inneh\\u00e5ll fr\\u00e5n ${platformName} Genom att klicka p\\u00e5 \\\"Visa externt inneh\\u00e5ll fr\\u00e5n ${platformName}\\\" godk\\u00e4nner jag att inneh\\u00e5llet kommer att visas f\\u00f6r mig. Detta g\\u00f6r att personuppgifter kan \\u00f6verf\\u00f6ras till ${platformName} och tredje part. Du kan hitta mer information om detta i v\\u00e5r dataskyddsdeklaration and ${platformName} \\u2019s sekretesspolicy. \",\"english_generic_overlay_message\":\" Allow External content This article contains external content in this section. To view the content, we request your permission. Show external content By clicking on \\u201cShow external content\\u201d, I agree that the content will be displayed to me. This allows personal data to be transmitted to other third parties. You can find more information about this in our data protection declaration and the external source\\u2019s privacy policy. \",\"german_generic_overlay_message\":\" Allow External content This article contains external content in this section. To view the content, we request your permission. Show external content By clicking on \\u201cShow external content\\u201d, I agree that the content will be displayed to me. This allows personal data to be transmitted to other third parties. You can find more information about this in our data protection declaration and the external source\\u2019s privacy policy. \",\"sweden_generic_overlay_message\":\" Allow External content This article contains external content in this section. To view the content, we request your permission. Show external content By clicking on \\u201cShow external content\\u201d, I agree that the content will be displayed to me. This allows personal data to be transmitted to other third parties. You can find more information about this in our data protection declaration and the external source\\u2019s privacy policy. \"},\"foundry_privacy_policies\":{\"contentpass\":\"https:\\/\\/foundryco.com\\/about-us\\/privacy-compliance\\/\",\"gdpr\":\"https:\\/\\/foundryco.com\\/about-us\\/privacy-compliance\\/\",\"ccpa\":\"https:\\/\\/foundryco.com\\/about-us\\/privacy-compliance\\/\"},\"megaphone_privacy_policies\":{\"contentpass\":\"https:\\/\\/megaphone.spotify.com\\/legal\",\"gdpr\":\"https:\\/\\/megaphone.spotify.com\\/legal\",\"ccpa\":\"https:\\/\\/megaphone.spotify.com\\/legal\"},\"instagram_privacy_policies\":{\"contentpass\":\"https:\\/\\/privacycenter.instagram.com\\/policy\\/version\\/25238980265745528\\/\",\"gdpr\":\"https:\\/\\/privacycenter.instagram.com\\/policy\\/version\\/25238980265745528\\/\",\"ccpa\":\"https:\\/\\/privacycenter.instagram.com\\/policy\\/version\\/25238980265745528\\/\"},\"facebook_privacy_policies\":{\"contentpass\":\"https:\\/\\/www.facebook.com\\/privacy\\/policy\\/version\\/25238980265745528\",\"gdpr\":\"https:\\/\\/www.facebook.com\\/privacy\\/policy\\/version\\/25238980265745528\",\"ccpa\":\"https:\\/\\/www.facebook.com\\/privacy\\/policy\\/version\\/25238980265745528\"},\"twitter_privacy_policies\":{\"contentpass\":\"https:\\/\\/x.com\\/de\\/privacy\",\"gdpr\":\"https:\\/\\/x.com\\/en\\/privacy\",\"ccpa\":\"https:\\/\\/x.com\\/en\\/privacy\"},\"toutube_privacy_policies\":{\"contentpass\":\"https:\\/\\/support.google.com\\/youtube\\/answer\\/10364219?hl=de\",\"gdpr\":\"https:\\/\\/support.google.com\\/youtube\\/answer\\/10364219?hl=en-GB\",\"ccpa\":\"https:\\/\\/support.google.com\\/youtube\\/answer\\/10364219?hl=en-GB\"},\"tiktok_privacy_policies\":{\"contentpass\":\"https:\\/\\/www.tiktok.com\\/legal\\/page\\/eea\\/privacy-policy\\/de\",\"gdpr\":\"https:\\/\\/www.tiktok.com\\/legal\\/page\\/eea\\/privacy-policy\\/en\",\"ccpa\":\"https:\\/\\/www.tiktok.com\\/legal\\/page\\/us\\/privacy-policy\\/en\"},\"infogram_privacy_policies\":{\"contentpass\":\"https:\\/\\/infogram.com\\/privacy\",\"gdpr\":\"https:\\/\\/infogram.com\\/privacy\",\"ccpa\":\"https:\\/\\/infogram.com\\/privacy\"},\"apple_podcast_privacy_policies\":{\"contentpass\":\"https:\\/\\/www.apple.com\\/legal\\/privacy\\/data\\/de\\/apple-podcasts\\/\",\"gdpr\":\"https:\\/\\/www.apple.com\\/legal\\/privacy\\/data\\/en\\/apple-podcasts\",\"ccpa\":\"https:\\/\\/www.apple.com\\/legal\\/privacy\\/data\\/en\\/apple-podcasts\"},\"slideshare_privacy_policies\":{\"contentpass\":\"https:\\/\\/www.slideshare.net\\/privacy\",\"gdpr\":\"https:\\/\\/www.slideshare.net\\/privacy\",\"ccpa\":\"https:\\/\\/www.slideshare.net\\/privacy\"},\"jetpack_podcast_player_privacy_policies\":{\"contentpass\":\"https:\\/\\/jetpack.com\\/support\\/jetpack-blocks\\/podcast-player-block\\/\",\"gdpr\":\"https:\\/\\/jetpack.com\\/support\\/jetpack-blocks\\/podcast-player-block\\/\",\"ccpa\":\"https:\\/\\/jetpack.com\\/support\\/jetpack-blocks\\/podcast-player-block\\/\"},\"vimeo_privacy_policies\":{\"contentpass\":\"https:\\/\\/vimeo.com\\/privacy\",\"gdpr\":\"https:\\/\\/vimeo.com\\/privacy\",\"ccpa\":\"https:\\/\\/vimeo.com\\/privacy\"},\"soundcloud_privacy_policies\":{\"contentpass\":\"https:\\/\\/soundcloud.com\\/pages\\/privacy\",\"gdpr\":\"https:\\/\\/soundcloud.com\\/pages\\/privacy\",\"ccpa\":\"https:\\/\\/soundcloud.com\\/pages\\/privacy\"},\"giphy_privacy_policies\":{\"contentpass\":\"https:\\/\\/support.giphy.com\\/hc\\/en-us\\/articles\\/360032872931-GIPHY-Privacy-Policy \",\"gdpr\":\"https:\\/\\/support.giphy.com\\/hc\\/en-us\\/articles\\/360032872931-GIPHY-Privacy-Policy \",\"ccpa\":\"https:\\/\\/support.giphy.com\\/hc\\/en-us\\/articles\\/360032872931-GIPHY-Privacy-Policy \"},\"reddit_privacy_policies\":{\"contentpass\":\"https:\\/\\/www.reddit.com\\/policies\\/privacy-policy \",\"gdpr\":\"https:\\/\\/www.reddit.com\\/policies\\/privacy-policy \",\"ccpa\":\"https:\\/\\/www.reddit.com\\/policies\\/privacy-policy \"},\"spotify_privacy_policies\":{\"contentpass\":\"https:\\/\\/www.spotify.com\\/de-en\\/legal\\/privacy-policy\\/\",\"gdpr\":\"https:\\/\\/www.spotify.com\\/de-en\\/legal\\/privacy-policy\\/\",\"ccpa\":\"https:\\/\\/www.spotify.com\\/de-en\\/legal\\/privacy-policy\\/\"},\"bluesky_privacy_policies\":{\"contentpass\":\"https:\\/\\/bsky.social\\/about\\/support\\/privacy-policy\",\"gdpr\":\"https:\\/\\/bsky.social\\/about\\/support\\/privacy-policy\",\"ccpa\":\"https:\\/\\/bsky.social\\/about\\/support\\/privacy-policy \"},\"linkedin_privacy_policies\":{\"contentpass\":\"https:\\/\\/www.linkedin.com\\/legal\\/privacy-policy\",\"gdpr\":\"https:\\/\\/www.linkedin.com\\/legal\\/privacy-policy\",\"ccpa\":\"https:\\/\\/www.linkedin.com\\/legal\\/privacy-policy\"}}},\"GPT\":{\"ad_slot_name\":\"networking_section\",\"prefix\":\"\\/8456\\/IDG.G_B2B_ComputerWorld.com\\/\",\"targeting\":{\"articleId\":\"1575186\",\"author\":\"ira_brodsky\",\"browser\":\"Mozilla\\/5.0\",\"templateType\":\"article\",\"categorySlugs\":\"networking\",\"tags\":\"\",\"categoryIds\":\"2381\",\"env\":null,\"productId\":\"\",\"goldenIds\":\"441\",\"channel\":\"networking\",\"fireplace\":\"false\",\"type\":\"news\",\"typeId\":\"32\",\"sponsored\":\"false\",\"video-autoplay\":\"true\",\"manufactuer\":\"\",\"url\":\"https:\\/\\/www.computerworld.com\\/article\\/1575186\\/the-net-finds-its-voice.html\",\"zone\":\"news-article\\/networking\",\"wpsponsorshipId\":\"\"}},\"geolocation\":\"CA\",\"suppress_monetization\":{},\"supressBb2bRightrail\":\"\",\"products\":[],\"vendor_pricing\":{\"amazon\":[]},\"APS\":[],\"isB2B\":\"1\",\"isSingle\":\"1\",\"isEuVisitor\":\"\"}; window.dataLayer = window.dataLayer || []; window.dataLayer.push({\"adBlockerEnabled\":true,\"arenaId\":\"\",\"audience\":\"enterprise\",\"ccpaOptedOut\":\"false\",\"environment\":\"wp_production\",\"sessionNumber\":\"@TODO\",\"firstSessionDate\":\"@TODO\",\"lastSessionDate\":\"@TODO\",\"timestamp\":1774289191,\"url\":\"https:\\/\\/www.computerworld.com\\/article\\/1575186\\/the-net-finds-its-voice.html\",\"triblioPixelCode\":\"\",\"prodIds\":\"\",\"prodCategories\":\"\",\"prodManufacturers\":\"\",\"prodNames\":\"\",\"prodVendors\":\"\",\"categories\":\"networking\",\"categoryIds\":\"2381\",\"categoriesSlugs\":\"networking\",\"channel\":\"networking\",\"primaryCategory\":\"networking\",\"primaryAncestorCategoryList\":\"networking\",\"primaryAncestorCategoryListSlugs\":\"networking\",\"ancestorGoldenCategories\":\"networking\",\"goldenTaxonomyIdPrimary\":\"441\",\"gtaxPrimaryIdsList\":\"441\",\"gtaxPrimarySlugsList\":\"networking\",\"gtaxIdList\":\"441\",\"gtaxList\":\"networking\",\"bcGtaxIdList\":[441],\"bcGtaxList\":[\"networking\"],\"language\":\"English\",\"author\":\"ira_brodsky\",\"translation\":\"no\",\"translationOriginalArticleId\":\"\",\"translationOriginalPublication\":\"\",\"translationOriginalLanguage\":\"\",\"translationOriginalBrand\":\"\",\"articleId\":\"1575186\",\"articleTitle\":\"The 'Net finds its voice\",\"articleType\":\"default\",\"isBlog\":\"false\",\"blogname\":\"\",\"blogId\":\"\",\"brandpost\":\"false\",\"content_type\":\"News\",\"datePublished\":\"2001-01-09\",\"dateUpdate\":\"2001-01-09\",\"dateTimePublished\":\"2001-01-09T18:12:35-05:00\",\"dateTimeUpdate\":\"2001-01-09T18:12:35-05:00\",\"dateFirstPublished\":false,\"dateFirstTimePublished\":false,\"daysSincePublished\":\"\",\"daysSinceUpdated\":\"9203\",\"description\":\"\",\"displayType\":\"article\",\"fireplace\":\"false\",\"pageNumber\":\"1\",\"page_type\":\"article\",\"platform\":\"web\",\"podcastSponsored\":\"false\",\"property\":\"computerworld\",\"source\":\"computerworld\",\"sponsorName\":\"\",\"sponsorshipId\":\"\",\"tags\":[],\"legacyCmsId\":\"2801981\",\"edition\":\"us\",\"articleLocale\":\"global\",\"isInsiderContent\":\"false\",\"insiderSignedIn\":\"true\",\"adSuppression\":\"false\",\"BCUID\":\"\",\"legacyCmsName\":\"Onecms\",\"idgAppID\":{\"SITE_TYPE\":[{\"type\":\"delivery\",\"site\":\"computerworld.com\",\"sourcecms\":\"onecms\",\"connectedhub\":\"b2b\",\"staff\":\"CW Staff\",\"brand\":\"CW\"}],\"IDG_APP_ID\":4910},\"adestraId\":\"\"}); (function(){ const isContentPassOn = true; const isContentPassCookiePresent = function () { const data = (document.cookie.match(/^(?:.*;)?\\s*_cpauthhint\\s*=\\s*([^;]+)(?:.*)?$/) || [,null])[1]; //eslint-disable-line console.log('^^CP cookie value = '+data); if (data) return true; return false }; const fireGtm = function(){ console.log('^^GTM Firing'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-NN43QC7W'); }; console.log('^^Content pass is active =',isContentPassOn); if(isContentPassOn) { const userHasCPCookie = isContentPassCookiePresent(); //does the user have the Content pass cookie console.log('^^User has contentpass cookie=',userHasCPCookie); if(userHasCPCookie){ document.addEventListener('consentManagerReady', () => { if(consentManager.gdprApplies) { const hasConsent = consentManager.checkConsentByVendor('Google Tag Manager'); console.log('^^ContentPass on and GTM consent =',hasConsent); if(hasConsent===true)fireGtm(); } else {//not gdpr so fire fireGtm(); } }); } else {//no cookie so fire fireGtm(); } } else { fireGtm(); } })(); // Permutive Stub !function(n,e,i){if(!n){n=n||{},window.permutive=n,n.q=[],n.config={}||{},n.config.apiKey=e,n.config.environment=n.config.environment||\"production\";for(var o=[\"addon\",\"identify\",\"track\",\"trigger\",\"query\",\"segment\",\"segments\",\"ready\",\"on\",\"once\",\"user\",\"consent\"],r=0;r s.replace(/[~'\"=!+#;^()<>&[]]/g,''); window.ntvConfig = window.ntvConfig || {} ; window.ntvConfig.keyValues = window.ntvConfig.keyValues || {}; const segs = localStorage.getItem('_pnativo'); if (segs) { window.ntvConfig.keyValues.permutive = JSON.parse(segs).join(\",\"); } const metaKeywordsTag = document.querySelector(\"meta[name='keywords']\"); if ( metaKeywordsTag && (metaKeywordsTag.hasAttribute('content')) ) { const kwds = metaKeywordsTag.content.split(',').filter(kw => kw.length { const boxes = document.querySelectorAll('.nativo-loading'); boxes.forEach(box => { box.classList.remove('nativo-loading'); }); } var ntv=ntv||{};ntv.cmd=ntv.cmd||[]; // setup command queue ntv.cmd.push(function(){ setTimeout(DoSomething, 1000) }); window._io_config = window?._io_config || {}; window._io_config[\"0.2.0\"] = window?._io_config[\"0.2.0\"] || []; window._io_config[\"0.2.0\"].push({\"page_url\":\"https:\\/\\/www.computerworld.com\\/article\\/1575186\\/the-net-finds-its-voice.html\",\"page_url_canonical\":\"\",\"page_title\":\"The \\u2018Net finds its voice \\u2013 Computerworld\",\"page_type\":\"article\",\"page_language\":\"en\",\"article_authors\":[\"ira_brodsky\"],\"article_type\":\"News\",\"article_publication_date\":\"Tue, 09 Jan 2001 18:12:35 EST\",\"article_categories\":[\"Networking\"]}); /** * If contentpass is enabled, we need the acps param, * otherwise, we need type GDPR that will be called from * client-mu-plugins/idg-third-party/src/modules/sourcepoint.js#L140. */ window._sp_.config.gdpr.targetingParams.acps = 'false'; window._sp_.config.isSPA = true; (function() { // get contentpass configuration details var contentpassBaseUrl = 'https://cp.computerworld.com'; var contentpassPropertyId = 'd6daa08f'; var cpController = contentpassBaseUrl + '/now.js';//todo - never used? !function(C,o,n,t,P,a,s){C.CPObject=n,C[n]||(C[n]=function(){ for(var e=arguments.length,i=new Array(e),c=0;c 0&&(o.body?o.body.classList.add(\"cpauthenticated\"):o.addEventListener(\"DOMContentLoaded\",(function(){ o.body.classList.add(\"cpauthenticated\")})))}catch(e){}C[n].l=+new Date,C[n].sv=5}(window,document,\"cp\"); // Will activate contentpass and initialize basic interfaces for // communicating with contentpass. cp('create', contentpassPropertyId, { baseUrl: contentpassBaseUrl }); // This function will trigger rendering of the Sourcepoint consent layer. First, it will check // whether the current user is an authenticated contentpass user. If so, the targeting parameter // acps is set to the string value 'true' (important: the value is not a bool, but a string!). // If the user is not an authenticated contentpass user, the targeting parameter is set to // 'false'. Make sure to not show the consent layer when the targeting parameter is set to 'true' // in your Sourcepoint scenario. When login status is determined, Sourcepoint is automatically // triggered by calling window._sp_.executeMessaging(). cp('render', { onFullConsent: function() { console.log('[CP] onFullConsent'); //! set the below or use the above code //window.visitorConsentedAll = true; // Init advertising here // // Attention: // When you update your vendor list without asking for re-consent // then Sourcepoint does not signal full consent for previously // fully consented visitors. Thus this callback is not executed, // and partially consented impressions are not monetized at all! // // We therefore strongly recommend to configure your Sourcepoint // scenario setup to always ask for re-consent on vendor updates. // // Alternatively you can always load vendors specifically based // on their respective consent status according to the TCF API. // You can find a sample integration for this on // https://docs.contentpass.net/docs/3rdparty } }); (function () { cp('authenticate', function(err, user) { if (err || (!user.isLoggedIn() && !user.hasValidSubscription())) { (function spExecMsg() { if (window._sp_ && window._sp_.executeMessaging) { if (!window._sp_.config.isSPA) { console.warn('###### Contentpass [SPCP] Sourcepoint not in SPA mode!'); } else if (window._sp_.version) { console.log('###### Contentpass [SPCP] Sourcepoint already running'); } else { console.log('###### Contentpass [SPCP] Starting Sourcepoint'); window._sp_.executeMessaging(); } } else { console.log('###### Contentpass [SPCP] Sourcepoint not loaded yet. Retrying.'); setTimeout(spExecMsg, 10); } })(); } if (user.isLoggedIn() && user.hasValidSubscription()) { // User has a valid contentpass subscription. Set the targeting parameter // to \"'true'\" so no wall is being displayed due to Sourcepoint scenario setup. console.log('###### Contentpass user.isLoggedIn() && hasValidSubscription. Setting acps to true'); window._sp_.config.targetingParams.acps = 'true'; window.cpLoggedInUser = true; } }); })(); })(); window.blocksForConsent = { \"instagram\": { \"platform\": \"instagram\", \"platformName\": \"Instagram.com\", \"selector\": \".wp-block-embed-instagram\", \"privacyPolicyLink\": 'instagram_privacy_policies', \"callback\": \"instagramCallback()\" }, \"megaphone\": { \"platform\": \"megaphone\", \"platformName\": \"Megaphone.fm\", \"selector\": \".wp-block-embed-megaphone, iframe[data-src*=\\\"megaphone\\\"]\", \"privacyPolicyLink\": 'megaphone_privacy_policies', \"callback\": \"megaphoneCallback()\" }, \"slideshare\": { \"platform\": \"slideshare\", \"platformName\": \"Slideshare.net\", \"selector\": \"iframe[data-src*=\\\"slideshare.net\\\"]\", \"privacyPolicyLink\": 'slideshare_privacy_policies', \"callback\": \"slideshareCallback()\" }, \"facebook\": { \"platform\": \"facebook\", \"platformName\": \"Facebook.com\", \"selector\": \".embed_url_facebook, iframe[data-src*=\\\"facebook\\\"]\", \"privacyPolicyLink\": 'facebook_privacy_policies', \"callback\": \"loadFacebookEmbed()\" }, \"twitter\": { \"platform\": \"twitter\", \"platformName\": \"Twitter.com\", \"selector\": \".wp-block-embed-twitter\", \"privacyPolicyLink\": 'twitter_privacy_policies', \"callback\": \"twitterCallback()\" }, \"youtube\": { \"platform\": \"youtube\", \"platformName\": \"Youtube.com\", \"selector\": \".wp-block-embed-youtube, [data-type=\\\"youtube\\\"], .youtube-video .video-container\", \"privacyPolicyLink\": 'toutube_privacy_policies', \"callback\": \"youtubeCallback()\" }, \"tiktok\": { \"platform\": \"tiktok\", \"platformName\": \"Tiktok.com\", \"selector\": \".wp-block-embed-tiktok\", \"privacyPolicyLink\": 'tiktok_privacy_policies', \"callback\": \"tiktokCallback()\" }, \"infogram\": { \"platform\": \"infogram\", \"platformName\": \"Infogram.com\", \"selector\": \".infogram-embed\", \"privacyPolicyLink\": 'infogram_privacy_policies', \"callback\": \"infogramCallback()\" }, \"applepodcast\": { \"platform\": \"apple\", \"platformName\": \"Apple.com\", \"selector\": \".apple_podcasts iframe\", \"privacyPolicyLink\": 'apple_podcast_privacy_policies', \"callback\": \"loadApplePodcastplayer()\" }, \"jetpackpodcastplayer\": { \"platform\": \"jetpack\", \"platformName\": \"Jetpack.com\", \"selector\": \".wp-block-jetpack-podcast-player\", \"privacyPolicyLink\": 'jetpack_podcast_player_privacy_policies', \"callback\": \"loadPodcastplayer()\" }, \"vimeo\": { \"platform\": \"vimeo\", \"platformName\": \"Vimeo.com\", \"selector\": \".wp-block-embed-vimeo\", \"privacyPolicyLink\": 'vimeo_privacy_policies', \"callback\": \"vimeoCallback()\" }, \"soundcloud\": { \"platform\": \"soundcloud\", \"platformName\": \"Soundcloud.com\", \"selector\": \".wp-block-embed-soundcloud\", \"privacyPolicyLink\": 'soundcloud_privacy_policies', \"callback\": \"soundcloudCallback()\" }, \"giphy\": { \"platform\": \"giphy\", \"platformName\": \"Giphy.com\", \"selector\": \".wp-block-jetpack-gif\", \"privacyPolicyLink\": 'giphy_privacy_policies', \"callback\": \"giphyCallback()\" }, \"reddit\": { \"platform\": \"reddit\", \"platformName\": \"Reddit.com\", \"selector\": \".wp-block-embed-reddit\", \"privacyPolicyLink\": 'reddit_privacy_policies', \"callback\": \"redditCallback()\" }, \"spotify\": { \"platform\": \"spotify\", \"platformName\": \"Spotify.com\", \"selector\": \".wp-block-embed-spotify\", \"privacyPolicyLink\": 'spotify_privacy_policies', \"callback\": \"spotifyCallback()\" }, \"bluesky\": { \"platform\": \"bluesky\", \"platformName\": \"Bluesky.com\", \"selector\": \".wp-block-embed-bluesky-social,.wp-block-embed-bluesky\", \"privacyPolicyLink\": 'bluesky_privacy_policies', \"callback\": \"blueskyCallback()\" }, \"linkedin\": { \"platform\": \"linkedin\", \"platformName\": \"LinkedIn.com\", \"selector\": \"iframe[data-src*=\\\"linkedin.com\\\"]\", \"privacyPolicyLink\": 'linkedin_privacy_policies', \"callback\": \"linkedinCallback()\" } }; function getOverlayMessage(platform, platformName, privacyPolicyLink, foundryPPLink, callback, cmpType) { let customHTMLTextOverlay = window?.IDG?.settings?.overlays_privacy_policies?.consent_overlays?.english_overlay_message ?? ''; customHTMLTextOverlay = customHTMLTextOverlay.replace(/\\$\\{platformName\\}/g, platformName).replace(/\\$\\{privacyPolicyLink\\}/g, privacyPolicyLink).replace(/\\$\\{foundryPPLink\\}/g, foundryPPLink).replace(/\\$\\{platform\\}/g, platform).replace(/\\$\\{callback\\}/g, callback).replace(/\\$\\{cmp\\}/g, cmpType); return customHTMLTextOverlay; } function setOverlayCookie(name, value, days) { let expires = \"\"; if (days) { const date = new Date(); date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); expires = \"; expires=\" + date.toUTCString(); } document.cookie = name + \"=\" + (value || \"\") + expires + \"; path=/\"; } function getOverlayCookie(name) { const nameEQ = name + \"=\"; const ca = document.cookie.split(';'); for(let i = 0; i 0; const overlayPrevExists = jQuery(element).prev(`.${cookieName}`).length > 0; if (!overlayNextExists && !overlayPrevExists) { const textOverlay = getOverlayMessage(platform, platformName, ppLink, foundryPPLink, callback, cmpType); jQuery(textOverlay).insertAfter(element); jQuery(element).hide(); } } else { jQuery(element).show(); //eval(callback); window[callback.split('(')[0]]();//dont think any of the have actual arguments const src = element.getAttribute('src'); const dataSrc = element.getAttribute('data-src'); console.log('[Consent] renderOverlay src %s dataSrc %s',src, dataSrc); if (dataSrc ) { element.setAttribute('src', dataSrc); // Move data-src to src } } } function showOverlays(cmpType) { console.log('[Consent] showOverlays cmpType ',cmpType); const blocksForConsent = window?.blocksForConsent ?? []; Object.entries(blocksForConsent).forEach(function([key, value]) { //key = slideshare, twitter etc const { platform, platformName, selector, privacyPolicyLink, callback } = value; const elements = document.querySelectorAll(`${selector}`); // selector for iframes and scripts within 'legacy_content' for the custom blcok. const legacySelector = `.legacy_content iframe[data-src*=\"${platform}\"], .legacy_content script[src*=\"${platform}\"], .legacy_content script[data-src*=\"${platform}\"], .legacy_content blockquote[class*=\"${platform}\"]`; // Select all iframes and scripts within the div with class 'legacy_content' that match the dynamic selectors. const legacyElements = document.querySelectorAll(legacySelector); const ppLink = window?.IDG?.settings?.overlays_privacy_policies?.[privacyPolicyLink]?.[cmpType]; const foundryPPLink = window?.IDG?.settings?.overlays_privacy_policies?.foundry_privacy_policies?.[cmpType]; elements.forEach(function(element) { renderOverlay(element, platform, platformName, ppLink, foundryPPLink, callback, cmpType) }); legacyElements.forEach(function(element) { renderOverlay(element, platform, platformName, ppLink, foundryPPLink, `renderCustomBlockInLegacyContent('${platform}', '${callback}')`, cmpType); }); }); } /** * Load podcast player if user accepted consent **/ function iframeLoaded( podcastIframe ) { if( podcastIframe ) { const height = podcastIframe.contentWindow.document.body.scrollHeight + 'px'; podcastIframe.style.height = height; } } function loadPodcastplayer(){ const podcastElements = document.querySelectorAll('.wp-block-jetpack-podcast-player'); if( podcastElements ){ let count = 1; Array.from(podcastElements).map(function(element) { if (!element.querySelector('iframe')) { let postId = element.getAttribute('post_id'); let podcastIframe = document.createElement(\"iframe\"); const siteUrl = document.location.origin; podcastIframe.src = siteUrl+\"/podcast-player?id=\"+postId+\"&position=\"+count+'&_ajaxnonce=7d88a9e17e'; podcastIframe.width = \"100%\"; podcastIframe.frameBorder =\"0\"; podcastIframe.scrolling = \"0\"; podcastIframe.style.border= \"none\"; podcastIframe.scrolling = \"no\"; element.appendChild(podcastIframe); podcastIframe.onload = function() { setTimeout( function() { iframeLoaded( podcastIframe ); }, 1000); }; count++; } }); } } /** * Load Apple podcast-block if user accepted consent **/ function loadApplePodcastplayer(){ const applePodcastElements = document.querySelectorAll('.apple_podcasts iframe'); if( applePodcastElements ){ Array.from(applePodcastElements).map(function(element) { const dataSrc = element.getAttribute('data-url'); const dataHeight = element.getAttribute('data-height'); element.src = dataSrc; element.height = dataHeight; }); } } /** * Load custom HTML block if user accepted consent */ function customHTMLCallback() { jQuery('.legacy_content iframe, .legacy_content script, .legacy_content img').each(function(index, element) { const dataSrc = jQuery(element).attr('data-src'); if(dataSrc) { if( element.nodeName.toLowerCase() === 'script' ) { let genericScript = document.createElement(\"script\"); genericScript.type = \"text/javascript\"; genericScript.async = true; genericScript.src = dataSrc; element.parentNode.insertBefore(genericScript, element); element.remove(); } else { jQuery(element).attr('src', jQuery(element).attr('data-src')); } jQuery(element).show(); } }); jQuery(\"[class*='custom-html-consent-notice-']\").hide(); } function renderCustomBlockInLegacyContent(selector, callback) { const legacySelector = `.legacy_content iframe[data-src*=\"${selector}\"], .legacy_content script[src*=\"${selector}\"], .legacy_content script[data-src*=\"${selector}\"], .legacy_content blockquote[class*=\"${selector}\"], .legacy_content img[data-src*=\"${selector}\"]`; jQuery(legacySelector).each(function(index, element) { if( element.nodeName.toLowerCase() === 'script' ) { let genericScript = document.createElement(\"script\"); genericScript.async = true; genericScript.src = jQuery(element).attr('data-src'); element.parentNode.insertBefore(genericScript, element); element.remove(); } else { jQuery(element).attr('src', jQuery(element).attr('data-src')); } jQuery(element).show(); }); //eval(callback); console.log('[Consent] renderCustomBlockInLegacyContent calling callback'); window[callback.split('(')[0]]();//dont think any of the have actual arguments } /** * Load Spotify if user accepted consent. */ /** * Load bluesky if user accepted consent. */ document.addEventListener('consentManagerReady', () => { const debug = consentManager.debug; if(debug)console.log('#### Widget Consent Check consentRequired %s', consentManager.consentRequired); let vendors = []; if(loadPodcastplayer) vendors.push({ name: \"Podigee\", callback: loadPodcastplayer, consentOk: false }); if(loadApplePodcastplayer) vendors.push({ name: \"Apple Podcasts\", callback: loadApplePodcastplayer, consentOk: false }); /* vendors.push({ name: \"Taboola\", callback: loadTaboola, consentOk: false }); */ //if we need consent then check if - includes US optout too if(consentManager.consentRequired === true){ vendors.forEach( (vendor)=>{ const vendorNames = (vendor.checkAdditional ?? []); vendorNames.push(vendor.name);// array of primary i.e. name and additionals //must pass all vendor.consentOk = vendorNames.every( name => { return consentManager.checkConsentByVendor(name) === true; }); }); } else { //no consent needed could default to this above vendors.forEach( (vendor)=>{ vendor.consentOk = true; }); } //no specific vendor - need all or not applicable if( ( consentManager.consentRequired && consentManager.consentedAll ) || !consentManager.consentRequired){ setTimeout(customHTMLCallback, 0); if(debug)console.log('#### Widget Consent Allowing Custom'); }else if ( consentManager.consentRequired && !consentManager.consentedAll ) { if(consentManager.gdprApplies === true)showOverlays('gdpr'); else if(consentManager.usOptOutApplies === true)showOverlays('ccpa');//todo - gpp too? } vendors.forEach( (vendor)=>{ if(vendor.consentOk) { if(debug)console.log('#### Widget Consent Allowing %s', vendor.name); try { setTimeout(vendor.callback, 0); } catch (error) { console.error('#### Widget Consent Callback Error - FIX ME %s', vendor.name, error); } }else{ if(debug)console.log('#### Widget Consent Denying %s', vendor.name); } }); }); [{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.computerworld.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Networking\",\"item\":\"https:\\/\\/www.computerworld.com\\/networking\\/\"}]},{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"url\":\"https:\\/\\/www.computerworld.com\\/article\\/1575186\\/the-net-finds-its-voice.html\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Computerworld\",\"url\":\"https:\\/\\/www.computerworld.com\",\"logo\":{\"@type\":\"ImageObject\"}},\"author\":{\"@type\":\"Person\",\"name\":\"ira_brodsky\",\"url\":\"https:\\/\\/www.computerworld.com\\/profile\\/ira-brodsky\\/\"},\"name\":\"The 'Net finds its voice\",\"headline\":\"The 'Net finds its voice\",\"articleBody\":\"I don't know whether Al Gore deserves credit for inventing the Internet, but I know the 'Net has long since taken on a life of its own. Anyone thinking they can devise tomorrow's Internet is crazy. IP telephony is a case in point. The main application for IP telephony was supposed to be free international phone calls. Now all eyes -- make that ears -- are focused on an entirely new idea: talking Web sites.A whole industry has emerged dedicated to the simple proposition that people should be able to access the Internet from their telephones. Adding voice access will not only extend the 'Net's reach to roughly one billion wired and wireless phones, but it also will give the Internet a more human face. Consider voice portals. They are springing up all over the Web and attracting sacks full of venture capitalist money. Tellme (www.tellme.com), which offers a menu of free services from traffic reports to restaurant reservations, has received a whopping $238 million in funding. BeVocal (www.bevocal.com) is doing pretty much the same and has raised more than $45 million. Quack.com (www. quack.com), which helps businesses create their own voice portals, was snapped up by AOL. But voice portals are just the start. If they succeed as expected, there will be a major push to voice-enable existing Web sites. Companies such as ITXC (www.itxc.com), Firetalk (www.firetalk.com) and HearMe (www.hearme.com) are just a few of the firms helping e-tailers do this. Companies such as Virtual Personalities (www.verbot.com) are even developing talking avatars, or verbots, they hope will make shopping on the Web as natural as going to the local mall.And that's not all. Voice application service providers are building virtual PBXs and even virtual central offices that companies will access remotely, letting them reduce their investments in telephone equipment, support personnel, training and facilities. Voice-powered Web services will also benefit brick-and-mortar businesses. Look for today's interactive voice response systems to be replaced by more powerful Web-based systems using automatic speech recognition. Similar systems, only on a larger scale, will reduce the costs of operating call centers.Making all this possible are technologies such as VXML (a voice extensible markup language), human-sounding text-to-speech and more circumspect artificial intelligence. This doesn't mean the application originally conceived for IP telephony, free or inexpensive long-distance calls, will fade. The more we use voice to access Web sites and Web-based services, the easier it will be to make or receive IP telephony calls. To wit, no PC will ship without a microphone, speakers or headset.Technology optimists were right. We don't need a government program to bridge the \\\"digital divide.\\\" Soon, anyone with a $10 phone will be able to access the 'Net. And it will only get better.\",\"wordCount\":468,\"datePublished\":\"2001-01-09T18:12:35-05:00\",\"dateModified\":\"2001-01-09T18:12:35-05:00\",\"keywords\":\"Networking\",\"mainEntityOfPage\":\"https:\\/\\/www.computerworld.com\\/article\\/1575186\\/the-net-finds-its-voice.html\"}] :root { --nativo-loader-color: #424a45; --sponsored-links--border-bottom-color: #9d9490; --sponsored-container--background-color: #fff; } :root { /*Host Speaker Profile*/ --host-speaker-profile-heading-color: #141414; --host-speaker-profile-heading-font-family: inherit; --host-speaker-profile-title-description-font-family: inherit; --host-speaker-title-color: #808080; --host-speaker-description-color: #141414; --host-speaker-label-color: #AAA; --host-speaker-remove-link-color: #c30e0e; --host-speaker-horizontal-line-color: #DEDEDE; --host-speaker-company-name-font-color: #75757A; /* Agenda Block */ --agenda-heading-event-name-color: #141414; --agenda-heading-font-family: inherit; --agenda-event-name-font-family: inherit; --agenda-horizontal-block-divider-color: #dedede; --agenda-event-month-day-date-color: #322a2a; --agenda-event-month-date-color: #969696; --agenda-start-end-time-color: #75757a; --agenda-error-msg-color: #FF0000; --agenda-day-time-text-shadow-color: #808080; --agenda-note-text-color: #808080; --agenda-label-text-color: #111; --agenda-multi-day-button-background-color: #000; --agenda-multi-day-button-text-color: #fff; --agenda-heading-label-color: #AAA; --agenda-details-link-color: #327F7C; --agenda-block-mobile-background-color: #f5f5f5; /*event content block */ --event-register-btn-bg-color: #ed1b24; --event-register-btn-color: #fff; --event-share-icons-color: white; --event-share-icons-color-fb: #3b5998; --event-share-icons-color-twitter: #00acee; --event-share-icons-color-linkedin: #2867b2; --event-description-top-border: #d8dad8; --event-details-label-color: #B30000; --event-details-text-color: #141414; --event-logo-label: inherit, sans-serif; --event-description-text-color: #322a2a; --who-should-attend-heading: inherit; --who-should-attend-text: inherit, sans-serif; /* Event Index Page */ --border-color: #75757a; --filter-background-color: #F6F6F6; --base-font-color: #322a2a; --index-more-events-title-color: #141414; --myraid-font-family: inherit; --myriad-regular: 400; --myriad-bold: 700; --base--global-white-color: #fff; --base--global-black-color: #000; --index-events-title-font-hover-color: #B30000; /* Image Credit */ --image-credit-font-color: #555; --image-credit-text: \"Credit: \"; --event-hero-block-heading-color: #fff;--event-hero-dynamic-background-image: none; } :root { /* FAQ*/ --faq-heading-seprator-color: #d8d8d8; --faq-input-box-border-color: #757575; --faq-remove-link-color: #c30e0e; --faq-heading-color: #141414; --faq-heading-font-family: inherit; --faq-title-description-font-family: inherit; --faq-label-color: #AAA; --faq-company-name-font-color: #75757A; --faq-horizontal-line-color: #DEDEDE; --faq-head-title--font-family: \"graphik\", sans-serif; } :root { --nav-menu-error: #b32d2e; --promo-unit-hr: #d55d5d; --promo-unit-title-after: #d04949; --promo-unit-title: #322a2a; --promo-unit-before-one: #e42e22; --promo-unit-before-two: #f3f5f6; --promo-unit-item-bg: #000; /* Deals Collection Block */ --deal-collection-productIndex-border-color: #12C7F1; --deal-collection-deal-header-color: #000; --deal-collection-deal--view-button--background-color: #21873A; --deal-collection-deal-price-color: #CD0912; --site-primary: #3399cc; --view-button--green: #3e873a; /* Jobs Collection Block */ --job-collection-productIndex-border-color: #12C7F1; --job-collection-job-header-color: #000; --job-collection-job--view-button--background-color: #21873A; --job-collection-job-price-color: #CD0912; /* Publication list pop-up pn edit edition page */ --publication-list-container-bg: rgba(255, 255, 255, 1); --publication-list-container-border: #111; --publication-list-container-bs: #222; --publication-list-bg:rgba(100, 100, 100, .6); --publication-list-popup-header-border: #ddd; --publication-list-popup-header-bg: #e9e9e9; /*Lineup Element*/ --lineup-element-error-font-color: #cd423b; --lineup-element-disabled-button-background-color: #ddd; --lineup-element-disabled-button-font-color: #eee; --lineup-element-button-tooltip-background-color: #757575; --lineup-element-button-tooltip-font-color: #fff; --lineup-element-note-font-color: #757575; --lineup-element-button-disabled: hsla(0,0%,100%,.4); /* LineUp Popover.*/ --lineup-popover-a-color: white; --lineup-popover-err-color: red; --lineup-popover-th-color: #d4d4d4; --lineup-popover-tr-color: #f2f2f2; --lineup-popover-paginate-a-active-color: #ddd; --lineup-popover-paginate-a-non-active-color: #006ba1; /* Slotting settings */ --slotting-settings-taxonomy-help-text-color: #808080; /* Author section top */ --sponsorship-brandpost-divider-line-color: #D8D8D8; /* Author Archive Page */ --author-archive-title: rgba(0, 0, 0, .87); --author-job-title: #000; --author-share-icons-divider-color: #D8D8D8; --author-share-icon-fill-color: #111; /* Sponsors index Page */ --sponsored-index-page-slug-background-color: #eee; --sponsorship-brandpost--title: 28px; --sponsorship-title--line-height: 32px; --uppercase-text: uppercase; --sponsor-eyebrow--font-color: #75757A; --sponsor-tooltip-learn-more--font-color: #111111; --sponsorship-brandpost--title-color: #111111; /* How to - at a glance block */ --how-to-at-glance-text-font-family: \"canada-type-gibson\", sans-serif; --how-to--step-heading--font-family: \"regis\", serif; --how-to--step-border--divider-color: #B6AEAA; --how-to--at-a-glance--background-color: #E6DCD5; /* Sponsorship Header. */ --sponsorship-header--font-color: #4d4d4d; /* fonts */ --fira-sans-semibold: 700; /* responsive table gradient */ --core-table--gradient--border-color: #C5C5C5; --core-table--gradient--alpha--border-color: #faf6f445; /* headings */ --heading-three: 24px; --heading-four: 20px; --heading-three-line-height: 30px; /* Insider Popover.*/ --insider-popover-background-color: white; --insider-popover-box-shadow-color: rgba(0, 0, 0, .31); --insider-popover-help-text-color: #4a4a4a; --insiderPopover-link-color: #322a2a; --insider-popover-signing-button-text-color: white; --insider-popover-signin-button-background: #4a3d3d; --insider-popover-signout-button-background: #b43017; --insiderPopover-welcome-font-color: #141414; /* Listing Button */ --insider-listing-primary-button-background : #4e4242; --insiderPopover-link-hover-color:#3c807c; --mercury-form--insider-color: #6eae00; } Topics Latest Newsletters Resources Buyer\u2019s Guides Events About About Us Advertise Contact Us Editorial Ethics Policy Foundry Careers Reprints Newsletters Add Computerworld as a Preferred Source in Google Search Policies Terms of Service Privacy Policy Cookie Policy Copyright Notice Member Preferences About AdChoices Your California Privacy Rights Our Network CIO CSO InfoWorld Network World More News Features Opinion Blogs BrandPosts Events Podcasts Videos Buyer\u2019s Guides Close Generative AI Office Suites Collaboration Software Productivity Software Windows Android Apple Augmented Reality Emerging Technology Mobile Hybrid and Remote Work Artificial Intelligence Operating Systems Careers IT Leadership IT Management IT Operations Industry Cloud Computing Computers and Peripherals Analytics Data Center Enterprise Applications Networking Security Vendors and Providers Enterprise Buyer\u2019s Guides Back Close Americas United States Asia India Korea (\ub300\ud55c\ubbfc\uad6d) Europe Netherlands United Kingdom Germany (Deutschland) Poland (Polska) Spain (Espa\u00f1a) Sweden (Sverige) Oceania Australia New Zealand Back Close Popular Topics Generative AI Productivity Software Windows Android Apple Hybrid and Remote Work Search US-EN Topics Latest Newsletters Resources Buyer\u2019s Guides Events About Policies Our Network More Back Topics Generative AI Office Suites Collaboration Software Productivity Software Windows Android Apple Augmented Reality Emerging Technology Mobile Hybrid and Remote Work Artificial Intelligence Operating Systems Careers IT Leadership IT Management IT Operations Industry Cloud Computing Computers and Peripherals Analytics Data Center Enterprise Applications Networking Security Vendors and Providers Enterprise Buyer\u2019s Guides Back About About Us Advertise Contact Us Editorial Ethics Policy Foundry Careers Reprints Newsletters Add Computerworld as a Preferred Source in Google Search Back Policies Terms of Service Privacy Policy Cookie Policy Copyright Notice Member Preferences About AdChoices Your California Privacy Rights Back Our Network CIO CSO InfoWorld Network World Back More News Features Opinion Blogs BrandPosts Events Podcasts Videos Buyer\u2019s Guides Home Networking by Ira Brodsky The \u2018Net finds its voice news Jan 9, 2001 3 mins",
+        "date": {
+          "display": "January 9, 2001",
+          "sort": "2001-01-09",
+          "precision": "day"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-quack",
+          "org-aol",
+          "org-sei"
+        ],
+        "archive_local": "historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "canonical_url": "https://www.computerworld.com/article/1575186/the-net-finds-its-voice.html",
+        "source_id": "src-quack-2001-the-net-finds-its-voice-html"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "press"
+        ],
+        "person_relevance": "This source helps contextualize Steven Woods' Quack.com era.",
+        "notes": "Voice portal feature coverage from the post-exit period, useful as broader Quack market context. Useful source lead, but kept deferred under the conservative approval policy."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-aol-gets-vocal-buys-quack-com",
+      "key": "https://www.ecommercetimes.com/story/aol-gets-vocal-buys-quack-com-4185.html",
+      "canonical_url": "https://www.ecommercetimes.com/story/aol-gets-vocal-buys-quack-com-4185.html",
+      "title_hint": "AOL Gets Vocal, Buys Quack.com",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "Likely relevant Quack acquisition coverage, but the archive copy is currently blocked and needs verification.",
+      "notes_hint": "Third-party coverage of the Quack acquisition.",
+      "date_hint": "2000",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": "company-history",
+      "discovered_from": [
+        "media-sources-review",
+        "source-manifest",
+        "search-pack:company-history"
+      ],
+      "tags_hint": [
+        "quack",
+        "press",
+        "aol",
+        "acquisition"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-2000-aol-acquisition",
+        "date": {
+          "display": "2000",
+          "sort": "2000-08-31"
+        },
+        "description": "Third-party deal coverage reinforces the AOL acquisition and Quack's geographic footprint."
+      },
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "person-alex-quilici",
+        "org-aol"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "AOL Gets Vocal, Buys Quack.com",
+        "description": "Third-party coverage of the Quack acquisition.",
+        "date": {
+          "display": "2000",
+          "sort": "2000-01-01",
+          "precision": "year"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-quack",
+          "org-aol",
+          "person-steven-woods",
+          "person-alex-quilici"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.ecommercetimes.com/story/aol-gets-vocal-buys-quack-com-4185.html",
+        "source_id": "src-quack-2000-aol-gets-vocal-buys-quack-com-4185-html"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "press",
+          "aol",
+          "acquisition"
+        ],
+        "person_relevance": "Likely relevant Quack acquisition coverage, but the archive copy is currently blocked and needs verification.",
+        "notes": "Third-party coverage of the Quack acquisition. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-another-feather-in-aol-s-cap",
+      "key": "https://www.internetnews.com/it-management/another-feather-in-aols-cap",
+      "canonical_url": "https://www.internetnews.com/it-management/another-feather-in-aols-cap",
+      "title_hint": "Another Feather In AOL's Cap",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "Steven Woods co-founded Quack.com and this source covers the AOL acquisition.",
+      "notes_hint": "InternetNews coverage of the Quack/AOL acquisition.",
+      "date_hint": "2000",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": "company-history",
+      "discovered_from": [
+        "media-sources-review",
+        "source-manifest",
+        "search-pack:company-history"
+      ],
+      "tags_hint": [
+        "quack",
+        "press",
+        "aol",
+        "acquisition"
+      ],
+      "existing_local_paths": [
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "/Users/stevenwoods/GitPages/public/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
+      ],
+      "timeline_event": {
+        "event_id": "evt-quack-2000-aol-acquisition",
+        "date": {
+          "display": "August 31, 2000",
+          "sort": "2000-08-31"
+        },
+        "description": "AOL acquired Quack.com, bringing the company into the AOL / Netscape voice-services push."
+      },
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "person-alex-quilici",
+        "org-aol",
+        "org-bid-com",
+        "org-speechworks"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "local-copy",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": "historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "shared_local": "quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Another Feather In AOL's Cap",
+        "description": "America Online Inc. Thursday acquired privately-held Quack.com, a speech-activated Internet portal that uses the same underlying voice-recognition",
+        "date": {
+          "display": "August 31, 2000",
+          "sort": "2000-08-31",
+          "precision": "day"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "person-ted-leonsis",
+          "org-quack",
+          "org-speechworks",
+          "org-aol",
+          "org-sei",
+          "org-bid-com",
+          "person-steven-woods",
+          "person-alex-quilici"
+        ],
+        "archive_local": "historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "canonical_url": "https://www.internetnews.com/it-management/another-feather-in-aols-cap",
+        "source_id": "src-quack-2000-another-feather-in-aols-cap"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "approved",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "press",
+          "aol",
+          "acquisition"
+        ],
+        "person_relevance": "Steven Woods co-founded Quack.com and this source covers the AOL acquisition.",
+        "notes": "InternetNews coverage of the Quack/AOL acquisition. Well-attributed source with clear provenance and a local archive copy."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-if-it-walks-like-a-duck-quack-com",
+      "key": "https://www.internetnews.com/it-management/if-it-walks-like-a-duck-quack-com",
+      "canonical_url": "https://www.internetnews.com/it-management/if-it-walks-like-a-duck-quack-com",
+      "title_hint": "If It Walks Like a Duck, Quack.com",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "Opinionated but detailed market-context article on Quack.com's acquisition, talent value, and competition.",
+      "notes_hint": "Useful for market competition, talent-acquisition framing, and the post-Lycos pivot narrative.",
+      "date_hint": "2000-09-01",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "company-history",
+      "discovered_from": [
+        "search-pack:company-history",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "market",
+        "competition",
+        "aol"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-2000-post-acquisition-market-view",
+        "date": {
+          "display": "September 1, 2000",
+          "sort": "2000-09-01"
+        },
+        "description": "Post-acquisition commentary framed Quack as both a voice portal play and a talent acquisition in a crowded market."
+      },
+      "entity_mentions_hint": [
+        "org-aol",
+        "org-speechworks",
+        "org-lycos"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "If It Walks Like a Duck, Quack.com",
+        "description": "Useful for market competition, talent-acquisition framing, and the post-Lycos pivot narrative.",
+        "date": {
+          "display": "September 1, 2000",
+          "sort": "2000-09-01",
+          "precision": "day"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-quack",
+          "org-lycos",
+          "org-aol",
+          "org-speechworks"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.internetnews.com/it-management/if-it-walks-like-a-duck-quack-com",
+        "source_id": "src-quack-2000-if-it-walks-like-a-duck-quack-com"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "market",
+          "competition",
+          "aol"
+        ],
+        "person_relevance": "Opinionated but detailed market-context article on Quack.com's acquisition, talent value, and competition.",
+        "notes": "Useful for market competition, talent-acquisition framing, and the post-Lycos pivot narrative. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-sei-architecture-practices-propel-successful-startup",
+      "key": "https://www.sei.cmu.edu/library/abstracts/news-at-sei/feature11q02.cfm",
+      "canonical_url": "https://www.sei.cmu.edu/library/abstracts/news-at-sei/feature11q02.cfm",
+      "title_hint": "SEI Architecture Practices Propel Successful Startup",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "This source helps contextualize Steven Woods' Quack.com era.",
+      "notes_hint": "Historical retrospective connecting SEI work to the Quack/Kinitos startup path.",
+      "date_hint": "2002-era retrospective",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": null,
+      "discovered_from": [
+        "media-sources-review",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "press"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "SEI Architecture Practices Propel Successful Startup",
+        "description": "Historical retrospective connecting SEI work to the Quack/Kinitos startup path.",
+        "date": {
+          "display": "2002-era retrospective",
+          "sort": "2002-01-01",
+          "precision": "approximate"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-sei"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.sei.cmu.edu/library/abstracts/news-at-sei/feature11q02.cfm",
+        "source_id": "src-quack-2002-feature11q02-cfm"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "press"
+        ],
+        "person_relevance": "This source helps contextualize Steven Woods' Quack.com era.",
+        "notes": "Historical retrospective connecting SEI work to the Quack/Kinitos startup path. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-earful-of-internet-voice-portals-read-news-and-other-information-via-phone-to-users-on-the-go",
+      "key": "https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php",
+      "canonical_url": "https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php",
+      "title_hint": "EARFUL OF INTERNET / Voice portals read news and other information via phone to users on the go",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "This broader voice-portal feature helps place Steven Woods' Quack.com work in its 2000 market context.",
+      "notes_hint": "Broader voice-portal coverage naming Quack.com as a key company in the space.",
+      "date_hint": "2000",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": "company-history",
+      "discovered_from": [
+        "media-sources-review",
+        "source-manifest",
+        "search-pack:company-history"
+      ],
+      "tags_hint": [
+        "quack",
+        "press",
+        "voice-portal",
+        "demo",
+        "market"
+      ],
+      "existing_local_paths": [
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/sfgate-earful-of-internet-2000.html",
+        "/Users/stevenwoods/GitPages/public/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html"
+      ],
+      "timeline_event": {
+        "event_id": "evt-quack-2000-voice-portal-market-context",
+        "date": {
+          "display": "May 25, 2000",
+          "sort": "2000-05-25"
+        },
+        "description": "Voice-portal coverage positioned Quack within the fast-expanding 2000 market."
+      },
+      "entity_mentions_hint": [
+        "org-quack"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "local-copy",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": "historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "shared_local": "quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "EARFUL OF INTERNET / Voice portals read news and other information via phone to users on the go",
+        "description": "Consumers use speech instead of a computer mouse to navigate information like weather,...",
+        "date": {
+          "display": "May 25, 2000",
+          "sort": "2000-05-25",
+          "precision": "day"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-quack",
+          "org-lycos",
+          "org-sei"
+        ],
+        "archive_local": "historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "canonical_url": "https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php",
+        "source_id": "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "approved",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "press",
+          "voice-portal",
+          "demo",
+          "market"
+        ],
+        "person_relevance": "This broader voice-portal feature helps place Steven Woods' Quack.com work in its 2000 market context.",
+        "notes": "Broader voice-portal coverage naming Quack.com as a key company in the space. Well-attributed source with clear provenance and a local archive copy."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-aol-buys-a-voice-portal-boosting-bid-com-s-fortunes",
+      "key": "https://www.thestreet.com/technology/aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+      "canonical_url": "https://www.thestreet.com/technology/aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+      "title_hint": "AOL Buys a Voice Portal, Boosting Bid.com's Fortunes",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "Potentially strong acquisition coverage for Steven Woods' Quack.com era, but local preservation is still missing.",
+      "notes_hint": "Third-party acquisition coverage for Quack.com; strong exit milestone source.",
+      "date_hint": "2000-08-31",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": "investors-and-financing",
+      "discovered_from": [
+        "media-sources-review",
+        "source-manifest",
+        "search-pack:investors-and-financing"
+      ],
+      "tags_hint": [
+        "quack",
+        "press",
+        "aol",
+        "acquisition",
+        "investor-outcome",
+        "bid-com"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [
+        "org-bid-com",
+        "org-aol"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "AOL Buys a Voice Portal, Boosting Bid.com's Fortunes",
+        "description": "Third-party acquisition coverage for Quack.com; strong exit milestone source.",
+        "date": {
+          "display": "August 31, 2000",
+          "sort": "2000-08-31",
+          "precision": "day"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-quack",
+          "org-aol",
+          "org-bid-com"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.thestreet.com/technology/aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+        "source_id": "src-quack-2000-aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982"
+      },
+      "classification": {
+        "research_theme": "company-history",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "press",
+          "aol",
+          "acquisition",
+          "investor-outcome",
+          "bid-com"
+        ],
+        "person_relevance": "Potentially strong acquisition coverage for Steven Woods' Quack.com era, but local preservation is still missing.",
+        "notes": "Third-party acquisition coverage for Quack.com; strong exit milestone source. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-vc-buzz-246-55-million-in-today-s-deals",
+      "key": "https://www.internetnews.com/it-management/vc-buzz-246-55-million-in-todays-deals",
+      "canonical_url": "https://www.internetnews.com/it-management/vc-buzz-246-55-million-in-todays-deals",
+      "title_hint": "VC Buzz - $246.55+ Million in Today's Deals",
+      "source_family": "investor-and-financing-context",
+      "research_theme": "investors-and-outcomes",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "Early financing coverage helps explain how Quack financed its early voice-portal push before the AOL exit.",
+      "notes_hint": "Named participants in Quack's initial financing include Bid.com, e-Lab Technology Ventures, Jefferson Partners Technology Fund LP, and HDL Capital Corporation.",
+      "date_hint": "1999",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "investors-and-financing",
+      "discovered_from": [
+        "search-pack:investors-and-financing",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "financing",
+        "investors",
+        "venture"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-1999-initial-financing",
+        "date": {
+          "display": "1999",
+          "sort": "1999-11-01"
+        },
+        "description": "Quack completed its initial financing round with a named investor syndicate."
+      },
+      "entity_mentions_hint": [
+        "org-bid-com",
+        "org-e-lab",
+        "org-jefferson-partners",
+        "org-hdl-capital",
+        "org-rbc-elab"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "VC Buzz - $246.55+ Million in Today's Deals",
+        "description": "Named participants in Quack's initial financing include Bid.com, e-Lab Technology Ventures, Jefferson Partners Technology Fund LP, and HDL Capital Corporation.",
+        "date": {
+          "display": "1999",
+          "sort": "1999-01-01",
+          "precision": "year"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-bid-com",
+          "org-e-lab",
+          "org-jefferson-partners",
+          "org-hdl-capital",
+          "org-rbc-elab"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.internetnews.com/it-management/vc-buzz-246-55-million-in-todays-deals",
+        "source_id": "src-quack-1999-vc-buzz-246-55-million-in-todays-deals"
+      },
+      "classification": {
+        "research_theme": "investors-and-outcomes",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "financing",
+          "investors",
+          "venture"
+        ],
+        "person_relevance": "Early financing coverage helps explain how Quack financed its early voice-portal push before the AOL exit.",
+        "notes": "Named participants in Quack's initial financing include Bid.com, e-Lab Technology Ventures, Jefferson Partners Technology Fund LP, and HDL Capital Corporation. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-strategic-direction-at-quack-com-a",
+      "key": "https://www.thecasecentre.org/products/view?id=14578",
+      "canonical_url": "https://www.thecasecentre.org/products/view?id=14578",
+      "title_hint": "Strategic Direction at Quack.com (A)",
+      "source_family": "investor-and-financing-context",
+      "research_theme": "investors-and-outcomes",
+      "source_type_hint": "artifact",
+      "person_relevance_hint": "Case-study metadata that documents Quack's financing pressure and strategic reassessment during 2000.",
+      "notes_hint": "Strong report/case-study metadata for business model, funding pressure, and strategic pivot analysis.",
+      "date_hint": "2002-02",
+      "quality_hint": "moderate",
+      "priority": "high",
+      "query_pack_id": "investors-and-financing",
+      "discovered_from": [
+        "search-pack:investors-and-financing",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "case-study",
+        "business-model",
+        "financing"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-2002-case-study-published",
+        "date": {
+          "display": "February 2002",
+          "sort": "2002-02-27"
+        },
+        "description": "Ivey case-study publication documented Quack's financing pressure and strategic direction questions."
+      },
+      "entity_mentions_hint": [],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Strategic Direction at Quack.com (A)",
+        "description": "Strong report/case-study metadata for business model, funding pressure, and strategic pivot analysis.",
+        "date": {
+          "display": "February 2002",
+          "sort": "2002-02-01",
+          "precision": "month"
+        },
+        "source_type": "artifact",
+        "entities": [
+          "org-quack"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.thecasecentre.org/products/view?id=14578",
+        "source_id": "src-quack-2002-view"
+      },
+      "classification": {
+        "research_theme": "investors-and-outcomes",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "case-study",
+          "business-model",
+          "financing"
+        ],
+        "person_relevance": "Case-study metadata that documents Quack's financing pressure and strategic reassessment during 2000.",
+        "notes": "Strong report/case-study metadata for business model, funding pressure, and strategic pivot analysis. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-quack-com",
+      "key": "https://en.wikipedia.org/wiki/Quack.com",
+      "canonical_url": "https://en.wikipedia.org/wiki/Quack.com",
+      "title_hint": "Quack.com",
+      "source_family": "secondary-graph",
+      "research_theme": "key-individuals",
+      "source_type_hint": "profile",
+      "person_relevance_hint": "Wikipedia page is useful as a lead list for citations, themes, and missing source classes, but should not be approved by itself.",
+      "notes_hint": "Use as a citation graph only; cites CNET, StartupNorth, patents, and investor themes worth following up.",
+      "date_hint": "2026",
+      "quality_hint": "weak",
+      "priority": "medium",
+      "query_pack_id": "secondary-graph-and-retrospectives",
+      "discovered_from": [
+        "search-pack:secondary-graph-and-retrospectives",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "wikipedia",
+        "lead-generator"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "person-alex-quilici",
+        "person-jeromy-carriere",
+        "org-uwaterloo",
+        "org-aol"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Quack.com",
+        "description": "Use as a citation graph only; cites CNET, StartupNorth, patents, and investor themes worth following up.",
+        "date": {
+          "display": "2026",
+          "sort": "2026-01-01",
+          "precision": "year"
+        },
+        "source_type": "profile",
+        "entities": [
+          "org-quack",
+          "person-steven-woods",
+          "person-alex-quilici",
+          "person-jeromy-carriere",
+          "org-uwaterloo",
+          "org-aol"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://en.wikipedia.org/wiki/Quack.com",
+        "source_id": "src-quack-2026-quack-com"
+      },
+      "classification": {
+        "research_theme": "key-individuals",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "wikipedia",
+          "lead-generator"
+        ],
+        "person_relevance": "Wikipedia page is useful as a lead list for citations, themes, and missing source classes, but should not be approved by itself.",
+        "notes": "Use as a citation graph only; cites CNET, StartupNorth, patents, and investor themes worth following up. Secondary graph source kept only as a lead and cross-reference, not as sole authority."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-steven-woods",
+      "key": "https://en.wikipedia.org/wiki/Steven_Woods",
+      "canonical_url": "https://en.wikipedia.org/wiki/Steven_Woods",
+      "title_hint": "Steven Woods",
+      "source_family": "secondary-graph",
+      "research_theme": "key-individuals",
+      "source_type_hint": "profile",
+      "person_relevance_hint": "Steven Woods' Wikipedia page is useful as a lead-generator for Quack-era citations but should not stand alone as authority.",
+      "notes_hint": "Use as a cross-checking source graph for Quack-era leads such as Jefferson Partners, patents, and retrospective articles.",
+      "date_hint": "2026",
+      "quality_hint": "weak",
+      "priority": "medium",
+      "query_pack_id": "secondary-graph-and-retrospectives",
+      "discovered_from": [
+        "search-pack:secondary-graph-and-retrospectives",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "steven-woods",
+        "wikipedia",
+        "lead-generator",
+        "quack"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "org-uwaterloo"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Steven Woods",
+        "description": "Use as a cross-checking source graph for Quack-era leads such as Jefferson Partners, patents, and retrospective articles.",
+        "date": {
+          "display": "2026",
+          "sort": "2026-01-01",
+          "precision": "year"
+        },
+        "source_type": "profile",
+        "entities": [
+          "person-steven-woods",
+          "org-jefferson-partners",
+          "org-uwaterloo"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://en.wikipedia.org/wiki/Steven_Woods",
+        "source_id": "src-quack-2026-steven-woods"
+      },
+      "classification": {
+        "research_theme": "key-individuals",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "steven-woods",
+          "wikipedia",
+          "lead-generator"
+        ],
+        "person_relevance": "Steven Woods' Wikipedia page is useful as a lead-generator for Quack-era citations but should not stand alone as authority.",
+        "notes": "Use as a cross-checking source graph for Quack-era leads such as Jefferson Partners, patents, and retrospective articles. Secondary graph source kept only as a lead and cross-reference, not as sole authority."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-strategic-direction-at-quack-com-b",
+      "key": "https://www.thecasecentre.org/products/view?id=14579",
+      "canonical_url": "https://www.thecasecentre.org/products/view?id=14579",
+      "title_hint": "Strategic Direction at Quack.com (B)",
+      "source_family": "secondary-graph",
+      "research_theme": "key-individuals",
+      "source_type_hint": "artifact",
+      "person_relevance_hint": "Supplementary case-study metadata that helps explain what happened after Quack's 2000 strategic crisis.",
+      "notes_hint": "Important report lead, but likely deferred unless or until fuller access or stronger local notes are captured.",
+      "date_hint": "2002-02",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": "secondary-graph-and-retrospectives",
+      "discovered_from": [
+        "search-pack:secondary-graph-and-retrospectives"
+      ],
+      "tags_hint": [
+        "quack",
+        "case-study",
+        "strategy",
+        "retrospective"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [],
+      "state": "classified",
+      "duplicate_of": "src-quack-2002-view",
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Strategic Direction at Quack.com (B)",
+        "description": "Important report lead, but likely deferred unless or until fuller access or stronger local notes are captured.",
+        "date": {
+          "display": "February 2002",
+          "sort": "2002-02-01",
+          "precision": "month"
+        },
+        "source_type": "artifact",
+        "entities": [
+          "org-quack"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.thecasecentre.org/products/view?id=14579",
+        "source_id": "src-quack-2002-view"
+      },
+      "classification": {
+        "research_theme": "key-individuals",
+        "archive_lane": "artifacts",
+        "status": "rejected",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "case-study",
+          "strategy",
+          "retrospective"
+        ],
+        "person_relevance": "Supplementary case-study metadata that helps explain what happened after Quack's 2000 strategic crisis.",
+        "notes": "Important report lead, but likely deferred unless or until fuller access or stronger local notes are captured. Duplicate lead resolved to an existing source record."
+      },
+      "manifested": false
+    },
+    {
+      "lead_id": "lead-us20060149633a1-system-and-method-for-advertising-with-an-internet-voice-portal",
+      "key": "https://patents.google.com/patent/US20060149633A1",
+      "canonical_url": "https://patents.google.com/patent/US20060149633A1",
+      "title_hint": "US20060149633A1 - System and method for advertising with an internet voice portal",
+      "source_family": "patent-and-ip",
+      "research_theme": "patents-and-ip",
+      "source_type_hint": "artifact",
+      "person_relevance_hint": "Patent record that helps document Steven Woods' role in Quack's voice-portal IP portfolio.",
+      "notes_hint": "Patent source showing Quack product and advertising architecture details plus inventor list.",
+      "date_hint": "2006-07-06",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "patents-and-ip",
+      "discovered_from": [
+        "search-pack:patents-and-ip",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "patent",
+        "voice-portal",
+        "advertising"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-2006-advertising-patent-publication",
+        "date": {
+          "display": "July 6, 2006",
+          "sort": "2006-07-06"
+        },
+        "description": "Publication of a Quack-related advertising-with-an-internet-voice-portal patent application."
+      },
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "person-alex-quilici",
+        "person-jeromy-carriere",
+        "org-quack"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "US20060149633A1 - System and method for advertising with an internet voice portal",
+        "description": "Patent source showing Quack product and advertising architecture details plus inventor list.",
+        "date": {
+          "display": "July 6, 2006",
+          "sort": "2006-07-06",
+          "precision": "day"
+        },
+        "source_type": "artifact",
+        "entities": [
+          "person-steven-woods",
+          "person-alex-quilici",
+          "person-jeromy-carriere",
+          "org-quack"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://patents.google.com/patent/US20060149633A1",
+        "source_id": "src-quack-2006-us20060149633a1"
+      },
+      "classification": {
+        "research_theme": "patents-and-ip",
+        "archive_lane": "artifacts",
+        "status": "approved",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "patent",
+          "voice-portal",
+          "advertising"
+        ],
+        "person_relevance": "Patent record that helps document Steven Woods' role in Quack's voice-portal IP portfolio.",
+        "notes": "Patent source showing Quack product and advertising architecture details plus inventor list. Strong official or institutional source with clear date and provenance."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-us6687734b1-system-and-method-for-determining-if-one-web-site-has-the-same-information-as-another-web-site",
+      "key": "https://patents.google.com/patent/US6687734B1/en",
+      "canonical_url": "https://patents.google.com/patent/US6687734B1/en",
+      "title_hint": "US6687734B1 - System and method for determining if one web site has the same information as another web site",
+      "source_family": "patent-and-ip",
+      "research_theme": "patents-and-ip",
+      "source_type_hint": "artifact",
+      "person_relevance_hint": "Patent record documenting Quack-era inventorship by Steven Woods and Jeromy Carriere.",
+      "notes_hint": "Patent source useful for product/data architecture and later assignee history through AOL and Facebook/Meta.",
+      "date_hint": "2004-02-03",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "patents-and-ip",
+      "discovered_from": [
+        "search-pack:patents-and-ip",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "patent",
+        "data-extraction",
+        "ip"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-2004-same-info-patent-grant",
+        "date": {
+          "display": "February 3, 2004",
+          "sort": "2004-02-03"
+        },
+        "description": "Grant of a Quack-related patent around identifying the same information across websites."
+      },
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "person-jeromy-carriere",
+        "org-aol"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "US6687734B1 - System and method for determining if one web site has the same information as another web site",
+        "description": "Patent source useful for product/data architecture and later assignee history through AOL and Facebook/Meta.",
+        "date": {
+          "display": "February 3, 2004",
+          "sort": "2004-02-03",
+          "precision": "day"
+        },
+        "source_type": "artifact",
+        "entities": [
+          "org-aol",
+          "person-steven-woods",
+          "person-jeromy-carriere"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://patents.google.com/patent/US6687734B1/en",
+        "source_id": "src-quack-2004-en"
+      },
+      "classification": {
+        "research_theme": "patents-and-ip",
+        "archive_lane": "artifacts",
+        "status": "approved",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "patent",
+          "data-extraction",
+          "ip"
+        ],
+        "person_relevance": "Patent record documenting Quack-era inventorship by Steven Woods and Jeromy Carriere.",
+        "notes": "Patent source useful for product/data architecture and later assignee history through AOL and Facebook/Meta. Strong official or institutional source with clear date and provenance."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-aol-formalizes-anywhere-strategy",
+      "key": "https://www.internetnews.com/it-management/aol-formalizes-anywhere-strategy",
+      "canonical_url": "https://www.internetnews.com/it-management/aol-formalizes-anywhere-strategy",
+      "title_hint": "AOL Formalizes 'Anywhere' Strategy",
+      "source_family": "first-party-company-partner",
+      "research_theme": "speechworks-and-partners",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "This source connects the Quack acquisition to AOL by Phone and the broader AOL Anywhere product strategy.",
+      "notes_hint": "Useful for the post-acquisition product story and explicit mention of Quack and SpeechWorks in AOL by Phone.",
+      "date_hint": "2000",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "speechworks-and-partners",
+      "discovered_from": [
+        "search-pack:speechworks-and-partners",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "aol-by-phone",
+        "speechworks",
+        "product"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-2000-aol-by-phone",
+        "date": {
+          "display": "2000",
+          "sort": "2000-10-01"
+        },
+        "description": "AOL by Phone became part of the AOL Anywhere strategy using Quack technology and SpeechWorks voice recognition."
+      },
+      "entity_mentions_hint": [
+        "org-aol",
+        "org-quack",
+        "org-speechworks"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "AOL Formalizes 'Anywhere' Strategy",
+        "description": "Useful for the post-acquisition product story and explicit mention of Quack and SpeechWorks in AOL by Phone.",
+        "date": {
+          "display": "2000",
+          "sort": "2000-01-01",
+          "precision": "year"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-speechworks",
+          "org-aol",
+          "org-quack"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.internetnews.com/it-management/aol-formalizes-anywhere-strategy",
+        "source_id": "src-quack-2000-aol-formalizes-anywhere-strategy"
+      },
+      "classification": {
+        "research_theme": "speechworks-and-partners",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "aol-by-phone",
+          "speechworks",
+          "product"
+        ],
+        "person_relevance": "This source connects the Quack acquisition to AOL by Phone and the broader AOL Anywhere product strategy.",
+        "notes": "Useful for the post-acquisition product story and explicit mention of Quack and SpeechWorks in AOL by Phone. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-lycos-quack-com-launch-new-portal",
+      "key": "https://www.internetnews.com/it-management/lycos-quack-com-launch-new-portal",
+      "canonical_url": "https://www.internetnews.com/it-management/lycos-quack-com-launch-new-portal",
+      "title_hint": "Lycos, Quack.com Launch New Portal",
+      "source_family": "first-party-company-partner",
+      "research_theme": "speechworks-and-partners",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "Partnership coverage that helps explain Quack.com's portal strategy shortly before the AOL acquisition.",
+      "notes_hint": "Core source for the Lycos partnership and Quack's portal/distribution ambitions.",
+      "date_hint": "2000-05-22",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "speechworks-and-partners",
+      "discovered_from": [
+        "search-pack:speechworks-and-partners",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "lycos",
+        "partnership",
+        "voice-portal"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": {
+        "event_id": "evt-quack-2000-lycos-partnership",
+        "date": {
+          "display": "May 22, 2000",
+          "sort": "2000-05-22"
+        },
+        "description": "Lycos and Quack announced a voice-enabled portal partnership built on Quack's voice-to-Internet technology."
+      },
+      "entity_mentions_hint": [
+        "org-lycos",
+        "org-quack"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Lycos, Quack.com Launch New Portal",
+        "description": "Core source for the Lycos partnership and Quack's portal/distribution ambitions.",
+        "date": {
+          "display": "May 22, 2000",
+          "sort": "2000-05-22",
+          "precision": "day"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-quack",
+          "org-lycos"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.internetnews.com/it-management/lycos-quack-com-launch-new-portal",
+        "source_id": "src-quack-2000-lycos-quack-com-launch-new-portal"
+      },
+      "classification": {
+        "research_theme": "speechworks-and-partners",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "lycos",
+          "partnership",
+          "voice-portal"
+        ],
+        "person_relevance": "Partnership coverage that helps explain Quack.com's portal strategy shortly before the AOL acquisition.",
+        "notes": "Core source for the Lycos partnership and Quack's portal/distribution ambitions. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-speechworks-calling-on-investors",
+      "key": "https://www.internetnews.com/it-management/speechworks-calling-on-investors",
+      "canonical_url": "https://www.internetnews.com/it-management/speechworks-calling-on-investors",
+      "title_hint": "SpeechWorks: Calling on Investors",
+      "source_family": "first-party-company-partner",
+      "research_theme": "speechworks-and-partners",
+      "source_type_hint": "media-mention",
+      "person_relevance_hint": "This source helps explain the maturity and market position of SpeechWorks, the voice-recognition technology behind Quack's service stack.",
+      "notes_hint": "Useful partner-context source around the SpeechWorks IPO window.",
+      "date_hint": "2000-08-02",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": "speechworks-and-partners",
+      "discovered_from": [
+        "search-pack:speechworks-and-partners",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "speechworks",
+        "partner",
+        "ipo",
+        "voice-recognition",
+        "quack"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [
+        "org-speechworks"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "SpeechWorks: Calling on Investors",
+        "description": "Useful partner-context source around the SpeechWorks IPO window.",
+        "date": {
+          "display": "August 2, 2000",
+          "sort": "2000-08-02",
+          "precision": "day"
+        },
+        "source_type": "media-mention",
+        "entities": [
+          "org-speechworks"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://www.internetnews.com/it-management/speechworks-calling-on-investors",
+        "source_id": "src-quack-2000-speechworks-calling-on-investors"
+      },
+      "classification": {
+        "research_theme": "speechworks-and-partners",
+        "archive_lane": "artifacts",
+        "status": "deferred",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "speechworks",
+          "partner",
+          "ipo",
+          "voice-recognition"
+        ],
+        "person_relevance": "This source helps explain the maturity and market position of SpeechWorks, the voice-recognition technology behind Quack's service stack.",
+        "notes": "Useful partner-context source around the SpeechWorks IPO window. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-university-of-saskatchewan-alumni-profile-2021-quack-retrospective",
+      "key": "https://alumni.usask.ca/get-involved/achieve/2021/woods.php",
+      "canonical_url": "https://alumni.usask.ca/get-involved/achieve/2021/woods.php",
+      "title_hint": "University of Saskatchewan alumni profile (2021 Quack retrospective)",
+      "source_family": "university-and-academic-ecosystem",
+      "research_theme": "waterloo-canada-relationship",
+      "source_type_hint": "profile",
+      "person_relevance_hint": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
+      "notes_hint": "Useful retrospective framing with team-photo caption and a direct explanation of how surprising the product felt.",
+      "date_hint": "2021",
+      "quality_hint": "strong",
+      "priority": "high",
+      "query_pack_id": "waterloo-and-canada",
+      "discovered_from": [
+        "search-pack:waterloo-and-canada",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "quack",
+        "retrospective",
+        "alumni",
+        "canada"
+      ],
+      "existing_local_paths": [
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/usask-alumni-profile-2021.html",
+        "/Users/stevenwoods/GitPages/public/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+      ],
+      "timeline_event": null,
+      "entity_mentions_hint": [
+        "person-steven-woods",
+        "org-usask"
+      ],
+      "state": "classified",
+      "duplicate_of": "src-quack-2021-usask-alumni-profile",
+      "fetch": {
+        "status": "local-copy",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "shared_local": "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Steven Woods - Alumni and Friends | University of Saskatchewan",
+        "description": "Search the USask Search Benefits and travel Alumni Benefits Alumni Travel Class notes Class Notes Share your story In Memoriam Get involved Alumni Achievement Awards Events Golden Grads Homecoming Regional Networks Reunions Senate Silver Grads USask Calgary Hub Volunteer Alumni Leadership Alumni Association Alumni Advisory Board Contact us Alumni Email Contact us Update contact information Transcripts Green and White Alumni News Donate now Dr. Steven Woods is a 2021 recipient of the USask Lifetime Achievement Award. This award recognizes a graduate for an outstanding lifetime of accomplishments and contributions to the social, cultural and economic well-being of society. The University of Saskatchewan is recognizing the incredible achievements of Dr. Steven Woods (BSc\u201987, PhD), one of the recipients of our Alumni Lifetime Achievement Award. By Leslie-Ann Schlosser",
+        "date": {
+          "display": "2021",
+          "sort": "2021-01-01",
+          "precision": "year"
+        },
+        "source_type": "profile",
+        "entities": [
+          "person-steven-woods",
+          "org-quack",
+          "org-aol",
+          "org-uwaterloo",
+          "org-usask",
+          "org-sei"
+        ],
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "canonical_url": "https://alumni.usask.ca/get-involved/achieve/2021/woods.php",
+        "source_id": "src-quack-2021-woods-php"
+      },
+      "classification": {
+        "research_theme": "waterloo-canada-relationship",
+        "archive_lane": "artifacts",
+        "status": "rejected",
+        "person_hub_use": "do-not-surface-yet",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "retrospective",
+          "alumni",
+          "canada"
+        ],
+        "person_relevance": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
+        "notes": "Useful retrospective framing with team-photo caption and a direct explanation of how surprising the product felt. Duplicate lead resolved to an existing source record."
+      },
+      "manifested": true
+    },
+    {
+      "lead_id": "lead-jeromy-carriere-mathematics-university-of-waterloo",
+      "key": "https://uwaterloo.ca/math/profiles/jeromy-carriere",
+      "canonical_url": "https://uwaterloo.ca/math/profiles/jeromy-carriere",
+      "title_hint": "Jeromy Carriere | Mathematics | University of Waterloo",
+      "source_family": "university-and-academic-ecosystem",
+      "research_theme": "waterloo-canada-relationship",
+      "source_type_hint": "profile",
+      "person_relevance_hint": "Waterloo profile that helps connect Quack's founder story to the University of Waterloo alumni network.",
+      "notes_hint": "Useful key-individual and Waterloo relationship source for Jeromy Carriere's Quack connection.",
+      "date_hint": "2014",
+      "quality_hint": "moderate",
+      "priority": "medium",
+      "query_pack_id": "waterloo-and-canada",
+      "discovered_from": [
+        "search-pack:waterloo-and-canada",
+        "source-manifest"
+      ],
+      "tags_hint": [
+        "waterloo",
+        "jeromy-carriere",
+        "alumni",
+        "quack"
+      ],
+      "existing_local_paths": [],
+      "timeline_event": null,
+      "entity_mentions_hint": [
+        "person-jeromy-carriere",
+        "org-uwaterloo"
+      ],
+      "state": "manifested",
+      "duplicate_of": null,
+      "fetch": {
+        "status": "skipped",
+        "last_attempt": "2026-03-24T23:34:41Z",
+        "archive_local": null,
+        "shared_local": null,
+        "http_status": null,
+        "error": null
+      },
+      "analysis": {
+        "title": "Jeromy Carriere | Mathematics | University of Waterloo",
+        "description": "Useful key-individual and Waterloo relationship source for Jeromy Carriere's Quack connection.",
+        "date": {
+          "display": "2014",
+          "sort": "2014-01-01",
+          "precision": "year"
+        },
+        "source_type": "profile",
+        "entities": [
+          "person-jeromy-carriere",
+          "org-uwaterloo"
+        ],
+        "archive_local": null,
+        "canonical_url": "https://uwaterloo.ca/math/profiles/jeromy-carriere",
+        "source_id": "src-quack-2014-jeromy-carriere"
+      },
+      "classification": {
+        "research_theme": "waterloo-canada-relationship",
+        "archive_lane": "artifacts",
+        "status": "approved",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred",
+        "tags": [
+          "quack",
+          "waterloo",
+          "jeromy-carriere",
+          "alumni"
+        ],
+        "person_relevance": "Waterloo profile that helps connect Quack's founder story to the University of Waterloo alumni network.",
+        "notes": "Useful key-individual and Waterloo relationship source for Jeromy Carriere's Quack connection. Strong official or institutional source with clear date and provenance."
+      },
+      "manifested": true
+    }
+  ]
+}

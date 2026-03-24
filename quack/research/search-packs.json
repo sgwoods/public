@@ -1,0 +1,525 @@
+{
+  "schema_version": "1.0",
+  "project_id": "quack-com",
+  "packs": [
+    {
+      "pack_id": "company-history",
+      "source_family": "reputable-third-party-press",
+      "research_theme": "company-history",
+      "queries": [
+        "Quack.com AOL acquisition voice portal history",
+        "Quackware Quack.com early voice portal",
+        "Quack.com market validation press coverage"
+      ],
+      "seed_results": [
+        {
+          "title": "Another Feather In AOL's Cap",
+          "canonical_url": "https://www.internetnews.com/it-management/another-feather-in-aols-cap/",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "Steven Woods co-founded Quack.com and this source covers the AOL acquisition.",
+          "notes_hint": "Core acquisition coverage that also names Bid.com and SpeechWorks in the deal context.",
+          "date_hint": "2000-08-31",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "aol",
+            "acquisition",
+            "press"
+          ],
+          "existing_local_path": "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+          "timeline_event": {
+            "event_id": "evt-quack-2000-aol-acquisition",
+            "date": {
+              "display": "August 31, 2000",
+              "sort": "2000-08-31"
+            },
+            "description": "AOL acquired Quack.com, bringing the company into the AOL / Netscape voice-services push."
+          },
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "person-alex-quilici",
+            "org-aol",
+            "org-bid-com",
+            "org-speechworks"
+          ]
+        },
+        {
+          "title": "AOL Gets Vocal, Buys Quack.com",
+          "canonical_url": "https://www.ecommercetimes.com/story/aol-gets-vocal-buys-quack-com-4185.html",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "Acquisition coverage for Steven Woods' Quack.com era with extra company detail including office footprint.",
+          "notes_hint": "Acquisition coverage that mentions Quack's Sunnyvale headquarters and Toronto and Boston offices.",
+          "date_hint": "2000",
+          "quality_hint": "moderate",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "aol",
+            "acquisition",
+            "press"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-2000-aol-acquisition",
+            "date": {
+              "display": "2000",
+              "sort": "2000-08-31"
+            },
+            "description": "Third-party deal coverage reinforces the AOL acquisition and Quack's geographic footprint."
+          },
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "person-alex-quilici",
+            "org-aol"
+          ]
+        },
+        {
+          "title": "If It Walks Like a Duck, Quack.com",
+          "canonical_url": "https://www.internetnews.com/it-management/if-it-walks-like-a-duck-quack-com/",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "Opinionated but detailed market-context article on Quack.com's acquisition, talent value, and competition.",
+          "notes_hint": "Useful for market competition, talent-acquisition framing, and the post-Lycos pivot narrative.",
+          "date_hint": "2000-09-01",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "market",
+            "competition",
+            "aol"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-2000-post-acquisition-market-view",
+            "date": {
+              "display": "September 1, 2000",
+              "sort": "2000-09-01"
+            },
+            "description": "Post-acquisition commentary framed Quack as both a voice portal play and a talent acquisition in a crowded market."
+          },
+          "entity_mentions_hint": [
+            "org-aol",
+            "org-speechworks",
+            "org-lycos"
+          ]
+        },
+        {
+          "title": "EARFUL OF INTERNET / Voice portals read news and other information via phone to users on the go",
+          "canonical_url": "https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "Broader voice-portal market feature that helps place Steven Woods' Quack.com work in 2000 context.",
+          "notes_hint": "Useful contemporaneous voice-portal market context with Quack named as a key player.",
+          "date_hint": "2000-05-25",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "voice-portal",
+            "market",
+            "press"
+          ],
+          "existing_local_path": "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/sfgate-earful-of-internet-2000.html",
+          "timeline_event": {
+            "event_id": "evt-quack-2000-voice-portal-market-context",
+            "date": {
+              "display": "May 25, 2000",
+              "sort": "2000-05-25"
+            },
+            "description": "Voice-portal coverage positioned Quack within the fast-expanding 2000 market."
+          },
+          "entity_mentions_hint": [
+            "org-quack"
+          ]
+        }
+      ]
+    },
+    {
+      "pack_id": "speechworks-and-partners",
+      "source_family": "first-party-company-partner",
+      "research_theme": "speechworks-and-partners",
+      "queries": [
+        "Quack.com SpeechWorks AOL by Phone",
+        "Quack.com Lycos partnership voice portal",
+        "AOL Anywhere Quack SpeechWorks"
+      ],
+      "seed_results": [
+        {
+          "title": "Lycos, Quack.com Launch New Portal",
+          "canonical_url": "https://www.internetnews.com/it-management/lycos-quack-com-launch-new-portal/",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "Partnership coverage that helps explain Quack.com's portal strategy shortly before the AOL acquisition.",
+          "notes_hint": "Core source for the Lycos partnership and Quack's portal/distribution ambitions.",
+          "date_hint": "2000-05-22",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "lycos",
+            "partnership",
+            "voice-portal"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-2000-lycos-partnership",
+            "date": {
+              "display": "May 22, 2000",
+              "sort": "2000-05-22"
+            },
+            "description": "Lycos and Quack announced a voice-enabled portal partnership built on Quack's voice-to-Internet technology."
+          },
+          "entity_mentions_hint": [
+            "org-lycos",
+            "org-quack"
+          ]
+        },
+        {
+          "title": "AOL Formalizes 'Anywhere' Strategy",
+          "canonical_url": "https://www.internetnews.com/it-management/aol-formalizes-anywhere-strategy/",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "This source connects the Quack acquisition to AOL by Phone and the broader AOL Anywhere product strategy.",
+          "notes_hint": "Useful for the post-acquisition product story and explicit mention of Quack and SpeechWorks in AOL by Phone.",
+          "date_hint": "2000",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "aol-by-phone",
+            "speechworks",
+            "product"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-2000-aol-by-phone",
+            "date": {
+              "display": "2000",
+              "sort": "2000-10-01"
+            },
+            "description": "AOL by Phone became part of the AOL Anywhere strategy using Quack technology and SpeechWorks voice recognition."
+          },
+          "entity_mentions_hint": [
+            "org-aol",
+            "org-quack",
+            "org-speechworks"
+          ]
+        },
+        {
+          "title": "SpeechWorks: Calling on Investors",
+          "canonical_url": "https://www.internetnews.com/it-management/speechworks-calling-on-investors/",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "This source helps explain the maturity and market position of SpeechWorks, the voice-recognition technology behind Quack's service stack.",
+          "notes_hint": "Useful partner-context source around the SpeechWorks IPO window.",
+          "date_hint": "2000-08-02",
+          "quality_hint": "moderate",
+          "priority": "medium",
+          "tags_hint": [
+            "speechworks",
+            "partner",
+            "ipo",
+            "voice-recognition"
+          ],
+          "entity_mentions_hint": [
+            "org-speechworks"
+          ]
+        }
+      ]
+    },
+    {
+      "pack_id": "investors-and-financing",
+      "source_family": "investor-and-financing-context",
+      "research_theme": "investors-and-outcomes",
+      "queries": [
+        "Quack.com initial financing Bid.com Jefferson Partners HDL Capital",
+        "Quack.com investor outcomes AOL acquisition",
+        "Quack.com venture financing voice portal"
+      ],
+      "seed_results": [
+        {
+          "title": "VC Buzz - $246.55+ Million in Today's Deals",
+          "canonical_url": "https://www.internetnews.com/it-management/vc-buzz-246-55-million-in-todays-deals/",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "Early financing coverage helps explain how Quack financed its early voice-portal push before the AOL exit.",
+          "notes_hint": "Named participants in Quack's initial financing include Bid.com, e-Lab Technology Ventures, Jefferson Partners Technology Fund LP, and HDL Capital Corporation.",
+          "date_hint": "1999",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "financing",
+            "investors",
+            "venture"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-1999-initial-financing",
+            "date": {
+              "display": "1999",
+              "sort": "1999-11-01"
+            },
+            "description": "Quack completed its initial financing round with a named investor syndicate."
+          },
+          "entity_mentions_hint": [
+            "org-bid-com",
+            "org-e-lab",
+            "org-jefferson-partners",
+            "org-hdl-capital",
+            "org-rbc-elab"
+          ]
+        },
+        {
+          "title": "AOL Buys a Voice Portal, Boosting Bid.com's Fortunes",
+          "canonical_url": "https://www.thestreet.com/technology/aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+          "source_type_hint": "media-mention",
+          "person_relevance_hint": "Potentially strong acquisition and investor-outcome source for Steven Woods' Quack.com era, but still needs local preservation.",
+          "notes_hint": "Important investor-outcome lead tied to Bid.com's disclosed return.",
+          "date_hint": "2000-08-31",
+          "quality_hint": "moderate",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "investor-outcome",
+            "aol",
+            "bid-com"
+          ],
+          "entity_mentions_hint": [
+            "org-bid-com",
+            "org-aol"
+          ]
+        },
+        {
+          "title": "Strategic Direction at Quack.com (A)",
+          "canonical_url": "https://www.thecasecentre.org/products/view?id=14578",
+          "source_type_hint": "artifact",
+          "person_relevance_hint": "Case-study metadata that documents Quack's financing pressure and strategic reassessment during 2000.",
+          "notes_hint": "Strong report/case-study metadata for business model, funding pressure, and strategic pivot analysis.",
+          "date_hint": "2002-02",
+          "quality_hint": "moderate",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "case-study",
+            "business-model",
+            "financing"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-2002-case-study-published",
+            "date": {
+              "display": "February 2002",
+              "sort": "2002-02-27"
+            },
+            "description": "Ivey case-study publication documented Quack's financing pressure and strategic direction questions."
+          }
+        }
+      ]
+    },
+    {
+      "pack_id": "waterloo-and-canada",
+      "source_family": "university-and-academic-ecosystem",
+      "research_theme": "waterloo-canada-relationship",
+      "queries": [
+        "Quack.com University of Waterloo Canada engineers",
+        "Quack.com Waterloo alumni retrospective",
+        "Quack.com Canada startup ecosystem"
+      ],
+      "seed_results": [
+        {
+          "title": "University of Saskatchewan alumni profile (2021 Quack retrospective)",
+          "canonical_url": "https://alumni.usask.ca/get-involved/achieve/2021/woods.php",
+          "source_type_hint": "profile",
+          "person_relevance_hint": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
+          "notes_hint": "Useful retrospective framing with team-photo caption and a direct explanation of how surprising the product felt.",
+          "date_hint": "2021",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "retrospective",
+            "alumni",
+            "canada"
+          ],
+          "existing_local_path": "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/usask-alumni-profile-2021.html",
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "org-usask"
+          ]
+        },
+        {
+          "title": "University of Waterloo Entrepreneurship Impact Series: Steven Woods",
+          "canonical_url": "https://uwaterloo.ca/math/alumni-friends/entrepreneurship-impact-series",
+          "source_type_hint": "appearance",
+          "person_relevance_hint": "Public appearance profile describing Steven Woods' entrepreneurial path and Quack.com's 2000 AOL acquisition.",
+          "notes_hint": "Later public-facing retrospective that explicitly links Quack, Kinitos, and Waterloo-Toronto corridor talent building.",
+          "date_hint": "2023-04",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "waterloo",
+            "appearance",
+            "retrospective"
+          ],
+          "existing_local_path": "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "org-uwaterloo"
+          ]
+        },
+        {
+          "title": "Jeromy Carriere | Mathematics | University of Waterloo",
+          "canonical_url": "https://uwaterloo.ca/math/profiles/jeromy-carriere",
+          "source_type_hint": "profile",
+          "person_relevance_hint": "Waterloo profile that helps connect Quack's founder story to the University of Waterloo alumni network.",
+          "notes_hint": "Useful key-individual and Waterloo relationship source for Jeromy Carriere's Quack connection.",
+          "date_hint": "2014",
+          "quality_hint": "moderate",
+          "priority": "medium",
+          "tags_hint": [
+            "waterloo",
+            "jeromy-carriere",
+            "alumni",
+            "quack"
+          ],
+          "entity_mentions_hint": [
+            "person-jeromy-carriere",
+            "org-uwaterloo"
+          ]
+        }
+      ]
+    },
+    {
+      "pack_id": "patents-and-ip",
+      "source_family": "patent-and-ip",
+      "research_theme": "patents-and-ip",
+      "queries": [
+        "Quack.com patents voice access internet-based information",
+        "Quack.com patent advertising internet voice portal",
+        "Quack.com patent same information as another web site"
+      ],
+      "seed_results": [
+        {
+          "title": "US20060149633A1 - System and method for advertising with an internet voice portal",
+          "canonical_url": "https://patents.google.com/patent/US20060149633A1",
+          "source_type_hint": "artifact",
+          "person_relevance_hint": "Patent record that helps document Steven Woods' role in Quack's voice-portal IP portfolio.",
+          "notes_hint": "Patent source showing Quack product and advertising architecture details plus inventor list.",
+          "date_hint": "2006-07-06",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "patent",
+            "voice-portal",
+            "advertising"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-2006-advertising-patent-publication",
+            "date": {
+              "display": "July 6, 2006",
+              "sort": "2006-07-06"
+            },
+            "description": "Publication of a Quack-related advertising-with-an-internet-voice-portal patent application."
+          },
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "person-alex-quilici",
+            "person-jeromy-carriere",
+            "org-quack"
+          ]
+        },
+        {
+          "title": "US6687734B1 - System and method for determining if one web site has the same information as another web site",
+          "canonical_url": "https://patents.google.com/patent/US6687734B1/en",
+          "source_type_hint": "artifact",
+          "person_relevance_hint": "Patent record documenting Quack-era inventorship by Steven Woods and Jeromy Carriere.",
+          "notes_hint": "Patent source useful for product/data architecture and later assignee history through AOL and Facebook/Meta.",
+          "date_hint": "2004-02-03",
+          "quality_hint": "strong",
+          "priority": "high",
+          "tags_hint": [
+            "quack",
+            "patent",
+            "data-extraction",
+            "ip"
+          ],
+          "timeline_event": {
+            "event_id": "evt-quack-2004-same-info-patent-grant",
+            "date": {
+              "display": "February 3, 2004",
+              "sort": "2004-02-03"
+            },
+            "description": "Grant of a Quack-related patent around identifying the same information across websites."
+          },
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "person-jeromy-carriere",
+            "org-aol"
+          ]
+        }
+      ]
+    },
+    {
+      "pack_id": "secondary-graph-and-retrospectives",
+      "source_family": "secondary-graph",
+      "research_theme": "key-individuals",
+      "queries": [
+        "Quack.com Wikipedia key individuals investors patents",
+        "Steven Woods Quack.com Wikipedia",
+        "Quack.com Canadian startup ecosystem retrospective"
+      ],
+      "seed_results": [
+        {
+          "title": "Quack.com",
+          "canonical_url": "https://en.wikipedia.org/wiki/Quack.com",
+          "source_type_hint": "profile",
+          "person_relevance_hint": "Wikipedia page is useful as a lead list for citations, themes, and missing source classes, but should not be approved by itself.",
+          "notes_hint": "Use as a citation graph only; cites CNET, StartupNorth, patents, and investor themes worth following up.",
+          "date_hint": "2026",
+          "quality_hint": "weak",
+          "priority": "medium",
+          "tags_hint": [
+            "quack",
+            "wikipedia",
+            "lead-generator"
+          ],
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "person-alex-quilici",
+            "person-jeromy-carriere",
+            "org-uwaterloo",
+            "org-aol"
+          ]
+        },
+        {
+          "title": "Steven Woods",
+          "canonical_url": "https://en.wikipedia.org/wiki/Steven_Woods",
+          "source_type_hint": "profile",
+          "person_relevance_hint": "Steven Woods' Wikipedia page is useful as a lead-generator for Quack-era citations but should not stand alone as authority.",
+          "notes_hint": "Use as a cross-checking source graph for Quack-era leads such as Jefferson Partners, patents, and retrospective articles.",
+          "date_hint": "2026",
+          "quality_hint": "weak",
+          "priority": "medium",
+          "tags_hint": [
+            "steven-woods",
+            "wikipedia",
+            "lead-generator"
+          ],
+          "entity_mentions_hint": [
+            "person-steven-woods",
+            "org-uwaterloo"
+          ]
+        },
+        {
+          "title": "Strategic Direction at Quack.com (B)",
+          "canonical_url": "https://www.thecasecentre.org/products/view?id=14579",
+          "source_type_hint": "artifact",
+          "person_relevance_hint": "Supplementary case-study metadata that helps explain what happened after Quack's 2000 strategic crisis.",
+          "notes_hint": "Important report lead, but likely deferred unless or until fuller access or stronger local notes are captured.",
+          "date_hint": "2002-02",
+          "quality_hint": "moderate",
+          "priority": "medium",
+          "tags_hint": [
+            "quack",
+            "case-study",
+            "strategy",
+            "retrospective"
+          ]
+        }
+      ]
+    }
+  ]
+}
