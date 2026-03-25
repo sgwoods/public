@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "project_id": "canberra-research",
+  "active": true,
+  "display_name": "Canberra / CSIRO / Knights Archive",
+  "description": "Research archive for Steven Woods' Canberra period, combining CSIRO work, Canberra life, and hockey with the Canberra Knights.",
+  "person_context": "Steven Woods spent 1991 to 1992 in Canberra, working at CSIRO and playing hockey for the Canberra Knights.",
+  "project_page_url": "https://sgwoods.github.io/public/canberra-research.html",
+  "repo_url": null,
+  "timeline_span": {
+    "start_year": 1991,
+    "end_year": 1992,
+    "label": "Canberra, CSIRO, and Knights era"
+  },
+  "repo_pushed_at": "2026-03-25T00:15:00Z",
+  "status_generated_at": "2026-03-25T00:15:00Z",
+  "status_label": "Current phase",
+  "status_value": "Scaffolded research project",
+  "focus_label": "Current focus",
+  "focus_value": "CSIRO references, Knights records, and Australian local context",
+  "current_focus": "CSIRO references, Knights records, and Australian local context",
+  "notable_items": [
+    {
+      "label": "Working repository",
+      "url": "https://sgwoods.github.io/public/canberra-research/"
+    }
+  ],
+  "featured_source_ids": []
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "project_id": "sei-pittsburgh-research",
+  "handoff_generated_at": "2026-03-25T00:15:00Z",
+  "items_for_public": [],
+  "open_questions": [
+    {
+      "question": "Build the first SEI Pittsburgh source ledger and collect core SEI publication and staff references."
+    }
+  ]
+}

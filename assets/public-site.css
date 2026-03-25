@@ -450,6 +450,26 @@ code {
     background: linear-gradient(180deg, rgba(255, 176, 82, 0.96), rgba(219, 116, 50, 0.96));
 }
 
+.activitySegment--google,
+.activityLegendSwatch.activitySegment--google {
+    background: linear-gradient(180deg, rgba(246, 83, 20, 0.96), rgba(219, 68, 55, 0.96));
+}
+
+.activitySegment--inovia,
+.activityLegendSwatch.activitySegment--inovia {
+    background: linear-gradient(180deg, rgba(162, 89, 255, 0.96), rgba(110, 56, 190, 0.96));
+}
+
+.activitySegment--canberra,
+.activityLegendSwatch.activitySegment--canberra {
+    background: linear-gradient(180deg, rgba(54, 179, 126, 0.96), rgba(28, 120, 85, 0.96));
+}
+
+.activitySegment--sei,
+.activityLegendSwatch.activitySegment--sei {
+    background: linear-gradient(180deg, rgba(159, 168, 218, 0.96), rgba(92, 107, 192, 0.96));
+}
+
 .activitySegment--kinitos,
 .activityLegendSwatch.activitySegment--kinitos {
     background: linear-gradient(180deg, rgba(98, 214, 202, 0.96), rgba(39, 166, 162, 0.96));
