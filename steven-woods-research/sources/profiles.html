@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles and Recognition | Steven Woods Research</title>
+    <link rel="stylesheet" href="../../assets/public-site.css">
+    <style>
+        :root {
+            --bg: #0f1118;
+            --bg2: #1d2f45;
+            --panel-bg: rgba(16, 20, 29, 0.76);
+            --panel-glow: rgba(104, 205, 255, 0.18);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(196, 225, 255, 0.14);
+            --panel-border: rgba(124, 181, 255, 0.22);
+            --text: #f3f7ff;
+            --muted: #c8d6ea;
+            --muted-strong: #f5fbff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(124, 181, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.14), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        .tagRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(196, 225, 255, 0.14);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <main class="shell shell--narrow">
+        <section class="hero">
+            <div class="heroTop">
+                <div>
+                    <span class="eyebrow">Collected Content</span>
+                    <h1>Profiles and Recognition</h1>
+                </div>
+                <a class="heroHomeLink" href="../index.html">Steven Woods Research</a>
+            </div>
+            <p class="lead">Institutional profiles, awards, transition pieces, and other biographical sources that frame Steven Woods directly.</p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Entries</span>
+                    <span class="metaValue">3</span>
+                    <div class="metaNote">Approved items currently surfaced from the project source manifest.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Source Type</span>
+                    <span class="metaValue">profile</span>
+                    <div class="metaNote">Each entry carries a date, a short summary, and direct source/archive links.</div>
+                </div>
+            </div>
+            <div class="links">
+                <a class="button" href="index.html">All source indexes</a>
+                <a class="button button--ghost" href="../source-manifest.json">Source manifest</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Collected Items</h2>
+            <div class="entryGrid">
+                <article class="entry">
+                    <h3 class="entryTitle">Inovia Welcomes Two World-Class Partners: Krista Skalde Joins as Chief Talent Officer and Steven Woods as Chief Technology Officer</h3>
+                    <span class="entryMeta"><strong>Date</strong> July 23, 2021 <strong>Context</strong> Inovia</span>
+                    <p>First-party profile source documenting the transition from Google Canada to Inovia.</p>
+                    <div class="tagRow"><span class="tag">profile</span> <span class="tag">inovia</span> <span class="tag">transition</span></div>
+                    <p class="footer">Strong transition/profile source.</p>
+                    <div class="entryLinks">
+                        <a class="button" href="https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/inovia-welcomes-steven-woods.html">Open local archive</a>
+                    </div>
+                </article>
+                <article class="entry">
+                    <h3 class="entryTitle">Steven Woods - Alumni and Friends</h3>
+                    <span class="entryMeta"><strong>Date</strong> 2021 <strong>Context</strong> Steven Woods / cross-company</span>
+                    <p>Strong profile source for awards, background, and retrospective company framing.</p>
+                    <div class="tagRow"><span class="tag">profile</span> <span class="tag">award</span> <span class="tag">usask</span></div>
+                    <p class="footer">Important retrospective profile.</p>
+                    <div class="entryLinks">
+                        <a class="button" href="https://alumni.usask.ca/get-involved/achieve/2021/woods.php">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/usask-alumni-profile-2021.html">Open local archive</a>
+                    </div>
+                </article>
+                <article class="entry">
+                    <h3 class="entryTitle">Steven Woods | Mathematics | University of Waterloo</h3>
+                    <span class="entryMeta"><strong>Date</strong> 2010 era <strong>Context</strong> Steven Woods / cross-company</span>
+                    <p>University profile tied to the J.W. Graham Medal and public recognition.</p>
+                    <div class="tagRow"><span class="tag">profile</span> <span class="tag">waterloo</span> <span class="tag">award</span></div>
+                    <p class="footer">Good recognition anchor.</p>
+                    <div class="entryLinks">
+                        <a class="button" href="https://uwaterloo.ca/math/profiles/steven-woods">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-jw-graham-profile.html">Open local archive</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
