@@ -1578,6 +1578,9 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
             <div class="grid">
 {''.join(entity_cards)}
             </div>
+            <div class="links">
+                <a class="button button--ghost" href="quack/research/related-people-index-todo.md">Open related people to-do</a>
+            </div>
         </section>
 
         <section class="panel">

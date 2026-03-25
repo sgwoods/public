@@ -494,7 +494,7 @@
       },
       "urls": {
         "canonical": null,
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "archive_web": null
       },
       "ownership": {
@@ -509,7 +509,7 @@
         "acquisition"
       ],
       "status": "deferred",
-      "notes": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+      "notes": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy. Useful source lead, but kept deferred under the conservative approval policy."
     },
     {
       "source_id": "src-quack-2023-uwaterloo-entrepreneurship-impact",

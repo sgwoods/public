@@ -1,13 +1,13 @@
 # Quack research batch report
 
-Generated: 2026-03-24T23:34:41Z
+Generated: 2026-03-25T00:11:05Z
 
 ## Batch summary
 
 - Leads tracked: 23
 - Approved manifest sources: 6
 - Deferred manifest sources: 14
-- Locally archived copies in Quack layer: 6
+- Locally archived copies in Quack layer: 7
 - Timeline events captured: 9
 
 ## What the batch found
@@ -24,7 +24,7 @@ Generated: 2026-03-24T23:34:41Z
 
 ## Still needs manual follow-up
 
-- Steven Woods - Alumni and Friends | University of Saskatchewan: Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete.
+- Steven Woods - Alumni and Friends | University of Saskatchewan: Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy. Useful source lead, but kept deferred under the conservative approval policy.
 - Risking it all for dot-com gold in California: Cited in secondary biographies as a Steve/Quack profile article; needs direct archive verification. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete.
 - The ‘Net finds its voice: Voice portal feature coverage from the post-exit period, useful as broader Quack market context. Useful source lead, but kept deferred under the conservative approval policy.
 - AOL Gets Vocal, Buys Quack.com: Third-party coverage of the Quack acquisition. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete.

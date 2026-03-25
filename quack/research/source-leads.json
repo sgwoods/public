@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "quack-com",
-  "generated_at": "2026-03-24T23:34:41Z",
+  "generated_at": "2026-03-25T00:11:05Z",
   "leads": [
     {
       "lead_id": "lead-src-quack-2021-usask-alumni-profile",
@@ -34,16 +34,16 @@
       "state": "manifested",
       "duplicate_of": null,
       "fetch": {
-        "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
-        "archive_local": null,
-        "shared_local": null,
+        "status": "local-copy",
+        "last_attempt": "2026-03-25T00:11:05Z",
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "shared_local": "steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "http_status": null,
         "error": "no-canonical-url"
       },
       "analysis": {
         "title": "Steven Woods - Alumni and Friends | University of Saskatchewan",
-        "description": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy.",
+        "description": "Search the USask Search Benefits and travel Alumni Benefits Alumni Travel Class notes Class Notes Share your story In Memoriam Get involved Alumni Achievement Awards Events Golden Grads Homecoming Regional Networks Reunions Senate Silver Grads USask Calgary Hub Volunteer Alumni Leadership Alumni Association Alumni Advisory Board Contact us Alumni Email Contact us Update contact information Transcripts Green and White Alumni News Donate now Dr. Steven Woods is a 2021 recipient of the USask Lifetime Achievement Award. This award recognizes a graduate for an outstanding lifetime of accomplishments and contributions to the social, cultural and economic well-being of society. The University of Saskatchewan is recognizing the incredible achievements of Dr. Steven Woods (BSc\u201987, PhD), one of the recipients of our Alumni Lifetime Achievement Award. By Leslie-Ann Schlosser",
         "date": {
           "display": "2021",
           "sort": "2021-01-01",
@@ -52,9 +52,13 @@
         "source_type": "profile",
         "entities": [
           "person-steven-woods",
-          "org-usask"
+          "org-quack",
+          "org-aol",
+          "org-uwaterloo",
+          "org-usask",
+          "org-sei"
         ],
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "canonical_url": null,
         "source_id": "src-quack-2021-usask-alumni-profile"
       },
@@ -71,7 +75,7 @@
           "acquisition"
         ],
         "person_relevance": "Retrospective alumni profile summarizing Steven Woods' Quack.com success and the 2000 AOL sale.",
-        "notes": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy. Promising lead, but not yet strong enough for approval because local preservation or fetch confirmation is incomplete."
+        "notes": "Useful retrospective framing with a team-photo caption and concise explanation of the Quack exit. Useful source lead, but kept deferred under the conservative approval policy. Useful source lead, but kept deferred under the conservative approval policy."
       },
       "manifested": true
     },
@@ -107,7 +111,7 @@
       "duplicate_of": "src-quack-2021-usask-alumni-profile",
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "shared_local": "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "http_status": null,
@@ -190,7 +194,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
         "shared_local": "quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
         "http_status": null,
@@ -265,7 +269,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -326,7 +330,8 @@
       "existing_local_paths": [
         "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
         "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html"
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/computerworld-net-finds-voice-2001.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [],
@@ -334,7 +339,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": "historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
         "shared_local": "quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
         "http_status": null,
@@ -416,7 +421,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -486,7 +491,8 @@
       "existing_local_paths": [
         "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
         "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
       ],
       "timeline_event": {
         "event_id": "evt-quack-2000-aol-acquisition",
@@ -507,7 +513,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": "historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
         "shared_local": "quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
         "http_status": null,
@@ -595,7 +601,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -666,7 +672,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -732,7 +738,8 @@
       "existing_local_paths": [
         "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
         "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html"
+        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/sfgate-earful-of-internet-2000.html"
       ],
       "timeline_event": {
         "event_id": "evt-quack-2000-voice-portal-market-context",
@@ -749,7 +756,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": "historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
         "shared_local": "quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
         "http_status": null,
@@ -828,7 +835,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -915,7 +922,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -996,7 +1003,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1071,7 +1078,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1148,7 +1155,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1219,7 +1226,7 @@
       "duplicate_of": "src-quack-2002-view",
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1301,7 +1308,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1385,7 +1392,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1468,7 +1475,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1550,7 +1557,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1624,7 +1631,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1702,7 +1709,7 @@
       "duplicate_of": "src-quack-2021-usask-alumni-profile",
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "shared_local": "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "http_status": null,
@@ -1780,7 +1787,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-24T23:34:41Z",
+        "last_attempt": "2026-03-25T00:11:05Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
