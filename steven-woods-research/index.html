@@ -48,6 +48,27 @@
             text-transform: uppercase;
         }
 
+        .quickLinks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .quickLinks a {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(196, 225, 255, 0.14);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
         .workflowCard h3 {
             display: flex;
             align-items: center;
@@ -87,6 +108,12 @@
                     <span class="metaValue">Research pass active</span>
                     <div class="metaNote">The public-record archive now has a reviewed source ledger and local source captures.</div>
                 </div>
+            </div>
+            <div class="quickLinks" aria-label="Collected content shortcuts">
+                <a href="#content-appearances">Podcasts and talks</a>
+                <a href="#content-appearances">Interviews</a>
+                <a href="#content-profiles">Profiles and awards</a>
+                <a href="#content-media">Media mentions</a>
             </div>
             <div class="links">
                 <a class="button" href="../steven-woods-research.html">Summary project page</a>
@@ -128,23 +155,37 @@
         <section class="panel">
             <h2>Collected Content</h2>
             <div class="statusGrid">
-                <article class="card">
+                <article class="card" id="content-appearances">
                     <h3>Talks, interviews, and podcasts</h3>
                     <p>Date-first index of approved public appearances, with summary text and direct links to source and archive copies.</p>
+                    <ul class="guideList">
+                        <li><strong>Riddick Show podcast:</strong> long-form audio interview with preserved metadata and archive copy.</li>
+                        <li><strong>Research Discovery Days:</strong> keynote video and event-page pairing.</li>
+                        <li><strong>Springboard Atlantic:</strong> direct written interview from the Google Canada period.</li>
+                    </ul>
                     <div class="links">
                         <a class="button" href="sources/appearances.html">Open index</a>
                     </div>
                 </article>
-                <article class="card">
+                <article class="card" id="content-profiles">
                     <h3>Profiles and recognition</h3>
                     <p>Browsable list of institutional profiles, awards, and transition pieces with active links to the collected content.</p>
+                    <ul class="guideList">
+                        <li><strong>USask alumni profile:</strong> award framing and broad career retrospective.</li>
+                        <li><strong>Waterloo profile:</strong> academic recognition and medal context.</li>
+                        <li><strong>Inovia announcement:</strong> first-party transition profile.</li>
+                    </ul>
                     <div class="links">
                         <a class="button" href="sources/profiles.html">Open index</a>
                     </div>
                 </article>
-                <article class="card">
+                <article class="card" id="content-media">
                     <h3>Media mentions</h3>
                     <p>Approved third-party coverage organized by date, summary, and direct content links.</p>
+                    <ul class="guideList">
+                        <li><strong>Google Canada features:</strong> Waterloo engineering HQ and talent/ecosystem stories.</li>
+                        <li><strong>Quack-era press:</strong> AOL acquisition coverage and voice-portal market context.</li>
+                    </ul>
                     <div class="links">
                         <a class="button" href="sources/media-mentions.html">Open index</a>
                     </div>
