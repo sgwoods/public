@@ -546,6 +546,13 @@ def render() -> str:
             <h2>Reference Pages</h2>
             <div class="grid">
                 <article class="card">
+                    <h3>Profile</h3>
+                    <p>Compact executive profile with current links to LinkedIn, Inovia, and the open archive projects.</p>
+                    <div class="links">
+                        {render_button("steven-woods-profile.html", "Open page")}
+                    </div>
+                </article>
+                <article class="card">
                     <h3>Academic ancestry</h3>
                     <p>Direct advisor lineage with links to the Mathematics Genealogy Project.</p>
                     <div class="links">
