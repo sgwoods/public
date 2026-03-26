@@ -71,6 +71,44 @@ These names should stay on the planning list even when their exact Quack-era rol
 - Jon Kliegman
 - Joel Vanderkwaak
 
+## Focused updates from the March 25, 2026 pass
+
+### Michael Babiak
+
+- Confirmed public Quack/company-line associations:
+  - [Clay profile summary](https://clay.earth/profile/michael-babiak) describes Michael Babiak as an investor, board member, and VP of Corporate Development at Quack.com under AOL, plus Senior Advisor at Communitech and co-founder/head of business strategy at YotaScale.
+  - [YotaScale on F6S](https://www.f6s.com/company/yotascale) lists Michael Babiak as co-founder and also shows a Communitech senior-advisor connection.
+  - [Communitech employee directory snapshot on SignalHire](https://www.signalhire.com/companies/communitech/employees) lists Michael Babiak as Senior Advisor.
+  - [Crunchbase person profile](https://www.crunchbase.com/person/michael-babiak) lists him with NeoEdge Networks and YotaScale.
+- Current evidence gap:
+  - I did not find a strong public source in this pass that cleanly confirms the IBM career segment or the HDL Capital venture-capital segment.
+  - Those two should stay as explicit follow-up leads until a better public source is found.
+
+### Dan Servos
+
+- Current role:
+  - [SignalHire profile](https://www.signalhire.com/profiles/dan-servos%27s-email/2861418) identifies Dan Servos as `Global Head of Business Development, News+ and Stocks at Apple`, with prior Apple business-development roles starting in June 2013.
+  - [Wiza profile](https://wiza.co/d/apple/1f38/dan-servos) independently repeats the Apple `Global Head of Business Development, News+ and Stocks` title.
+- Quack-era tie:
+  - The same [SignalHire profile](https://www.signalhire.com/profiles/dan-servos%27s-email/2861418) lists `Senior Vice-President, Strategic Alliances & Sales at Quack.com, Inc.` before AOL.
+  - [Wikibin mirror](https://wikibin.org/articles/dan-servos.html) preserves older public biographical text connecting Dan Servos to Quack strategic partnerships and the later AOL acquisition path.
+
+### Jon Kliegman
+
+- Current role:
+  - [SignalHire profile for Jonathan Kliegman](https://www.signalhire.com/profiles/jonathan-kliegman%27s-email/155796630) identifies him as `Member of Technical Staff at OpenAI` beginning in July 2025, after `Staff Software Engineer at Google` from May 2010 to May 2025.
+- Google-era corroboration:
+  - [CMU Parallel Data Lab alumni page](https://www.pdl.cmu.edu/People/alumni.shtml) lists Jon Kliegman at Google, Canada.
+  - Public Chromium / ChromeOS traces such as [Chromium OS dev posts](https://groups.google.com/a/chromium.org/g/chromium-os-dev/c/Bb8LswwK8qI) and [Linux kernel patch references](https://www.spinics.net/lists/kernel/msg1488947.html) corroborate his Google/ChromeOS engineering work.
+- Quack-era tie:
+  - The same [SignalHire profile](https://www.signalhire.com/profiles/jonathan-kliegman%27s-email/155796630) lists `Director of Operations at Quack.com` from September 1999 to September 2000.
+
+## LinkedIn-use note
+
+- I can use public LinkedIn-result snippets and public profile mirrors or aggregators when they are visible on the open web.
+- I cannot rely on private, login-gated, or viewer-dependent LinkedIn content as a stable final source.
+- For final person pages, LinkedIn should usually remain a discovery pointer backed by stronger public sources wherever possible.
+
 ## Intake rule for future names
 
 - Add new names here as soon as they come to mind, even if the role is still uncertain.
