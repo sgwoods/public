@@ -2,7 +2,7 @@
 
 Working source file for a future public page covering interviews, podcasts, talks, presentations, profiles, and third-party media mentions involving Steven Gregory Woods.
 
-Last updated: 2026-03-23
+Last updated: 2026-04-01
 
 ## Inclusion buckets
 
@@ -28,11 +28,15 @@ Last updated: 2026-03-23
 
 | Type | Title | Approx. date | URL | Evidence / notes | Local archive |
 | --- | --- | --- | --- | --- | --- |
+| profile | Steven Woods | reviewed 2026-04-01 | https://www.linkedin.com/in/stevenwoods/ | Major self-approved baseline profile for current role, employer sequence, and public identity. Useful as a baseline, not as the sole independent source. | none |
+| profile | Steve Woods | reviewed 2026-04-01 | https://www.inovia.vc/team/steve-woods/ | Current first-party employer profile summarizing founder history, Google Canada leadership, and current Inovia role. | none |
 | profile | Steven Woods - Alumni and Friends | 2021 | https://alumni.usask.ca/get-involved/achieve/2021/woods.php | USask distinguished alumni feature/profile. | `archive-html/usask-alumni-profile-2021.html` |
 | profile | Steven Woods \| Mathematics \| University of Waterloo | 2010-era profile page | https://uwaterloo.ca/math/profiles/steven-woods | J.W. Graham Medal profile page. | `archive-html/uwaterloo-jw-graham-profile.html` |
 | profile | Inovia welcomes two world-class partners ... Steven Woods as Chief Technology Officer | 2021-07-23 | https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/ | Strong first-party profile/announcement. | `archive-html/inovia-welcomes-steven-woods.html` |
 | profile | Steven Woods Keynote presentation | 2012-10-03 | https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346 | SlideShare deck; createdAt found in page payload. Event context still needs tightening. | `archive-html/slideshare-steven-woods-keynote.html` |
 | profile | about.me/sgw | current self-profile | https://about.me/sgw | Useful bio hub, but likely belongs in a supporting links section rather than the main public page. | `archive-html/about-me-sgw.html` |
+| profile | bio.link / sgwoods | reviewed 2026-04-01 | https://bio.link/sgwoods | Live link hub for current public profile destinations. Direct archival capture remains difficult, but it is useful as a baseline link map. | none |
+| profile | Steven Woods | reviewed 2026-04-01 | https://en.wikipedia.org/wiki/Steven_Woods | Public synthesis page useful for comparison, gap-finding, and future Wikipedia-style draft work. | none |
 
 ## Google-era media mentions
 

@@ -12,21 +12,25 @@
     "end_year": 2026,
     "label": "Public record from University of Saskatchewan through current archive work"
   },
-  "repo_pushed_at": "2026-03-24T23:50:00Z",
-  "status_generated_at": "2026-03-24T23:50:00Z",
+  "repo_pushed_at": "2026-04-01T16:00:00Z",
+  "status_generated_at": "2026-04-01T16:00:00Z",
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
-  "focus_value": "Public appearances, profile sources, and cross-company media organization",
-  "current_focus": "Public appearances, profile sources, and cross-company media organization",
+  "focus_value": "Baseline identity, timeline, current profile sources, and one-page CV",
+  "current_focus": "Baseline identity, timeline, current profile sources, and one-page CV",
   "notable_items": [
+    {
+      "label": "One-page CV",
+      "url": "https://sgwoods.github.io/public/steven-woods-cv.pdf"
+    },
+    {
+      "label": "Baseline identity record",
+      "url": "https://sgwoods.github.io/public/steven-woods-research/research/baseline-identity.json"
+    },
     {
       "label": "Media sources review",
       "url": "https://sgwoods.github.io/public/steven-woods-research/research/media-sources-review.md"
-    },
-    {
-      "label": "Riddick Show episode metadata",
-      "url": "https://sgwoods.github.io/public/steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml"
     },
     {
       "label": "Waterloo Entrepreneurship and Impact appearance",
@@ -38,10 +42,11 @@
     }
   ],
   "featured_source_ids": [
+    "src-steven-current-inovia-team-profile",
+    "src-steven-current-linkedin-profile",
     "src-steven-2023-riddick-show",
-    "src-steven-2023-research-discovery-days-keynote",
     "src-steven-2021-usask-alumni-profile",
-    "src-steven-2013-springboard-google-canada-interview",
-    "src-steven-2003-usask-sorenson-lecture"
+    "src-steven-2023-research-discovery-days-keynote",
+    "src-steven-2013-springboard-google-canada-interview"
   ]
 }

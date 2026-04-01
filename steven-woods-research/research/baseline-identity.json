@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "subject_id": "steven-gregory-woods",
+  "preferred_name": "Steven Gregory Woods",
+  "display_name": "Steven Woods",
+  "reviewed_at": "2026-04-01",
+  "summary": "Canadian technology executive, company builder, and investor with a long career spanning AI research, startup formation, product invention, large-scale engineering leadership at Google Canada, and venture support as Partner and CTO at Inovia Capital.",
+  "current_role": {
+    "title": "Partner and CTO",
+    "organization": "Inovia Capital",
+    "start": "2021-08",
+    "location": "Waterloo, Ontario, Canada"
+  },
+  "baseline_sources": [
+    {
+      "source_id": "src-steven-current-linkedin-profile",
+      "role": "self-approved baseline profile"
+    },
+    {
+      "source_id": "src-steven-current-inovia-team-profile",
+      "role": "current first-party employer profile"
+    },
+    {
+      "source_id": "src-steven-current-about-me-profile",
+      "role": "self-authored supplemental profile"
+    },
+    {
+      "source_id": "src-steven-2021-usask-alumni-profile",
+      "role": "retrospective institutional profile"
+    },
+    {
+      "source_id": "src-steven-2010-uwaterloo-jw-graham-profile",
+      "role": "institutional recognition profile"
+    },
+    {
+      "source_id": "src-steven-current-wikipedia-page",
+      "role": "secondary synthesis page"
+    }
+  ],
+  "public_links": {
+    "linkedin": "https://www.linkedin.com/in/stevenwoods/",
+    "inovia": "https://www.inovia.vc/team/steve-woods/",
+    "about_me": "https://about.me/sgw",
+    "bio_link": "https://bio.link/sgwoods",
+    "wikipedia": "https://en.wikipedia.org/wiki/Steven_Woods",
+    "researchgate": "https://www.researchgate.net/profile/Steven-Woods",
+    "google_scholar": "https://scholar.google.com/citations?user=63-YZ9QAAAAJ",
+    "instagram": "https://instagram.com/stevengwoods/",
+    "angel_list": "https://angel.co/p/steven-woods",
+    "math_genealogy": "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=67095"
+  },
+  "identity_signals": [
+    "Partner and CTO at Inovia Capital",
+    "Former Google Canada engineering leader",
+    "Co-founder of Quack.com, Kinitos, and NeoEdge Networks",
+    "PhD in Mathematics (Computer Science) from the University of Waterloo"
+  ],
+  "education": [
+    {
+      "credential": "PhD, Mathematics (Computer Science)",
+      "institution": "University of Waterloo",
+      "year": "1996",
+      "precision": "year"
+    },
+    {
+      "credential": "M.Math, Mathematics (Computer Science)",
+      "institution": "University of Waterloo",
+      "year": "1993-1996",
+      "precision": "approximate"
+    },
+    {
+      "credential": "B.Sc., Computer Science",
+      "institution": "University of Saskatchewan",
+      "year": "1987",
+      "precision": "year"
+    },
+    {
+      "credential": "Postdoctoral studies",
+      "institution": "University of Hawai'i at Manoa",
+      "year": "1996-1997",
+      "precision": "year"
+    },
+    {
+      "credential": "French as a Second Language",
+      "institution": "Universite Laval",
+      "year": "undated",
+      "precision": "approximate"
+    }
+  ],
+  "career_phases": [
+    {
+      "label": "Canberra / CSIRO / Knights",
+      "start": "1991",
+      "end": "1992",
+      "precision": "year",
+      "note": "CSIRO work and Canberra Knights hockey period in Australia."
+    },
+    {
+      "label": "SEI Pittsburgh",
+      "start": "1998",
+      "end": "1999",
+      "precision": "year",
+      "note": "Software Engineering Institute period focused on software architecture and reengineering work."
+    },
+    {
+      "label": "Quack.com",
+      "start": "1999",
+      "end": "2000",
+      "precision": "approximate",
+      "note": "Co-founder period culminating in AOL acquisition coverage in 2000."
+    },
+    {
+      "label": "Kinitos / NeoEdge",
+      "start": "2000",
+      "end": "2008",
+      "precision": "approximate",
+      "note": "Company-building and product work across software infrastructure, services, gaming, and advertising technology."
+    },
+    {
+      "label": "Google Canada",
+      "start": "2008",
+      "end": "2021",
+      "precision": "year",
+      "note": "Engineering and team-building phase; public profiles say the Canadian technical team grew from about 20 to more than 1,300."
+    },
+    {
+      "label": "Inovia Capital",
+      "start": "2021-08",
+      "end": "present",
+      "precision": "month",
+      "note": "Partner and CTO role focused on founder support, investment evaluation, and company-building."
+    }
+  ],
+  "selected_recognition": [
+    {
+      "label": "USask Lifetime Achievement Award",
+      "year": "2021"
+    },
+    {
+      "label": "J.W. Graham Medal, University of Waterloo",
+      "year": "2010"
+    },
+    {
+      "label": "IEEE Working Conference on Reverse Engineering Outstanding Contribution Award",
+      "year": "1996"
+    }
+  ],
+  "selected_publications": [
+    "Constraint-Based Design Recovery for Software Reengineering: Theory and Experiments (1997)",
+    "The program understanding problem: Analysis and a heuristic approach (1996)",
+    "Program plan matching: experiments with a constraint-based approach (2000)"
+  ],
+  "selected_patents": [
+    "System and method for voice access to internet-based information (US6510417B1, 2003)",
+    "System and method for funneling user responses in an internet voice portal system to determine a desired item or service (US8131555B1, 2012)",
+    "Identification of areas of interest on a web page (US8379053B1, 2013)"
+  ],
+  "notes": [
+    "LinkedIn is treated as a baseline identity and chronology source, not as the sole authority.",
+    "Several pre-2000 and 2000-2008 transitions remain approximate and should continue to be tightened through the era-specific archives."
+  ]
+}

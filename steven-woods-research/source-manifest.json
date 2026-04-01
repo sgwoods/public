@@ -278,6 +278,131 @@
       "notes": "Strong transition/profile source."
     },
     {
+      "source_id": "src-steven-current-inovia-team-profile",
+      "title": "Steve Woods",
+      "source_type": "profile",
+      "company_context": "Inovia",
+      "person_relevance": "Current first-party employer profile summarizing Steven Woods' founder, Google Canada, and venture leadership arc.",
+      "date": {
+        "display": "Reviewed April 1, 2026",
+        "sort": "2026-04-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.inovia.vc/team/steve-woods/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "inovia", "baseline", "current-role"],
+      "status": "approved",
+      "notes": "Use as the current first-party role and summary source."
+    },
+    {
+      "source_id": "src-steven-current-linkedin-profile",
+      "title": "Steven Woods",
+      "source_type": "profile",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Primary self-presented baseline profile used to anchor current role, employer sequence, and public identity.",
+      "date": {
+        "display": "Reviewed April 1, 2026",
+        "sort": "2026-04-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.linkedin.com/in/stevenwoods/",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "linkedin", "baseline", "current-role"],
+      "status": "approved",
+      "notes": "Treat as a major baseline identity and chronology source, but not as a substitute for independent sourcing."
+    },
+    {
+      "source_id": "src-steven-current-about-me-profile",
+      "title": "Steven Woods on about.me",
+      "source_type": "profile",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Self-authored supplemental profile covering biography, education, location, and outward public links.",
+      "date": {
+        "display": "Reviewed April 1, 2026",
+        "sort": "2026-04-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://about.me/sgw",
+        "archive_local": "historic/artifacts/archive-html/about-me-sgw.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "about-me", "baseline", "self-authored"],
+      "status": "approved",
+      "notes": "Useful baseline source for education, interests, geography, and public link-network discovery."
+    },
+    {
+      "source_id": "src-steven-current-bio-link",
+      "title": "bio.link / sgwoods",
+      "source_type": "profile",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Current public link hub connecting Steven Woods' active profile and research destinations.",
+      "date": {
+        "display": "Reviewed April 1, 2026",
+        "sort": "2026-04-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://bio.link/sgwoods",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "bio-link", "baseline", "link-hub"],
+      "status": "approved",
+      "notes": "Useful as a live public link map even when direct archival capture is difficult."
+    },
+    {
+      "source_id": "src-steven-current-wikipedia-page",
+      "title": "Steven Woods",
+      "source_type": "profile",
+      "company_context": "Steven Woods / cross-company",
+      "person_relevance": "Public secondary synthesis page useful for comparing timeline coverage and identifying gaps in the archive.",
+      "date": {
+        "display": "Reviewed April 1, 2026",
+        "sort": "2026-04-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://en.wikipedia.org/wiki/Steven_Woods",
+        "archive_local": null,
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "steven-woods-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "wikipedia", "secondary", "baseline"],
+      "status": "approved",
+      "notes": "Treat as a public synthesis page rather than a primary authority."
+    },
+    {
       "source_id": "src-steven-2012-slideshare-keynote-deck",
       "title": "Steven Woods Keynote presentation",
       "source_type": "appearance",

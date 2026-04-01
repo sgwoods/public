@@ -1,0 +1,31 @@
+Steven Gregory Woods
+Partner and CTO, Inovia Capital  |  Waterloo, Ontario  |  linkedin.com/in/stevenwoods
+Canadian technology executive, company builder, and investor with a long career spanning AI
+research, startup formation, product invention, large-scale engineering leadership at Google
+Canada, and venture support as Partner and CTO at Inovia Capital.
+
+EXPERIENCE
+- 2021-present  Inovia Capital: Partner and CTO role focused on founder support, investment
+  evaluation, and company-building.
+- 2008-2021     Google Canada: Engineering and team-building phase; public profiles say the
+  Canadian technical team grew from about 20 to more than 1,300.
+- 1999-2008     Co-founder and builder across Quack.com, Kinitos, and NeoEdge Networks.
+- 1998-1999     Software Engineering Institute, Pittsburgh.
+
+EDUCATION
+- PhD, Mathematics (Computer Science), University of Waterloo (1996)
+- M.Math, Mathematics (Computer Science), University of Waterloo (1993-1996)
+- B.Sc., Computer Science, University of Saskatchewan (1987)
+- Postdoctoral studies, University of Hawai'i at Manoa (1996-1997)
+
+RECOGNITION
+- USask Lifetime Achievement Award (2021)
+- J.W. Graham Medal, University of Waterloo (2010)
+- IEEE Working Conference on Reverse Engineering Outstanding Contribution Award (1996)
+
+SELECTED OUTPUTS
+- Constraint-Based Design Recovery for Software Reengineering: Theory and Experiments (1997)
+- The program understanding problem: Analysis and a heuristic approach (1996)
+- Selected patents in voice systems, web analysis, structured data, and gaming/adtech.
+
+Profiles: Inovia | LinkedIn | Wikipedia | Research archive at sgwoods.github.io/public/
