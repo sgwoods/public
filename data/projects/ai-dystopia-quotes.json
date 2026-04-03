@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "project_id": "ai-dystopia-quotes",
+  "active": true,
+  "display_name": "AI Dystopia Quotes",
+  "description": "Public project page for a curated corpus of recognizable dystopian AI quotations and source metadata.",
+  "project_page_path": "ai-dystopia-quotes.html",
+  "repo_url": "https://github.com/sgwoods/sci-fi-ai-dystopian-project",
+  "dashboard_url": null,
+  "experience_url": null,
+  "repo_pushed_at": "2026-04-03T14:51:41-04:00",
+  "status_generated_at": "2026-04-03T18:55:21Z",
+  "status_label": "Current stage",
+  "status_value": "Active curation + publishing",
+  "focus_label": "Current focus",
+  "focus_value": "Growing the approved canon and widening discovery"
+}

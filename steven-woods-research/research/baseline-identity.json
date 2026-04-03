@@ -57,13 +57,13 @@
   ],
   "education": [
     {
-      "credential": "PhD, Mathematics (Computer Science)",
+      "credential": "PhD, Mathematics (Computer Science, AI)",
       "institution": "University of Waterloo",
       "year": "1996",
       "precision": "year"
     },
     {
-      "credential": "M.Math, Mathematics (Computer Science)",
+      "credential": "M.Math, Mathematics (Computer Science, AI)",
       "institution": "University of Waterloo",
       "year": "1993-1996",
       "precision": "approximate"
@@ -154,6 +154,18 @@
     "System and method for voice access to internet-based information (US6510417B1, 2003)",
     "System and method for funneling user responses in an internet voice portal system to determine a desired item or service (US8131555B1, 2012)",
     "Identification of areas of interest on a web page (US8379053B1, 2013)"
+  ],
+  "selected_investments": [
+    "Cohere (Series A)",
+    "Spellbook (Seed+ and Series A)",
+    "Signal.ai (Seed)",
+    "Reliant.ai (Seed+)"
+  ],
+  "current_focus_areas": [
+    "Investing partner, technical diligence, and AI strategy",
+    "Founder support and company building",
+    "Board, advisory, and portfolio guidance",
+    "Selected investments led: Cohere, Spellbook, Signal.ai, Reliant.ai"
   ],
   "notes": [
     "LinkedIn is treated as a baseline identity and chronology source, not as the sole authority.",

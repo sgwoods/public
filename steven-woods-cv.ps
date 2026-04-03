@@ -1,57 +1,117 @@
 %!PS-Adobe-3.0
 << /PageSize [612 792] >> setpagedevice
-/Helvetica findfont 10 scalefont setfont
-/Helvetica-Bold findfont 20 scalefont setfont
-36 756 moveto (Steven Gregory Woods) show
-/Helvetica findfont 11 scalefont setfont
-36 732 moveto (Partner and CTO, Inovia Capital  |  Waterloo, Ontario  |  linkedin.com/in/stevenwoods) show
-/Helvetica findfont 10 scalefont setfont
-36 717 moveto (Canadian technology executive, company builder, and investor with a long career spanning AI) show
-/Helvetica findfont 10 scalefont setfont
-36 705 moveto (research, startup formation, product invention, large-scale engineering leadership at Google) show
-/Helvetica findfont 10 scalefont setfont
-36 693 moveto (Canada, and venture support as Partner and CTO at Inovia Capital.) show
-/Helvetica-Bold findfont 11 scalefont setfont
-36 673 moveto (EXPERIENCE) show
-/Helvetica findfont 10 scalefont setfont
-44 657 moveto (·  2021-present  Inovia Capital: Partner and CTO role focused on founder support, investment) show
-/Helvetica findfont 10 scalefont setfont
-54 645 moveto (evaluation, and company-building.) show
-/Helvetica findfont 10 scalefont setfont
-44 633 moveto (·  2008-2021     Google Canada: Engineering and team-building phase; public profiles say the) show
-/Helvetica findfont 10 scalefont setfont
-54 621 moveto (Canadian technical team grew from about 20 to more than 1,300.) show
-/Helvetica findfont 10 scalefont setfont
-44 609 moveto (·  1999-2008     Co-founder and builder across Quack.com, Kinitos, and NeoEdge Networks.) show
-/Helvetica findfont 10 scalefont setfont
-44 597 moveto (·  1998-1999     Software Engineering Institute, Pittsburgh.) show
-/Helvetica-Bold findfont 11 scalefont setfont
-36 577 moveto (EDUCATION) show
-/Helvetica findfont 10 scalefont setfont
-44 561 moveto (·  PhD, Mathematics \(Computer Science\), University of Waterloo \(1996\)) show
-/Helvetica findfont 10 scalefont setfont
-44 549 moveto (·  M.Math, Mathematics \(Computer Science\), University of Waterloo \(1993-1996\)) show
-/Helvetica findfont 10 scalefont setfont
-44 537 moveto (·  B.Sc., Computer Science, University of Saskatchewan \(1987\)) show
-/Helvetica findfont 10 scalefont setfont
-44 525 moveto (·  Postdoctoral studies, University of Hawai'i at Manoa \(1996-1997\)) show
-/Helvetica-Bold findfont 11 scalefont setfont
-36 505 moveto (RECOGNITION) show
-/Helvetica findfont 10 scalefont setfont
-44 489 moveto (·  USask Lifetime Achievement Award \(2021\)) show
-/Helvetica findfont 10 scalefont setfont
-44 477 moveto (·  J.W. Graham Medal, University of Waterloo \(2010\)) show
-/Helvetica findfont 10 scalefont setfont
-44 465 moveto (·  IEEE Working Conference on Reverse Engineering Outstanding Contribution Award \(1996\)) show
-/Helvetica-Bold findfont 11 scalefont setfont
-36 445 moveto (SELECTED OUTPUTS) show
-/Helvetica findfont 10 scalefont setfont
-44 429 moveto (·  Constraint-Based Design Recovery for Software Reengineering: Theory and Experiments \(1997\)) show
-/Helvetica findfont 10 scalefont setfont
-44 417 moveto (·  The program understanding problem: Analysis and a heuristic approach \(1996\)) show
-/Helvetica findfont 10 scalefont setfont
-44 405 moveto (·  Selected patents in voice systems, web analysis, structured data, and gaming/adtech.) show
-/Helvetica-Oblique findfont 9 scalefont setfont
-36 385 moveto (Profiles: Inovia | LinkedIn | Wikipedia | Research archive at sgwoods.github.io/public/) show
+
+/showline {
+  /text exch def /size exch def /fontname exch def /rgbB exch def /rgbG exch def /rgbR exch def /y exch def /x exch def
+  gsave
+  rgbR rgbG rgbB setrgbcolor
+  fontname findfont size scalefont setfont
+  x y moveto text show
+  grestore
+} def
+
+/showlink {
+  /url exch def /text exch def /size exch def /fontname exch def /rgbB exch def /rgbG exch def /rgbR exch def /y exch def /x exch def
+  gsave
+  rgbR rgbG rgbB setrgbcolor
+  fontname findfont size scalefont setfont
+  x y moveto text show
+  text stringwidth pop /w exch def
+  [ /Rect [ x y 2 sub x w add y size add ]
+    /Border [0 0 0]
+    /Action << /Subtype /URI /URI url >>
+    /Subtype /Link
+    /ANN
+  pdfmark
+  grestore
+} def
+
+/rule {
+  /y exch def /x2 exch def /x1 exch def
+  gsave
+  0.820 0.860 0.900 setrgbcolor
+  0.8 setlinewidth
+  newpath x1 y moveto x2 y lineto stroke
+  grestore
+} def
+
+[ /Title (Steven Gregory Woods Executive CV) /Author (Steven Gregory Woods) /Subject (Executive one-page CV) /Creator (render_steven_cv.py) /DOCINFO pdfmark
+
+gsave
+0.070 0.180 0.310 setrgbcolor
+0 696 612 96 rectfill
+grestore
+gsave
+0.160 0.330 0.560 setrgbcolor
+0 690 612 6 rectfill
+grestore
+48 746 1.000 1.000 1.000 /Helvetica-Bold 24 (Steven Gregory Woods) showline
+48 721 0.900 0.950 0.990 /Helvetica-Bold 11 (Investing Partner & CTO, Inovia Capital) showline
+48 704 0.840 0.900 0.950 /Helvetica 10 (Waterloo, Ontario, Canada) showline
+402 721 0.840 0.900 0.950 /Helvetica-Bold 9 (Executive CV) showline
+402 704 0.840 0.900 0.950 /Helvetica 8 (Updated April 2026) showline
+48 664 0.120 0.150 0.190 /Helvetica 10.5 (Canadian technology executive, founder, inventor, and investor. Investing Partner & CTO at Inovia) showline
+48 650 0.120 0.150 0.190 /Helvetica 10.5 (Capital, former leader of Google Canada's engineering organization, and co-founder of Quack.com,) showline
+48 636 0.120 0.150 0.190 /Helvetica 10.5 (Kinitos, and NeoEdge Networks. PhD and M.Math in Mathematics \(Computer Science, AI\), University of) showline
+48 622 0.120 0.150 0.190 /Helvetica 10.5 (Waterloo.) showline
+48 590 0.160 0.330 0.560 /Helvetica-Bold 9 (LEADERSHIP EXPERIENCE) showline
+48 564 0.120 0.150 0.190 /Helvetica-Bold 10 (2021-present) showline
+136 564 0.120 0.150 0.190 /Helvetica-Bold 10 (Investing Partner & CTO, Inovia Capital) showline
+136 552 0.120 0.150 0.190 /Helvetica 9.3 (Leads investing, technical diligence, AI strategy, and portfolio company) showline
+136 541 0.120 0.150 0.190 /Helvetica 9.3 (support.) showline
+48 525 0.120 0.150 0.190 /Helvetica-Bold 10 (2008-2021) showline
+136 525 0.120 0.150 0.190 /Helvetica-Bold 10 (Google Canada engineering leadership) showline
+136 513 0.120 0.150 0.190 /Helvetica 9.3 (Led Google Canada's engineering organization from about 20 to more than) showline
+136 502 0.120 0.150 0.190 /Helvetica 9.3 (1,300 technical staff.) showline
+48 486 0.120 0.150 0.190 /Helvetica-Bold 10 (2000-2008) showline
+136 486 0.120 0.150 0.190 /Helvetica-Bold 10 (Co-founder and executive, Kinitos / NeoEdge Networks) showline
+136 474 0.120 0.150 0.190 /Helvetica 9.3 (Built and deployed products across enterprise software, internet services,) showline
+136 463 0.120 0.150 0.190 /Helvetica 9.3 (gaming, and advertising technology.) showline
+48 447 0.120 0.150 0.190 /Helvetica-Bold 10 (1999-2000) showline
+136 447 0.120 0.150 0.190 /Helvetica-Bold 10 (Co-founder, Quack.com) showline
+136 435 0.120 0.150 0.190 /Helvetica 9.3 (Built an early voice systems startup acquired by AOL in 2000.) showline
+48 419 0.120 0.150 0.190 /Helvetica-Bold 10 (1998-1999) showline
+136 419 0.120 0.150 0.190 /Helvetica-Bold 10 (Software Engineering Institute, Carnegie Mellon University) showline
+136 407 0.120 0.150 0.190 /Helvetica 9.3 (Advanced software architecture, design recovery, and program understanding.) showline
+48 391 0.120 0.150 0.190 /Helvetica-Bold 10 (1991-1992) showline
+136 391 0.120 0.150 0.190 /Helvetica-Bold 10 (CSIRO, Canberra, Australia) showline
+136 379 0.120 0.150 0.190 /Helvetica 9.3 (Research and development for CSIRO Australia; Canberra Knights) showline
+136 368 0.120 0.150 0.190 /Helvetica 9.3 (semi-professional player.) showline
+48 340 0.160 0.330 0.560 /Helvetica-Bold 8.5 (EDUCATION) showline
+48 326 0.120 0.150 0.190 /Helvetica 8.7 (-  PhD, Mathematics \(Computer Science, AI\),) showline
+58 316 0.120 0.150 0.190 /Helvetica 8.7 (University of Waterloo) showline
+48 305 0.120 0.150 0.190 /Helvetica 8.7 (-  M.Math, Mathematics \(Computer Science,) showline
+58 295 0.120 0.150 0.190 /Helvetica 8.7 (AI\), University of Waterloo) showline
+48 284 0.120 0.150 0.190 /Helvetica 8.7 (-  B.Sc., Computer Science, University of) showline
+58 274 0.120 0.150 0.190 /Helvetica 8.7 (Saskatchewan) showline
+48 263 0.120 0.150 0.190 /Helvetica 8.7 (-  Postdoctoral studies, University of) showline
+58 253 0.120 0.150 0.190 /Helvetica 8.7 (Hawai'i at Manoa) showline
+48 230 0.160 0.330 0.560 /Helvetica-Bold 8.5 (RECOGNITION) showline
+48 216 0.120 0.150 0.190 /Helvetica 8.7 (-  USask Lifetime Achievement Award \(2021\)) showline
+48 206 0.120 0.150 0.190 /Helvetica 8.7 (-  J.W. Graham Medal, University of Waterloo) showline
+58 196 0.120 0.150 0.190 /Helvetica 8.7 (\(2010\)) showline
+48 186 0.120 0.150 0.190 /Helvetica 8.7 (-  IEEE Working Conference on Reverse) showline
+58 176 0.120 0.150 0.190 /Helvetica 8.7 (Engineering Outstanding Contribution Award) showline
+58 166 0.120 0.150 0.190 /Helvetica 8.7 (\(1996\)) showline
+320 340 0.160 0.330 0.560 /Helvetica-Bold 8.5 (BOARD / ADVISORY / INVESTMENT FOCUS) showline
+320 326 0.120 0.150 0.190 /Helvetica 8.7 (-  Investing partner, technical diligence,) showline
+330 316 0.120 0.150 0.190 /Helvetica 8.7 (and AI strategy) showline
+320 306 0.120 0.150 0.190 /Helvetica 8.7 (-  Founder support and company building) showline
+320 296 0.120 0.150 0.190 /Helvetica 8.7 (-  Board, advisory, and portfolio guidance) showline
+320 286 0.120 0.150 0.190 /Helvetica 8.7 (-  Selected investments led: Cohere,) showline
+330 276 0.120 0.150 0.190 /Helvetica 8.7 (Spellbook, Signal.ai, Reliant.ai) showline
+320 254 0.160 0.330 0.560 /Helvetica-Bold 8.5 (PUBLICATIONS & PATENTS) showline
+320 240 0.120 0.150 0.190 /Helvetica 8.7 (-  Constraint-Based Design Recovery for) showline
+330 230 0.120 0.150 0.190 /Helvetica 8.7 (Software Reengineering: Theory and) showline
+330 220 0.120 0.150 0.190 /Helvetica 8.7 (Experiments \(book, 1997\)) showline
+320 209 0.120 0.150 0.190 /Helvetica 8.7 (-  Selected inventor on patents spanning) showline
+330 199 0.120 0.150 0.190 /Helvetica 8.7 (voice systems, web analysis, structured) showline
+330 189 0.120 0.150 0.190 /Helvetica 8.7 (data, and gaming / adtech systems) showline
+320 166 0.160 0.330 0.560 /Helvetica-Bold 8.5 (PUBLIC LINKS) showline
+320 152 0.120 0.150 0.190 /Helvetica 7.9 (LinkedIn: linkedin.com/in/stevenwoods) (https://www.linkedin.com/in/stevenwoods/) showlink
+320 142 0.120 0.150 0.190 /Helvetica 7.9 (Inovia: inovia.vc/team/steve-woods) (https://www.inovia.vc/team/steve-woods/) showlink
+320 132 0.120 0.150 0.190 /Helvetica 7.9 (Profile: sgwoods.github.io/public/steven-woods-profile.html) (https://sgwoods.github.io/public/steven-woods-profile.html) showlink
+320 122 0.120 0.150 0.190 /Helvetica 7.9 (Public projects: sgwoods.github.io/public) (https://sgwoods.github.io/public/) showlink
+320 112 0.120 0.150 0.190 /Helvetica 7.9 (Patents & publications: sgwoods.github.io/public/patents-publications.html) (https://sgwoods.github.io/public/patents-publications.html) showlink
 showpage
 %%EOF

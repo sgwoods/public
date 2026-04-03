@@ -108,11 +108,6 @@
             margin-top: 24px;
         }
 
-        .linkBands--footer {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            margin-top: 14px;
-        }
-
         .linkBand {
             padding: 16px 18px;
             border-radius: 20px;
@@ -145,6 +140,71 @@
             text-decoration: underline;
         }
 
+        .buttonRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .buttonLike {
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .button--micro {
+            padding: 11px 14px;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .inlineViewer {
+            width: min(1040px, calc(100vw - 32px));
+            border: 1px solid rgba(177, 222, 255, 0.18);
+            border-radius: 24px;
+            padding: 0;
+            background:
+                linear-gradient(160deg, rgba(12, 34, 54, 0.96), rgba(7, 19, 31, 0.92)),
+                radial-gradient(circle at 20% 0%, rgba(103, 230, 168, 0.12), transparent 32%);
+            color: var(--text);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .inlineViewer::backdrop {
+            background: rgba(3, 10, 18, 0.68);
+        }
+
+        .inlineViewerHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(177, 222, 255, 0.12);
+        }
+
+        .inlineViewerTitle {
+            margin: 0;
+            font-size: 16px;
+            color: var(--muted-strong);
+        }
+
+        .inlineViewerActions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .inlineViewerFrame {
+            display: block;
+            width: 100%;
+            height: min(78vh, 920px);
+            border: 0;
+            background: white;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
+
         @media (max-width: 960px) {
             .shell {
                 min-height: auto;
@@ -163,9 +223,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .linkBands--footer {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -181,9 +238,10 @@
                 <div class="titleBlock">
                     <h1>Steven Gregory Woods</h1>
                     <p class="summary">
-                        Technology executive, company builder, and investor. A PhD-trained AI researcher who
-                        co-founded Quack.com, Kinitos, and NeoEdge, helped build Google Canada engineering at scale,
-                        and is now Partner and CTO at Inovia Capital.
+                        Canadian technology executive, entrepreneur, and investor. Woods co-founded Quack.com,
+                        Kinitos, and NeoEdge Networks, later led Google Canada's engineering organization, and is now
+                        Investing Partner &amp; CTO at Inovia Capital. He holds M.Math and PhD degrees in Mathematics
+                        (Computer Science, AI) from the University of Waterloo.
                     </p>
                     <div class="signalRow" aria-label="Profile signals">
                         <span class="signal">Partner &amp; CTO, Inovia</span>
@@ -194,7 +252,10 @@
                     <div class="links">
                         <a class="button" href="https://www.linkedin.com/in/stevenwoods/">LinkedIn</a>
                         <a class="button" href="https://www.inovia.vc/team/steve-woods/">Inovia</a>
-                        <a class="button button--ghost" href="steven-woods-cv.pdf">One-page CV</a>
+                        <button class="button button--ghost buttonLike inlineViewerTrigger" type="button" data-inline-src="steven-woods-cv.pdf" data-inline-title="Steven Woods executive CV">
+                            One-page CV
+                        </button>
+                        <a class="button button--ghost button--micro" href="steven-woods-cv.pdf" target="_blank" rel="noopener noreferrer">Open CV separately</a>
                         <a class="button button--ghost" href="index.html">Public projects</a>
                     </div>
                 </div>
@@ -213,8 +274,13 @@
                     <div class="linkList">
                         <a href="https://www.linkedin.com/in/stevenwoods/">LinkedIn profile</a>
                         <a href="https://www.inovia.vc/team/steve-woods/">Inovia team page</a>
+                        <span class="buttonRow">
+                            <button class="button button--ghost buttonLike inlineViewerTrigger" type="button" data-inline-src="steven-woods-cv.pdf" data-inline-title="Steven Woods executive CV">
+                                View one-page CV
+                            </button>
+                            <a class="button button--ghost button--micro" href="steven-woods-cv.pdf" target="_blank" rel="noopener noreferrer">Open separately</a>
+                        </span>
                         <a href="https://bio.link/sgwoods">bio.link / sgwoods</a>
-                        <a href="steven-woods-cv.pdf">One-page CV (PDF)</a>
                     </div>
                 </article>
 
@@ -225,7 +291,6 @@
                         <a href="google-canada-research.html">Google Canada research</a>
                         <a href="inovia-research.html">Inovia research</a>
                         <a href="quack-com.html">Quack archive project</a>
-                        <a href="kinitos-neoedge.html">Kinitos / NeoEdge archive project</a>
                     </div>
                 </article>
 
@@ -236,48 +301,50 @@
                         <a href="patents-publications.html">Patents and publications</a>
                         <a href="https://uwaterloo.ca/math/profiles/steven-woods">University of Waterloo profile</a>
                         <a href="https://alumni.usask.ca/get-involved/achieve/2021/woods.php">University of Saskatchewan alumni profile</a>
-                        <a href="https://en.wikipedia.org/wiki/Steven_Woods">Wikipedia</a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="linkBands linkBands--footer">
-                <article class="linkBand">
-                    <h2>From bio.link</h2>
-                    <div class="linkList">
-                        <a href="https://stevenwoods.com/">StevenWoods.com</a>
-                        <a href="https://about.me/sgw">About.me / sgw</a>
-                        <a href="https://angel.co/p/steven-woods">AngelList</a>
-                    </div>
-                </article>
-
-                <article class="linkBand">
-                    <h2>Research</h2>
-                    <div class="linkList">
-                        <a href="https://www.researchgate.net/profile/Steven-Woods">ResearchGate</a>
-                        <a href="https://scholar.google.com/citations?user=63-YZ9QAAAAJ">Google Scholar</a>
-                        <a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=67095">Mathematics Genealogy</a>
-                    </div>
-                </article>
-
-                <article class="linkBand">
-                    <h2>Personal</h2>
-                    <div class="linkList">
-                        <a href="https://instagram.com/stevengwoods/">Wildlife photos</a>
-                        <a href="https://www.eliteprospects.com/team/17009/canberra-knights/1991-1992">Canberra Knights</a>
-                    </div>
-                </article>
-
-                <article class="linkBand">
-                    <h2>Company History</h2>
-                    <div class="linkList">
-                        <a href="https://www.startupnorth.ca/2007/09/17/49-notable-companies-started-by-university-of-waterloo-alumni/">Quack.com background</a>
-                        <a href="quack-com.html">Quack archive project</a>
                         <a href="kinitos-neoedge.html">Kinitos / NeoEdge archive project</a>
                     </div>
                 </article>
             </div>
         </section>
     </main>
+
+    <dialog class="inlineViewer" id="inline-viewer">
+        <div class="inlineViewerHeader">
+            <h2 class="inlineViewerTitle" id="inline-viewer-title">Document viewer</h2>
+            <div class="inlineViewerActions">
+                <a class="button button--ghost button--micro" id="inline-viewer-open" href="#" target="_blank" rel="noopener noreferrer">Open in separate window</a>
+                <button class="button button--ghost button--micro buttonLike" type="button" id="inline-viewer-close">Close</button>
+            </div>
+        </div>
+        <iframe class="inlineViewerFrame" id="inline-viewer-frame" title="Inline artifact viewer" loading="lazy"></iframe>
+    </dialog>
+
+    <script>
+        const viewer = document.getElementById("inline-viewer");
+        const viewerFrame = document.getElementById("inline-viewer-frame");
+        const viewerTitle = document.getElementById("inline-viewer-title");
+        const viewerOpen = document.getElementById("inline-viewer-open");
+        const viewerClose = document.getElementById("inline-viewer-close");
+
+        for (const trigger of document.querySelectorAll(".inlineViewerTrigger")) {
+            trigger.addEventListener("click", () => {
+                const src = trigger.dataset.inlineSrc;
+                const title = trigger.dataset.inlineTitle || "Document viewer";
+                viewerTitle.textContent = title;
+                viewerFrame.src = src;
+                viewerOpen.href = src;
+                viewer.showModal();
+            });
+        }
+
+        viewerClose.addEventListener("click", () => {
+            viewer.close();
+            viewerFrame.src = "";
+        });
+
+        viewer.addEventListener("close", () => {
+            viewerFrame.src = "";
+        });
+    </script>
 </body>
 </html>

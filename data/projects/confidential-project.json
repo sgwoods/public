@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "project_id": "confidential-project",
+  "active": true,
+  "display_name": "Plan private rental portal",
+  "description": "Confidential client-facing portal and product work summarized here only at a high level.",
+  "project_page_path": "confidential-project.html",
+  "repo_url": null,
+  "dashboard_url": null,
+  "experience_url": null,
+  "repo_pushed_at": "2026-04-01T17:55:00Z",
+  "status_generated_at": "2026-04-01T17:55:00Z",
+  "status_label": "Current phase",
+  "status_value": "Confidential project",
+  "focus_label": "Current focus",
+  "focus_value": "Private rental portal and related product work"
+}

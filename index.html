@@ -21,12 +21,12 @@
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Tracked Projects</span>
-                    <span class="metaValue" data-project-count>10</span>
+                    <span class="metaValue" data-project-count>12</span>
                     <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Repository Work Last Updated</span>
-                    <span class="metaValue" data-project-last-updated>April 1, 2026</span>
+                    <span class="metaValue" data-project-last-updated>April 3, 2026</span>
                     <div class="metaNote">Computed from the latest `repo_pushed_at` value across active project manifests.</div>
                 </div>
             </div>
@@ -71,6 +71,28 @@
 
                     <div class="links">
                         <a class="button" href="aurora-galactica.html">Open project page</a> <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html">Open dashboard</a> <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/">Open live experience</a> <a class="button" href="https://github.com/sgwoods/Codex-Test1">Open repository</a>
+                    </div>
+                </article>
+                <article class="card" data-project-card="confidential-project">
+                    <h3>Plan private rental portal</h3>
+                    <p>Confidential client-facing portal and product work summarized here only at a high level.</p>
+                    <div class="detailList">
+                        <div><strong>Last repo update</strong> April 1, 2026</div><div><strong>Current phase</strong> Confidential project</div><div><strong>Current focus</strong> Private rental portal and related product work</div>
+                    </div>
+
+                    <div class="links">
+                        <a class="button" href="confidential-project.html">Open project page</a>
+                    </div>
+                </article>
+                <article class="card" data-project-card="ai-dystopia-quotes">
+                    <h3>AI Dystopia Quotes</h3>
+                    <p>Public project page for a curated corpus of recognizable dystopian AI quotations and source metadata.</p>
+                    <div class="detailList">
+                        <div><strong>Last repo update</strong> April 3, 2026</div><div><strong>Current stage</strong> Active curation + publishing</div><div><strong>Current focus</strong> Growing the approved canon and widening discovery</div>
+                    </div>
+
+                    <div class="links">
+                        <a class="button" href="ai-dystopia-quotes.html">Open project page</a> <a class="button" href="https://github.com/sgwoods/sci-fi-ai-dystopian-project">Open repository</a>
                     </div>
                 </article>
                 <article class="card" data-project-card="phd-renovation">
@@ -181,7 +203,7 @@
                 </article>
             </div>
             <p class="footer" data-project-status>This homepage is rendered centrally from `data/projects/*.json` so independent project syncs do not write directly into `index.html`.</p>
-            <script id="project-manifest-config" type="application/json">{"repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main", "fallback_manifest_paths": ["data/projects/aurora-galactica.json", "data/projects/codex-test1.json", "data/projects/kinitos-neoedge.json", "data/projects/mmath-renovation.json", "data/projects/phd-renovation.json", "data/projects/quack-com.json"], "supplemental_manifest_paths": ["canberra-research/project-manifest.json", "google-canada-research/project-manifest.json", "inovia-research/project-manifest.json", "kinitos-neoedge/project-manifest.json", "quack/project-manifest.json", "sei-pittsburgh-research/project-manifest.json", "steven-woods-research/project-manifest.json"], "project_order": ["aurora-galactica", "phd-renovation", "mmath-renovation", "steven-woods-research", "google-canada-research", "inovia-research", "canberra-research", "sei-pittsburgh-research", "quack-com", "kinitos-neoedge"]}</script>
+            <script id="project-manifest-config" type="application/json">{"repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main", "fallback_manifest_paths": ["data/projects/ai-dystopia-quotes.json", "data/projects/aurora-galactica.json", "data/projects/codex-test1.json", "data/projects/confidential-project.json", "data/projects/kinitos-neoedge.json", "data/projects/mmath-renovation.json", "data/projects/phd-renovation.json", "data/projects/quack-com.json"], "supplemental_manifest_paths": ["canberra-research/project-manifest.json", "google-canada-research/project-manifest.json", "inovia-research/project-manifest.json", "kinitos-neoedge/project-manifest.json", "quack/project-manifest.json", "sei-pittsburgh-research/project-manifest.json", "steven-woods-research/project-manifest.json"], "project_order": ["aurora-galactica", "confidential-project", "ai-dystopia-quotes", "phd-renovation", "mmath-renovation", "steven-woods-research", "google-canada-research", "inovia-research", "canberra-research", "sei-pittsburgh-research", "quack-com", "kinitos-neoedge"]}</script>
         </section>
 
         <section class="panel">
@@ -203,7 +225,7 @@
 
         <section class="panel" data-activity-chart data-activity-chart-id="coding">
             <h2>Recent Coding Activity</h2>
-            <p class="lead">Weekly commit counts on origin/main for the last 8 weeks across the three software project lines: Abtweak, CSP, and Aurora.</p>
+            <p class="lead">Weekly commit counts on origin/main for the last 8 weeks across the public software project lines. Additional confidential work is tracked in the project cards above without exposing private repository details.</p>
             <div class="activityChart">
                 <div class="activityYAxis" aria-hidden="true">
                     <span data-activity-axis="top">225</span>
@@ -293,13 +315,13 @@
                     </div>
                     <div class="activityWeek" data-activity-week="2026-03-30T00:00:00-04:00">
                         <div class="activityColumn">
-                            <div class="activityStack" aria-label="Mar 30: 22 total commits">
+                            <div class="activityStack" aria-label="Mar 30: 53 total commits">
                                 <span class="activitySegment activitySegment--abtweak" data-activity-project="mmath-renovation" style="height: 0.00%;" title="Abtweak: 0 commits"></span>
                                 <span class="activitySegment activitySegment--csp" data-activity-project="phd-renovation" style="height: 0.00%;" title="CSP: 0 commits"></span>
-                                <span class="activitySegment activitySegment--galaga" data-activity-project="aurora-galactica" style="height: 9.78%;" title="Aurora: 22 commits"></span>
+                                <span class="activitySegment activitySegment--galaga" data-activity-project="aurora-galactica" style="height: 23.56%;" title="Aurora: 53 commits"></span>
                             </div>
                         </div>
-                        <div class="activityTotal" data-activity-total>22</div>
+                        <div class="activityTotal" data-activity-total>53</div>
                         <div class="activityLabel">Mar 30</div>
                     </div>
                     </div>
@@ -316,11 +338,11 @@
                 </div>
                 <div class="activityLegendItem">
                     <span class="activityLegendSwatch activitySegment--galaga"></span>
-                    <span><strong>Aurora</strong> <span data-activity-legend-total="aurora-galactica">291</span> commits in the last 8 weeks</span>
+                    <span><strong>Aurora</strong> <span data-activity-legend-total="aurora-galactica">322</span> commits in the last 8 weeks</span>
                 </div>
             </div>
             <p class="footer" data-activity-status>Rendered from local repository history and refreshed from GitHub when the page loads.</p>
-            <script id="activity-chart-config-coding" type="application/json">{"chart_id": "coding", "generated_at": "2026-04-01T11:46:46.178488-04:00", "weeks": ["2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00", "2026-03-23T00:00:00-04:00", "2026-03-30T00:00:00-04:00"], "metric_label": "commits", "projects": [{"label": "Abtweak", "project_id": "mmath-renovation", "repo": "mmath-renovation", "ref": "main", "paths": []}, {"label": "CSP", "project_id": "phd-renovation", "repo": "phd-renovation", "ref": "main", "paths": []}, {"label": "Aurora", "project_id": "aurora-galactica", "repo": "Codex-Test1", "ref": "main", "paths": []}]}</script>
+            <script id="activity-chart-config-coding" type="application/json">{"chart_id": "coding", "generated_at": "2026-04-03T15:24:24.987468-04:00", "weeks": ["2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00", "2026-03-23T00:00:00-04:00", "2026-03-30T00:00:00-04:00"], "metric_label": "commits", "projects": [{"label": "Abtweak", "project_id": "mmath-renovation", "repo": "mmath-renovation", "ref": "main", "paths": []}, {"label": "CSP", "project_id": "phd-renovation", "repo": "phd-renovation", "ref": "main", "paths": []}, {"label": "Aurora", "project_id": "aurora-galactica", "repo": "Codex-Test1", "ref": "main", "paths": []}]}</script>
         </section>
 
         <section class="panel" data-activity-chart data-activity-chart-id="research">
@@ -490,7 +512,7 @@
                 </div>
             </div>
             <p class="footer" data-activity-status>Rendered from local repository history and refreshed from GitHub when the page loads.</p>
-            <script id="activity-chart-config-research" type="application/json">{"chart_id": "research", "generated_at": "2026-04-01T11:46:47.151850-04:00", "weeks": ["2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00", "2026-03-23T00:00:00-04:00", "2026-03-30T00:00:00-04:00"], "metric_label": "commits", "projects": [{"label": "Steven", "project_id": "steven-woods-research", "repo": "public", "ref": "main", "paths": ["steven-woods-research", "steven-woods-research.html"]}, {"label": "Quack", "project_id": "quack-com", "repo": "public", "ref": "main", "paths": ["quack", "quack-com.html"]}, {"label": "Google", "project_id": "google-canada-research", "repo": "public", "ref": "main", "paths": ["google-canada-research", "google-canada-research.html"]}, {"label": "Inovia", "project_id": "inovia-research", "repo": "public", "ref": "main", "paths": ["inovia-research", "inovia-research.html"]}, {"label": "Canberra", "project_id": "canberra-research", "repo": "public", "ref": "main", "paths": ["canberra-research", "canberra-research.html"]}, {"label": "SEI", "project_id": "sei-pittsburgh-research", "repo": "public", "ref": "main", "paths": ["sei-pittsburgh-research", "sei-pittsburgh-research.html"]}, {"label": "Kinitos / NeoEdge", "project_id": "kinitos-neoedge", "repo": "public", "ref": "main", "paths": ["kinitos-neoedge", "kinitos-neoedge.html"]}]}</script>
+            <script id="activity-chart-config-research" type="application/json">{"chart_id": "research", "generated_at": "2026-04-03T15:24:26.056042-04:00", "weeks": ["2026-02-09T00:00:00-05:00", "2026-02-16T00:00:00-05:00", "2026-02-23T00:00:00-05:00", "2026-03-02T00:00:00-05:00", "2026-03-09T00:00:00-04:00", "2026-03-16T00:00:00-04:00", "2026-03-23T00:00:00-04:00", "2026-03-30T00:00:00-04:00"], "metric_label": "commits", "projects": [{"label": "Steven", "project_id": "steven-woods-research", "repo": "public", "ref": "main", "paths": ["steven-woods-research", "steven-woods-research.html"]}, {"label": "Quack", "project_id": "quack-com", "repo": "public", "ref": "main", "paths": ["quack", "quack-com.html"]}, {"label": "Google", "project_id": "google-canada-research", "repo": "public", "ref": "main", "paths": ["google-canada-research", "google-canada-research.html"]}, {"label": "Inovia", "project_id": "inovia-research", "repo": "public", "ref": "main", "paths": ["inovia-research", "inovia-research.html"]}, {"label": "Canberra", "project_id": "canberra-research", "repo": "public", "ref": "main", "paths": ["canberra-research", "canberra-research.html"]}, {"label": "SEI", "project_id": "sei-pittsburgh-research", "repo": "public", "ref": "main", "paths": ["sei-pittsburgh-research", "sei-pittsburgh-research.html"]}, {"label": "Kinitos / NeoEdge", "project_id": "kinitos-neoedge", "repo": "public", "ref": "main", "paths": ["kinitos-neoedge", "kinitos-neoedge.html"]}]}</script>
         </section>
 
         <section class="panel">

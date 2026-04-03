@@ -23,6 +23,8 @@ OUTPUT = ROOT / "index.html"
 LOCAL_TZ = ZoneInfo("America/Toronto")
 PROJECT_ORDER = [
     "aurora-galactica",
+    "confidential-project",
+    "ai-dystopia-quotes",
     "phd-renovation",
     "mmath-renovation",
     "steven-woods-research",
@@ -588,7 +590,7 @@ def render() -> str:
 {render_activity_chart(
     chart_id="coding",
     title="Recent Coding Activity",
-    lead="Weekly commit counts on origin/main for the last 8 weeks across the three software project lines: Abtweak, CSP, and Aurora.",
+    lead="Weekly commit counts on origin/main for the last 8 weeks across the public software project lines. Additional confidential work is tracked in the project cards above without exposing private repository details.",
     projects=CODING_ACTIVITY_PROJECTS,
     metric_label="commits",
 )}

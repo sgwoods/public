@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Gregory Woods - Wikipedia-style Draft</title>
+    <link rel="stylesheet" href="assets/public-site.css">
+    <style>
+        body {
+            background:
+                linear-gradient(180deg, #f4f7fb, #edf2f8 24%, #eef3f8 100%);
+            color: #1f2933;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        a {
+            color: #1a4d8f;
+        }
+
+        .shell {
+            max-width: 980px;
+            padding-top: 28px;
+            padding-bottom: 48px;
+        }
+
+        .reviewPanel {
+            margin-bottom: 18px;
+            padding: 20px 22px;
+            border-radius: 20px;
+            background: rgba(13, 28, 43, 0.9);
+            border: 1px solid rgba(177, 222, 255, 0.16);
+            color: #e9f2fb;
+            box-shadow: 0 14px 34px rgba(17, 30, 47, 0.14);
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+        }
+
+        .reviewPanel h2 {
+            margin: 0 0 10px;
+            color: #eff7ff;
+            font-size: 15px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .reviewPanel p,
+        .reviewPanel li {
+            color: #c6d8ea;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .reviewPanel ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+        }
+
+        .articleShell {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(22, 41, 61, 0.12);
+            border-radius: 24px;
+            box-shadow: 0 16px 40px rgba(17, 30, 47, 0.08);
+            overflow: hidden;
+        }
+
+        .articleHeader {
+            padding: 24px 28px 20px;
+            border-bottom: 1px solid rgba(22, 41, 61, 0.1);
+            background: linear-gradient(180deg, rgba(245, 249, 255, 0.9), rgba(255, 255, 255, 0.96));
+        }
+
+        .articleHeader h1 {
+            margin: 10px 0 8px;
+            color: #15283d;
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.02;
+            letter-spacing: -0.03em;
+        }
+
+        .articleHeader p {
+            margin: 0;
+            color: #4b5c6d;
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .articleBody {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 28px;
+            padding: 28px;
+        }
+
+        .articleMain p,
+        .articleMain li {
+            margin: 0 0 14px;
+            color: #1f2933;
+            font-size: 18px;
+            line-height: 1.68;
+        }
+
+        .articleMain h2 {
+            margin: 30px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(22, 41, 61, 0.12);
+            color: #183554;
+            font-size: 28px;
+            letter-spacing: -0.02em;
+        }
+
+        .articleMain h3 {
+            margin: 22px 0 10px;
+            color: #24486d;
+            font-size: 20px;
+        }
+
+        .articleMain ul {
+            padding-left: 22px;
+            margin: 0 0 10px;
+        }
+
+        .articleAside {
+            align-content: start;
+        }
+
+        .infobox {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            font-size: 14px;
+            background: #f7f9fc;
+            border: 1px solid rgba(22, 41, 61, 0.14);
+        }
+
+        .infobox caption {
+            padding: 14px 16px;
+            background: #dfe9f4;
+            color: #1a324d;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .infobox th,
+        .infobox td {
+            padding: 10px 12px;
+            border-top: 1px solid rgba(22, 41, 61, 0.1);
+            vertical-align: top;
+            text-align: left;
+            color: #34495e;
+            line-height: 1.45;
+        }
+
+        .infobox th {
+            width: 34%;
+            font-weight: 600;
+            color: #1f364d;
+            background: rgba(233, 240, 248, 0.6);
+        }
+
+        .lede {
+            font-size: 19px;
+        }
+
+        .ref {
+            vertical-align: super;
+            font-size: 0.72em;
+            line-height: 0;
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+        }
+
+        .ref a {
+            text-decoration: none;
+        }
+
+        .refList {
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            font-size: 14px;
+            color: #46596c;
+        }
+
+        .refList li {
+            margin-bottom: 10px;
+        }
+
+        .smallLinks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+        }
+
+        @media (max-width: 960px) {
+            .articleBody {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <section class="reviewPanel">
+            <h2>Where We Are</h2>
+            <p>
+                This is an offline rewrite candidate intended to approximate Wikipedia article structure, tone, and
+                citation behavior while staying conservative about claims. It should be treated as a cleanup candidate
+                for the existing article, not as a publication-ready replacement.
+            </p>
+            <ul>
+                <li>Strongest source base today: University of Saskatchewan, University of Waterloo, BetaKit, Springboard Atlantic, Quack/AOL-era press, and canonical publication/patent records.</li>
+                <li>Still weakest areas: broader independent coverage for Google Canada significance and for Kinitos / NeoEdge significance.</li>
+                <li>Comparable live pages reviewed: <a href="https://en.wikipedia.org/wiki/Urs_H%C3%B6lzle">Urs Hölzle</a>, <a href="https://en.wikipedia.org/wiki/Reid_Hoffman">Reid Hoffman</a>, <a href="https://en.wikipedia.org/wiki/Kevin_Scott_(computer_scientist)">Kevin Scott</a>, <a href="https://en.wikipedia.org/wiki/Ray_Ozzie">Ray Ozzie</a>, and <a href="https://en.wikipedia.org/wiki/Mike_Schroepfer">Mike Schroepfer</a>.</li>
+            </ul>
+        </section>
+
+        <section class="articleShell">
+            <header class="articleHeader">
+                <div class="heroTop">
+                    <span class="eyebrow">Wikipedia-Style Draft</span>
+                    <a class="heroHomeLink" href="steven-woods-research.html">Steven Woods Research</a>
+                </div>
+                <h1>Steven Gregory Woods</h1>
+                <p>
+                    Neutral browser-readable draft based on the current research archive. This page is intended for
+                    review of tone, structure, and sourcing discipline before any possible Wikipedia editing.
+                </p>
+                <div class="smallLinks">
+                    <a class="button button--ghost" href="https://en.wikipedia.org/wiki/Steven_Woods">Current Wikipedia page</a>
+                    <a class="button button--ghost" href="steven-woods-profile.html">Public profile page</a>
+                    <a class="button button--ghost" href="steven-woods-research.html">Research project</a>
+                </div>
+            </header>
+
+            <div class="articleBody">
+                <article class="articleMain">
+                    <p class="lede">
+                        <strong>Steven Gregory Woods</strong> is a Canadian technology executive, entrepreneur,
+                        investor, and former engineering leader at Google Canada. He is investing partner and chief
+                        technology officer at Inovia Capital and previously co-founded Quack.com, Kinitos, and NeoEdge
+                        Networks.<span class="ref"><a href="#ref-1">[1]</a><a href="#ref-2">[2]</a><a href="#ref-3">[3]</a></span>
+                    </p>
+
+                    <p>
+                        Woods studied computer science at the University of Saskatchewan and completed graduate work in
+                        mathematics at the University of Waterloo, where he earned M.Math and PhD degrees in work
+                        connected to computer science and artificial intelligence. He later held research roles
+                        including postdoctoral work at the University of Hawai'i at Manoa and a period at the Software
+                        Engineering Institute in Pittsburgh.<span class="ref"><a href="#ref-4">[4]</a><a href="#ref-5">[5]</a><a href="#ref-6">[6]</a></span>
+                    </p>
+
+                    <h2>Education and research</h2>
+                    <p>
+                        Woods earned a Bachelor of Science in computer science from the University of Saskatchewan. He
+                        later pursued graduate study at the University of Waterloo, completing M.Math and PhD degrees
+                        in mathematics with work tied closely to computer science and artificial intelligence.<span class="ref"><a href="#ref-4">[4]</a><a href="#ref-5">[5]</a></span>
+                    </p>
+                    <p>
+                        His academic and research work has included postdoctoral study at the University of Hawai'i at
+                        Manoa and software engineering research associated with the Software Engineering Institute.
+                        Publications from this period focused on program understanding, software architecture, and
+                        design recovery.<span class="ref"><a href="#ref-6">[6]</a><a href="#ref-11">[11]</a></span>
+                    </p>
+
+                    <h2>Business career</h2>
+                    <h3>Quack.com</h3>
+                    <p>
+                        During the late 1990s Woods co-founded Quack.com, an early voice systems company later
+                        associated with AOL's acquisition of the business in 2000. Contemporary press coverage treated
+                        the company as part of the emerging voice portal market.<span class="ref"><a href="#ref-7">[7]</a><a href="#ref-8">[8]</a></span>
+                    </p>
+
+                    <h3>Kinitos and NeoEdge</h3>
+                    <p>
+                        After Quack, Woods co-founded Kinitos. The company later evolved into NeoEdge Networks as its
+                        product and market focus shifted over time. Reporting from that period connects Woods to
+                        software services, gaming, and advertising technology activities associated with NeoEdge.<span class="ref"><a href="#ref-9">[9]</a></span>
+                    </p>
+
+                    <h3>Google Canada</h3>
+                    <p>
+                        From 2008 to 2021 Woods was part of Google Canada's engineering leadership. Public institutional
+                        and media sources describe him as a senior engineering leader during a period of major growth in
+                        Google's Canadian technical organization.<span class="ref"><a href="#ref-2">[2]</a><a href="#ref-5">[5]</a><a href="#ref-10">[10]</a></span>
+                    </p>
+
+                    <h3>Inovia Capital</h3>
+                    <p>
+                        In 2021 Woods joined Inovia Capital as partner and CTO. In that role he has been presented as
+                        working across founder support, technology evaluation, and company-building within the
+                        firm's investment platform.<span class="ref"><a href="#ref-1">[1]</a><a href="#ref-3">[3]</a></span>
+                    </p>
+
+                    <h2>Publications, patents, and recognition</h2>
+                    <p>
+                        Woods has published research in software engineering and program understanding, including the
+                        1997 book <em>Constraint-Based Design Recovery for Software Reengineering: Theory and
+                        Experiments</em>. He has also been listed on patents related to voice systems, web analysis, and
+                        structured data.<span class="ref"><a href="#ref-11">[11]</a><a href="#ref-12">[12]</a></span>
+                    </p>
+
+                    <p>
+                        His recognitions include the IEEE Working Conference on Reverse Engineering Outstanding
+                        Contribution Award, the J.W. Graham Medal from the University of Waterloo, and the University of
+                        Saskatchewan Lifetime Achievement Award.<span class="ref"><a href="#ref-4">[4]</a><a href="#ref-5">[5]</a></span>
+                    </p>
+
+                    <h2>References</h2>
+                    <ol class="refList">
+                        <li id="ref-1"><a href="https://www.inovia.vc/team/steve-woods/">Inovia Capital team profile: Steve Woods</a>.</li>
+                        <li id="ref-2"><a href="https://betakit.com/googles-steven-woods-joins-inovia-as-partner-and-cto/">BetaKit: Google's Steven Woods joins Inovia as partner and CTO</a>.</li>
+                        <li id="ref-3"><a href="https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/">Inovia: Steven Woods joins as Chief Technology Officer</a>.</li>
+                        <li id="ref-4"><a href="https://alumni.usask.ca/get-involved/achieve/2021/woods.php">University of Saskatchewan Alumni: Steven Woods - Alumni and Friends</a>.</li>
+                        <li id="ref-5"><a href="https://uwaterloo.ca/math/profiles/steven-woods">University of Waterloo Mathematics profile: Steven Woods</a>.</li>
+                        <li id="ref-6"><a href="https://www.sei.cmu.edu/authors/steve-woods/">Software Engineering Institute author page: Steve Woods</a>.</li>
+                        <li id="ref-7"><a href="https://www.internetnews.com/it-management/another-feather-in-aols-cap/">InternetNews: Another Feather In AOL's Cap</a>.</li>
+                        <li id="ref-8"><a href="https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php">SFGate: EARFUL OF INTERNET</a>.</li>
+                        <li id="ref-9"><a href="https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php">University of Saskatchewan: P.G. Sorenson Lecture</a>.</li>
+                        <li id="ref-10"><a href="https://springboardatlantic.ca/a-conversation-with-steven-woods-engineering-director-at-google-canada/">Springboard Atlantic: A Conversation With Steven Woods, Engineering Director At Google Canada</a>.</li>
+                        <li id="ref-11"><a href="https://link.springer.com/book/10.1007/978-1-4615-5461-5">Springer: Constraint-Based Design Recovery for Software Reengineering</a>.</li>
+                        <li id="ref-12"><a href="https://patents.google.com/patent/US8379053B1/en">Google Patents: Identification of areas of interest on a web page (US8379053B1)</a>.</li>
+                    </ol>
+                </article>
+
+                <aside class="articleAside">
+                    <table class="infobox">
+                        <caption>Steven Gregory Woods</caption>
+                        <tr>
+                            <th>Occupation</th>
+                            <td>Technology executive, entrepreneur, investor</td>
+                        </tr>
+                        <tr>
+                            <th>Known for</th>
+                            <td>Quack.com, Kinitos, NeoEdge Networks, Google Canada, Inovia Capital</td>
+                        </tr>
+                        <tr>
+                            <th>Education</th>
+                            <td>University of Saskatchewan; University of Waterloo (M.Math, PhD)</td>
+                        </tr>
+                        <tr>
+                            <th>Current role</th>
+                            <td>Investing partner and CTO, Inovia Capital</td>
+                        </tr>
+                        <tr>
+                            <th>Research areas</th>
+                            <td>Software engineering, program understanding, design recovery, internet voice systems</td>
+                        </tr>
+                        <tr>
+                            <th>Website</th>
+                            <td><a href="https://bio.link/sgwoods">bio.link/sgwoods</a></td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

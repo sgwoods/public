@@ -1,31 +1,49 @@
 Steven Gregory Woods
-Partner and CTO, Inovia Capital  |  Waterloo, Ontario  |  linkedin.com/in/stevenwoods
-Canadian technology executive, company builder, and investor with a long career spanning AI
-research, startup formation, product invention, large-scale engineering leadership at Google
-Canada, and venture support as Partner and CTO at Inovia Capital.
+Investing Partner & CTO, Inovia Capital  |  Waterloo, Ontario, Canada
 
-EXPERIENCE
-- 2021-present  Inovia Capital: Partner and CTO role focused on founder support, investment
-  evaluation, and company-building.
-- 2008-2021     Google Canada: Engineering and team-building phase; public profiles say the
-  Canadian technical team grew from about 20 to more than 1,300.
-- 1999-2008     Co-founder and builder across Quack.com, Kinitos, and NeoEdge Networks.
-- 1998-1999     Software Engineering Institute, Pittsburgh.
+Canadian technology executive, founder, inventor, and investor. Investing Partner & CTO at Inovia
+Capital, former leader of Google Canada's engineering organization, and co-founder of Quack.com,
+Kinitos, and NeoEdge Networks. PhD and M.Math in Mathematics (Computer Science, AI), University of
+Waterloo.
+
+LEADERSHIP EXPERIENCE
+- 2021-present  Investing Partner & CTO, Inovia Capital: Leads investing, technical diligence, AI
+  strategy, and portfolio company support.
+- 2008-2021  Google Canada engineering leadership: Led Google Canada's engineering organization from
+  about 20 to more than 1,300 technical staff.
+- 2000-2008  Co-founder and executive, Kinitos / NeoEdge Networks: Built and deployed products across
+  enterprise software, internet services, gaming, and advertising technology.
+- 1999-2000  Co-founder, Quack.com: Built an early voice systems startup acquired by AOL in 2000.
+- 1998-1999  Software Engineering Institute, Carnegie Mellon University: Advanced software architecture,
+  design recovery, and program understanding.
+- 1991-1992  CSIRO, Canberra, Australia: Research and development for CSIRO Australia; Canberra Knights
+  semi-professional player.
 
 EDUCATION
-- PhD, Mathematics (Computer Science), University of Waterloo (1996)
-- M.Math, Mathematics (Computer Science), University of Waterloo (1993-1996)
-- B.Sc., Computer Science, University of Saskatchewan (1987)
-- Postdoctoral studies, University of Hawai'i at Manoa (1996-1997)
+- PhD, Mathematics (Computer Science, AI), University of Waterloo
+- M.Math, Mathematics (Computer Science, AI), University of Waterloo
+- B.Sc., Computer Science, University of Saskatchewan
+- Postdoctoral studies, University of Hawai'i at Manoa
 
 RECOGNITION
 - USask Lifetime Achievement Award (2021)
 - J.W. Graham Medal, University of Waterloo (2010)
 - IEEE Working Conference on Reverse Engineering Outstanding Contribution Award (1996)
 
-SELECTED OUTPUTS
-- Constraint-Based Design Recovery for Software Reengineering: Theory and Experiments (1997)
-- The program understanding problem: Analysis and a heuristic approach (1996)
-- Selected patents in voice systems, web analysis, structured data, and gaming/adtech.
+BOARD / ADVISORY / INVESTMENT FOCUS
+- Investing partner, technical diligence, and AI strategy
+- Founder support and company building
+- Board, advisory, and portfolio guidance
+- Selected investments led: Cohere, Spellbook, Signal.ai, Reliant.ai
 
-Profiles: Inovia | LinkedIn | Wikipedia | Research archive at sgwoods.github.io/public/
+SELECTED PUBLICATIONS & PATENTS
+- Constraint-Based Design Recovery for Software Reengineering: Theory and Experiments (book, 1997)
+- Selected inventor on patents spanning voice systems, web analysis, structured data, and gaming /
+  adtech systems
+
+PUBLIC LINKS
+- LinkedIn: linkedin.com/in/stevenwoods (https://www.linkedin.com/in/stevenwoods/)
+- Inovia: inovia.vc/team/steve-woods (https://www.inovia.vc/team/steve-woods/)
+- Profile: sgwoods.github.io/public/steven-woods-profile.html (https://sgwoods.github.io/public/steven-woods-profile.html)
+- Public projects: sgwoods.github.io/public (https://sgwoods.github.io/public/)
+- Patents & publications: sgwoods.github.io/public/patents-publications.html (https://sgwoods.github.io/public/patents-publications.html)
