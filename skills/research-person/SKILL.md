@@ -14,6 +14,7 @@ Typical tasks:
 - expand by employer, institution, company era, publication, patent, and media trail
 - separate person-centric interpretation from company-centric interpretation
 - preserve local source captures when possible
+- favor inline viewing or playback on archive pages, with separate-open fallback links
 - build `project-manifest.json`, `source-manifest.json`, and `public-handoff.json`
 - draft concise public-facing profile pages
 - draft a Wikipedia-style biography candidate when requested
@@ -40,8 +41,9 @@ Typical tasks:
 3. Expand each career or institution phase with better sources.
 4. Keep a review ledger in `research/` before promoting records into the manifest.
 5. Preserve local HTML, metadata, or document captures when feasible.
-6. Promote only reviewed records into `source-manifest.json`.
-7. For overlapping company-era sources:
+6. When building archive pages, prefer inline viewers or players for preserved local copies, and always keep a separate-open option for external pages.
+7. Promote only reviewed records into `source-manifest.json`.
+8. For overlapping company-era sources:
    - keep the short person-centric interpretation in the person project
    - link the deeper company context to the owning company archive
 
@@ -116,6 +118,12 @@ Preserve:
 - canonical URL
 - local archive path if preserved
 - short note on why the source matters
+
+Prefer:
+
+- local archive capture when the source is likely to drift or disappear
+- local archive playback or viewing inside the project page when feasible
+- a separate-open fallback for any external source
 
 Use stable IDs like:
 

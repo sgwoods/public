@@ -45,6 +45,52 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
+
+        .inlineViewer {
+            width: min(1100px, calc(100vw - 32px));
+            border: 1px solid rgba(124, 181, 255, 0.22);
+            border-radius: 24px;
+            padding: 0;
+            background:
+                linear-gradient(160deg, rgba(16, 20, 29, 0.96), rgba(11, 16, 24, 0.92)),
+                radial-gradient(circle at 20% 0%, rgba(104, 205, 255, 0.12), transparent 32%);
+            color: var(--text);
+        }
+
+        .inlineViewer::backdrop {
+            background: rgba(2, 7, 14, 0.72);
+        }
+
+        .inlineViewerHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(196, 225, 255, 0.12);
+        }
+
+        .inlineViewerTitle {
+            margin: 0;
+            font-size: 16px;
+            color: var(--muted-strong);
+        }
+
+        .inlineViewerActions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .inlineViewerFrame {
+            display: block;
+            width: 100%;
+            height: min(78vh, 920px);
+            border: 0;
+            background: white;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +132,7 @@
                     <div class="tagRow"><span class="tag">keynote</span> <span class="tag">waterloo</span> <span class="tag">youtube</span> <span class="tag">appearance</span></div>
                     <p class="footer">Combine the YouTube recording with the Waterloo event page in summary use.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.youtube.com/watch?v=C_HIi0IKK90">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-research-discovery-days.html">Open local archive</a> <a class="button button--ghost" href="https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days">Open alternate archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/uwaterloo-research-discovery-days.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-research-discovery-days.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days" data-inline-title="View archive here">View archive here</button> <a class="button button--ghost" href="https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days" target="_blank" rel="noopener noreferrer">Open archive</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.youtube.com/watch?v=C_HIi0IKK90" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.youtube.com/watch?v=C_HIi0IKK90" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -96,7 +142,7 @@
                     <div class="tagRow"><span class="tag">podcast</span> <span class="tag">interview</span> <span class="tag">inovia</span> <span class="tag">appearance</span></div>
                     <p class="footer">Feed metadata and direct audio URL are preserved locally.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/apple-riddick-show.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/apple-riddick-show.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/apple-riddick-show.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -106,7 +152,7 @@
                     <div class="tagRow"><span class="tag">waterloo</span> <span class="tag">video</span> <span class="tag">appearance</span> <span class="tag">entrepreneurship</span></div>
                     <p class="footer">Event page includes the direct YouTube recording.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html">Open local archive</a> <a class="button button--ghost" href="https://www.youtube.com/watch?v=L64GbHRcsFQ">Open alternate archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.youtube.com/watch?v=L64GbHRcsFQ" data-inline-title="View archive here">View archive here</button> <a class="button button--ghost" href="https://www.youtube.com/watch?v=L64GbHRcsFQ" target="_blank" rel="noopener noreferrer">Open archive</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -116,7 +162,7 @@
                     <div class="tagRow"><span class="tag">talk</span> <span class="tag">cs-can</span> <span class="tag">appearance</span> <span class="tag">university-industry</span></div>
                     <p class="footer">Recording still to be confirmed.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/cscan-university-industry-collaboration.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/cscan-university-industry-collaboration.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/cscan-university-industry-collaboration.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -126,7 +172,7 @@
                     <div class="tagRow"><span class="tag">waterloo</span> <span class="tag">lecture</span> <span class="tag">appearance</span></div>
                     <p class="footer">Useful for the public-speaking timeline.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://uwaterloo.ca/math/lecture?page=1">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://uwaterloo.ca/math/lecture?page=1" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://uwaterloo.ca/math/lecture?page=1" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -136,7 +182,7 @@
                     <div class="tagRow"><span class="tag">youtube</span> <span class="tag">google</span> <span class="tag">waterloo</span> <span class="tag">appearance</span></div>
                     <p class="footer">Likely tied to the 2017 Cheriton Research Symposium.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.youtube.com/watch?v=3cDnlKwbtTY">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.youtube.com/watch?v=3cDnlKwbtTY" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.youtube.com/watch?v=3cDnlKwbtTY" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -146,7 +192,7 @@
                     <div class="tagRow"><span class="tag">interview</span> <span class="tag">google</span> <span class="tag">appearance</span></div>
                     <p class="footer">Good Google-era interview anchor.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://springboardatlantic.ca/a-conversation-with-steven-woods-engineering-director-at-google-canada/">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/springboard-google-canada-interview.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/springboard-google-canada-interview.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/springboard-google-canada-interview.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://springboardatlantic.ca/a-conversation-with-steven-woods-engineering-director-at-google-canada/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://springboardatlantic.ca/a-conversation-with-steven-woods-engineering-director-at-google-canada/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -156,7 +202,7 @@
                     <div class="tagRow"><span class="tag">slides</span> <span class="tag">keynote</span> <span class="tag">presentation</span></div>
                     <p class="footer">Keep as a deck/presentation item with partial event context.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/slideshare-steven-woods-keynote.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/slideshare-steven-woods-keynote.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/slideshare-steven-woods-keynote.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -166,11 +212,48 @@
                     <div class="tagRow"><span class="tag">kinitos</span> <span class="tag">lecture</span> <span class="tag">usask</span> <span class="tag">appearance</span></div>
                     <p class="footer">Also relevant to the Kinitos archive, but person-centric treatment lives here.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/usask-pg-sorenson-lectures.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/usask-pg-sorenson-lectures.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/usask-pg-sorenson-lectures.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
             </div>
         </section>
     </main>
+    <dialog class="inlineViewer" id="inline-viewer">
+        <div class="inlineViewerHeader">
+            <h2 class="inlineViewerTitle" id="inline-viewer-title">Content viewer</h2>
+            <div class="inlineViewerActions">
+                <a class="button button--ghost" id="inline-viewer-open" href="#" target="_blank" rel="noopener noreferrer">Open separately</a>
+                <button class="button button--ghost" type="button" id="inline-viewer-close">Close</button>
+            </div>
+        </div>
+        <iframe class="inlineViewerFrame" id="inline-viewer-frame" title="Inline content viewer" loading="lazy"></iframe>
+    </dialog>
+    <script>
+        const viewer = document.getElementById("inline-viewer");
+        const viewerFrame = document.getElementById("inline-viewer-frame");
+        const viewerTitle = document.getElementById("inline-viewer-title");
+        const viewerOpen = document.getElementById("inline-viewer-open");
+        const viewerClose = document.getElementById("inline-viewer-close");
+
+        for (const trigger of document.querySelectorAll(".inlineViewerTrigger")) {
+            trigger.addEventListener("click", () => {
+                const src = trigger.dataset.inlineSrc;
+                const title = trigger.dataset.inlineTitle || "Content viewer";
+                viewerTitle.textContent = title;
+                viewerFrame.src = src;
+                viewerOpen.href = src;
+                viewer.showModal();
+            });
+        }
+
+        viewerClose.addEventListener("click", () => {
+            viewer.close();
+            viewerFrame.src = "";
+        });
+
+        viewer.addEventListener("close", () => {
+            viewerFrame.src = "";
+        });
+    </script>
 </body>
 </html>

@@ -75,19 +75,33 @@ def load_sources() -> list[SourceRecord]:
     return sorted(records, key=lambda record: (record.date_sort, record.title.lower()), reverse=True)
 
 
-def link_button(href: str, label: str, ghost: bool = False) -> str:
+def link_button(href: str, label: str, ghost: bool = False, new_tab: bool = False) -> str:
     classes = "button button--ghost" if ghost else "button"
-    return f'<a class="{classes}" href="{html.escape(href)}">{html.escape(label)}</a>'
+    extra = ' target="_blank" rel="noopener noreferrer"' if new_tab else ""
+    return f'<a class="{classes}" href="{html.escape(href)}"{extra}>{html.escape(label)}</a>'
+
+
+def viewer_button(href: str, label: str, ghost: bool = False) -> str:
+    classes = "button button--ghost inlineViewerTrigger" if ghost else "button inlineViewerTrigger"
+    return (
+        f'<button class="{classes}" type="button" '
+        f'data-inline-src="{html.escape(href)}" data-inline-title="{html.escape(label)}">'
+        f"{html.escape(label)}</button>"
+    )
 
 
 def render_entry(record: SourceRecord, prefix: str = "../") -> str:
     buttons = []
-    if record.canonical_url:
-        buttons.append(link_button(record.canonical_url, "Open source"))
     if record.archive_local:
-        buttons.append(link_button(prefix + record.archive_local, "Open local archive", ghost=bool(record.canonical_url)))
+        archive_href = prefix + record.archive_local
+        buttons.append(viewer_button(archive_href, "View archived copy here"))
+        buttons.append(link_button(archive_href, "Open archived copy", ghost=True, new_tab=True))
     if record.archive_web:
-        buttons.append(link_button(record.archive_web, "Open alternate archive", ghost=True))
+        buttons.append(viewer_button(record.archive_web, "View archive here", ghost=bool(record.archive_local)))
+        buttons.append(link_button(record.archive_web, "Open archive", ghost=True, new_tab=True))
+    if record.canonical_url:
+        buttons.append(viewer_button(record.canonical_url, "View source here", ghost=bool(record.archive_local or record.archive_web)))
+        buttons.append(link_button(record.canonical_url, "Open source", ghost=True, new_tab=True))
 
     tags = " ".join(
         f'<span class="tag">{html.escape(tag)}</span>'
@@ -157,6 +171,52 @@ def render_category_page(source_type: str, records: list[SourceRecord]) -> str:
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }}
+
+        .inlineViewer {{
+            width: min(1100px, calc(100vw - 32px));
+            border: 1px solid rgba(124, 181, 255, 0.22);
+            border-radius: 24px;
+            padding: 0;
+            background:
+                linear-gradient(160deg, rgba(16, 20, 29, 0.96), rgba(11, 16, 24, 0.92)),
+                radial-gradient(circle at 20% 0%, rgba(104, 205, 255, 0.12), transparent 32%);
+            color: var(--text);
+        }}
+
+        .inlineViewer::backdrop {{
+            background: rgba(2, 7, 14, 0.72);
+        }}
+
+        .inlineViewerHeader {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(196, 225, 255, 0.12);
+        }}
+
+        .inlineViewerTitle {{
+            margin: 0;
+            font-size: 16px;
+            color: var(--muted-strong);
+        }}
+
+        .inlineViewerActions {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }}
+
+        .inlineViewerFrame {{
+            display: block;
+            width: 100%;
+            height: min(78vh, 920px);
+            border: 0;
+            background: white;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }}
     </style>
 </head>
 <body>
@@ -195,6 +255,43 @@ def render_category_page(source_type: str, records: list[SourceRecord]) -> str:
             </div>
         </section>
     </main>
+    <dialog class="inlineViewer" id="inline-viewer">
+        <div class="inlineViewerHeader">
+            <h2 class="inlineViewerTitle" id="inline-viewer-title">Content viewer</h2>
+            <div class="inlineViewerActions">
+                <a class="button button--ghost" id="inline-viewer-open" href="#" target="_blank" rel="noopener noreferrer">Open separately</a>
+                <button class="button button--ghost" type="button" id="inline-viewer-close">Close</button>
+            </div>
+        </div>
+        <iframe class="inlineViewerFrame" id="inline-viewer-frame" title="Inline content viewer" loading="lazy"></iframe>
+    </dialog>
+    <script>
+        const viewer = document.getElementById("inline-viewer");
+        const viewerFrame = document.getElementById("inline-viewer-frame");
+        const viewerTitle = document.getElementById("inline-viewer-title");
+        const viewerOpen = document.getElementById("inline-viewer-open");
+        const viewerClose = document.getElementById("inline-viewer-close");
+
+        for (const trigger of document.querySelectorAll(".inlineViewerTrigger")) {{
+            trigger.addEventListener("click", () => {{
+                const src = trigger.dataset.inlineSrc;
+                const title = trigger.dataset.inlineTitle || "Content viewer";
+                viewerTitle.textContent = title;
+                viewerFrame.src = src;
+                viewerOpen.href = src;
+                viewer.showModal();
+            }});
+        }}
+
+        viewerClose.addEventListener("click", () => {{
+            viewer.close();
+            viewerFrame.src = "";
+        }});
+
+        viewer.addEventListener("close", () => {{
+            viewerFrame.src = "";
+        }});
+    </script>
 </body>
 </html>
 """
@@ -210,7 +307,7 @@ def render_index_page(sources_by_type: dict[str, list[SourceRecord]]) -> str:
                     <p>{html.escape(meta["description"])}</p>
                     <div class="detailList">
                         <div><strong>Entries</strong> {len(records)}</div>
-                        <div><strong>Format</strong> Date, summary, source link, and archive link where available</div>
+                        <div><strong>Format</strong> Date, summary, inline view when possible, and separate-open links</div>
                     </div>
                     <div class="links">
                         {link_button(f'{meta["slug"]}.html', "Open index")}
@@ -236,7 +333,7 @@ def render_index_page(sources_by_type: dict[str, list[SourceRecord]]) -> str:
                 </div>
                 <a class="heroHomeLink" href="../index.html">Steven Woods Research</a>
             </div>
-            <p class="lead">Browsable category indexes for the approved Steven Woods source set. Each category page exposes dates, short summaries, and direct links to source and archive copies.</p>
+            <p class="lead">Browsable category indexes for the approved Steven Woods source set. Each category page exposes dates, short summaries, inline viewing where practical, and direct source or archive links.</p>
             <div class="links">
                 {link_button("../source-manifest.json", "Source manifest")}
                 {link_button("../research/media-sources-review.md", "Review ledger", ghost=True)}

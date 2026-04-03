@@ -45,6 +45,52 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
+
+        .inlineViewer {
+            width: min(1100px, calc(100vw - 32px));
+            border: 1px solid rgba(124, 181, 255, 0.22);
+            border-radius: 24px;
+            padding: 0;
+            background:
+                linear-gradient(160deg, rgba(16, 20, 29, 0.96), rgba(11, 16, 24, 0.92)),
+                radial-gradient(circle at 20% 0%, rgba(104, 205, 255, 0.12), transparent 32%);
+            color: var(--text);
+        }
+
+        .inlineViewer::backdrop {
+            background: rgba(2, 7, 14, 0.72);
+        }
+
+        .inlineViewerHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(196, 225, 255, 0.12);
+        }
+
+        .inlineViewerTitle {
+            margin: 0;
+            font-size: 16px;
+            color: var(--muted-strong);
+        }
+
+        .inlineViewerActions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .inlineViewerFrame {
+            display: block;
+            width: 100%;
+            height: min(78vh, 920px);
+            border: 0;
+            background: white;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +132,7 @@
                     <div class="tagRow"><span class="tag">google</span> <span class="tag">waterloo</span> <span class="tag">hq</span> <span class="tag">media</span></div>
                     <p class="footer">Strong Google-era feature page.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://blog.google/intl/en-ca/company-news/inside-google/its-our-biggest-unboxing-ever/">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/google-canada-unboxing-2016.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/google-canada-unboxing-2016.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/google-canada-unboxing-2016.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://blog.google/intl/en-ca/company-news/inside-google/its-our-biggest-unboxing-ever/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://blog.google/intl/en-ca/company-news/inside-google/its-our-biggest-unboxing-ever/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -96,7 +142,7 @@
                     <div class="tagRow"><span class="tag">google</span> <span class="tag">media</span> <span class="tag">profile</span></div>
                     <p class="footer">Good Google-era media mention.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://canada.googleblog.com/2013/02/innovation-nation-canadas-cutting-edge.html">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/google-canada-innovation-nation.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/google-canada-innovation-nation.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/google-canada-innovation-nation.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://canada.googleblog.com/2013/02/innovation-nation-canadas-cutting-edge.html" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://canada.googleblog.com/2013/02/innovation-nation-canadas-cutting-edge.html" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -106,7 +152,7 @@
                     <div class="tagRow"><span class="tag">google</span> <span class="tag">waterloo</span> <span class="tag">media</span></div>
                     <p class="footer">Short but useful local-media anchor.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://kitchener.citynews.ca/2010/08/11/google-lang-tannery/">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/citynews-google-lang-tannery.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/citynews-google-lang-tannery.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/citynews-google-lang-tannery.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://kitchener.citynews.ca/2010/08/11/google-lang-tannery/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://kitchener.citynews.ca/2010/08/11/google-lang-tannery/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -116,7 +162,7 @@
                     <div class="tagRow"><span class="tag">quack</span> <span class="tag">aol</span> <span class="tag">acquisition</span> <span class="tag">media</span></div>
                     <p class="footer">Person-centric summary is here; company-deep interpretation belongs in the Quack archive.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.internetnews.com/it-management/another-feather-in-aols-cap/">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.internetnews.com/it-management/another-feather-in-aols-cap/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.internetnews.com/it-management/another-feather-in-aols-cap/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -126,11 +172,48 @@
                     <div class="tagRow"><span class="tag">quack</span> <span class="tag">voice-portal</span> <span class="tag">media</span></div>
                     <p class="footer">Useful broader market framing.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
             </div>
         </section>
     </main>
+    <dialog class="inlineViewer" id="inline-viewer">
+        <div class="inlineViewerHeader">
+            <h2 class="inlineViewerTitle" id="inline-viewer-title">Content viewer</h2>
+            <div class="inlineViewerActions">
+                <a class="button button--ghost" id="inline-viewer-open" href="#" target="_blank" rel="noopener noreferrer">Open separately</a>
+                <button class="button button--ghost" type="button" id="inline-viewer-close">Close</button>
+            </div>
+        </div>
+        <iframe class="inlineViewerFrame" id="inline-viewer-frame" title="Inline content viewer" loading="lazy"></iframe>
+    </dialog>
+    <script>
+        const viewer = document.getElementById("inline-viewer");
+        const viewerFrame = document.getElementById("inline-viewer-frame");
+        const viewerTitle = document.getElementById("inline-viewer-title");
+        const viewerOpen = document.getElementById("inline-viewer-open");
+        const viewerClose = document.getElementById("inline-viewer-close");
+
+        for (const trigger of document.querySelectorAll(".inlineViewerTrigger")) {
+            trigger.addEventListener("click", () => {
+                const src = trigger.dataset.inlineSrc;
+                const title = trigger.dataset.inlineTitle || "Content viewer";
+                viewerTitle.textContent = title;
+                viewerFrame.src = src;
+                viewerOpen.href = src;
+                viewer.showModal();
+            });
+        }
+
+        viewerClose.addEventListener("click", () => {
+            viewer.close();
+            viewerFrame.src = "";
+        });
+
+        viewer.addEventListener("close", () => {
+            viewerFrame.src = "";
+        });
+    </script>
 </body>
 </html>

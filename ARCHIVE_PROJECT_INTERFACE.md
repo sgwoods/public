@@ -61,6 +61,36 @@ Not allowed:
 - two separate long-form canonical descriptions of the same source
 - conflicting dates, titles, or source URLs without an explicit note
 
+## Content access and preservation policy
+
+Archive projects should prefer durable, reader-friendly access patterns.
+
+Default rules:
+
+- where practical, let users open preserved content inside the project page itself
+- also offer a clear option to open the same item separately in a browser tab or window
+- prefer a preserved local archive copy over a transient external source when both exist
+- keep the canonical external URL as a visible option when it still matters for provenance
+
+For source records, the preferred order of presentation is:
+
+1. local preserved copy
+2. trusted external archive copy
+3. canonical live web page
+
+This means project pages should usually expose buttons such as:
+
+- `View archived copy here`
+- `Open archived copy`
+- `View source here`
+- `Open source`
+
+Notes:
+
+- remote pages may block iframe embedding; still provide the inline option when reasonable, but always include a separate-open fallback
+- media pages may use an inline player instead of a document viewer where appropriate
+- if a source is at risk of disappearing, preserving a local snapshot should be treated as preferred archival work, not optional polish
+
 ## Required exports
 
 Each archive project should maintain and publish three machine-readable files:
@@ -217,6 +247,12 @@ Recommended shape:
   - local path in the archive project if preserved
 - `urls.archive_web`
   - external archive URL if applicable
+
+Archive guidance:
+
+- `urls.archive_local` should be populated whenever a durable local capture exists
+- if a source is important and only `urls.canonical` exists, the project should usually track follow-up work to archive it locally
+- pages that render source records should favor `archive_local` in their primary inline-view actions when available
 - `ownership.canonical_repo`
   - owning archive project
 - `ownership.person_hub_use`

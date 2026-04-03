@@ -45,6 +45,52 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
+
+        .inlineViewer {
+            width: min(1100px, calc(100vw - 32px));
+            border: 1px solid rgba(124, 181, 255, 0.22);
+            border-radius: 24px;
+            padding: 0;
+            background:
+                linear-gradient(160deg, rgba(16, 20, 29, 0.96), rgba(11, 16, 24, 0.92)),
+                radial-gradient(circle at 20% 0%, rgba(104, 205, 255, 0.12), transparent 32%);
+            color: var(--text);
+        }
+
+        .inlineViewer::backdrop {
+            background: rgba(2, 7, 14, 0.72);
+        }
+
+        .inlineViewerHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(196, 225, 255, 0.12);
+        }
+
+        .inlineViewerTitle {
+            margin: 0;
+            font-size: 16px;
+            color: var(--muted-strong);
+        }
+
+        .inlineViewerActions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .inlineViewerFrame {
+            display: block;
+            width: 100%;
+            height: min(78vh, 920px);
+            border: 0;
+            background: white;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +132,7 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">about-me</span> <span class="tag">baseline</span> <span class="tag">self-authored</span></div>
                     <p class="footer">Useful baseline source for education, interests, geography, and public link-network discovery.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://about.me/sgw">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/about-me-sgw.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/about-me-sgw.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/about-me-sgw.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://about.me/sgw" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://about.me/sgw" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -96,7 +142,7 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">linkedin</span> <span class="tag">baseline</span> <span class="tag">current-role</span></div>
                     <p class="footer">Treat as a major baseline identity and chronology source, but not as a substitute for independent sourcing.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.linkedin.com/in/stevenwoods/">Open source</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="https://www.linkedin.com/in/stevenwoods/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.linkedin.com/in/stevenwoods/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -106,7 +152,7 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">wikipedia</span> <span class="tag">secondary</span> <span class="tag">baseline</span></div>
                     <p class="footer">Treat as a public synthesis page rather than a primary authority.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://en.wikipedia.org/wiki/Steven_Woods">Open source</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="https://en.wikipedia.org/wiki/Steven_Woods" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://en.wikipedia.org/wiki/Steven_Woods" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -116,7 +162,7 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">inovia</span> <span class="tag">baseline</span> <span class="tag">current-role</span></div>
                     <p class="footer">Use as the current first-party role and summary source.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.inovia.vc/team/steve-woods/">Open source</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="https://www.inovia.vc/team/steve-woods/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.inovia.vc/team/steve-woods/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -126,7 +172,7 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">bio-link</span> <span class="tag">baseline</span> <span class="tag">link-hub</span></div>
                     <p class="footer">Useful as a live public link map even when direct archival capture is difficult.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://bio.link/sgwoods">Open source</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="https://bio.link/sgwoods" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://bio.link/sgwoods" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -136,7 +182,7 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">inovia</span> <span class="tag">transition</span></div>
                     <p class="footer">Strong transition/profile source.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/inovia-welcomes-steven-woods.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/inovia-welcomes-steven-woods.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/inovia-welcomes-steven-woods.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -146,7 +192,7 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">award</span> <span class="tag">usask</span></div>
                     <p class="footer">Important retrospective profile.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://alumni.usask.ca/get-involved/achieve/2021/woods.php">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/usask-alumni-profile-2021.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/usask-alumni-profile-2021.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/usask-alumni-profile-2021.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://alumni.usask.ca/get-involved/achieve/2021/woods.php" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://alumni.usask.ca/get-involved/achieve/2021/woods.php" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
                 <article class="entry">
@@ -156,11 +202,48 @@
                     <div class="tagRow"><span class="tag">profile</span> <span class="tag">waterloo</span> <span class="tag">award</span></div>
                     <p class="footer">Good recognition anchor.</p>
                     <div class="entryLinks">
-                        <a class="button" href="https://uwaterloo.ca/math/profiles/steven-woods">Open source</a> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-jw-graham-profile.html">Open local archive</a>
+                        <button class="button inlineViewerTrigger" type="button" data-inline-src="../historic/artifacts/archive-html/uwaterloo-jw-graham-profile.html" data-inline-title="View archived copy here">View archived copy here</button> <a class="button button--ghost" href="../historic/artifacts/archive-html/uwaterloo-jw-graham-profile.html" target="_blank" rel="noopener noreferrer">Open archived copy</a> <button class="button button--ghost inlineViewerTrigger" type="button" data-inline-src="https://uwaterloo.ca/math/profiles/steven-woods" data-inline-title="View source here">View source here</button> <a class="button button--ghost" href="https://uwaterloo.ca/math/profiles/steven-woods" target="_blank" rel="noopener noreferrer">Open source</a>
                     </div>
                 </article>
             </div>
         </section>
     </main>
+    <dialog class="inlineViewer" id="inline-viewer">
+        <div class="inlineViewerHeader">
+            <h2 class="inlineViewerTitle" id="inline-viewer-title">Content viewer</h2>
+            <div class="inlineViewerActions">
+                <a class="button button--ghost" id="inline-viewer-open" href="#" target="_blank" rel="noopener noreferrer">Open separately</a>
+                <button class="button button--ghost" type="button" id="inline-viewer-close">Close</button>
+            </div>
+        </div>
+        <iframe class="inlineViewerFrame" id="inline-viewer-frame" title="Inline content viewer" loading="lazy"></iframe>
+    </dialog>
+    <script>
+        const viewer = document.getElementById("inline-viewer");
+        const viewerFrame = document.getElementById("inline-viewer-frame");
+        const viewerTitle = document.getElementById("inline-viewer-title");
+        const viewerOpen = document.getElementById("inline-viewer-open");
+        const viewerClose = document.getElementById("inline-viewer-close");
+
+        for (const trigger of document.querySelectorAll(".inlineViewerTrigger")) {
+            trigger.addEventListener("click", () => {
+                const src = trigger.dataset.inlineSrc;
+                const title = trigger.dataset.inlineTitle || "Content viewer";
+                viewerTitle.textContent = title;
+                viewerFrame.src = src;
+                viewerOpen.href = src;
+                viewer.showModal();
+            });
+        }
+
+        viewerClose.addEventListener("click", () => {
+            viewer.close();
+            viewerFrame.src = "";
+        });
+
+        viewer.addEventListener("close", () => {
+            viewerFrame.src = "";
+        });
+    </script>
 </body>
 </html>
