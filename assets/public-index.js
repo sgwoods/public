@@ -378,6 +378,7 @@
         );
         const axisTop = chart.querySelector('[data-activity-axis="top"]');
         const axisMid = chart.querySelector('[data-activity-axis="mid"]');
+        const refreshedNode = chart.querySelector("[data-activity-last-refreshed]");
         const statusNode = chart.querySelector("[data-activity-status]");
         const weekNodes = Array.from(chart.querySelectorAll("[data-activity-week]"));
         const projectLabels = new Map(config.projects.map((project) => [project.project_id, project.label]));
@@ -435,6 +436,9 @@
         if (statusNode) {
             statusNode.textContent = message;
         }
+        if (refreshedNode) {
+            refreshedNode.textContent = formatLocalDateTime(new Date().toISOString());
+        }
     }
 
     async function initActivityChart(chart) {
@@ -449,7 +453,12 @@
             index < weekStarts.length - 1 ? weekStarts[index + 1] : new Date(start.getTime() + 7 * 24 * 60 * 60 * 1000)
         );
         const sinceIso = weekStarts[0].toISOString();
+        const refreshedNode = chart.querySelector("[data-activity-last-refreshed]");
         const statusNode = chart.querySelector("[data-activity-status]");
+
+        if (refreshedNode && config.generated_at) {
+            refreshedNode.textContent = formatLocalDateTime(config.generated_at);
+        }
 
         if (statusNode) {
             statusNode.textContent = `Refreshing recent GitHub ${config.metric_label || "commit"} activity for ${config.projects.map((project) => project.label).join(", ")}...`;

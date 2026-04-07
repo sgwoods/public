@@ -184,6 +184,10 @@ def format_local_date(value: datetime) -> str:
     return value.astimezone(LOCAL_TZ).strftime("%B %-d, %Y")
 
 
+def format_local_datetime(value: datetime) -> str:
+    return value.astimezone(LOCAL_TZ).strftime("%B %-d, %Y at %-I:%M %p")
+
+
 def load_project(path: Path) -> ProjectStatus:
     payload: dict[str, Any] = json.loads(path.read_text())
     timeline_span = payload.get("timeline_span") or {}
@@ -401,6 +405,7 @@ def render_activity_chart(
         )
 
     chart_config_json = json.dumps(chart_config).replace("</", "<\\/")
+    generated_label = format_local_datetime(parse_datetime(chart_config["generated_at"]))
 
     return f"""        <section class="panel" data-activity-chart data-activity-chart-id="{chart_id}">
             <h2>{html.escape(title)}</h2>
@@ -422,6 +427,7 @@ def render_activity_chart(
             <div class="activityLegend">
 {chr(10).join(legend)}
             </div>
+            <p class="footer"><strong>Last refreshed:</strong> <span data-activity-last-refreshed>{html.escape(generated_label)}</span></p>
             <p class="footer" data-activity-status>Rendered from local repository history and refreshed from GitHub when the page loads.</p>
             <script id="activity-chart-config-{chart_id}" type="application/json">{chart_config_json}</script>
         </section>"""
