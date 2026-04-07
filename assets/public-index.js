@@ -310,12 +310,12 @@
         return Math.ceil(value / 25) * 25;
     }
 
-    function bucketCounts(commitDates, weekStarts, weekEnds) {
-        const counts = new Array(weekStarts.length).fill(0);
+    function bucketCounts(commitDates, bucketStarts, bucketEnds) {
+        const counts = new Array(bucketStarts.length).fill(0);
         for (const commitDate of commitDates) {
             const timestamp = commitDate.getTime();
-            for (let index = 0; index < weekStarts.length; index += 1) {
-                if (timestamp >= weekStarts[index].getTime() && timestamp < weekEnds[index].getTime()) {
+            for (let index = 0; index < bucketStarts.length; index += 1) {
+                if (timestamp >= bucketStarts[index].getTime() && timestamp < bucketEnds[index].getTime()) {
                     counts[index] += 1;
                     break;
                 }
@@ -354,7 +354,7 @@
         return commitDates;
     }
 
-    async function fetchProjectCounts(project, sinceIso, weekStarts, weekEnds) {
+    async function fetchProjectCounts(project, sinceIso, bucketStarts, bucketEnds) {
         const paths = Array.isArray(project.paths) && project.paths.length > 0 ? project.paths : [null];
         const dateMaps = await Promise.all(paths.map((path) => fetchCommitDatesForPath(project, sinceIso, path)));
         const mergedDates = new Map();
@@ -366,7 +366,7 @@
             }
         }
 
-        return bucketCounts(Array.from(mergedDates.values()), weekStarts, weekEnds);
+        return bucketCounts(Array.from(mergedDates.values()), bucketStarts, bucketEnds);
     }
 
     function renderActivityData(chart, config, weeks, message) {
@@ -382,6 +382,7 @@
         const statusNode = chart.querySelector("[data-activity-status]");
         const weekNodes = Array.from(chart.querySelectorAll("[data-activity-week]"));
         const projectLabels = new Map(config.projects.map((project) => [project.project_id, project.label]));
+        const projectColors = new Map(config.projects.map((project) => [project.project_id, [project.color_top, project.color_bottom]]));
 
         const totalsByProject = new Map(config.projects.map((project) => [project.project_id, 0]));
         let maxTotal = 0;
@@ -424,7 +425,10 @@
                 const projectId = segmentNode.getAttribute("data-activity-project");
                 const count = week.counts[projectId] || 0;
                 const height = ceiling > 0 ? (count / ceiling) * 100 : 0;
+                const colors = projectColors.get(projectId) || ["rgba(121, 184, 255, 0.96)", "rgba(74, 126, 230, 0.96)"];
                 segmentNode.style.height = `${height.toFixed(2)}%`;
+                segmentNode.style.setProperty("--activity-top", colors[0]);
+                segmentNode.style.setProperty("--activity-bottom", colors[1]);
                 segmentNode.title = `${projectLabels.get(projectId) || projectId}: ${count} ${config.metric_label || "commits"}`;
             }
         });
@@ -448,13 +452,26 @@
             return;
         }
 
-        const weekStarts = config.weeks.map((value) => new Date(value));
-        const weekEnds = weekStarts.map((start, index) =>
-            index < weekStarts.length - 1 ? weekStarts[index + 1] : new Date(start.getTime() + 7 * 24 * 60 * 60 * 1000)
-        );
-        const sinceIso = weekStarts[0].toISOString();
+        const bucketConfig = Array.isArray(config.buckets) ? config.buckets : [];
+        const bucketStarts = bucketConfig.map((entry) => new Date(entry.start));
+        const bucketEnds = bucketConfig.map((entry) => new Date(entry.end));
+        const sinceIso = bucketStarts[0].toISOString();
         const refreshedNode = chart.querySelector("[data-activity-last-refreshed]");
         const statusNode = chart.querySelector("[data-activity-status]");
+
+        chart.style.setProperty("--activity-columns", String(bucketConfig.length || 8));
+
+        const weekNodes = Array.from(chart.querySelectorAll("[data-activity-week]"));
+        weekNodes.forEach((weekNode, index) => {
+            const labelNode = weekNode.querySelector(".activityLabel");
+            if (labelNode && bucketConfig[index]) {
+                labelNode.textContent = bucketConfig[index].label;
+            }
+        });
+
+        const computedBucketEnds = bucketEnds.length ? bucketEnds : bucketStarts.map((start, index) =>
+            index < bucketStarts.length - 1 ? bucketStarts[index + 1] : new Date(start.getTime() + 7 * 24 * 60 * 60 * 1000)
+        );
 
         if (refreshedNode && config.generated_at) {
             refreshedNode.textContent = formatLocalDateTime(config.generated_at);
@@ -466,15 +483,16 @@
 
         try {
             const countsByProject = await Promise.all(
-                config.projects.map((project) => fetchProjectCounts(project, sinceIso, weekStarts, weekEnds))
+                config.projects.map((project) => fetchProjectCounts(project, sinceIso, bucketStarts, computedBucketEnds))
             );
-            const weeks = weekStarts.map((start, index) => {
+            const weeks = bucketStarts.map((start, index) => {
                 const counts = {};
                 config.projects.forEach((project, projectIndex) => {
                     counts[project.project_id] = countsByProject[projectIndex][index] || 0;
                 });
                 return {
                     start: start.toISOString(),
+                    label: bucketConfig[index]?.label || `Bucket ${index + 1}`,
                     counts,
                 };
             });

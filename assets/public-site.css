@@ -388,7 +388,7 @@ code {
     z-index: 1;
     min-height: 260px;
     display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(var(--activity-columns, 8), minmax(0, 1fr));
     gap: 14px;
     align-items: end;
     padding: 8px 0 0;
@@ -423,6 +423,7 @@ code {
     width: 100%;
     min-height: 0;
     transition: height 0.5s ease;
+    background: linear-gradient(180deg, var(--activity-top, rgba(121, 184, 255, 0.96)), var(--activity-bottom, rgba(74, 126, 230, 0.96)));
 }
 
 .activitySegment--abtweak,
@@ -514,6 +515,7 @@ code {
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+    background: linear-gradient(180deg, var(--activity-top, rgba(121, 184, 255, 0.96)), var(--activity-bottom, rgba(74, 126, 230, 0.96)));
 }
 
 @media (max-width: 720px) {

@@ -35,100 +35,41 @@ PROJECT_ORDER = [
     "quack-com",
     "kinitos-neoedge",
 ]
-CODING_ACTIVITY_PROJECTS = [
-    {
+KNOWN_CODING_REPOS: dict[str, dict[str, Any]] = {
+    "mmath-renovation": {
         "label": "Abtweak",
         "repo_path": Path("/Users/stevenwoods/mmath-renovation"),
         "ref": "origin/main",
-        "css_class": "activitySegment--abtweak",
-        "project_id": "mmath-renovation",
+        "api_ref": "main",
+        "repo": "mmath-renovation",
     },
-    {
+    "phd-renovation": {
         "label": "CSP",
         "repo_path": Path("/Users/stevenwoods/phd-renovation"),
         "ref": "origin/main",
-        "css_class": "activitySegment--csp",
-        "project_id": "phd-renovation",
+        "api_ref": "main",
+        "repo": "phd-renovation",
     },
-    {
+    "aurora-galactica": {
         "label": "Aurora",
         "repo_path": Path("/Users/stevenwoods/Documents/Codex-Test1"),
         "ref": "origin/main",
-        "css_class": "activitySegment--galaga",
-        "project_id": "aurora-galactica",
-    },
-]
-RESEARCH_ACTIVITY_PROJECTS = [
-    {
-        "label": "Steven",
-        "repo_path": ROOT,
-        "ref": "HEAD",
         "api_ref": "main",
-        "css_class": "activitySegment--steven",
-        "project_id": "steven-woods-research",
-        "pathspecs": ["steven-woods-research", "steven-woods-research.html"],
-        "repo": "public",
+        "repo": "Codex-Test1",
     },
-    {
-        "label": "Quack",
-        "repo_path": ROOT,
-        "ref": "HEAD",
-        "api_ref": "main",
-        "css_class": "activitySegment--quack",
-        "project_id": "quack-com",
-        "pathspecs": ["quack", "quack-com.html"],
-        "repo": "public",
-    },
-    {
-        "label": "Google",
-        "repo_path": ROOT,
-        "ref": "HEAD",
-        "api_ref": "main",
-        "css_class": "activitySegment--google",
-        "project_id": "google-canada-research",
-        "pathspecs": ["google-canada-research", "google-canada-research.html"],
-        "repo": "public",
-    },
-    {
-        "label": "Inovia",
-        "repo_path": ROOT,
-        "ref": "HEAD",
-        "api_ref": "main",
-        "css_class": "activitySegment--inovia",
-        "project_id": "inovia-research",
-        "pathspecs": ["inovia-research", "inovia-research.html"],
-        "repo": "public",
-    },
-    {
-        "label": "Canberra",
-        "repo_path": ROOT,
-        "ref": "HEAD",
-        "api_ref": "main",
-        "css_class": "activitySegment--canberra",
-        "project_id": "canberra-research",
-        "pathspecs": ["canberra-research", "canberra-research.html"],
-        "repo": "public",
-    },
-    {
-        "label": "SEI",
-        "repo_path": ROOT,
-        "ref": "HEAD",
-        "api_ref": "main",
-        "css_class": "activitySegment--sei",
-        "project_id": "sei-pittsburgh-research",
-        "pathspecs": ["sei-pittsburgh-research", "sei-pittsburgh-research.html"],
-        "repo": "public",
-    },
-    {
-        "label": "Kinitos / NeoEdge",
-        "repo_path": ROOT,
-        "ref": "HEAD",
-        "api_ref": "main",
-        "css_class": "activitySegment--kinitos",
-        "project_id": "kinitos-neoedge",
-        "pathspecs": ["kinitos-neoedge", "kinitos-neoedge.html"],
-        "repo": "public",
-    },
+}
+
+ACTIVITY_COLOR_PALETTE = [
+    ("rgba(103, 230, 168, 0.96)", "rgba(57, 181, 124, 0.96)"),
+    ("rgba(121, 184, 255, 0.96)", "rgba(74, 126, 230, 0.96)"),
+    ("rgba(255, 214, 107, 0.96)", "rgba(233, 157, 62, 0.96)"),
+    ("rgba(255, 176, 82, 0.96)", "rgba(219, 116, 50, 0.96)"),
+    ("rgba(246, 83, 20, 0.96)", "rgba(219, 68, 55, 0.96)"),
+    ("rgba(162, 89, 255, 0.96)", "rgba(110, 56, 190, 0.96)"),
+    ("rgba(54, 179, 126, 0.96)", "rgba(28, 120, 85, 0.96)"),
+    ("rgba(159, 168, 218, 0.96)", "rgba(92, 107, 192, 0.96)"),
+    ("rgba(98, 214, 202, 0.96)", "rgba(39, 166, 162, 0.96)"),
+    ("rgba(244, 143, 177, 0.96)", "rgba(216, 27, 96, 0.96)"),
 ]
 LEGACY_ARCHIVES = [
     {
@@ -163,8 +104,10 @@ class ProjectStatus:
 
 
 @dataclass
-class ActivityWeek:
+class ActivityBucket:
     start: datetime
+    end: datetime
+    label: str
     counts: dict[str, int]
 
     @property
@@ -280,6 +223,11 @@ def current_week_start(today: date | None = None) -> datetime:
     return datetime.combine(start_date, time.min, tzinfo=LOCAL_TZ)
 
 
+def current_day_start(today: date | None = None) -> datetime:
+    local_today = today or datetime.now(LOCAL_TZ).date()
+    return datetime.combine(local_today, time.min, tzinfo=LOCAL_TZ)
+
+
 def git_rev_list_count(
     repo_path: Path,
     ref: str,
@@ -309,9 +257,9 @@ def git_rev_list_count(
     return int(result.stdout.strip() or "0")
 
 
-def load_activity_weeks(projects: list[dict[str, Any]], num_weeks: int = 8) -> list[ActivityWeek]:
+def load_weekly_activity_buckets(projects: list[dict[str, Any]], num_weeks: int = 8) -> list[ActivityBucket]:
     start = current_week_start() - timedelta(weeks=num_weeks - 1)
-    weeks: list[ActivityWeek] = []
+    weeks: list[ActivityBucket] = []
     for offset in range(num_weeks):
         week_start = start + timedelta(weeks=offset)
         week_end = week_start + timedelta(weeks=1)
@@ -324,8 +272,41 @@ def load_activity_weeks(projects: list[dict[str, Any]], num_weeks: int = 8) -> l
                 week_end,
                 project.get("pathspecs"),
             )
-        weeks.append(ActivityWeek(start=week_start, counts=counts))
+        weeks.append(
+            ActivityBucket(
+                start=week_start,
+                end=week_end,
+                label=week_start.astimezone(LOCAL_TZ).strftime("%b %-d"),
+                counts=counts,
+            )
+        )
     return weeks
+
+
+def load_daily_activity_buckets(projects: list[dict[str, Any]], num_days: int = 7) -> list[ActivityBucket]:
+    start = current_day_start() - timedelta(days=num_days - 1)
+    days: list[ActivityBucket] = []
+    for offset in range(num_days):
+        day_start = start + timedelta(days=offset)
+        day_end = day_start + timedelta(days=1)
+        counts: dict[str, int] = {}
+        for project in projects:
+            counts[project["project_id"]] = git_rev_list_count(
+                project["repo_path"],
+                project["ref"],
+                day_start,
+                day_end,
+                project.get("pathspecs"),
+            )
+        days.append(
+            ActivityBucket(
+                start=day_start,
+                end=day_end,
+                label=day_start.astimezone(LOCAL_TZ).strftime("%b %-d"),
+                counts=counts,
+            )
+        )
+    return days
 
 
 def nice_upper_bound(value: int) -> int:
@@ -342,8 +323,107 @@ def nice_upper_bound(value: int) -> int:
     return ((value + step - 1) // step) * step
 
 
-def format_week_label(value: datetime) -> str:
-    return value.astimezone(LOCAL_TZ).strftime("%b %-d")
+def activity_color(index: int) -> tuple[str, str]:
+    return ACTIVITY_COLOR_PALETTE[index % len(ACTIVITY_COLOR_PALETTE)]
+
+
+def research_manifest_folder_by_id() -> dict[str, str]:
+    mapping: dict[str, str] = {}
+    for path in sorted(ROOT.glob("*/project-manifest.json")):
+        payload = json.loads(path.read_text())
+        project_id = payload.get("project_id")
+        if project_id:
+            mapping[project_id] = path.parent.name
+    return mapping
+
+
+def classify_projects(projects: list[ProjectStatus]) -> tuple[list[ProjectStatus], list[ProjectStatus]]:
+    research_ids = set(research_manifest_folder_by_id())
+    research_projects: list[ProjectStatus] = []
+    coding_projects: list[ProjectStatus] = []
+
+    for project in projects:
+        if project.project_id in research_ids:
+            research_projects.append(project)
+        else:
+            coding_projects.append(project)
+
+    coding_projects.sort(key=sort_key)
+    research_projects.sort(key=sort_key)
+    return coding_projects, research_projects
+
+
+def build_coding_activity_projects(projects: list[ProjectStatus]) -> list[dict[str, Any]]:
+    activity_projects: list[dict[str, Any]] = []
+    for index, project in enumerate(projects):
+        color_top, color_bottom = activity_color(index)
+        known = KNOWN_CODING_REPOS.get(project.project_id)
+        if known:
+            activity_projects.append(
+                {
+                    "label": known["label"],
+                    "repo_path": known["repo_path"],
+                    "ref": known["ref"],
+                    "api_ref": known["api_ref"],
+                    "project_id": project.project_id,
+                    "repo": known["repo"],
+                    "color_top": color_top,
+                    "color_bottom": color_bottom,
+                    "pathspecs": known.get("pathspecs", []),
+                }
+            )
+            continue
+
+        pathspecs = [project.project_page_href, f"data/projects/{project.project_id}.json"]
+        related_data = ROOT / "data" / f"{project.project_id}.approved.json"
+        if related_data.exists():
+            pathspecs.append(f"data/{project.project_id}.approved.json")
+
+        activity_projects.append(
+            {
+                "label": project.display_name,
+                "repo_path": ROOT,
+                "ref": "HEAD",
+                "api_ref": "main",
+                "project_id": project.project_id,
+                "repo": "public",
+                "pathspecs": pathspecs,
+                "color_top": color_top,
+                "color_bottom": color_bottom,
+            }
+        )
+    return activity_projects
+
+
+def build_research_activity_projects(projects: list[ProjectStatus]) -> list[dict[str, Any]]:
+    activity_projects: list[dict[str, Any]] = []
+    folder_by_id = research_manifest_folder_by_id()
+    for index, project in enumerate(projects):
+        color_top, color_bottom = activity_color(index)
+        folder_name = folder_by_id.get(project.project_id)
+        folder = ROOT / folder_name if folder_name else None
+        pathspecs = [project.project_page_href]
+        if folder and folder.exists():
+            pathspecs.insert(0, folder_name)
+        else:
+            fallback_folder = project.project_page_href.removesuffix(".html")
+            if (ROOT / fallback_folder).exists():
+                pathspecs.insert(0, fallback_folder)
+
+        activity_projects.append(
+            {
+                "label": project.display_name,
+                "repo_path": ROOT,
+                "ref": "HEAD",
+                "api_ref": "main",
+                "project_id": project.project_id,
+                "repo": "public",
+                "pathspecs": pathspecs,
+                "color_top": color_top,
+                "color_bottom": color_bottom,
+            }
+        )
+    return activity_projects
 
 
 def render_activity_chart(
@@ -353,14 +433,23 @@ def render_activity_chart(
     lead: str,
     projects: list[dict[str, Any]],
     metric_label: str,
+    buckets: list[ActivityBucket],
+    bucket_mode: str,
 ) -> str:
-    weeks = load_activity_weeks(projects)
-    ceiling = nice_upper_bound(max(week.total for week in weeks))
+    ceiling = nice_upper_bound(max(bucket.total for bucket in buckets))
     midpoint = ceiling // 2
     chart_config = {
         "chart_id": chart_id,
         "generated_at": datetime.now(LOCAL_TZ).isoformat(),
-        "weeks": [week.start.isoformat() for week in weeks],
+        "bucket_mode": bucket_mode,
+        "buckets": [
+            {
+                "start": bucket.start.isoformat(),
+                "end": bucket.end.isoformat(),
+                "label": bucket.label,
+            }
+            for bucket in buckets
+        ],
         "metric_label": metric_label,
         "projects": [
             {
@@ -369,38 +458,40 @@ def render_activity_chart(
                 "repo": project.get("repo", project["repo_path"].name),
                 "ref": project.get("api_ref", project["ref"].replace("origin/", "")),
                 "paths": project.get("pathspecs", []),
+                "color_top": project["color_top"],
+                "color_bottom": project["color_bottom"],
             }
             for project in projects
         ],
     }
     legend = []
     for project in projects:
-        total = sum(week.counts[project["project_id"]] for week in weeks)
+        total = sum(bucket.counts[project["project_id"]] for bucket in buckets)
         legend.append(
             f"""                <div class="activityLegendItem">
-                    <span class="activityLegendSwatch {project["css_class"]}"></span>
-                    <span><strong>{html.escape(project["label"])}</strong> <span data-activity-legend-total="{project["project_id"]}">{total}</span> {html.escape(metric_label)} in the last 8 weeks</span>
+                    <span class="activityLegendSwatch" style="--activity-top: {project["color_top"]}; --activity-bottom: {project["color_bottom"]};"></span>
+                    <span><strong>{html.escape(project["label"])}</strong> <span data-activity-legend-total="{project["project_id"]}">{total}</span> {html.escape(metric_label)} in this {html.escape(bucket_mode)} view</span>
                 </div>"""
         )
 
     columns = []
-    for week in weeks:
+    for bucket in buckets:
         segments = []
         for project in projects:
-            count = week.counts[project["project_id"]]
+            count = bucket.counts[project["project_id"]]
             height = (count / ceiling) * 100
             segments.append(
-                f"""                                <span class="activitySegment {project["css_class"]}" data-activity-project="{project["project_id"]}" style="height: {height:.2f}%;" title="{html.escape(project["label"])}: {count} {html.escape(metric_label)}"></span>"""
+                f"""                                <span class="activitySegment" data-activity-project="{project["project_id"]}" style="height: {height:.2f}%; --activity-top: {project["color_top"]}; --activity-bottom: {project["color_bottom"]};" title="{html.escape(project["label"])}: {count} {html.escape(metric_label)}"></span>"""
             )
         columns.append(
-            f"""                    <div class="activityWeek" data-activity-week="{week.start.isoformat()}">
+            f"""                    <div class="activityWeek" data-activity-week="{bucket.start.isoformat()}">
                         <div class="activityColumn">
-                            <div class="activityStack" aria-label="{html.escape(format_week_label(week.start))}: {week.total} total {html.escape(metric_label)}">
+                            <div class="activityStack" aria-label="{html.escape(bucket.label)}: {bucket.total} total {html.escape(metric_label)}">
 {chr(10).join(segments)}
                             </div>
                         </div>
-                        <div class="activityTotal" data-activity-total>{week.total}</div>
-                        <div class="activityLabel">{html.escape(format_week_label(week.start))}</div>
+                        <div class="activityTotal" data-activity-total>{bucket.total}</div>
+                        <div class="activityLabel">{html.escape(bucket.label)}</div>
                     </div>"""
         )
 
@@ -410,7 +501,7 @@ def render_activity_chart(
     return f"""        <section class="panel" data-activity-chart data-activity-chart-id="{chart_id}">
             <h2>{html.escape(title)}</h2>
             <p class="lead">{html.escape(lead)}</p>
-            <div class="activityChart">
+            <div class="activityChart" style="--activity-columns: {len(buckets)};">
                 <div class="activityYAxis" aria-hidden="true">
                     <span data-activity-axis="top">{ceiling}</span>
                     <span data-activity-axis="mid">{midpoint}</span>
@@ -501,6 +592,9 @@ def render() -> str:
     projects = [project for project in projects if project.active]
     projects = dedupe_projects(projects)
     projects.sort(key=sort_key)
+    coding_projects, research_projects = classify_projects(projects)
+    coding_activity_projects = build_coding_activity_projects(coding_projects)
+    research_activity_projects = build_research_activity_projects(research_projects)
     if not projects:
         raise SystemExit("No active project manifests found.")
 
@@ -594,19 +688,43 @@ def render() -> str:
         </section>
 
 {render_activity_chart(
-    chart_id="coding",
-    title="Recent Coding Activity",
-    lead="Weekly commit counts on origin/main for the last 8 weeks across the public software project lines. Additional confidential work is tracked in the project cards above without exposing private repository details.",
-    projects=CODING_ACTIVITY_PROJECTS,
+    chart_id="coding-daily",
+    title="Recent Coding Activity: Last 7 Days",
+    lead="Daily commit counts for the last 7 days across all active coding project lines currently represented on this homepage.",
+    projects=coding_activity_projects,
     metric_label="commits",
+    buckets=load_daily_activity_buckets(coding_activity_projects, num_days=7),
+    bucket_mode="daily",
 )}
 
 {render_activity_chart(
-    chart_id="research",
-    title="Recent Research Archive Activity",
-    lead="Weekly path-scoped commit counts in the public archive repo for the last 8 weeks across the Steven Woods, Quack, and Kinitos / NeoEdge research lines.",
-    projects=RESEARCH_ACTIVITY_PROJECTS,
+    chart_id="coding-weekly",
+    title="Recent Coding Activity: Weekly Summary",
+    lead="Weekly commit counts on origin/main for the last 8 weeks across all active coding project lines currently represented on this homepage.",
+    projects=coding_activity_projects,
     metric_label="commits",
+    buckets=load_weekly_activity_buckets(coding_activity_projects, num_weeks=8),
+    bucket_mode="weekly",
+)}
+
+{render_activity_chart(
+    chart_id="research-daily",
+    title="Recent Research Archive Activity: Last 7 Days",
+    lead="Daily path-scoped commit counts for the last 7 days across all active research archive lines represented on this homepage.",
+    projects=research_activity_projects,
+    metric_label="commits",
+    buckets=load_daily_activity_buckets(research_activity_projects, num_days=7),
+    bucket_mode="daily",
+)}
+
+{render_activity_chart(
+    chart_id="research-weekly",
+    title="Recent Research Archive Activity: Weekly Summary",
+    lead="Weekly path-scoped commit counts in the public archive repo for the last 8 weeks across all active research archive lines represented on this homepage.",
+    projects=research_activity_projects,
+    metric_label="commits",
+    buckets=load_weekly_activity_buckets(research_activity_projects, num_weeks=8),
+    bucket_mode="weekly",
 )}
 
 {render_style_guide_note()}
