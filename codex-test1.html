@@ -235,7 +235,7 @@
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Current Build</span>
-                    <span class="metaValue">0.5.0+build.112.sha.38572b3</span>
+                    <span class="metaValue">0.5.0+build.113.sha.8a7bedb</span>
                     <div class="metaNote">Stamped from the latest synced repository build metadata.</div>
                 </div>
                 <div class="metaCard">
@@ -279,8 +279,8 @@
         <section class="panel">
             <h2>Latest release note</h2>
             <div class="card">
-                <h3>Aurora trust-fix and copy-boundary patch</h3>
-                <p>Bundled the first Platinum fast-follow Aurora fixes: dual-fighter runs now continue correctly after a single-ship loss, challenge stages present as bonus stages without consuming normal stage numbering, end-of-run carry/capture visuals no longer leak under results, and startup/wait-mode shell copy now follows a clearer platform-versus-application ownership model.</p>
+                <h3>Runtime freeze hardening patch</h3>
+                <p>Hardened Aurora against silent late-run frame-loop crashes by trapping runtime loop exceptions, surfacing export guidance when a frame fault occurs, fixing a restart-time async score-submit crash, and adding a targeted late-run ship-loss soak gate to the release process.</p>
             </div>
         </section>
 
