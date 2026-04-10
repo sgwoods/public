@@ -7,10 +7,10 @@
   "repo_url": "https://github.com/sgwoods/Codex-Test1",
   "dashboard_url": "https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html",
   "experience_url": "https://sgwoods.github.io/Aurora-Galactica/",
-  "repo_pushed_at": "2026-04-10T08:56:24-04:00",
-  "status_generated_at": "2026-04-10T12:56:32Z",
+  "repo_pushed_at": "2026-04-10T08:55:41-04:00",
+  "status_generated_at": "2026-04-10T12:56:42Z",
   "status_label": "Current release",
-  "status_value": "0.5.0",
+  "status_value": "1.2.3",
   "focus_label": "Current focus",
-  "focus_value": "Polished four-stage 1.0 slice"
+  "focus_value": "Keep the live 1.2.3 line trustworthy, watch score-surface feedback in production, and choose the next narrow Aurora moment-polish bundle without weakening the Platinum boundary or release discipline."
 }
