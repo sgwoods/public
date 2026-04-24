@@ -7,14 +7,14 @@
   "repo_url": "https://github.com/sgwoods/Codex-Test1",
   "dashboard_url": "https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html",
   "experience_url": "https://sgwoods.github.io/Aurora-Galactica/",
-  "repo_pushed_at": "2026-04-10T08:55:41-04:00",
-  "status_generated_at": "2026-04-11T19:45:10Z",
-  "source_build_label": "1.2.3+build.388.sha.13c8421",
-  "source_commit": "13c8421211aecc72ea936eca6fc0793fd40b1267",
+  "repo_pushed_at": "2026-04-24T19:03:30-04:00",
+  "status_generated_at": "2026-04-24T23:04:58Z",
+  "source_build_label": "1.2.3+build.489.sha.f6ba6c2",
+  "source_commit": "f6ba6c290cc62edc0d31240550fb45d928f7d2ee",
   "source_template_sha": "442e0ca0c8d3",
-  "public_sync_generated_at": "2026-04-11T19:45:10Z",
+  "public_sync_generated_at": "2026-04-24T23:04:58Z",
   "status_label": "Current release",
   "status_value": "1.2.3",
   "focus_label": "Current focus",
-  "focus_value": "Keep the live 1.2.3 line trustworthy, watch score-surface feedback in production, and choose the next narrow Aurora moment-polish bundle without weakening the Platinum boundary or release discipline."
+  "focus_value": "Promote the current materially improved hosted beta to production from the approved artifact set, keeping release docs, committed analysis artifacts, and the Platinum-versus-application boundary review current as part of the gate."
 }
