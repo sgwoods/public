@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import subprocess
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
@@ -21,6 +22,23 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "projects"
 OUTPUT = ROOT / "index.html"
 LOCAL_TZ = ZoneInfo("America/Toronto")
+
+
+def first_existing_path(candidates: list[Path]) -> Path:
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
+
+
+def env_or_candidates(env_name: str, candidates: list[Path]) -> Path:
+    override_raw = os.environ.get(env_name)
+    if override_raw:
+        override = Path(override_raw).expanduser()
+        return override
+    return first_existing_path(candidates)
+
+
 PROJECT_ORDER = [
     "aurora-galactica",
     "confidential-project",
@@ -38,21 +56,43 @@ PROJECT_ORDER = [
 KNOWN_CODING_REPOS: dict[str, dict[str, Any]] = {
     "mmath-renovation": {
         "label": "Abtweak",
-        "repo_path": Path("/Users/stevenwoods/mmath-renovation"),
+        "repo_path": env_or_candidates(
+            "PUBLIC_MMATH_REPO_PATH",
+            [
+                Path.home() / "Documents" / "GitPages" / "mmath-renovation",
+                Path("/Users/steven/Documents/GitPages/mmath-renovation"),
+                Path("/Users/stevenwoods/mmath-renovation"),
+            ],
+        ),
         "ref": "origin/main",
         "api_ref": "main",
         "repo": "mmath-renovation",
     },
     "phd-renovation": {
         "label": "CSP",
-        "repo_path": Path("/Users/stevenwoods/phd-renovation"),
+        "repo_path": env_or_candidates(
+            "PUBLIC_PHD_REPO_PATH",
+            [
+                Path.home() / "Documents" / "GitPages" / "phd-renovation",
+                Path("/Users/steven/Documents/GitPages/phd-renovation"),
+                Path("/Users/stevenwoods/phd-renovation"),
+            ],
+        ),
         "ref": "origin/main",
         "api_ref": "main",
         "repo": "phd-renovation",
     },
     "aurora-galactica": {
         "label": "Aurora",
-        "repo_path": Path("/Users/stevenwoods/Documents/Codex-Test1"),
+        "repo_path": env_or_candidates(
+            "PUBLIC_AURORA_REPO_PATH",
+            [
+                Path.home() / "Documents" / "Codex-Test1",
+                Path.home() / "Documents" / "New project" / "Codex-Test1",
+                Path("/Users/steven/Documents/Codex-Test1"),
+                Path("/Users/stevenwoods/Documents/Codex-Test1"),
+            ],
+        ),
         "ref": "origin/main",
         "api_ref": "main",
         "repo": "Codex-Test1",
@@ -235,6 +275,8 @@ def git_rev_list_count(
     end: datetime,
     pathspecs: list[str] | None = None,
 ) -> int:
+    if not repo_path.exists():
+        return 0
     command = [
         "git",
         "-C",
@@ -248,12 +290,15 @@ def git_rev_list_count(
     if pathspecs:
         command.extend(["--", *pathspecs])
 
-    result = subprocess.run(
-        command,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
+    try:
+        result = subprocess.run(
+            command,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return 0
     return int(result.stdout.strip() or "0")
 
 

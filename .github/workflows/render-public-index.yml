@@ -1,0 +1,43 @@
+name: Render Public Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/projects/*.json"
+      - "*/project-manifest.json"
+      - "assets/public-index.js"
+      - "tools/render_index.py"
+      - ".github/workflows/render-public-index.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render homepage index
+        run: python3 tools/render_index.py
+
+      - name: Commit regenerated index
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No index changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Render public index from manifests"
+          git push
