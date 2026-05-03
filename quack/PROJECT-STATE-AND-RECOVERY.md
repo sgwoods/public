@@ -19,6 +19,8 @@ The top-level `public` site is the Steven-centric downstream hub, not the owner 
 ## Current state
 
 - archive structure exists under `quack/`
+- workspace-status note exists at:
+  - `quack/WORKSPACE-STATUS.md`
 - formal interface files exist:
   - `quack/project-manifest.json`
   - `quack/source-manifest.json`
@@ -56,16 +58,18 @@ The top-level `public` site is the Steven-centric downstream hub, not the owner 
   - that checkout has been validated on branch `codex/public-recovery-stabilization`
   - Quack pipeline regeneration and validation succeeded there
   - regeneration differences were timestamp-only and were restored, leaving the iCloud-backed checkout clean
+  - deprecated and non-canonical local checkout paths are explicitly labeled in `quack/WORKSPACE-STATUS.md`
 
 ## Recommended next steps
 
 1. Treat the iCloud-backed checkout at `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery` as the canonical local Quack workspace going forward.
-2. Decide whether to merge the Quack continuity savepoint into the default branch now that the iCloud-backed workspace is confirmed clean.
-3. Preserve stronger first-party Quack or AOL by Phone captures.
-4. Strengthen investor-outcome sources with better preserved or filing-style material.
-5. Continue founder and related-people source collection, especially Alex Quilici and Jeromy Carriere.
-6. Promote only well-supported deferred sources; keep weak leads explicit.
-7. Keep manifests, project page, and campaign notes in sync whenever the archive materially changes.
+2. Use `quack/WORKSPACE-STATUS.md` to keep current versus deprecated work areas explicit if another checkout or repo split is introduced later.
+3. Decide whether to merge the Quack continuity savepoint into the default branch now that the iCloud-backed workspace is confirmed clean.
+4. Preserve stronger first-party Quack or AOL by Phone captures.
+5. Strengthen investor-outcome sources with better preserved or filing-style material.
+6. Continue founder and related-people source collection, especially Alex Quilici and Jeromy Carriere.
+7. Promote only well-supported deferred sources; keep weak leads explicit.
+8. Keep manifests, project page, and campaign notes in sync whenever the archive materially changes.
 
 ## Forward plan
 

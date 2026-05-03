@@ -4,6 +4,8 @@ This directory is the Quack.com company archive workspace.
 
 Use the tracked shared workflow at `data/shared/company-research-workflow.md` for company-history research, source discovery, manifest updates, timeline/entity extraction, project-page upkeep, and archive coordination work in this subtree.
 
+Read `WORKSPACE-STATUS.md` before doing substantial local work so active work happens in the current canonical checkout rather than a deprecated or parallel one.
+
 Working rules:
 
 - Read `public/ARCHIVE_PROJECT_INTERFACE.md` before making structure, metadata, or publishing decisions.

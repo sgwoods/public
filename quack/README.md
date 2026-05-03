@@ -33,7 +33,8 @@ Shared analysis guidance:
 Recovery and audit note:
 
 - current project-state, recoverability, and continuity status: `PROJECT-STATE-AND-RECOVERY.md`
-- active local-workspace rule: substantive local Quack work should move to an iCloud-backed checkout and this current path should be treated as transitional until that happens
+- current-versus-deprecated workspace guidance: `WORKSPACE-STATUS.md`
+- active local-workspace rule: substantive local Quack work should happen only in the canonical iCloud-backed checkout described in `WORKSPACE-STATUS.md`
 
 Formal export files:
 

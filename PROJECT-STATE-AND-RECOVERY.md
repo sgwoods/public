@@ -8,15 +8,19 @@ Going forward, all local work should be done only in an iCloud-backed folder.
 
 Current state:
 
-- this checkout is under `/Users/stevenwoods/GitPages/public`
-- the standard iCloud-backed root exists at:
-  - `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs`
+- canonical active continuity checkout:
+  - `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+- older non-iCloud transition checkout:
+  - `/Users/stevenwoods/GitPages/public`
+- parallel older iCloud checkout:
+  - `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public`
 
 Practical implication:
 
-- this current checkout should be treated as a transition workspace
-- no new substantial local-only work should continue here once the current state is stabilized
-- the next safe milestone is to preserve and reconcile the current work, then migrate the active workspace into an iCloud-backed location
+- `public-quack-recovery` is the current active continuity workspace
+- `/Users/stevenwoods/GitPages/public` should be treated as a deprecated transition checkout for active local work
+- `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public` should be treated as a non-canonical parallel iCloud checkout unless intentionally reconciled later
+- no new substantial local-only work should continue in deprecated or non-canonical checkouts
 
 ## Parallel workstreams
 
@@ -52,7 +56,7 @@ This is the current working plan and should be kept up to date as work proceeds.
 
 ### Phase 1: stabilize the current local state
 
-Status: `in progress`
+Status: `partially complete`
 
 Goals:
 
@@ -65,14 +69,14 @@ Tasks:
 
 - [x] create a dedicated recovery branch from the current local state
 - [x] commit the currently untracked continuity files
-- [ ] group and commit the current tracked local modifications intentionally
-- [ ] separate continuity-only changes from active parallel project changes
+- [ ] group and commit the remaining tracked local modifications intentionally
+- [x] separate Quack continuity-only changes from active parallel project changes
 - [ ] remove or ignore Finder junk such as `.DS_Store`
 - [ ] fetch/review and reconcile the current `origin/main` gap
 
 ### Phase 2: iCloud migration
 
-Status: `not started`
+Status: `complete for Quack continuity workspace`
 
 Goals:
 
@@ -81,11 +85,11 @@ Goals:
 
 Tasks:
 
-- [ ] choose the canonical iCloud-backed parent folder for active repos
-- [ ] create a fresh clone of this repo in the iCloud-backed location
-- [ ] verify the fresh clone can build/render the public surfaces
-- [ ] move any still-uncommitted work into that canonical checkout
-- [ ] stop treating `/Users/stevenwoods/GitPages/public` as the primary working copy
+- [x] choose the canonical iCloud-backed parent folder for active repos
+- [x] create a fresh clone of this repo in the iCloud-backed location
+- [x] verify the Quack continuity checkout can build/regenerate its archive surfaces
+- [x] move Quack continuity work into that canonical checkout via the recovery branch
+- [x] stop treating `/Users/stevenwoods/GitPages/public` as the primary Quack working copy
 
 ### Phase 3: continuity hardening
 
@@ -148,6 +152,11 @@ These are the current canonical working areas inside this repo:
 
 These are the areas that should be treated as current working surfaces unless later documents explicitly replace them.
 
+Workspace-status references:
+
+- `quack/WORKSPACE-STATUS.md`
+- `kinitos-neoedge/WORKSPACE-STATUS.md`
+
 ## Legacy, alias, or supporting areas
 
 These paths are not the canonical deep working areas, even if they still exist and remain useful:
@@ -160,8 +169,11 @@ These paths are not the canonical deep working areas, even if they still exist a
   - legacy compatibility alias for Aurora Galactica
   - not the canonical active project identity
 - `/Users/stevenwoods/GitPages/public`
-  - current transition checkout only
-  - not the intended long-term canonical local working copy once iCloud migration is complete
+  - deprecated transition checkout for active local archive work
+  - not the intended long-term canonical local working copy
+- `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public`
+  - non-canonical parallel iCloud checkout
+  - useful only if intentionally reconciled later
 
 Rule:
 
