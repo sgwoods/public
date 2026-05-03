@@ -48,27 +48,32 @@ The top-level `public` site is the Steven-centric downstream hub, not the owner 
 - local-workspace policy:
   - going forward, substantive local work for this project should be done only from an iCloud-backed working folder
   - the current checkout at `/Users/stevenwoods/GitPages` should be treated as a transition workspace until that migration is complete
+- remote continuity status:
+  - the latest Quack continuity/recovery savepoint has been committed and pushed to remote branch `codex/public-recovery-stabilization`
+  - the default branch may still trail this state until that work is merged
 
 ## Recommended next steps
 
-1. Save the latest Quack continuity work by committing and pushing the current local archive/recovery updates.
-2. Create or refresh an iCloud-backed checkout of the `public` repo and make that the canonical local workspace.
+1. Create or refresh an iCloud-backed checkout of the `public` repo and make that the canonical local workspace.
+2. Check out `codex/public-recovery-stabilization` there or merge it there as appropriate.
 3. Verify the iCloud-backed checkout by opening this file, rerunning the Quack pipeline, and confirming the project page and manifests regenerate cleanly.
-4. Preserve stronger first-party Quack or AOL by Phone captures.
-5. Strengthen investor-outcome sources with better preserved or filing-style material.
-6. Continue founder and related-people source collection, especially Alex Quilici and Jeromy Carriere.
-7. Promote only well-supported deferred sources; keep weak leads explicit.
-8. Keep manifests, project page, and campaign notes in sync whenever the archive materially changes.
+4. Decide whether to merge the Quack continuity savepoint into the default branch once the iCloud-backed workspace is confirmed clean.
+5. Preserve stronger first-party Quack or AOL by Phone captures.
+6. Strengthen investor-outcome sources with better preserved or filing-style material.
+7. Continue founder and related-people source collection, especially Alex Quilici and Jeromy Carriere.
+8. Promote only well-supported deferred sources; keep weak leads explicit.
+9. Keep manifests, project page, and campaign notes in sync whenever the archive materially changes.
 
 ## Forward plan
 
 The working plan for the next stage is:
 
-1. Stabilize the current local audit and portability changes.
-2. Push them so the remote repo reflects the current documented continuity baseline.
-3. Move active local work to an iCloud-backed folder.
+1. Use the pushed continuity branch as the current safe recovery point.
+2. Move active local work to an iCloud-backed folder.
+3. Validate Quack regeneration in that iCloud-backed checkout.
 4. Treat the iCloud-backed checkout as the only place for new captures, artifact edits, research-ledger updates, and page/manifest regeneration.
-5. Use this document as the running project-state note and update it whenever the archive materially changes.
+5. Merge or publish from that stabilized workspace once verified.
+6. Use this document as the running project-state note and update it whenever the archive materially changes.
 
 ## What is checked in
 
@@ -96,17 +101,12 @@ Checked-in external-but-relied-on archive context also exists elsewhere in the s
 
 ## What is not checked in
 
-The checked-in baseline is strong, but this working tree still contains newer local Quack continuity work that is not yet committed as of this audit, including:
-
-- `quack/PROJECT-STATE-AND-RECOVERY.md`
-- `data/shared/company-research-workflow.md`
-- portability and recovery updates in `quack/tools/quack_research_pipeline.py`
-- regenerated Quack research outputs and page/manifests reflecting those updates
+The checked-in baseline is strong, and the latest Quack continuity work has been pushed to remote branch `codex/public-recovery-stabilization`.
 
 This means:
 
-- a fresh checkout of the current local working tree is sufficient to continue
-- a fresh checkout of the remote repo is only guaranteed to include the last pushed state, not these latest local audit improvements, until they are committed and pushed
+- a fresh checkout can resume exactly from that branch
+- the default branch may still lag until this work is merged
 - because the current working tree is not in an iCloud-backed location, it should not be treated as the long-term canonical local workspace for new project work
 
 The `public` repo also has unrelated local modifications outside this project:
@@ -144,17 +144,18 @@ Sources currently still relying on canonical URLs rather than Quack-owned local 
 
 If the local directory tree is lost, the checked-in Quack baseline is sufficient to resume Quack work without rediscovery of the archive structure, manifests, source ledger, campaigns, topic briefs, or project page.
 
-To resume from the exact latest local audit state documented here, the current local project changes still need to be committed and pushed.
+To resume from the exact latest continuity state documented here, use remote branch `codex/public-recovery-stabilization` until those changes are merged into the default branch.
 
 Recovery steps on a new machine:
 
 1. Check out the `public` repo.
-2. Open `ARCHIVE_PROJECT_INTERFACE.md`.
-3. Open `quack/PROJECT-STATE-AND-RECOVERY.md`.
-4. Use `data/shared/company-research-workflow.md` plus the tracked intake playbook/template.
-5. Resume from `quack/research/run-report.md`, `quack/research/source-leads.json`, and the campaign notes.
-6. Regenerate derived outputs with `python3 quack/tools/quack_research_pipeline.py run` if needed.
-7. Validate portability with `python3 quack/tools/quack_research_pipeline.py validate`.
+2. Check out branch `codex/public-recovery-stabilization` if the default branch does not yet include this continuity state.
+3. Open `ARCHIVE_PROJECT_INTERFACE.md`.
+4. Open `quack/PROJECT-STATE-AND-RECOVERY.md`.
+5. Use `data/shared/company-research-workflow.md` plus the tracked intake playbook/template.
+6. Resume from `quack/research/run-report.md`, `quack/research/source-leads.json`, and the campaign notes.
+7. Regenerate derived outputs with `python3 quack/tools/quack_research_pipeline.py run` if needed.
+8. Validate portability with `python3 quack/tools/quack_research_pipeline.py validate`.
 
 Preferred recovery/workflow policy going forward:
 
@@ -167,4 +168,4 @@ Preferred recovery/workflow policy going forward:
 - some manifest entries still rely on external canonical URLs rather than local mirrors
 - some research leads still contain weaker deferred evidence that needs stronger sourcing before promotion
 - unrelated files elsewhere in the `public` repo may still be locally modified, so whole-repo publishing should still be done with care
-- until the latest local Quack continuity changes are committed and pushed, the remote repo still trails the documented local state
+- until the continuity branch is merged, the default branch still trails the documented Quack state
