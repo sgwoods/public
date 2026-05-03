@@ -51,29 +51,30 @@ The top-level `public` site is the Steven-centric downstream hub, not the owner 
 - remote continuity status:
   - the latest Quack continuity/recovery savepoint has been committed and pushed to remote branch `codex/public-recovery-stabilization`
   - the default branch may still trail this state until that work is merged
+- iCloud-backed workspace status:
+  - a dedicated iCloud-backed checkout now exists at `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+  - that checkout has been validated on branch `codex/public-recovery-stabilization`
+  - Quack pipeline regeneration and validation succeeded there
+  - regeneration differences were timestamp-only and were restored, leaving the iCloud-backed checkout clean
 
 ## Recommended next steps
 
-1. Create or refresh an iCloud-backed checkout of the `public` repo and make that the canonical local workspace.
-2. Check out `codex/public-recovery-stabilization` there or merge it there as appropriate.
-3. Verify the iCloud-backed checkout by opening this file, rerunning the Quack pipeline, and confirming the project page and manifests regenerate cleanly.
-4. Decide whether to merge the Quack continuity savepoint into the default branch once the iCloud-backed workspace is confirmed clean.
-5. Preserve stronger first-party Quack or AOL by Phone captures.
-6. Strengthen investor-outcome sources with better preserved or filing-style material.
-7. Continue founder and related-people source collection, especially Alex Quilici and Jeromy Carriere.
-8. Promote only well-supported deferred sources; keep weak leads explicit.
-9. Keep manifests, project page, and campaign notes in sync whenever the archive materially changes.
+1. Treat the iCloud-backed checkout at `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery` as the canonical local Quack workspace going forward.
+2. Decide whether to merge the Quack continuity savepoint into the default branch now that the iCloud-backed workspace is confirmed clean.
+3. Preserve stronger first-party Quack or AOL by Phone captures.
+4. Strengthen investor-outcome sources with better preserved or filing-style material.
+5. Continue founder and related-people source collection, especially Alex Quilici and Jeromy Carriere.
+6. Promote only well-supported deferred sources; keep weak leads explicit.
+7. Keep manifests, project page, and campaign notes in sync whenever the archive materially changes.
 
 ## Forward plan
 
 The working plan for the next stage is:
 
 1. Use the pushed continuity branch as the current safe recovery point.
-2. Move active local work to an iCloud-backed folder.
-3. Validate Quack regeneration in that iCloud-backed checkout.
-4. Treat the iCloud-backed checkout as the only place for new captures, artifact edits, research-ledger updates, and page/manifest regeneration.
-5. Merge or publish from that stabilized workspace once verified.
-6. Use this document as the running project-state note and update it whenever the archive materially changes.
+2. Use the validated iCloud-backed checkout as the only place for new captures, artifact edits, research-ledger updates, and page/manifest regeneration.
+3. Merge or publish from that stabilized workspace as appropriate.
+4. Use this document as the running project-state note and update it whenever the archive materially changes.
 
 ## What is checked in
 
@@ -108,6 +109,7 @@ This means:
 - a fresh checkout can resume exactly from that branch
 - the default branch may still lag until this work is merged
 - because the current working tree is not in an iCloud-backed location, it should not be treated as the long-term canonical local workspace for new project work
+- the iCloud-backed Quack checkout is now the preferred local continuation point
 
 The `public` repo also has unrelated local modifications outside this project:
 
@@ -159,7 +161,7 @@ Recovery steps on a new machine:
 
 Preferred recovery/workflow policy going forward:
 
-1. Clone or sync the repo into an iCloud-backed folder first.
+1. Use `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery` as the active local Quack workspace unless a newer iCloud-backed replacement is intentionally created.
 2. Do substantive local archive work only from that iCloud-backed checkout.
 3. Use non-iCloud copies only as temporary migration or verification workspaces, not as the place where new archive progress accumulates.
 
