@@ -135,6 +135,40 @@ Its job is to:
 
 This repo is not just a website. It is also the continuity surface for several related archive and research efforts.
 
+## Current canonical working areas
+
+These are the current canonical working areas inside this repo:
+
+- `Spectra/` for the recovered historical site archive
+- `steven-woods-research/` for the person-centric deep archive
+- `quack/` for the canonical Quack deep archive
+- `kinitos-neoedge/` for the canonical Kinitos / NeoEdge deep archive
+- `google-canada-research/`, `inovia-research/`, `canberra-research/`, and `sei-pittsburgh-research/` as early era-archive shells
+- top-level public pages and renderers under the repo root and `tools/`
+
+These are the areas that should be treated as current working surfaces unless later documents explicitly replace them.
+
+## Legacy, alias, or supporting areas
+
+These paths are not the canonical deep working areas, even if they still exist and remain useful:
+
+- `data/kinitos-neoedge/`
+  - legacy/supporting intake scaffold
+  - useful for continuity and earlier intake context
+  - not the canonical deep archive root
+- `data/projects/codex-test1.json`
+  - legacy compatibility alias for Aurora Galactica
+  - not the canonical active project identity
+- `/Users/stevenwoods/GitPages/public`
+  - current transition checkout only
+  - not the intended long-term canonical local working copy once iCloud migration is complete
+
+Rule:
+
+- if a path is canonical, work should accumulate there
+- if a path is legacy/supporting, it should be labeled and used only for continuity, intake history, or compatibility
+- if a path becomes abandoned, mark it explicitly rather than leaving it ambiguous
+
 ## Current state
 
 - tracked files: about `3110`
@@ -285,6 +319,10 @@ The repo still contains Finder metadata in multiple places such as:
 - `canberra-research/.DS_Store`
 
 These do not help continuity and should not be part of the recovery story.
+
+Current hygiene rule:
+
+- `.DS_Store`, `__pycache__/`, `*.pyc`, and AppleDouble files should be ignored and treated as non-project residue
 
 ## Artifact-state assessment
 

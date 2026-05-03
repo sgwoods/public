@@ -1,5 +1,11 @@
 # Kinitos / NeoEdge Networks Archive
 
+Legacy/supporting status:
+
+- this directory is a supporting intake scaffold, not the canonical deep archive root
+- the canonical deep archive now lives under `public/kinitos-neoedge/`
+- keep this subtree only for continuity, lightweight intake context, and older supporting materials unless a future migration explicitly retires it
+
 This directory is the intake area for the public archive project covering the Kinitos company period and its later NeoEdge Networks refocus.
 
 Use the lane folders below so recovered material keeps its original context:

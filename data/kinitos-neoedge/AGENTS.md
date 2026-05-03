@@ -1,12 +1,18 @@
 # Kinitos / NeoEdge Archive Instructions
 
-This directory is the Kinitos / NeoEdge company archive workspace.
+This directory is a legacy/supporting Kinitos / NeoEdge intake workspace.
+
+Important status:
+
+- this is not the canonical deep archive root
+- the canonical deep archive lives under `public/kinitos-neoedge/`
+- use this subtree only for supporting intake context, older scaffold material, or continuity support unless a future migration plan says otherwise
 
 Use the tracked shared workflow at `data/shared/company-research-workflow.md` for company-history research, source discovery, manifest updates, timeline/entity extraction, project-page upkeep, and archive coordination work in this subtree.
 
 Working rules:
 
-- Treat this archive as the canonical deep archive for the Kinitos / NeoEdge company line.
+- Treat `public/kinitos-neoedge/` as the canonical deep archive for the Kinitos / NeoEdge company line.
 - Treat `public` as the Steven-centric downstream hub.
 - Keep detailed company-specific interpretation in this project.
 - Flow only short Steven-relevant summaries upward through the archive handoff layer.
