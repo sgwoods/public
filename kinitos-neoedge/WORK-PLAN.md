@@ -31,7 +31,8 @@ Preserve the Kinitos -> NeoEdge -> Blue Noodle -> Double Fusion company line as 
 - the source manifest is populated and usable
 - five local HTML captures are already preserved in git
 - a dated recovery audit exists at `PROJECT-STATE-AND-RECOVERY-2026-05-03.md`
-- the next operational constraint is now iCloud-backed local continuity
+- the canonical active local workspace is now the iCloud-backed `public-quack-recovery` checkout
+- workspace status is tracked in `WORKSPACE-STATUS.md`
 
 ## Active plan
 
@@ -53,7 +54,7 @@ Completed checkpoint:
 
 ### Phase 2: iCloud workspace migration
 
-Status: `active next phase`
+Status: `completed`
 
 Goals:
 
@@ -67,13 +68,20 @@ Tasks:
 - verify that the Kinitos archive can be opened and continued there without missing local-only context
 - treat the current non-iCloud checkout as transitional only after migration succeeds
 
+Completed checkpoint:
+
+- the canonical active local workspace is `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+- that workspace was verified on branch `codex/public-recovery-stabilization`
+- the older non-iCloud checkout is now transitional for Kinitos local work
+- workspace-role labeling now lives in `WORKSPACE-STATUS.md`
+
 Operational rule after migration:
 
 - new raw captures, draft notes, downloaded artifacts, and restoration experiments should begin only inside the iCloud-backed workspace
 
 ### Phase 3: preservation completeness
 
-Status: `queued`
+Status: `active next phase`
 
 Goals:
 
@@ -110,10 +118,10 @@ Tasks:
 
 ## Practical next-step path from here
 
-1. Establish the canonical iCloud-backed local workspace for active archive work.
-2. Open the project from that iCloud-backed workspace and verify the recovery path.
-3. Treat the current non-iCloud checkout as transitional only after the iCloud-backed workspace is verified.
-4. Only then resume local collection, source capture, or restoration tasks.
+1. Continue Kinitos local work from the canonical iCloud-backed workspace only.
+2. Preserve the approved non-local sources, starting with the Yahoo cluster and fragile press items.
+3. Keep the deprecated and support-only workspace labels current if any additional checkouts or scaffolds appear.
+4. Only after that preservation pass, resume broader research or restoration campaigns.
 
 ## Why this ordering matters
 

@@ -12,17 +12,21 @@
     "end_year": 2011,
     "label": "Kinitos founding through NeoEdge acquisition era"
   },
-  "repo_pushed_at": "2026-05-03T14:59:43Z",
-  "status_generated_at": "2026-05-03T14:59:43Z",
+  "repo_pushed_at": "2026-05-03T16:39:25Z",
+  "status_generated_at": "2026-05-03T16:39:25Z",
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
-  "focus_value": "Continuity lock-in, iCloud workspace migration, and preservation completeness",
-  "current_focus": "Continuity lock-in, iCloud workspace migration, and preservation completeness",
+  "focus_value": "Canonical iCloud workspace established; preservation completeness next",
+  "current_focus": "Canonical iCloud workspace established; preservation completeness next",
   "notable_items": [
     {
       "label": "Living work plan",
       "url": "https://sgwoods.github.io/public/kinitos-neoedge/WORK-PLAN.md"
+    },
+    {
+      "label": "Workspace status",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/WORKSPACE-STATUS.md"
     },
     {
       "label": "Project state and recovery audit",

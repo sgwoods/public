@@ -5,7 +5,10 @@ This folder is the working repository for the Kinitos / NeoEdge Networks archive
 Current operating note:
 
 - the living execution plan is `WORK-PLAN.md`
+- the canonical workspace label and deprecated-checkout notes live in `WORKSPACE-STATUS.md`
 - going forward, active local work for this archive should happen in an iCloud-backed folder only
+- the canonical active local workspace is `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+- non-iCloud checkouts should be treated as transitional for Kinitos local work
 
 Workflow:
 

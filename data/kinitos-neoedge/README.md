@@ -29,6 +29,8 @@ Current canonical coordination outputs for the active archive live in `public/ki
 - `project-manifest.json`
 - `source-manifest.json`
 - `public-handoff.json`
+- `WORK-PLAN.md`
+- `WORKSPACE-STATUS.md`
 - project page: `public/kinitos-neoedge.html`
 
 Shared analysis guidance for new finds:

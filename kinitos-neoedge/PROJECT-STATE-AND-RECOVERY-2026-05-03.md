@@ -12,6 +12,8 @@ Canonical deep archive root: `public/kinitos-neoedge/`
 
 Supporting intake scaffold: `public/data/kinitos-neoedge/`
 
+Canonical active local workspace after migration: `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+
 ## Precise goal
 
 This project is the canonical deep archive for the company line that began as Kinitos, evolved into NeoEdge Networks, passed through the Blue Noodle phase, and ended in the 2011 Double Fusion asset and IP transfer story.
@@ -47,7 +49,29 @@ Recommended project status label:
 
 Recommended immediate focus:
 
-- `Recovery audit, preservation completeness, and fresh-checkout continuability`
+- `Preservation completeness from the canonical iCloud-backed workspace`
+
+## Workspace status update
+
+Since the original audit pass, the active local workspace situation has been clarified.
+
+Canonical active local workspace:
+
+- `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+
+Transitional non-canonical checkout:
+
+- `/Users/stevenwoods/GitPages/public`
+
+Non-canonical parallel iCloud checkout:
+
+- `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public`
+
+Support-only scaffold:
+
+- `public/data/kinitos-neoedge/`
+
+That means the archive is no longer only "continuable"; it now also has a verified iCloud-backed active local workspace. The remaining gap is preservation completeness, not workspace continuity.
 
 ## What is checked in
 
@@ -222,22 +246,20 @@ The older `public/data/kinitos-neoedge/` tree should be treated as supporting in
 
 The next-step path has changed because local working activity is now expected to happen in an iCloud-backed folder only.
 
-Revised order:
+Revised order after migration verification:
 
-1. Commit and push the current continuity-oriented working-tree changes so the latest Kinitos workflow state is no longer machine-local only.
-2. Check in `data/shared/company-research-workflow.md` so the repo contains its own recovery copy of the shared research method.
-3. Establish an iCloud-backed active workspace for ongoing local archive work, then reopen the project there before doing more local ingest.
-4. After migration, prioritize local capture of the `19` approved non-local sources, especially fragile press sources and the Yahoo Games cluster.
-5. Add a lightweight verification script or repeatable command that reports:
+1. Continue Kinitos local work from the canonical iCloud-backed workspace only.
+2. Prioritize local capture of the `19` approved non-local sources, especially fragile press sources and the Yahoo Games cluster.
+3. Add a lightweight verification script or repeatable command that reports:
    - Kinitos tracked/untracked status
    - approved-source preservation counts
    - any broken `archive_local` paths
-6. After those continuity and migration steps, pause broad research and resume only when:
+4. After those preservation steps, resume broader research or restoration only when:
    - new documents arrive
    - a targeted source-capture campaign is chosen
    - code or artifact restoration work is ready to begin
 
-See also: `WORK-PLAN.md` for the living version of this plan.
+See also: `WORK-PLAN.md` for the living phase plan and `WORKSPACE-STATUS.md` for canonical-versus-deprecated workspace labeling.
 
 ## Bottom line
 
