@@ -49,7 +49,7 @@ Completed checkpoint:
 
 - Kinitos continuity documentation was written and locked into the archive workflow on the stabilization branch
 - the shared checked-in workflow baseline is already present in the repo
-- the remaining immediate action is to publish the current Kinitos-scoped commit without mixing in unrelated repo work
+- the Kinitos continuity checkpoint was committed and pushed on `codex/public-recovery-stabilization` without mixing in unrelated repo work
 
 ### Phase 2: iCloud workspace migration
 
@@ -110,11 +110,10 @@ Tasks:
 
 ## Practical next-step path from here
 
-1. Publish the current Kinitos continuity commit from the existing checkout.
-2. Establish the canonical iCloud-backed local workspace for active archive work.
-3. Open the project from that iCloud-backed workspace and verify the recovery path.
-4. Treat the current non-iCloud checkout as transitional only after the iCloud-backed workspace is verified.
-5. Only then resume local collection, source capture, or restoration tasks.
+1. Establish the canonical iCloud-backed local workspace for active archive work.
+2. Open the project from that iCloud-backed workspace and verify the recovery path.
+3. Treat the current non-iCloud checkout as transitional only after the iCloud-backed workspace is verified.
+4. Only then resume local collection, source capture, or restoration tasks.
 
 ## Why this ordering matters
 
