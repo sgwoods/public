@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import subprocess
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
@@ -35,24 +36,30 @@ PROJECT_ORDER = [
     "quack-com",
     "kinitos-neoedge",
 ]
+def configured_repo_path(env_name: str, default_path: str) -> Path:
+    override = os.environ.get(env_name)
+    chosen = override if override else default_path
+    return Path(chosen).expanduser()
+
+
 KNOWN_CODING_REPOS: dict[str, dict[str, Any]] = {
     "mmath-renovation": {
         "label": "Abtweak",
-        "repo_path": Path("/Users/stevenwoods/mmath-renovation"),
+        "repo_path": configured_repo_path("PUBLIC_MMATH_REPO", "/Users/stevenwoods/mmath-renovation"),
         "ref": "origin/main",
         "api_ref": "main",
         "repo": "mmath-renovation",
     },
     "phd-renovation": {
         "label": "CSP",
-        "repo_path": Path("/Users/stevenwoods/phd-renovation"),
+        "repo_path": configured_repo_path("PUBLIC_PHD_REPO", "/Users/stevenwoods/phd-renovation"),
         "ref": "origin/main",
         "api_ref": "main",
         "repo": "phd-renovation",
     },
     "aurora-galactica": {
         "label": "Aurora",
-        "repo_path": Path("/Users/stevenwoods/Documents/Codex-Test1"),
+        "repo_path": configured_repo_path("PUBLIC_AURORA_REPO", "/Users/stevenwoods/Documents/Codex-Test1"),
         "ref": "origin/main",
         "api_ref": "main",
         "repo": "Codex-Test1",
@@ -235,6 +242,8 @@ def git_rev_list_count(
     end: datetime,
     pathspecs: list[str] | None = None,
 ) -> int:
+    if not repo_path.exists():
+        return 0
     command = [
         "git",
         "-C",
@@ -248,12 +257,15 @@ def git_rev_list_count(
     if pathspecs:
         command.extend(["--", *pathspecs])
 
-    result = subprocess.run(
-        command,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
+    try:
+        result = subprocess.run(
+            command,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return 0
     return int(result.stdout.strip() or "0")
 
 

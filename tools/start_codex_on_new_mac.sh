@@ -33,8 +33,42 @@ print_header() {
   printf "\n== %s ==\n" "$1"
 }
 
+check_optional_tools() {
+  print_header "Optional tool visibility"
+  if command -v gs >/dev/null 2>&1; then
+    gs --version | head -n 1
+  else
+    echo "Ghostscript (gs) not found; steven-woods-cv.pdf can remain checked in, but local regeneration will be unavailable until gs is installed."
+  fi
+}
+
+report_dashboard_repo_paths() {
+  print_header "Dashboard sibling repos"
+  local aurora="${PUBLIC_AURORA_REPO:-$HOME/Documents/Codex-Test1}"
+  local phd="${PUBLIC_PHD_REPO:-$HOME/phd-renovation}"
+  local mmath="${PUBLIC_MMATH_REPO:-$HOME/mmath-renovation}"
+
+  for label_and_path in \
+    "Aurora:$aurora" \
+    "PhD renovation:$phd" \
+    "MMath renovation:$mmath"; do
+    local label="${label_and_path%%:*}"
+    local path="${label_and_path#*:}"
+    if [[ -d "$path/.git" ]]; then
+      echo "$label repo found: $path"
+    else
+      echo "$label repo not found: $path"
+    fi
+  done
+}
+
 validate_checkout() {
   local target="$1"
+
+  require_cmd git
+  require_cmd python3
+  require_cmd jq
+  require_cmd rg
 
   print_header "Validating checkout"
 
@@ -65,6 +99,8 @@ validate_checkout() {
   local required_files=(
     "ARCHIVE_PROJECT_INTERFACE.md"
     "PROJECT-STATE-AND-RECOVERY.md"
+    "START-HERE-NEW-MAC.md"
+    "LOCAL-WORKTREE-STATUS.md"
     "quack/PROJECT-STATE-AND-RECOVERY.md"
     "quack/WORKSPACE-STATUS.md"
     "quack/tools/quack_research_pipeline.py"
@@ -84,14 +120,20 @@ validate_checkout() {
   python3 --version
   jq --version
   rg --version | head -n 1
+  check_optional_tools
 
   print_header "Compiling Python entry points"
   python3 -m py_compile \
     "$target/quack/tools/quack_research_pipeline.py" \
-    "$target/tools/render_index.py"
+    "$target/tools/render_index.py" \
+    "$target/tools/render_publications.py" \
+    "$target/tools/render_steven_sources.py" \
+    "$target/tools/render_steven_cv.py"
 
   print_header "Running Quack validation"
   python3 "$target/quack/tools/quack_research_pipeline.py" validate
+
+  report_dashboard_repo_paths
 
   print_header "Checking recovery-branch divergence"
   git -C "$target" rev-list --left-right --count "origin/main...origin/$BRANCH"

@@ -221,25 +221,32 @@ Archive-style project manifests currently exist for:
 
 ## Current status
 
-The repo is **not** in a fully recoverable, clean, ready-to-clone-and-continue state yet.
+The continuity story is now materially better than it was at the start of this pass, but there is still an important split between:
 
-Current git state:
+- the **safe continuity lane**, which is checked in and iCloud-backed
+- the **deprecated MacBook checkout**, which still contains unrelated active project edits
+
+Current continuity reality:
 
 - branch: `codex/public-recovery-stabilization`
-- local branch is behind `origin/main` by more than `200` commits at this audit point
-- there are many local tracked modifications
-- there are untracked recovery/workflow documents that are not yet committed
+- remote tracking branch for that lane exists and is current
+- canonical active continuity checkout:
+  - `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+- older iCloud checkout on `main` also exists and is clean:
+  - `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public`
+- deprecated non-iCloud checkout still has local modifications from active parallel work:
+  - `/Users/stevenwoods/GitPages/public`
 
-This means we cannot honestly claim today that:
+What we can now honestly claim:
 
-- a fresh checkout alone exactly reproduces the current working state
-- all current local research and artifact work is safe if this directory tree is lost
+- a new machine can clone the recovery branch into an iCloud-backed workspace and validate it from checked-in instructions
+- Quack and Kinitos continuity can restart from the canonical iCloud-backed recovery checkout without relying on memory from this MacBook
+- the portability path is documented and scripted
 
-We can claim something narrower:
+What we still cannot honestly claim:
 
-- the checked-in repo contains a large amount of the archive and workflow structure
-- several subprojects already have strong continuity surfaces
-- but the whole-repo continuity guarantee is not complete until local changes are reconciled and committed
+- that every active parallel project change in the deprecated MacBook checkout is already folded into the continuity lane
+- that the deprecated checkout itself should be treated as canonical
 
 ## What is checked in now
 
@@ -272,53 +279,30 @@ Notable continuity-positive signals:
 
 ### Local tracked modifications
 
-These files are modified locally and are not yet reflected in the checked-in repository state:
+The deprecated non-iCloud checkout still has tracked local modifications that are not part of the clean continuity snapshot.
 
-- `ai-dystopia-quotes.html`
-- `data/ai-dystopia-quotes.approved.json`
-- `data/kinitos-neoedge/AGENTS.md`
-- `data/kinitos-neoedge/README.md`
-- `data/projects/ai-dystopia-quotes.json`
-- `data/projects/phd-renovation.json`
-- `data/projects/quack-com.json`
-- `kinitos-neoedge/README.md`
-- `phd-renovation-handbook.html`
-- `phd-renovation-thesis.ps`
-- `quack-com.html`
-- `quack/AGENTS.md`
-- `quack/README.md`
-- `quack/incoming/README.md`
-- `quack/project-manifest.json`
-- `quack/public-handoff.json`
-- `quack/research/entities.json`
-- `quack/research/next-steps-from-kinitos.md`
-- `quack/research/run-report.md`
-- `quack/research/source-leads.json`
-- `quack/research/timeline.json`
-- `quack/research/topic-briefs/anecdotes-and-cultural-footprint.md`
-- `quack/research/topic-briefs/company-history.md`
-- `quack/research/topic-briefs/investors-and-outcomes.md`
-- `quack/research/topic-briefs/key-individuals.md`
-- `quack/research/topic-briefs/patents-and-ip.md`
-- `quack/research/topic-briefs/product-and-technology.md`
-- `quack/research/topic-briefs/speechworks-and-partners.md`
-- `quack/research/topic-briefs/waterloo-canada-relationship.md`
-- `quack/tools/quack_research_pipeline.py`
+At the time of this update, those modified areas include:
+
+- `ai-dystopia-quotes`
+- `phd-renovation`
+- `mmath-renovation`
+- some top-level derived or presentation files such as `index.html` and `steven-woods-cv.pdf`
 
 Important note:
 
-- not all of these are part of the continuity mission
-- several belong to active parallel project workstreams and should be kept grouped by project rather than swept into continuity commits
+- these are active parallel project surfaces
+- they should be grouped and handled in their own project flows
+- they are not proof that the continuity lane is broken
+- they are proof that `/Users/stevenwoods/GitPages/public` is not the canonical workspace anymore
 
 ### Local untracked files
 
-These files exist only locally right now:
+The continuity bootstrap surfaces should be checked in and preferred over ad hoc local notes.
 
-- `PROJECT-STATE-AND-RECOVERY.md`
-- `data/shared/company-research-workflow.md`
-- `quack/PROJECT-STATE-AND-RECOVERY.md`
-- `kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md`
-- `kinitos-neoedge/WORK-PLAN.md`
+If new untracked bootstrap or portability files appear in the deprecated checkout, treat that as a warning sign:
+
+- either the file should be intentionally promoted into the continuity lane
+- or it should be removed as scratch or duplicate material
 
 ### Local machine residue
 
@@ -356,26 +340,23 @@ Current hygiene rule:
 
 ### Continuity conclusion
 
-If this local directory vanished today, we could recover **much** of the work from git, but **not all current work**.
+If the deprecated non-iCloud checkout vanished today, we would still retain the continuity lane because:
 
-The main reasons are:
+- the recovery branch is pushed
+- the canonical continuity checkout is already in iCloud-backed storage
+- the bootstrap and validation path is documented
 
-- local modifications not yet committed
-- untracked local documents
-- local branch behind remote
-- some source artifacts still depend on external web availability
+What would still be at risk are only the active parallel project edits that remain local to the deprecated checkout and have not yet been grouped into their own project-specific commits.
 
 ## Recommended next steps to reach recovery certainty
 
 ### Immediate
 
-1. Create a dedicated recovery branch from the current local state.
-2. Commit the two untracked recovery/workflow documents.
-3. Separate continuity work from active parallel project work before further commits.
-4. Remove or ignore Finder junk like `.DS_Store`.
-5. Fetch and review the `108` remote commits before claiming continuity.
-6. Do **not** start new substantial local work in this non-iCloud checkout after the stabilization pass.
-7. Prepare a clean iCloud-backed clone to become the canonical active workspace.
+1. Keep the continuity lane on `codex/public-recovery-stabilization` clean and pushed.
+2. Treat `/Users/stevenwoods/GitPages/public` as deprecated for new work.
+3. Move active project continuation into iCloud-backed checkouts only.
+4. Promote only deliberate portability surfaces into the continuity lane.
+5. Remove duplicate local bootstrap or scratch files that are no longer authoritative.
 
 ### After that
 
@@ -389,7 +370,7 @@ The main reasons are:
    - canonical external only
    - needs local preservation
 8. Decide which artifacts are canonical repo content versus machine-local scratch output.
-9. Add a top-level `bootstrap on new machine` section to `README.md` after the repo is clean enough to trust.
+9. Keep `README.md`, `START-HERE-NEW-MAC.md`, and `LOCAL-WORKTREE-STATUS.md` aligned so a new machine has one obvious startup path.
 
 ## Recommended next steps for the project itself
 

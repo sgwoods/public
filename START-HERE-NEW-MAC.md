@@ -29,7 +29,7 @@ is **deprecated for active local archive work** and still contains unrelated loc
 
 At this audit point:
 
-- `codex/public-recovery-stabilization` is `13` commits ahead of `origin/main`
+- `codex/public-recovery-stabilization` is `15` commits ahead of `origin/main`
 - `origin/main` is `216` commits ahead of `codex/public-recovery-stabilization`
 
 Interpretation:
@@ -46,6 +46,10 @@ These tools were present and working during the portability audit:
 - `python3 3.14.2`
 - `jq 1.7.1`
 - `rg 15.1.0`
+
+Optional but useful:
+
+- `gs` / Ghostscript for regenerating `steven-woods-cv.pdf`
 
 Those are the expected baseline tools for the bootstrap and validation path.
 
@@ -89,23 +93,45 @@ bash tools/start_codex_on_new_mac.sh setup
 Open these before doing any substantial work:
 
 - `PROJECT-STATE-AND-RECOVERY.md`
+- `LOCAL-WORKTREE-STATUS.md`
 - `quack/PROJECT-STATE-AND-RECOVERY.md`
 - `quack/WORKSPACE-STATUS.md`
 - `kinitos-neoedge/WORKSPACE-STATUS.md`
+
+## Sibling repos for full dashboard fidelity
+
+The repo itself is usable without sibling repositories, but the top-level coding activity charts are more complete when these local repos are also present:
+
+- Aurora:
+  - default path: `/Users/stevenwoods/Documents/Codex-Test1`
+  - override: `PUBLIC_AURORA_REPO`
+- PhD renovation:
+  - default path: `/Users/stevenwoods/phd-renovation`
+  - override: `PUBLIC_PHD_REPO`
+- MMath renovation:
+  - default path: `/Users/stevenwoods/mmath-renovation`
+  - override: `PUBLIC_MMATH_REPO`
+
+If these paths do not exist on the new Mac, the repo remains workable. Activity charts will simply show partial or zero counts for the missing coding projects until the overrides or sibling clones are provided.
 
 ## What the start script validates
 
 The checked-in script at `tools/start_codex_on_new_mac.sh` verifies:
 
 - required commands exist: `git`, `python3`, `jq`, `rg`
+- optional PDF regeneration tool visibility: `gs` if present
 - the checkout is on `codex/public-recovery-stabilization`
 - the checkout is clean
 - key continuity files exist
 - Python entry points compile:
   - `quack/tools/quack_research_pipeline.py`
   - `tools/render_index.py`
+  - `tools/render_publications.py`
+  - `tools/render_steven_sources.py`
+  - `tools/render_steven_cv.py`
 - Quack archive validation passes:
   - `python3 quack/tools/quack_research_pipeline.py validate`
+- sibling repo locations are reported for dashboard/chart fidelity
 - the recovery branch can be compared against `origin/main` even from a single-branch clone
 
 It was rerun successfully against the canonical iCloud-backed checkout during this portability pass.
