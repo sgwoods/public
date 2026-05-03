@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "quack-com",
-  "generated_at": "2026-03-25T00:11:05Z",
+  "generated_at": "2026-05-03T14:17:16Z",
   "leads": [
     {
       "lead_id": "lead-src-quack-2021-usask-alumni-profile",
@@ -27,7 +27,8 @@
         "acquisition"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+        "steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [],
@@ -35,9 +36,9 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
-        "shared_local": "steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "shared_local": "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "http_status": null,
         "error": "no-canonical-url"
       },
@@ -103,7 +104,7 @@
         "acquisition"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+        "steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [],
@@ -111,7 +112,7 @@
       "duplicate_of": "src-quack-2021-usask-alumni-profile",
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "shared_local": "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "http_status": null,
@@ -181,9 +182,8 @@
         "waterloo"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [
@@ -194,7 +194,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
         "shared_local": "quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
         "http_status": null,
@@ -269,7 +269,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -328,10 +328,8 @@
         "press"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
-        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/computerworld-net-finds-voice-2001.html"
+        "steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [],
@@ -339,7 +337,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": "historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
         "shared_local": "quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
         "http_status": null,
@@ -421,7 +419,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -489,10 +487,8 @@
         "acquisition"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
-        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
+        "steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
       ],
       "timeline_event": {
         "event_id": "evt-quack-2000-aol-acquisition",
@@ -513,7 +509,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": "historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
         "shared_local": "quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
         "http_status": null,
@@ -601,7 +597,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -672,7 +668,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -736,10 +732,8 @@
         "market"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
-        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/sfgate-earful-of-internet-2000.html"
+        "steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html"
       ],
       "timeline_event": {
         "event_id": "evt-quack-2000-voice-portal-market-context",
@@ -756,7 +750,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": "historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
         "shared_local": "quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
         "http_status": null,
@@ -835,7 +829,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -922,7 +916,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1003,7 +997,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1078,7 +1072,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1155,7 +1149,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1226,7 +1220,7 @@
       "duplicate_of": "src-quack-2002-view",
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1308,7 +1302,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1392,7 +1386,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1475,7 +1469,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1557,7 +1551,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1631,7 +1625,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,
@@ -1696,9 +1690,8 @@
         "canada"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+        "steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [
@@ -1709,7 +1702,7 @@
       "duplicate_of": "src-quack-2021-usask-alumni-profile",
       "fetch": {
         "status": "local-copy",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": "historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "shared_local": "quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
         "http_status": null,
@@ -1787,7 +1780,7 @@
       "duplicate_of": null,
       "fetch": {
         "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
+        "last_attempt": "2026-05-03T14:17:15Z",
         "archive_local": null,
         "shared_local": null,
         "http_status": null,

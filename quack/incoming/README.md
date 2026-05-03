@@ -8,5 +8,6 @@ Use the shared intake workflow before moving anything out of this folder:
 
 - `public/data/shared/incoming-artifact-analysis-playbook.md`
 - `public/data/shared/incoming-artifact-analysis-template.md`
-- `skills/historic-artifact-intake/SKILL.md`
-- `skills/company-research/SKILL.md`
+- `data/shared/incoming-artifact-analysis-playbook.md`
+- `data/shared/incoming-artifact-analysis-template.md`
+- `data/shared/company-research-workflow.md`

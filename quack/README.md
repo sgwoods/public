@@ -24,9 +24,16 @@ Shared analysis guidance:
 
 - playbook: `public/data/shared/incoming-artifact-analysis-playbook.md`
 - template: `public/data/shared/incoming-artifact-analysis-template.md`
-- repo-local skill: `skills/historic-artifact-intake/SKILL.md`
-- shared batch research skill: `skills/company-research/SKILL.md`
-- when Quack discovers a reusable archive method, fold it back into `skills/company-research/` so Kinitos and Quack keep the same research workflow
+- tracked shared workflow: `data/shared/company-research-workflow.md`
+- tracked intake playbook: `data/shared/incoming-artifact-analysis-playbook.md`
+- tracked intake template: `data/shared/incoming-artifact-analysis-template.md`
+- if local Codex skills exist, they are optional accelerators; the checked-in workflow files above are the recovery baseline
+- when Quack discovers a reusable archive method, fold it back into tracked shared workflow files under `data/shared/` so Kinitos and Quack keep the same research workflow
+
+Recovery and audit note:
+
+- current project-state, recoverability, and continuity status: `PROJECT-STATE-AND-RECOVERY.md`
+- active local-workspace rule: substantive local Quack work should move to an iCloud-backed checkout and this current path should be treated as transitional until that happens
 
 Formal export files:
 

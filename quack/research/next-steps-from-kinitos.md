@@ -18,4 +18,4 @@ These are practical next moves for the Quack archive based on useful patterns al
 
 - Keep direct bridges to the next company era only where they help explain what happened after Quack, without letting Quack lose its own company-centric identity.
 - Treat retrospective sources as useful framing, but not as replacements for contemporaneous press, first-party material, or patent records.
-- When one archive discovers a reusable research pattern, fold it back into `skills/company-research/` so Quack and Kinitos keep converging on the same method.
+- When one archive discovers a reusable research pattern, fold it back into tracked shared workflow files under `data/shared/` so Quack and Kinitos keep converging on the same method.

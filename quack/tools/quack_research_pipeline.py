@@ -297,6 +297,46 @@ def rel_to_public(path: Path) -> str:
     return str(path.relative_to(PUBLIC_ROOT))
 
 
+def normalize_known_local_path(raw_path: str | None) -> str | None:
+    portable = portable_local_path(raw_path)
+    if not portable:
+        return None
+    legacy_prefix = "data/media-appearances/archive-html/"
+    if portable.startswith(legacy_prefix):
+        candidate = PUBLIC_ROOT / "steven-woods-research" / "historic" / "artifacts" / "archive-html" / portable[len(legacy_prefix) :]
+        if candidate.exists():
+            return rel_to_public(candidate)
+    return portable
+
+
+def portable_local_path(raw_path: str | None) -> str | None:
+    if not raw_path:
+        return None
+    candidate = Path(raw_path)
+    if candidate.is_absolute():
+        text = str(candidate)
+        public_root_str = str(PUBLIC_ROOT)
+        if text.startswith(public_root_str + os.sep) or text == public_root_str:
+            return str(candidate.relative_to(PUBLIC_ROOT))
+        return text
+    return raw_path
+
+
+def materialize_local_path(raw_path: str | None) -> Path | None:
+    if not raw_path:
+        return None
+    candidate = Path(raw_path)
+    if candidate.is_absolute():
+        return candidate
+    root_candidate = (ROOT / raw_path).resolve()
+    if root_candidate.exists():
+        return root_candidate
+    public_candidate = (PUBLIC_ROOT / raw_path).resolve()
+    if public_candidate.exists():
+        return public_candidate
+    return public_candidate if raw_path.startswith(("quack/", "steven-woods-research/", "data/", "kinitos-neoedge/")) else root_candidate
+
+
 def slugify(value: str) -> str:
     slug = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     return slug or "item"
@@ -361,7 +401,9 @@ def extract_quack_review_sources() -> list[dict[str, Any]]:
         }
         archive_match = re.search(r"`([^`]+)`", local_archive)
         if archive_match:
-            entry["existing_local_path"] = str((PUBLIC_ROOT / "data" / "media-appearances" / archive_match.group(1)).resolve())
+            entry["existing_local_path"] = str(
+                (PUBLIC_ROOT / "steven-woods-research" / "historic" / "artifacts" / archive_match.group(1)).resolve()
+            )
         rows.append(entry)
     return rows
 
@@ -374,16 +416,10 @@ def load_existing_manifest_sources() -> list[dict[str, Any]]:
 def resolve_existing_archive_path(raw_path: str | None) -> str | None:
     if not raw_path:
         return None
-    candidate = Path(raw_path)
-    if candidate.is_absolute():
-        return str(candidate)
-    root_candidate = (ROOT / raw_path).resolve()
-    if root_candidate.exists():
-        return str(root_candidate)
-    public_candidate = (PUBLIC_ROOT / raw_path).resolve()
-    if public_candidate.exists():
-        return str(public_candidate)
-    return str(root_candidate)
+    candidate = materialize_local_path(raw_path)
+    if not candidate:
+        return None
+    return portable_local_path(str(candidate))
 
 
 def merge_list_unique(existing: list[str], additions: list[str]) -> list[str]:
@@ -428,7 +464,9 @@ def base_lead_record(source: dict[str, Any]) -> dict[str, Any]:
         "query_pack_id": source.get("query_pack_id"),
         "discovered_from": list(source.get("discovered_from", [])),
         "tags_hint": list(source.get("tags_hint", [])),
-        "existing_local_paths": [source["existing_local_path"]] if source.get("existing_local_path") else [],
+        "existing_local_paths": [normalize_known_local_path(source["existing_local_path"])]
+        if source.get("existing_local_path") and normalize_known_local_path(source["existing_local_path"])
+        else [],
         "timeline_event": source.get("timeline_event"),
         "entity_mentions_hint": list(source.get("entity_mentions_hint", [])),
         "state": "discovered",
@@ -450,6 +488,13 @@ def base_lead_record(source: dict[str, Any]) -> dict[str, Any]:
 def discover() -> dict[str, Any]:
     ensure_dirs()
     existing = load_leads()
+    for lead in existing.get("leads", []):
+        normalized_paths = []
+        for raw_path in lead.get("existing_local_paths", []):
+            normalized = normalize_known_local_path(raw_path)
+            if normalized and normalized not in normalized_paths:
+                normalized_paths.append(normalized)
+        lead["existing_local_paths"] = normalized_paths
     by_key = {lead["key"]: lead for lead in existing.get("leads", [])}
 
     def upsert(source: dict[str, Any]) -> None:
@@ -568,7 +613,7 @@ def local_path_for_lead(lead: dict[str, Any]) -> Path | None:
         if path.exists():
             return path
     for raw_path in lead.get("existing_local_paths", []):
-        path = Path(raw_path)
+        path = materialize_local_path(raw_path)
         if path.exists():
             return path
     return None
