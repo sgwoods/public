@@ -114,6 +114,23 @@ The start script is meant to validate:
 
 It also prints the recommended reading order for Codex startup.
 
+## Validation results so far
+
+The portability package has already been validated in two ways on this machine:
+
+1. canonical iCloud-backed workspace validation passed
+   - workspace: `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
+   - result: clean Kinitos subtree, correct branch, correct remote, zero broken local archive paths
+2. clean-clone simulation passed
+   - clone path used for validation: `/tmp/public-kinitos-portability-check`
+   - result: clean Kinitos subtree, correct branch, correct remote, zero broken local archive paths
+
+That means portability is strongly evidenced locally.
+
+The remaining final proof is:
+
+- run the same startup script on the different Mac that will replace this one
+
 ## When this MacBook can be deprecated for Kinitos work
 
 This MacBook can be treated as deprecated for Kinitos local work once a different Mac has done all of the following successfully:
@@ -144,6 +161,6 @@ We are now trying to prove that:
 
 ## Next few steps
 
-1. Run the start script in the canonical iCloud-backed workspace.
-2. Do a simulated fresh-start validation from a clean clone when practical.
-3. Once portability is convincing, resume preservation completeness from the canonical workspace.
+1. Run the same startup script on the different Mac that will replace this MacBook.
+2. Once that passes, treat this MacBook as deprecated for Kinitos local work.
+3. Resume preservation completeness from the canonical workspace.

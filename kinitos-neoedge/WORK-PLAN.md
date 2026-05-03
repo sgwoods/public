@@ -34,6 +34,8 @@ Preserve the Kinitos -> NeoEdge -> Blue Noodle -> Double Fusion company line as 
 - the canonical active local workspace is now the iCloud-backed `public-quack-recovery` checkout
 - workspace status is tracked in `WORKSPACE-STATUS.md`
 - portability handoff status is tracked in `PORTABILITY-AND-MAC-HANDOFF.md`
+- the Codex startup validation passed in the canonical iCloud-backed workspace
+- the Codex startup validation passed in a clean clone simulation
 
 ## Active plan
 
@@ -82,7 +84,7 @@ Operational rule after migration:
 
 ### Phase 2.5: portability and Mac handoff
 
-Status: `active next phase`
+Status: `validated locally; different-Mac confirmation still desired`
 
 Goals:
 
@@ -97,9 +99,15 @@ Tasks:
 - validate the canonical iCloud-backed workspace
 - do a clean-clone or new-machine style startup validation when practical
 
+Completed checkpoint:
+
+- the startup script passed in the canonical iCloud-backed workspace
+- the startup script passed in a clean clone simulation under `/tmp`
+- the remaining highest-value confirmation is a real run on a different Mac before fully retiring this one
+
 ### Phase 3: preservation completeness
 
-Status: `queued after portability validation`
+Status: `next after different-Mac confirmation, or earlier if needed`
 
 Goals:
 
@@ -137,10 +145,11 @@ Tasks:
 ## Practical next-step path from here
 
 1. Continue Kinitos local work from the canonical iCloud-backed workspace only.
-2. Validate startup portability from the checked-in handoff document and start script.
-3. Preserve the approved non-local sources, starting with the Yahoo cluster and fragile press items.
-4. Keep the deprecated and support-only workspace labels current if any additional checkouts or scaffolds appear.
-5. Only after that preservation pass, resume broader research or restoration campaigns.
+2. Run the checked-in startup validator on the different Mac that will replace this one.
+3. Once that passes, formally treat this MacBook as deprecated for Kinitos local work.
+4. Preserve the approved non-local sources, starting with the Yahoo cluster and fragile press items.
+5. Keep the deprecated and support-only workspace labels current if any additional checkouts or scaffolds appear.
+6. Only after that preservation pass, resume broader research or restoration campaigns.
 
 ## Why this ordering matters
 
