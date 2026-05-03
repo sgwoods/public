@@ -18,6 +18,34 @@ Practical implication:
 - no new substantial local-only work should continue here once the current state is stabilized
 - the next safe milestone is to preserve and reconcile the current work, then migrate the active workspace into an iCloud-backed location
 
+## Parallel workstreams
+
+Several active projects are being worked on separately and in parallel to this continuity effort.
+
+At the time of this update, those parallel workstreams include:
+
+- `phd-renovation`
+- `ai-dystopia-quotes`
+- `mmath-renovation`
+- `kinitos-neoedge`
+- `quack`
+
+Operational rule:
+
+- the continuity/recovery branch should not casually absorb active project work from those streams just because their files are locally modified
+- project-specific work should remain grouped by project and handled intentionally
+- continuity work should focus on:
+  - recovery notes
+  - workflow baselines
+  - archive coordination surfaces
+  - migration readiness
+
+This changes the stabilization strategy:
+
+- do not treat all local modifications as one cleanup batch
+- instead, separate `continuity infrastructure` from `active project development or research`
+- preserve continuity-first work here, while leaving parallel project changes for their own deliberate batching
+
 ## Living plan
 
 This is the current working plan and should be kept up to date as work proceeds.
@@ -31,12 +59,14 @@ Goals:
 - protect current local-only work from accidental loss
 - make the current workspace auditable
 - avoid introducing more divergence before migration
+- avoid accidentally co-mingling unrelated parallel project work under the recovery branch
 
 Tasks:
 
 - [x] create a dedicated recovery branch from the current local state
 - [x] commit the currently untracked continuity files
 - [ ] group and commit the current tracked local modifications intentionally
+- [ ] separate continuity-only changes from active parallel project changes
 - [ ] remove or ignore Finder junk such as `.DS_Store`
 - [ ] fetch/review and reconcile the current `origin/main` gap
 
@@ -227,6 +257,11 @@ These files are modified locally and are not yet reflected in the checked-in rep
 - `quack/research/topic-briefs/waterloo-canada-relationship.md`
 - `quack/tools/quack_research_pipeline.py`
 
+Important note:
+
+- not all of these are part of the continuity mission
+- several belong to active parallel project workstreams and should be kept grouped by project rather than swept into continuity commits
+
 ### Local untracked files
 
 These files exist only locally right now:
@@ -284,7 +319,7 @@ The main reasons are:
 
 1. Create a dedicated recovery branch from the current local state.
 2. Commit the two untracked recovery/workflow documents.
-3. Commit or intentionally shelve every tracked local modification with clear grouping.
+3. Separate continuity work from active parallel project work before further commits.
 4. Remove or ignore Finder junk like `.DS_Store`.
 5. Fetch and review the `108` remote commits before claiming continuity.
 6. Do **not** start new substantial local work in this non-iCloud checkout after the stabilization pass.
@@ -307,11 +342,12 @@ The main reasons are:
 ## Recommended next steps for the project itself
 
 1. Stabilize repository continuity before adding more historical content.
-2. Reconcile the current local Quack/Kinitos/shared-workflow work and get it safely committed.
+2. Keep continuity-specific commits separate from active parallel project commits.
 3. Bring the local checkout up to date with `origin/main` in a controlled way.
 4. Migrate active work to an iCloud-backed clone and treat that as canonical.
-5. Continue source preservation, prioritizing fragile or high-value external sources.
-6. Tighten the contract between project manifests and rendered public pages so stale exports are easier to detect.
+5. Resume each parallel project from the iCloud-backed workspace in its own grouped flow.
+6. Continue source preservation, prioritizing fragile or high-value external sources.
+7. Tighten the contract between project manifests and rendered public pages so stale exports are easier to detect.
 
 ## Subprojects that should be separated
 
@@ -382,3 +418,8 @@ With the new iCloud-backed-work requirement, the next unit of work is more speci
 - stabilize current local state
 - migrate the canonical working copy into iCloud-backed storage
 - then continue archive and research expansion only from that backed-up checkout
+
+Because several substantive projects are moving in parallel, the correct interpretation is:
+
+- continuity work should make those parallel streams safer
+- continuity work should not replace their own project-specific batching and decision-making
