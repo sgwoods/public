@@ -12,14 +12,22 @@
     "end_year": 2011,
     "label": "Kinitos founding through NeoEdge acquisition era"
   },
-  "repo_pushed_at": "2026-03-24T23:45:00Z",
-  "status_generated_at": "2026-03-24T23:45:00Z",
+  "repo_pushed_at": "2026-05-03T14:15:35Z",
+  "status_generated_at": "2026-05-03T14:33:03Z",
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
-  "focus_value": "Blue Noodle wind-down, investor trail, MostFun, Double Fusion asset-path, and archived site-capture research",
-  "current_focus": "Blue Noodle wind-down, investor trail, MostFun, Double Fusion asset-path, and archived site-capture research",
+  "focus_value": "Continuity lock-in, iCloud workspace migration, and preservation completeness",
+  "current_focus": "Continuity lock-in, iCloud workspace migration, and preservation completeness",
   "notable_items": [
+    {
+      "label": "Living work plan",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/WORK-PLAN.md"
+    },
+    {
+      "label": "Project state and recovery audit",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md"
+    },
     {
       "label": "Research pass: March 24, 2026",
       "url": "https://sgwoods.github.io/public/kinitos-neoedge/incoming/research-pass-2026-03-24.md"

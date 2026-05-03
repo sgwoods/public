@@ -35,7 +35,7 @@ Goals:
 Tasks:
 
 - [x] create a dedicated recovery branch from the current local state
-- [ ] commit the currently untracked continuity files
+- [x] commit the currently untracked continuity files
 - [ ] group and commit the current tracked local modifications intentionally
 - [ ] remove or ignore Finder junk such as `.DS_Store`
 - [ ] fetch/review and reconcile the current `origin/main` gap

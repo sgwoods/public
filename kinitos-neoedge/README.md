@@ -2,6 +2,11 @@
 
 This folder is the working repository for the Kinitos / NeoEdge Networks archive project.
 
+Current operating note:
+
+- the living execution plan is `WORK-PLAN.md`
+- going forward, active local work for this archive should happen in an iCloud-backed folder only
+
 Workflow:
 
 - place raw finds in `incoming/`
@@ -13,8 +18,9 @@ Shared analysis guidance:
 
 - playbook: `public/data/shared/incoming-artifact-analysis-playbook.md`
 - template: `public/data/shared/incoming-artifact-analysis-template.md`
-- repo-local skill: `skills/historic-artifact-intake/SKILL.md`
-- shared batch research skill: `skills/company-research/SKILL.md`
+- tracked shared workflow: `data/shared/company-research-workflow.md`
+- tracked intake playbook: `data/shared/incoming-artifact-analysis-playbook.md`
+- tracked intake template: `data/shared/incoming-artifact-analysis-template.md`
 
 Layout:
 
