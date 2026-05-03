@@ -12,13 +12,13 @@
     "end_year": 2011,
     "label": "Kinitos founding through NeoEdge acquisition era"
   },
-  "repo_pushed_at": "2026-05-03T16:39:25Z",
-  "status_generated_at": "2026-05-03T16:39:25Z",
+  "repo_pushed_at": "2026-05-03T16:47:02Z",
+  "status_generated_at": "2026-05-03T16:47:02Z",
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
-  "focus_value": "Canonical iCloud workspace established; preservation completeness next",
-  "current_focus": "Canonical iCloud workspace established; preservation completeness next",
+  "focus_value": "Portability validation and new-Mac handoff; preservation completeness next",
+  "current_focus": "Portability validation and new-Mac handoff; preservation completeness next",
   "notable_items": [
     {
       "label": "Living work plan",
@@ -27,6 +27,10 @@
     {
       "label": "Workspace status",
       "url": "https://sgwoods.github.io/public/kinitos-neoedge/WORKSPACE-STATUS.md"
+    },
+    {
+      "label": "Portability and Mac handoff",
+      "url": "https://sgwoods.github.io/public/kinitos-neoedge/PORTABILITY-AND-MAC-HANDOFF.md"
     },
     {
       "label": "Project state and recovery audit",

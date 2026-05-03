@@ -33,6 +33,7 @@ Preserve the Kinitos -> NeoEdge -> Blue Noodle -> Double Fusion company line as 
 - a dated recovery audit exists at `PROJECT-STATE-AND-RECOVERY-2026-05-03.md`
 - the canonical active local workspace is now the iCloud-backed `public-quack-recovery` checkout
 - workspace status is tracked in `WORKSPACE-STATUS.md`
+- portability handoff status is tracked in `PORTABILITY-AND-MAC-HANDOFF.md`
 
 ## Active plan
 
@@ -79,9 +80,26 @@ Operational rule after migration:
 
 - new raw captures, draft notes, downloaded artifacts, and restoration experiments should begin only inside the iCloud-backed workspace
 
-### Phase 3: preservation completeness
+### Phase 2.5: portability and Mac handoff
 
 Status: `active next phase`
+
+Goals:
+
+- prove that the archive can restart on a different Mac without hidden local dependency
+- document the exact startup path for Codex
+- make this current MacBook safely deprecable for Kinitos work
+
+Tasks:
+
+- maintain a checked-in portability handoff document
+- maintain a checked-in Codex startup and validation script
+- validate the canonical iCloud-backed workspace
+- do a clean-clone or new-machine style startup validation when practical
+
+### Phase 3: preservation completeness
+
+Status: `queued after portability validation`
 
 Goals:
 
@@ -119,9 +137,10 @@ Tasks:
 ## Practical next-step path from here
 
 1. Continue Kinitos local work from the canonical iCloud-backed workspace only.
-2. Preserve the approved non-local sources, starting with the Yahoo cluster and fragile press items.
-3. Keep the deprecated and support-only workspace labels current if any additional checkouts or scaffolds appear.
-4. Only after that preservation pass, resume broader research or restoration campaigns.
+2. Validate startup portability from the checked-in handoff document and start script.
+3. Preserve the approved non-local sources, starting with the Yahoo cluster and fragile press items.
+4. Keep the deprecated and support-only workspace labels current if any additional checkouts or scaffolds appear.
+5. Only after that preservation pass, resume broader research or restoration campaigns.
 
 ## Why this ordering matters
 
@@ -131,6 +150,7 @@ The right sequence is:
 
 - first stabilize
 - then migrate
+- then prove portability
 - then collect again
 
 ## Update rule

@@ -6,9 +6,11 @@ Current operating note:
 
 - the living execution plan is `WORK-PLAN.md`
 - the canonical workspace label and deprecated-checkout notes live in `WORKSPACE-STATUS.md`
+- the new-machine startup and Mac handoff guide lives in `PORTABILITY-AND-MAC-HANDOFF.md`
 - going forward, active local work for this archive should happen in an iCloud-backed folder only
 - the canonical active local workspace is `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery`
 - non-iCloud checkouts should be treated as transitional for Kinitos local work
+- the Codex startup validation script is `tools/start-kinitos-codex.sh`
 
 Workflow:
 
