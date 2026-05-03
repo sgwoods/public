@@ -21,6 +21,7 @@ Practical implication:
 - `/Users/stevenwoods/GitPages/public` should be treated as a deprecated transition checkout for active local work
 - `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public` should be treated as a non-canonical parallel iCloud checkout unless intentionally reconciled later
 - no new substantial local-only work should continue in deprecated or non-canonical checkouts
+- new-machine bootstrap and validation instructions now live in `START-HERE-NEW-MAC.md` and `tools/start_codex_on_new_mac.sh`
 
 ## Parallel workstreams
 
@@ -156,6 +157,7 @@ Workspace-status references:
 
 - `quack/WORKSPACE-STATUS.md`
 - `kinitos-neoedge/WORKSPACE-STATUS.md`
+- `START-HERE-NEW-MAC.md`
 
 ## Legacy, alias, or supporting areas
 

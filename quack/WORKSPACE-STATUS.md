@@ -84,3 +84,12 @@ The project is now in a safer state:
 2. Review whether `codex/public-recovery-stabilization` should be merged cleanly or narrowed before merge.
 3. Preserve stronger first-party Quack and AOL-by-Phone materials.
 4. Strengthen investor-outcome sourcing and keep the manifests and project page in sync.
+
+## New-Mac handoff
+
+If Quack needs to be resumed on a different Mac, start with:
+
+- `public/START-HERE-NEW-MAC.md`
+- `public/tools/start_codex_on_new_mac.sh`
+
+Those are the checked-in bootstrap and validation surfaces for proving the canonical workspace can be recreated elsewhere.
