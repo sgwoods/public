@@ -37,7 +37,7 @@ Preserve the Kinitos -> NeoEdge -> Blue Noodle -> Double Fusion company line as 
 
 ### Phase 1: continuity lock-in
 
-Status: `in progress`
+Status: `completed`
 
 Goals:
 
@@ -45,15 +45,15 @@ Goals:
 - make the shared workflow recovery file tracked
 - make the current Kinitos continuity docs part of the repo state
 
-Tasks:
+Completed checkpoint:
 
-- commit the current Kinitos archive updates
-- commit `data/shared/company-research-workflow.md`
-- push the resulting state so the archive is no longer dependent on this one machine
+- Kinitos continuity documentation was written and locked into the archive workflow on the stabilization branch
+- the shared checked-in workflow baseline is already present in the repo
+- the remaining immediate action is to publish the current Kinitos-scoped commit without mixing in unrelated repo work
 
 ### Phase 2: iCloud workspace migration
 
-Status: `next`
+Status: `active next phase`
 
 Goals:
 
@@ -110,10 +110,10 @@ Tasks:
 
 ## Practical next-step path from here
 
-1. Finish documenting and committing the current continuity state from the existing checkout.
-2. Push that state so a fresh machine can recover it from git alone.
-3. Establish the canonical iCloud-backed local workspace for active archive work.
-4. Open the project from that iCloud-backed workspace and verify the recovery path.
+1. Publish the current Kinitos continuity commit from the existing checkout.
+2. Establish the canonical iCloud-backed local workspace for active archive work.
+3. Open the project from that iCloud-backed workspace and verify the recovery path.
+4. Treat the current non-iCloud checkout as transitional only after the iCloud-backed workspace is verified.
 5. Only then resume local collection, source capture, or restoration tasks.
 
 ## Why this ordering matters
