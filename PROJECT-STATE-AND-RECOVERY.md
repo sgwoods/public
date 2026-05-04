@@ -94,7 +94,7 @@ Tasks:
 
 ### Phase 3: continuity hardening
 
-Status: `not started`
+Status: `in progress`
 
 Goals:
 
@@ -103,7 +103,7 @@ Goals:
 
 Tasks:
 
-- [ ] add a top-level bootstrap checklist for a new machine
+- [x] add a top-level bootstrap checklist for a new machine
 - [ ] add a regeneration checklist for derived pages and indexes
 - [ ] audit source manifests for local mirror coverage
 - [ ] classify artifacts as canonical, derived, or scratch

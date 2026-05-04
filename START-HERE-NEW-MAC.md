@@ -29,7 +29,7 @@ is **deprecated for active local archive work** and still contains unrelated loc
 
 At this audit point:
 
-- `codex/public-recovery-stabilization` is `15` commits ahead of `origin/main`
+- `codex/public-recovery-stabilization` is `16` commits ahead of `origin/main`
 - `origin/main` is `216` commits ahead of `codex/public-recovery-stabilization`
 
 Interpretation:
@@ -135,6 +135,8 @@ The checked-in script at `tools/start_codex_on_new_mac.sh` verifies:
 - the recovery branch can be compared against `origin/main` even from a single-branch clone
 
 It was rerun successfully against the canonical iCloud-backed checkout during this portability pass.
+
+It also passed from a fresh remote clone on `2026-05-03`, proving that the checked-in recovery lane can recreate itself without depending on hidden state in the retiring MacBook checkout.
 
 ## What is still not fully settled
 
