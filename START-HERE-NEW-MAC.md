@@ -29,7 +29,7 @@ is **deprecated for active local archive work** and still contains unrelated loc
 
 At this audit point:
 
-- `codex/public-recovery-stabilization` is `16` commits ahead of `origin/main`
+- `codex/public-recovery-stabilization` is `17` commits ahead of `origin/main`
 - `origin/main` is `216` commits ahead of `codex/public-recovery-stabilization`
 
 Interpretation:
@@ -46,10 +46,7 @@ These tools were present and working during the portability audit:
 - `python3 3.14.2`
 - `jq 1.7.1`
 - `rg 15.1.0`
-
-Optional but useful:
-
-- `gs` / Ghostscript for regenerating `steven-woods-cv.pdf`
+- `gs` / Ghostscript `10.06.0`
 
 Those are the expected baseline tools for the bootstrap and validation path.
 
@@ -64,28 +61,38 @@ These give a rough expectation for cloned content already tracked in git:
 
 ## New-Mac bootstrap path
 
-### 1. Clone the continuity lane into iCloud
+### 1. Run the full setup script
 
-Use the checked-in bootstrap script after the initial clone.
-
-Minimal first step:
-
-```bash
-git clone --branch codex/public-recovery-stabilization --single-branch \
-  https://github.com/sgwoods/public.git \
-  "$HOME/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery"
-```
-
-### 2. Run the start script
-
-```bash
-bash "$HOME/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery/tools/start_codex_on_new_mac.sh" validate
-```
-
-Or, if the checkout does not exist yet and you want the script to perform the clone/refresh itself:
+From any checkout that already contains this script, run:
 
 ```bash
 bash tools/start_codex_on_new_mac.sh setup
+```
+
+What `setup` does now:
+
+- installs Homebrew if needed
+- installs required command-line tools if missing:
+  - `git`
+  - `python3`
+  - `jq`
+  - `rg`
+  - `gs`
+- clones or refreshes the continuity checkout in the canonical iCloud-backed path
+- validates the checkout until it is usable
+
+If you want a different target location:
+
+```bash
+bash tools/start_codex_on_new_mac.sh setup "/custom/target/path"
+```
+
+### 2. Run validation again if desired
+
+After setup completes, you can rerun validation directly from the canonical checkout:
+
+```bash
+bash "$HOME/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery/tools/start_codex_on_new_mac.sh" validate
 ```
 
 ### 3. Open the continuity notes first
@@ -118,8 +125,7 @@ If these paths do not exist on the new Mac, the repo remains workable. Activity 
 
 The checked-in script at `tools/start_codex_on_new_mac.sh` verifies:
 
-- required commands exist: `git`, `python3`, `jq`, `rg`
-- optional PDF regeneration tool visibility: `gs` if present
+- required commands exist or are installed during setup: `git`, `python3`, `jq`, `rg`, `gs`
 - the checkout is on `codex/public-recovery-stabilization`
 - the checkout is clean
 - key continuity files exist
@@ -138,6 +144,10 @@ It was rerun successfully against the canonical iCloud-backed checkout during th
 
 It also passed from a fresh remote clone on `2026-05-03`, proving that the checked-in recovery lane can recreate itself without depending on hidden state in the retiring MacBook checkout.
 
+The current `setup` + `validate` path is intended to be the one-command bootstrap for a replacement Mac.
+
+The full `setup` path was rerun successfully against the canonical iCloud-backed checkout on `2026-05-04`, confirming that dependency install/repair, checkout refresh, and validation can complete in one flow.
+
 ## What is still not fully settled
 
 Even after portability hardening, these things are still true:
@@ -151,8 +161,8 @@ Even after portability hardening, these things are still true:
 
 Before treating this MacBook as fully retired:
 
-1. confirm the new Mac can clone the recovery branch
-2. run `tools/start_codex_on_new_mac.sh validate`
+1. run `tools/start_codex_on_new_mac.sh setup` on the new Mac
+2. run `tools/start_codex_on_new_mac.sh validate` once more if you want a second confirmation
 3. open the continuity notes successfully
 4. confirm the new Mac’s iCloud-backed checkout is clean
 5. do at least one small intentional continuation step there

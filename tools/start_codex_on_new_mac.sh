@@ -5,10 +5,12 @@ set -euo pipefail
 REPO_URL="https://github.com/sgwoods/public.git"
 BRANCH="codex/public-recovery-stabilization"
 DEFAULT_TARGET="${HOME}/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery"
+HOMEBREW_INSTALL_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
 
 usage() {
   cat <<EOF
 Usage:
+  $(basename "$0") install
   $(basename "$0") setup [target_dir]
   $(basename "$0") validate [target_dir]
 
@@ -17,7 +19,8 @@ Defaults:
   target_dir: ${DEFAULT_TARGET}
 
 Commands:
-  setup     Clone or refresh the recovery branch into the target directory, then validate it.
+  install   Install or repair the required local toolchain for a new Mac.
+  setup     Install prerequisites, clone or refresh the recovery branch into the target directory, then validate it.
   validate  Validate an existing checkout without changing tracked files.
 EOF
 }
@@ -31,6 +34,79 @@ require_cmd() {
 
 print_header() {
   printf "\n== %s ==\n" "$1"
+}
+
+brew_bin() {
+  if command -v brew >/dev/null 2>&1; then
+    command -v brew
+    return 0
+  fi
+  if [[ -x /opt/homebrew/bin/brew ]]; then
+    echo /opt/homebrew/bin/brew
+    return 0
+  fi
+  if [[ -x /usr/local/bin/brew ]]; then
+    echo /usr/local/bin/brew
+    return 0
+  fi
+  return 1
+}
+
+refresh_shell_path_from_brew() {
+  local brew_path
+  brew_path="$(brew_bin 2>/dev/null || true)"
+  if [[ -n "$brew_path" ]]; then
+    eval "$("$brew_path" shellenv)"
+    hash -r
+  fi
+}
+
+ensure_homebrew() {
+  if brew_bin >/dev/null 2>&1; then
+    refresh_shell_path_from_brew
+    return 0
+  fi
+
+  print_header "Installing Homebrew"
+  require_cmd curl
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL "$HOMEBREW_INSTALL_URL")"
+  refresh_shell_path_from_brew
+
+  if ! brew_bin >/dev/null 2>&1; then
+    echo "Homebrew installation did not complete successfully." >&2
+    exit 1
+  fi
+}
+
+ensure_brew_package() {
+  local package="$1"
+  local command_name="$2"
+  local brew_path
+  brew_path="$(brew_bin)"
+
+  if command -v "$command_name" >/dev/null 2>&1; then
+    return 0
+  fi
+
+  print_header "Installing ${package}"
+  "$brew_path" install "$package"
+  refresh_shell_path_from_brew
+
+  if ! command -v "$command_name" >/dev/null 2>&1; then
+    echo "Expected command '$command_name' after installing package '$package', but it is still unavailable." >&2
+    exit 1
+  fi
+}
+
+install_required_toolchain() {
+  print_header "Installing required toolchain"
+
+  ensure_homebrew
+  ensure_brew_package git git
+  ensure_brew_package python python3
+  ensure_brew_package jq jq
+  ensure_brew_package ripgrep rg
+  ensure_brew_package ghostscript gs
 }
 
 check_optional_tools() {
@@ -156,11 +232,7 @@ EOF
 setup_checkout() {
   local target="$1"
 
-  print_header "Checking prerequisites"
-  require_cmd git
-  require_cmd python3
-  require_cmd jq
-  require_cmd rg
+  install_required_toolchain
 
   local parent
   parent="$(dirname "$target")"
@@ -186,6 +258,9 @@ main() {
   local target="${2:-$DEFAULT_TARGET}"
 
   case "$command" in
+    install)
+      install_required_toolchain
+      ;;
     setup)
       setup_checkout "$target"
       ;;
