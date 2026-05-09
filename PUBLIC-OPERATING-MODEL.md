@@ -1,6 +1,6 @@
 # Public Repo Operating Model
 
-Updated: `2026-05-07`
+Updated: `2026-05-09`
 
 This file defines the intended ongoing role of `sgwoods/public`.
 
@@ -40,7 +40,7 @@ Use these classes consistently when deciding where work belongs.
 | Shared navigation and reporting layer | Cross-project homepage, shared assets, shared renderers, shared workflow docs | `index.html`, `assets/`, `tools/render_index.py`, `data/shared/`, `README.md`, `PUBLIC_STATUS_INTERFACE.md`, `ARCHIVE_PROJECT_INTERFACE.md` | Owned by the `public` repo itself |
 | Standalone project exports and summary cards | Public pages and status manifests published in from true standalone repos | `data/projects/aurora-galactica.json`, `data/projects/phd-renovation.json`, `data/projects/mmath-renovation.json`, `data/projects/ai-dystopia-quotes.json`, top-level pages such as `phd-renovation.html`, `phd-renovation-dashboard.html`, `phd-renovation-handbook.html`, `mmath-renovation.html`, `aurora-galactica.html` | Owned by the originating standalone repo; `public` only renders and presents them |
 | Shared-public subprojects | Deep archive/research areas that still live inside `public` as subdirectories | `steven-woods-research/`, `quack/`, `kinitos-neoedge/`, `canberra-research/`, `google-canada-research/`, `inovia-research/`, `sei-pittsburgh-research/` plus their top-level landing pages | Maintained inside the canonical `public` clone unless deliberately split into separate repos later |
-| Legacy, compatibility, or deprecated patterns | Transitional aliases, duplicate publication paths, or older local clone habits that should not expand casually | `data/projects/codex-test1.json`, `codex-test1.html`, the bridge `data/projects/quack-com.json`, the bridge `data/projects/kinitos-neoedge.json`, older sparse single-purpose local clones of `public`, deprecated `/Users/stevenwoods/GitPages/public` checkout, recovery-only iCloud clone conventions | Keep only when needed for continuity or compatibility; label them clearly |
+| Legacy, compatibility, or deprecated patterns | Transitional aliases, duplicate publication paths, or older local clone habits that should not expand casually | `data/projects/codex-test1.json`, `codex-test1.html`, the bridge `data/projects/quack-com.json`, the bridge `data/projects/kinitos-neoedge.json`, older sparse single-purpose local clones of `public`, deprecated `/Users/stevenwoods/GitPages/public` checkout, optional recovery-lane iCloud clones | Keep only when needed for continuity or compatibility; label them clearly |
 
 ## Ongoing ownership model
 
@@ -100,8 +100,10 @@ For the newer machine and for ongoing work going forward, the preferred active c
 Interpretation:
 
 - `Projects-All/public` is the canonical active working clone for the shared public layer
+- `main` is the normal working branch for that preferred active clone
 - true standalone repos should each have their own sibling working clone under `Projects-All`
 - shared-public subprojects should normally be edited inside `Projects-All/public`
+- recovery-only or reconciliation branches should be used only intentionally
 - do not casually create extra top-level clones for `quack`, `steven-woods-research`, `google-canada-research`, and similar subprojects unless there is a deliberate operational reason
 
 Recommended `Projects-All` shape:

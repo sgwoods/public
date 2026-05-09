@@ -1,6 +1,6 @@
 # Public project state and recovery
 
-Updated: 2026-05-07
+Updated: 2026-05-09
 
 ## Current recommended working model
 
@@ -26,6 +26,7 @@ Important distinction:
 - `public-quack-recovery` remains a continuity and reconciliation lane
 - it is not the preferred default active clone model for ongoing shared-public work
 - `/Users/stevenwoods/GitPages/public` remains a deprecated transition checkout
+- `main` in `~/Projects-All/public` is now the normal active working state for this repo
 
 Read the remaining sections in this file as the history of the recovery pass
 that created the continuity lane, not as the final long-term clone model.
@@ -34,6 +35,8 @@ that created the continuity lane, not as the final long-term clone model.
 
 During the recovery pass, the working policy was that local work should happen
 only in an iCloud-backed folder.
+
+This section describes the optional continuity lane and older supporting checkouts, not the default active clone.
 
 Current state:
 
@@ -182,10 +185,10 @@ These are the current canonical working areas inside this repo:
 
 These are the areas that should be treated as current working surfaces unless later documents explicitly replace them.
 
-Workspace-status references:
+Current orientation references:
 
-- `quack/WORKSPACE-STATUS.md`
-- `kinitos-neoedge/WORKSPACE-STATUS.md`
+- `README.md`
+- `PUBLIC-OPERATING-MODEL.md`
 - `START-HERE-NEW-MAC.md`
 
 ## Legacy, alias, or supporting areas
@@ -300,8 +303,8 @@ Checked in and reusable from a clean clone:
 
 Notable continuity-positive signals:
 
-- Quack already has a dedicated checked-in recovery note at `quack/PROJECT-STATE-AND-RECOVERY.md`
-- shared workflow guidance exists at `data/shared/company-research-workflow.md`
+- the top-level migration/startup guidance is checked in under `README.md`, `PUBLIC-OPERATING-MODEL.md`, and `START-HERE-NEW-MAC.md`
+- shared workflow guidance exists at `data/shared/incoming-artifact-analysis-playbook.md` and `data/shared/incoming-artifact-analysis-template.md`
 - person/archive contract guidance exists in `ARCHIVE_PROJECT_INTERFACE.md`
 
 ## What is not safely checked in yet
@@ -365,7 +368,7 @@ Current hygiene rule:
 - not all external sources have local mirrors
 - some research notes still depend on canonical web URLs instead of preserved local copies
 - several active areas are only partially checked in because the current working tree is dirty
-- remote `origin/main` is ahead of the local checkout, so this local workspace is not even the full checked-in truth as of today
+- remote `origin/main` can drift ahead of a local checkout, so the active clone should be verified against GitHub before treating a local snapshot as authoritative
 
 ### Continuity conclusion
 
@@ -399,7 +402,7 @@ What would still be at risk are only the active parallel project edits that rema
    - canonical external only
    - needs local preservation
 8. Decide which artifacts are canonical repo content versus machine-local scratch output.
-9. Keep `README.md`, `START-HERE-NEW-MAC.md`, and `LOCAL-WORKTREE-STATUS.md` aligned so a new machine has one obvious startup path.
+9. Keep `README.md`, `PUBLIC-OPERATING-MODEL.md`, and `START-HERE-NEW-MAC.md` aligned so a new machine has one obvious startup path.
 
 ## Recommended next steps for the project itself
 

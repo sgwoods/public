@@ -2,7 +2,9 @@
 
 Updated: `2026-05-09`
 
-This file is the portability handoff for bringing the `public` continuity workspace onto a different Mac without relying on memory from the retiring MacBook.
+This file is the portability handoff for bringing the shared `public` workspace onto a different Mac without relying on memory from the retiring MacBook.
+
+The normal target is the preferred active clone at `~/Projects-All/public` on `main`. The older recovery lane remains available for deliberate continuity and reconciliation work, but it is not the default path.
 
 ## Preferred active clone model
 
@@ -38,7 +40,9 @@ Then open:
 
 ## What is safe right now
 
-The safest current continuity state is:
+For normal day-to-day work, use `~/Projects-All/public` on `main`.
+
+The notes below describe the optional continuity/recovery lane:
 
 - remote branch: `codex/public-recovery-stabilization`
 - canonical active local continuity workspace:
@@ -47,7 +51,7 @@ The safest current continuity state is:
 That iCloud-backed checkout has already been validated to:
 
 - exist on the recovery branch
-- contain the current Quack continuity and workspace-status docs
+- contain the current checked-in continuity and migration docs
 - pass `python3 quack/tools/quack_research_pipeline.py validate`
 - remain clean after validation
 
@@ -132,11 +136,12 @@ bash "$HOME/Projects-All/public/tools/start_codex_on_new_mac.sh" validate
 Open these before doing any substantial work:
 
 - `PUBLIC-OPERATING-MODEL.md`
+- `README.md`
 - `PROJECT-STATE-AND-RECOVERY.md`
 - `ARCHIVE_PROJECT_INTERFACE.md`
 - `PUBLIC_STATUS_INTERFACE.md`
-- `quack/WORKSPACE-STATUS.md`
-- `kinitos-neoedge/WORKSPACE-STATUS.md`
+- `quack/README.md`
+- `kinitos-neoedge/README.md`
 
 ## Recovery-lane bootstrap path
 
@@ -157,14 +162,17 @@ bash "$HOME/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quac
 The repo itself is usable without sibling repositories, but the top-level coding activity charts are more complete when these local repos are also present:
 
 - Aurora:
-  - default path: `/Users/stevenwoods/Documents/Codex-Test1`
-  - override: `PUBLIC_AURORA_REPO`
+  - default path: `~/Projects-All/Codex-Test1`
+  - preferred override: `PUBLIC_AURORA_REPO_PATH`
+  - legacy override still accepted by the start script: `PUBLIC_AURORA_REPO`
 - PhD renovation:
-  - default path: `/Users/stevenwoods/phd-renovation`
-  - override: `PUBLIC_PHD_REPO`
+  - default path: `~/Projects-All/phd-renovation-working`
+  - preferred override: `PUBLIC_PHD_REPO_PATH`
+  - legacy override still accepted by the start script: `PUBLIC_PHD_REPO`
 - MMath renovation:
-  - default path: `/Users/stevenwoods/mmath-renovation`
-  - override: `PUBLIC_MMATH_REPO`
+  - default path: `~/Projects-All/mmath-renovation-working`
+  - preferred override: `PUBLIC_MMATH_REPO_PATH`
+  - legacy override still accepted by the start script: `PUBLIC_MMATH_REPO`
 
 If these paths do not exist on the new Mac, the repo remains workable. Activity charts will simply show partial or zero counts for the missing coding projects until the overrides or sibling clones are provided.
 
@@ -189,7 +197,7 @@ The checked-in script at `tools/start_codex_on_new_mac.sh` verifies:
 - sibling repo locations are reported for dashboard/chart fidelity
 - the relevant branch can be compared against `origin/main` even from a single-branch clone
 
-It was rerun successfully against the canonical iCloud-backed checkout during this portability pass.
+It was rerun successfully during this portability pass.
 
 It also passed from a fresh remote clone on `2026-05-03`, proving that the checked-in recovery lane can recreate itself without depending on hidden state in the retiring MacBook checkout.
 
@@ -197,7 +205,7 @@ The current `setup` + `validate` path is intended to be the one-command bootstra
 
 The `setup-recovery` + `validate-recovery` path remains the continuity-lane bootstrap when that older reconciliation workspace is still needed.
 
-The full `setup` path was rerun successfully against the canonical iCloud-backed checkout on `2026-05-04`, confirming that dependency install/repair, checkout refresh, and validation can complete in one flow.
+The full `setup` path was rerun successfully during the migration pass, confirming that dependency install/repair, checkout refresh, and validation can complete in one flow for the preferred active clone.
 
 ## What is still not fully settled
 
