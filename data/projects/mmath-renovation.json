@@ -7,10 +7,10 @@
   "repo_url": "https://github.com/sgwoods/mmath-renovation",
   "dashboard_url": "https://sgwoods.github.io/public/mmath-renovation-release-dashboard.html",
   "experience_url": "https://sgwoods.github.io/public/mmath-renovation-remote-experiments.html",
-  "repo_pushed_at": "2026-05-04T12:41:28Z",
-  "status_generated_at": "2026-05-04T12:41:52Z",
+  "repo_pushed_at": "2026-05-04T20:44:37Z",
+  "status_generated_at": "2026-05-09T18:39:59Z",
   "status_label": "Current release",
   "status_value": "1.0.0-rc.1",
   "focus_label": "Current focus",
-  "focus_value": "Hanoi-4 extension benchmark"
+  "focus_value": "Portability hardening and disciplined post-RC continuation"
 }
