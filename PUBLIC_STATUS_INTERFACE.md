@@ -20,6 +20,40 @@ To make that work:
 - each project owns only its own status manifest
 - the `public` repo owns homepage rendering and homepage wording
 
+## Scope Boundary
+
+This document applies to true standalone projects that publish summary/status
+into `public`.
+
+Examples:
+
+- `aurora-galactica`
+- `phd-renovation`
+- `mmath-renovation`
+- `ai-dystopia-quotes`
+
+This document is not the default publishing contract for shared-public
+subprojects such as:
+
+- `steven-woods-research`
+- `quack`
+- `kinitos-neoedge`
+- `canberra-research`
+- `google-canada-research`
+- `inovia-research`
+- `sei-pittsburgh-research`
+
+Those subprojects live inside the shared `public` repo and should normally
+publish through their own subdirectory manifests:
+
+- `project-manifest.json`
+- `source-manifest.json`
+- `public-handoff.json`
+
+If a shared-public subproject also has a `data/projects/*.json` record today,
+that should be treated as an explicit bridge or compatibility layer, not as the
+preferred default for new subproject work.
+
 ## Rule
 
 Each project may update:
@@ -39,21 +73,33 @@ status manifests.
 
 ## Status Manifest Ownership
 
-Each active project owns exactly one canonical file under `data/projects/`.
-Legacy compatibility aliases may exist, but they must stay inactive so they do
-not create duplicate homepage entries.
+Each standalone project owns exactly one canonical file under `data/projects/`.
+Legacy compatibility aliases may exist, and shared-public bridge records may
+exist, but they should stay clearly labeled so they do not create accidental
+ownership confusion.
 
-Current canonical files:
+Current canonical standalone-project files:
 
 - `data/projects/aurora-galactica.json`
 - `data/projects/phd-renovation.json`
 - `data/projects/mmath-renovation.json`
+- `data/projects/ai-dystopia-quotes.json`
+- `data/projects/confidential-project.json`
+
+Current bridge records that are still consumed by the homepage but are not the
+preferred default model for shared-public subprojects:
+
+- `data/projects/quack-com.json`
+- `data/projects/kinitos-neoedge.json`
 
 Current compatibility alias files:
 
 - `data/projects/codex-test1.json`
 
-Only the owning project may write its file.
+Only the owning project may write its canonical file.
+
+For bridge records, keep ownership and purpose explicit. Do not add new bridge
+records casually.
 
 ## Required JSON Schema
 
@@ -155,6 +201,8 @@ The `public` repo owns the homepage renderer.
 That renderer will:
 
 - read all `data/projects/*.json`
+- combine them with the selected shared-public `project-manifest.json` inputs
+  described in `ARCHIVE_PROJECT_INTERFACE.md`
 - include only records where `active` is `true`
 - render homepage entries in a fixed order
 - compute the homepage "Repository work last updated" value from the maximum

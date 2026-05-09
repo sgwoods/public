@@ -10,6 +10,34 @@ This document applies to projects such as:
 
 The top-level site is the Steven Woods hub shell. The archive projects are the deep historical archives.
 
+## Maintenance Model
+
+These archive projects are currently shared-public subprojects, not default
+standalone repos.
+
+The preferred active working model on the newer machine is:
+
+- one canonical clone at `~/Projects-All/public`
+- shared-public subprojects maintained inside that clone
+
+That means the default active home for projects such as:
+
+- `canberra-research`
+- `google-canada-research`
+- `inovia-research`
+- `sei-pittsburgh-research`
+- `steven-woods-research`
+- `quack`
+- `kinitos-neoedge`
+
+is inside the canonical `public` repo unless we deliberately split one out into
+its own repository later.
+
+Older sparse or single-purpose local clones of those subprojects should be
+treated as legacy transitional patterns. Reconcile any unique work they contain
+before deleting or normalizing them, but do not treat them as the preferred
+ongoing model.
+
 ## Ownership model
 
 Use this split consistently:
@@ -100,6 +128,13 @@ Each archive project should maintain and publish three machine-readable files:
 3. `public-handoff.json`
 
 These may live in the archive project repo itself, but their contents are intended for `public` to consume.
+
+For shared-public subprojects that still live inside `public`, these files are
+the canonical machine-readable export lane.
+
+Do not create new `data/projects/*.json` records for archive subprojects by
+default. Use that standalone-project lane only when a documented bridge or
+compatibility reason exists.
 
 ## Project manifest
 
