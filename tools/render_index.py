@@ -59,6 +59,8 @@ KNOWN_CODING_REPOS: dict[str, dict[str, Any]] = {
         "repo_path": env_or_candidates(
             "PUBLIC_MMATH_REPO_PATH",
             [
+                Path.home() / "Projects-All" / "mmath-renovation-working",
+                Path("/Users/steven/Projects-All/mmath-renovation-working"),
                 Path.home() / "Documents" / "GitPages" / "mmath-renovation",
                 Path("/Users/steven/Documents/GitPages/mmath-renovation"),
                 Path("/Users/stevenwoods/mmath-renovation"),
@@ -73,6 +75,8 @@ KNOWN_CODING_REPOS: dict[str, dict[str, Any]] = {
         "repo_path": env_or_candidates(
             "PUBLIC_PHD_REPO_PATH",
             [
+                Path.home() / "Projects-All" / "phd-renovation-working",
+                Path("/Users/steven/Projects-All/phd-renovation-working"),
                 Path.home() / "Documents" / "GitPages" / "phd-renovation",
                 Path("/Users/steven/Documents/GitPages/phd-renovation"),
                 Path("/Users/stevenwoods/phd-renovation"),
@@ -87,6 +91,8 @@ KNOWN_CODING_REPOS: dict[str, dict[str, Any]] = {
         "repo_path": env_or_candidates(
             "PUBLIC_AURORA_REPO_PATH",
             [
+                Path.home() / "Projects-All" / "Codex-Test1",
+                Path("/Users/steven/Projects-All/Codex-Test1"),
                 Path.home() / "Documents" / "Codex-Test1",
                 Path.home() / "Documents" / "New project" / "Codex-Test1",
                 Path("/Users/steven/Documents/Codex-Test1"),
