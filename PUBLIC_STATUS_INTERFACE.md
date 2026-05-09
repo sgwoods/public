@@ -5,7 +5,7 @@ for the shared public homepage in this repository.
 
 The shared homepage is:
 
-- [/Users/stevenwoods/GitPages/public/index.html](/Users/stevenwoods/GitPages/public/index.html)
+- [`index.html`](index.html)
 
 That file is shared and must not be edited directly by independent project
 update flows.
@@ -65,7 +65,7 @@ Each project may update:
 
 Each project must not update:
 
-- [/Users/stevenwoods/GitPages/public/index.html](/Users/stevenwoods/GitPages/public/index.html)
+- [`index.html`](index.html)
 - any other project's status manifest
 
 The `public` project alone is responsible for rendering `index.html` from the
@@ -188,7 +188,7 @@ Each project's automation may do the following:
 
 A project updater must not:
 
-- edit [/Users/stevenwoods/GitPages/public/index.html](/Users/stevenwoods/GitPages/public/index.html)
+- edit [`index.html`](index.html)
 - edit another project's JSON file
 - rewrite homepage wording directly
 - reorder homepage entries
@@ -207,11 +207,11 @@ That renderer will:
 - render homepage entries in a fixed order
 - compute the homepage "Repository work last updated" value from the maximum
   `repo_pushed_at`
-- generate [/Users/stevenwoods/GitPages/public/index.html](/Users/stevenwoods/GitPages/public/index.html)
+- generate [`index.html`](index.html)
 
 Current renderer path:
 
-- [/Users/stevenwoods/GitPages/public/tools/render_index.py](/Users/stevenwoods/GitPages/public/tools/render_index.py)
+- [`tools/render_index.py`](tools/render_index.py)
 
 ## Suggested Homepage Sentence Template
 

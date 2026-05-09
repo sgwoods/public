@@ -128,9 +128,9 @@ check_optional_tools() {
 
 report_dashboard_repo_paths() {
   print_header "Dashboard sibling repos"
-  local aurora="${PUBLIC_AURORA_REPO:-$HOME/Documents/Codex-Test1}"
-  local phd="${PUBLIC_PHD_REPO:-$HOME/phd-renovation}"
-  local mmath="${PUBLIC_MMATH_REPO:-$HOME/mmath-renovation}"
+  local aurora="${PUBLIC_AURORA_REPO_PATH:-${PUBLIC_AURORA_REPO:-$HOME/Projects-All/Codex-Test1}}"
+  local phd="${PUBLIC_PHD_REPO_PATH:-${PUBLIC_PHD_REPO:-$HOME/Projects-All/phd-renovation-working}}"
+  local mmath="${PUBLIC_MMATH_REPO_PATH:-${PUBLIC_MMATH_REPO:-$HOME/Projects-All/mmath-renovation-working}}"
 
   for label_and_path in \
     "Aurora:$aurora" \
@@ -208,19 +208,23 @@ validate_checkout() {
       divergence_range="origin/main...origin/$RECOVERY_BRANCH"
       required_files=(
         "ARCHIVE_PROJECT_INTERFACE.md"
+        "README.md"
         "PROJECT-STATE-AND-RECOVERY.md"
         "START-HERE-NEW-MAC.md"
-        "LOCAL-WORKTREE-STATUS.md"
-        "quack/PROJECT-STATE-AND-RECOVERY.md"
-        "quack/WORKSPACE-STATUS.md"
+        "PUBLIC-OPERATING-MODEL.md"
+        "quack/README.md"
         "quack/tools/quack_research_pipeline.py"
-        "data/shared/company-research-workflow.md"
-        "kinitos-neoedge/WORKSPACE-STATUS.md"
+        "kinitos-neoedge/README.md"
+        "data/shared/incoming-artifact-analysis-playbook.md"
+        "data/shared/incoming-artifact-analysis-template.md"
       )
       suggested_files=(
+        "README.md"
+        "PUBLIC-OPERATING-MODEL.md"
         "PROJECT-STATE-AND-RECOVERY.md"
-        "quack/PROJECT-STATE-AND-RECOVERY.md"
-        "quack/WORKSPACE-STATUS.md"
+        "START-HERE-NEW-MAC.md"
+        "quack/README.md"
+        "kinitos-neoedge/README.md"
       )
       ;;
     *)
