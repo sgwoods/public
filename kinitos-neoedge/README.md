@@ -2,6 +2,16 @@
 
 This folder is the working repository for the Kinitos / NeoEdge Networks archive project.
 
+Current operating note:
+
+- the living execution plan is `WORK-PLAN.md`
+- the canonical workspace label and deprecated-checkout notes live in `WORKSPACE-STATUS.md`
+- the new-machine startup and Mac handoff guide lives in `PORTABILITY-AND-MAC-HANDOFF.md`
+- going forward, active local work for this archive should happen in the canonical `~/Projects-All/public` checkout
+- the canonical active local workspace is `/Users/steven/Projects-All/public`
+- older recovery or legacy checkouts should be treated as reference-only for Kinitos local work
+- the Codex startup validation script is `tools/start-kinitos-codex.sh`
+
 Workflow:
 
 - place raw finds in `incoming/`
@@ -13,8 +23,9 @@ Shared analysis guidance:
 
 - playbook: `public/data/shared/incoming-artifact-analysis-playbook.md`
 - template: `public/data/shared/incoming-artifact-analysis-template.md`
-- repo-local skill: `skills/historic-artifact-intake/SKILL.md`
-- shared batch research skill: `skills/company-research/SKILL.md`
+- tracked shared workflow: `data/shared/company-research-workflow.md`
+- tracked intake playbook: `data/shared/incoming-artifact-analysis-playbook.md`
+- tracked intake template: `data/shared/incoming-artifact-analysis-template.md`
 
 Layout:
 
