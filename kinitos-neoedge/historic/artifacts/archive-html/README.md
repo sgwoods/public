@@ -12,6 +12,10 @@ Current preserved captures:
 - `pg-sorenson-lecture-2003-01-01-usask.html`
 - `mostfun-try-before-you-buy-2007-07-01-gamezebo.html`
 - `yahoo-ad-supported-online-gaming-2008-07-10-newmediawire.html`
+- `neoedge-neomom-product-tastes-2008-12-22-gamesbeat-reader.html`
+- `neoedge-raises-4m-2009-09-29-gamesbeat-reader.html`
+- `neoedge-offspring-merger-2009-11-19-gamesbeat-reader.html`
+- `neoedge-raises-3m-2010-12-21-gamesbeat-reader.html`
 - `double-fusion-neoedge-acquisition-2011-12-15-gamedeveloper.html`
 - `interstitial-advertising-patent-2011-11-02-google-patents.html`
 - `distraction-free-content-patent-2011-11-02-google-patents.html`
