@@ -2,7 +2,16 @@
 
 Working source file for a future public page covering interviews, podcasts, talks, presentations, profiles, and third-party media mentions involving Steven Gregory Woods.
 
-Last updated: 2026-04-01
+Last updated: 2026-05-10
+
+## Source-of-truth rule
+
+Use this file together with the manifest triad intentionally:
+
+- `source-manifest.json` is the machine-readable approved-source baseline used by the collected-content pages
+- this review ledger is the broader working file for supporting captures, blocked preservation targets, and source candidates not yet promoted into the manifest
+
+That means a checked-in local capture may legitimately appear here before it becomes a formal source-manifest entry. Company-overlap items may also remain here as person-centric context even when deeper company treatment belongs in Quack or Kinitos / NeoEdge.
 
 ## Inclusion buckets
 
