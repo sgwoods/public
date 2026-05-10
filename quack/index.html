@@ -119,12 +119,14 @@
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Current State</span>
-                    <span class="metaValue">Ready for first document drops</span>
-                    <div class="metaNote">The basic repository structure now matches the intended workflow.</div>
+                    <span class="metaValue">Active archive with continuity layer</span>
+                    <div class="metaNote">The Quack archive now has 20 tracked sources, 5 local archive copies, and checked-in restart docs and validation.</div>
                 </div>
             </div>
             <div class="links">
                 <a class="button" href="../index.html">Public index</a>
+                <a class="button" href="WORK-PLAN.md">Open work plan</a>
+                <a class="button button--ghost" href="tools/start-quack-codex.sh">Open startup check</a>
                 <a class="button button--ghost" href="../steven-woods-research/research/media-sources-review.md">Source review</a>
             </div>
         </section>
@@ -207,14 +209,57 @@
                     <strong>2021 alumni profile</strong>
                     <p>Contains a Quack.com team photo caption and retrospective sale/product framing that help seed the historic timeline.</p>
                     <div class="links">
-                        <a class="button" href="../steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html">Open local capture</a>
+                        <a class="button" href="historic/artifacts/archive-html/usask-alumni-profile-2021.html">Open local capture</a>
                     </div>
                 </article>
                 <article class="statusCard">
                     <strong>Entrepreneurship profile</strong>
                     <p>Provides a concise retrospective summary describing Quack.com as a pioneering interactive voice assistant acquired in 2000.</p>
                     <div class="links">
-                        <a class="button" href="../steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html">Open local capture</a>
+                        <a class="button" href="historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html">Open local capture</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Continuity And Coordination</h2>
+            <div class="statusGrid">
+                <article class="statusCard">
+                    <strong>Workspace status</strong>
+                    <p>The canonical workspace, deprecated historical paths, and Quack's staged-in-public ownership model are now labeled explicitly.</p>
+                    <div class="links">
+                        <a class="button" href="WORKSPACE-STATUS.md">Open workspace status</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>Living plan</strong>
+                    <p>The continuity pass now has a repo-owned plan so the next Quack run can resume from a named preservation and evidence queue instead of rediscovery.</p>
+                    <div class="links">
+                        <a class="button" href="WORK-PLAN.md">Open work plan</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>Recovery note</strong>
+                    <p>A dated restart audit now records Quack's current counts, archive inventory, and remaining URL-backed gaps.</p>
+                    <div class="links">
+                        <a class="button" href="PROJECT-STATE-AND-RECOVERY-2026-05-10.md">Open recovery note</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>Startup validator</strong>
+                    <p>Quack now has a dedicated startup check that verifies required files, JSON manifests, local archive paths, and Quack-scoped git status from the canonical workspace.</p>
+                    <div class="links">
+                        <a class="button" href="tools/start-quack-codex.sh">Open validator</a>
+                    </div>
+                </article>
+                <article class="statusCard">
+                    <strong>Coordination files</strong>
+                    <p>The manifest triad is a first-class part of the archive contract here, not just background metadata.</p>
+                    <div class="links">
+                        <a class="button" href="project-manifest.json">Project manifest</a>
+                        <a class="button button--ghost" href="source-manifest.json">Source manifest</a>
+                        <a class="button button--ghost" href="public-handoff.json">Public handoff</a>
                     </div>
                 </article>
             </div>
@@ -240,11 +285,18 @@
 
         <section class="panel">
             <h2>Working Layout</h2>
-            <p class="lead">The repository now matches the intended intake-to-history flow.</p>
+            <p class="lead">The repository now covers both the intake-to-history flow and the continuity layer needed for a clean restart on a new machine.</p>
             <div class="codeLike">public/quack/
 |- index.html
 |- README.md
+|- WORK-PLAN.md
+|- WORKSPACE-STATUS.md
+|- PROJECT-STATE-AND-RECOVERY-2026-05-10.md
+|- project-manifest.json
+|- source-manifest.json
+|- public-handoff.json
 |- incoming/
+|- tools/
 `- historic/
    |- memories/
    |- demos/
@@ -257,9 +309,9 @@
             <div class="notePanel">
                 <span class="microLabel">Next Repository Pass</span>
                 <ol class="checkpointList">
-                    <li>Start dropping raw captures into <code>incoming/</code>.</li>
-                    <li>Create the first classified summaries as material moves into <code>historic/</code>.</li>
-                    <li>Add dedicated exhibit pages once a historic lane has enough material to tell a coherent story.</li>
+                    <li>Use <code>tools/start-quack-codex.sh</code> as the first restart check before new Quack work.</li>
+                    <li>Continue preservation around AOL by Phone, first-party AOL pages, and other URL-backed Quack evidence.</li>
+                    <li>Keep the manifest triad, run report, and public page aligned whenever Quack evidence or archive counts change.</li>
                 </ol>
             </div>
         </section>

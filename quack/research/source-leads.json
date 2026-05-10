@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "quack-com",
-  "generated_at": "2026-03-25T00:11:05Z",
+  "generated_at": "2026-05-10T20:13:50Z",
   "leads": [
     {
       "lead_id": "lead-src-quack-2021-usask-alumni-profile",
@@ -27,7 +27,7 @@
         "acquisition"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [],
@@ -103,7 +103,7 @@
         "acquisition"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [],
@@ -181,9 +181,9 @@
         "waterloo"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "/Users/steven/Projects-All/public/quack/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [
@@ -328,10 +328,9 @@
         "press"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
-        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/computerworld-net-finds-voice-2001.html"
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html",
+        "/Users/steven/Projects-All/public/quack/historic/artifacts/archive-html/computerworld-net-finds-voice-2001.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [],
@@ -489,10 +488,9 @@
         "acquisition"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
-        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "/Users/steven/Projects-All/public/quack/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
       ],
       "timeline_event": {
         "event_id": "evt-quack-2000-aol-acquisition",
@@ -736,10 +734,9 @@
         "market"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
-        "/Users/stevenwoods/GitPages/public/data/media-appearances/archive-html/sfgate-earful-of-internet-2000.html"
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html",
+        "/Users/steven/Projects-All/public/quack/historic/artifacts/archive-html/sfgate-earful-of-internet-2000.html"
       ],
       "timeline_event": {
         "event_id": "evt-quack-2000-voice-portal-market-context",
@@ -1696,9 +1693,9 @@
         "canada"
       ],
       "existing_local_paths": [
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
-        "/Users/stevenwoods/GitPages/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
-        "/Users/stevenwoods/GitPages/public/quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "/Users/steven/Projects-All/public/steven-woods-research/historic/artifacts/archive-html/usask-alumni-profile-2021.html",
+        "/Users/steven/Projects-All/public/quack/historic/artifacts/archive-html/usask-alumni-profile-2021.html"
       ],
       "timeline_event": null,
       "entity_mentions_hint": [

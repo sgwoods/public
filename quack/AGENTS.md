@@ -2,7 +2,15 @@
 
 This directory is the Quack.com company archive workspace.
 
-Use the shared [company-research skill](/Users/stevenwoods/GitPages/skills/company-research/SKILL.md) for company-history research, source discovery, manifest updates, timeline/entity extraction, project-page upkeep, and archive coordination work in this subtree.
+Use the shared Quack workflow surfaces in this repo for company-history research, source discovery, manifest updates, timeline/entity extraction, project-page upkeep, and archive coordination work in this subtree:
+
+- `public/data/shared/incoming-artifact-analysis-playbook.md`
+- `public/data/shared/incoming-artifact-analysis-template.md`
+- `public/quack/WORK-PLAN.md`
+- `public/quack/WORKSPACE-STATUS.md`
+- `public/quack/tools/start-quack-codex.sh`
+
+If your local Codex environment also exposes a reusable `company-research` skill, use it as a helper, but do not depend on old machine-specific skill paths.
 
 Working rules:
 
@@ -14,7 +22,7 @@ Working rules:
 - Keep `project-manifest.json`, `source-manifest.json`, and `public-handoff.json` current whenever research materially changes the archive.
 - Keep the Quack project summary page in sync with the current manifests and research outputs.
 - Treat the manifests and project page as ongoing coordination surfaces, not optional polish.
-- When Quack discovers a reusable research method, classification rule, page pattern, or preservation practice, update `skills/company-research/` so Kinitos and Quack stay aligned.
+- When Quack discovers a reusable research method, classification rule, page pattern, or preservation practice, update the shared workflow docs or shared skills so Kinitos and Quack stay aligned.
 - Do not rewrite top-level Steven biography or cross-company pages directly from this subtree.
 
 Collaboration rule:

@@ -1,13 +1,13 @@
 # Quack research batch report
 
-Generated: 2026-03-25T00:11:05Z
+Generated: 2026-05-10T20:13:50Z
 
 ## Batch summary
 
 - Leads tracked: 23
 - Approved manifest sources: 6
 - Deferred manifest sources: 14
-- Locally archived copies in Quack layer: 7
+- Locally archived copies in Quack layer: 5
 - Timeline events captured: 9
 
 ## What the batch found
