@@ -2,7 +2,7 @@
 
 Original audit timestamp: `2026-05-03T14:15:35Z`
 
-Updated after preservation pass: `2026-05-10T17:57:58Z`
+Updated after preservation pass: `2026-05-10T18:11:41Z`
 
 Repo: `public`
 
@@ -45,7 +45,7 @@ Confirmed archive state:
 - a public summary page exists at `public/kinitos-neoedge.html`
 - a working repository page exists at `public/kinitos-neoedge/index.html`
 - source research has already produced three substantial research passes
-- twelve approved sources now have checked-in local HTML preservation copies
+- sixteen approved sources now have checked-in local HTML preservation copies
 - the company arc now covers Kinitos, NeoEdge, MostFun, Blue Noodle, and the Double Fusion endgame
 - the archive coordination contract with `public` is in place
 - the continuity and restart layer now lives in the canonical `~/Projects-All/public` checkout
@@ -82,7 +82,7 @@ That means the archive is no longer dependent on the older recovery checkout for
 
 ## What is checked in
 
-At the committed-history target for this consolidation, the archive and its restart layer include `37` tracked files relevant to Kinitos continuity:
+At the committed-history target for this consolidation, the archive and its restart layer include `48` tracked files relevant to Kinitos continuity:
 
 - public pages:
   - `kinitos-neoedge.html`
@@ -119,6 +119,17 @@ At the committed-history target for this consolidation, the archive and its rest
   - `kinitos-neoedge/historic/artifacts/archive-html/mostfun-homepage-2008-04-07-wayback.html`
   - `kinitos-neoedge/historic/artifacts/archive-html/neoedge-homepage-2008-03-15-wayback.html`
   - `kinitos-neoedge/historic/artifacts/archive-html/bluenoodle-homepage-2011-02-08-wayback.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/pg-sorenson-lecture-2003-01-01-usask.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/mostfun-try-before-you-buy-2007-07-01-gamezebo.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/yahoo-ad-supported-online-gaming-2008-07-10-newmediawire.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/neoedge-neomom-product-tastes-2008-12-22-gamesbeat-reader.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/neoedge-raises-4m-2009-09-29-gamesbeat-reader.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/neoedge-offspring-merger-2009-11-19-gamesbeat-reader.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/neoedge-raises-3m-2010-12-21-gamesbeat-reader.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/double-fusion-neoedge-acquisition-2011-12-15-gamedeveloper.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/interstitial-advertising-patent-2011-11-02-google-patents.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/distraction-free-content-patent-2011-11-02-google-patents.html`
+  - `kinitos-neoedge/historic/artifacts/archive-html/founding-innovation-keynote-2023-04-01-uwaterloo.html`
 - earlier intake scaffold retained for continuity:
   - `data/kinitos-neoedge/AGENTS.md`
   - `data/kinitos-neoedge/README.md`
@@ -138,9 +149,9 @@ The current `source-manifest.json` contains `32` source records:
 
 Approved-source preservation status:
 
-- `12` approved sources have checked-in local archive copies
+- `16` approved sources have checked-in local archive copies
 - `0` approved sources depend on an archive-web-only path without a local copy
-- `12` approved sources currently depend only on canonical live URLs
+- `8` approved sources currently depend only on canonical live URLs
 - `0` approved local archive paths are broken when resolved relative to `public/kinitos-neoedge/`
 
 ### Approved sources with checked-in local copies
@@ -152,6 +163,10 @@ Approved-source preservation status:
 - `src-neoedge-2007-wayback-homepage-patent-pending-delivery`
 - `src-mostfun-2008-wayback-homepage-game-network`
 - `src-neoedge-2008-wayback-homepage-marketplace`
+- `src-neoedge-2008-gamesbeat-neomom-product-tastes`
+- `src-neoedge-2009-gamesbeat-raises-4m`
+- `src-neoedge-2009-gamesbeat-offspring-merger`
+- `src-neoedge-2010-gamesbeat-raises-3m`
 - `src-blue-noodle-2011-wayback-homepage-casual-social`
 - `src-neoedge-2011-gamedeveloper-double-fusion-acquisition`
 - `src-neoedge-ip-2008-google-patents-interstitial-advertising-chain`
@@ -163,10 +178,6 @@ Approved-source preservation status:
 - `src-kinitos-2004-internetnews-microsoft-sneak-peek` - Microsoft Offers Sneak Peek to Developers
 - `src-kinitos-2005-microsoft-experience-capital-markets-partners` - Microsoft Experience Capital Markets Is Supported by More Than 20 Leading Solution Partners
 - `src-neoedge-2007-gamespot-bushnell-joins-board` - Bushnell joins NeoEdge board
-- `src-neoedge-2008-gamesbeat-neomom-product-tastes` - NeoEdge Networks launches NeoMOM to measure product tastes
-- `src-neoedge-2009-gamesbeat-raises-4m` - NeoEdge raises $4M for in-game video ads from game-focused VC firm
-- `src-neoedge-2009-gamesbeat-offspring-merger` - Game ad firm NeoEdge merges with game developer, hires new CEO
-- `src-neoedge-2010-gamesbeat-raises-3m` - NeoEdge raises $3M for ad platform for games
 - `src-blue-noodle-2010-uspto-trademark-filing` - BLUE NOODLE INC. trademark filing in USPTO Official Gazette
 - `src-blue-noodle-2011-adtechdaily-clickstrip-gdc` - Blue Noodle Premiers New Video Ad-Bar, Clickstrip, at Game Developers Conference
 - `src-blue-noodle-2011-fortune-mmv-financial-trouble` - Exclusive: MMV Financial in trouble
@@ -187,7 +198,7 @@ A fresh checkout of the committed repository is already sufficient to recover:
 - the shared workflow baseline
 - the three research passes
 - the lead tracker
-- the five preserved HTML captures
+- the sixteen preserved local HTML captures
 - the distinction between the active deep archive and the earlier intake scaffold
 
 That means the archive can be resumed meaningfully on a new machine without rediscovering the company arc from scratch and without depending on `public-quack-recovery` as the active workspace.
@@ -196,8 +207,8 @@ That means the archive can be resumed meaningfully on a new machine without redi
 
 The main remaining gap is not workspace continuity. It is evidence completeness:
 
-- twelve approved sources are still not locally preserved
-- the most concentrated remaining blockers are Cloudflare-protected or otherwise brittle press pages
+- eight approved sources are still not locally preserved
+- the GamesBeat / VentureBeat funding-and-merger cluster now has local reader-rendered preservation copies, leaving a smaller set of Microsoft, GameSpot, USPTO Official Gazette, Fortune, and AdTech Daily pages as the main blockers
 - full source review therefore still depends partly on the public web
 
 ### Practical verdict
@@ -226,7 +237,7 @@ The older `public/data/kinitos-neoedge/` tree should be treated as supporting in
 ## Recommended next steps
 
 1. Continue Kinitos local work only from `~/Projects-All/public`.
-2. Prioritize local capture of the remaining `12` approved non-local sources, especially the GamesBeat / VentureBeat funding-and-merger cluster and other Cloudflare-blocked press sources.
+2. Prioritize local capture of the remaining `8` approved non-local sources, especially the Microsoft, GameSpot, USPTO Official Gazette, Fortune, and AdTech Daily pages.
 3. Keep using the startup script and recovery audit as the first restart path after any machine or checkout transition.
 4. After those preservation steps, resume broader research or restoration only when:
    - new documents arrive

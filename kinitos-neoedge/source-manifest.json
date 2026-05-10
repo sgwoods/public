@@ -139,7 +139,7 @@
       },
       "urls": {
         "canonical": "https://gamesbeat.com/neoedge-networks-launches-neomom-to-measure-product-tastes/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/neoedge-neomom-product-tastes-2008-12-22-gamesbeat-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -155,7 +155,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GamesBeat says NeoEdge's NeoMOM initiative drew on a network of more than 50 publishers, more than 500 games, and over 20 million players."
+      "notes": "GamesBeat says NeoEdge's NeoMOM initiative drew on a network of more than 50 publishers, more than 500 games, and over 20 million players. A local reader-rendered preservation copy of the canonical page was checked in from the canonical workspace on 2026-05-10 via r.jina.ai because this GamesBeat source was part of the brittle blocked-press cluster."
     },
     {
       "source_id": "src-neoedge-2009-gamesbeat-raises-4m",
@@ -170,7 +170,7 @@
       },
       "urls": {
         "canonical": "https://gamesbeat.com/neoedge-raises-4m-for-in-game-video-ads-from-game-focused-vc-firm/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/neoedge-raises-4m-2009-09-29-gamesbeat-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -186,7 +186,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GamesBeat reports a $4M round, 470 games across more than 50 publishers, and distribution on outlets such as Big Fish Games and Yahoo Games. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare challenge on direct fetch, so this Yahoo-adjacent funding source remains approved but URL-backed."
+      "notes": "GamesBeat reports a $4M round, 470 games across more than 50 publishers, and distribution on outlets such as Big Fish Games and Yahoo Games. The earlier direct-fetch blocker for this Yahoo-adjacent funding source was mitigated on 2026-05-10 by checking in a local reader-rendered preservation copy of the canonical page via r.jina.ai."
     },
     {
       "source_id": "src-neoedge-2009-gamesbeat-offspring-merger",
@@ -201,7 +201,7 @@
       },
       "urls": {
         "canonical": "https://gamesbeat.com/game-ad-firm-neoedge-merges-with-game-developer-hires-new-ceo/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/neoedge-offspring-merger-2009-11-19-gamesbeat-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -217,7 +217,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GamesBeat covers the Offspring merger, Lesley Mansford becoming CEO, and NeoEdge's continued ad-tech focus alongside new game development."
+      "notes": "GamesBeat covers the Offspring merger, Lesley Mansford becoming CEO, and NeoEdge's continued ad-tech focus alongside new game development. A local reader-rendered preservation copy of the canonical page was checked in from the canonical workspace on 2026-05-10 via r.jina.ai because this GamesBeat source was part of the brittle blocked-press cluster."
     },
     {
       "source_id": "src-neoedge-2010-gamesbeat-raises-3m",
@@ -232,7 +232,7 @@
       },
       "urls": {
         "canonical": "https://gamesbeat.com/neoedge-raises-3m-for-ad-platform-for-games/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/neoedge-raises-3m-2010-12-21-gamesbeat-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -248,7 +248,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GamesBeat reports MMV Financial funding, more than 100 million monthly video ad impressions, and partnerships with Yahoo Games and iWin. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare challenge on direct fetch, so this Yahoo-linked funding source remains approved but URL-backed."
+      "notes": "GamesBeat reports MMV Financial funding, more than 100 million monthly video ad impressions, and partnerships with Yahoo Games and iWin. The earlier direct-fetch blocker for this Yahoo-linked funding source was mitigated on 2026-05-10 by checking in a local reader-rendered preservation copy of the canonical page via r.jina.ai."
     },
     {
       "source_id": "src-neoedge-2011-gamedeveloper-double-fusion-acquisition",
