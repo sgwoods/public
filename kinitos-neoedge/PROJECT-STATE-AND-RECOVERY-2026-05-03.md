@@ -2,7 +2,7 @@
 
 Original audit timestamp: `2026-05-03T14:15:35Z`
 
-Updated after canonical workspace consolidation: `2026-05-10T13:41:46Z`
+Updated after preservation pass: `2026-05-10T17:57:58Z`
 
 Repo: `public`
 
@@ -45,18 +45,18 @@ Confirmed archive state:
 - a public summary page exists at `public/kinitos-neoedge.html`
 - a working repository page exists at `public/kinitos-neoedge/index.html`
 - source research has already produced three substantial research passes
-- five local Wayback HTML captures are preserved in git
+- twelve approved sources now have checked-in local HTML preservation copies
 - the company arc now covers Kinitos, NeoEdge, MostFun, Blue Noodle, and the Double Fusion endgame
 - the archive coordination contract with `public` is in place
 - the continuity and restart layer now lives in the canonical `~/Projects-All/public` checkout
 
 Recommended project status label:
 
-- `Active archive with workspace canonicalization completed`
+- `Active archive with preservation completeness underway`
 
 Recommended immediate focus:
 
-- `Preservation completeness and additional local source capture from the canonical Projects-All workspace`
+- `Preservation completeness from the canonical Projects-All workspace, with the remaining weak spots concentrated in blocked press sources`
 
 ## Workspace status update
 
@@ -138,26 +138,28 @@ The current `source-manifest.json` contains `32` source records:
 
 Approved-source preservation status:
 
-- `5` approved sources have checked-in local archive copies
-- `1` approved source depends on an external archive URL
-- `18` approved sources currently depend only on canonical live URLs
+- `12` approved sources have checked-in local archive copies
+- `0` approved sources depend on an archive-web-only path without a local copy
+- `12` approved sources currently depend only on canonical live URLs
 - `0` approved local archive paths are broken when resolved relative to `public/kinitos-neoedge/`
 
 ### Approved sources with checked-in local copies
 
+- `src-kinitos-2003-usask-pg-sorenson-lecture`
+- `src-mostfun-2007-gamezebo-try-before-you-buy`
+- `src-neoedge-2008-yahoo-ad-supported-online-gaming`
 - `src-mostfun-2007-wayback-homepage-game-player`
 - `src-neoedge-2007-wayback-homepage-patent-pending-delivery`
 - `src-mostfun-2008-wayback-homepage-game-network`
 - `src-neoedge-2008-wayback-homepage-marketplace`
 - `src-blue-noodle-2011-wayback-homepage-casual-social`
-
-### Approved source with archive-web only
-
-- `src-neoedge-2008-yahoo-ad-supported-online-gaming` - Yahoo! Announces Ad-Supported Online Gaming
+- `src-neoedge-2011-gamedeveloper-double-fusion-acquisition`
+- `src-neoedge-ip-2008-google-patents-interstitial-advertising-chain`
+- `src-neoedge-ip-2010-google-patents-distraction-free-content-chain`
+- `src-kinitos-neoedge-2023-waterloo-rdd-founding-innovation-keynote`
 
 ### Approved sources not yet preserved locally
 
-- `src-kinitos-2003-usask-pg-sorenson-lecture` - P.G. Sorenson Lecture: Dr. Steven Woods, CEO of Kinitos, Inc.
 - `src-kinitos-2004-internetnews-microsoft-sneak-peek` - Microsoft Offers Sneak Peek to Developers
 - `src-kinitos-2005-microsoft-experience-capital-markets-partners` - Microsoft Experience Capital Markets Is Supported by More Than 20 Leading Solution Partners
 - `src-neoedge-2007-gamespot-bushnell-joins-board` - Bushnell joins NeoEdge board
@@ -165,16 +167,11 @@ Approved-source preservation status:
 - `src-neoedge-2009-gamesbeat-raises-4m` - NeoEdge raises $4M for in-game video ads from game-focused VC firm
 - `src-neoedge-2009-gamesbeat-offspring-merger` - Game ad firm NeoEdge merges with game developer, hires new CEO
 - `src-neoedge-2010-gamesbeat-raises-3m` - NeoEdge raises $3M for ad platform for games
-- `src-neoedge-2011-gamedeveloper-double-fusion-acquisition` - Double Fusion Expands Its In-Game Advertising With NeoEdge Acquisition
-- `src-mostfun-2007-gamezebo-try-before-you-buy` - MostFun.com shakes up try-before-you-buy
 - `src-blue-noodle-2010-uspto-trademark-filing` - BLUE NOODLE INC. trademark filing in USPTO Official Gazette
 - `src-blue-noodle-2011-adtechdaily-clickstrip-gdc` - Blue Noodle Premiers New Video Ad-Bar, Clickstrip, at Game Developers Conference
 - `src-blue-noodle-2011-fortune-mmv-financial-trouble` - Exclusive: MMV Financial in trouble
 - `src-blue-noodle-2011-fortune-investor-immorality` - Investor immorality: The strange case of Blue Noodle
 - `src-double-fusion-2011-adtechdaily-major-expansion-neoedge-assets` - Major Expansion at In-Gaming Ad Leader Double Fusion
-- `src-neoedge-ip-2008-google-patents-interstitial-advertising-chain` - US20080207328A1 - Interstitial advertising in a gaming environment
-- `src-neoedge-ip-2010-google-patents-distraction-free-content-chain` - US20100175058A1 - System for providing distraction-free content in a flash-based gaming environment
-- `src-kinitos-neoedge-2023-waterloo-rdd-founding-innovation-keynote` - Math and Computing Research Discovery Days: Founding Innovation Keynote: Steven Woods
 
 ## Recovery assessment
 
@@ -199,13 +196,13 @@ That means the archive can be resumed meaningfully on a new machine without redi
 
 The main remaining gap is not workspace continuity. It is evidence completeness:
 
-- nineteen approved sources are still not locally preserved
-- one approved source still depends on an external archive URL
+- twelve approved sources are still not locally preserved
+- the most concentrated remaining blockers are Cloudflare-protected or otherwise brittle press pages
 - full source review therefore still depends partly on the public web
 
 ### Practical verdict
 
-The Kinitos archive is now `continuity-safe and cleanly restartable` from the canonical `~/Projects-All/public` checkout, but it is not yet `fully self-contained and exact-evidence reproducible` because source preservation is still incomplete.
+The Kinitos archive is now `continuity-safe and meaningfully more self-contained` from the canonical `~/Projects-All/public` checkout, but it is not yet `fully self-contained and exact-evidence reproducible` because a blocked press cluster and several other approved live URLs still lack local copies.
 
 ## Fresh-machine restart procedure
 
@@ -229,7 +226,7 @@ The older `public/data/kinitos-neoedge/` tree should be treated as supporting in
 ## Recommended next steps
 
 1. Continue Kinitos local work only from `~/Projects-All/public`.
-2. Prioritize local capture of the `19` approved non-local sources, especially fragile press sources and the Yahoo Games cluster.
+2. Prioritize local capture of the remaining `12` approved non-local sources, especially the GamesBeat / VentureBeat funding-and-merger cluster and other Cloudflare-blocked press sources.
 3. Keep using the startup script and recovery audit as the first restart path after any machine or checkout transition.
 4. After those preservation steps, resume broader research or restoration only when:
    - new documents arrive
@@ -242,4 +239,4 @@ See also: `WORK-PLAN.md` for the living phase plan and `WORKSPACE-STATUS.md` for
 
 The project is already a real archive, not just a loose lead list.
 
-The continuity layer is now present in the canonical `~/Projects-All/public` workspace, so the old recovery checkout is no longer required for active Kinitos work. The main remaining risk is source-preservation completeness, not workspace continuity.
+The continuity layer is now present in the canonical `~/Projects-All/public` workspace, so the old recovery checkout is no longer required for active Kinitos work. The main remaining risk is source-preservation completeness within a smaller, more clearly defined blocked-press cluster.

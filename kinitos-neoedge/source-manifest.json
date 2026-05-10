@@ -15,7 +15,7 @@
       },
       "urls": {
         "canonical": "https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/pg-sorenson-lecture-2003-01-01-usask.html",
         "archive_web": null
       },
       "ownership": {
@@ -31,7 +31,7 @@
         "steven-woods"
       ],
       "status": "approved",
-      "notes": "Official university page says Woods left AOL in May 2002 to co-found Kinitos and was serving as CEO by the 2003 lecture."
+      "notes": "Official university page says Woods left AOL in May 2002 to co-found Kinitos and was serving as CEO by the 2003 lecture. Local HTML preservation copy checked in from the canonical workspace on 2026-05-10."
     },
     {
       "source_id": "src-kinitos-2004-internetnews-microsoft-sneak-peek",
@@ -93,7 +93,7 @@
         "press-release"
       ],
       "status": "approved",
-      "notes": "Microsoft lists Kinitos as a solution partner and describes its on-demand application delivery, update control, usage insight, and error reaction capabilities."
+      "notes": "Microsoft lists Kinitos as a solution partner and describes its on-demand application delivery, update control, usage insight, and error reaction capabilities. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare block on the live URL, so this source remains approved but URL-backed."
     },
     {
       "source_id": "src-neoedge-2007-gamespot-bushnell-joins-board",
@@ -186,7 +186,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GamesBeat reports a $4M round, 470 games across more than 50 publishers, and distribution on outlets such as Big Fish Games and Yahoo Games."
+      "notes": "GamesBeat reports a $4M round, 470 games across more than 50 publishers, and distribution on outlets such as Big Fish Games and Yahoo Games. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare challenge on direct fetch, so this Yahoo-adjacent funding source remains approved but URL-backed."
     },
     {
       "source_id": "src-neoedge-2009-gamesbeat-offspring-merger",
@@ -248,7 +248,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GamesBeat reports MMV Financial funding, more than 100 million monthly video ad impressions, and partnerships with Yahoo Games and iWin."
+      "notes": "GamesBeat reports MMV Financial funding, more than 100 million monthly video ad impressions, and partnerships with Yahoo Games and iWin. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare challenge on direct fetch, so this Yahoo-linked funding source remains approved but URL-backed."
     },
     {
       "source_id": "src-neoedge-2011-gamedeveloper-double-fusion-acquisition",
@@ -263,7 +263,7 @@
       },
       "urls": {
         "canonical": "https://www.gamedeveloper.com/business/double-fusion-expands-its-in-game-advertising-with-neoedge-acquisition",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/double-fusion-neoedge-acquisition-2011-12-15-gamedeveloper.html",
         "archive_web": null
       },
       "ownership": {
@@ -279,7 +279,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "Game Developer reports Double Fusion's acquisition of NeoEdge and frames it as an expansion into casual and social in-game advertising."
+      "notes": "Game Developer reports Double Fusion's acquisition of NeoEdge and frames it as an expansion into casual and social in-game advertising. Local HTML preservation copy checked in from the canonical workspace on 2026-05-10."
     },
     {
       "source_id": "src-mostfun-2007-gamezebo-try-before-you-buy",
@@ -294,7 +294,7 @@
       },
       "urls": {
         "canonical": "https://www.gamezebo.com/news/mostfun-com-shakes-up-try-before-you-buy/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/mostfun-try-before-you-buy-2007-07-01-gamezebo.html",
         "archive_web": null
       },
       "ownership": {
@@ -310,7 +310,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "Gamezebo describes MostFun as offering around 130 premium casual titles free with a small number of TV-quality video ads."
+      "notes": "Gamezebo describes MostFun as offering around 130 premium casual titles free with a small number of TV-quality video ads. Local HTML preservation copy checked in from the canonical workspace on 2026-05-10."
     },
     {
       "source_id": "src-neoedge-2008-yahoo-ad-supported-online-gaming",
@@ -325,7 +325,7 @@
       },
       "urls": {
         "canonical": "https://www.altaba.com/news-releases/news-release-details/yahoo-announces-ad-supported-online-gaming",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/yahoo-ad-supported-online-gaming-2008-07-10-newmediawire.html",
         "archive_web": "https://www.newmediawire.com/news/yahoo-announces-ad-supported-online-gaming-3076097"
       },
       "ownership": {
@@ -341,7 +341,7 @@
         "press-release"
       ],
       "status": "approved",
-      "notes": "Yahoo's announcement includes a substantial company description for NeoEdge, naming its NeoARM and NeoAds technology and scale within the Yahoo Games rollout."
+      "notes": "Yahoo's announcement includes a substantial company description for NeoEdge, naming its NeoARM and NeoAds technology and scale within the Yahoo Games rollout. The canonical Altaba-hosted URL no longer resolves cleanly, so a local HTML preservation copy was checked in on 2026-05-10 from the accessible NewMediaWire-hosted version already tracked in archive_web."
     },
     {
       "source_id": "src-blue-noodle-2010-uspto-trademark-filing",
@@ -403,7 +403,7 @@
         "gdc"
       ],
       "status": "approved",
-      "notes": "Ad Tech Daily says Blue Noodle was formerly NeoEdge and positions Clickstrip plus Yahoo Games, iWin, and RedAtoms partnerships as part of the 2011 strategy."
+      "notes": "Ad Tech Daily says Blue Noodle was formerly NeoEdge and positions Clickstrip plus Yahoo Games, iWin, and RedAtoms partnerships as part of the 2011 strategy. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare block on direct fetch, so this source remains approved but URL-backed."
     },
     {
       "source_id": "src-blue-noodle-2011-fortune-mmv-financial-trouble",
@@ -671,7 +671,7 @@
       },
       "urls": {
         "canonical": "https://patents.google.com/patent/US20080207328A1/en",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/interstitial-advertising-patent-2011-11-02-google-patents.html",
         "archive_web": null
       },
       "ownership": {
@@ -689,7 +689,7 @@
         "legal"
       ],
       "status": "approved",
-      "notes": "Google Patents shows a NeoEdge patent naming Steven Woods and Kelly Slough as inventors, with legal events tracing assignment to NeoEdge, later lender interests, Blue Noodle name-change handling, and eventual assignment into Double Fusion in 2011."
+      "notes": "Google Patents shows a NeoEdge patent naming Steven Woods and Kelly Slough as inventors, with legal events tracing assignment to NeoEdge, later lender interests, Blue Noodle name-change handling, and eventual assignment into Double Fusion in 2011. Local HTML preservation copy checked in from the canonical workspace on 2026-05-10."
     },
     {
       "source_id": "src-neoedge-ip-2010-google-patents-distraction-free-content-chain",
@@ -704,7 +704,7 @@
       },
       "urls": {
         "canonical": "https://patents.google.com/patent/US20100175058A1/en",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/distraction-free-content-patent-2011-11-02-google-patents.html",
         "archive_web": null
       },
       "ownership": {
@@ -722,7 +722,7 @@
         "legal"
       ],
       "status": "approved",
-      "notes": "Google Patents records the NeoEdge to Blue Noodle to Double Fusion assignment path for a Flash-game advertising patent family, reinforcing that the 2011 transaction involved concrete IP assets as well as network distribution."
+      "notes": "Google Patents records the NeoEdge to Blue Noodle to Double Fusion assignment path for a Flash-game advertising patent family, reinforcing that the 2011 transaction involved concrete IP assets as well as network distribution. Local HTML preservation copy checked in from the canonical workspace on 2026-05-10."
     },
     {
       "source_id": "src-kinitos-neoedge-2023-waterloo-rdd-founding-innovation-keynote",
@@ -737,7 +737,7 @@
       },
       "urls": {
         "canonical": "https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/founding-innovation-keynote-2023-04-01-uwaterloo.html",
         "archive_web": null
       },
       "ownership": {
@@ -753,7 +753,7 @@
         "steven-woods"
       ],
       "status": "approved",
-      "notes": "Official Waterloo event page says Woods co-founded Quack.com, Kinitos, and NeoEdge Networks and built teams across Silicon Valley and the Waterloo-Toronto corridor."
+      "notes": "Official Waterloo event page says Woods co-founded Quack.com, Kinitos, and NeoEdge Networks and built teams across Silicon Valley and the Waterloo-Toronto corridor. Local HTML preservation copy checked in from the canonical workspace on 2026-05-10."
     },
     {
       "source_id": "src-blue-noodle-2006-gaebler-funding-round",
