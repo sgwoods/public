@@ -361,7 +361,14 @@ def extract_quack_review_sources() -> list[dict[str, Any]]:
         }
         archive_match = re.search(r"`([^`]+)`", local_archive)
         if archive_match:
-            entry["existing_local_path"] = str((PUBLIC_ROOT / "data" / "media-appearances" / archive_match.group(1)).resolve())
+            relative_path = archive_match.group(1)
+            candidates = [
+                ROOT / "historic" / "artifacts" / relative_path,
+                PUBLIC_ROOT / "steven-woods-research" / "historic" / "artifacts" / relative_path,
+                PUBLIC_ROOT / "data" / "media-appearances" / relative_path,
+            ]
+            resolved = next((candidate.resolve() for candidate in candidates if candidate.exists()), candidates[0].resolve())
+            entry["existing_local_path"] = str(resolved)
         rows.append(entry)
     return rows
 
@@ -1030,16 +1037,17 @@ def update_project_manifest(source_manifest: dict[str, Any]) -> dict[str, Any]:
     manifest["status_label"] = "Current phase"
     manifest["status_value"] = "Active research archive"
     manifest["focus_label"] = "Current focus"
-    manifest["current_focus"] = "Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press"
+    manifest["current_focus"] = "Continuity-safe archive with follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press"
     manifest["featured_source_ids"] = featured
     manifest["notable_items"] = notable_items
     return manifest
 
 
 def write_run_report(leads: list[dict[str, Any]], source_manifest: dict[str, Any], timeline: dict[str, Any]) -> None:
-    approved = [lead for lead in leads if lead.get("classification", {}).get("status") == "approved"]
+    approved_manifest = [source for source in source_manifest["sources"] if source["status"] == "approved"]
+    deferred_manifest = [source for source in source_manifest["sources"] if source["status"] == "deferred"]
+    archived_manifest = [source for source in source_manifest["sources"] if source["urls"].get("archive_local")]
     deferred = [lead for lead in leads if lead.get("classification", {}).get("status") == "deferred"]
-    archived = [lead for lead in leads if lead["fetch"].get("archive_local")]
     campaign_cards = read_campaign_cards()
     lines = [
         "# Quack research batch report",
@@ -1049,9 +1057,9 @@ def write_run_report(leads: list[dict[str, Any]], source_manifest: dict[str, Any
         "## Batch summary",
         "",
         f"- Leads tracked: {len(leads)}",
-        f"- Approved manifest sources: {len(source_manifest['sources']) - sum(1 for s in source_manifest['sources'] if s['status'] == 'deferred')}",
-        f"- Deferred manifest sources: {sum(1 for s in source_manifest['sources'] if s['status'] == 'deferred')}",
-        f"- Locally archived copies in Quack layer: {len(archived)}",
+        f"- Approved manifest sources: {len(approved_manifest)}",
+        f"- Deferred manifest sources: {len(deferred_manifest)}",
+        f"- Locally archived copies in Quack layer: {len(archived_manifest)}",
         f"- Timeline events captured: {len(timeline['events'])}",
         "",
         "## What the batch found",
@@ -1263,10 +1271,10 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
     current_state_cards = [
         {
             "title": "Research workspace is now active",
-            "body": "Quack now has a repeatable research batch with source leads, timeline output, entity extraction, topic briefs, and a machine-assisted run report living inside the archive layer.",
+            "body": "Quack now has a repeatable research batch with source leads, timeline output, entity extraction, topic briefs, a machine-assisted run report, and repo-owned restart surfaces living inside the archive layer.",
             "details": [
                 f"<strong>Internal outputs</strong> 5 core research surfaces",
-                "<strong>Formal exports</strong> project, source, and public handoff manifests",
+                "<strong>Continuity surfaces</strong> plan, workspace status, recovery note, and startup validator",
             ],
         },
         {
@@ -1282,12 +1290,12 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
             "body": "Strong or fragile sources are now being copied into the Quack layer, which keeps the archive useful even when older web coverage disappears or changes.",
             "details": [
                 f"<strong>Local archive copies</strong> {archived_count}",
-                "<strong>Demo lane seeded</strong> video and retrospective leads file created",
+                "<strong>Approved with local copies</strong> 3 of 6 approved sources currently resolve to checked-in local files",
             ],
         },
         {
             "title": "Archive coordination is explicit",
-            "body": "Quack remains staged inside the public repo, but the contract boundary is now visible: company-specific interpretation stays here and only short Steven-relevant summaries flow upward.",
+            "body": "Quack remains staged inside the public repo, but the contract boundary is now visible: company-specific interpretation stays here, only short Steven-relevant summaries flow upward, and the canonical active workspace is now explicit.",
             "details": [
                 "<strong>Ownership split</strong> Quack archive deep, public hub summary",
                 "<strong>Open issue</strong> eventual repo split still deferred",
@@ -1508,7 +1516,7 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
                 <div class="metaCard">
                     <span class="metaLabel">Current Phase</span>
                     <span class="metaValue">Active research archive</span>
-                    <div class="metaNote">Quack now has a repeatable batch workflow, preserved local copies, and formal public handoff files.</div>
+                    <div class="metaNote">Quack now has a repeatable batch workflow, preserved local copies, formal public handoff files, and a checked-in continuity layer.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Timeline Span</span>
@@ -1518,7 +1526,7 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
                 <div class="metaCard">
                     <span class="metaLabel">Current Focus</span>
                     <span class="metaValue">{html.escape(project_manifest["current_focus"])}</span>
-                    <div class="metaNote">Research outputs now live in the Quack archive layer and feed the public summary downstream.</div>
+                    <div class="metaNote">Research outputs and continuity docs now live in the Quack archive layer and feed the public summary downstream.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Updated</span>
@@ -1532,6 +1540,7 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
             <div class="links">
                 <a class="button" href="quack/">Open working repository</a>
                 <a class="button" href="quack/source-manifest.json">Open source manifest</a>
+                <a class="button button--ghost" href="quack/public-handoff.json">Open public handoff</a>
                 <a class="button button--ghost" href="quack/research/run-report.md">Open run report</a>
             </div>
         </section>
@@ -1611,11 +1620,14 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
         </section>
 
         <section class="panel">
-            <h2>Shared Workflow</h2>
-            <p class="lead">Quack and Kinitos now share the same <code>company-research</code> skill so discovery, preservation, classification, manifests, and public handoff stay on one evolving workflow instead of splitting into project-specific habits.</p>
+            <h2>Shared Workflow And Continuity</h2>
+            <p class="lead">Quack and Kinitos now share the same archive discipline: discovery and preservation stay structured, the manifest triad stays current, and restartability is documented in repo-owned files instead of chat-only memory.</p>
             <div class="links">
                 <a class="button" href="quack/README.md">Open Quack workflow notes</a>
                 <a class="button button--ghost" href="quack/project-manifest.json">Open project manifest</a>
+                <a class="button button--ghost" href="quack/public-handoff.json">Open public handoff</a>
+                <a class="button button--ghost" href="quack/WORK-PLAN.md">Open work plan</a>
+                <a class="button button--ghost" href="quack/tools/start-quack-codex.sh">Open startup check</a>
             </div>
         </section>
     </main>

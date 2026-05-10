@@ -24,15 +24,21 @@ Shared analysis guidance:
 
 - playbook: `public/data/shared/incoming-artifact-analysis-playbook.md`
 - template: `public/data/shared/incoming-artifact-analysis-template.md`
-- repo-local skill: `skills/historic-artifact-intake/SKILL.md`
-- shared batch research skill: `skills/company-research/SKILL.md`
-- when Quack discovers a reusable archive method, fold it back into `skills/company-research/` so Kinitos and Quack keep the same research workflow
+- if your local Codex environment provides a shared `company-research` or artifact-intake skill, treat it as a helper rather than a path dependency
+- when Quack discovers a reusable archive method, fold it back into the shared workflow so Kinitos and Quack keep the same research process
 
 Formal export files:
 
 - `project-manifest.json`
 - `source-manifest.json`
 - `public-handoff.json`
+
+Continuity and restart surfaces:
+
+- `WORK-PLAN.md`
+- `WORKSPACE-STATUS.md`
+- `PROJECT-STATE-AND-RECOVERY-2026-05-10.md`
+- `tools/start-quack-codex.sh`
 
 Layout:
 
@@ -41,3 +47,8 @@ Layout:
 - `historic/demos/` for reconstructed demos and presentation flows
 - `historic/artifacts/` for scans, screenshots, HTML captures, and source documents
 - `historic/code/` for recovered source, build notes, and compatibility work
+
+Active local continuity rule:
+
+- active Quack work should now happen from the canonical shared-public checkout at `/Users/steven/Projects-All/public`
+- older `GitPages/public` absolute paths that still appear inside historic research metadata should be treated as deprecated reference paths, not as the active workspace
