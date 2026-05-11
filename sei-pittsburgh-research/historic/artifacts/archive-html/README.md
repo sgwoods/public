@@ -6,6 +6,10 @@ Pittsburgh era archive.
 Seeded baseline on `2026-05-11`:
 
 - `news-at-sei-september-1999.html`
+- `steve-woods-sei-author-profile.html`
 
-This file is the SEI-hosted newsletter issue page that provides institute
-context for the `The Perils and Joys of Reconstructing Architectures` paper.
+These files provide SEI-hosted institute context for the archive:
+
+- the September 1999 newsletter issue page that frames the initial paper floor
+- the current SEI author profile that explicitly identifies Steve Woods as an
+  SEI alumni employee and clusters his publication record

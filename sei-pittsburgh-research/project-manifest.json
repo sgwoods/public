@@ -12,13 +12,13 @@
     "end_year": 2002,
     "label": "SEI Pittsburgh era"
   },
-  "repo_pushed_at": "2026-05-11T19:01:15Z",
-  "status_generated_at": "2026-05-11T19:01:15Z",
+  "repo_pushed_at": "2026-05-11T19:15:41Z",
+  "status_generated_at": "2026-05-11T19:15:41Z",
   "status_label": "Current phase",
   "status_value": "Seeded era archive",
   "focus_label": "Current focus",
-  "focus_value": "First-source baseline, SEI paper floor, and transition-to-startup bridge coverage",
-  "current_focus": "First-source baseline, SEI paper floor, and transition-to-startup bridge coverage",
+  "focus_value": "Expanded baseline with author-profile context and additional SEI publication coverage",
+  "current_focus": "Expanded baseline with author-profile context and additional SEI publication coverage",
   "notable_items": [
     {
       "label": "Working repository",
@@ -29,8 +29,12 @@
       "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/perils-and-joys-of-reconstructing-architectures-1999-sei.pdf"
     },
     {
-      "label": "News at SEI September 1999",
-      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-html/news-at-sei-september-1999.html"
+      "label": "SEI author profile",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-html/steve-woods-sei-author-profile.html"
+    },
+    {
+      "label": "Software Architectural Transformation",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf"
     },
     {
       "label": "SEI startup bridge PDF",
@@ -40,6 +44,9 @@
   "featured_source_ids": [
     "src-sei-1999-perils-and-joys-of-reconstructing-architectures",
     "src-sei-1999-news-at-sei-september",
-    "src-sei-2002-architecture-practices-propel-successful-startup"
+    "src-sei-2002-architecture-practices-propel-successful-startup",
+    "src-sei-current-steve-woods-author-profile",
+    "src-sei-1999-software-architectural-transformation",
+    "src-sei-1999-why-reengineering-projects-fail"
   ]
 }

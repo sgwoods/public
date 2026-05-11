@@ -1,6 +1,6 @@
 # SEI Pittsburgh Project State And Recovery Audit
 
-Audit timestamp: `2026-05-11T19:01:15Z`
+Audit timestamp: `2026-05-11T19:15:41Z`
 
 Repo: `public`
 
@@ -37,16 +37,16 @@ It does not own:
 
 Confirmed machine-readable baseline:
 
-- `3` total source records
-- `3` approved
+- `6` total source records
+- `6` approved
 - `0` deferred
 - `0` rejected
 
 Confirmed local preservation baseline:
 
-- `3` source records currently resolve to checked-in local archive files
-- the first baseline includes two direct SEI-hosted PDFs and one SEI-hosted
-  institute-context HTML page
+- `6` source records currently resolve to checked-in local archive files
+- the expanded baseline now includes four local PDF captures and two local HTML
+  captures from stable SEI-hosted sources
 
 Confirmed continuity baseline:
 
@@ -68,22 +68,24 @@ This pass converts it from a pure scaffold into a seeded era archive by adding:
 - explicit workspace and restart docs
 - a startup validator
 - a deeper machine-readable source baseline
-- localized preserved copies of a core paper, an institute-context page, and a
+- localized preserved copies of a core paper, a current SEI author profile,
+  two additional SEI-era publications, an institute-context page, and a
   retrospective bridge source
 
 ## Remaining risk
 
 The main remaining risk is not workspace ambiguity. It is depth and completeness:
 
-- staff and institute context explicitly naming Steven Woods is still thin
-- the SEI publication floor is still only a starter set rather than a deep run
-  through the period
+- staff and institute context is better now, but still thin beyond the current
+  author profile and publication index
+- the SEI publication floor is stronger now, but still not a deep run through
+  the period
 - the Quack transition lane still needs a few more strong bridge sources
 
 ## Practical verdict
 
 SEI Pittsburgh is now `seeded, continuity-safe, and restartable` inside the
-canonical shared-public workspace, with a real paper-and-bridge floor,
+canonical shared-public workspace, with a more credible paper-and-bridge floor,
 but it is not yet `deeply populated`.
 
 The next sensible SEI Pittsburgh pass is another small preservation-and-seeding

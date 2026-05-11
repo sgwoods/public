@@ -91,6 +91,96 @@
       ],
       "status": "approved",
       "notes": "Direct SEI-hosted PDF preserved locally. This bridge source was also noted in the Steven review ledger, but SEI now keeps its own localized copy and era-specific interpretation."
+    },
+    {
+      "source_id": "src-sei-current-steve-woods-author-profile",
+      "title": "Steve Woods",
+      "source_type": "profile",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Stable SEI-hosted staff-context source confirming Steve Woods as an SEI alumni employee and clustering his SEI publication record.",
+      "date": {
+        "display": "Reviewed May 11, 2026",
+        "sort": "2026-05-11",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/authors/steve-woods/",
+        "archive_local": "historic/artifacts/archive-html/steve-woods-sei-author-profile.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "profile",
+        "author",
+        "staff-context"
+      ],
+      "status": "approved",
+      "notes": "Current SEI author profile preserved locally as institute context. It explicitly identifies Steve Woods as an SEI alumni employee and links his SEI-era publications."
+    },
+    {
+      "source_id": "src-sei-1999-software-architectural-transformation",
+      "title": "Software Architectural Transformation",
+      "source_type": "artifact",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Additional SEI-era architecture publication anchor coauthored by Steve Woods and Rick Kazman.",
+      "date": {
+        "display": "January 1, 1999",
+        "sort": "1999-01-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/library/software-architectural-transformation/",
+        "archive_local": "historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "paper",
+        "architecture",
+        "transformation"
+      ],
+      "status": "approved",
+      "notes": "Preserved locally from the SEI library download link. The SEI library page lists Rick Kazman and Steve Woods as authors."
+    },
+    {
+      "source_id": "src-sei-1999-why-reengineering-projects-fail",
+      "title": "Why Reengineering Projects Fail",
+      "source_type": "artifact",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Additional SEI-era reengineering publication anchor showing Steve Woods in the broader reengineering research lane.",
+      "date": {
+        "display": "April 1, 1999",
+        "sort": "1999-04-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/library/why-reengineering-projects-fail/",
+        "archive_local": "historic/artifacts/archive-pdf/why-reengineering-projects-fail-1999-sei.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "paper",
+        "reengineering",
+        "failure-analysis"
+      ],
+      "status": "approved",
+      "notes": "Preserved locally from the SEI library download link. The SEI library page lists Steve Woods among the report authors."
     }
   ]
 }

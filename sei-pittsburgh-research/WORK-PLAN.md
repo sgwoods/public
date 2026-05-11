@@ -35,8 +35,8 @@ Steven Woods' work at the Software Engineering Institute, including:
 - the SEI Pittsburgh manifest triad exists and parses cleanly
 - the public summary page exists at `public/sei-pittsburgh-research.html`
 - the repo-facing working page exists at `public/sei-pittsburgh-research/index.html`
-- current manifest counts are `3` total / `3` approved / `0` deferred / `0` rejected
-- `3` source records currently resolve to checked-in local archive files
+- current manifest counts are `6` total / `6` approved / `0` deferred / `0` rejected
+- `6` source records currently resolve to checked-in local archive files
 - SEI Pittsburgh now has repo-owned continuity surfaces:
   - `WORK-PLAN.md`
   - `WORKSPACE-STATUS.md`
@@ -84,7 +84,7 @@ Completed checkpoint:
 
 ### Phase 3: preservation and coverage depth
 
-Status: `next`
+Status: `underway`
 
 Goals:
 
@@ -95,11 +95,20 @@ Goals:
 
 Priority queue:
 
-- stronger SEI staff or organization context that explicitly mentions Steven
-  Woods
+- stronger SEI staff or organization context beyond the current author profile
+  and publication index
 - additional SEI Interactive or related publication entries from the period
 - further bridge sources linking the SEI architecture practices to the Quack
   startup path
+
+Completed checkpoint:
+
+- a stable SEI author profile is now localized into the archive as institute
+  context
+- `Software Architectural Transformation` is now localized as another
+  architecture publication anchor
+- `Why Reengineering Projects Fail` is now localized as another SEI-era
+  reengineering publication anchor
 
 ## Practical next-step path from here
 

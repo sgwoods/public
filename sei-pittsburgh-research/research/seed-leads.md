@@ -19,10 +19,13 @@
 - `src-sei-1999-perils-and-joys-of-reconstructing-architectures`
 - `src-sei-1999-news-at-sei-september`
 - `src-sei-2002-architecture-practices-propel-successful-startup`
+- `src-sei-current-steve-woods-author-profile`
+- `src-sei-1999-software-architectural-transformation`
+- `src-sei-1999-why-reengineering-projects-fail`
 
 ## Next bounded candidates
 
-- stronger SEI staff or institute context explicitly naming Steven Woods
+- stronger SEI staff or institute context beyond the current author profile
 - additional SEI Interactive or related publication entries from the period
 - further bridge sources that connect the SEI architecture work to the Quack
   startup path
