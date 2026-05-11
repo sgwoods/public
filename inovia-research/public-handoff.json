@@ -1,11 +1,14 @@
 {
   "schema_version": "1.0",
   "project_id": "inovia-research",
-  "handoff_generated_at": "2026-03-25T00:15:00Z",
+  "handoff_generated_at": "2026-05-11T17:46:41Z",
   "items_for_public": [],
   "open_questions": [
     {
-      "question": "Build the first Inovia-era source ledger from firm pages, public talks, and interview material."
+      "question": "Localize the current Inovia team profile and decide whether it belongs in both the Steven person layer and the Inovia era layer."
+    },
+    {
+      "question": "Add the next round of Inovia-era appearances, panels, and ecosystem-facing sources without collapsing them back into Steven-only context."
     }
   ]
 }

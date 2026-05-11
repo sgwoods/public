@@ -4,7 +4,7 @@
   "active": true,
   "display_name": "Steven at Inovia Archive",
   "description": "Research archive for Steven Woods' Inovia period, covering leadership, talks, public appearances, and ecosystem-facing material.",
-  "person_context": "Steven Woods has been a partner and chief technology officer at Inovia since 2021; this project is the deep archive for that era.",
+  "person_context": "Steven Woods has been a partner and chief technology officer at Inovia since 2021; this project is the era-specific deep archive for that period and complements the person-centric Steven archive.",
   "project_page_url": "https://sgwoods.github.io/public/inovia-research.html",
   "repo_url": null,
   "timeline_span": {
@@ -12,18 +12,30 @@
     "end_year": 2026,
     "label": "Inovia era"
   },
-  "repo_pushed_at": "2026-03-25T00:15:00Z",
-  "status_generated_at": "2026-03-25T00:15:00Z",
+  "repo_pushed_at": "2026-05-11T17:46:41Z",
+  "status_generated_at": "2026-05-11T17:46:41Z",
   "status_label": "Current phase",
-  "status_value": "Scaffolded research project",
+  "status_value": "Seeded era archive",
   "focus_label": "Current focus",
-  "focus_value": "Partner profile, talks, and Inovia ecosystem appearances",
-  "current_focus": "Partner profile, talks, and Inovia ecosystem appearances",
+  "focus_value": "First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture",
+  "current_focus": "First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture",
   "notable_items": [
     {
       "label": "Working repository",
       "url": "https://sgwoods.github.io/public/inovia-research/"
+    },
+    {
+      "label": "Inovia transition announcement",
+      "url": "https://sgwoods.github.io/public/inovia-research/historic/artifacts/archive-html/inovia-welcomes-steven-woods.html"
+    },
+    {
+      "label": "Riddick Show episode",
+      "url": "https://sgwoods.github.io/public/inovia-research/historic/artifacts/archive-html/apple-riddick-show.html"
     }
   ],
-  "featured_source_ids": []
+  "featured_source_ids": [
+    "src-inovia-2021-inovia-welcome-profile",
+    "src-inovia-2021-betakit-transition-profile",
+    "src-inovia-2023-riddick-show"
+  ]
 }

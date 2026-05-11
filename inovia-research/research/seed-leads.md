@@ -1,13 +1,20 @@
 # Inovia seed leads
 
-## Starting sources
+## Promoted into `source-manifest.json` on 2026-05-11
 
-- Inovia welcome/profile announcement: https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/
-- BetaKit transition coverage: https://betakit.com/googles-steven-woods-joins-inovia-as-partner-and-cto/
-- Riddick Show episode: https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947
+- Inovia welcome/profile announcement
+- BetaKit transition coverage
+- Riddick Show episode
+
+## Next candidate leads
+
+- Current Inovia team profile
+- Additional Inovia-era talks, panels, and podcast appearances
+- Firm or portfolio-facing material that shows Steven Woods operating inside the
+  Inovia ecosystem rather than only being profiled at transition time
 
 ## Intake goals
 
-- partner and CTO profile material
-- public appearances and podcasts
-- Inovia ecosystem and venture context
+- firm and role baseline beyond the transition announcement
+- public appearances and podcasts in Inovia context
+- ecosystem and portfolio-facing venture context

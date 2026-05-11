@@ -1,5 +1,81 @@
 {
   "schema_version": "1.0",
   "project_id": "inovia-research",
-  "sources": []
+  "sources": [
+    {
+      "source_id": "src-inovia-2021-inovia-welcome-profile",
+      "title": "Inovia Welcomes Two World-Class Partners: Krista Skalde Joins as Chief Talent Officer and Steven Woods as Chief Technology Officer",
+      "source_type": "profile",
+      "company_context": "Inovia",
+      "person_relevance": "First-party transition source documenting Steven Woods joining Inovia as chief technology officer.",
+      "date": {
+        "display": "July 23, 2021",
+        "sort": "2021-07-23",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/",
+        "archive_local": "historic/artifacts/archive-html/inovia-welcomes-steven-woods.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "inovia-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["profile", "inovia", "transition", "first-party"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer so the Inovia era archive has its own first-party baseline."
+    },
+    {
+      "source_id": "src-inovia-2021-betakit-transition-profile",
+      "title": "Google's Steven Woods joins Inovia as partner and CTO",
+      "source_type": "media-mention",
+      "company_context": "Inovia",
+      "person_relevance": "Third-party transition coverage bridging the move from Google Canada into Inovia.",
+      "date": {
+        "display": "July 13, 2021",
+        "sort": "2021-07-13",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://betakit.com/googles-steven-woods-joins-inovia-as-partner-and-cto/",
+        "archive_local": "historic/artifacts/archive-html/betakit-joins-inovia-2021.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "inovia-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["media", "inovia", "transition", "betakit"],
+      "status": "approved",
+      "notes": "Useful external confirmation of the transition and early Inovia-era framing."
+    },
+    {
+      "source_id": "src-inovia-2023-riddick-show",
+      "title": "Steven Woods - Partner and Chief Technology Officer, Inovia Capital",
+      "source_type": "appearance",
+      "company_context": "Inovia",
+      "person_relevance": "Long-form Inovia-era interview with public episode metadata and supporting feed preservation.",
+      "date": {
+        "display": "May 1, 2023",
+        "sort": "2023-05-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947",
+        "archive_local": "historic/artifacts/archive-html/apple-riddick-show.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "inovia-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["podcast", "interview", "inovia", "appearance"],
+      "status": "approved",
+      "notes": "The companion `riddick-show-feed.xml` file is preserved locally for date and metadata verification."
+    }
+  ]
 }

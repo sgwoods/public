@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://media.rss.com/style.xsl"?>
+<rss xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="en" version="2.0">
+  <channel>
+    <title><![CDATA[The Riddick Show]]></title>
+    <link>https://rss.com/podcasts/riddickpodcast</link>
+    <atom:link href="https://media.rss.com/riddickpodcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+    <description><![CDATA[<p>A walls down discussion with the top leaders on how they got to where they are today.</p>]]></description>
+    <generator>RSS.com v2.12.2</generator>
+    <lastBuildDate>Tue, 20 Feb 2024 10:28:54 GMT</lastBuildDate>
+    <language>en</language>
+    <copyright><![CDATA[R David Kinley]]></copyright>
+    <itunes:image href="https://media.rss.com/riddickpodcast/20230410_030432_9614546200dae13fac0cad6c2d53f13f.jpg"/>
+    <podcast:guid>a98cc38a-ba49-5db0-96fc-d3ef8a5c93a0</podcast:guid>
+    <image>
+      <url>https://media.rss.com/riddickpodcast/20230410_030432_9614546200dae13fac0cad6c2d53f13f.jpg</url>
+      <title>The Riddick Show</title>
+      <link>https://rss.com/podcasts/riddickpodcast</link>
+    </image>
+    <podcast:locked>yes</podcast:locked>
+    <podcast:license>R David Kinley</podcast:license>
+    <itunes:author>David Kinley</itunes:author>
+    <itunes:owner>
+      <itunes:name>David Kinley</itunes:name>
+    </itunes:owner>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:category text="Business">
+      <itunes:category text="Entrepreneurship"/>
+      <itunes:category text="Management"/>
+    </itunes:category>
+    <item>
+      <title><![CDATA[David Dodson - Entrepreneur, Investor and Author of The Manager's Handbook]]></title>
+      <itunes:title><![CDATA[David Dodson - Entrepreneur, Investor and Author of The Manager's Handbook]]></itunes:title>
+      <description><![CDATA[David Dodson - Entrepreneur, Investor and Author of The Manager's Handbook]]></description>
+      <link>https://rss.com/podcasts/riddickpodcast/1034645</link>
+      <enclosure url="https://media.rss.com/riddickpodcast/2023_07_12_13_00_45_9bca0902-4f2d-4868-b3fb-1ee924d24496.mp3" length="65381888" type="audio/mpeg"/>
+      <guid isPermaLink="false">56ebe318-9e0b-4310-88d8-cbbaabdbfd40</guid>
+      <itunes:duration>4086</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <podcast:season>1</podcast:season>
+      <itunes:episode>6</itunes:episode>
+      <podcast:episode>6</podcast:episode>
+      <itunes:explicit>false</itunes:explicit>
+      <pubDate>Wed, 12 Jul 2023 13:00:52 GMT</pubDate>
+      <itunes:image href="https://media.rss.com/riddickpodcast/ep_cover_20230712_010701_fee4ecfe823ed8fc95bcbf7625afe1ed.jpg"/>
+    </item>
+    <item>
+      <title><![CDATA[Claude Bigras, CEO - GDI ]]></title>
+      <itunes:title><![CDATA[Claude Bigras, CEO - GDI ]]></itunes:title>
+      <description><![CDATA[Claude Bigras - from humble beginnings to a global brand ]]></description>
+      <link>https://rss.com/podcasts/riddickpodcast/972007</link>
+      <enclosure url="https://media.rss.com/riddickpodcast/2023_05_29_13_35_51_71931450-501f-45dc-b6c8-1b486f15c17f.mp3" length="63190110" type="audio/mpeg"/>
+      <guid isPermaLink="false">035a5ea6-72ef-48ba-8fd7-863b88a832f1</guid>
+      <itunes:duration>3949</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <podcast:season>1</podcast:season>
+      <itunes:episode>5</itunes:episode>
+      <podcast:episode>5</podcast:episode>
+      <itunes:explicit>false</itunes:explicit>
+      <pubDate>Mon, 29 May 2023 13:36:07 GMT</pubDate>
+      <itunes:image href="https://media.rss.com/riddickpodcast/ep_cover_20230529_010510_cc2f4dfe24ce1be7808ea189ccf7ef85.jpg"/>
+    </item>
+    <item>
+      <title><![CDATA[Steven Woods -Partner and Chief Technology Officer, Inovia Capital]]></title>
+      <itunes:title><![CDATA[Steven Woods -Partner and Chief Technology Officer, Inovia Capital]]></itunes:title>
+      <description><![CDATA[<p>Steve Woods currently serves as Partner and CTO at Inovia Capital. Prior to joining Inovia, he lead Engineering efforts at Google Canada. Before joining Google, Steve founded and built several successful startups. </p>]]></description>
+      <link>https://rss.com/podcasts/riddickpodcast/932219</link>
+      <enclosure url="https://media.rss.com/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3" length="81679965" type="audio/mpeg"/>
+      <guid isPermaLink="false">cfe8d5a4-30c6-4537-bac4-453e8de53f3a</guid>
+      <itunes:duration>5104</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <podcast:season>1</podcast:season>
+      <itunes:episode>4</itunes:episode>
+      <podcast:episode>4</podcast:episode>
+      <itunes:explicit>false</itunes:explicit>
+      <pubDate>Mon, 01 May 2023 12:42:00 GMT</pubDate>
+      <itunes:image href="https://media.rss.com/riddickpodcast/ep_cover_20230501_120541_fe2ff64751639827f0d4ddfa700f8f78.jpg"/>
+    </item>
+    <item>
+      <title><![CDATA[Blake Hutcheson - Chief Executive Officer, OMERS]]></title>
+      <itunes:title><![CDATA[Blake Hutcheson - Chief Executive Officer, OMERS]]></itunes:title>
+      <description><![CDATA[Blake Hutcheson is President and CEO of OMERS. He is responsible for the overall leadership and performance of the OMERS enterprise.]]></description>
+      <link>https://rss.com/podcasts/riddickpodcast/922500</link>
+      <enclosure url="https://media.rss.com/riddickpodcast/2023_04_24_15_44_46_40c88f27-6982-4262-a73b-ac9ebbfaa87e.mp3" length="65724154" type="audio/mpeg"/>
+      <guid isPermaLink="false">502c086c-bc5d-46a8-9862-80de5a57bfc4</guid>
+      <itunes:duration>4107</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <podcast:season>1</podcast:season>
+      <itunes:episode>3</itunes:episode>
+      <podcast:episode>3</podcast:episode>
+      <itunes:explicit>false</itunes:explicit>
+      <pubDate>Mon, 24 Apr 2023 15:45:11 GMT</pubDate>
+      <itunes:image href="https://media.rss.com/riddickpodcast/ep_cover_20230424_030410_638b8648becdf06b1bf17783c5ebebc7.jpg"/>
+    </item>
+    <item>
+      <title><![CDATA[ Annette Verschuren - From a small-town dairy farmer to a global change-maker]]></title>
+      <itunes:title><![CDATA[ Annette Verschuren - From a small-town dairy farmer to a global change-maker]]></itunes:title>
+      <description><![CDATA[From a small-town dairy farmer to a global change-maker, Annette Verschuren has built a career on taking risks, being unapologetically brazen, and <strong>prioritizing purpose with profits.</strong>Co-founder of the craft chain, Michaels Canada, former CEO of Home Depot Canada and Asia, Co-Founder of trailblazing clean-tech firm, NRStor, best-selling author and, now, podcaster, Annette has a clear mission to inspire budding leaders to look within, harness their strengths and bet on themselves. Tune in to hear her incredible journey!]]></description>
+      <link>https://rss.com/podcasts/riddickpodcast/911351</link>
+      <enclosure url="https://media.rss.com/riddickpodcast/2023_04_17_12_55_04_ca3c29a4-6736-4e6d-896f-a051d75f93fe.mp3" length="68226058" type="audio/mpeg"/>
+      <guid isPermaLink="false">a0efe602-7fa7-42f5-ad83-afdd682c06a2</guid>
+      <itunes:duration>4264</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <podcast:season>1</podcast:season>
+      <itunes:episode>2</itunes:episode>
+      <podcast:episode>2</podcast:episode>
+      <itunes:explicit>false</itunes:explicit>
+      <pubDate>Mon, 17 Apr 2023 12:56:14 GMT</pubDate>
+      <itunes:image href="https://media.rss.com/riddickpodcast/ep_cover_20230417_120453_d0e23698f2d295b82de7b831166cd828.jpg"/>
+      <podcast:transcript url="https://transcripts.rss.com/189738/911351/transcript" type="application/x-subrip"/>
+    </item>
+    <item>
+      <title><![CDATA[Yung Wu - CEO, MaRS Discovery District]]></title>
+      <itunes:title><![CDATA[Yung Wu - CEO, MaRS Discovery District]]></itunes:title>
+      <description><![CDATA[<p>Yung Wu, CEO of MaRS Discovery district takes us on his journey from immigrating to Canada as a young boy to becoming one of Canada's top innovation leaders, mentors and a voice of responsibility for our next generation of leadership</p>]]></description>
+      <link>https://rss.com/podcasts/riddickpodcast/901942</link>
+      <enclosure url="https://media.rss.com/riddickpodcast/2023_04_10_14_57_19_6d9029d6-7b67-4417-9671-c2183572cfd3.mp3" length="77573095" type="audio/mpeg"/>
+      <guid isPermaLink="false">1e3bea52-c560-4db6-b41e-f3c873190d6b</guid>
+      <itunes:duration>4848</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <podcast:season>1</podcast:season>
+      <itunes:episode>1</itunes:episode>
+      <podcast:episode>1</podcast:episode>
+      <itunes:explicit>false</itunes:explicit>
+      <pubDate>Mon, 10 Apr 2023 15:05:51 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

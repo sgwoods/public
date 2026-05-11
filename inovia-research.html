@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inovia Research Project</title>
     <link rel="stylesheet" href="assets/public-site.css">
+    <style>
+        :root {
+            --bg: #10141a;
+            --bg2: #22394d;
+            --panel-bg: rgba(16, 20, 26, 0.76);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(198, 230, 255, 0.14);
+            --panel-border: rgba(112, 194, 255, 0.22);
+            --button-bg: rgba(112, 194, 255, 0.18);
+            --button-border: rgba(112, 194, 255, 0.32);
+            --button-bg-ghost: rgba(255, 255, 255, 0.05);
+            --text: #f2f8ff;
+            --muted: #c5d6e6;
+            --muted-strong: #f4fbff;
+            --accent: #70c2ff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(112, 194, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.14), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+    </style>
 </head>
 <body>
     <main class="shell">
@@ -18,8 +42,8 @@
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Current Phase</span>
-                    <span class="metaValue">Scaffolded research project</span>
-                    <div class="metaNote">Ready for firm-site research, interviews, talks, and media collection.</div>
+                    <span class="metaValue">Seeded era archive</span>
+                    <div class="metaNote">The archive now has a checked-in continuity layer, a startup validator, and a first approved source baseline.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Timeline Span</span>
@@ -28,13 +52,43 @@
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Current Focus</span>
-                    <span class="metaValue">Partner profile, talks, and Inovia ecosystem appearances</span>
-                    <div class="metaNote">The first pass will concentrate on Inovia-owned material and public appearances.</div>
+                    <span class="metaValue">First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture</span>
+                    <div class="metaNote">This first bounded pass localized three starter sources and made the era boundary with Steven explicit.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Updated</span>
+                    <span class="metaValue">May 11, 2026</span>
+                    <div class="metaNote">Summary page synced to the new continuity layer and the initial era-specific source baseline.</div>
                 </div>
             </div>
             <div class="links">
                 <a class="button" href="inovia-research/">Open working repository</a>
-                <a class="button button--ghost" href="inovia-research/project-manifest.json">Project manifest</a>
+                <a class="button" href="inovia-research/project-manifest.json">Project manifest</a>
+                <a class="button button--ghost" href="inovia-research/source-manifest.json">Source manifest</a>
+                <a class="button button--ghost" href="inovia-research/WORK-PLAN.md">Open work plan</a>
+                <a class="button button--ghost" href="inovia-research/tools/start-inovia-codex.sh">Open startup check</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Current State</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Era boundary is now explicit</h3>
+                    <p>`steven-woods-research` remains the person-centric layer, while this project is now the canonical era-specific deep archive for the Inovia period.</p>
+                </article>
+                <article class="card">
+                    <h3>First-source baseline is real</h3>
+                    <p>The archive now has a three-source initial baseline: the Inovia welcome announcement, BetaKit transition coverage, and the Riddick Show episode.</p>
+                </article>
+                <article class="card">
+                    <h3>Local preservation has started</h3>
+                    <p>All three seeded sources now resolve to checked-in local archive files inside the Inovia archive tree, including supporting feed metadata for the podcast lane.</p>
+                </article>
+                <article class="card">
+                    <h3>Continuity is restartable</h3>
+                    <p>The working archive now includes a living work plan, workspace-status note, dated recovery audit, and startup validation path so future Inovia work does not depend on rediscovery.</p>
+                </article>
             </div>
         </section>
 
@@ -53,6 +107,10 @@
                     <h3>Ecosystem and portfolio context</h3>
                     <p>Public material tying Steven Woods to startup coaching, venture commentary, and portfolio ecosystem work.</p>
                 </article>
+            </div>
+            <div class="links">
+                <a class="button" href="inovia-research/public-handoff.json">Open public handoff</a>
+                <a class="button button--ghost" href="steven-woods-research.html">Open Steven person-centric layer</a>
             </div>
         </section>
     </main>
