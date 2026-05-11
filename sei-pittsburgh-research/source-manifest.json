@@ -181,6 +181,98 @@
       ],
       "status": "approved",
       "notes": "Preserved locally from the SEI library download link. The SEI library page lists Steve Woods among the report authors."
+    },
+    {
+      "source_id": "src-sei-current-jeromy-carriere-author-profile",
+      "title": "Jeromy Carriere",
+      "source_type": "profile",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Stable SEI-hosted collaborator-context source confirming Jeromy Carriere as an SEI alumni employee and clustering his SEI publication record.",
+      "date": {
+        "display": "Reviewed May 11, 2026",
+        "sort": "2026-05-11",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/authors/s-carriere/",
+        "archive_local": "historic/artifacts/archive-html/jeromy-carriere-sei-author-profile.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "profile",
+        "collaborator",
+        "staff-context"
+      ],
+      "status": "approved",
+      "notes": "Current SEI author profile preserved locally as collaborator and institute context. It explicitly identifies Jeromy Carriere as an SEI alumni employee and links his SEI-era publications."
+    },
+    {
+      "source_id": "src-sei-1998-requirements-for-integrating-software-architecture",
+      "title": "Requirements for Integrating Software Architecture and Reengineering Models: CORUM II",
+      "source_type": "artifact",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Early Woods-Carriere publication anchor tying software architecture and reengineering models together during the SEI period.",
+      "date": {
+        "display": "January 1, 1998",
+        "sort": "1998-01-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/library/requirements-for-integrating-software-architecture/",
+        "archive_local": "historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "paper",
+        "architecture",
+        "reengineering",
+        "corum"
+      ],
+      "status": "approved",
+      "notes": "Preserved locally from the SEI library download link. The PDF credits Rick Kazman, Steven G. Woods, and S. Jeromy Carriere, and the report title includes CORUM II."
+    },
+    {
+      "source_id": "src-sei-2002-short-history-of-quack-from-aols-web-site",
+      "title": "A Short History of Quack.com from AOL's Web Site",
+      "source_type": "media-mention",
+      "company_context": "SEI Pittsburgh / Quack transition",
+      "person_relevance": "Second transition bridge source summarizing Quack.com's founding and early product trajectory inside the same SEI newsletter issue that reflects on SEI architecture practices.",
+      "date": {
+        "display": "First Quarter 2002",
+        "sort": "2002-01-01",
+        "precision": "quarter"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/asset_files/newsletter/2002_102_001_413759.pdf",
+        "archive_local": "historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "quack",
+        "aol",
+        "transition",
+        "history"
+      ],
+      "status": "approved",
+      "notes": "This source uses the same preserved 2002 SEI newsletter PDF as the main startup-bridge feature. The Quack-history sidebar begins on internal issue page 23 and provides a second distinct transition reference."
     }
   ]
 }

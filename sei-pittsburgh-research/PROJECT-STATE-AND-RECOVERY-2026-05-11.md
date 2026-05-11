@@ -1,6 +1,6 @@
 # SEI Pittsburgh Project State And Recovery Audit
 
-Audit timestamp: `2026-05-11T19:15:41Z`
+Audit timestamp: `2026-05-11T19:22:15Z`
 
 Repo: `public`
 
@@ -37,16 +37,19 @@ It does not own:
 
 Confirmed machine-readable baseline:
 
-- `6` total source records
-- `6` approved
+- `9` total source records
+- `9` approved
 - `0` deferred
 - `0` rejected
 
 Confirmed local preservation baseline:
 
-- `6` source records currently resolve to checked-in local archive files
-- the expanded baseline now includes four local PDF captures and two local HTML
-  captures from stable SEI-hosted sources
+- `9` source records currently resolve to checked-in local archive files
+- the expanded baseline now includes five local PDF captures and three local
+  HTML captures from stable SEI-hosted sources
+- one preserved PDF issue now supports two distinct approved transition sources
+  because it contains both the main SEI architecture-practices article and the
+  Quack-history sidebar
 
 Confirmed continuity baseline:
 
@@ -68,24 +71,25 @@ This pass converts it from a pure scaffold into a seeded era archive by adding:
 - explicit workspace and restart docs
 - a startup validator
 - a deeper machine-readable source baseline
-- localized preserved copies of a core paper, a current SEI author profile,
-  two additional SEI-era publications, an institute-context page, and a
-  retrospective bridge source
+- localized preserved copies of a core paper, two SEI author profiles, three
+  additional SEI-era publications, an institute-context page, and two
+  transition bridge sources
 
 ## Remaining risk
 
 The main remaining risk is not workspace ambiguity. It is depth and completeness:
 
 - staff and institute context is better now, but still thin beyond the current
-  author profile and publication index
+  Woods and Carriere author profiles
 - the SEI publication floor is stronger now, but still not a deep run through
   the period
-- the Quack transition lane still needs a few more strong bridge sources
+- the bridge lane is better now, but still benefits from an external
+  non-SEI-owned Quack transition source later
 
 ## Practical verdict
 
 SEI Pittsburgh is now `seeded, continuity-safe, and restartable` inside the
-canonical shared-public workspace, with a more credible paper-and-bridge floor,
+canonical shared-public workspace, with a stronger paper-and-bridge floor,
 but it is not yet `deeply populated`.
 
 The next sensible SEI Pittsburgh pass is another small preservation-and-seeding

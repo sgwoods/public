@@ -164,8 +164,8 @@ printf '7. %s\n' "$PROJECT_ROOT/public-handoff.json"
 printf '8. %s\n' "$PROJECT_ROOT/research/seed-leads.md"
 
 printf '\nNext intended phase:\n'
-printf -- '- Add stronger SEI staff or institute context beyond the current author profile and publication index\n'
-printf -- '- Extend the SEI paper and publication floor beyond the current six-source baseline\n'
+printf -- '- Add one stronger institute-context source beyond the current Woods and Carriere profile floor\n'
+printf -- '- Extend the SEI publication floor beyond the current nine-source baseline with one more period publication or issue entry\n'
 printf -- '- Deepen the bridge into Quack with a few more strong transition sources\n'
 
 if [[ "$REPO_ROOT" != "$CANONICAL_WORKSPACE" ]]; then

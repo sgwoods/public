@@ -35,8 +35,8 @@ Steven Woods' work at the Software Engineering Institute, including:
 - the SEI Pittsburgh manifest triad exists and parses cleanly
 - the public summary page exists at `public/sei-pittsburgh-research.html`
 - the repo-facing working page exists at `public/sei-pittsburgh-research/index.html`
-- current manifest counts are `6` total / `6` approved / `0` deferred / `0` rejected
-- `6` source records currently resolve to checked-in local archive files
+- current manifest counts are `9` total / `9` approved / `0` deferred / `0` rejected
+- `9` source records currently resolve to checked-in local archive files
 - SEI Pittsburgh now has repo-owned continuity surfaces:
   - `WORK-PLAN.md`
   - `WORKSPACE-STATUS.md`
@@ -95,20 +95,22 @@ Goals:
 
 Priority queue:
 
-- stronger SEI staff or organization context beyond the current author profile
-  and publication index
+- stronger SEI staff or organization context beyond the current Woods and
+  Carriere author profiles
 - additional SEI Interactive or related publication entries from the period
 - further bridge sources linking the SEI architecture practices to the Quack
   startup path
 
 Completed checkpoint:
 
-- a stable SEI author profile is now localized into the archive as institute
-  context
-- `Software Architectural Transformation` is now localized as another
-  architecture publication anchor
-- `Why Reengineering Projects Fail` is now localized as another SEI-era
-  reengineering publication anchor
+- stable SEI author profiles for both Steve Woods and Jeromy Carriere are now
+  localized into the archive as institute and collaborator context
+- `Software Architectural Transformation`, `Why Reengineering Projects Fail`,
+  and `Requirements for Integrating Software Architecture and Reengineering
+  Models: CORUM II` are now localized as additional SEI publication anchors
+- `A Short History of Quack.com from AOL's Web Site` is now formalized as a
+  second Quack transition bridge source using the already-preserved 2002 SEI
+  newsletter PDF
 
 ## Practical next-step path from here
 

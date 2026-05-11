@@ -22,10 +22,14 @@
 - `src-sei-current-steve-woods-author-profile`
 - `src-sei-1999-software-architectural-transformation`
 - `src-sei-1999-why-reengineering-projects-fail`
+- `src-sei-current-jeromy-carriere-author-profile`
+- `src-sei-1998-requirements-for-integrating-software-architecture`
+- `src-sei-2002-short-history-of-quack-from-aols-web-site`
 
 ## Next bounded candidates
 
-- stronger SEI staff or institute context beyond the current author profile
+- stronger SEI staff or institute context beyond the current Woods and
+  Carriere profiles
 - additional SEI Interactive or related publication entries from the period
 - further bridge sources that connect the SEI architecture work to the Quack
   startup path

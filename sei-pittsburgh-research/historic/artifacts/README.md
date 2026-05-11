@@ -10,6 +10,9 @@ Current baseline:
 - `Steve Woods` author profile page
 - `Software Architectural Transformation` PDF
 - `Why Reengineering Projects Fail` PDF
+- `Jeromy Carriere` author profile page
+- `Requirements for Integrating Software Architecture and Reengineering
+  Models: CORUM II` PDF
 
 Add new preserved files here before surfacing them from the SEI Pittsburgh
 source manifest.

@@ -12,13 +12,13 @@
     "end_year": 2002,
     "label": "SEI Pittsburgh era"
   },
-  "repo_pushed_at": "2026-05-11T19:15:41Z",
-  "status_generated_at": "2026-05-11T19:15:41Z",
+  "repo_pushed_at": "2026-05-11T19:22:15Z",
+  "status_generated_at": "2026-05-11T19:22:15Z",
   "status_label": "Current phase",
   "status_value": "Seeded era archive",
   "focus_label": "Current focus",
-  "focus_value": "Expanded baseline with author-profile context and additional SEI publication coverage",
-  "current_focus": "Expanded baseline with author-profile context and additional SEI publication coverage",
+  "focus_value": "Expanded baseline with collaborator-profile context, deeper publication coverage, and a second Quack bridge",
+  "current_focus": "Expanded baseline with collaborator-profile context, deeper publication coverage, and a second Quack bridge",
   "notable_items": [
     {
       "label": "Working repository",
@@ -33,12 +33,16 @@
       "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-html/steve-woods-sei-author-profile.html"
     },
     {
-      "label": "Software Architectural Transformation",
-      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf"
+      "label": "Jeromy Carriere author profile",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-html/jeromy-carriere-sei-author-profile.html"
     },
     {
       "label": "SEI startup bridge PDF",
       "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf"
+    },
+    {
+      "label": "Requirements for Integrating Software Architecture",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf"
     }
   ],
   "featured_source_ids": [
@@ -47,6 +51,9 @@
     "src-sei-2002-architecture-practices-propel-successful-startup",
     "src-sei-current-steve-woods-author-profile",
     "src-sei-1999-software-architectural-transformation",
-    "src-sei-1999-why-reengineering-projects-fail"
+    "src-sei-1999-why-reengineering-projects-fail",
+    "src-sei-current-jeromy-carriere-author-profile",
+    "src-sei-1998-requirements-for-integrating-software-architecture",
+    "src-sei-2002-short-history-of-quack-from-aols-web-site"
   ]
 }
