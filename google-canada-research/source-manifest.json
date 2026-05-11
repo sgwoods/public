@@ -101,6 +101,81 @@
       "tags": ["google", "waterloo", "youtube", "appearance"],
       "status": "approved",
       "notes": "Localized from the Steven archive layer as a Google Waterloo community and public-appearance anchor."
+    },
+    {
+      "source_id": "src-google-canada-2013-springboard-google-canada-interview",
+      "title": "A Conversation With Steven Woods, Engineering Director At Google Canada",
+      "source_type": "appearance",
+      "company_context": "Google Canada",
+      "person_relevance": "Direct Google Canada-era interview anchor centered on Steven Woods' leadership, role, and public thinking during the Waterloo growth period.",
+      "date": {
+        "display": "January 30, 2013",
+        "sort": "2013-01-30",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://springboardatlantic.ca/a-conversation-with-steven-woods-engineering-director-at-google-canada/",
+        "archive_local": "historic/artifacts/archive-html/springboard-google-canada-interview.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "interview", "waterloo", "appearance"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer as a direct interview source for the Google Canada leadership period."
+    },
+    {
+      "source_id": "src-google-canada-2010-citynews-lang-tannery",
+      "title": "Google - Lang Tannery",
+      "source_type": "media-mention",
+      "company_context": "Google Canada",
+      "person_relevance": "Local media anchor quoting Steven Woods on Google Waterloo's Lang Tannery plans and early engineering presence.",
+      "date": {
+        "display": "August 11, 2010",
+        "sort": "2010-08-11",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://kitchener.citynews.ca/2010/08/11/google-lang-tannery/",
+        "archive_local": "historic/artifacts/archive-html/citynews-google-lang-tannery.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "citynews", "waterloo", "media"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer as a short but useful Waterloo office-growth and local-media source."
+    },
+    {
+      "source_id": "src-google-canada-2021-betakit-transition-to-inovia",
+      "title": "Google's Steven Woods joins Inovia as partner and CTO",
+      "source_type": "media-mention",
+      "company_context": "Google Canada",
+      "person_relevance": "Third-party transition article that cleanly bridges the close of the Google Canada era into the start of the Inovia period.",
+      "date": {
+        "display": "July 13, 2021",
+        "sort": "2021-07-13",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://betakit.com/googles-steven-woods-joins-inovia-as-partner-and-cto/",
+        "archive_local": "historic/artifacts/archive-html/betakit-joins-inovia-2021.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "inovia", "transition", "betakit"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer as an era-closing bridge source between Google Canada and Inovia."
     }
   ]
 }

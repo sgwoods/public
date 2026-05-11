@@ -6,6 +6,9 @@
 - Google Canada HQ feature
 - Innovation Nation
 - Waterloo / Google community talk video
+- Springboard Atlantic Google Canada interview
+- CityNews Lang Tannery coverage
+- BetaKit transition-to-Inovia bridge article
 
 ## Retained as supporting context in `steven-woods-research` for now
 
@@ -15,9 +18,9 @@
 
 ## Next candidate leads
 
-- Springboard Atlantic Google Canada interview
-- CityNews Lang Tannery coverage
-- transition-to-Inovia source once the era archive is ready to bridge out
+- University Affairs original behind the Springboard Atlantic interview
+- first-party Inovia welcome post as a companion transition source
+- Google startup ecosystem and accelerator coverage beyond the core era anchors
 
 ## Intake goals
 

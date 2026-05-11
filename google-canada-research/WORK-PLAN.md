@@ -35,8 +35,8 @@ Steven Woods' work during the Google Canada leadership years, including:
 - the Google Canada manifest triad exists and parses cleanly
 - the public summary page exists at `public/google-canada-research.html`
 - the repo-facing working page exists at `public/google-canada-research/index.html`
-- current manifest counts are `4` total / `4` approved / `0` deferred / `0` rejected
-- `4` source records currently resolve to checked-in local archive files
+- current manifest counts are `7` total / `7` approved / `0` deferred / `0` rejected
+- `7` source records currently resolve to checked-in local archive files
 - Google Canada now has repo-owned continuity surfaces:
   - `WORK-PLAN.md`
   - `WORKSPACE-STATUS.md`
@@ -84,7 +84,7 @@ Completed checkpoint:
 
 ### Phase 3: preservation and coverage depth
 
-Status: `next`
+Status: `underway`
 
 Goals:
 
@@ -92,20 +92,30 @@ Goals:
 - extend the archive beyond the initial Waterloo-and-Google starter set
 - grow the era archive without collapsing it back into Steven-only context
 
+Completed checkpoint:
+
+- the Springboard Atlantic interview is now localized into the Google Canada
+  archive
+- the CityNews Lang Tannery item is now localized as an early Waterloo office
+  and local-media anchor
+- a BetaKit transition article now closes the era more cleanly with an
+  explicit bridge into Inovia
+
 Priority queue:
 
-- Springboard Atlantic Google Canada interview
-- CityNews Lang Tannery coverage
-- transition-to-Inovia bridge source once the era archive is ready to close the
-  period cleanly
+- direct archival copy or stronger provenance for the original University
+  Affairs interview behind the Springboard Atlantic repost
+- first-party transition companion source for the move into Inovia
+- later Google-era ecosystem and accelerator coverage once the core archive is
+  a little deeper
 
 ## Practical next-step path from here
 
 1. Start every new Google Canada session from `/Users/steven/Projects-All/public`.
 2. Run `bash google-canada-research/tools/start-google-canada-codex.sh` before
    substantive work when continuity matters.
-3. Add the next interview, media, and transition sources to the source
-   manifest.
+3. Add the next first-party interview, media, and transition companion sources
+   to the source manifest.
 4. Keep `project-manifest.json`, `source-manifest.json`,
    `public-handoff.json`, `google-canada-research/index.html`, and
    `google-canada-research.html` aligned when the archive state changes.

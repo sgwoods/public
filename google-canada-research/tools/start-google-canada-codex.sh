@@ -155,9 +155,9 @@ printf '7. %s\n' "$PROJECT_ROOT/public-handoff.json"
 printf '8. %s\n' "$PROJECT_ROOT/research/seed-leads.md"
 
 printf '\nNext intended phase:\n'
-printf -- '- Localize the Springboard Atlantic interview and the next media anchors\n'
-printf -- '- Add more leadership and Waterloo-growth sources without collapsing back into Steven-only context\n'
-printf -- '- Keep Steven overlap explicit while growing the Google Canada archive as its own era layer\n'
+printf -- '- Capture a stronger original-provenance copy for the University Affairs interview behind the Springboard repost\n'
+printf -- '- Add a first-party transition companion source for the move into Inovia\n'
+printf -- '- Grow leadership, Waterloo-growth, and ecosystem coverage without collapsing back into Steven-only context\n'
 
 if [[ "$REPO_ROOT" != "$CANONICAL_WORKSPACE" ]]; then
   warn "This run used a non-canonical location. Treat it as comparison-only validation, not the canonical active workspace."

@@ -8,6 +8,9 @@ Current baseline:
 - Google Canada engineering HQ feature
 - Innovation Nation Google Canada blog post
 - Waterloo / Google community talk capture
+- Springboard Atlantic interview
+- CityNews Lang Tannery coverage
+- BetaKit transition-to-Inovia bridge article
 
 Add new preserved files here before surfacing them from the Google Canada source
 manifest.

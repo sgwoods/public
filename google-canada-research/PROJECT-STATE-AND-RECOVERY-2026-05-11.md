@@ -1,6 +1,6 @@
 # Google Canada Project State And Recovery Audit
 
-Audit timestamp: `2026-05-11T18:03:50Z`
+Audit timestamp: `2026-05-11T18:24:30Z`
 
 Repo: `public`
 
@@ -37,15 +37,15 @@ It does not own:
 
 Confirmed machine-readable baseline:
 
-- `4` total source records
-- `4` approved
+- `7` total source records
+- `7` approved
 - `0` deferred
 - `0` rejected
 
 Confirmed local preservation baseline:
 
-- `4` source records currently resolve to checked-in local archive files
-- all `4` localized baseline captures were copied from the Steven archive layer
+- `7` source records currently resolve to checked-in local archive files
+- all `7` localized baseline captures were copied from the Steven archive layer
   to give Google Canada its own restartable archive floor
 
 Confirmed continuity baseline:
@@ -67,22 +67,25 @@ This pass converts it from a pure scaffold into a seeded era archive by adding:
 
 - explicit workspace and restart docs
 - a startup validator
-- a first machine-readable source baseline
-- localized preserved copies of four initial Google Canada starter sources
+- an expanded machine-readable source baseline
+- localized preserved copies of seven initial Google Canada starter and bridge
+  sources
 
 ## Remaining risk
 
 The main remaining risk is not workspace ambiguity. It is depth and completeness:
 
-- the current seed set still omits the direct Springboard Atlantic interview
-- the CityNews Lang Tannery item and other media anchors are not localized yet
-- the transition-to-Inovia bridge is still better represented in Steven than in
-  Google Canada
+- the current baseline still lacks a stronger direct archival copy for the
+  original University Affairs interview behind the Springboard Atlantic repost
+- the first-party transition companion sources still live more strongly in
+  Steven and Inovia than in Google Canada
+- broader late-era ecosystem and accelerator coverage is still thin
 
 ## Practical verdict
 
 Google Canada is now `seeded, continuity-safe, and restartable` inside the
-canonical shared-public workspace, but it is not yet `deeply populated`.
+canonical shared-public workspace, with a more credible interview/media floor,
+but it is not yet `deeply populated`.
 
 The next sensible Google Canada pass is another small preservation-and-seeding
 pass, not another continuity rebuild.
