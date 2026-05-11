@@ -12,13 +12,13 @@
     "end_year": 2002,
     "label": "SEI Pittsburgh era"
   },
-  "repo_pushed_at": "2026-05-11T19:22:15Z",
-  "status_generated_at": "2026-05-11T19:22:15Z",
+  "repo_pushed_at": "2026-05-11T21:02:58Z",
+  "status_generated_at": "2026-05-11T21:02:58Z",
   "status_label": "Current phase",
   "status_value": "Seeded era archive",
   "focus_label": "Current focus",
-  "focus_value": "Expanded baseline with collaborator-profile context, deeper publication coverage, and a second Quack bridge",
-  "current_focus": "Expanded baseline with collaborator-profile context, deeper publication coverage, and a second Quack bridge",
+  "focus_value": "Expanded baseline with two additional SEI papers and a localized AOL bridge",
+  "current_focus": "Expanded baseline with two additional SEI papers and a localized AOL bridge",
   "notable_items": [
     {
       "label": "Working repository",
@@ -43,6 +43,14 @@
     {
       "label": "Requirements for Integrating Software Architecture",
       "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf"
+    },
+    {
+      "label": "Options Analysis for Reengineering (OAR)",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/options-analysis-for-reengineering-oar-1999-sei.pdf"
+    },
+    {
+      "label": "AOL acquisition bridge capture",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html"
     }
   ],
   "featured_source_ids": [
@@ -54,6 +62,9 @@
     "src-sei-1999-why-reengineering-projects-fail",
     "src-sei-current-jeromy-carriere-author-profile",
     "src-sei-1998-requirements-for-integrating-software-architecture",
-    "src-sei-2002-short-history-of-quack-from-aols-web-site"
+    "src-sei-2002-short-history-of-quack-from-aols-web-site",
+    "src-sei-1999-options-analysis-for-reengineering-oar",
+    "src-sei-1999-architectural-evaluation-of-collaborative-agent-based-systems",
+    "src-sei-2000-another-feather-in-aols-cap"
   ]
 }

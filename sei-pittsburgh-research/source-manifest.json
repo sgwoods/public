@@ -273,6 +273,99 @@
       ],
       "status": "approved",
       "notes": "This source uses the same preserved 2002 SEI newsletter PDF as the main startup-bridge feature. The Quack-history sidebar begins on internal issue page 23 and provides a second distinct transition reference."
+    },
+    {
+      "source_id": "src-sei-1999-options-analysis-for-reengineering-oar",
+      "title": "Options Analysis for Reengineering (OAR): Issues and Conceptual Approach",
+      "source_type": "artifact",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Additional SEI-era reengineering publication anchor showing Steven Woods in the institute's OAR methodology work.",
+      "date": {
+        "display": "September 1, 1999",
+        "sort": "1999-09-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/library/options-analysis-for-reengineering-oar-issues-and-conceptual-approach/",
+        "archive_local": "historic/artifacts/archive-pdf/options-analysis-for-reengineering-oar-1999-sei.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "paper",
+        "reengineering",
+        "oar",
+        "technical-note"
+      ],
+      "status": "approved",
+      "notes": "Preserved locally from the SEI library download link. The library page credits John Bergey, Dennis Smith, Nelson Weiderman, and Steve Woods."
+    },
+    {
+      "source_id": "src-sei-1999-architectural-evaluation-of-collaborative-agent-based-systems",
+      "title": "Architectural Evaluation of Collaborative Agent-Based Systems",
+      "source_type": "artifact",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Additional SEI-era architecture publication anchor showing Steve Woods in collaborative-agent system evaluation work.",
+      "date": {
+        "display": "October 1, 1999",
+        "sort": "1999-10-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/library/architectural-evaluation-of-collaborative-agent-based-systems/",
+        "archive_local": "historic/artifacts/archive-pdf/architectural-evaluation-of-collaborative-agent-based-systems-1999-sei.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "paper",
+        "architecture",
+        "evaluation",
+        "agent-systems"
+      ],
+      "status": "approved",
+      "notes": "Preserved locally from the SEI library download link. The library page credits Steve Woods and Mario Barbacci."
+    },
+    {
+      "source_id": "src-sei-2000-another-feather-in-aols-cap",
+      "title": "Another Feather In AOL's Cap",
+      "source_type": "media-mention",
+      "company_context": "SEI Pittsburgh / Quack / AOL transition",
+      "person_relevance": "External bridge source marking the AOL acquisition outcome for the Quack company that emerged from the SEI architecture period.",
+      "date": {
+        "display": "August 31, 2000",
+        "sort": "2000-08-31",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.internetnews.com/it-management/another-feather-in-aols-cap",
+        "archive_local": "historic/artifacts/archive-html/internetnews-another-feather-in-aols-cap-2000.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "quack",
+        "aol",
+        "acquisition",
+        "bridge"
+      ],
+      "status": "approved",
+      "notes": "Localized into the SEI archive from Quack's preserved InternetNews capture so this project can mark the startup outcome with explicit provenance while Quack keeps the deeper company-specific acquisition interpretation."
     }
   ]
 }

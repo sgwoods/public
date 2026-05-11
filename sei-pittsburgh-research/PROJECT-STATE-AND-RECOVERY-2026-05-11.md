@@ -1,6 +1,6 @@
 # SEI Pittsburgh Project State And Recovery Audit
 
-Audit timestamp: `2026-05-11T19:22:15Z`
+Audit timestamp: `2026-05-11T21:02:58Z`
 
 Repo: `public`
 
@@ -37,19 +37,22 @@ It does not own:
 
 Confirmed machine-readable baseline:
 
-- `9` total source records
-- `9` approved
+- `12` total source records
+- `12` approved
 - `0` deferred
 - `0` rejected
 
 Confirmed local preservation baseline:
 
-- `9` source records currently resolve to checked-in local archive files
-- the expanded baseline now includes five local PDF captures and three local
-  HTML captures from stable SEI-hosted sources
+- `12` source records currently resolve to checked-in local archive files
+- the expanded baseline now includes seven local PDF captures and four local
+  HTML captures
 - one preserved PDF issue now supports two distinct approved transition sources
   because it contains both the main SEI architecture-practices article and the
   Quack-history sidebar
+- one localized HTML bridge source is reused from Quack's preserved artifact
+  lane with explicit provenance so the SEI archive can mark the AOL outcome
+  without claiming Quack's deeper company ownership
 
 Confirmed continuity baseline:
 
@@ -71,9 +74,8 @@ This pass converts it from a pure scaffold into a seeded era archive by adding:
 - explicit workspace and restart docs
 - a startup validator
 - a deeper machine-readable source baseline
-- localized preserved copies of a core paper, two SEI author profiles, three
-  additional SEI-era publications, an institute-context page, and two
-  transition bridge sources
+- localized preserved copies of six SEI-era publications, two SEI author
+  profiles, one institute-context page, and three transition bridge sources
 
 ## Remaining risk
 
@@ -83,8 +85,8 @@ The main remaining risk is not workspace ambiguity. It is depth and completeness
   Woods and Carriere author profiles
 - the SEI publication floor is stronger now, but still not a deep run through
   the period
-- the bridge lane is better now, but still benefits from an external
-  non-SEI-owned Quack transition source later
+- the bridge lane is stronger now, but still benefits from one more
+  non-SEI-owned Quack transition source beyond the AOL acquisition bridge
 
 ## Practical verdict
 

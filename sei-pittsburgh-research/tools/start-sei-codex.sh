@@ -165,8 +165,8 @@ printf '8. %s\n' "$PROJECT_ROOT/research/seed-leads.md"
 
 printf '\nNext intended phase:\n'
 printf -- '- Add one stronger institute-context source beyond the current Woods and Carriere profile floor\n'
-printf -- '- Extend the SEI publication floor beyond the current nine-source baseline with one more period publication or issue entry\n'
-printf -- '- Deepen the bridge into Quack with a few more strong transition sources\n'
+printf -- '- Extend the SEI publication floor beyond the current twelve-source baseline with one more period publication or issue entry\n'
+printf -- '- Deepen the bridge beyond the localized AOL acquisition coverage with one more strong transition source\n'
 
 if [[ "$REPO_ROOT" != "$CANONICAL_WORKSPACE" ]]; then
   warn "This run used a non-canonical location. Treat it as comparison-only validation, not the canonical active workspace."

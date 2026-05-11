@@ -13,6 +13,10 @@ Current baseline:
 - `Jeromy Carriere` author profile page
 - `Requirements for Integrating Software Architecture and Reengineering
   Models: CORUM II` PDF
+- `Options Analysis for Reengineering (OAR): Issues and Conceptual Approach`
+  PDF
+- `Architectural Evaluation of Collaborative Agent-Based Systems` PDF
+- `Another Feather In AOL's Cap` localized HTML bridge copy
 
 Add new preserved files here before surfacing them from the SEI Pittsburgh
 source manifest.

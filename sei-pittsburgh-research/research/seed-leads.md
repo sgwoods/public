@@ -25,6 +25,9 @@
 - `src-sei-current-jeromy-carriere-author-profile`
 - `src-sei-1998-requirements-for-integrating-software-architecture`
 - `src-sei-2002-short-history-of-quack-from-aols-web-site`
+- `src-sei-1999-options-analysis-for-reengineering-oar`
+- `src-sei-1999-architectural-evaluation-of-collaborative-agent-based-systems`
+- `src-sei-2000-another-feather-in-aols-cap`
 
 ## Next bounded candidates
 

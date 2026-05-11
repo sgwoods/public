@@ -37,7 +37,7 @@ It currently has:
 
 - a continuity layer
 - a startup validator
-- a nine-source approved baseline
+- a twelve-source approved baseline
 - localized first captures in `historic/artifacts/`
 
 Start with:

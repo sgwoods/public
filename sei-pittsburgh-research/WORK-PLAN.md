@@ -35,8 +35,8 @@ Steven Woods' work at the Software Engineering Institute, including:
 - the SEI Pittsburgh manifest triad exists and parses cleanly
 - the public summary page exists at `public/sei-pittsburgh-research.html`
 - the repo-facing working page exists at `public/sei-pittsburgh-research/index.html`
-- current manifest counts are `9` total / `9` approved / `0` deferred / `0` rejected
-- `9` source records currently resolve to checked-in local archive files
+- current manifest counts are `12` total / `12` approved / `0` deferred / `0` rejected
+- `12` source records currently resolve to checked-in local archive files
 - SEI Pittsburgh now has repo-owned continuity surfaces:
   - `WORK-PLAN.md`
   - `WORKSPACE-STATUS.md`
@@ -106,11 +106,16 @@ Completed checkpoint:
 - stable SEI author profiles for both Steve Woods and Jeromy Carriere are now
   localized into the archive as institute and collaborator context
 - `Software Architectural Transformation`, `Why Reengineering Projects Fail`,
-  and `Requirements for Integrating Software Architecture and Reengineering
-  Models: CORUM II` are now localized as additional SEI publication anchors
+  `Requirements for Integrating Software Architecture and Reengineering
+  Models: CORUM II`, `Options Analysis for Reengineering (OAR): Issues and
+  Conceptual Approach`, and `Architectural Evaluation of Collaborative
+  Agent-Based Systems` are now localized as additional SEI publication anchors
 - `A Short History of Quack.com from AOL's Web Site` is now formalized as a
   second Quack transition bridge source using the already-preserved 2002 SEI
   newsletter PDF
+- `Another Feather In AOL's Cap` is now localized from the Quack archive as a
+  third bridge source that marks the AOL acquisition outcome without moving
+  Quack's company-specific depth into the SEI project
 
 ## Practical next-step path from here
 
