@@ -4,7 +4,7 @@
   "active": true,
   "display_name": "Steven at Google Canada Archive",
   "description": "Research archive for Steven Woods' Google Canada period, covering leadership, Waterloo engineering growth, talks, interviews, and Canadian media coverage.",
-  "person_context": "Steven Woods led Google in Canada during this period; this project is the deep archive for that era-specific public record.",
+  "person_context": "Steven Woods led Google in Canada during this period; this project is the era-specific deep archive for that public record and complements the person-centric Steven archive.",
   "project_page_url": "https://sgwoods.github.io/public/google-canada-research.html",
   "repo_url": null,
   "timeline_span": {
@@ -12,18 +12,31 @@
     "end_year": 2021,
     "label": "Google Canada era"
   },
-  "repo_pushed_at": "2026-03-25T00:15:00Z",
-  "status_generated_at": "2026-03-25T00:15:00Z",
+  "repo_pushed_at": "2026-05-11T18:03:50Z",
+  "status_generated_at": "2026-05-11T18:03:50Z",
   "status_label": "Current phase",
-  "status_value": "Scaffolded research project",
+  "status_value": "Seeded era archive",
   "focus_label": "Current focus",
-  "focus_value": "Leadership timeline, talks, and Canadian press",
-  "current_focus": "Leadership timeline, talks, and Canadian press",
+  "focus_value": "First-source baseline, continuity-safe restartability, and the next round of leadership, interview, and media capture",
+  "current_focus": "First-source baseline, continuity-safe restartability, and the next round of leadership, interview, and media capture",
   "notable_items": [
     {
       "label": "Working repository",
       "url": "https://sgwoods.github.io/public/google-canada-research/"
+    },
+    {
+      "label": "Google Canada engineering HQ feature",
+      "url": "https://sgwoods.github.io/public/google-canada-research/historic/artifacts/archive-html/google-canada-unboxing-2016.html"
+    },
+    {
+      "label": "Innovation Nation",
+      "url": "https://sgwoods.github.io/public/google-canada-research/historic/artifacts/archive-html/google-canada-innovation-nation.html"
     }
   ],
-  "featured_source_ids": []
+  "featured_source_ids": [
+    "src-google-canada-2021-entrepreneurial-computer-scientist",
+    "src-google-canada-2016-google-engineering-hq",
+    "src-google-canada-2013-google-innovation-nation",
+    "src-google-canada-2017-google-waterloo-uw-community"
+  ]
 }

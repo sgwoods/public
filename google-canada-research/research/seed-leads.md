@@ -1,12 +1,23 @@
 # Google Canada seed leads
 
-## Starting sources
+## Promoted into `source-manifest.json` on 2026-05-11
+
+- The entrepreneurial computer scientist
+- Google Canada HQ feature
+- Innovation Nation
+- Waterloo / Google community talk video
+
+## Retained as supporting context in `steven-woods-research` for now
 
 - University of Waterloo profile: https://uwaterloo.ca/math/profiles/steven-woods
-- The entrepreneurial computer scientist: https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist
-- Google Canada HQ feature: https://blog.google/intl/en-ca/company-news/inside-google/its-our-biggest-unboxing-ever/
-- Innovation Nation: https://canada.googleblog.com/2013/02/innovation-nation-canadas-cutting-edge.html
-- Waterloo / Google community talk video: https://www.youtube.com/watch?v=3cDnlKwbtTY
+  - useful person-centric recognition context, but not part of the first small
+    Google Canada-specific baseline here
+
+## Next candidate leads
+
+- Springboard Atlantic Google Canada interview
+- CityNews Lang Tannery coverage
+- transition-to-Inovia source once the era archive is ready to bridge out
 
 ## Intake goals
 

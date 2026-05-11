@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Canada Research Project</title>
     <link rel="stylesheet" href="assets/public-site.css">
+    <style>
+        :root {
+            --bg: #11141b;
+            --bg2: #233b50;
+            --panel-bg: rgba(17, 20, 27, 0.76);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(199, 228, 255, 0.14);
+            --panel-border: rgba(118, 191, 255, 0.22);
+            --button-bg: rgba(118, 191, 255, 0.18);
+            --button-border: rgba(118, 191, 255, 0.32);
+            --button-bg-ghost: rgba(255, 255, 255, 0.05);
+            --text: #f3f9ff;
+            --muted: #c7d8e9;
+            --muted-strong: #f4fbff;
+            --accent: #76bfff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(118, 191, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.14), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+    </style>
 </head>
 <body>
     <main class="shell">
@@ -18,8 +42,8 @@
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Current Phase</span>
-                    <span class="metaValue">Scaffolded research project</span>
-                    <div class="metaNote">Ready for source collection, timeline building, and preserved captures.</div>
+                    <span class="metaValue">Seeded era archive</span>
+                    <div class="metaNote">The archive now has a checked-in continuity layer, a startup validator, and a first approved source baseline.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Timeline Span</span>
@@ -28,13 +52,43 @@
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Current Focus</span>
-                    <span class="metaValue">Leadership timeline, talks, and Canadian press</span>
-                    <div class="metaNote">Initial work will center on event pages, interviews, videos, and Google Canada coverage.</div>
+                    <span class="metaValue">First-source baseline, continuity-safe restartability, and the next round of leadership, interview, and media capture</span>
+                    <div class="metaNote">This first bounded pass localized four Google-era starter sources and made the era boundary with Steven explicit.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Updated</span>
+                    <span class="metaValue">May 11, 2026</span>
+                    <div class="metaNote">Summary page synced to the new continuity layer and the initial Google Canada-era source baseline.</div>
                 </div>
             </div>
             <div class="links">
                 <a class="button" href="google-canada-research/">Open working repository</a>
-                <a class="button button--ghost" href="google-canada-research/project-manifest.json">Project manifest</a>
+                <a class="button" href="google-canada-research/project-manifest.json">Project manifest</a>
+                <a class="button button--ghost" href="google-canada-research/source-manifest.json">Source manifest</a>
+                <a class="button button--ghost" href="google-canada-research/WORK-PLAN.md">Open work plan</a>
+                <a class="button button--ghost" href="google-canada-research/tools/start-google-canada-codex.sh">Open startup check</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Current State</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Era boundary is now explicit</h3>
+                    <p>`steven-woods-research` remains the person-centric layer, while this project is now the canonical era-specific deep archive for the Google Canada period.</p>
+                </article>
+                <article class="card">
+                    <h3>First-source baseline is real</h3>
+                    <p>The archive now has a four-source initial baseline: a Waterloo lecture listing, two official Google-era media sources, and a Google Waterloo community talk capture.</p>
+                </article>
+                <article class="card">
+                    <h3>Local preservation has started</h3>
+                    <p>All four seeded sources now resolve to checked-in local archive files inside the Google Canada archive tree.</p>
+                </article>
+                <article class="card">
+                    <h3>Continuity is restartable</h3>
+                    <p>The working archive now includes a living work plan, workspace-status note, dated recovery audit, and startup validation path so future Google Canada work does not depend on rediscovery.</p>
+                </article>
             </div>
         </section>
 
@@ -53,6 +107,10 @@
                     <h3>Media and profiles</h3>
                     <p>Coverage featuring Steven Woods during the Google Canada period, including transition sources into Inovia.</p>
                 </article>
+            </div>
+            <div class="links">
+                <a class="button" href="google-canada-research/public-handoff.json">Open public handoff</a>
+                <a class="button button--ghost" href="steven-woods-research.html">Open Steven person-centric layer</a>
             </div>
         </section>
     </main>

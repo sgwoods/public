@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Canada Research Working Repository</title>
     <link rel="stylesheet" href="../assets/public-site.css">
+    <style>
+        :root {
+            --bg: #10131a;
+            --bg2: #223a4d;
+            --panel-bg: rgba(16, 19, 26, 0.76);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(199, 228, 255, 0.14);
+            --panel-border: rgba(118, 191, 255, 0.22);
+            --button-bg: rgba(118, 191, 255, 0.18);
+            --button-border: rgba(118, 191, 255, 0.34);
+            --button-bg-ghost: rgba(255, 255, 255, 0.05);
+            --text: #f3f9ff;
+            --muted: #c7d8e9;
+            --muted-strong: #f4fbff;
+            --accent: #76bfff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(118, 191, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(98, 214, 202, 0.14), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        .workflowGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: rgba(118, 191, 255, 0.2);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <main class="shell shell--narrow">
@@ -16,23 +60,79 @@
                 </div>
                 <a class="heroHomeLink" href="../google-canada-research.html">Back to project page</a>
             </div>
-            <p class="lead">Working repository for the Google Canada era archive. Research will collect leadership, Waterloo engineering, media, appearances, and transition-to-Inovia material.</p>
+            <p class="lead">
+                Working repository for the Google Canada era archive. The archive
+                is now seeded and restartable: it has a continuity layer, a
+                startup validator, and a first approved baseline of localized
+                Google Canada-era sources.
+            </p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Current State</span>
+                    <span class="metaValue">Seeded era archive</span>
+                    <div class="metaNote">The archive now has 4 approved sources and 4 local archive copies.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Ownership split</span>
+                    <span class="metaValue">Era deep here, person layer in Steven</span>
+                    <div class="metaNote">Google Canada owns era-specific depth; `steven-woods-research` remains the shared person-centric layer.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Canonical workspace</span>
+                    <span class="metaValue">~/Projects-All/public</span>
+                    <div class="metaNote">This shared-public checkout is the intended active home for Google Canada work.</div>
+                </div>
+            </div>
             <div class="links">
                 <a class="button" href="../google-canada-research.html">Summary project page</a>
+                <a class="button" href="WORK-PLAN.md">Work plan</a>
+                <a class="button button--ghost" href="tools/start-google-canada-codex.sh">Startup check</a>
                 <a class="button button--ghost" href="../index.html">Public index</a>
             </div>
         </section>
         <section class="panel">
-            <h2>Working Tracks</h2>
-            <div class="grid">
-                <article class="card"><h3>Leadership timeline</h3><p>Roles, Waterloo growth, and ecosystem involvement.</p></article>
-                <article class="card"><h3>Appearances and interviews</h3><p>Talks, videos, symposiums, and direct interview sources.</p></article>
-                <article class="card"><h3>Media and profiles</h3><p>Public coverage tied to Google Canada and later transition context.</p></article>
+            <h2>Repository Workflow</h2>
+            <div class="workflowGrid">
+                <article class="card">
+                    <h3><span class="chip">01</span> Incoming intake</h3>
+                    <p>New Google Canada finds land in `incoming/` first so raw captures are logged before they are normalized into archive state.</p>
+                </article>
+                <article class="card">
+                    <h3><span class="chip">02</span> Era source review</h3>
+                    <p>Stable Google Canada-era sources are promoted into `source-manifest.json` with dates, URLs, statuses, and notes that explain why they matter to the era archive.</p>
+                </article>
+                <article class="card">
+                    <h3><span class="chip">03</span> Local preservation</h3>
+                    <p>Preserved local copies live in `historic/artifacts/archive-html/` so the era archive does not depend only on the Steven layer or live URLs.</p>
+                </article>
             </div>
             <div class="links">
                 <a class="button" href="project-manifest.json">Project manifest</a>
                 <a class="button button--ghost" href="source-manifest.json">Source manifest</a>
                 <a class="button button--ghost" href="public-handoff.json">Public handoff</a>
+                <a class="button button--ghost" href="WORKSPACE-STATUS.md">Workspace status</a>
+                <a class="button button--ghost" href="PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Recovery audit</a>
+            </div>
+        </section>
+        <section class="panel">
+            <h2>Seeded Baseline</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Waterloo lecture listing</h3>
+                    <p>Late Google Canada-era public-speaking anchor with an exact date and strong retrospective framing.</p>
+                </article>
+                <article class="card">
+                    <h3>Engineering HQ feature</h3>
+                    <p>Official Google feature documenting Waterloo HQ growth and Google Canada leadership context.</p>
+                </article>
+                <article class="card">
+                    <h3>Innovation Nation</h3>
+                    <p>Google Canada blog source around recruiting, university ties, and the Canadian engineering story.</p>
+                </article>
+                <article class="card">
+                    <h3>Google Waterloo community talk</h3>
+                    <p>Public community-facing talk that helps anchor the Waterloo and University of Waterloo relationship lane.</p>
+                </article>
             </div>
         </section>
     </main>

@@ -1,5 +1,106 @@
 {
   "schema_version": "1.0",
   "project_id": "google-canada-research",
-  "sources": []
+  "sources": [
+    {
+      "source_id": "src-google-canada-2021-entrepreneurial-computer-scientist",
+      "title": "The entrepreneurial computer scientist",
+      "source_type": "appearance",
+      "company_context": "Google Canada",
+      "person_relevance": "Late Google Canada-era Waterloo lecture listing with exact date and concise retrospective framing.",
+      "date": {
+        "display": "January 20, 2021",
+        "sort": "2021-01-20",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://uwaterloo.ca/math/lecture?page=1",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "waterloo", "lecture", "appearance"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer to seed a Google Canada-era public-speaking anchor."
+    },
+    {
+      "source_id": "src-google-canada-2016-google-engineering-hq",
+      "title": "It's our biggest unboxing ever! Introducing Google Canada's new engineering HQ",
+      "source_type": "media-mention",
+      "company_context": "Google Canada",
+      "person_relevance": "Official Google feature around the Waterloo engineering HQ and Steven Woods' Google Canada leadership context.",
+      "date": {
+        "display": "January 14, 2016",
+        "sort": "2016-01-14",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://blog.google/intl/en-ca/company-news/inside-google/its-our-biggest-unboxing-ever/",
+        "archive_local": "historic/artifacts/archive-html/google-canada-unboxing-2016.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "waterloo", "hq", "media"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer to anchor Waterloo engineering growth and office expansion."
+    },
+    {
+      "source_id": "src-google-canada-2013-google-innovation-nation",
+      "title": "Innovation Nation - Canada's Cutting Edge Campus",
+      "source_type": "media-mention",
+      "company_context": "Google Canada",
+      "person_relevance": "Google Canada blog feature quoting Steven Woods on talent, recruiting, and university ties.",
+      "date": {
+        "display": "February 25, 2013",
+        "sort": "2013-02-25",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://canada.googleblog.com/2013/02/innovation-nation-canadas-cutting-edge.html",
+        "archive_local": "historic/artifacts/archive-html/google-canada-innovation-nation.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "media", "recruiting", "waterloo"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer as a strong Google Canada talent and ecosystem source."
+    },
+    {
+      "source_id": "src-google-canada-2017-google-waterloo-uw-community",
+      "title": "Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community",
+      "source_type": "appearance",
+      "company_context": "Google Canada",
+      "person_relevance": "Useful public talk connecting Steven Woods, Google Waterloo, and University of Waterloo community ties.",
+      "date": {
+        "display": "2017",
+        "sort": "2017-01-01",
+        "precision": "year"
+      },
+      "urls": {
+        "canonical": "https://www.youtube.com/watch?v=3cDnlKwbtTY",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "waterloo", "youtube", "appearance"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer as a Google Waterloo community and public-appearance anchor."
+    }
+  ]
 }
