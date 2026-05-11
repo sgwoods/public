@@ -9,6 +9,8 @@
 - Springboard Atlantic Google Canada interview
 - CityNews Lang Tannery coverage
 - BetaKit transition-to-Inovia bridge article
+- University Affairs original behind the Springboard Atlantic interview
+- Inovia welcome profile / announcement
 
 ## Retained as supporting context in `steven-woods-research` for now
 
@@ -18,9 +20,9 @@
 
 ## Next candidate leads
 
-- University Affairs original behind the Springboard Atlantic interview
-- first-party Inovia welcome post as a companion transition source
+- current Inovia team profile as a possible late-era closeout reference
 - Google startup ecosystem and accelerator coverage beyond the core era anchors
+- stronger event-page provenance for the Waterloo community talk
 
 ## Intake goals
 

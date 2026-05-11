@@ -35,8 +35,8 @@ Steven Woods' work during the Google Canada leadership years, including:
 - the Google Canada manifest triad exists and parses cleanly
 - the public summary page exists at `public/google-canada-research.html`
 - the repo-facing working page exists at `public/google-canada-research/index.html`
-- current manifest counts are `7` total / `7` approved / `0` deferred / `0` rejected
-- `7` source records currently resolve to checked-in local archive files
+- current manifest counts are `9` total / `9` approved / `0` deferred / `0` rejected
+- `9` source records currently resolve to checked-in local archive files
 - Google Canada now has repo-owned continuity surfaces:
   - `WORK-PLAN.md`
   - `WORKSPACE-STATUS.md`
@@ -100,14 +100,19 @@ Completed checkpoint:
   and local-media anchor
 - a BetaKit transition article now closes the era more cleanly with an
   explicit bridge into Inovia
+- the stronger University Affairs original is now preserved locally as a
+  reader-style capture with explicit provenance notes
+- the first-party Inovia welcome profile is now localized as a companion
+  transition source
 
 Priority queue:
 
-- direct archival copy or stronger provenance for the original University
-  Affairs interview behind the Springboard Atlantic repost
-- first-party transition companion source for the move into Inovia
 - later Google-era ecosystem and accelerator coverage once the core archive is
   a little deeper
+- a decision on whether the current Inovia team profile belongs here as a
+  late-era summary source
+- stronger event-page provenance for the 2017 Waterloo community talk if it
+  turns up cleanly
 
 ## Practical next-step path from here
 

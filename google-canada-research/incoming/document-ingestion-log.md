@@ -15,8 +15,10 @@ Use this log to track archived documents and captures as they arrive.
 - `2026-05-11` - localized `historic/artifacts/archive-html/springboard-google-canada-interview.html` from the Steven archive layer as a direct Google Canada-era interview anchor
 - `2026-05-11` - localized `historic/artifacts/archive-html/citynews-google-lang-tannery.html` from the Steven archive layer as an early Waterloo office and local-media source
 - `2026-05-11` - localized `historic/artifacts/archive-html/betakit-joins-inovia-2021.html` from the Steven archive layer as a transition-to-Inovia bridge source
+- `2026-05-11` - created `historic/artifacts/archive-html/university-affairs-google-canada-interview-reader.html` as a reader-style preservation copy from the browser-readable archived University Affairs page after raw non-browser fetches returned a 401 shell
+- `2026-05-11` - localized `historic/artifacts/archive-html/inovia-welcomes-steven-woods.html` from the Steven archive layer as a first-party transition companion source
 
 ## Blockers
 
-- Current expanded baseline is in place, but the archive still needs stronger first-party interview provenance, companion transition sources, and later ecosystem coverage.
+- Current expanded baseline is in place, but the archive still needs later ecosystem coverage, a decision on the current Inovia team profile, and tighter provenance for the 2017 community talk.
 - The University of Waterloo profile remains in the Steven person layer for now rather than being duplicated into the first Google Canada baseline.

@@ -125,7 +125,7 @@
       },
       "tags": ["google", "interview", "waterloo", "appearance"],
       "status": "approved",
-      "notes": "Localized from the Steven archive layer as a direct interview source for the Google Canada leadership period."
+      "notes": "Localized from the Steven archive layer as a direct reposted interview source. The stronger University Affairs original is also preserved locally in this archive."
     },
     {
       "source_id": "src-google-canada-2010-citynews-lang-tannery",
@@ -176,6 +176,56 @@
       "tags": ["google", "inovia", "transition", "betakit"],
       "status": "approved",
       "notes": "Localized from the Steven archive layer as an era-closing bridge source between Google Canada and Inovia."
+    },
+    {
+      "source_id": "src-google-canada-2013-university-affairs-google-canada-interview",
+      "title": "A conversation with Google Canada",
+      "source_type": "appearance",
+      "company_context": "Google Canada",
+      "person_relevance": "Stronger original-provenance interview source centered on Steven Woods during the Google Canada leadership period.",
+      "date": {
+        "display": "January 30, 2013",
+        "sort": "2013-01-30",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://archives.universityaffairs.ca/news/news-article/a-conversation-with-steven-woods-google-canada/",
+        "archive_local": "historic/artifacts/archive-html/university-affairs-google-canada-interview-reader.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "interview", "waterloo", "university-affairs"],
+      "status": "approved",
+      "notes": "Preserved locally as a reader-style copy from the browser-readable archived University Affairs page because raw non-browser fetches returned a 401 shell."
+    },
+    {
+      "source_id": "src-google-canada-2021-inovia-welcome-transition-profile",
+      "title": "Inovia Welcomes Two World-Class Partners: Krista Skalde Joins as Chief Talent Officer and Steven Woods as Chief Technology Officer",
+      "source_type": "profile",
+      "company_context": "Google Canada / Inovia transition",
+      "person_relevance": "First-party transition companion source documenting the end of the Google Canada era and the start of the Inovia period.",
+      "date": {
+        "display": "July 23, 2021",
+        "sort": "2021-07-23",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/",
+        "archive_local": "historic/artifacts/archive-html/inovia-welcomes-steven-woods.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "google-canada-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": ["google", "inovia", "transition", "profile"],
+      "status": "approved",
+      "notes": "Localized from the Steven archive layer as a first-party transition companion to the BetaKit bridge article."
     }
   ]
 }

@@ -12,29 +12,29 @@
     "end_year": 2021,
     "label": "Google Canada era"
   },
-  "repo_pushed_at": "2026-05-11T18:24:30Z",
-  "status_generated_at": "2026-05-11T18:24:30Z",
+  "repo_pushed_at": "2026-05-11T19:08:38Z",
+  "status_generated_at": "2026-05-11T19:08:38Z",
   "status_label": "Current phase",
   "status_value": "Seeded era archive",
   "focus_label": "Current focus",
-  "focus_value": "Expanded starter baseline with interview, local media, and transition-to-Inovia bridge coverage",
-  "current_focus": "Expanded starter baseline with interview, local media, and transition-to-Inovia bridge coverage",
+  "focus_value": "Expanded baseline with original-provenance interview coverage and first-party transition context",
+  "current_focus": "Expanded baseline with original-provenance interview coverage and first-party transition context",
   "notable_items": [
     {
       "label": "Working repository",
       "url": "https://sgwoods.github.io/public/google-canada-research/"
     },
     {
-      "label": "Springboard Atlantic interview",
-      "url": "https://sgwoods.github.io/public/google-canada-research/historic/artifacts/archive-html/springboard-google-canada-interview.html"
+      "label": "University Affairs interview",
+      "url": "https://sgwoods.github.io/public/google-canada-research/historic/artifacts/archive-html/university-affairs-google-canada-interview-reader.html"
     },
     {
       "label": "Google Canada engineering HQ feature",
       "url": "https://sgwoods.github.io/public/google-canada-research/historic/artifacts/archive-html/google-canada-unboxing-2016.html"
     },
     {
-      "label": "Transition to Inovia bridge",
-      "url": "https://sgwoods.github.io/public/google-canada-research/historic/artifacts/archive-html/betakit-joins-inovia-2021.html"
+      "label": "First-party Inovia transition profile",
+      "url": "https://sgwoods.github.io/public/google-canada-research/historic/artifacts/archive-html/inovia-welcomes-steven-woods.html"
     }
   ],
   "featured_source_ids": [
@@ -44,6 +44,8 @@
     "src-google-canada-2017-google-waterloo-uw-community",
     "src-google-canada-2013-springboard-google-canada-interview",
     "src-google-canada-2010-citynews-lang-tannery",
-    "src-google-canada-2021-betakit-transition-to-inovia"
+    "src-google-canada-2021-betakit-transition-to-inovia",
+    "src-google-canada-2013-university-affairs-google-canada-interview",
+    "src-google-canada-2021-inovia-welcome-transition-profile"
   ]
 }

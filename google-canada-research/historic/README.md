@@ -5,5 +5,6 @@ Current structure:
 
 - `historic/artifacts/archive-html/` for preserved local HTML captures
 
-The current expanded baseline was localized from the Steven archive layer so
-the Google Canada archive can become restartable in its own right.
+The current expanded baseline was localized from the Steven archive layer, with
+one reader-style preservation copy created from browser-readable archived
+content, so the Google Canada archive can become restartable in its own right.

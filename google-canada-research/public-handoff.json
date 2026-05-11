@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
   "project_id": "google-canada-research",
-  "handoff_generated_at": "2026-05-11T18:24:30Z",
+  "handoff_generated_at": "2026-05-11T19:08:38Z",
   "items_for_public": [],
   "open_questions": [
     {
-      "question": "Decide whether the University Affairs original behind the Springboard Atlantic interview can be preserved directly as a stronger first-generation interview source."
+      "question": "Decide whether the current Inovia team profile should also be localized here as a later era-close summary source or remain in Steven and Inovia only."
     },
     {
       "question": "Decide whether the University of Waterloo profile should remain Steven-layer support only or also become a Google Canada-era reference source."
     },
     {
-      "question": "Decide whether the first-party Inovia welcome post should be localized here as a companion transition source or remain solely in Steven and Inovia contexts."
+      "question": "Choose the next later-era ecosystem anchors, likely Hyperdrive and Google Startups Accelerator coverage, for a future bounded preservation pass."
     }
   ]
 }

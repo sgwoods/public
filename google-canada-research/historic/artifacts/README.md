@@ -11,6 +11,8 @@ Current baseline:
 - Springboard Atlantic interview
 - CityNews Lang Tannery coverage
 - BetaKit transition-to-Inovia bridge article
+- University Affairs original interview
+- Inovia welcome profile / announcement
 
 Add new preserved files here before surfacing them from the Google Canada source
 manifest.

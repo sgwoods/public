@@ -155,9 +155,9 @@ printf '7. %s\n' "$PROJECT_ROOT/public-handoff.json"
 printf '8. %s\n' "$PROJECT_ROOT/research/seed-leads.md"
 
 printf '\nNext intended phase:\n'
-printf -- '- Capture a stronger original-provenance copy for the University Affairs interview behind the Springboard repost\n'
-printf -- '- Add a first-party transition companion source for the move into Inovia\n'
-printf -- '- Grow leadership, Waterloo-growth, and ecosystem coverage without collapsing back into Steven-only context\n'
+printf -- '- Decide whether the current Inovia team profile belongs here as a later era-close summary source\n'
+printf -- '- Add later ecosystem anchors such as Hyperdrive and Google Startups Accelerator coverage\n'
+printf -- '- Tighten provenance for the 2017 Waterloo community talk if a cleaner event page turns up\n'
 
 if [[ "$REPO_ROOT" != "$CANONICAL_WORKSPACE" ]]; then
   warn "This run used a non-canonical location. Treat it as comparison-only validation, not the canonical active workspace."
