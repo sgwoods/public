@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEI Pittsburgh Research Working Repository</title>
     <link rel="stylesheet" href="../assets/public-site.css">
+    <style>
+        :root {
+            --bg: #121017;
+            --bg2: #40364f;
+            --panel-bg: rgba(18, 16, 23, 0.76);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(222, 205, 255, 0.14);
+            --panel-border: rgba(192, 154, 255, 0.22);
+            --button-bg: rgba(192, 154, 255, 0.18);
+            --button-border: rgba(192, 154, 255, 0.34);
+            --button-bg-ghost: rgba(255, 255, 255, 0.05);
+            --text: #f8f4ff;
+            --muted: #ded2f1;
+            --muted-strong: #fff9ff;
+            --accent: #c09aff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(192, 154, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(125, 203, 255, 0.12), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+
+        .workflowGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: rgba(192, 154, 255, 0.2);
+            color: var(--muted-strong);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <main class="shell shell--narrow">
@@ -16,23 +60,77 @@
                 </div>
                 <a class="heroHomeLink" href="../sei-pittsburgh-research.html">Back to project page</a>
             </div>
-            <p class="lead">Working repository for the SEI Pittsburgh archive. Research will gather SEI papers, staff materials, architecture and reengineering context, and transition-to-startup sources.</p>
+            <p class="lead">
+                Working repository for the SEI Pittsburgh era archive. The
+                archive is now seeded and restartable: it has a continuity
+                layer, a startup validator, and an approved baseline of
+                localized SEI-era sources spanning a core architecture paper,
+                institute context, and a first retrospective bridge into the
+                Quack startup path.
+            </p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">Current State</span>
+                    <span class="metaValue">Seeded era archive</span>
+                    <div class="metaNote">The archive now has 3 approved sources and 3 local archive copies.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Ownership split</span>
+                    <span class="metaValue">Era deep here, person layer in Steven</span>
+                    <div class="metaNote">SEI Pittsburgh owns era-specific depth; `steven-woods-research` remains the shared person-centric layer.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Canonical workspace</span>
+                    <span class="metaValue">~/Projects-All/public</span>
+                    <div class="metaNote">This shared-public checkout is the intended active home for SEI Pittsburgh work.</div>
+                </div>
+            </div>
             <div class="links">
                 <a class="button" href="../sei-pittsburgh-research.html">Summary project page</a>
+                <a class="button" href="WORK-PLAN.md">Work plan</a>
+                <a class="button button--ghost" href="tools/start-sei-codex.sh">Startup check</a>
                 <a class="button button--ghost" href="../index.html">Public index</a>
             </div>
         </section>
         <section class="panel">
-            <h2>Working Tracks</h2>
-            <div class="grid">
-                <article class="card"><h3>SEI publications</h3><p>Architecture, reengineering, and staff-linked paper collection.</p></article>
-                <article class="card"><h3>Institute context</h3><p>Staff pages, institute references, and SEI public material.</p></article>
-                <article class="card"><h3>Transition context</h3><p>Sources connecting the SEI period to later startup activity.</p></article>
+            <h2>Repository Workflow</h2>
+            <div class="workflowGrid">
+                <article class="card">
+                    <h3><span class="chip">01</span> Incoming intake</h3>
+                    <p>New SEI finds land in `incoming/` first so raw captures are logged before they are normalized into archive state.</p>
+                </article>
+                <article class="card">
+                    <h3><span class="chip">02</span> Era source review</h3>
+                    <p>Stable SEI-era sources are promoted into `source-manifest.json` with dates, URLs, statuses, and notes that explain why they matter to the era archive.</p>
+                </article>
+                <article class="card">
+                    <h3><span class="chip">03</span> Local preservation</h3>
+                    <p>Preserved local copies live in `historic/artifacts/archive-html/` and `historic/artifacts/archive-pdf/` so the era archive does not depend only on live URLs or the Steven layer.</p>
+                </article>
             </div>
             <div class="links">
                 <a class="button" href="project-manifest.json">Project manifest</a>
                 <a class="button button--ghost" href="source-manifest.json">Source manifest</a>
                 <a class="button button--ghost" href="public-handoff.json">Public handoff</a>
+                <a class="button button--ghost" href="WORKSPACE-STATUS.md">Workspace status</a>
+                <a class="button button--ghost" href="PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Recovery audit</a>
+            </div>
+        </section>
+        <section class="panel">
+            <h2>Seeded Baseline</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Core SEI paper</h3>
+                    <p>`The Perils and Joys of Reconstructing Architectures` now anchors the SEI-era paper floor with a direct SEI-hosted PDF preserved locally.</p>
+                </article>
+                <article class="card">
+                    <h3>Institute-context issue page</h3>
+                    <p>The `News at SEI September 1999` issue page provides stable local context for the publication run around the architecture paper.</p>
+                </article>
+                <article class="card">
+                    <h3>Startup bridge retrospective</h3>
+                    <p>`SEI Architecture Practices Propel Successful Startup` now gives the archive a first direct bridge from SEI architecture practices into the Quack startup path.</p>
+                </article>
             </div>
         </section>
     </main>

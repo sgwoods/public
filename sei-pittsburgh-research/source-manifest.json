@@ -1,5 +1,96 @@
 {
   "schema_version": "1.0",
   "project_id": "sei-pittsburgh-research",
-  "sources": []
+  "sources": [
+    {
+      "source_id": "src-sei-1999-perils-and-joys-of-reconstructing-architectures",
+      "title": "The Perils and Joys of Reconstructing Architectures",
+      "source_type": "artifact",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Core SEI-era paper and publication anchor documenting Steven Woods' architecture and reengineering work inside the institute.",
+      "date": {
+        "display": "September 1999",
+        "sort": "1999-09-01",
+        "precision": "month"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/documents/2629/1999_102_001_413658.pdf",
+        "archive_local": "historic/artifacts/archive-pdf/perils-and-joys-of-reconstructing-architectures-1999-sei.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "paper",
+        "architecture",
+        "reengineering"
+      ],
+      "status": "approved",
+      "notes": "Direct SEI-hosted PDF preserved locally. The paper appears in SEI Interactive and credits Steven G. Woods, S. Jeromy Carriere, and Rick Kazman."
+    },
+    {
+      "source_id": "src-sei-1999-news-at-sei-september",
+      "title": "News at SEI September 1999",
+      "source_type": "media-mention",
+      "company_context": "SEI Pittsburgh",
+      "person_relevance": "Stable institute-context source anchoring the September 1999 SEI publication environment around the Perils and Joys paper.",
+      "date": {
+        "display": "September 1, 1999",
+        "sort": "1999-09-01",
+        "precision": "day"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/library/news-at-sei-september-1999/",
+        "archive_local": "historic/artifacts/archive-html/news-at-sei-september-1999.html",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "newsletter",
+        "institute",
+        "context"
+      ],
+      "status": "approved",
+      "notes": "SEI-hosted newsletter issue page preserved locally as institute context for the September 1999 publication run that included the architecture paper."
+    },
+    {
+      "source_id": "src-sei-2002-architecture-practices-propel-successful-startup",
+      "title": "SEI Architecture Practices Propel Successful Startup",
+      "source_type": "media-mention",
+      "company_context": "SEI Pittsburgh / Quack transition",
+      "person_relevance": "Retrospective bridge source connecting Steven Woods' and Jeromy Carriere's SEI architecture work to the Quack startup path.",
+      "date": {
+        "display": "First Quarter 2002",
+        "sort": "2002-01-01",
+        "precision": "quarter"
+      },
+      "urls": {
+        "canonical": "https://www.sei.cmu.edu/asset_files/newsletter/2002_102_001_413759.pdf",
+        "archive_local": "historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf",
+        "archive_web": null
+      },
+      "ownership": {
+        "canonical_repo": "sei-pittsburgh-research",
+        "person_hub_use": "summary-ok",
+        "company_deep_link": "preferred"
+      },
+      "tags": [
+        "sei",
+        "quack",
+        "startup",
+        "retrospective"
+      ],
+      "status": "approved",
+      "notes": "Direct SEI-hosted PDF preserved locally. This bridge source was also noted in the Steven review ledger, but SEI now keeps its own localized copy and era-specific interpretation."
+    }
+  ]
 }

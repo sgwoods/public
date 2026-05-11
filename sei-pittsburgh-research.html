@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEI Pittsburgh Research Project</title>
     <link rel="stylesheet" href="assets/public-site.css">
+    <style>
+        :root {
+            --bg: #13101a;
+            --bg2: #3f3751;
+            --panel-bg: rgba(19, 16, 26, 0.76);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(222, 205, 255, 0.14);
+            --panel-border: rgba(192, 154, 255, 0.22);
+            --button-bg: rgba(192, 154, 255, 0.18);
+            --button-border: rgba(192, 154, 255, 0.32);
+            --button-bg-ghost: rgba(255, 255, 255, 0.05);
+            --text: #f8f4ff;
+            --muted: #ded2f1;
+            --muted-strong: #fff9ff;
+            --accent: #c09aff;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(192, 154, 255, 0.18), transparent 24%),
+                radial-gradient(circle at top right, rgba(125, 203, 255, 0.12), transparent 28%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+        }
+    </style>
 </head>
 <body>
     <main class="shell">
@@ -14,27 +38,57 @@
                 <a class="heroHomeLink" href="https://sgwoods.github.io/public">Steven Woods</a>
             </div>
             <h1>SEI Pittsburgh Archive</h1>
-            <p class="lead">Research archive for Steven Woods' Software Engineering Institute period in Pittsburgh from 1998 to 1999, including software architecture, reengineering work, and startup-transition context.</p>
+            <p class="lead">Research archive for Steven Woods' Software Engineering Institute period in Pittsburgh from 1998 through the early 2002 retrospective bridge period, including software architecture, reengineering work, institute context, and startup-transition material.</p>
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Current Phase</span>
-                    <span class="metaValue">Scaffolded research project</span>
-                    <div class="metaNote">Ready for SEI papers, staff materials, talks, and retrospective startup-transition sources.</div>
+                    <span class="metaValue">Seeded era archive</span>
+                    <div class="metaNote">The archive now has a checked-in continuity layer, a startup validator, and an approved first-source baseline.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Timeline Span</span>
-                    <span class="metaValue">1998 to 1999</span>
-                    <div class="metaNote">Focused on SEI work in Pittsburgh immediately before the Quack era.</div>
+                    <span class="metaValue">1998 to 2002 bridge</span>
+                    <div class="metaNote">Focused on SEI work in Pittsburgh and the first retrospective bridge into the Quack era.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Current Focus</span>
-                    <span class="metaValue">SEI papers, staff context, and transition-to-startup material</span>
-                    <div class="metaNote">The first pass will gather SEI publications, staff pages, and transition-related sources.</div>
+                    <span class="metaValue">First-source baseline, SEI paper floor, and transition-to-startup bridge coverage</span>
+                    <div class="metaNote">This bounded pass added a core paper, institute context, and a direct SEI-hosted startup bridge source.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Updated</span>
+                    <span class="metaValue">May 11, 2026</span>
+                    <div class="metaNote">Summary page synced to the new continuity layer and the initial SEI Pittsburgh source baseline.</div>
                 </div>
             </div>
             <div class="links">
                 <a class="button" href="sei-pittsburgh-research/">Open working repository</a>
-                <a class="button button--ghost" href="sei-pittsburgh-research/project-manifest.json">Project manifest</a>
+                <a class="button" href="sei-pittsburgh-research/project-manifest.json">Project manifest</a>
+                <a class="button button--ghost" href="sei-pittsburgh-research/source-manifest.json">Source manifest</a>
+                <a class="button button--ghost" href="sei-pittsburgh-research/WORK-PLAN.md">Open work plan</a>
+                <a class="button button--ghost" href="sei-pittsburgh-research/tools/start-sei-codex.sh">Open startup check</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Current State</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Era boundary is now explicit</h3>
+                    <p>`steven-woods-research` remains the person-centric layer, while this project is now the canonical era-specific deep archive for the SEI Pittsburgh period.</p>
+                </article>
+                <article class="card">
+                    <h3>First-source baseline is real</h3>
+                    <p>The archive now has a three-source baseline: a core SEI architecture paper, a stable institute-context issue page, and a direct retrospective bridge into the Quack startup path.</p>
+                </article>
+                <article class="card">
+                    <h3>Local preservation has started</h3>
+                    <p>All three approved baseline sources now resolve to checked-in local archive files inside the SEI Pittsburgh archive tree.</p>
+                </article>
+                <article class="card">
+                    <h3>Continuity is restartable</h3>
+                    <p>The working archive now includes a living work plan, workspace-status note, dated recovery audit, and startup validation path so future SEI work does not depend on rediscovery.</p>
+                </article>
             </div>
         </section>
 
@@ -43,7 +97,7 @@
             <div class="grid">
                 <article class="card">
                     <h3>SEI publications and papers</h3>
-                    <p>Architecture and reengineering work, columns, white papers, and staff-linked publication context.</p>
+                    <p>Architecture and reengineering work, columns, papers, and publication context.</p>
                 </article>
                 <article class="card">
                     <h3>Staff and institute context</h3>
@@ -51,8 +105,12 @@
                 </article>
                 <article class="card">
                     <h3>Transition to startups</h3>
-                    <p>Material connecting the SEI period to Quack, Kinitos, and later company-building work.</p>
+                    <p>Material connecting the SEI period to Quack and later company-building work.</p>
                 </article>
+            </div>
+            <div class="links">
+                <a class="button" href="sei-pittsburgh-research/public-handoff.json">Open public handoff</a>
+                <a class="button button--ghost" href="steven-woods-research.html">Open Steven person-centric layer</a>
             </div>
         </section>
     </main>

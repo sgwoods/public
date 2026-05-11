@@ -4,26 +4,42 @@
   "active": true,
   "display_name": "SEI Pittsburgh Archive",
   "description": "Research archive for Steven Woods' Software Engineering Institute period in Pittsburgh, covering publications, institute context, and startup-transition material.",
-  "person_context": "Steven Woods worked at the Software Engineering Institute in Pittsburgh from 1998 to 1999; this project is the deep archive for that period.",
+  "person_context": "Steven Woods worked at the Software Engineering Institute in Pittsburgh from 1998 to 1999; this project is the era-specific deep archive for that period and its immediate transition bridge.",
   "project_page_url": "https://sgwoods.github.io/public/sei-pittsburgh-research.html",
   "repo_url": null,
   "timeline_span": {
     "start_year": 1998,
-    "end_year": 1999,
+    "end_year": 2002,
     "label": "SEI Pittsburgh era"
   },
-  "repo_pushed_at": "2026-03-25T00:15:00Z",
-  "status_generated_at": "2026-03-25T00:15:00Z",
+  "repo_pushed_at": "2026-05-11T19:01:15Z",
+  "status_generated_at": "2026-05-11T19:01:15Z",
   "status_label": "Current phase",
-  "status_value": "Scaffolded research project",
+  "status_value": "Seeded era archive",
   "focus_label": "Current focus",
-  "focus_value": "SEI papers, staff context, and transition-to-startup material",
-  "current_focus": "SEI papers, staff context, and transition-to-startup material",
+  "focus_value": "First-source baseline, SEI paper floor, and transition-to-startup bridge coverage",
+  "current_focus": "First-source baseline, SEI paper floor, and transition-to-startup bridge coverage",
   "notable_items": [
     {
       "label": "Working repository",
       "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/"
+    },
+    {
+      "label": "Perils and Joys paper PDF",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/perils-and-joys-of-reconstructing-architectures-1999-sei.pdf"
+    },
+    {
+      "label": "News at SEI September 1999",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-html/news-at-sei-september-1999.html"
+    },
+    {
+      "label": "SEI startup bridge PDF",
+      "url": "https://sgwoods.github.io/public/sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf"
     }
   ],
-  "featured_source_ids": []
+  "featured_source_ids": [
+    "src-sei-1999-perils-and-joys-of-reconstructing-architectures",
+    "src-sei-1999-news-at-sei-september",
+    "src-sei-2002-architecture-practices-propel-successful-startup"
+  ]
 }
