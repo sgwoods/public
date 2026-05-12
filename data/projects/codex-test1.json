@@ -7,14 +7,14 @@
   "repo_url": "https://github.com/sgwoods/Codex-Test1",
   "dashboard_url": "https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html",
   "experience_url": "https://sgwoods.github.io/Aurora-Galactica/",
-  "repo_pushed_at": "2026-05-05T06:19:42-04:00",
-  "status_generated_at": "2026-05-05T10:22:36Z",
-  "source_build_label": "1.3.0+build.574.sha.0123dd0",
-  "source_commit": "0123dd03f06bcb859acb79237c75633653cde4ad",
-  "source_template_sha": "442e0ca0c8d3",
-  "public_sync_generated_at": "2026-05-05T10:22:36Z",
+  "repo_pushed_at": "2026-05-12T07:47:09-04:00",
+  "status_generated_at": "2026-05-12T11:50:43Z",
+  "source_build_label": "1.3.0+build.705.sha.583cc0c7",
+  "source_commit": "583cc0c7838c87f6b992ddb9d9cb8f1550a365ee",
+  "source_template_sha": "d1d72bb3295d",
+  "public_sync_generated_at": "2026-05-12T11:50:43Z",
   "status_label": "Current release",
   "status_value": "1.3.0",
   "focus_label": "Current focus",
-  "focus_value": "Stabilize the shipped 1.3.0 production family while beginning 1.4.0 arcade-depth and platform-contract follow-through, and keep Galaxy Guardians moving as a measured second-cabinet program rather than a rushed second launch."
+  "focus_value": "The accepted 1.3.0.1 hosted-dev conformance/docs/dashboard bundle has now refreshed the live 1.3.0 public family on hosted `/beta` and hosted `/production`; keep the line trustworthy, keep hosted `/dev` ready for the next coherent review bundle, and shape 1.4.0 around arcade depth, audio/event feedback, and cleaner Platinum/application seams."
 }
