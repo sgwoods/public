@@ -77,7 +77,7 @@
       },
       "urls": {
         "canonical": "https://news.microsoft.com/2005/06/21/microsoft-experience-capital-markets-is-supported-by-more-than-20-leading-solution-partners/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/microsoft-experience-capital-markets-2005-06-21-microsoft-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -93,7 +93,7 @@
         "press-release"
       ],
       "status": "approved",
-      "notes": "Microsoft lists Kinitos as a solution partner and describes its on-demand application delivery, update control, usage insight, and error reaction capabilities. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare block on the live URL, so this source remains approved but URL-backed."
+      "notes": "Microsoft lists Kinitos as a solution partner and describes its on-demand application delivery, update control, usage insight, and error reaction capabilities. A 2026-05-16 reader-rendered preservation copy of the canonical Microsoft page was checked in from the canonical workspace via r.jina.ai after the direct live URL remained Cloudflare-blocked."
     },
     {
       "source_id": "src-neoedge-2007-gamespot-bushnell-joins-board",
