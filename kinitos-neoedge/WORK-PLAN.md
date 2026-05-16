@@ -123,6 +123,22 @@ Tasks:
 - update manifests and project pages as each campaign lands
 - begin code or artifact restoration work only from the canonical workspace
 
+Current evidence note:
+
+- a private first-party Kinitos MSN-log bundle was accessioned outside the repo
+  on `2026-05-16`
+- the raw XML logs remain quarantined outside git
+- the repo-safe first-contact summary now lives at:
+  - `incoming/first-party-msn-log-bundle-2026-05-16.md`
+
+Next safe derivative tasks:
+
+- convert the strongest internal signals into sanitized company-history notes
+- derive public corroboration leads before promoting any new factual claims into
+  `source-manifest.json`
+- keep raw private communications out of the public repo unless a different
+  deliberate storage policy is adopted later
+
 ## Practical next-step path from here
 
 1. Continue Kinitos local work from `/Users/steven/Projects-All/public` only.

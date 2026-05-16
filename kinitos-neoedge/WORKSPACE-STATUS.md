@@ -47,6 +47,17 @@ If this older path still exists on the older machine, treat it as historical onl
 
 Do not revive it as the active Kinitos workspace.
 
+## External quarantined evidence
+
+A private Kinitos-era MSN XML bundle was transferred from the retired old
+machine on `2026-05-16`.
+
+Handling rule:
+
+- keep the raw XML logs outside this public repo
+- use checked-in notes only for sanitized summaries and follow-up source leads
+- do not treat the quarantined bundle as general working-repo content
+
 ## Support-only scaffold
 
 This subtree remains useful, but it is not the canonical deep archive root:
@@ -77,4 +88,5 @@ The project is now in a safer and clearer state:
 
 1. Continue Kinitos local work from the canonical active local workspace only.
 2. Preserve the approved non-local sources, starting with the Yahoo cluster and fragile press items.
-3. Keep `WORK-PLAN.md`, `WORKSPACE-STATUS.md`, `project-manifest.json`, and the public project page current as the archive moves forward.
+3. Convert the quarantined MSN-log bundle into sanitized historical notes and public corroboration leads without checking the raw logs into git.
+4. Keep `WORK-PLAN.md`, `WORKSPACE-STATUS.md`, `project-manifest.json`, and the public project page current as the archive moves forward.
