@@ -2,6 +2,17 @@
 
 Track articles, documents, and other source leads here before they are captured locally or processed into the historic archive.
 
+## Private-evidence-derived public corroboration leads
+
+- Added: `2026-05-16`
+- Status: tracked as sanitized follow-up work from a quarantined private
+  evidence bundle; raw logs remain outside git
+- Notes: use the repo-safe derivative note below to pursue public or archived
+  corroboration without promoting private chat content into the checked-in
+  archive
+- Follow-up note:
+  - `incoming/public-corroboration-leads-from-msn-bundle-2026-05-16.md`
+
 ## CNET article lead
 
 - Source ID: `src-neoedge-2008-cnet-yahoo-ad-supported-games`

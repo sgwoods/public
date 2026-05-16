@@ -78,6 +78,7 @@ This bundle looks like potentially strong first-party evidence for the
 
 ## Next action
 
-Review the accession inventory outside the repo, then create a sanitized
-follow-up note that converts the strongest company-history signals into public
-corroboration tasks.
+Review the accession inventory outside the repo, then work through the
+sanitized follow-up note:
+
+- `incoming/public-corroboration-leads-from-msn-bundle-2026-05-16.md`
