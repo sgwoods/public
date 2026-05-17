@@ -46,7 +46,7 @@
       },
       "urls": {
         "canonical": "https://www.internetnews.com/developer/microsoft-offers-sneak-peek-to-developers/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/microsoft-offers-sneak-peek-2004-03-11-internetnews.html",
         "archive_web": null
       },
       "ownership": {
@@ -62,7 +62,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "InternetNews coverage of DevDay 2004 names Kinitos' Smart Client Application Management software as a Microsoft-aligned example."
+      "notes": "InternetNews coverage of DevDay 2004 names Kinitos' Smart Client Application Management software as a Microsoft-aligned example. A direct local HTML preservation copy of the live InternetNews page was checked in from the canonical workspace on 2026-05-17."
     },
     {
       "source_id": "src-kinitos-2005-microsoft-experience-capital-markets-partners",
@@ -108,7 +108,7 @@
       },
       "urls": {
         "canonical": "https://www.gamespot.com/articles/bushnell-joins-neoedge-board/1100-6171273/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/bushnell-joins-neoedge-board-2007-05-22-gamespot-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -124,7 +124,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GameSpot reports NeoEdge was founded in 2002, had 40 employees, had Alex Terry as CEO, and was operating MostFun.com in beta."
+      "notes": "GameSpot reports NeoEdge was founded in 2002, had 40 employees, had Alex Terry as CEO, and was operating MostFun.com in beta. A 2026-05-17 reader-style preservation copy was checked in from the canonical workspace after the direct live URL remained Cloudflare-blocked to shell fetch."
     },
     {
       "source_id": "src-neoedge-2008-gamesbeat-neomom-product-tastes",
@@ -356,7 +356,7 @@
       },
       "urls": {
         "canonical": "https://www.uspto.gov/web/trademarks/tmog/20110315_OG.pdf",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-pdf/blue-noodle-trademark-filing-2011-03-15-uspto-official-gazette-pages-118-119.pdf",
         "archive_web": null
       },
       "ownership": {
@@ -372,7 +372,7 @@
         "legal"
       ],
       "status": "approved",
-      "notes": "Official USPTO gazette shows BLUE NOODLE INC. filing for downloadable and online game-related entertainment services, supporting the Blue Noodle games/studio phase."
+      "notes": "Official USPTO gazette shows BLUE NOODLE INC. filing for downloadable and online game-related entertainment services, supporting the Blue Noodle games/studio phase. A tight two-page PDF extract isolating the relevant Blue Noodle entries was checked in from the canonical workspace on 2026-05-17."
     },
     {
       "source_id": "src-blue-noodle-2011-adtechdaily-clickstrip-gdc",

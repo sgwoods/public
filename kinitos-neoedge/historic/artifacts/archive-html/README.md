@@ -20,5 +20,10 @@ Current preserved captures:
 - `interstitial-advertising-patent-2011-11-02-google-patents.html`
 - `distraction-free-content-patent-2011-11-02-google-patents.html`
 - `founding-innovation-keynote-2023-04-01-uwaterloo.html`
+- `microsoft-experience-capital-markets-2005-06-21-microsoft-reader.html`
+- `blue-noodle-clickstrip-2011-03-10-adtechdaily-reader.html`
+- `double-fusion-major-expansion-2011-12-29-adtechdaily-reader.html`
+- `microsoft-offers-sneak-peek-2004-03-11-internetnews.html`
+- `bushnell-joins-neoedge-board-2007-05-22-gamespot-reader.html`
 
 These files back the corresponding approved source records in `source-manifest.json`.
