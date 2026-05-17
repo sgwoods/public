@@ -329,11 +329,11 @@
       "energy": "medium-high",
       "value": "high",
       "time_horizon": "medium",
-      "likely_current_work": "Preservation-completeness work on the remaining blocked press cluster and continued maintenance of the local evidence floor.",
-      "next_step": "Finish the remaining blocked Microsoft, GameSpot, USPTO, Fortune, and AdTech Daily preservation lane before widening into broader restoration again.",
+      "likely_current_work": "A pushed Kinitos branch has finished the approved-source preservation floor and added private-evidence derivative notes, even though the public line still understates that progress.",
+      "next_step": "Promote the preservation-complete Kinitos branch, then shift into deferred-source and public-corroboration follow-up instead of more blocked-press preservation.",
       "quality_note": "One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.",
-      "drift_note": null,
-      "coordination_note": "The right sequence is preserve fragile evidence first, then reopen broader research.",
+      "drift_note": "Current public main still understates the Kinitos preservation floor; the pushed branch is ahead with all approved sources localized and with private-evidence derivative notes already captured safely.",
+      "coordination_note": "The right sequence is promote the preservation-complete branch first, then reopen broader research through deferred and corroboration campaigns.",
       "extra_links": [
         {
           "label": "Open working repository",

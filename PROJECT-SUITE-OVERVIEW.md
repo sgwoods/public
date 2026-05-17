@@ -54,7 +54,7 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 
 | Project | Surface Class | Visibility | Priority | Current Manifest State |
 | --- | --- | --- | --- | --- |
-| [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.3.0; Stabilize the shipped 1.3.0 production family while beginning 1.4.0 arcade-depth and platform-contract follow-through, and keep Galaxy Guardians moving as a measured second-cabinet program rather than a rushed second launch. |
+| [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.0; Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams. |
 | [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake + continuity |
@@ -75,7 +75,7 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: 1.3.0. Current focus: Stabilize the shipped 1.3.0 production family while beginning 1.4.0 arcade-depth and platform-contract follow-through, and keep Galaxy Guardians moving as a measured second-cabinet program rather than a rushed second launch.. Last repo update: May 5, 2026.
+- Current manifest state: Current release: 1.4.0. Current focus: Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams.. Last repo update: May 14, 2026.
 - Likely current work: Post-release follow-through on the Aurora and Platinum public family, including lane trust, Galaxy Guardians readiness, and cleaner platform-versus-application seams.
 - Next step: Do a quick cross-branch status refresh before any shared-public publish so the Aurora manifest and the active release lane are not out of sync.
 - Quality: This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.
@@ -230,8 +230,9 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 - Time-energy-value: energy medium-high; value high; horizon medium
 - Current manifest state: Current phase: Active research archive. Current focus: Preservation completeness underway; sixteen approved sources now have local copies, including the GamesBeat funding-and-merger cluster. Last repo update: May 10, 2026.
 - Evidence status: Evidence baseline: 24 approved / 8 deferred / 0 rejected (32 total).
-- Likely current work: Preservation-completeness work on the remaining blocked press cluster and continued maintenance of the local evidence floor.
-- Next step: Finish the remaining blocked Microsoft, GameSpot, USPTO, Fortune, and AdTech Daily preservation lane before widening into broader restoration again.
+- Likely current work: A pushed Kinitos branch has finished the approved-source preservation floor and added private-evidence derivative notes, even though the public line still understates that progress.
+- Next step: Promote the preservation-complete Kinitos branch, then shift into deferred-source and public-corroboration follow-up instead of more blocked-press preservation.
 - Quality: One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.
-- Coordination note: The right sequence is preserve fragile evidence first, then reopen broader research.
+- Coordination note: The right sequence is promote the preservation-complete branch first, then reopen broader research through deferred and corroboration campaigns.
+- Drift note: Current public main still understates the Kinitos preservation floor; the pushed branch is ahead with all approved sources localized and with private-evidence derivative notes already captured safely.
 - Public links: [Project page](https://sgwoods.github.io/public/kinitos-neoedge.html), [Open working repository](kinitos-neoedge/), [Open work plan](kinitos-neoedge/WORK-PLAN.md), [Open recovery audit](kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md)

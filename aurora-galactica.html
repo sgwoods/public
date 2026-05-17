@@ -173,6 +173,141 @@
             font-size: 18px;
         }
 
+        .narrative {
+            max-width: 900px;
+            margin: 0 0 18px;
+        }
+
+        .metricStrip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .miniMetric {
+            padding: 15px 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .miniMetric span,
+        .scoreMeta span,
+        .investmentMeta span {
+            color: #9cc4df;
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .miniMetric strong {
+            display: block;
+            margin-top: 8px;
+            font-size: 24px;
+        }
+
+        .miniMetric small {
+            display: block;
+            margin-top: 8px;
+            color: var(--muted);
+            line-height: 1.45;
+        }
+
+        .scoreChart {
+            display: grid;
+            gap: 12px;
+        }
+
+        .scoreRow,
+        .investmentRow {
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .scoreHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .scoreName,
+        .scoreValue {
+            font-weight: 700;
+        }
+
+        .scoreValue {
+            white-space: nowrap;
+        }
+
+        .barTrack {
+            width: 100%;
+            height: 10px;
+            margin: 12px 0 10px;
+            border-radius: 999px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .barTrack span {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #ffcf6e, #67e6a8);
+        }
+
+        .scoreRow.gap .barTrack span {
+            background: linear-gradient(90deg, #ff8a7a, #ffcf6e);
+        }
+
+        .scoreRow.watch .barTrack span {
+            background: linear-gradient(90deg, #ffcf6e, #9fe8ff);
+        }
+
+        .scoreRow.strong .barTrack span {
+            background: linear-gradient(90deg, #67e6a8, #9fe8ff);
+        }
+
+        .scoreRow p,
+        .investmentRow p,
+        .smallText {
+            margin: 8px 0 0;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .scoreMeta,
+        .investmentMeta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .investmentRow {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(220px, .9fr);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .investmentRow strong {
+            display: block;
+        }
+
+        .investmentMeta {
+            justify-content: flex-end;
+        }
+
+        .emptyState {
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
         .links {
             display: flex;
             flex-wrap: wrap;
@@ -215,45 +350,59 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+
+            .investmentRow {
+                grid-template-columns: 1fr;
+            }
+
+            .investmentMeta {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- public-sync: release=1.3.0 label=1.3.0+build.574.sha.0123dd0 commit=0123dd03f06bcb859acb79237c75633653cde4ad template=442e0ca0c8d3 synced=2026-05-05T10:22:36Z -->
+    <!-- public-sync: release=1.4.0 label=1.4.0+build.748.sha.09a4c633 commit=09a4c633cf92d35660f1a5986a156ea9cab112f4 template=ff93a7560120 synced=2026-05-15T01:05:16Z -->
     <main class="shell">
         <section class="hero">
             <div class="heroTop">
-                <span class="eyebrow">Public Project Page</span>
+                <span class="eyebrow">Public Portfolio Project Page</span>
                 <a class="homeLink" href="https://sgwoods.github.io/public/">Steven Woods</a>
             </div>
             <h1>Aurora Galactica on Platinum</h1>
-            <p>This project now ships Aurora Galactica as the first playable game pack on the Platinum browser-arcade platform, with hosted dev, beta, production, and first-class documentation surfaces kept aligned from the same repo source.</p>
+            <p>Aurora Galactica is the first shipped game on the Platinum browser-arcade platform and the active proof of a broader conformance program: reference ingestion, local harnessing, score dashboards, release lanes, and Codex-assisted development working together to make inspired arcade software more measurable and repeatable.</p>
             <div class="meta">
                 <div class="metaCard">
-                    <span class="metaLabel">Current Release</span>
-                    <span class="metaValue">1.3.0</span>
-                    <div class="metaNote">Current public line for the active game build.</div>
+                    <span class="metaLabel">Release Version</span>
+                    <span class="metaValue">1.4.0</span>
+                    <div class="metaNote">Version label for the release location shown on this page.</div>
                 </div>
                 <div class="metaCard">
-                    <span class="metaLabel">Updated</span>
-                    <span class="metaValue">May 05 2026, 6:21 AM EDT</span>
-                    <div class="metaNote">Most recent synced release timestamp for the public project surface.</div>
+                    <span class="metaLabel">Release Location</span>
+                    <span class="metaValue">Public portfolio sync</span>
+                    <div class="metaNote">Synced to the public portfolio from the live production release state.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Build Timestamp</span>
+                    <span class="metaValue">May 14 2026, 9:03 PM EDT</span>
+                    <div class="metaNote">Timestamp of the build artifact for this release location, not necessarily the final public portfolio sync time.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Current Focus</span>
-                    <span class="metaValue">Stabilize the shipped 1.3.0 production family while beginning 1.4.0 arcade-depth and platform-contract follow-through, and keep Galaxy Guardians moving as a measured second-cabinet program rather than a rushed second launch.</span>
+                    <span class="metaValue">Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams.</span>
                     <div class="metaNote">Current work on Aurora and Platinum pulled directly from the maintained release dashboard.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Latest Note</span>
-                    <span class="metaValue">Fidelity and second-cabinet release</span>
-                    <div class="metaNote">Public page synced from the latest shipped release note and repository state.</div>
+                    <span class="metaValue">1.4.0 multi-game public release</span>
+                    <div class="metaNote">Release note carried by this lane's generated artifacts.</div>
                 </div>
             </div>
             <div class="links">
-                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/">Open live game</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/">Open this lane build</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/beta/">Open beta build</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html">Open release dashboard</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/conformance-dashboard.html">Open conformance dashboard</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html">Open project guide</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html">Open Platinum guide</a>
                 <a class="button" href="https://github.com/sgwoods/Codex-Test1">Open repository</a>
@@ -265,40 +414,526 @@
             <div class="grid">
                 <article class="card">
                     <h3>Primary goal</h3>
-                    <p>Keep Platinum Release 1 stable while we separate platform and application documentation, close the small Aurora trust-fix cluster, and prepare the second-game seam without rushing it into production.</p>
+                    <p>Advance Aurora toward a stronger Galaga-like conformance gate while keeping Platinum clean as the reusable host and turning ingestion, harnesses, metrics, and resource economics into a repeatable path for future games.</p>
                 </article>
                 <article class="card">
-                    <h3>What is already solid</h3>
-                    <p>Platinum now owns the shell, picker, hosted lane model, and release framing, while Aurora remains a playable shipped pack with the main release documentation, dashboard, and player guide generated from maintained source docs.</p>
+                    <h3>How the platform helps</h3>
+                    <p>Platinum owns the shell, picker, hosted lane model, documentation surfaces, conformance dashboard, release framing, and shared harness substrate. Each game keeps its own rules, scoring, identity, and reference evidence.</p>
                 </article>
                 <article class="card">
-                    <h3>Current blocker</h3>
-                    <p>The biggest remaining risk is not broad architecture uncertainty anymore. It is making sure the fast-follow Aurora fixes, the hosted docs, and the platform/application boundary all stay aligned across localhost, hosted /dev, hosted /beta, and hosted /production.</p>
+                    <h3>Current conformance push</h3>
+                    <p>The highest-value work is audio/event feedback, level arc, alien entry and challenge-stage novelty, visual reference grounding, pressure replay precision, and Galaxy Guardians ingestion promotion before any broader second-game claim.</p>
                 </article>
+                <article class="card">
+                    <h3>Release posture</h3>
+                    <p>Hosted /production still carries the refreshed public 1.3.0 family, while hosted /dev and hosted /beta now carry the first deliberate 1.4.0 candidate family as 1.4.0.1 and 1.4.0-beta.1. The next public release decision should come from that candidate line, not from casual lane churn.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel" id="conformance-entry-points">
+            <h2>Aurora And Guardians Conformance</h2>
+            <p class="narrative">Use these lane-relative links when you want a direct conformance read for a specific game, or a quick compare entry point with both games visible at the top of the dashboard.</p>
+            <div class="grid">
+                <article class="card">
+                    <h3>Aurora conformance</h3>
+                    <p>Open the hosted dashboard with Aurora selected immediately so the score, priorities, ingestion, and cost view all stay scoped to the shipped first cabinet.</p>
+                    <div class="links">
+                        <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/conformance-dashboard.html?game=aurora-galactica#conformance">Open Aurora conformance</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Galaxy Guardians conformance</h3>
+                    <p>Open the same dashboard with Galaxy Guardians selected so the preview-second-cabinet evidence, gaps, and next investment areas are the first thing you see.</p>
+                    <div class="links">
+                        <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/conformance-dashboard.html?game=galaxy-guardians#conformance">Open Guardians conformance</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Side-by-side starting point</h3>
+                    <p>Start from the shared dashboard when you want the top-level compare cards for both games first, then switch deeper into Aurora or Guardians from the selector.</p>
+                    <div class="links">
+                        <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/conformance-dashboard.html#conformance">Open compare view</a>
+                        <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#conformance-entry-points">Open guide links</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Short, medium, and long plan</h2>
+            <p class="narrative">The current recommendation is to keep the refreshed 1.3.0 public family trustworthy, keep the documentation and dashboard story aligned, and use hosted /dev plus hosted /beta to review the deliberate 1.4.0 candidate family rather than blurring the lanes together. The plan below keeps release movement tied to measurable player-facing value and keeps the public project page aligned with the same release path as the software.</p>
+            <div class="grid">
+                <article class="card">
+                    <h3>Short term: review 1.4.0 cleanly</h3>
+                    <p>Keep the shipped 1.3.0 public line stable, keep the conformance dashboard, documentation, application artifact scorecard, economics read, and release notes aligned, and use the current dev and beta candidates to decide whether 1.4.0 is truly stronger.</p>
+                </article>
+                <article class="card">
+                    <h3>Medium term: 1.4.0 arcade depth</h3>
+                    <p>Shape the next beta family around alien entry variation, challenge-stage novelty, level arc, boss/formation grammar, visual reference grounding, audio/event feedback, and cleaner Platinum/application seams.</p>
+                </article>
+                <article class="card">
+                    <h3>Long term: evidence to multi-game</h3>
+                    <p>Use 1.5.0 for shared video evidence and flight recorder, 1.6.0 for message-to-pilot cabinet polish, and 2.0 for a credible multi-game Platinum milestone built from ingestion-backed game-owned conformance packages.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Conformance system</h2>
+            <p class="narrative">This public page is meant to be read directly, not only used as a launcher. The conformance program compares Aurora against Galaga-family reference behavior through captured examples, derived metrics, repeatable harnesses, confidence notes, and resource accounting. The generated guide pages, dashboards, and source artifacts are drill-down surfaces behind the overview shown here.</p>
+            <div class="grid">
+                <article class="card">
+                    <h3>Ingestion</h3>
+                    <p>Reference footage, source manifests, clipped windows, contact sheets, waveforms, event logs, alien indexes, audio cue indexes, stage summaries, and confidence notes become game-owned evidence rather than loose design memory.</p>
+                </article>
+                <article class="card">
+                    <h3>Harnessing and scoring</h3>
+                    <p>Local CPU and browser harnesses measure movement, timing, audio, stage shape, boss formation grammar, visual surfaces, pressure windows, and shell behavior against reference-derived targets.</p>
+                </article>
+                <article class="card">
+                    <h3>Resource economics</h3>
+                    <p>The project tracks local compute, browser work, artifact growth, and GPU-equivalent Codex/OpenAI/API usage so future conformance investment can be chosen by value, confidence, and cost.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Conformance readout</h2>
+            <p class="narrative">The score bars below are working measurements, not claims of perfection. A high number can still carry lower confidence when the scorer lacks enough reference windows or when the metric needs finer resolution. The goal is to make the gap visible, choose the next investment area, and then rerun the harnesses after each improvement.</p>
+            <div class="metricStrip">
+
+                <article class="miniMetric">
+                    <span>Overall quality</span>
+                    <strong>9.1/10</strong>
+                    <small>Target &gt;=9.3</small>
+                </article>
+
+                <article class="miniMetric">
+                    <span>Audio identity</span>
+                    <strong>6.9/10</strong>
+                    <small>Target &gt;=7.5</small>
+                </article>
+
+                <article class="miniMetric">
+                    <span>Level arc</span>
+                    <strong>8.7/10</strong>
+                    <small>Target &gt;=8.8</small>
+                </article>
+
+                <article class="miniMetric">
+                    <span>Boss entry and formation grammar</span>
+                    <strong>9.2/10</strong>
+                    <small>Target &gt;=8.0 first gate; &gt;=9.0 mature</small>
+                </article>
+            </div>
+            <div class="scoreChart">
+
+                <article class="scoreRow gap">
+                    <div class="scoreHeader">
+                        <span class="scoreName">Audio identity, event feedback, and cue alignment</span>
+                        <span class="scoreValue">6.9/10</span>
+                    </div>
+                    <div class="barTrack" aria-hidden="true"><span style="width: 69%"></span></div>
+                    <p>Largest current score gap and high user-experience impact: shots, explosions, boss damage, challenge results, capture/rescue feedback.</p>
+                    <div class="scoreMeta">
+                        <span>Confidence: medium-high</span>
+                        <span>Target: 7.5-8.0</span>
+                    </div>
+                </article>
+
+                <article class="scoreRow gap">
+                    <div class="scoreHeader">
+                        <span class="scoreName">Alien entry and challenge-stage novelty</span>
+                        <span class="scoreValue">7.8/10</span>
+                    </div>
+                    <div class="barTrack" aria-hidden="true"><span style="width: 78%"></span></div>
+                    <p>Regular-stage alien entry, challenge-stage trajectories, and new-alien introduction are not yet sufficiently varied or reference-grounded; this is a first-order Galaga conformance gap.</p>
+                    <div class="scoreMeta">
+                        <span>Confidence: medium</span>
+                        <span>Target: 7.5 first gate; 9.0+ mature</span>
+                    </div>
+                </article>
+
+                <article class="scoreRow watch">
+                    <div class="scoreHeader">
+                        <span class="scoreName">Level arc and encounter shape</span>
+                        <span class="scoreValue">8.7/10</span>
+                    </div>
+                    <div class="barTrack" aria-hidden="true"><span style="width: 87%"></span></div>
+                    <p>Controls whether long play feels like Galaga-like escalation rather than repeated pressure.</p>
+                    <div class="scoreMeta">
+                        <span>Confidence: medium-high</span>
+                        <span>Target: 8.8-9.0</span>
+                    </div>
+                </article>
+
+                <article class="scoreRow strong">
+                    <div class="scoreHeader">
+                        <span class="scoreName">Boss entry and formation grammar</span>
+                        <span class="scoreValue">9.2/10</span>
+                    </div>
+                    <div class="barTrack" aria-hidden="true"><span style="width: 92%"></span></div>
+                    <p>Boss entries, escorts, formation settling, and challenge set pieces are core Galaga choreography and directly affect whether stages feel authored.</p>
+                    <div class="scoreMeta">
+                        <span>Confidence: medium</span>
+                        <span>Target: 8.0-8.5 first gate; 9.0+ with path/slot extraction</span>
+                    </div>
+                </article>
+
+                <article class="scoreRow watch">
+                    <div class="scoreHeader">
+                        <span class="scoreName">Overall visual look and feel: gameplay, start page, typography complexity</span>
+                        <span class="scoreValue">8.6/10</span>
+                    </div>
+                    <div class="barTrack" aria-hidden="true"><span style="width: 86%"></span></div>
+                    <p>A high score can still feel off if start text, density, contrast, alien readability, and arcade typography do not cohere.</p>
+                    <div class="scoreMeta">
+                        <span>Confidence: medium-low</span>
+                        <span>Target: 8.4-8.8</span>
+                    </div>
+                </article>
+
+                <article class="scoreRow gap">
+                    <div class="scoreHeader">
+                        <span class="scoreName">Stage 4 pressure exact replay / pressure curve precision</span>
+                        <span class="scoreValue">6/10</span>
+                    </div>
+                    <div class="barTrack" aria-hidden="true"><span style="width: 60%"></span></div>
+                    <p>Pressure should be learnable and reproducible, not merely present in one run.</p>
+                    <div class="scoreMeta">
+                        <span>Confidence: medium</span>
+                        <span>Target: 8.2-8.6</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Value versus compute</h2>
+            <p class="narrative">Conformance work is also an economics problem. Local CPU and browser runs should do as much of the repetitive measurement as possible, while Codex/OpenAI/model calls are treated as GPU-equivalent strategy, critique, harness-design, and interpretation work. The project tracks both so we can compare effort against measured score movement over time.</p>
+            <div class="metricStrip">
+
+                <article class="miniMetric">
+                    <span>Measured runs</span>
+                    <strong>529</strong>
+                    <small>Harness and analysis executions in the current economics rollup.</small>
+                </article>
+                <article class="miniMetric">
+                    <span>Wall time</span>
+                    <strong>349.4 min</strong>
+                    <small>Elapsed local time captured by conformance jobs.</small>
+                </article>
+                <article class="miniMetric">
+                    <span>CPU time</span>
+                    <strong>561.0 min</strong>
+                    <small>Local compute used by the measurable assessment loop.</small>
+                </article>
+                <article class="miniMetric">
+                    <span>Artifacts</span>
+                    <strong>812.4 MB</strong>
+                    <small>Persisted evidence: traces, reports, frames, audio and charts.</small>
+                </article>
+            </div>
+            <div class="scoreChart">
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>Audio identity, event feedback, and cue alignment</strong>
+                        <p>Keep the calibrated layered playerHit runtime cue; next either refine the residual playerHit tail/body gap with the same calibrated scorer or move effort to stagePulse pressure-bed strategy if user impact per compute looks higher.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>high; cpu, model-api, openai-api</span>
+                        <span>278 runs; 200 min wall; 359.1 min CPU</span>
+                        <span>Value score: 2.96</span>
+                    </div>
+                </article>
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>Alien entry and challenge-stage novelty</strong>
+                        <p>Attack Reference-grounded path precision readiness: Path comparison confidence 0.64; current heuristic cap 6.8/10; path-slot extraction score 9.8/10.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>estimated; cpu, browser</span>
+                        <span>177 runs; 24.6 min wall; 40.9 min CPU</span>
+                        <span>Value score: 0.00</span>
+                    </div>
+                </article>
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>Level arc and encounter shape</strong>
+                        <p>Use the top-ranked opportunity window to add or widen deterministic evidence before changing gameplay tuning.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>low; cpu, browser</span>
+                        <span>160 runs; 24 min wall; 39.7 min CPU</span>
+                        <span>Value score: 1.68</span>
+                    </div>
+                </article>
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>Boss entry and formation grammar</strong>
+                        <p>Advance Path shape and set-formation precision: 600 tracks classified into path families; expected family coverage 1; capped score 6.8/10 until direct reference labels land.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>high; cpu, browser</span>
+                        <span>160 runs; 24 min wall; 39.7 min CPU</span>
+                        <span>Value score: 0.79</span>
+                    </div>
+                </article>
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>Overall visual look and feel: gameplay, start page, typography complexity</strong>
+                        <p>Promote reference-backed visual contact sheets and add sprite/popup/style sub-scorers.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>medium; cpu, browser, gpu</span>
+                        <span>1 runs; 0.1 min wall; 0.1 min CPU</span>
+                        <span>Value score: 0.41</span>
+                    </div>
+                </article>
+            </div>
+            <div class="links">
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/conformance-dashboard.html#cost">Open Cost / Value deep dive</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/conformance-dashboard-data.json">Open raw conformance data</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#release-conformance-dashboard-doc">Open generated release conformance report</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Reference ingestion</h2>
+            <p class="narrative">Ingestion is the repeatable bridge between external artifacts and playable software. It turns reference media into source windows, annotations, scoreable events, visual comparisons, audio cue maps, and measurement debt that future games can reuse rather than rediscovering by taste alone.</p>
+            <div class="grid">
+
+                <article class="card emphasis">
+                    <h3>Ingestion coverage</h3>
+                    <p>Ingestion turns reference media and Aurora runtime captures into repeatable evidence: clips, contact sheets, traces, event logs, labels, scores, confidence, and next missing annotations.</p>
+                    <p class="smallText">Sources: 12 families; high confidence: 6; scored or promoted: 10.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Galaga-family reference audio clips</h3>
+                    <p>audio identity / event feedback: 50 clips. clipped, mapped, partially scored; confidence medium-high.</p>
+                    <p class="smallText">Next: Add finer event labels for explosion, impact, boss damage, immunity/entry, capture, and rescue semantics.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Aurora audio cue comparison and event-gap reports</h3>
+                    <p>audio cue scoring: 21 compared cues; semantic 9.78/10; 0 attention rows. semantic-scored; confidence medium-high.</p>
+                    <p class="smallText">Next: Tune the highest segment-level gap next: captureBeam tail. Rerun audio comparison and event-gap analysis after the change.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Aurora Audio Conformance Lab v2</h3>
+                    <p>audio candidate loop / family promotion decisions: 8/8 target cues swept; 2 keeper candidates tracked; runtime promotions 1. family-scored; confidence medium-high.</p>
+                    <p class="smallText">Next: Keep the calibrated layered playerHit runtime cue; next either refine the residual playerHit tail/body gap with the same calibrated scorer or move effort to stagePulse pressure-bed strategy if user impact per compute looks higher.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Aurora audio cue contracts</h3>
+                    <p>audio semantic contract / theme latitude / promotion safety: 8 contracts; readiness 9.1/10; blocked 7. contract-scored; confidence medium-high.</p>
+                    <p class="smallText">Next: Keep the calibrated layered playerHit runtime cue; next either refine the residual playerHit tail/body gap with the same calibrated scorer or move effort to stagePulse pressure-bed strategy if user impact per compute looks higher.</p>
+                </article>
+            </div>
+            <div class="links">
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#game-conformance-catalog-doc">Open generated game conformance catalog</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/application-guide.html#conformance-alien-index">Open Aurora catalog tables</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#reference-media-inventory-doc">Open generated reference media inventory</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Game conformance catalog</h2>
+            <p class="narrative">The project now treats alien/enemy roles, audio cues, stage behavior, and test personas as visible documentation surfaces. The rows below are generated from the live conformance dashboard game profiles; the generated project and application guides carry the fuller tables.</p>
+            <div class="grid">
+
+                <article class="card">
+                    <h3>Aurora Galactica</h3>
+                    <p><strong>Active conformance investment.</strong> Aurora is the shipped first Platinum game and the current subject of long-cycle conformance scoring.</p>
+                    <p class="smallText"><strong>Key gates:</strong> Overall quality: 9.1/10; Audio identity: 6.9/10; Level arc: 8.7/10; Alien entry and challenge-stage novelty: 7.8/10.</p>
+                    <p class="smallText"><strong>Next work:</strong> Audio identity, event feedback, and cue alignment (6.9/10); Alien entry and challenge-stage novelty (7.8/10); Level arc and encounter shape (8.7/10).</p>
+                    <p class="smallText"><strong>Live artifacts:</strong> src/assets/reference-audio; reference-artifacts/analyses/aurora-audio-event-gap/2026-05-14-1c788342-dirty-180248/report.json.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Galaxy Guardians</h3>
+                    <p><strong>Preview / ingestion.</strong> Useful playable-preview evidence, now just below a compelling beta-facing quick peek. The score table, wave progression, visible attract/score-table surfaces, frame-motion proxy, object-track proxy, runtime-vs-reference movement comparison, stage-rank pressure contract, sprite-reference extraction, component sprite targets, waveform/spectrogram audio comparison, stricter measured cue targets, labeled cue-window previews, reusable audio conformance lab, and playtest-weighted conformance review now exist as non-production preview contracts; the highest-leverage next work is human listening/review of cue windows, browser play review of the new graphics/audio, and a motion-feel pass.</p>
+                    <p class="smallText"><strong>Key gates:</strong> Preview reference conformance: 7.7/10; Playtest-weighted conformance: 6.9/10; Public release readiness: 3.9/10; Audio conformance lab: 8.3/10.</p>
+                    <p class="smallText"><strong>Next work:</strong> Preview reference conformance (7.7/10); Playable-preview conformance and feel (6.9/10); Audio lab cue identity (8.3/10).</p>
+                    <p class="smallText"><strong>Live artifacts:</strong> reference-artifacts/analyses/galaxy-guardians-identity; reference-artifacts/analyses/audio-conformance-lab/galaxy-guardians-preview/audio-conformance-lab-0.1.json.</p>
+                </article>
+                <article class="card">
+                    <h3>Confidence rule</h3>
+                    <p>An x/10 score is a current-resolution measurement. Low-confidence or proxy rows are deliberately marked so the next work can improve the scorer rather than hide the uncertainty.</p>
+                </article>
+            </div>
+            <div class="links">
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#game-conformance-catalog-doc">Read full generated catalog</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/application-guide.html#stage-conformance-summary">Open stage summary tables</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html#persona-contract">Open platform persona contract</a>
             </div>
         </section>
 
         <section class="panel">
             <h2>Latest release note</h2>
             <div class="card">
-                <h3>Fidelity and second-cabinet release</h3>
-                <p>Shipped the 1.3.0 Aurora quality-and-trust release on Platinum, including the first public Galaxy Guardians sneak peek, layered platform/application version tracking, stronger pilot and release-lane discipline, and a clearer post-release path into 1.4.0 arcade depth.</p>
+                <h3>1.4.0 multi-game public release</h3>
+                <p>Shipped the deliberate 1.4.0 public family on Platinum, promoting the reviewed beta candidate into hosted `/production` with the merged Galaxy Guardians playable/conformance tranche, player-two and watch-mode review work, replay/trophy follow-through, and side-by-side conformance/documentation surfaces.</p>
+                <div class="links">
+                    <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/release-notes.html">Open full release notes</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel" id="review-learning">
+            <h2>Architecture and code review learning</h2>
+            <p class="narrative">The project treats review as a learning loop, not just a gate. Architecture review notes, code-review findings, proposed changes, accepted changes, and repeated patterns are captured in a durable ledger so future releases can avoid the same classes of mistakes and decide when a review note deserves a harness, release preflight, platform rule, or documentation rule.</p>
+            <div class="metricStrip">
+
+                <article class="miniMetric">
+                    <span>Review cycles</span>
+                    <strong>3</strong>
+                    <small>Architecture and code-review cycles represented in the learning ledger.</small>
+                </article>
+                <article class="miniMetric">
+                    <span>Issue notes</span>
+                    <strong>4</strong>
+                    <small>Tracked findings, observations, and in-progress review concerns.</small>
+                </article>
+                <article class="miniMetric">
+                    <span>Accepted changes</span>
+                    <strong>3</strong>
+                    <small>Review-driven process or implementation changes accepted into the project.</small>
+                </article>
+                <article class="miniMetric">
+                    <span>Blocking findings</span>
+                    <strong>P0 0 / P1 0</strong>
+                    <small>P0/P1 findings block hosted-dev movement. Production dispositions: 1 addressed, 3 dismissed, 0 missing.</small>
+                </article>
+            </div>
+            <div class="scoreChart">
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>P2 - architecture-boundary - architect-key-abstractions</strong>
+                        <p>Keep core runtime, shell, service adapter, game-pack, entity, scoring, stage, render, and auth concerns named and separated.</p>
+                        <p class="smallText"><strong>Proposed:</strong> Continue moving shared behavior into Platinum-owned contracts and game-specific behavior into pack-owned data or adapters.</p>
+                        <p class="smallText"><strong>Production disposition:</strong> addressed - The platform/application architecture documents and boundary harnesses now define the core runtime, shell, service adapter, game-pack, entity, scoring, stage, render, and auth concerns.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>Status: accepted</span>
+                        <span>Source: ARCHITECT_REVIEW_RESPONSE.md</span>
+                        <span>Review decision: Architecture docs and boundary harnesses are the standing source of truth.</span>
+                    </div>
+                </article>
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>P2 - architecture-boundary - architect-magic-constants</strong>
+                        <p>Some movement, render spacing, animation timing, and gameplay update values still need clearer structural ownership.</p>
+                        <p class="smallText"><strong>Proposed:</strong> Move stable game-design values into pack/spec structures; keep local math values near implementation with intent comments.</p>
+                        <p class="smallText"><strong>Production disposition:</strong> dismissed - Remaining movement, render-spacing, animation-timing, and gameplay tuning constants are a next-cycle maintainability concern, not a blocker for the current production candidate when targeted gameplay and boundary checks pass.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>Status: in_progress</span>
+                        <span>Source: ARCHITECT_REVIEW_RESPONSE.md</span>
+                        <span>Review decision: Track this as continuing 1.4.0 platform maturity work.</span>
+                    </div>
+                </article>
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>P2 - harness-fragility - architect-harness-fragility</strong>
+                        <p>Recorded-path harnesses can become brittle after motion and pacing changes.</p>
+                        <p class="smallText"><strong>Proposed:</strong> Prefer state-based assertions, coarse behavioral envelopes, and repeated-run averages where exact replay geometry is not the contract.</p>
+                        <p class="smallText"><strong>Production disposition:</strong> dismissed - Recorded-path fragility is acknowledged and retained as a harness-maturity concern. It does not block the current production candidate if the relevant release harnesses, documentation freshness check, and publish preflight pass.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>Status: in_progress</span>
+                        <span>Source: ARCHITECT_REVIEW_RESPONSE.md</span>
+                        <span>Review decision: Measured conformance work should leave more reusable harness logic behind than one-off replay checks.</span>
+                    </div>
+                </article>
+
+                <article class="investmentRow">
+                    <div>
+                        <strong>P2 - conformance-evidence - architect-enemy-spec</strong>
+                        <p>Enemy family definitions should become declarative enough to support new game ingestion and controlled experimentation.</p>
+                        <p class="smallText"><strong>Proposed:</strong> Continue extracting enemy family, attack pattern, and stage grammar data into game-owned specs.</p>
+                        <p class="smallText"><strong>Production disposition:</strong> dismissed - Declarative enemy-family and attack-pattern specs remain important for 1.4.0 and later conformance work. This is not a production blocker for a reviewed candidate unless the release claims those specs as complete.</p>
+                    </div>
+                    <div class="investmentMeta">
+                        <span>Status: in_progress</span>
+                        <span>Source: ARCHITECT_REVIEW_RESPONSE.md</span>
+                        <span>Review decision: Use ingestion-backed specs before considering heavier persistence infrastructure.</span>
+                    </div>
+                </article>
+            </div>
+            <div class="grid">
+
+                <article class="card">
+                    <h3>release-tooling-churn</h3>
+                    <p>Changes to scripts or release tooling often look small but affect lane authority and publish behavior.</p>
+                    <p class="smallText"><strong>Response:</strong> Require `npm run publish:check:dev` plus the review packet before hosted-dev movement.</p>
+                </article>
+
+                <article class="card">
+                    <h3>generated-artifact-self-noise</h3>
+                    <p>Generated review artifacts can make review packets appear stale if they are treated as source inputs.</p>
+                    <p class="smallText"><strong>Response:</strong> Exclude generated review artifact directories from packet freshness while keeping human-facing review docs in scope.</p>
+                </article>
+
+                <article class="card">
+                    <h3>harness-before-subjective-tuning</h3>
+                    <p>Motion, audio, pacing, and transition polish can drift when tuned subjectively.</p>
+                    <p class="smallText"><strong>Response:</strong> Start with reference evidence, extracted clips, timing windows, or semantic logs, then promote only measured keepers.</p>
+                </article>
+
+                <article class="card">
+                    <h3>review-notes-should-teach</h3>
+                    <p>One-off review comments lose value unless they become future prevention mechanisms.</p>
+                    <p class="smallText"><strong>Response:</strong> Classify recurring findings and decide whether each should become a harness, release check, documentation rule, or code simplification.</p>
+                </article>
+            </div>
+            <div class="links">
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#review-learning-ledger-doc">Open review learning ledger</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#code-review-model-doc">Open code review model</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#architect-review-response-doc">Open architecture baseline review</a>
+            </div>
+        </section>
+
+        <section class="panel" id="documentation-provenance">
+            <h2>Documentation provenance</h2>
+            <p class="narrative">The main pages are generated from persistent repository artifacts and analysis outputs. This section is itself generated from <code>documentation-provenance.json</code>, so release review can see which artifacts own the visible claims instead of treating page text as the source of truth.</p>
+            <div class="scoreChart">
+<p class="emptyState">Documentation provenance is not available in this build. Restore documentation-provenance.json before release review.</p>
             </div>
         </section>
 
         <section class="panel">
             <h2>Where to look</h2>
             <div class="links">
-                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/">Open live game</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/">Open this lane build</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/beta/">Open beta build</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html">Open release dashboard</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/release-notes.html">Open release notes</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/conformance-dashboard.html">Open conformance dashboard</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html">Open project guide</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/application-guide.html">Open application guide</a>
                 <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html">Open Platinum guide</a>
                 <a class="button" href="https://github.com/sgwoods/Codex-Test1">Open repository</a>
-                <a class="button" href="https://github.com/sgwoods/Codex-Test1/blob/main/PLAN.md">Roadmap</a>
-                <a class="button" href="https://github.com/sgwoods/Codex-Test1/blob/main/REFERENCE_BASELINE.md">Reference baseline</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#plan-doc">Plan source</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#project-state-conformance-doc">Project state and conformance program</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#game-conformance-catalog-doc">Game conformance catalog</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#strategic-beta-review-doc">Strategic beta review</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#classic-arcade-ingestion-framework-doc">Classic arcade ingestion framework</a>
+                <a class="button" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html#artifact-policy-doc">Artifact policy</a>
             </div>
-            <p class="footer">Public summary synced to the repository state on May 5, 2026.</p>
+            <p class="footer">Public portfolio summary synced to the production repository state. Date label: May 14, 2026.</p>
         </section>
     </main>
 </body>
