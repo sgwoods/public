@@ -1,0 +1,353 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-05-17",
+  "summary": "Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs.",
+  "use_this_page_for": [
+    "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
+    "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
+    "Make reprioritization explicit by editing one small source file and rerendering the public and repo-readable overview surfaces."
+  ],
+  "update_workflow": [
+    "Update the owning project manifest or archive manifest first when factual project status changes.",
+    "Edit this file when priority_now, likely_current_work, next_step, quality_note, or drift_note changes materially.",
+    "Rerun python3 tools/render_project_suite_overview.py after either kind of change.",
+    "Rerun python3 tools/render_index.py when the top-level public index should pick up reference-page changes."
+  ],
+  "tev_rules": [
+    "Protect already-public software and reference surfaces before starting wide new research lanes.",
+    "Prefer publish-refresh work when local archive or documentation progress already exists but the public surface is behind; that is often the best time-energy-value move.",
+    "Use small seeding passes for scaffolded archives instead of broad redesigns.",
+    "Treat this overview as the place to reprioritize, and the per-project manifests as the place to state factual current status."
+  ],
+  "priority_bands": [
+    {
+      "id": "protect",
+      "label": "Protect public surfaces",
+      "description": "Keep already-public software, docs, and dashboards trustworthy before expanding scope."
+    },
+    {
+      "id": "publish",
+      "label": "Publish local progress",
+      "description": "High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface."
+    },
+    {
+      "id": "steady",
+      "label": "Steady advance",
+      "description": "Important ongoing work that benefits from regular small batches rather than a one-off push."
+    },
+    {
+      "id": "seed",
+      "label": "Seed and clarify",
+      "description": "Early-stage areas where a small baseline is more valuable than broad exploration."
+    },
+    {
+      "id": "private",
+      "label": "Private tracking",
+      "description": "Keep only a high-level public summary while the underlying work remains private."
+    }
+  ],
+  "projects": {
+    "aurora-galactica": {
+      "surface_class": "Standalone repo export",
+      "visibility": "Public",
+      "priority_now": "protect",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "short",
+      "likely_current_work": "Post-release follow-through on the Aurora and Platinum public family, including lane trust, Galaxy Guardians readiness, and cleaner platform-versus-application seams.",
+      "next_step": "Do a quick cross-branch status refresh before any shared-public publish so the Aurora manifest and the active release lane are not out of sync.",
+      "quality_note": "This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.",
+      "drift_note": "Live public main is ahead of this branch on Aurora. Treat Aurora as a cross-branch verification check whenever this repo branch is used for shared-public publishing.",
+      "coordination_note": "Best handled as protect-and-verify work rather than broad redesign.",
+      "extra_links": [
+        {
+          "label": "Open beta build",
+          "url": "https://sgwoods.github.io/Aurora-Galactica/beta/"
+        },
+        {
+          "label": "Open project guide",
+          "url": "https://sgwoods.github.io/Aurora-Galactica/project-guide.html"
+        },
+        {
+          "label": "Open Platinum guide",
+          "url": "https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html"
+        }
+      ]
+    },
+    "confidential-project": {
+      "surface_class": "Private project summary",
+      "visibility": "Mixed public summary / private implementation",
+      "priority_now": "private",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "ongoing",
+      "likely_current_work": "Private rental-portal delivery and related product execution.",
+      "next_step": "Keep the public summary minimal and accurate; do not expand the public surface unless there is a deliberate client-safe artifact to add.",
+      "quality_note": "The public/private boundary is already clear, which is the main quality goal here.",
+      "drift_note": null,
+      "coordination_note": "Track only high-level continuity in public."
+    },
+    "ai-dystopia-quotes": {
+      "surface_class": "Standalone repo export",
+      "visibility": "Public",
+      "priority_now": "steady",
+      "energy": "low",
+      "value": "medium-high",
+      "time_horizon": "short",
+      "likely_current_work": "Ongoing corpus expansion, stronger discovery lanes, and continued approval-quality curation rather than platform work.",
+      "next_step": "Keep adding high-quality approved entries in batches and refresh the public export whenever the approved corpus meaningfully grows.",
+      "quality_note": "The public page already reads cleanly and feels complete enough to trust; the main question is breadth and selection quality.",
+      "drift_note": null,
+      "coordination_note": "A good example of a healthy incremental export loop.",
+      "extra_links": [
+        {
+          "label": "Open approved JSON",
+          "url": "data/ai-dystopia-quotes.approved.json"
+        },
+        {
+          "label": "Open project manifest",
+          "url": "data/projects/ai-dystopia-quotes.json"
+        }
+      ]
+    },
+    "phd-renovation": {
+      "surface_class": "Standalone repo export",
+      "visibility": "Public",
+      "priority_now": "steady",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "medium",
+      "likely_current_work": "Disciplined intake, continuity hardening, and bounded 1.x cleanup around the stable 1.0.0 baseline.",
+      "next_step": "Continue intake and warning cleanup without destabilizing the verified baseline, then refresh the handbook and dashboard only when the supported story changes materially.",
+      "quality_note": "One of the most mature documentation and validation surfaces in the suite.",
+      "drift_note": null,
+      "coordination_note": "Good candidate for steady, bounded progress rather than urgent intervention.",
+      "extra_links": [
+        {
+          "label": "Open handbook",
+          "url": "phd-renovation-handbook.html"
+        },
+        {
+          "label": "Open thesis PDF",
+          "url": "phd-renovation-thesis.pdf"
+        },
+        {
+          "label": "Open roadmap",
+          "url": "https://github.com/sgwoods/phd-renovation/blob/main/RENOVATION.md"
+        }
+      ]
+    },
+    "mmath-renovation": {
+      "surface_class": "Standalone repo export",
+      "visibility": "Public",
+      "priority_now": "protect",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "short-medium",
+      "likely_current_work": "Portability hardening, handoff clarity, and careful continuation from the 1.0.0-rc.1 restoration baseline.",
+      "next_step": "Keep the release-candidate surface trustworthy, then only widen into deeper benchmark or hosted-runner work once the portability story is comfortably stable.",
+      "quality_note": "Strong research-restoration presentation with clear public framing; still benefits from discipline more than expansion.",
+      "drift_note": null,
+      "coordination_note": "Treat the hosted runner as mechanism, not the project identity.",
+      "extra_links": [
+        {
+          "label": "Open remote experiments guide",
+          "url": "mmath-renovation-remote-experiments.html"
+        },
+        {
+          "label": "Open thesis PDF",
+          "url": "mmath-thesis.pdf"
+        },
+        {
+          "label": "Open roadmap",
+          "url": "https://github.com/sgwoods/mmath-renovation/blob/main/docs/project-goal-roadmap.md"
+        }
+      ]
+    },
+    "steven-woods-research": {
+      "surface_class": "Shared-public archive subproject",
+      "visibility": "Public",
+      "priority_now": "steady",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "medium",
+      "likely_current_work": "Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.",
+      "next_step": "Preserve the remaining URL-backed baseline pages and reconcile the review-ledger-only captures that should become formal source records.",
+      "quality_note": "One of the best organized archive areas, with clear role boundaries and strong continuity surfaces.",
+      "drift_note": null,
+      "coordination_note": "Use this as the canonical person-centric layer, not a dumping ground for company-depth material.",
+      "extra_links": [
+        {
+          "label": "Open one-page CV",
+          "url": "steven-woods-cv.pdf"
+        },
+        {
+          "label": "Open work plan",
+          "url": "steven-woods-research/WORK-PLAN.md"
+        },
+        {
+          "label": "Open review ledger",
+          "url": "steven-woods-research/research/media-sources-review.md"
+        }
+      ]
+    },
+    "google-canada-research": {
+      "surface_class": "Shared-public archive subproject",
+      "visibility": "Public",
+      "priority_now": "publish",
+      "energy": "low-medium",
+      "value": "high",
+      "time_horizon": "short",
+      "likely_current_work": "The local archive has already moved beyond scaffold state into a seeded, continuity-safe baseline with interview, media, and transition coverage.",
+      "next_step": "Refresh the public page and published manifest to match the newer local seeded state, then deepen one more interview and ecosystem batch.",
+      "quality_note": "The hidden repo state is materially better than the public story currently suggests.",
+      "drift_note": "Current public page still reads like a scaffold even though local docs and manifests on this branch are ahead.",
+      "coordination_note": "Classic publish-local-progress candidate.",
+      "extra_links": [
+        {
+          "label": "Open working repository",
+          "url": "google-canada-research/"
+        },
+        {
+          "label": "Open work plan",
+          "url": "google-canada-research/WORK-PLAN.md"
+        },
+        {
+          "label": "Open recovery audit",
+          "url": "google-canada-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md"
+        }
+      ]
+    },
+    "inovia-research": {
+      "surface_class": "Shared-public archive subproject",
+      "visibility": "Public",
+      "priority_now": "publish",
+      "energy": "low",
+      "value": "medium-high",
+      "time_horizon": "short",
+      "likely_current_work": "The local archive has a real seeded baseline now, but the public page still looks like a raw scaffold.",
+      "next_step": "Publish the newer local seeded state, then localize the current team profile and add one more public-appearance or ecosystem source batch.",
+      "quality_note": "The continuity work is in place; the main weakness is thin public depth and stale public framing.",
+      "drift_note": "Current public page is behind the local seeded-state docs and manifests on this branch.",
+      "coordination_note": "Low-energy, meaningful public-trust win once refreshed.",
+      "extra_links": [
+        {
+          "label": "Open working repository",
+          "url": "inovia-research/"
+        },
+        {
+          "label": "Open work plan",
+          "url": "inovia-research/WORK-PLAN.md"
+        },
+        {
+          "label": "Open recovery audit",
+          "url": "inovia-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md"
+        }
+      ]
+    },
+    "canberra-research": {
+      "surface_class": "Shared-public archive subproject",
+      "visibility": "Public",
+      "priority_now": "seed",
+      "energy": "medium",
+      "value": "medium",
+      "time_horizon": "short",
+      "likely_current_work": "Still mostly a scaffold, with the core value in establishing a first honest source baseline rather than broad research.",
+      "next_step": "Seed the first CSIRO, Canberra Knights, and local-context sources so the archive has a real evidence floor.",
+      "quality_note": "Clear structure exists, but there is not yet enough source depth to treat it as active archive work in the same way as the stronger projects.",
+      "drift_note": null,
+      "coordination_note": "Good candidate for a small, bounded seeding pass rather than a big research campaign.",
+      "extra_links": [
+        {
+          "label": "Open working repository",
+          "url": "canberra-research/"
+        },
+        {
+          "label": "Open seed leads",
+          "url": "canberra-research/research/seed-leads.md"
+        }
+      ]
+    },
+    "sei-pittsburgh-research": {
+      "surface_class": "Shared-public archive subproject",
+      "visibility": "Public",
+      "priority_now": "publish",
+      "energy": "low-medium",
+      "value": "high",
+      "time_horizon": "short",
+      "likely_current_work": "The local archive has already been seeded and deepened with papers, profiles, and Quack bridge sources, but the public summary still looks pre-seeding.",
+      "next_step": "Refresh the public page and published manifest to match the stronger local baseline, then add one more staff or transition-context source batch.",
+      "quality_note": "Strong continuity and evidence progress, but underrepresented on the public surface right now.",
+      "drift_note": "Current public page still presents SEI as a scaffold even though local docs and manifests on this branch are ahead.",
+      "coordination_note": "Another high-value publish-local-progress candidate.",
+      "extra_links": [
+        {
+          "label": "Open working repository",
+          "url": "sei-pittsburgh-research/"
+        },
+        {
+          "label": "Open work plan",
+          "url": "sei-pittsburgh-research/WORK-PLAN.md"
+        },
+        {
+          "label": "Open recovery audit",
+          "url": "sei-pittsburgh-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md"
+        }
+      ]
+    },
+    "quack-com": {
+      "surface_class": "Shared-public bridge archive",
+      "visibility": "Public",
+      "priority_now": "steady",
+      "energy": "medium-high",
+      "value": "high",
+      "time_horizon": "medium",
+      "likely_current_work": "Preservation and source-completeness work around AOL by Phone, investor outcomes, first-party capture gaps, and stronger preserved press.",
+      "next_step": "Keep working campaign-by-campaign, preserving fragile or first-party evidence before widening the editorial surface.",
+      "quality_note": "A strong archive workflow is in place, but evidence completeness still matters more than polish.",
+      "drift_note": null,
+      "coordination_note": "Treat the bridge record as compatibility, not as a second canonical home.",
+      "extra_links": [
+        {
+          "label": "Open working repository",
+          "url": "quack/"
+        },
+        {
+          "label": "Open work plan",
+          "url": "quack/WORK-PLAN.md"
+        },
+        {
+          "label": "Open run report",
+          "url": "quack/research/run-report.md"
+        }
+      ]
+    },
+    "kinitos-neoedge": {
+      "surface_class": "Shared-public bridge archive",
+      "visibility": "Public",
+      "priority_now": "steady",
+      "energy": "medium-high",
+      "value": "high",
+      "time_horizon": "medium",
+      "likely_current_work": "Preservation-completeness work on the remaining blocked press cluster and continued maintenance of the local evidence floor.",
+      "next_step": "Finish the remaining blocked Microsoft, GameSpot, USPTO, Fortune, and AdTech Daily preservation lane before widening into broader restoration again.",
+      "quality_note": "One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.",
+      "drift_note": null,
+      "coordination_note": "The right sequence is preserve fragile evidence first, then reopen broader research.",
+      "extra_links": [
+        {
+          "label": "Open working repository",
+          "url": "kinitos-neoedge/"
+        },
+        {
+          "label": "Open work plan",
+          "url": "kinitos-neoedge/WORK-PLAN.md"
+        },
+        {
+          "label": "Open recovery audit",
+          "url": "kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md"
+        }
+      ]
+    }
+  }
+}

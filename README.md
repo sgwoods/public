@@ -11,6 +11,7 @@ It is not just a standalone project site. Its job is to provide one clear public
 
 Start here in this repo:
 
+- [PROJECT-SUITE-OVERVIEW.md](PROJECT-SUITE-OVERVIEW.md)
 - [PUBLIC-OPERATING-MODEL.md](PUBLIC-OPERATING-MODEL.md)
 - [PROJECT-STATE-AND-RECOVERY.md](PROJECT-STATE-AND-RECOVERY.md)
 - [START-HERE-NEW-MAC.md](START-HERE-NEW-MAC.md)

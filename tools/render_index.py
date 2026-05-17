@@ -127,6 +127,32 @@ LEGACY_ARCHIVES = [
         "button_label": "Open archive",
     },
 ]
+REFERENCE_PAGES = [
+    {
+        "title": "Project suite overview",
+        "description": "Portfolio map, public/private surface guide, and reprioritization layer across the full project suite.",
+        "page_path": "project-suite-overview.html",
+        "button_label": "Open page",
+    },
+    {
+        "title": "Profile",
+        "description": "Compact executive profile with current links to LinkedIn, Inovia, and the open archive projects.",
+        "page_path": "steven-woods-profile.html",
+        "button_label": "Open page",
+    },
+    {
+        "title": "Academic ancestry",
+        "description": "Direct advisor lineage with links to the Mathematics Genealogy Project.",
+        "page_path": "academic.html",
+        "button_label": "Open page",
+    },
+    {
+        "title": "Patents and publications",
+        "description": "Selected books, patents, and academic publications.",
+        "page_path": "patents-publications.html",
+        "button_label": "Open page",
+    },
+]
 
 
 @dataclass
@@ -257,6 +283,16 @@ def dedupe_projects(projects: list[ProjectStatus]) -> list[ProjectStatus]:
 
 def render_button(href: str, label: str) -> str:
     return f'<a class="button" href="{html.escape(href)}">{html.escape(label)}</a>'
+
+
+def render_reference_card(page: dict[str, str]) -> str:
+    return f"""                <article class="card">
+                    <h3>{html.escape(page["title"])}</h3>
+                    <p>{html.escape(page["description"])}</p>
+                    <div class="links">
+                        {render_button(page["page_path"], page["button_label"])}
+                    </div>
+                </article>"""
 
 
 def git_datetime(value: datetime) -> str:
@@ -649,7 +685,8 @@ def render() -> str:
     if not projects:
         raise SystemExit("No active project manifests found.")
 
-    last_updated = max(project.repo_pushed_at for project in projects)
+    latest_project_repo_update = max(project.repo_pushed_at for project in projects)
+    rendered_at = datetime.now(LOCAL_TZ)
     project_cards = "\n".join(render_project_card(project) for project in projects)
     project_manifest_config = {
         "repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main",
@@ -679,7 +716,8 @@ def render() -> str:
             <p>
                 Shared public entry point for long-lived research restorations, active software projects,
                 and supporting reference material. Active project cards below are rendered from the
-                project status manifests in this repository.
+                project status manifests in this repository. Project repo activity and page-render
+                freshness are tracked separately below.
             </p>
             <div class="meta">
                 <div class="metaCard">
@@ -688,9 +726,14 @@ def render() -> str:
                     <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
                 </div>
                 <div class="metaCard">
-                    <span class="metaLabel">Repository Work Last Updated</span>
-                    <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(last_updated))}</span>
-                    <div class="metaNote">Computed from the latest `repo_pushed_at` value across active project manifests.</div>
+                    <span class="metaLabel">Latest Project Repo Update</span>
+                    <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(latest_project_repo_update))}</span>
+                    <div class="metaNote">Most recent `repo_pushed_at` represented by the active project manifests, not the homepage render date.</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">Homepage Rendered</span>
+                    <span class="metaValue">{html.escape(format_local_datetime(rendered_at))}</span>
+                    <div class="metaNote">When this index page was rendered from the manifests in this repository.</div>
                 </div>
             </div>
         </section>
@@ -698,27 +741,7 @@ def render() -> str:
         <section class="panel">
             <h2>Reference Pages</h2>
             <div class="grid">
-                <article class="card">
-                    <h3>Profile</h3>
-                    <p>Compact executive profile with current links to LinkedIn, Inovia, and the open archive projects.</p>
-                    <div class="links">
-                        {render_button("steven-woods-profile.html", "Open page")}
-                    </div>
-                </article>
-                <article class="card">
-                    <h3>Academic ancestry</h3>
-                    <p>Direct advisor lineage with links to the Mathematics Genealogy Project.</p>
-                    <div class="links">
-                        {render_button("academic.html", "Open page")}
-                    </div>
-                </article>
-                <article class="card">
-                    <h3>Patents and publications</h3>
-                    <p>Selected books, patents, and academic publications.</p>
-                    <div class="links">
-                        {render_button("patents-publications.html", "Open page")}
-                    </div>
-                </article>
+{chr(10).join(render_reference_card(page) for page in REFERENCE_PAGES)}
             </div>
         </section>
 

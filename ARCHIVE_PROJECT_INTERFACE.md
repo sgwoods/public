@@ -2,6 +2,10 @@
 
 Purpose: define how independent archive projects coordinate with the top-level `public` site.
 
+For the decision framework on when an archive should remain monorepo-owned
+versus graduate into a stronger standalone effort, see
+`ARCHIVE_SUBPROJECT_GRADUATION_GUIDE.md`.
+
 This document applies to projects such as:
 
 - `steven-woods-research`
