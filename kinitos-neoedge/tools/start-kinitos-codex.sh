@@ -131,7 +131,7 @@ printf '5. %s\n' "$PROJECT_ROOT/project-manifest.json"
 printf '6. %s\n' "$PROJECT_ROOT/source-manifest.json"
 
 printf '\nNext intended phase:\n'
-printf -- '- Preservation completeness and additional local source capture\n'
+printf -- '- Deferred-source follow-up and public corroboration campaigns\n'
 printf -- '- Keep coordination manifests and public surfaces in sync\n'
 printf -- '- Broader research or restoration only after deliberate campaign selection\n'
 

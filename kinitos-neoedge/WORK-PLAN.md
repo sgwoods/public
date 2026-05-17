@@ -1,6 +1,6 @@
 # Kinitos / NeoEdge Living Work Plan
 
-Last updated: `2026-05-10`
+Last updated: `2026-05-17`
 
 This is the living execution plan for the Kinitos / NeoEdge archive project. Keep it current as the archive advances.
 
@@ -30,7 +30,7 @@ Preserve the Kinitos -> NeoEdge -> Blue Noodle -> Double Fusion company line as 
 - the working repository page exists
 - the source manifest is populated and usable
 - the source baseline remains `32` total / `24` approved / `8` deferred / `0` rejected
-- twenty-two approved sources now have checked-in local HTML/PDF preservation copies
+- all twenty-four approved sources now have checked-in local HTML/PDF preservation copies
 - the continuity and restart layer now lives in `~/Projects-All/public`
 - a dated recovery audit exists at `PROJECT-STATE-AND-RECOVERY-2026-05-03.md`
 - workspace status is tracked in `WORKSPACE-STATUS.md`
@@ -79,7 +79,7 @@ Operational rule after consolidation:
 
 ### Phase 3: preservation completeness
 
-Status: `in progress`
+Status: `completed`
 
 Goals:
 
@@ -97,20 +97,20 @@ Tasks:
 Current checkpoint:
 
 - the Yahoo Games press-release source is now locally preserved through the accessible NewMediaWire-hosted version tracked in `archive_web`
-- new local preservation copies are now checked in for the 2003 University of Saskatchewan lecture page, the 2007 Gamezebo MostFun article, the 2011 Game Developer acquisition article, both Google Patents records, and the 2023 Waterloo keynote page
+- local preservation copies are now checked in for the 2003 University of Saskatchewan lecture page, the 2007 Gamezebo MostFun article, the 2011 Game Developer acquisition article, both Google Patents records, the 2023 Waterloo keynote page, the Kinitos Microsoft and InternetNews pages, the NeoEdge GameSpot board article, the Blue Noodle trademark gazette extract, both Ad Tech Daily articles, and the final Fortune endgame pair
 - the GamesBeat / VentureBeat funding-and-merger cluster now has local reader-rendered preservation copies checked in
-- the most concentrated remaining blockers are now the Fortune pages that still lack local captures
+- all approved sources now have checked-in local copies, so the next bounded work can move from blocked-press preservation to deferred-source and corroboration follow-up
 
 Priority queue:
 
-- Cloudflare-blocked press items
-- Fortune follow-up
-- acquisition and investor trail sources
-- first-party and official pages that still lack local copies
+- deferred-source follow-up
+- acquisition and investor trail corroboration
+- first-party and official pages that deepen the record beyond the approved baseline
+- private-evidence public corroboration tasks
 
 ### Phase 4: resumable research and restoration
 
-Status: `later`
+Status: `next`
 
 Goals:
 
@@ -142,21 +142,22 @@ Next safe derivative tasks:
 ## Practical next-step path from here
 
 1. Continue Kinitos local work from `/Users/steven/Projects-All/public` only.
-2. Continue the preservation pass with the remaining blocked press items, especially the Fortune pages.
-3. Capture additional local copies for high-value first-party, official, legal, or archived material when the evidence is strong.
-4. Keep the manifest triad, public page, and status export aligned as the archive changes.
-5. Treat `public-quack-recovery` as reference-only until you are fully comfortable retiring it.
-6. After the preservation pass, resume broader research or restoration campaigns in named batches.
+2. Start a named deferred-source and corroboration campaign rather than another blocked-press preservation round.
+3. Use the sanitized MSN-bundle derivative notes to seek public corroboration for the strongest Kinitos, NeoEdge, and Blue Noodle claims.
+4. Capture additional local copies for high-value first-party, official, legal, or archived material when the evidence is strong.
+5. Keep the manifest triad, public page, and status export aligned as the archive changes.
+6. Treat `public-quack-recovery` as reference-only until you are fully comfortable retiring it.
+7. After the deferred and corroboration pass, resume broader research or restoration campaigns in named batches.
 
 ## Why this ordering matters
 
-The workspace continuity problem is now largely solved. The bigger remaining risk is that important approved sources still depend on external web availability.
+The workspace continuity problem is now largely solved. The biggest remaining risk is no longer the approved-source floor. It is the depth and corroboration gap around deferred items, endgame investor trail detail, and any future restoration leads.
 
 The right sequence is:
 
 - first consolidate the canonical workspace
 - then preserve fragile evidence in batches
-- then resume broader research or restoration
+- then use the stable baseline to drive narrower corroboration and restoration work
 
 ## Update rule
 

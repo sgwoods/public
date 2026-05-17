@@ -418,7 +418,7 @@
       },
       "urls": {
         "canonical": "https://fortune.com/2011/07/18/exclusive-mmv-financial-in-trouble/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/fortune-mmv-financial-in-trouble-2011-07-18-fortune-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -434,7 +434,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "Fortune reports MMV Financial had closed U.S. offices and stopped writing new business shortly before the Blue Noodle asset crisis."
+      "notes": "Fortune reports MMV Financial had closed U.S. offices and stopped writing new business shortly before the Blue Noodle asset crisis. A 2026-05-17 reader-style preservation copy of the canonical Fortune page was checked in from the accessible Fortune-rendered article text after direct shell fetch of the live URL returned only a CloudFront block page."
     },
     {
       "source_id": "src-blue-noodle-2011-fortune-investor-immorality",
@@ -449,7 +449,7 @@
       },
       "urls": {
         "canonical": "https://fortune.com/2011/08/17/investor-immorality-the-strange-case-of-blue-noodle/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/fortune-investor-immorality-blue-noodle-2011-08-17-fortune-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -465,7 +465,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "Fortune says Blue Noodle had also been known as NeoEdge Networks and GWN, defaulted on debt, had assets seized by MMV, and had a deal in principle to sell assets to Double Fusion."
+      "notes": "Fortune says Blue Noodle had also been known as NeoEdge Networks and GWN, defaulted on debt, had assets seized by MMV, and had a deal in principle to sell assets to Double Fusion. A 2026-05-17 reader-style preservation copy of the canonical Fortune page was checked in from the accessible Fortune-rendered article text after direct shell fetch of the live URL returned only a CloudFront block page."
     },
     {
       "source_id": "src-double-fusion-2011-adtechdaily-major-expansion-neoedge-assets",

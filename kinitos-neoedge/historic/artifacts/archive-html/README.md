@@ -25,5 +25,7 @@ Current preserved captures:
 - `double-fusion-major-expansion-2011-12-29-adtechdaily-reader.html`
 - `microsoft-offers-sneak-peek-2004-03-11-internetnews.html`
 - `bushnell-joins-neoedge-board-2007-05-22-gamespot-reader.html`
+- `fortune-mmv-financial-in-trouble-2011-07-18-fortune-reader.html`
+- `fortune-investor-immorality-blue-noodle-2011-08-17-fortune-reader.html`
 
 These files back the corresponding approved source records in `source-manifest.json`.
