@@ -387,7 +387,7 @@
       },
       "urls": {
         "canonical": "https://adtechdaily.com/2011/03/10/blue-noodle-premiers-new-video-ad-bar-clickstrip-at-game-developers-conference/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/blue-noodle-clickstrip-2011-03-10-adtechdaily-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -403,7 +403,7 @@
         "gdc"
       ],
       "status": "approved",
-      "notes": "Ad Tech Daily says Blue Noodle was formerly NeoEdge and positions Clickstrip plus Yahoo Games, iWin, and RedAtoms partnerships as part of the 2011 strategy. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare block on direct fetch, so this source remains approved but URL-backed."
+      "notes": "Ad Tech Daily says Blue Noodle was formerly NeoEdge and positions Clickstrip plus Yahoo Games, iWin, and RedAtoms partnerships as part of the 2011 strategy. A 2026-05-16 reader-rendered preservation copy of the canonical Ad Tech Daily page was checked in from the canonical workspace via r.jina.ai after the direct live URL remained Cloudflare-blocked."
     },
     {
       "source_id": "src-blue-noodle-2011-fortune-mmv-financial-trouble",
@@ -480,7 +480,7 @@
       },
       "urls": {
         "canonical": "https://adtechdaily.com/2011/12/29/major-expansion-at-in-gaming-ad-leader-double-fusion/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/double-fusion-major-expansion-2011-12-29-adtechdaily-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -496,7 +496,7 @@
         "adtech"
       ],
       "status": "approved",
-      "notes": "Ad Tech Daily explicitly frames the deal as an acquisition of NeoEdge's assets and says those assets added 100M+ monthly impressions plus Canadian distribution."
+      "notes": "Ad Tech Daily explicitly frames the deal as an acquisition of NeoEdge's assets and says those assets added 100M+ monthly impressions plus Canadian distribution. A 2026-05-16 reader-rendered preservation copy of the canonical Ad Tech Daily page was checked in from the canonical workspace via r.jina.ai after the direct live URL remained Cloudflare-blocked."
     },
     {
       "source_id": "src-mostfun-2007-wayback-homepage-game-player",

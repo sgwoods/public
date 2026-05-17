@@ -30,7 +30,7 @@ Preserve the Kinitos -> NeoEdge -> Blue Noodle -> Double Fusion company line as 
 - the working repository page exists
 - the source manifest is populated and usable
 - the source baseline remains `32` total / `24` approved / `8` deferred / `0` rejected
-- seventeen approved sources now have checked-in local HTML preservation copies
+- nineteen approved sources now have checked-in local HTML preservation copies
 - the continuity and restart layer now lives in `~/Projects-All/public`
 - a dated recovery audit exists at `PROJECT-STATE-AND-RECOVERY-2026-05-03.md`
 - workspace status is tracked in `WORKSPACE-STATUS.md`
@@ -99,12 +99,12 @@ Current checkpoint:
 - the Yahoo Games press-release source is now locally preserved through the accessible NewMediaWire-hosted version tracked in `archive_web`
 - new local preservation copies are now checked in for the 2003 University of Saskatchewan lecture page, the 2007 Gamezebo MostFun article, the 2011 Game Developer acquisition article, both Google Patents records, and the 2023 Waterloo keynote page
 - the GamesBeat / VentureBeat funding-and-merger cluster now has local reader-rendered preservation copies checked in
-- the most concentrated remaining blockers are now the InternetNews, GameSpot, USPTO Official Gazette, Fortune, and AdTech Daily pages that still lack local captures
+- the most concentrated remaining blockers are now the InternetNews, GameSpot, USPTO Official Gazette, and Fortune pages that still lack local captures
 
 Priority queue:
 
 - Cloudflare-blocked press items
-- InternetNews, GameSpot, USPTO, Fortune, and AdTech Daily follow-up
+- InternetNews, GameSpot, USPTO, and Fortune follow-up
 - acquisition and investor trail sources
 - first-party and official pages that still lack local copies
 
@@ -142,7 +142,7 @@ Next safe derivative tasks:
 ## Practical next-step path from here
 
 1. Continue Kinitos local work from `/Users/steven/Projects-All/public` only.
-2. Continue the preservation pass with the remaining blocked press items, especially the InternetNews, GameSpot, USPTO Official Gazette, Fortune, and AdTech Daily pages.
+2. Continue the preservation pass with the remaining blocked press items, especially the InternetNews, GameSpot, USPTO Official Gazette, and Fortune pages.
 3. Capture additional local copies for high-value first-party, official, legal, or archived material when the evidence is strong.
 4. Keep the manifest triad, public page, and status export aligned as the archive changes.
 5. Treat `public-quack-recovery` as reference-only until you are fully comfortable retiring it.
