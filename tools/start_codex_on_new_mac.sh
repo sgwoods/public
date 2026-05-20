@@ -185,10 +185,15 @@ validate_checkout() {
       divergence_range="origin/main...HEAD"
       required_files=(
         "ARCHIVE_PROJECT_INTERFACE.md"
+        "PROJECT-SUITE-OVERVIEW.md"
         "PUBLIC_STATUS_INTERFACE.md"
         "README.md"
+        "data/shared/project-suite-overview.json"
         "index.html"
+        "project-suite-overview.html"
+        "tools/refresh_public_coordination.py"
         "tools/render_index.py"
+        "tools/render_project_suite_overview.py"
         "tools/render_publications.py"
         "tools/render_steven_sources.py"
         "tools/render_steven_cv.py"
@@ -272,7 +277,9 @@ validate_checkout() {
   print_header "Compiling Python entry points"
   python3 -m py_compile \
     "$target/quack/tools/quack_research_pipeline.py" \
+    "$target/tools/refresh_public_coordination.py" \
     "$target/tools/render_index.py" \
+    "$target/tools/render_project_suite_overview.py" \
     "$target/tools/render_publications.py" \
     "$target/tools/render_steven_sources.py" \
     "$target/tools/render_steven_cv.py"

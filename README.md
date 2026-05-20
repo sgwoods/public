@@ -19,6 +19,15 @@ Start here in this repo:
 - [ARCHIVE_PROJECT_INTERFACE.md](ARCHIVE_PROJECT_INTERFACE.md)
 - [PUBLIC_STATUS_INTERFACE.md](PUBLIC_STATUS_INTERFACE.md)
 
+Common coordination refresh:
+
+- `python3 tools/refresh_public_coordination.py`
+  validates the suite notes and rerenders `PROJECT-SUITE-OVERVIEW.md`,
+  `project-suite-overview.html`, and `index.html`
+- `python3 tools/refresh_public_coordination.py --check`
+  verifies those generated coordination surfaces are still in sync while
+  ignoring only the intentionally volatile homepage render timestamps
+
 Current important rule:
 
 - the preferred active shared-public clone is `~/Projects-All/public` on `main`
