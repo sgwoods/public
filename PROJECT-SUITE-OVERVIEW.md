@@ -1,13 +1,11 @@
 # Project Suite Overview
 
-Updated: `2026-05-17`
+Updated: `2026-05-18`
 
 Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
-
-Current branch snapshot: `codex/public-coordination-cleanup`
 
 ## What This Page Is For
 
@@ -19,8 +17,8 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 
 - Update the owning project manifest or archive manifest first when factual project status changes.
 - Edit this file when priority_now, likely_current_work, next_step, quality_note, or drift_note changes materially.
-- Rerun python3 tools/render_project_suite_overview.py after either kind of change.
-- Rerun python3 tools/render_index.py when the top-level public index should pick up reference-page changes.
+- Run `python3 tools/refresh_public_coordination.py` to validate the suite notes and rerender the repo overview plus homepage from the current manifests.
+- Use `python3 tools/refresh_public_coordination.py --check` when you want a no-write drift check for the generated coordination surfaces.
 
 ## Time-Energy-Value Rules
 
@@ -32,8 +30,8 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 ## Current Priority Lanes
 
 - **Protect public surfaces** (2): Keep already-public software, docs, and dashboards trustworthy before expanding scope.
-- **Publish local progress** (3): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
-- **Steady advance** (5): Important ongoing work that benefits from regular small batches rather than a one-off push.
+- **Publish local progress** (0): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
+- **Steady advance** (8): Important ongoing work that benefits from regular small batches rather than a one-off push.
 - **Seed and clarify** (1): Early-stage areas where a small baseline is more valuable than broad exploration.
 - **Private tracking** (1): Keep only a high-level public summary while the underlying work remains private.
 
@@ -60,10 +58,10 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake + continuity |
 | [Masters of Mathematics renovation project](mmath-renovation.html) | Standalone repo export | Public | Protect public surfaces | 1.0.0-rc.1; Portability hardening and disciplined post-RC continuation |
 | [Steven Woods Public Record Project](https://sgwoods.github.io/public/steven-woods-research.html) | Shared-public archive subproject | Public | Steady advance | Active research archive; Continuity layer, baseline identity, timeline, current profile sources, and one-page CV |
-| [Steven at Google Canada Archive](https://sgwoods.github.io/public/google-canada-research.html) | Shared-public archive subproject | Public | Publish local progress | Seeded era archive; Expanded baseline with original-provenance interview coverage and first-party transition context |
-| [Steven at Inovia Archive](https://sgwoods.github.io/public/inovia-research.html) | Shared-public archive subproject | Public | Publish local progress | Seeded era archive; First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture |
+| [Steven at Google Canada Archive](https://sgwoods.github.io/public/google-canada-research.html) | Shared-public archive subproject | Public | Steady advance | Seeded era archive; Expanded baseline with original-provenance interview coverage and first-party transition context |
+| [Steven at Inovia Archive](https://sgwoods.github.io/public/inovia-research.html) | Shared-public archive subproject | Public | Steady advance | Seeded era archive; First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture |
 | [Canberra / CSIRO / Knights Archive](https://sgwoods.github.io/public/canberra-research.html) | Shared-public archive subproject | Public | Seed and clarify | Scaffolded research project; CSIRO references, Knights records, and Australian local context |
-| [SEI Pittsburgh Archive](https://sgwoods.github.io/public/sei-pittsburgh-research.html) | Shared-public archive subproject | Public | Publish local progress | Seeded era archive; Expanded baseline with two additional SEI papers and a localized AOL bridge |
+| [SEI Pittsburgh Archive](https://sgwoods.github.io/public/sei-pittsburgh-research.html) | Shared-public archive subproject | Public | Steady advance | Seeded era archive; Expanded baseline with two additional SEI papers and a localized AOL bridge |
 | [Quack.com Archive Project](https://sgwoods.github.io/public/quack-com.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press |
 | [Kinitos / NeoEdge Networks Archive](https://sgwoods.github.io/public/kinitos-neoedge.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Preservation completeness underway; sixteen approved sources now have local copies, including the GamesBeat funding-and-merger cluster |
 
@@ -75,12 +73,12 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: 1.4.0. Current focus: Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams.. Last repo update: May 14, 2026.
+- Current manifest state: Current release: 1.4.0. Current focus: Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams.. Last repo update: May 20, 2026.
 - Likely current work: Post-release follow-through on the Aurora and Platinum public family, including lane trust, Galaxy Guardians readiness, and cleaner platform-versus-application seams.
-- Next step: Do a quick cross-branch status refresh before any shared-public publish so the Aurora manifest and the active release lane are not out of sync.
+- Next step: Do a quick Aurora release-lane status refresh before any shared-public publish so the manifest and the active release lane stay aligned.
 - Quality: This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.
 - Coordination note: Best handled as protect-and-verify work rather than broad redesign.
-- Drift note: Live public main is ahead of this branch on Aurora. Treat Aurora as a cross-branch verification check whenever this repo branch is used for shared-public publishing.
+- Drift note: Aurora publishes from a separate repo on a faster cadence than this shared hub, so verify the exported manifest before broad public-repo refreshes.
 - Public links: [Project page](aurora-galactica.html), [Dashboard](https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html), [Live experience](https://sgwoods.github.io/Aurora-Galactica/), [Repository](https://github.com/sgwoods/Codex-Test1), [Open beta build](https://sgwoods.github.io/Aurora-Galactica/beta/), [Open project guide](https://sgwoods.github.io/Aurora-Galactica/project-guide.html), [Open Platinum guide](https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html)
 
 ### Plan private rental portal
@@ -154,30 +152,28 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 
 - Surface class: Shared-public archive subproject
 - Visibility: Public
-- Priority now: Publish local progress
+- Priority now: Steady advance
 - Time-energy-value: energy low-medium; value high; horizon short
 - Current manifest state: Current phase: Seeded era archive. Current focus: Expanded baseline with original-provenance interview coverage and first-party transition context. Last repo update: May 11, 2026.
 - Evidence status: Evidence baseline: 9 approved / 0 deferred / 0 rejected (9 total).
-- Likely current work: The local archive has already moved beyond scaffold state into a seeded, continuity-safe baseline with interview, media, and transition coverage.
-- Next step: Refresh the public page and published manifest to match the newer local seeded state, then deepen one more interview and ecosystem batch.
-- Quality: The hidden repo state is materially better than the public story currently suggests.
-- Coordination note: Classic publish-local-progress candidate.
-- Drift note: Current public page still reads like a scaffold even though local docs and manifests on this branch are ahead.
+- Likely current work: Now that the seeded baseline is public, deepen interview, media, and transition coverage in small, high-signal batches.
+- Next step: Add one more interview or ecosystem source batch, then tighten the public summary only if the center of gravity changes materially.
+- Quality: Now has a seeded, continuity-safe public baseline with room for deeper source density.
+- Coordination note: Good candidate for steady, source-batch progress rather than another structural pass.
 - Public links: [Project page](https://sgwoods.github.io/public/google-canada-research.html), [Open working repository](google-canada-research/), [Open work plan](google-canada-research/WORK-PLAN.md), [Open recovery audit](google-canada-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md)
 
 ### Steven at Inovia Archive
 
 - Surface class: Shared-public archive subproject
 - Visibility: Public
-- Priority now: Publish local progress
+- Priority now: Steady advance
 - Time-energy-value: energy low; value medium-high; horizon short
 - Current manifest state: Current phase: Seeded era archive. Current focus: First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture. Last repo update: May 11, 2026.
 - Evidence status: Evidence baseline: 3 approved / 0 deferred / 0 rejected (3 total).
-- Likely current work: The local archive has a real seeded baseline now, but the public page still looks like a raw scaffold.
-- Next step: Publish the newer local seeded state, then localize the current team profile and add one more public-appearance or ecosystem source batch.
-- Quality: The continuity work is in place; the main weakness is thin public depth and stale public framing.
-- Coordination note: Low-energy, meaningful public-trust win once refreshed.
-- Drift note: Current public page is behind the local seeded-state docs and manifests on this branch.
+- Likely current work: Seeded-baseline maintenance plus current-role, team-profile, and ecosystem appearance capture.
+- Next step: Localize the current team profile and add one more public-appearance or ecosystem source batch.
+- Quality: The continuity structure is in place; the main gap now is source depth rather than project setup.
+- Coordination note: Best advanced through small, explicit source batches.
 - Public links: [Project page](https://sgwoods.github.io/public/inovia-research.html), [Open working repository](inovia-research/), [Open work plan](inovia-research/WORK-PLAN.md), [Open recovery audit](inovia-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md)
 
 ### Canberra / CSIRO / Knights Archive
@@ -198,15 +194,14 @@ Current branch snapshot: `codex/public-coordination-cleanup`
 
 - Surface class: Shared-public archive subproject
 - Visibility: Public
-- Priority now: Publish local progress
+- Priority now: Steady advance
 - Time-energy-value: energy low-medium; value high; horizon short
 - Current manifest state: Current phase: Seeded era archive. Current focus: Expanded baseline with two additional SEI papers and a localized AOL bridge. Last repo update: May 11, 2026.
 - Evidence status: Evidence baseline: 12 approved / 0 deferred / 0 rejected (12 total).
-- Likely current work: The local archive has already been seeded and deepened with papers, profiles, and Quack bridge sources, but the public summary still looks pre-seeding.
-- Next step: Refresh the public page and published manifest to match the stronger local baseline, then add one more staff or transition-context source batch.
-- Quality: Strong continuity and evidence progress, but underrepresented on the public surface right now.
-- Coordination note: Another high-value publish-local-progress candidate.
-- Drift note: Current public page still presents SEI as a scaffold even though local docs and manifests on this branch are ahead.
+- Likely current work: Seeded-baseline maintenance plus additional staff, paper, and startup-transition context around the SEI-to-Quack bridge.
+- Next step: Add one more staff or transition-context batch, then refresh the summary only when the bridge story materially improves.
+- Quality: Strong continuity and evidence progress, with a published baseline that now supports steady deepening.
+- Coordination note: Good steady research lane now that the scaffold phase is over.
 - Public links: [Project page](https://sgwoods.github.io/public/sei-pittsburgh-research.html), [Open working repository](sei-pittsburgh-research/), [Open work plan](sei-pittsburgh-research/WORK-PLAN.md), [Open recovery audit](sei-pittsburgh-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md)
 
 ### Quack.com Archive Project

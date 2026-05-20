@@ -187,8 +187,10 @@ The checked-in script at `tools/start_codex_on_new_mac.sh` verifies:
 - the checkout is clean
 - key files for the selected mode exist
 - Python entry points compile:
+  - `tools/refresh_public_coordination.py`
   - `quack/tools/quack_research_pipeline.py`
   - `tools/render_index.py`
+  - `tools/render_project_suite_overview.py`
   - `tools/render_publications.py`
   - `tools/render_steven_sources.py`
   - `tools/render_steven_cv.py`
@@ -206,6 +208,14 @@ The current `setup` + `validate` path is intended to be the one-command bootstra
 The `setup-recovery` + `validate-recovery` path remains the continuity-lane bootstrap when that older reconciliation workspace is still needed.
 
 The full `setup` path was rerun successfully during the migration pass, confirming that dependency install/repair, checkout refresh, and validation can complete in one flow for the preferred active clone.
+
+For routine shared-public coordination refreshes after manifest or portfolio-note
+changes, the default one-command path is:
+
+- `python3 tools/refresh_public_coordination.py`
+
+Use `python3 tools/refresh_public_coordination.py --check` when you want a
+no-write drift check for the generated coordination surfaces.
 
 ## What is still not fully settled
 

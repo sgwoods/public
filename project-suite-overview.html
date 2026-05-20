@@ -98,7 +98,7 @@
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Updated</span>
-                    <span class="metaValue">2026-05-17</span>
+                    <span class="metaValue">2026-05-18</span>
                     <div class="metaNote">Update this when the portfolio judgment layer changes materially.</div>
                 </div>
             </div>
@@ -114,13 +114,13 @@
             <div class="metaList">
                 <div class="notePanel">Keep one durable portfolio-level mental model in the repo instead of in chat only.</div><div class="notePanel">Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.</div><div class="notePanel">Make reprioritization explicit by editing one small source file and rerendering the public and repo-readable overview surfaces.</div>
             </div>
-            <div class="notePanel"><strong>Current branch snapshot:</strong> <code>codex/public-coordination-cleanup</code>. This page reflects the repo coordination state in this checkout, so it can run ahead of or behind the live public site until changes are published.</div>
+            
         </section>
 
         <section class="panel">
             <h2>Update Workflow</h2>
             <ul class="guideList">
-                <li>Update the owning project manifest or archive manifest first when factual project status changes.</li><li>Edit this file when priority_now, likely_current_work, next_step, quality_note, or drift_note changes materially.</li><li>Rerun python3 tools/render_project_suite_overview.py after either kind of change.</li><li>Rerun python3 tools/render_index.py when the top-level public index should pick up reference-page changes.</li>
+                <li>Update the owning project manifest or archive manifest first when factual project status changes.</li><li>Edit this file when priority_now, likely_current_work, next_step, quality_note, or drift_note changes materially.</li><li>Run `python3 tools/refresh_public_coordination.py` to validate the suite notes and rerender the repo overview plus homepage from the current manifests.</li><li>Use `python3 tools/refresh_public_coordination.py --check` when you want a no-write drift check for the generated coordination surfaces.</li>
             </ul>
         </section>
 
@@ -144,14 +144,14 @@
                 <article class="card">
                     <h3>Publish local progress</h3>
                     <div class="detailList">
-                        <div><strong>Projects</strong> 3</div>
+                        <div><strong>Projects</strong> 0</div>
                     </div>
                     <p>High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.</p>
                 </article>
                 <article class="card">
                     <h3>Steady advance</h3>
                     <div class="detailList">
-                        <div><strong>Projects</strong> 5</div>
+                        <div><strong>Projects</strong> 8</div>
                     </div>
                     <p>Important ongoing work that benefits from regular small batches rather than a one-off push.</p>
                 </article>
@@ -226,7 +226,7 @@
                 <div class="suiteEntryTop">
                     <div>
                         <h3 class="entryTitle">Aurora Galactica</h3>
-                        <span class="entryMeta"><strong>Current manifest state</strong> Current release: 1.4.0. Current focus: Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams.. Last repo update: May 14, 2026.</span>
+                        <span class="entryMeta"><strong>Current manifest state</strong> Current release: 1.4.0. Current focus: Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams.. Last repo update: May 20, 2026.</span>
                     </div>
                     <a class="button" href="aurora-galactica.html">Open project page</a>
                 </div>
@@ -236,12 +236,12 @@
                 <p class="suiteSummary">Public project page synced from its published repository or archive status manifest.</p>
                 <ul class="suiteFacts">
                     <li><strong>Likely current work:</strong> Post-release follow-through on the Aurora and Platinum public family, including lane trust, Galaxy Guardians readiness, and cleaner platform-versus-application seams.</li>
-                    <li><strong>Next step:</strong> Do a quick cross-branch status refresh before any shared-public publish so the Aurora manifest and the active release lane are not out of sync.</li>
+                    <li><strong>Next step:</strong> Do a quick Aurora release-lane status refresh before any shared-public publish so the manifest and the active release lane stay aligned.</li>
                     <li><strong>Quality:</strong> This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.</li>
                     <li><strong>Coordination note:</strong> Best handled as protect-and-verify work rather than broad redesign.</li>
                     
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Live public main is ahead of this branch on Aurora. Treat Aurora as a cross-branch verification check whenever this repo branch is used for shared-public publishing.</div>
+                <div class="notePanel"><strong>Drift note</strong> Aurora publishes from a separate repo on a faster cadence than this shared hub, so verify the exported manifest before broad public-repo refreshes.</div>
                 <div class="links">
                     <a class="button button--ghost" href="aurora-galactica.html">Project page</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html">Dashboard</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/">Live experience</a> <a class="button button--ghost" href="https://github.com/sgwoods/Codex-Test1">Repository</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/beta/">Open beta build</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html">Open project guide</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html">Open Platinum guide</a>
                 </div>
@@ -375,17 +375,17 @@
                     <a class="button" href="https://sgwoods.github.io/public/google-canada-research.html">Open project page</a>
                 </div>
                 <div class="badgeRow">
-                    <span class="badge">Shared-public archive subproject</span><span class="badge">Public</span><span class="badge">Publish local progress</span><span class="badge">Energy low-medium</span><span class="badge">Value high</span><span class="badge">Horizon short</span>
+                    <span class="badge">Shared-public archive subproject</span><span class="badge">Public</span><span class="badge">Steady advance</span><span class="badge">Energy low-medium</span><span class="badge">Value high</span><span class="badge">Horizon short</span>
                 </div>
                 <p class="suiteSummary">Research archive for Steven Woods&#x27; Google Canada period, covering leadership, Waterloo engineering growth, talks, interviews, and Canadian media coverage.</p>
                 <ul class="suiteFacts">
-                    <li><strong>Likely current work:</strong> The local archive has already moved beyond scaffold state into a seeded, continuity-safe baseline with interview, media, and transition coverage.</li>
-                    <li><strong>Next step:</strong> Refresh the public page and published manifest to match the newer local seeded state, then deepen one more interview and ecosystem batch.</li>
-                    <li><strong>Quality:</strong> The hidden repo state is materially better than the public story currently suggests.</li>
-                    <li><strong>Coordination note:</strong> Classic publish-local-progress candidate.</li>
+                    <li><strong>Likely current work:</strong> Now that the seeded baseline is public, deepen interview, media, and transition coverage in small, high-signal batches.</li>
+                    <li><strong>Next step:</strong> Add one more interview or ecosystem source batch, then tighten the public summary only if the center of gravity changes materially.</li>
+                    <li><strong>Quality:</strong> Now has a seeded, continuity-safe public baseline with room for deeper source density.</li>
+                    <li><strong>Coordination note:</strong> Good candidate for steady, source-batch progress rather than another structural pass.</li>
                     <li><strong>Evidence status:</strong> Evidence baseline: 9 approved / 0 deferred / 0 rejected (9 total).</li>
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Current public page still reads like a scaffold even though local docs and manifests on this branch are ahead.</div>
+                
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/google-canada-research.html">Project page</a> <a class="button button--ghost" href="google-canada-research/">Open working repository</a> <a class="button button--ghost" href="google-canada-research/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="google-canada-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Open recovery audit</a>
                 </div>
@@ -399,17 +399,17 @@
                     <a class="button" href="https://sgwoods.github.io/public/inovia-research.html">Open project page</a>
                 </div>
                 <div class="badgeRow">
-                    <span class="badge">Shared-public archive subproject</span><span class="badge">Public</span><span class="badge">Publish local progress</span><span class="badge">Energy low</span><span class="badge">Value medium-high</span><span class="badge">Horizon short</span>
+                    <span class="badge">Shared-public archive subproject</span><span class="badge">Public</span><span class="badge">Steady advance</span><span class="badge">Energy low</span><span class="badge">Value medium-high</span><span class="badge">Horizon short</span>
                 </div>
                 <p class="suiteSummary">Research archive for Steven Woods&#x27; Inovia period, covering leadership, talks, public appearances, and ecosystem-facing material.</p>
                 <ul class="suiteFacts">
-                    <li><strong>Likely current work:</strong> The local archive has a real seeded baseline now, but the public page still looks like a raw scaffold.</li>
-                    <li><strong>Next step:</strong> Publish the newer local seeded state, then localize the current team profile and add one more public-appearance or ecosystem source batch.</li>
-                    <li><strong>Quality:</strong> The continuity work is in place; the main weakness is thin public depth and stale public framing.</li>
-                    <li><strong>Coordination note:</strong> Low-energy, meaningful public-trust win once refreshed.</li>
+                    <li><strong>Likely current work:</strong> Seeded-baseline maintenance plus current-role, team-profile, and ecosystem appearance capture.</li>
+                    <li><strong>Next step:</strong> Localize the current team profile and add one more public-appearance or ecosystem source batch.</li>
+                    <li><strong>Quality:</strong> The continuity structure is in place; the main gap now is source depth rather than project setup.</li>
+                    <li><strong>Coordination note:</strong> Best advanced through small, explicit source batches.</li>
                     <li><strong>Evidence status:</strong> Evidence baseline: 3 approved / 0 deferred / 0 rejected (3 total).</li>
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Current public page is behind the local seeded-state docs and manifests on this branch.</div>
+                
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/inovia-research.html">Project page</a> <a class="button button--ghost" href="inovia-research/">Open working repository</a> <a class="button button--ghost" href="inovia-research/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="inovia-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Open recovery audit</a>
                 </div>
@@ -447,17 +447,17 @@
                     <a class="button" href="https://sgwoods.github.io/public/sei-pittsburgh-research.html">Open project page</a>
                 </div>
                 <div class="badgeRow">
-                    <span class="badge">Shared-public archive subproject</span><span class="badge">Public</span><span class="badge">Publish local progress</span><span class="badge">Energy low-medium</span><span class="badge">Value high</span><span class="badge">Horizon short</span>
+                    <span class="badge">Shared-public archive subproject</span><span class="badge">Public</span><span class="badge">Steady advance</span><span class="badge">Energy low-medium</span><span class="badge">Value high</span><span class="badge">Horizon short</span>
                 </div>
                 <p class="suiteSummary">Research archive for Steven Woods&#x27; Software Engineering Institute period in Pittsburgh, covering publications, institute context, and startup-transition material.</p>
                 <ul class="suiteFacts">
-                    <li><strong>Likely current work:</strong> The local archive has already been seeded and deepened with papers, profiles, and Quack bridge sources, but the public summary still looks pre-seeding.</li>
-                    <li><strong>Next step:</strong> Refresh the public page and published manifest to match the stronger local baseline, then add one more staff or transition-context source batch.</li>
-                    <li><strong>Quality:</strong> Strong continuity and evidence progress, but underrepresented on the public surface right now.</li>
-                    <li><strong>Coordination note:</strong> Another high-value publish-local-progress candidate.</li>
+                    <li><strong>Likely current work:</strong> Seeded-baseline maintenance plus additional staff, paper, and startup-transition context around the SEI-to-Quack bridge.</li>
+                    <li><strong>Next step:</strong> Add one more staff or transition-context batch, then refresh the summary only when the bridge story materially improves.</li>
+                    <li><strong>Quality:</strong> Strong continuity and evidence progress, with a published baseline that now supports steady deepening.</li>
+                    <li><strong>Coordination note:</strong> Good steady research lane now that the scaffold phase is over.</li>
                     <li><strong>Evidence status:</strong> Evidence baseline: 12 approved / 0 deferred / 0 rejected (12 total).</li>
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Current public page still presents SEI as a scaffold even though local docs and manifests on this branch are ahead.</div>
+                
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/sei-pittsburgh-research.html">Project page</a> <a class="button button--ghost" href="sei-pittsburgh-research/">Open working repository</a> <a class="button button--ghost" href="sei-pittsburgh-research/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="sei-pittsburgh-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Open recovery audit</a>
                 </div>
