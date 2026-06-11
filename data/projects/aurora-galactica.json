@@ -7,14 +7,14 @@
   "repo_url": "https://github.com/sgwoods/Codex-Test1",
   "dashboard_url": "https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html",
   "experience_url": "https://sgwoods.github.io/Aurora-Galactica/",
-  "repo_pushed_at": "2026-06-11T11:46:34-04:00",
-  "status_generated_at": "2026-06-11T16:04:38Z",
-  "source_build_label": "1.4.1+build.1160.sha.6f9155d8",
-  "source_commit": "6f9155d8a8c4e8ddee281df7a182db0cb466eb38",
+  "repo_pushed_at": "2026-06-11T12:33:20-04:00",
+  "status_generated_at": "2026-06-11T16:36:02Z",
+  "source_build_label": "1.4.1+build.1164.sha.54398ff5",
+  "source_commit": "54398ff5c95bf9a6b3571c42a0efcf46cf43cebb",
   "source_template_sha": "88eb6c96f418",
-  "public_sync_generated_at": "2026-06-11T16:04:38Z",
+  "public_sync_generated_at": "2026-06-11T16:36:02Z",
   "status_label": "Current release",
   "status_value": "1.4.1",
   "focus_label": "Current focus",
-  "focus_value": "Aurora 1.4.1 is the production patch release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates."
+  "focus_value": "Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates."
 }
