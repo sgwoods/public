@@ -7,6 +7,7 @@ from pathlib import Path
 from urllib.parse import urlencode, urlparse
 
 import render_index
+from archive_provenance import content_digest
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data/shared/repository-observations.json"
@@ -43,6 +44,7 @@ def observe(previous=None, get=api):
         if key not in snapshots or render_index.parse_datetime(snapshot["status_generated_at"]) > render_index.parse_datetime(snapshots[key][0]["status_generated_at"]):
             snapshots[key] = (snapshot, path)
     metadata = {}
+    trees = {}
     for key, (snapshot, path) in snapshots.items():
         row = dict(previous.get("projects", {}).get(key, {}))
         row.update(display_name=snapshot["display_name"], attempted_at=now,
@@ -75,9 +77,17 @@ def observe(previous=None, get=api):
             if not commits:
                 raise ValueError("No commits for configured scope")
             commit = commits[0]
+            state = classify(snapshot, commit)
+            if scope and snapshot.get("source_content_sha256"):
+                if repo not in trees:
+                    tree = get(f"repos/{repo}/git/trees/{branch}?recursive=1")
+                    if tree.get("truncated"):
+                        raise ValueError("Incomplete archive tree")
+                    trees[repo] = tree["tree"]
+                state = "content_matches" if content_digest(trees[repo], scope) == snapshot["source_content_sha256"] else "content_changed"
             row.update(repo=repo, branch=branch, path=scope, checked_at=now,
                        commit=commit["sha"], commit_date=commit["commit"]["committer"]["date"],
-                       commit_url=commit["html_url"], state=classify(snapshot, commit))
+                       commit_url=commit["html_url"], state=state)
             row.pop("error", None)
         except (ValueError, KeyError, subprocess.SubprocessError):
             # Keep the last successful observation; never expose API stderr or credentials.

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated_at": "2026-10-03",
-  "summary": "Repo-owned portfolio coordination. October 3, 2026: repository observations now independently track public default branches and archive paths, with weekly checks, failure retention, and explicit freshness. MMath, PhD, and AI Quotes exporters now record source commits and refreshed public manifests. Kinitos preservation work has been integrated after review. Aurora production remains unchanged pending the other-machine handoff in PROJECT-STATUS-CONTRACT.md. Observations do not certify runtime health or promote releases.",
+  "summary": "Repo-owned portfolio coordination. October 3, 2026: 13 active projects, including Star Swarm. Repository observations independently track public default branches and archive paths. All seven shared archives now have verified source commits and content fingerprints; snapshot metadata changes do not count as content drift. MMath, PhD, and AI Quotes use source-aware exports. Star Swarm status imports its existing clean deployed build identity, independent of the coding agent. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep and the Aurora handoff.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
     "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
@@ -174,7 +174,7 @@
       "likely_current_work": "Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.",
       "next_step": "Preserve the remaining URL-backed baseline pages and reconcile the review-ledger-only captures that should become formal source records.",
       "quality_note": "One of the best organized archive areas, with clear role boundaries and strong continuity surfaces.",
-      "drift_note": null,
+      "drift_note": "October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.",
       "coordination_note": "Use this as the canonical person-centric layer, not a dumping ground for company-depth material.",
       "extra_links": [
         {
@@ -201,7 +201,7 @@
       "likely_current_work": "Now that the seeded baseline is public, deepen interview, media, and transition coverage in small, high-signal batches.",
       "next_step": "Add one more interview or ecosystem source batch, then tighten the public summary only if the center of gravity changes materially.",
       "quality_note": "Now has a seeded, continuity-safe public baseline with room for deeper source density.",
-      "drift_note": null,
+      "drift_note": "October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.",
       "coordination_note": "Good candidate for steady, source-batch progress rather than another structural pass.",
       "extra_links": [
         {
@@ -228,7 +228,7 @@
       "likely_current_work": "Seeded-baseline maintenance plus current-role, team-profile, and ecosystem appearance capture.",
       "next_step": "Localize the current team profile and add one more public-appearance or ecosystem source batch.",
       "quality_note": "The continuity structure is in place; the main gap now is source depth rather than project setup.",
-      "drift_note": null,
+      "drift_note": "October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.",
       "coordination_note": "Best advanced through small, explicit source batches.",
       "extra_links": [
         {
@@ -255,7 +255,7 @@
       "likely_current_work": "Still mostly a scaffold, with the core value in establishing a first honest source baseline rather than broad research.",
       "next_step": "Seed the first CSIRO, Canberra Knights, and local-context sources so the archive has a real evidence floor.",
       "quality_note": "Clear structure exists, but there is not yet enough source depth to treat it as active archive work in the same way as the stronger projects.",
-      "drift_note": null,
+      "drift_note": "October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.",
       "coordination_note": "Good candidate for a small, bounded seeding pass rather than a big research campaign.",
       "extra_links": [
         {
@@ -278,7 +278,7 @@
       "likely_current_work": "Seeded-baseline maintenance plus additional staff, paper, and startup-transition context around the SEI-to-Quack bridge.",
       "next_step": "Add one more staff or transition-context batch, then refresh the summary only when the bridge story materially improves.",
       "quality_note": "Strong continuity and evidence progress, with a published baseline that now supports steady deepening.",
-      "drift_note": null,
+      "drift_note": "October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.",
       "coordination_note": "Good steady research lane now that the scaffold phase is over.",
       "extra_links": [
         {
@@ -305,7 +305,7 @@
       "likely_current_work": "Preservation and source-completeness work around AOL by Phone, investor outcomes, first-party capture gaps, and stronger preserved press.",
       "next_step": "Keep working campaign-by-campaign, preserving fragile or first-party evidence before widening the editorial surface.",
       "quality_note": "A strong archive workflow is in place, but evidence completeness still matters more than polish.",
-      "drift_note": null,
+      "drift_note": "October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.",
       "coordination_note": "Treat the bridge record as compatibility, not as a second canonical home.",
       "extra_links": [
         {
@@ -332,7 +332,7 @@
       "likely_current_work": "The preservation branch has been integrated in 993055e after reviewing its derivatives and removing private log filenames from the public lead note. All 24 approved records have existing local artifacts.",
       "next_step": "Resume deferred-source and public-corroboration research in bounded batches; raw private logs remain outside the repository.",
       "quality_note": "One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.",
-      "drift_note": "Preservation floor integrated and artifact existence verified. Source content was not exhaustively re-fact-checked in this maintenance pass.",
+      "drift_note": "October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.",
       "coordination_note": "Publication backlog closed; pursue source depth next, rather than repeating preservation setup.",
       "extra_links": [
         {
@@ -346,6 +346,33 @@
         {
           "label": "Open recovery audit",
           "url": "kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md"
+        }
+      ]
+    },
+    "star-swarm": {
+      "surface_class": "Standalone repo / hosted build import",
+      "visibility": "Public",
+      "priority_now": "protect",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "short",
+      "likely_current_work": "Active Claude/Firstmate development. The reviewed architecture describes playable formation-shooter mechanics, selectable variants, and a prompt-assisted content forge. Recent commits fix exit-card controls and remembered-variant rendering; the October 3 main CI run and Pages deployment passed.",
+      "next_step": "Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.",
+      "quality_note": "State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.",
+      "drift_note": "The hub imports clean deployed build.json identities on refresh. Default-branch development is observed separately; detailed feature claims remain in the source architecture.",
+      "coordination_note": "Agent-neutral integration: Claude, Firstmate, and Codex share the same source repo and deployed build contract. No credentials for the public hub are needed by the source project.",
+      "extra_links": [
+        {
+          "label": "Canonical architecture",
+          "url": "https://github.com/sgwoods/star-swarm/blob/main/docs/ARCHITECTURE.md"
+        },
+        {
+          "label": "Roadmap",
+          "url": "https://github.com/sgwoods/star-swarm/blob/main/docs/ROADMAP.md"
+        },
+        {
+          "label": "Deployed build identity",
+          "url": "https://sgwoods.github.io/star-swarm/build.json"
         }
       ]
     }

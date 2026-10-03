@@ -5,9 +5,33 @@ from pathlib import Path
 from unittest.mock import patch
 
 import check_repository_freshness as checker
+from archive_provenance import content_digest
+from sync_external_status import updated_manifest
 
 
 class FreshnessTests(unittest.TestCase):
+    def test_archive_fingerprint_ignores_only_its_manifest(self):
+        entries = [{"path": "archive/source-manifest.json", "mode": "100644", "type": "blob", "sha": "a"},
+                   {"path": "archive/project-manifest.json", "mode": "100644", "type": "blob", "sha": "b"}]
+        baseline = content_digest(entries, "archive")
+        entries[1]["sha"] = "metadata-change"
+        self.assertEqual(baseline, content_digest(entries, "archive"))
+        entries[0]["sha"] = "source-change"
+        self.assertNotEqual(baseline, content_digest(entries, "archive"))
+        entries[0]["sha"] = "a"
+        entries.append({"path": "archive/new-evidence.txt", "mode": "100644", "type": "blob", "sha": "c"})
+        self.assertNotEqual(baseline, content_digest(entries, "archive"))
+
+    def test_deployed_import_rejects_dirty_or_unknown_builds(self):
+        commit = {"sha": "a" * 40, "commit": {"committer": {"date": "2026-10-03T00:00:00Z"}}}
+        identity = {"commit": "a" * 7, "dirty": False, "mode": "release", "builtAt": "2026-10-03T00:01:00Z"}
+        result = updated_manifest({}, identity, commit)
+        self.assertEqual(result["source_commit"], commit["sha"])
+        self.assertEqual(updated_manifest(result, identity, commit), result)
+        for invalid in [dict(identity, dirty=True), dict(identity, mode="dev"), dict(identity, commit="unknown"), dict(identity, commit="b" * 7)]:
+            with self.assertRaises(ValueError):
+                updated_manifest({}, invalid, commit)
+
     def test_commit_identity_is_not_a_release_claim(self):
         commit = {"sha": "b", "commit": {"committer": {"date": "2026-09-24T00:00:00Z"}}}
         self.assertEqual(checker.classify({"source_commit": "a"}, commit), "different_commit")

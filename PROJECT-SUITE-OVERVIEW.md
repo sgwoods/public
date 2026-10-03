@@ -2,7 +2,7 @@
 
 Updated: `2026-10-03`
 
-Repo-owned portfolio coordination. October 3, 2026: repository observations now independently track public default branches and archive paths, with weekly checks, failure retention, and explicit freshness. MMath, PhD, and AI Quotes exporters now record source commits and refreshed public manifests. Kinitos preservation work has been integrated after review. Aurora production remains unchanged pending the other-machine handoff in PROJECT-STATUS-CONTRACT.md. Observations do not certify runtime health or promote releases.
+Repo-owned portfolio coordination. October 3, 2026: 13 active projects, including Star Swarm. Repository observations independently track public default branches and archive paths. All seven shared archives now have verified source commits and content fingerprints; snapshot metadata changes do not count as content drift. MMath, PhD, and AI Quotes use source-aware exports. Star Swarm status imports its existing clean deployed build identity, independent of the coding agent. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep and the Aurora handoff.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
@@ -31,7 +31,7 @@ Current branch snapshot: `main`
 
 ## Current Priority Lanes
 
-- **Protect public surfaces** (2): Keep already-public software, docs, and dashboards trustworthy before expanding scope.
+- **Protect public surfaces** (3): Keep already-public software, docs, and dashboards trustworthy before expanding scope.
 - **Publish local progress** (0): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
 - **Steady advance** (8): Important ongoing work that benefits from regular small batches rather than a one-off push.
 - **Seed and clarify** (1): Early-stage areas where a small baseline is more valuable than broad exploration.
@@ -55,6 +55,7 @@ Current branch snapshot: `main`
 | Project | Surface Class | Visibility | Priority | Current Manifest State |
 | --- | --- | --- | --- | --- |
 | [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
+| [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build cecf7ed; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
 | [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
@@ -82,6 +83,20 @@ Current branch snapshot: `main`
 - Coordination note: High-value continuity task: preserve and review current local work before starting another gameplay or publication batch.
 - Drift note: The GitHub observer now shows newer development independently of the June production export. No Aurora checkout was edited in this pass.
 - Public links: [Project page](aurora-galactica.html), [Dashboard](https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html), [Live experience](https://sgwoods.github.io/Aurora-Galactica/), [Repository](https://github.com/sgwoods/Codex-Test1), [Open beta build](https://sgwoods.github.io/Aurora-Galactica/beta/), [Open project guide](https://sgwoods.github.io/Aurora-Galactica/project-guide.html), [Open Platinum guide](https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html)
+
+### Star Swarm
+
+- Surface class: Standalone repo / hosted build import
+- Visibility: Public
+- Priority now: Protect public surfaces
+- Time-energy-value: energy medium; value high; horizon short
+- Current manifest state: Published build: Build cecf7ed. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Last repo update: October 3, 2026.
+- Likely current work: Active Claude/Firstmate development. The reviewed architecture describes playable formation-shooter mechanics, selectable variants, and a prompt-assisted content forge. Recent commits fix exit-card controls and remembered-variant rendering; the October 3 main CI run and Pages deployment passed.
+- Next step: Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.
+- Quality: State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.
+- Coordination note: Agent-neutral integration: Claude, Firstmate, and Codex share the same source repo and deployed build contract. No credentials for the public hub are needed by the source project.
+- Drift note: The hub imports clean deployed build.json identities on refresh. Default-branch development is observed separately; detailed feature claims remain in the source architecture.
+- Public links: [Project page](star-swarm.html), [Dashboard](https://github.com/sgwoods/star-swarm/actions/workflows/ci.yml), [Live experience](https://sgwoods.github.io/star-swarm/), [Repository](https://github.com/sgwoods/star-swarm), [Canonical architecture](https://github.com/sgwoods/star-swarm/blob/main/docs/ARCHITECTURE.md), [Roadmap](https://github.com/sgwoods/star-swarm/blob/main/docs/ROADMAP.md), [Deployed build identity](https://sgwoods.github.io/star-swarm/build.json)
 
 ### Plan private rental portal
 
@@ -145,12 +160,13 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Last repo update: May 10, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Last repo update: May 11, 2026.
 - Evidence status: Evidence baseline: 22 approved / 0 deferred / 0 rejected (22 total).
 - Likely current work: Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.
 - Next step: Preserve the remaining URL-backed baseline pages and reconcile the review-ledger-only captures that should become formal source records.
 - Quality: One of the best organized archive areas, with clear role boundaries and strong continuity surfaces.
 - Coordination note: Use this as the canonical person-centric layer, not a dumping ground for company-depth material.
+- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
 - Public links: [Project page](https://sgwoods.github.io/public/steven-woods-research.html), [Open one-page CV](steven-woods-cv.pdf), [Open work plan](steven-woods-research/WORK-PLAN.md), [Open review ledger](steven-woods-research/research/media-sources-review.md)
 
 ### Steven at Google Canada Archive
@@ -165,6 +181,7 @@ Current branch snapshot: `main`
 - Next step: Add one more interview or ecosystem source batch, then tighten the public summary only if the center of gravity changes materially.
 - Quality: Now has a seeded, continuity-safe public baseline with room for deeper source density.
 - Coordination note: Good candidate for steady, source-batch progress rather than another structural pass.
+- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
 - Public links: [Project page](https://sgwoods.github.io/public/google-canada-research.html), [Open working repository](google-canada-research/), [Open work plan](google-canada-research/WORK-PLAN.md), [Open recovery audit](google-canada-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md)
 
 ### Steven at Inovia Archive
@@ -179,6 +196,7 @@ Current branch snapshot: `main`
 - Next step: Localize the current team profile and add one more public-appearance or ecosystem source batch.
 - Quality: The continuity structure is in place; the main gap now is source depth rather than project setup.
 - Coordination note: Best advanced through small, explicit source batches.
+- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
 - Public links: [Project page](https://sgwoods.github.io/public/inovia-research.html), [Open working repository](inovia-research/), [Open work plan](inovia-research/WORK-PLAN.md), [Open recovery audit](inovia-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md)
 
 ### Canberra / CSIRO / Knights Archive
@@ -193,6 +211,7 @@ Current branch snapshot: `main`
 - Next step: Seed the first CSIRO, Canberra Knights, and local-context sources so the archive has a real evidence floor.
 - Quality: Clear structure exists, but there is not yet enough source depth to treat it as active archive work in the same way as the stronger projects.
 - Coordination note: Good candidate for a small, bounded seeding pass rather than a big research campaign.
+- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
 - Public links: [Project page](https://sgwoods.github.io/public/canberra-research.html), [Open working repository](canberra-research/), [Open seed leads](canberra-research/research/seed-leads.md)
 
 ### SEI Pittsburgh Archive
@@ -207,6 +226,7 @@ Current branch snapshot: `main`
 - Next step: Add one more staff or transition-context batch, then refresh the summary only when the bridge story materially improves.
 - Quality: Strong continuity and evidence progress, with a published baseline that now supports steady deepening.
 - Coordination note: Good steady research lane now that the scaffold phase is over.
+- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
 - Public links: [Project page](https://sgwoods.github.io/public/sei-pittsburgh-research.html), [Open working repository](sei-pittsburgh-research/), [Open work plan](sei-pittsburgh-research/WORK-PLAN.md), [Open recovery audit](sei-pittsburgh-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md)
 
 ### Quack.com Archive Project
@@ -215,11 +235,13 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium-high; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Last repo update: May 10, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Last repo update: May 11, 2026.
+- Evidence status: Evidence baseline: 6 approved / 14 deferred / 0 rejected (20 total).
 - Likely current work: Preservation and source-completeness work around AOL by Phone, investor outcomes, first-party capture gaps, and stronger preserved press.
 - Next step: Keep working campaign-by-campaign, preserving fragile or first-party evidence before widening the editorial surface.
 - Quality: A strong archive workflow is in place, but evidence completeness still matters more than polish.
 - Coordination note: Treat the bridge record as compatibility, not as a second canonical home.
+- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
 - Public links: [Project page](https://sgwoods.github.io/public/quack-com.html), [Open working repository](quack/), [Open work plan](quack/WORK-PLAN.md), [Open run report](quack/research/run-report.md)
 
 ### Kinitos / NeoEdge Networks Archive
@@ -228,11 +250,11 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium-high; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up. Last repo update: May 17, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up. Last repo update: October 3, 2026.
 - Evidence status: Evidence baseline: 24 approved / 8 deferred / 0 rejected (32 total).
 - Likely current work: The preservation branch has been integrated in 993055e after reviewing its derivatives and removing private log filenames from the public lead note. All 24 approved records have existing local artifacts.
 - Next step: Resume deferred-source and public-corroboration research in bounded batches; raw private logs remain outside the repository.
 - Quality: One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.
 - Coordination note: Publication backlog closed; pursue source depth next, rather than repeating preservation setup.
-- Drift note: Preservation floor integrated and artifact existence verified. Source content was not exhaustively re-fact-checked in this maintenance pass.
+- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
 - Public links: [Project page](https://sgwoods.github.io/public/kinitos-neoedge.html), [Open working repository](kinitos-neoedge/), [Open work plan](kinitos-neoedge/WORK-PLAN.md), [Open recovery audit](kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md)

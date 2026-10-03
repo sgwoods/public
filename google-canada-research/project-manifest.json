@@ -12,8 +12,8 @@
     "end_year": 2021,
     "label": "Google Canada era"
   },
-  "repo_pushed_at": "2026-05-11T19:08:38Z",
-  "status_generated_at": "2026-05-11T19:08:38Z",
+  "repo_pushed_at": "2026-05-11T14:40:34-04:00",
+  "status_generated_at": "2026-10-03T19:23:28+00:00",
   "status_label": "Current phase",
   "status_value": "Seeded era archive",
   "focus_label": "Current focus",
@@ -47,5 +47,11 @@
     "src-google-canada-2021-betakit-transition-to-inovia",
     "src-google-canada-2013-university-affairs-google-canada-interview",
     "src-google-canada-2021-inovia-welcome-transition-profile"
-  ]
+  ],
+  "source_commit": "5a855e0d335b5543725008c8a30fd214ab366d64",
+  "source_commit_at": "2026-05-11T14:40:34-04:00",
+  "source_ref": "main",
+  "source_dirty": false,
+  "source_scope": "google-canada-research",
+  "source_content_sha256": "3fbb1a2156a5d0152a846b0cf2fef751d744a43e2afa2282d519f396152b8064"
 }

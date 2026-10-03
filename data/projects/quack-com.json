@@ -8,10 +8,16 @@
   "repo_url": "",
   "dashboard_url": null,
   "experience_url": null,
-  "repo_pushed_at": "2026-05-10T20:13:50Z",
-  "status_generated_at": "2026-05-10T20:13:50Z",
+  "repo_pushed_at": "2026-05-11T13:29:59-04:00",
+  "status_generated_at": "2026-10-03T19:23:29+00:00",
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
-  "focus_value": "Continuity-safe archive with follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press"
+  "focus_value": "Continuity-safe archive with follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press",
+  "source_commit": "9309a868e56e920a3996b706a16e1ef45a6007ea",
+  "source_commit_at": "2026-05-11T13:29:59-04:00",
+  "source_ref": "main",
+  "source_dirty": false,
+  "source_scope": "quack",
+  "source_content_sha256": "67d61e1ff63029f61ce5b9b26b8ee2f384fef3d17e84b85b1dbf6cf621e45578"
 }

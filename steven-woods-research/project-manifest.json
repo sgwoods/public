@@ -12,8 +12,8 @@
     "end_year": 2026,
     "label": "Public record from University of Saskatchewan through current archive work"
   },
-  "repo_pushed_at": "2026-05-10T20:42:54Z",
-  "status_generated_at": "2026-05-10T20:42:54Z",
+  "repo_pushed_at": "2026-05-11T13:29:59-04:00",
+  "status_generated_at": "2026-10-03T19:23:29+00:00",
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
@@ -48,5 +48,11 @@
     "src-steven-2021-usask-alumni-profile",
     "src-steven-2023-research-discovery-days-keynote",
     "src-steven-2013-springboard-google-canada-interview"
-  ]
+  ],
+  "source_commit": "d30c70064744271c793abcc75bcc83cdb5be6f2b",
+  "source_commit_at": "2026-05-11T13:29:59-04:00",
+  "source_ref": "main",
+  "source_dirty": false,
+  "source_scope": "steven-woods-research",
+  "source_content_sha256": "2b7e5552a202341db4e26f72a2a741b2c0556ae7dbac270626c6a067cfe848ad"
 }

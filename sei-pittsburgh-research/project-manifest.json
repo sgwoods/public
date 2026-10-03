@@ -12,8 +12,8 @@
     "end_year": 2002,
     "label": "SEI Pittsburgh era"
   },
-  "repo_pushed_at": "2026-05-11T21:02:58Z",
-  "status_generated_at": "2026-05-11T21:02:58Z",
+  "repo_pushed_at": "2026-05-11T17:09:13-04:00",
+  "status_generated_at": "2026-10-03T19:23:29+00:00",
   "status_label": "Current phase",
   "status_value": "Seeded era archive",
   "focus_label": "Current focus",
@@ -66,5 +66,11 @@
     "src-sei-1999-options-analysis-for-reengineering-oar",
     "src-sei-1999-architectural-evaluation-of-collaborative-agent-based-systems",
     "src-sei-2000-another-feather-in-aols-cap"
-  ]
+  ],
+  "source_commit": "7e85db52577b63ddbd1bcc88063c1b5a4daa90bc",
+  "source_commit_at": "2026-05-11T17:09:13-04:00",
+  "source_ref": "main",
+  "source_dirty": false,
+  "source_scope": "sei-pittsburgh-research",
+  "source_content_sha256": "f4bbe6bd1307b731823ec9031b412614c7139dacb1e4e52357ad2b671e350192"
 }

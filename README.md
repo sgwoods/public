@@ -12,6 +12,8 @@ It is not just a standalone project site. Its job is to provide one clear public
 Start here in this repo:
 
 - [PROJECT-SUITE-OVERVIEW.md](PROJECT-SUITE-OVERVIEW.md)
+- [PUBLIC-REPOSITORY-INVENTORY.md](PUBLIC-REPOSITORY-INVENTORY.md)
+- [PROJECT-STATUS-CONTRACT.md](PROJECT-STATUS-CONTRACT.md)
 - [PUBLIC-OPERATING-MODEL.md](PUBLIC-OPERATING-MODEL.md)
 - [PROJECT-STATE-AND-RECOVERY.md](PROJECT-STATE-AND-RECOVERY.md)
 - [START-HERE-NEW-MAC.md](START-HERE-NEW-MAC.md)
@@ -23,7 +25,7 @@ Common coordination refresh:
 
 - `python3 tools/refresh_public_coordination.py`
   validates the suite notes and rerenders `PROJECT-SUITE-OVERVIEW.md`,
-  `project-suite-overview.html`, and `index.html`
+  `project-suite-overview.html`, `index.html`, and opted-in external project pages
 - `python3 tools/refresh_public_coordination.py --check`
   verifies those generated coordination surfaces are still in sync while
   ignoring only the intentionally volatile homepage render timestamps
@@ -39,3 +41,9 @@ Current important rule:
 Run `python3 tools/refresh_public_coordination.py --observe` to check GitHub and
 refresh the portfolio. Published source dates and observed development dates are
 separate. See [the status contract and Aurora handoff](PROJECT-STATUS-CONTRACT.md).
+
+Star Swarm imports its existing public `build.json`; no agent-specific exporter or
+source-repository credentials are needed. Weekly and manual refreshes use the same
+path. Archive content fingerprints are deliberately reviewed separately: run
+`python3 tools/snapshot_archive_provenance.py --check` to detect changed content,
+then review the evidence before recording a new baseline without `--check`.

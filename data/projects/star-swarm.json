@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "project_id": "star-swarm",
+  "active": true,
+  "display_name": "Star Swarm",
+  "description": "A playable arcade-style formation shooter with data-driven packs and a prompt-assisted content forge, developed with Claude and Firstmate.",
+  "project_page_path": "star-swarm.html",
+  "repo_url": "https://github.com/sgwoods/star-swarm",
+  "dashboard_url": "https://github.com/sgwoods/star-swarm/actions/workflows/ci.yml",
+  "experience_url": "https://sgwoods.github.io/star-swarm/",
+  "repo_pushed_at": "2026-10-03T13:48:47Z",
+  "status_generated_at": "2026-10-03T19:34:00Z",
+  "source_commit": "cecf7ed2004f19b4fa0eb0f9ab9e9a05bd9cd826",
+  "source_commit_at": "2026-10-03T13:48:47Z",
+  "source_ref": "deployed",
+  "source_dirty": false,
+  "source_build_at": "2026-10-03T13:49:51Z",
+  "status_label": "Published build",
+  "status_value": "Build cecf7ed",
+  "focus_label": "Project direction",
+  "focus_value": "Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.",
+  "status_sync": "github-pages-build-v1"
+}

@@ -79,11 +79,11 @@
                 <a class="heroHomeLink" href="index.html">Steven Woods</a>
             </div>
             <h1>Project Suite Overview</h1>
-            <p class="lead">Repo-owned portfolio coordination. October 3, 2026: repository observations now independently track public default branches and archive paths, with weekly checks, failure retention, and explicit freshness. MMath, PhD, and AI Quotes exporters now record source commits and refreshed public manifests. Kinitos preservation work has been integrated after review. Aurora production remains unchanged pending the other-machine handoff in PROJECT-STATUS-CONTRACT.md. Observations do not certify runtime health or promote releases.</p>
+            <p class="lead">Repo-owned portfolio coordination. October 3, 2026: 13 active projects, including Star Swarm. Repository observations independently track public default branches and archive paths. All seven shared archives now have verified source commits and content fingerprints; snapshot metadata changes do not count as content drift. MMath, PhD, and AI Quotes use source-aware exports. Star Swarm status imports its existing clean deployed build identity, independent of the coding agent. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep and the Aurora handoff.</p>
             <div class="meta">
                 <div class="metaCard">
                     <span class="metaLabel">Tracked projects</span>
-                    <span class="metaValue">12</span>
+                    <span class="metaValue">13</span>
                     <div class="metaNote">Active project lines currently carried by this overview.</div>
                 </div>
                 <div class="metaCard">
@@ -137,7 +137,7 @@
                 <article class="card">
                     <h3>Protect public surfaces</h3>
                     <div class="detailList">
-                        <div><strong>Projects</strong> 2</div>
+                        <div><strong>Projects</strong> 3</div>
                     </div>
                     <p>Keep already-public software, docs, and dashboards trustworthy before expanding scope.</p>
                 </article>
@@ -239,11 +239,35 @@
                     <li><strong>Next step:</strong> Use the Aurora handoff prompt in PROJECT-STATUS-CONTRACT.md on the active machine. Keep production source metadata tied to the released build, verify the active release lanes, and export only validated changes.</li>
                     <li><strong>Quality:</strong> This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.</li>
                     <li><strong>Coordination note:</strong> High-value continuity task: preserve and review current local work before starting another gameplay or publication batch.</li>
-                    
+
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> The GitHub observer now shows newer development independently of the June production export. No Aurora checkout was edited in this pass.</div>
+<div class="notePanel"><strong>Drift note</strong> The GitHub observer now shows newer development independently of the June production export. No Aurora checkout was edited in this pass.</div>
                 <div class="links">
                     <a class="button button--ghost" href="aurora-galactica.html">Project page</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html">Dashboard</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/">Live experience</a> <a class="button button--ghost" href="https://github.com/sgwoods/Codex-Test1">Repository</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/beta/">Open beta build</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/project-guide.html">Open project guide</a> <a class="button button--ghost" href="https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html">Open Platinum guide</a>
+                </div>
+            </article>
+            <article class="entry suiteEntry" id="project-star-swarm">
+                <div class="suiteEntryTop">
+                    <div>
+                        <h3 class="entryTitle">Star Swarm</h3>
+                        <span class="entryMeta"><strong>Current manifest state</strong> Published build: Build cecf7ed. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Last repo update: October 3, 2026.</span>
+                    </div>
+                    <a class="button" href="star-swarm.html">Open project page</a>
+                </div>
+                <div class="badgeRow">
+                    <span class="badge">Standalone repo / hosted build import</span><span class="badge">Public</span><span class="badge">Protect public surfaces</span><span class="badge">Energy medium</span><span class="badge">Value high</span><span class="badge">Horizon short</span>
+                </div>
+                <p class="suiteSummary">A playable arcade-style formation shooter with data-driven packs and a prompt-assisted content forge, developed with Claude and Firstmate.</p>
+                <ul class="suiteFacts">
+                    <li><strong>Likely current work:</strong> Active Claude/Firstmate development. The reviewed architecture describes playable formation-shooter mechanics, selectable variants, and a prompt-assisted content forge. Recent commits fix exit-card controls and remembered-variant rendering; the October 3 main CI run and Pages deployment passed.</li>
+                    <li><strong>Next step:</strong> Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.</li>
+                    <li><strong>Quality:</strong> State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.</li>
+                    <li><strong>Coordination note:</strong> Agent-neutral integration: Claude, Firstmate, and Codex share the same source repo and deployed build contract. No credentials for the public hub are needed by the source project.</li>
+
+                </ul>
+<div class="notePanel"><strong>Drift note</strong> The hub imports clean deployed build.json identities on refresh. Default-branch development is observed separately; detailed feature claims remain in the source architecture.</div>
+                <div class="links">
+                    <a class="button button--ghost" href="star-swarm.html">Project page</a> <a class="button button--ghost" href="https://github.com/sgwoods/star-swarm/actions/workflows/ci.yml">Dashboard</a> <a class="button button--ghost" href="https://sgwoods.github.io/star-swarm/">Live experience</a> <a class="button button--ghost" href="https://github.com/sgwoods/star-swarm">Repository</a> <a class="button button--ghost" href="https://github.com/sgwoods/star-swarm/blob/main/docs/ARCHITECTURE.md">Canonical architecture</a> <a class="button button--ghost" href="https://github.com/sgwoods/star-swarm/blob/main/docs/ROADMAP.md">Roadmap</a> <a class="button button--ghost" href="https://sgwoods.github.io/star-swarm/build.json">Deployed build identity</a>
                 </div>
             </article>
             <article class="entry suiteEntry" id="project-confidential-project">
@@ -263,9 +287,9 @@
                     <li><strong>Next step:</strong> Keep the public summary minimal and accurate; do not expand the public surface unless there is a deliberate client-safe artifact to add.</li>
                     <li><strong>Quality:</strong> The public/private boundary is already clear, which is the main quality goal here.</li>
                     <li><strong>Coordination note:</strong> Track only high-level continuity in public.</li>
-                    
+
                 </ul>
-                
+
                 <div class="links">
                     <a class="button button--ghost" href="confidential-project.html">Project page</a>
                 </div>
@@ -287,9 +311,9 @@
                     <li><strong>Next step:</strong> Favor one targeted editorial intake batch, then publish through the updated exporter.</li>
                     <li><strong>Quality:</strong> The public page already reads cleanly and feels complete enough to trust; the main question is breadth and selection quality.</li>
                     <li><strong>Coordination note:</strong> Source metadata reconciled. Measure future curation value by approved additions rather than scan count.</li>
-                    <li><strong>Evidence status:</strong> Approved corpus: 32 entries.</li>
+<li><strong>Evidence status:</strong> Approved corpus: 32 entries.</li>
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Export reconciled October 3; the repository observer will flag subsequent source differences.</div>
+<div class="notePanel"><strong>Drift note</strong> Export reconciled October 3; the repository observer will flag subsequent source differences.</div>
                 <div class="links">
                     <a class="button button--ghost" href="ai-dystopia-quotes.html">Project page</a> <a class="button button--ghost" href="https://github.com/sgwoods/sci-fi-ai-dystopian-project">Repository</a> <a class="button button--ghost" href="data/ai-dystopia-quotes.approved.json">Open approved JSON</a> <a class="button button--ghost" href="data/projects/ai-dystopia-quotes.json">Open project manifest</a>
                 </div>
@@ -311,9 +335,9 @@
                     <li><strong>Next step:</strong> Review the three pre-existing remote migration/reporting documentation commits separately, then continue intake triage.</li>
                     <li><strong>Quality:</strong> One of the most mature documentation and validation surfaces in the suite.</li>
                     <li><strong>Coordination note:</strong> Metadata fix published; the remote documentation branch remains a separate integration task.</li>
-                    
+
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Public metadata now represents clean source f5eea43. Artifact dates remain independent. The older local checkout was not altered.</div>
+<div class="notePanel"><strong>Drift note</strong> Public metadata now represents clean source f5eea43. Artifact dates remain independent. The older local checkout was not altered.</div>
                 <div class="links">
                     <a class="button button--ghost" href="phd-renovation.html">Project page</a> <a class="button button--ghost" href="https://sgwoods.github.io/public/phd-renovation-dashboard.html">Dashboard</a> <a class="button button--ghost" href="https://github.com/sgwoods/phd-renovation">Repository</a> <a class="button button--ghost" href="phd-renovation-handbook.html">Open handbook</a> <a class="button button--ghost" href="phd-renovation-thesis.pdf">Open thesis PDF</a> <a class="button button--ghost" href="https://github.com/sgwoods/phd-renovation/blob/main/RENOVATION.md">Open roadmap</a>
                 </div>
@@ -335,9 +359,9 @@
                     <li><strong>Next step:</strong> Continue bounded portability or benchmark work; use the updated exporter for subsequent factual status changes.</li>
                     <li><strong>Quality:</strong> Strong research-restoration presentation with clear public framing; still benefits from discipline more than expansion.</li>
                     <li><strong>Coordination note:</strong> Small publication gap closed; defer broader benchmark expansion until deliberately prioritized.</li>
-                    
+
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Public status now identifies source commit 408c933 and the live runner URL. The runner responded HTTP 200 during this pass; experiment execution was not tested.</div>
+<div class="notePanel"><strong>Drift note</strong> Public status now identifies source commit 408c933 and the live runner URL. The runner responded HTTP 200 during this pass; experiment execution was not tested.</div>
                 <div class="links">
                     <a class="button button--ghost" href="mmath-renovation.html">Project page</a> <a class="button button--ghost" href="https://sgwoods.github.io/public/mmath-renovation-release-dashboard.html">Dashboard</a> <a class="button button--ghost" href="https://abtweak-experiments-ui.vercel.app">Live experience</a> <a class="button button--ghost" href="https://github.com/sgwoods/mmath-renovation">Repository</a> <a class="button button--ghost" href="mmath-renovation-remote-experiments.html">Open remote experiments guide</a> <a class="button button--ghost" href="mmath-thesis.pdf">Open thesis PDF</a> <a class="button button--ghost" href="https://github.com/sgwoods/mmath-renovation/blob/main/docs/project-goal-roadmap.md">Open roadmap</a>
                 </div>
@@ -346,7 +370,7 @@
                 <div class="suiteEntryTop">
                     <div>
                         <h3 class="entryTitle">Steven Woods Public Record Project</h3>
-                        <span class="entryMeta"><strong>Current manifest state</strong> Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Last repo update: May 10, 2026.</span>
+                        <span class="entryMeta"><strong>Current manifest state</strong> Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Last repo update: May 11, 2026.</span>
                     </div>
                     <a class="button" href="https://sgwoods.github.io/public/steven-woods-research.html">Open project page</a>
                 </div>
@@ -359,9 +383,9 @@
                     <li><strong>Next step:</strong> Preserve the remaining URL-backed baseline pages and reconcile the review-ledger-only captures that should become formal source records.</li>
                     <li><strong>Quality:</strong> One of the best organized archive areas, with clear role boundaries and strong continuity surfaces.</li>
                     <li><strong>Coordination note:</strong> Use this as the canonical person-centric layer, not a dumping ground for company-depth material.</li>
-                    <li><strong>Evidence status:</strong> Evidence baseline: 22 approved / 0 deferred / 0 rejected (22 total).</li>
+<li><strong>Evidence status:</strong> Evidence baseline: 22 approved / 0 deferred / 0 rejected (22 total).</li>
                 </ul>
-                
+<div class="notePanel"><strong>Drift note</strong> October 3 provenance repair records the archive&#x27;s actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.</div>
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/steven-woods-research.html">Project page</a> <a class="button button--ghost" href="steven-woods-cv.pdf">Open one-page CV</a> <a class="button button--ghost" href="steven-woods-research/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="steven-woods-research/research/media-sources-review.md">Open review ledger</a>
                 </div>
@@ -383,9 +407,9 @@
                     <li><strong>Next step:</strong> Add one more interview or ecosystem source batch, then tighten the public summary only if the center of gravity changes materially.</li>
                     <li><strong>Quality:</strong> Now has a seeded, continuity-safe public baseline with room for deeper source density.</li>
                     <li><strong>Coordination note:</strong> Good candidate for steady, source-batch progress rather than another structural pass.</li>
-                    <li><strong>Evidence status:</strong> Evidence baseline: 9 approved / 0 deferred / 0 rejected (9 total).</li>
+<li><strong>Evidence status:</strong> Evidence baseline: 9 approved / 0 deferred / 0 rejected (9 total).</li>
                 </ul>
-                
+<div class="notePanel"><strong>Drift note</strong> October 3 provenance repair records the archive&#x27;s actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.</div>
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/google-canada-research.html">Project page</a> <a class="button button--ghost" href="google-canada-research/">Open working repository</a> <a class="button button--ghost" href="google-canada-research/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="google-canada-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Open recovery audit</a>
                 </div>
@@ -407,9 +431,9 @@
                     <li><strong>Next step:</strong> Localize the current team profile and add one more public-appearance or ecosystem source batch.</li>
                     <li><strong>Quality:</strong> The continuity structure is in place; the main gap now is source depth rather than project setup.</li>
                     <li><strong>Coordination note:</strong> Best advanced through small, explicit source batches.</li>
-                    <li><strong>Evidence status:</strong> Evidence baseline: 3 approved / 0 deferred / 0 rejected (3 total).</li>
+<li><strong>Evidence status:</strong> Evidence baseline: 3 approved / 0 deferred / 0 rejected (3 total).</li>
                 </ul>
-                
+<div class="notePanel"><strong>Drift note</strong> October 3 provenance repair records the archive&#x27;s actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.</div>
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/inovia-research.html">Project page</a> <a class="button button--ghost" href="inovia-research/">Open working repository</a> <a class="button button--ghost" href="inovia-research/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="inovia-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Open recovery audit</a>
                 </div>
@@ -431,9 +455,9 @@
                     <li><strong>Next step:</strong> Seed the first CSIRO, Canberra Knights, and local-context sources so the archive has a real evidence floor.</li>
                     <li><strong>Quality:</strong> Clear structure exists, but there is not yet enough source depth to treat it as active archive work in the same way as the stronger projects.</li>
                     <li><strong>Coordination note:</strong> Good candidate for a small, bounded seeding pass rather than a big research campaign.</li>
-                    <li><strong>Evidence status:</strong> Evidence baseline: no formal source records yet.</li>
+<li><strong>Evidence status:</strong> Evidence baseline: no formal source records yet.</li>
                 </ul>
-                
+<div class="notePanel"><strong>Drift note</strong> October 3 provenance repair records the archive&#x27;s actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.</div>
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/canberra-research.html">Project page</a> <a class="button button--ghost" href="canberra-research/">Open working repository</a> <a class="button button--ghost" href="canberra-research/research/seed-leads.md">Open seed leads</a>
                 </div>
@@ -455,9 +479,9 @@
                     <li><strong>Next step:</strong> Add one more staff or transition-context batch, then refresh the summary only when the bridge story materially improves.</li>
                     <li><strong>Quality:</strong> Strong continuity and evidence progress, with a published baseline that now supports steady deepening.</li>
                     <li><strong>Coordination note:</strong> Good steady research lane now that the scaffold phase is over.</li>
-                    <li><strong>Evidence status:</strong> Evidence baseline: 12 approved / 0 deferred / 0 rejected (12 total).</li>
+<li><strong>Evidence status:</strong> Evidence baseline: 12 approved / 0 deferred / 0 rejected (12 total).</li>
                 </ul>
-                
+<div class="notePanel"><strong>Drift note</strong> October 3 provenance repair records the archive&#x27;s actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.</div>
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/sei-pittsburgh-research.html">Project page</a> <a class="button button--ghost" href="sei-pittsburgh-research/">Open working repository</a> <a class="button button--ghost" href="sei-pittsburgh-research/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="sei-pittsburgh-research/PROJECT-STATE-AND-RECOVERY-2026-05-11.md">Open recovery audit</a>
                 </div>
@@ -466,7 +490,7 @@
                 <div class="suiteEntryTop">
                     <div>
                         <h3 class="entryTitle">Quack.com Archive Project</h3>
-                        <span class="entryMeta"><strong>Current manifest state</strong> Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Last repo update: May 10, 2026.</span>
+                        <span class="entryMeta"><strong>Current manifest state</strong> Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Last repo update: May 11, 2026.</span>
                     </div>
                     <a class="button" href="https://sgwoods.github.io/public/quack-com.html">Open project page</a>
                 </div>
@@ -479,9 +503,9 @@
                     <li><strong>Next step:</strong> Keep working campaign-by-campaign, preserving fragile or first-party evidence before widening the editorial surface.</li>
                     <li><strong>Quality:</strong> A strong archive workflow is in place, but evidence completeness still matters more than polish.</li>
                     <li><strong>Coordination note:</strong> Treat the bridge record as compatibility, not as a second canonical home.</li>
-                    
+<li><strong>Evidence status:</strong> Evidence baseline: 6 approved / 14 deferred / 0 rejected (20 total).</li>
                 </ul>
-                
+<div class="notePanel"><strong>Drift note</strong> October 3 provenance repair records the archive&#x27;s actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.</div>
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/quack-com.html">Project page</a> <a class="button button--ghost" href="quack/">Open working repository</a> <a class="button button--ghost" href="quack/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="quack/research/run-report.md">Open run report</a>
                 </div>
@@ -490,7 +514,7 @@
                 <div class="suiteEntryTop">
                     <div>
                         <h3 class="entryTitle">Kinitos / NeoEdge Networks Archive</h3>
-                        <span class="entryMeta"><strong>Current manifest state</strong> Current phase: Active research archive. Current focus: Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up. Last repo update: May 17, 2026.</span>
+                        <span class="entryMeta"><strong>Current manifest state</strong> Current phase: Active research archive. Current focus: Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up. Last repo update: October 3, 2026.</span>
                     </div>
                     <a class="button" href="https://sgwoods.github.io/public/kinitos-neoedge.html">Open project page</a>
                 </div>
@@ -503,9 +527,9 @@
                     <li><strong>Next step:</strong> Resume deferred-source and public-corroboration research in bounded batches; raw private logs remain outside the repository.</li>
                     <li><strong>Quality:</strong> One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.</li>
                     <li><strong>Coordination note:</strong> Publication backlog closed; pursue source depth next, rather than repeating preservation setup.</li>
-                    <li><strong>Evidence status:</strong> Evidence baseline: 24 approved / 8 deferred / 0 rejected (32 total).</li>
+<li><strong>Evidence status:</strong> Evidence baseline: 24 approved / 8 deferred / 0 rejected (32 total).</li>
                 </ul>
-                <div class="notePanel"><strong>Drift note</strong> Preservation floor integrated and artifact existence verified. Source content was not exhaustively re-fact-checked in this maintenance pass.</div>
+<div class="notePanel"><strong>Drift note</strong> October 3 provenance repair records the archive&#x27;s actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.</div>
                 <div class="links">
                     <a class="button button--ghost" href="https://sgwoods.github.io/public/kinitos-neoedge.html">Project page</a> <a class="button button--ghost" href="kinitos-neoedge/">Open working repository</a> <a class="button button--ghost" href="kinitos-neoedge/WORK-PLAN.md">Open work plan</a> <a class="button button--ghost" href="kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md">Open recovery audit</a>
                 </div>

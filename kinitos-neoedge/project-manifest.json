@@ -12,8 +12,8 @@
     "end_year": 2011,
     "label": "Kinitos founding through NeoEdge acquisition era"
   },
-  "repo_pushed_at": "2026-05-17T16:29:44Z",
-  "status_generated_at": "2026-05-17T16:29:44Z",
+  "repo_pushed_at": "2026-10-03T12:47:32-04:00",
+  "status_generated_at": "2026-10-03T19:23:28+00:00",
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
@@ -57,5 +57,11 @@
     "src-mostfun-2008-wayback-homepage-game-network",
     "src-blue-noodle-2011-wayback-homepage-casual-social",
     "src-neoedge-ip-2008-google-patents-interstitial-advertising-chain"
-  ]
+  ],
+  "source_commit": "993055ee863c2c560581ac0593ce5972ca04963f",
+  "source_commit_at": "2026-10-03T12:47:32-04:00",
+  "source_ref": "main",
+  "source_dirty": false,
+  "source_scope": "kinitos-neoedge",
+  "source_content_sha256": "76f0668061b9d49aa9e5819210324bdd7496bb91a613ae9a7f2cf631c32d15e7"
 }

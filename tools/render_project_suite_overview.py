@@ -52,7 +52,7 @@ def priority_lookup(notes: dict[str, Any]) -> dict[str, dict[str, str]]:
 
 
 def project_source_counts(project_id: str) -> dict[str, int] | None:
-    source_manifest_path = ROOT / project_id / "source-manifest.json"
+    source_manifest_path = ROOT / ("quack" if project_id == "quack-com" else project_id) / "source-manifest.json"
     if source_manifest_path.exists():
         payload = json.loads(source_manifest_path.read_text())
         sources = payload.get("sources", [])
@@ -303,9 +303,9 @@ def render_project_entry(
                     <li><strong>Next step:</strong> {html.escape(note["next_step"])}</li>
                     <li><strong>Quality:</strong> {html.escape(note["quality_note"])}</li>
                     <li><strong>Coordination note:</strong> {html.escape(note["coordination_note"])}</li>
-                    {extra_rows}
+{extra_rows}
                 </ul>
-                {drift_html}
+{drift_html}
                 <div class="links">
                     {links_html}
                 </div>

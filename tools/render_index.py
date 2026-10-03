@@ -41,6 +41,7 @@ def env_or_candidates(env_name: str, candidates: list[Path]) -> Path:
 
 PROJECT_ORDER = [
     "aurora-galactica",
+    "star-swarm",
     "confidential-project",
     "ai-dystopia-quotes",
     "phd-renovation",
@@ -461,6 +462,15 @@ def build_coding_activity_projects(projects: list[ProjectStatus]) -> list[dict[s
             )
             continue
 
+        if project.repo_url and project.repo_url.startswith("https://github.com/sgwoods/"):
+            repo = project.repo_url.rstrip("/").rsplit("/", 1)[-1]
+            activity_projects.append({
+                "label": project.display_name, "repo_path": ROOT.parent / repo,
+                "ref": "origin/main", "api_ref": "main", "project_id": project.project_id,
+                "repo": repo, "pathspecs": [], "color_top": color_top, "color_bottom": color_bottom,
+            })
+            continue
+
         pathspecs = [project.project_page_href, f"data/projects/{project.project_id}.json"]
         related_data = ROOT / "data" / f"{project.project_id}.approved.json"
         if related_data.exists():
@@ -682,6 +692,7 @@ def render_observations() -> str:
         checked = observation.get("checked_at")
         stale = not checked or datetime.now(timezone.utc) - parse_datetime(checked) > timedelta(days=8)
         labels = {"matches": "Matches exported source", "different_commit": "Different source commit; review export",
+                  "content_matches": "Archive content matches snapshot", "content_changed": "Archive content changed; review snapshot",
                   "dirty_snapshot": "Export included uncommitted changes; review source",
                   "newer_commit": "Newer than reported snapshot", "legacy_unverified": "Legacy snapshot; commit identity unavailable",
                   "not_observed": "No public repository configured", "check_failed": "Check failed; retained observation"}

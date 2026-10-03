@@ -71,5 +71,54 @@ here needs to manufacture a fresh production date.
 - Aurora exporter migration remains the other-machine task above. Three older PhD
   migration/reporting branch commits remain a separate documentation review.
 - Older archive manifests lack source commit identity. The observer reports this
-  explicitly; add provenance on their next deliberate content export rather than
-  relabeling old content as newly researched.
+  explicitly until their content has been reviewed and baselined. The seven
+  existing archive manifests were baselined in the follow-up below.
+
+## Shared archive provenance
+
+Run `python3 tools/snapshot_archive_provenance.py` after reviewing and committing
+archive changes, then run the coordination refresh and commit the generated metadata.
+`--check` verifies current committed content against the recorded fingerprints.
+The script refuses uncommitted archive content and is idempotent.
+
+Each archive records its last content commit, that commit's real date, and
+`source_content_sha256`: SHA-256 over sorted Git entries (path, mode, type, blob
+identity) below its directory, excluding only its own `project-manifest.json`.
+The observer recomputes the same fingerprint from GitHub. This avoids a circular
+"manifest updates its own source commit" cycle. Changes to evidence, source
+ledgers, plans, or archive pages are detected; metadata-only updates are ignored.
+Quack and Kinitos compatibility manifests receive the same provenance metadata.
+
+All seven archive provenance gaps are repaired. This is not an evidence-completeness
+claim: Canberra has no source records; Quack has 3 of 6 approved sources localized;
+Steven Woods has 18 of 22. All paths declared as localized existed at review time.
+Google Canada (9), Inovia (3), SEI (12), and Kinitos (24) have local artifacts for
+all currently approved records. Counts describe the October 3 review.
+
+## Star Swarm: Claude / Firstmate handoff
+
+No new exporter or cross-repository credentials are needed. The hub reads
+`https://sgwoods.github.io/star-swarm/build.json`, which the existing source CI
+already deploys with the tested game. Opt-in is `status_sync: github-pages-build-v1`
+in the hub manifest. The importer requires release mode, a clean tree, and a
+commit resolvable in the public source repository. Invalid or unreachable builds
+retain the last snapshot and fail the refresh visibly. A new deployment updates
+the source fields and build label; it does not invent a semantic release version.
+
+Agent handoff prompt:
+
+> Maintain Star Swarm's existing build.json contract when publishing: commit,
+> dirty, mode, and builtAt must identify the bundle actually deployed. Keep
+> ARCHITECTURE.md as the tested state document and ROADMAP.md as planned work.
+> The public portfolio now consumes build.json, so no public-repo token or
+> second export is required. After a successful deployment, run
+> `python3 tools/refresh_public_coordination.py --observe` in sgwoods/public,
+> or dispatch its Render Public Index workflow; the weekly run also picks it up.
+> If the project's purpose, URLs, or priorities change, update the hub's
+> data/projects/star-swarm.json and data/shared/project-suite-overview.json.
+> Do not treat a main-branch commit as deployed until the build identity confirms it.
+
+The hub generates star-swarm.html from that manifest. Feature descriptions link
+to the canonical source docs instead of maintaining another feature checklist.
+Other projects can opt in only if they publish the same release build identity
+and use the same documented architecture/roadmap page convention.

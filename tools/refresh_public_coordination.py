@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -48,7 +49,7 @@ def load_context() -> tuple[dict, list[render_index.ProjectStatus]]:
 
 
 def build_outputs(notes: dict, projects: list[render_index.ProjectStatus]) -> list[RenderedOutput]:
-    return [
+    outputs = [
         RenderedOutput(
             path=render_project_suite_overview.MARKDOWN_OUTPUT,
             contents=render_project_suite_overview.render_markdown(notes, projects),
@@ -63,6 +64,15 @@ def build_outputs(notes: dict, projects: list[render_index.ProjectStatus]) -> li
             compare_mode="index",
         ),
     ]
+    import render_external_project
+    for path in sorted((ROOT / "data/projects").glob("*.json")):
+        payload = json.loads(path.read_text())
+        if payload.get("active") and payload.get("status_sync") == "github-pages-build-v1":
+            output_path = (ROOT / payload["project_page_path"]).resolve()
+            if output_path.parent != ROOT or output_path.suffix != ".html":
+                raise SystemExit("External project pages must be root-level HTML files")
+            outputs.append(RenderedOutput(output_path, render_external_project.render(payload)))
+    return outputs
 
 
 def normalize_for_compare(contents: str, compare_mode: str) -> str:
@@ -124,7 +134,7 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help=(
             "Do not write files; exit non-zero if PROJECT-SUITE-OVERVIEW.md, "
-            "project-suite-overview.html, or index.html are out of sync."
+            "project-suite-overview.html, index.html, or external project pages are out of sync."
         ),
     )
     return parser.parse_args()
@@ -137,6 +147,11 @@ def main() -> None:
         if args.check:
             raise SystemExit("--observe writes observations; use it separately from --check")
         import check_repository_freshness
+        import sync_external_status
+        try:
+            sync_external_status.main()
+        except SystemExit:
+            observation_failed = True
         try:
             check_repository_freshness.main()
         except SystemExit:

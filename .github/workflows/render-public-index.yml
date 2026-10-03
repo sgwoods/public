@@ -14,6 +14,10 @@ on:
       - "tools/refresh_public_coordination.py"
       - "tools/check_repository_freshness.py"
       - "tools/test_repository_freshness.py"
+      - "tools/archive_provenance.py"
+      - "tools/snapshot_archive_provenance.py"
+      - "tools/sync_external_status.py"
+      - "tools/render_external_project.py"
       - "data/shared/project-suite-overview.json"
       - ".github/workflows/render-public-index.yml"
   workflow_dispatch:
@@ -58,13 +62,13 @@ jobs:
 
       - name: Commit regenerated index
         run: |
-          if git diff --quiet -- index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json; then
+          if git diff --quiet -- index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/projects star-swarm.html; then
             echo "No index changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json
+          git add index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/projects star-swarm.html
           git commit -m "Refresh public repository observations and coordination pages"
           git push
 

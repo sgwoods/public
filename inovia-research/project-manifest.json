@@ -12,8 +12,8 @@
     "end_year": 2026,
     "label": "Inovia era"
   },
-  "repo_pushed_at": "2026-05-11T17:46:41Z",
-  "status_generated_at": "2026-05-11T17:46:41Z",
+  "repo_pushed_at": "2026-05-11T13:51:44-04:00",
+  "status_generated_at": "2026-10-03T19:23:28+00:00",
   "status_label": "Current phase",
   "status_value": "Seeded era archive",
   "focus_label": "Current focus",
@@ -37,5 +37,11 @@
     "src-inovia-2021-inovia-welcome-profile",
     "src-inovia-2021-betakit-transition-profile",
     "src-inovia-2023-riddick-show"
-  ]
+  ],
+  "source_commit": "02e07accc9b2e615ddb2efddabd084128551cb02",
+  "source_commit_at": "2026-05-11T13:51:44-04:00",
+  "source_ref": "main",
+  "source_dirty": false,
+  "source_scope": "inovia-research",
+  "source_content_sha256": "c591c5c20156aa98f330b34bcb39c38af8fe44b2b6eda756b9fb43fbc15e45a7"
 }
