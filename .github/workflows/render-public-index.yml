@@ -26,6 +26,7 @@ concurrency:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   render-index:
@@ -65,6 +66,11 @@ jobs:
           git add index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json
           git commit -m "Refresh public repository observations and coordination pages"
           git push
+
+      - name: Publish refreshed pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
 
       - name: Report failed observation or rendering
         if: steps.refresh.outcome == 'failure'

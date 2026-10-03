@@ -34,6 +34,9 @@ local edits, runtime health, and hosted release lanes require a separate review.
 
 The GitHub workflow checks weekly and on relevant changes. It updates all three
 generated coordination pages. An eight-day threshold marks observations stale.
+The workflow explicitly requests a Pages rebuild after publishing, using the
+[GitHub Pages build API](https://docs.github.com/en/rest/pages/pages#request-a-github-pages-build),
+so scheduled bot commits also reach the branch-published website.
 
 ## Aurora handoff prompt (other machine)
 
