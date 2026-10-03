@@ -1,11 +1,13 @@
 # Project Suite Overview
 
-Updated: `2026-05-18`
+Updated: `2026-10-03`
 
-Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs.
+Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs. Refresh review on October 3, 2026: since the May 20 wrap-up, published changes in this hub are confined to Aurora and generated homepage updates, with the latest project export dated June 11. Other project notes and priority bands are carried forward, not newly verified against their owning repositories; refresh those sources before treating likely work as current or reprioritizing.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
+
+Current branch snapshot: `main`
 
 ## What This Page Is For
 
@@ -52,7 +54,7 @@ Per-project manifests remain the factual status layer; this overview is the port
 
 | Project | Surface Class | Visibility | Priority | Current Manifest State |
 | --- | --- | --- | --- | --- |
-| [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.0; Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams. |
+| [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
 | [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake + continuity |
@@ -73,12 +75,12 @@ Per-project manifests remain the factual status layer; this overview is the port
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: 1.4.0. Current focus: Aurora 1.4.0 is now live on hosted `/production`. Keep the public family trustworthy while using hosted `/dev` and hosted `/beta` to shape the next measured follow-through in Aurora conformance, Galaxy Guardians first-class playability, audio/event feedback, and cleaner Platinum/application seams.. Last repo update: May 20, 2026.
-- Likely current work: Post-release follow-through on the Aurora and Platinum public family, including lane trust, Galaxy Guardians readiness, and cleaner platform-versus-application seams.
-- Next step: Do a quick Aurora release-lane status refresh before any shared-public publish so the manifest and the active release lane stay aligned.
+- Current manifest state: Current release: 1.4.1. Current focus: Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates.. Last repo update: June 11, 2026.
+- Likely current work: The latest available export reports Aurora 1.4.1 production quality release, build 1164, with Stage 3 gameplay keepers, sign-in repair, audio/theme clarity, and stronger release gates. Continued work after the June 11 export is not verified by this hub refresh.
+- Next step: Verify the owning repository and hosted release lanes, then export any newer status. The June release notes leave score submission guarded pending server-side validation; confirm whether that gap and the documented conformance gaps remain before choosing the next work batch.
 - Quality: This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.
 - Coordination note: Best handled as protect-and-verify work rather than broad redesign.
-- Drift note: Aurora publishes from a separate repo on a faster cadence than this shared hub, so verify the exported manifest before broad public-repo refreshes.
+- Drift note: Latest available export is June 11, 2026, reviewed here October 3. A fresh homepage render does not establish a fresh project status; verify the owning repository before assuming 1.4.1 remains the active release.
 - Public links: [Project page](aurora-galactica.html), [Dashboard](https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html), [Live experience](https://sgwoods.github.io/Aurora-Galactica/), [Repository](https://github.com/sgwoods/Codex-Test1), [Open beta build](https://sgwoods.github.io/Aurora-Galactica/beta/), [Open project guide](https://sgwoods.github.io/Aurora-Galactica/project-guide.html), [Open Platinum guide](https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html)
 
 ### Plan private rental portal

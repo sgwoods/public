@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-05-18",
-  "summary": "Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs.",
+  "updated_at": "2026-10-03",
+  "summary": "Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs. Refresh review on October 3, 2026: since the May 20 wrap-up, published changes in this hub are confined to Aurora and generated homepage updates, with the latest project export dated June 11. Other project notes and priority bands are carried forward, not newly verified against their owning repositories; refresh those sources before treating likely work as current or reprioritizing.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
     "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
@@ -54,10 +54,10 @@
       "energy": "medium",
       "value": "high",
       "time_horizon": "short",
-      "likely_current_work": "Post-release follow-through on the Aurora and Platinum public family, including lane trust, Galaxy Guardians readiness, and cleaner platform-versus-application seams.",
-      "next_step": "Do a quick Aurora release-lane status refresh before any shared-public publish so the manifest and the active release lane stay aligned.",
+      "likely_current_work": "The latest available export reports Aurora 1.4.1 production quality release, build 1164, with Stage 3 gameplay keepers, sign-in repair, audio/theme clarity, and stronger release gates. Continued work after the June 11 export is not verified by this hub refresh.",
+      "next_step": "Verify the owning repository and hosted release lanes, then export any newer status. The June release notes leave score submission guarded pending server-side validation; confirm whether that gap and the documented conformance gaps remain before choosing the next work batch.",
       "quality_note": "This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.",
-      "drift_note": "Aurora publishes from a separate repo on a faster cadence than this shared hub, so verify the exported manifest before broad public-repo refreshes.",
+      "drift_note": "Latest available export is June 11, 2026, reviewed here October 3. A fresh homepage render does not establish a fresh project status; verify the owning repository before assuming 1.4.1 remains the active release.",
       "coordination_note": "Best handled as protect-and-verify work rather than broad redesign.",
       "extra_links": [
         {
