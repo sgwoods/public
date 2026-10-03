@@ -46,7 +46,7 @@
       },
       "urls": {
         "canonical": "https://www.internetnews.com/developer/microsoft-offers-sneak-peek-to-developers/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/microsoft-offers-sneak-peek-2004-03-11-internetnews.html",
         "archive_web": null
       },
       "ownership": {
@@ -62,7 +62,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "InternetNews coverage of DevDay 2004 names Kinitos' Smart Client Application Management software as a Microsoft-aligned example."
+      "notes": "InternetNews coverage of DevDay 2004 names Kinitos' Smart Client Application Management software as a Microsoft-aligned example. A direct local HTML preservation copy of the live InternetNews page was checked in from the canonical workspace on 2026-05-17."
     },
     {
       "source_id": "src-kinitos-2005-microsoft-experience-capital-markets-partners",
@@ -77,7 +77,7 @@
       },
       "urls": {
         "canonical": "https://news.microsoft.com/2005/06/21/microsoft-experience-capital-markets-is-supported-by-more-than-20-leading-solution-partners/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/microsoft-experience-capital-markets-2005-06-21-microsoft-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -93,7 +93,7 @@
         "press-release"
       ],
       "status": "approved",
-      "notes": "Microsoft lists Kinitos as a solution partner and describes its on-demand application delivery, update control, usage insight, and error reaction capabilities. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare block on the live URL, so this source remains approved but URL-backed."
+      "notes": "Microsoft lists Kinitos as a solution partner and describes its on-demand application delivery, update control, usage insight, and error reaction capabilities. A 2026-05-16 reader-rendered preservation copy of the canonical Microsoft page was checked in from the canonical workspace via r.jina.ai after the direct live URL remained Cloudflare-blocked."
     },
     {
       "source_id": "src-neoedge-2007-gamespot-bushnell-joins-board",
@@ -108,7 +108,7 @@
       },
       "urls": {
         "canonical": "https://www.gamespot.com/articles/bushnell-joins-neoedge-board/1100-6171273/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/bushnell-joins-neoedge-board-2007-05-22-gamespot-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -124,7 +124,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "GameSpot reports NeoEdge was founded in 2002, had 40 employees, had Alex Terry as CEO, and was operating MostFun.com in beta."
+      "notes": "GameSpot reports NeoEdge was founded in 2002, had 40 employees, had Alex Terry as CEO, and was operating MostFun.com in beta. A 2026-05-17 reader-style preservation copy was checked in from the canonical workspace after the direct live URL remained Cloudflare-blocked to shell fetch."
     },
     {
       "source_id": "src-neoedge-2008-gamesbeat-neomom-product-tastes",
@@ -356,7 +356,7 @@
       },
       "urls": {
         "canonical": "https://www.uspto.gov/web/trademarks/tmog/20110315_OG.pdf",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-pdf/blue-noodle-trademark-filing-2011-03-15-uspto-official-gazette-pages-118-119.pdf",
         "archive_web": null
       },
       "ownership": {
@@ -372,7 +372,7 @@
         "legal"
       ],
       "status": "approved",
-      "notes": "Official USPTO gazette shows BLUE NOODLE INC. filing for downloadable and online game-related entertainment services, supporting the Blue Noodle games/studio phase."
+      "notes": "Official USPTO gazette shows BLUE NOODLE INC. filing for downloadable and online game-related entertainment services, supporting the Blue Noodle games/studio phase. A tight two-page PDF extract isolating the relevant Blue Noodle entries was checked in from the canonical workspace on 2026-05-17."
     },
     {
       "source_id": "src-blue-noodle-2011-adtechdaily-clickstrip-gdc",
@@ -387,7 +387,7 @@
       },
       "urls": {
         "canonical": "https://adtechdaily.com/2011/03/10/blue-noodle-premiers-new-video-ad-bar-clickstrip-at-game-developers-conference/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/blue-noodle-clickstrip-2011-03-10-adtechdaily-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -403,7 +403,7 @@
         "gdc"
       ],
       "status": "approved",
-      "notes": "Ad Tech Daily says Blue Noodle was formerly NeoEdge and positions Clickstrip plus Yahoo Games, iWin, and RedAtoms partnerships as part of the 2011 strategy. A 2026-05-10 preservation attempt from the canonical workspace hit a Cloudflare block on direct fetch, so this source remains approved but URL-backed."
+      "notes": "Ad Tech Daily says Blue Noodle was formerly NeoEdge and positions Clickstrip plus Yahoo Games, iWin, and RedAtoms partnerships as part of the 2011 strategy. A 2026-05-16 reader-rendered preservation copy of the canonical Ad Tech Daily page was checked in from the canonical workspace via r.jina.ai after the direct live URL remained Cloudflare-blocked."
     },
     {
       "source_id": "src-blue-noodle-2011-fortune-mmv-financial-trouble",
@@ -418,7 +418,7 @@
       },
       "urls": {
         "canonical": "https://fortune.com/2011/07/18/exclusive-mmv-financial-in-trouble/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/fortune-mmv-financial-in-trouble-2011-07-18-fortune-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -434,7 +434,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "Fortune reports MMV Financial had closed U.S. offices and stopped writing new business shortly before the Blue Noodle asset crisis."
+      "notes": "Fortune reports MMV Financial had closed U.S. offices and stopped writing new business shortly before the Blue Noodle asset crisis. A 2026-05-17 reader-style preservation copy of the canonical Fortune page was checked in from the accessible Fortune-rendered article text after direct shell fetch of the live URL returned only a CloudFront block page."
     },
     {
       "source_id": "src-blue-noodle-2011-fortune-investor-immorality",
@@ -449,7 +449,7 @@
       },
       "urls": {
         "canonical": "https://fortune.com/2011/08/17/investor-immorality-the-strange-case-of-blue-noodle/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/fortune-investor-immorality-blue-noodle-2011-08-17-fortune-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -465,7 +465,7 @@
         "press"
       ],
       "status": "approved",
-      "notes": "Fortune says Blue Noodle had also been known as NeoEdge Networks and GWN, defaulted on debt, had assets seized by MMV, and had a deal in principle to sell assets to Double Fusion."
+      "notes": "Fortune says Blue Noodle had also been known as NeoEdge Networks and GWN, defaulted on debt, had assets seized by MMV, and had a deal in principle to sell assets to Double Fusion. A 2026-05-17 reader-style preservation copy of the canonical Fortune page was checked in from the accessible Fortune-rendered article text after direct shell fetch of the live URL returned only a CloudFront block page."
     },
     {
       "source_id": "src-double-fusion-2011-adtechdaily-major-expansion-neoedge-assets",
@@ -480,7 +480,7 @@
       },
       "urls": {
         "canonical": "https://adtechdaily.com/2011/12/29/major-expansion-at-in-gaming-ad-leader-double-fusion/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/double-fusion-major-expansion-2011-12-29-adtechdaily-reader.html",
         "archive_web": null
       },
       "ownership": {
@@ -496,7 +496,7 @@
         "adtech"
       ],
       "status": "approved",
-      "notes": "Ad Tech Daily explicitly frames the deal as an acquisition of NeoEdge's assets and says those assets added 100M+ monthly impressions plus Canadian distribution."
+      "notes": "Ad Tech Daily explicitly frames the deal as an acquisition of NeoEdge's assets and says those assets added 100M+ monthly impressions plus Canadian distribution. A 2026-05-16 reader-rendered preservation copy of the canonical Ad Tech Daily page was checked in from the canonical workspace via r.jina.ai after the direct live URL remained Cloudflare-blocked."
     },
     {
       "source_id": "src-mostfun-2007-wayback-homepage-game-player",
