@@ -117,6 +117,9 @@ def parse_args() -> argparse.Namespace:
         )
     )
     parser.add_argument(
+        "--observe", action="store_true", help="Check public GitHub source activity before rendering (requires gh)."
+    )
+    parser.add_argument(
         "--check",
         action="store_true",
         help=(
@@ -129,6 +132,15 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    observation_failed = False
+    if args.observe:
+        if args.check:
+            raise SystemExit("--observe writes observations; use it separately from --check")
+        import check_repository_freshness
+        try:
+            check_repository_freshness.main()
+        except SystemExit:
+            observation_failed = True
     notes, projects = load_context()
     outputs = build_outputs(notes, projects)
 
@@ -156,6 +168,8 @@ def main() -> None:
         print("Already current:")
         for path in unchanged:
             print(f"  - {relative_path(path)}")
+    if observation_failed:
+        raise SystemExit("Rendered retained observations with failed checks; retry the audit.")
 
 
 if __name__ == "__main__":

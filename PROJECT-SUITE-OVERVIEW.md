@@ -2,7 +2,7 @@
 
 Updated: `2026-10-03`
 
-Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs. October 3, 2026 audit checked GitHub default-branch commits for the four public standalone projects and the MMath runner, local checkout status, and selected unmerged shared-hub and PhD branches. Aurora has September development beyond its June production export; Kinitos has unmerged preservation work; MMath, PhD, and AI Quotes have smaller May status gaps. This is a repository evidence audit, not a runtime or deployment certification. Private implementation and the full set of historical development branches were not audited.
+Repo-owned portfolio coordination. October 3, 2026: repository observations now independently track public default branches and archive paths, with weekly checks, failure retention, and explicit freshness. MMath, PhD, and AI Quotes exporters now record source commits and refreshed public manifests. Kinitos preservation work has been integrated after review. Aurora production remains unchanged pending the other-machine handoff in PROJECT-STATUS-CONTRACT.md. Observations do not certify runtime health or promote releases.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
@@ -32,8 +32,8 @@ Current branch snapshot: `main`
 ## Current Priority Lanes
 
 - **Protect public surfaces** (2): Keep already-public software, docs, and dashboards trustworthy before expanding scope.
-- **Publish local progress** (1): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
-- **Steady advance** (7): Important ongoing work that benefits from regular small batches rather than a one-off push.
+- **Publish local progress** (0): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
+- **Steady advance** (8): Important ongoing work that benefits from regular small batches rather than a one-off push.
 - **Seed and clarify** (1): Early-stage areas where a small baseline is more valuable than broad exploration.
 - **Private tracking** (1): Keep only a high-level public summary while the underlying work remains private.
 
@@ -57,7 +57,7 @@ Current branch snapshot: `main`
 | [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
 | [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
-| [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake + continuity |
+| [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
 | [Masters of Mathematics renovation project](mmath-renovation.html) | Standalone repo export | Public | Protect public surfaces | 1.0.0-rc.1; Portability hardening and disciplined post-RC continuation |
 | [Steven Woods Public Record Project](https://sgwoods.github.io/public/steven-woods-research.html) | Shared-public archive subproject | Public | Steady advance | Active research archive; Continuity layer, baseline identity, timeline, current profile sources, and one-page CV |
 | [Steven at Google Canada Archive](https://sgwoods.github.io/public/google-canada-research.html) | Shared-public archive subproject | Public | Steady advance | Seeded era archive; Expanded baseline with original-provenance interview coverage and first-party transition context |
@@ -65,7 +65,7 @@ Current branch snapshot: `main`
 | [Canberra / CSIRO / Knights Archive](https://sgwoods.github.io/public/canberra-research.html) | Shared-public archive subproject | Public | Seed and clarify | Scaffolded research project; CSIRO references, Knights records, and Australian local context |
 | [SEI Pittsburgh Archive](https://sgwoods.github.io/public/sei-pittsburgh-research.html) | Shared-public archive subproject | Public | Steady advance | Seeded era archive; Expanded baseline with two additional SEI papers and a localized AOL bridge |
 | [Quack.com Archive Project](https://sgwoods.github.io/public/quack-com.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press |
-| [Kinitos / NeoEdge Networks Archive](https://sgwoods.github.io/public/kinitos-neoedge.html) | Shared-public bridge archive | Public | Publish local progress | Active research archive; Preservation completeness underway; sixteen approved sources now have local copies, including the GamesBeat funding-and-merger cluster |
+| [Kinitos / NeoEdge Networks Archive](https://sgwoods.github.io/public/kinitos-neoedge.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up |
 
 ## Project Records
 
@@ -77,10 +77,10 @@ Current branch snapshot: `main`
 - Time-energy-value: energy medium; value high; horizon short
 - Current manifest state: Current release: 1.4.1. Current focus: Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates.. Last repo update: June 11, 2026.
 - Likely current work: GitHub main at 181d8e296a (September 24) promotes a bounded Guardians Stage 5 dive policy after candidate/readability work. The local checkout also has uncommitted review-launcher, gameplay-adapter, rendering, and UI changes. The exported production baseline remains Aurora 1.4.1 build 1164 from June 11.
-- Next step: Finish and validate the local Guardians review work in the owning repo, commit it there, then reconcile development versus hosted production and export an accurate status. Do not label September development as a new production release without release evidence.
+- Next step: Use the Aurora handoff prompt in PROJECT-STATUS-CONTRACT.md on the active machine. Keep production source metadata tied to the released build, verify the active release lanes, and export only validated changes.
 - Quality: This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.
 - Coordination note: High-value continuity task: preserve and review current local work before starting another gameplay or publication batch.
-- Drift note: Verified October 3: public export source 54398ff5 is dated June 11; GitHub main is 181d8e296a dated September 24. The owning repo also has local uncommitted work. Repository activity and the production release are distinct.
+- Drift note: The GitHub observer now shows newer development independently of the June production export. No Aurora checkout was edited in this pass.
 - Public links: [Project page](aurora-galactica.html), [Dashboard](https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html), [Live experience](https://sgwoods.github.io/Aurora-Galactica/), [Repository](https://github.com/sgwoods/Codex-Test1), [Open beta build](https://sgwoods.github.io/Aurora-Galactica/beta/), [Open project guide](https://sgwoods.github.io/Aurora-Galactica/project-guide.html), [Open Platinum guide](https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html)
 
 ### Plan private rental portal
@@ -102,13 +102,13 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy low; value medium-high; horizon short
-- Current manifest state: Current stage: Active curation + publishing. Current focus: Growing the approved canon and widening discovery. Last repo update: May 9, 2026.
+- Current manifest state: Current stage: Active curation + publishing. Current focus: Growing the approved canon and widening discovery. Last repo update: October 3, 2026.
 - Evidence status: Approved corpus: 32 entries.
-- Likely current work: GitHub main 7b71714c14 (May 9) updates the source-scan ledger from 139 to 145 and aligns status documentation. The added scans report no new quotes or source leads. The local checkout is clean.
-- Next step: Reconcile status metadata through the existing export path, then favor one targeted editorial intake batch over repeating broad scans that produced no additions.
+- Likely current work: Public manifest refreshed from clean source 3cbaf56 with explicit commit provenance. The scan-ledger increase to 145 does not imply new approved quotes.
+- Next step: Favor one targeted editorial intake batch, then publish through the updated exporter.
 - Quality: The public page already reads cleanly and feels complete enough to trust; the main question is breadth and selection quality.
-- Coordination note: Low effort status reconciliation; measure future curation value by approved additions, not scan count.
-- Drift note: October 3 audit found a May 9 scan-log/status commit after the hub's May 9 export timestamp; that commit does not demonstrate approved-corpus growth. No newer default-branch commit was found.
+- Coordination note: Source metadata reconciled. Measure future curation value by approved additions rather than scan count.
+- Drift note: Export reconciled October 3; the repository observer will flag subsequent source differences.
 - Public links: [Project page](ai-dystopia-quotes.html), [Repository](https://github.com/sgwoods/sci-fi-ai-dystopian-project), [Open approved JSON](data/ai-dystopia-quotes.approved.json), [Open project manifest](data/projects/ai-dystopia-quotes.json)
 
 ### PhD renovation project
@@ -117,12 +117,12 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium; value high; horizon medium
-- Current manifest state: Current build line: 1.0.0. Current focus: Intake + continuity. Last repo update: May 3, 2026.
-- Likely current work: GitHub main 2bdf7a8bf6 (May 4) records the proven other-Mac clone after bootstrap and artifact-pipeline cleanup. Remote codex/fix-artifact-pipeline has three later migration/reporting documentation commits through 2b4e519210. The clean local checkout is on that branch name but still at 2bdf7a8.
-- Next step: Fetch and reconcile the owning checkout with its remote documentation branch, review the three documentation commits for integration, then refresh the public status export. Keep intake/recovery as the next research lane; no new release was identified.
+- Current manifest state: Current build line: 1.0.0. Current focus: Intake triage. Last repo update: October 3, 2026.
+- Likely current work: Exporter metadata now uses the source commit and real export time. A new --status-only mode refreshes public status without rebuilding thesis artifacts; the release remains 1.0.0.
+- Next step: Review the three pre-existing remote migration/reporting documentation commits separately, then continue intake triage.
 - Quality: One of the most mature documentation and validation surfaces in the suite.
-- Coordination note: Good candidate for steady, bounded progress rather than urgent intervention.
-- Drift note: October 3 audit: public manifest is dated May 3; main and the remote documentation branch have May 4 work. Local tracking status alone did not reveal the remote branch advance because its tracking ref was stale.
+- Coordination note: Metadata fix published; the remote documentation branch remains a separate integration task.
+- Drift note: Public metadata now represents clean source f5eea43. Artifact dates remain independent. The older local checkout was not altered.
 - Public links: [Project page](phd-renovation.html), [Dashboard](https://sgwoods.github.io/public/phd-renovation-dashboard.html), [Repository](https://github.com/sgwoods/phd-renovation), [Open handbook](phd-renovation-handbook.html), [Open thesis PDF](phd-renovation-thesis.pdf), [Open roadmap](https://github.com/sgwoods/phd-renovation/blob/main/RENOVATION.md)
 
 ### Masters of Mathematics renovation project
@@ -131,13 +131,13 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short-medium
-- Current manifest state: Current release: 1.0.0-rc.1. Current focus: Portability hardening and disciplined post-RC continuation. Last repo update: May 4, 2026.
-- Likely current work: GitHub main ff7b8f4ae8 (May 9) clarifies the hosted-runner contract after portability and public-export cleanup. Runner main b71c6a8cc4 also documents that role. Both local checkouts are clean; no newer default-branch commits were found.
-- Next step: Review preserved public commit 11329bd, which points experience_url to the hosted runner, verify that destination, and integrate the link correction. Re-export status through the owning repo while retaining the 1.0.0-rc.1 release unless release evidence changes.
+- Current manifest state: Current release: 1.0.0-rc.1. Current focus: Portability hardening and disciplined post-RC continuation. Last repo update: October 3, 2026.
+- Likely current work: Exporter provenance and public runner-link reconciliation completed October 3. The exported release remains 1.0.0-rc.1.
+- Next step: Continue bounded portability or benchmark work; use the updated exporter for subsequent factual status changes.
 - Quality: Strong research-restoration presentation with clear public framing; still benefits from discipline more than expansion.
-- Coordination note: Small, bounded integration task with good coordination value; this audit does not establish a new release.
-- Drift note: October 3 audit: hub repo_pushed_at still says May 4; owning main has May 9 documentation and export work. Shared-hub branch codex/excluded-mmath-11329bd contains an unmerged runner-link change.
-- Public links: [Project page](mmath-renovation.html), [Dashboard](https://sgwoods.github.io/public/mmath-renovation-release-dashboard.html), [Live experience](https://sgwoods.github.io/public/mmath-renovation-remote-experiments.html), [Repository](https://github.com/sgwoods/mmath-renovation), [Open remote experiments guide](mmath-renovation-remote-experiments.html), [Open thesis PDF](mmath-thesis.pdf), [Open roadmap](https://github.com/sgwoods/mmath-renovation/blob/main/docs/project-goal-roadmap.md)
+- Coordination note: Small publication gap closed; defer broader benchmark expansion until deliberately prioritized.
+- Drift note: Public status now identifies source commit 408c933 and the live runner URL. The runner responded HTTP 200 during this pass; experiment execution was not tested.
+- Public links: [Project page](mmath-renovation.html), [Dashboard](https://sgwoods.github.io/public/mmath-renovation-release-dashboard.html), [Live experience](https://abtweak-experiments-ui.vercel.app), [Repository](https://github.com/sgwoods/mmath-renovation), [Open remote experiments guide](mmath-renovation-remote-experiments.html), [Open thesis PDF](mmath-thesis.pdf), [Open roadmap](https://github.com/sgwoods/mmath-renovation/blob/main/docs/project-goal-roadmap.md)
 
 ### Steven Woods Public Record Project
 
@@ -226,13 +226,13 @@ Current branch snapshot: `main`
 
 - Surface class: Shared-public bridge archive
 - Visibility: Public
-- Priority now: Publish local progress
+- Priority now: Steady advance
 - Time-energy-value: energy medium-high; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Preservation completeness underway; sixteen approved sources now have local copies, including the GamesBeat funding-and-merger cluster. Last repo update: May 10, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up. Last repo update: May 17, 2026.
 - Evidence status: Evidence baseline: 24 approved / 8 deferred / 0 rejected (32 total).
-- Likely current work: Remote branch codex/kinitos-private-evidence-first-contact remains six commits ahead of public main for this work, ending at 3992c6e. Its manifest reports all 24 approved sources localized, versus the public summary's 16; it also contains evidence-derived corroboration notes.
-- Next step: Review the six branch commits and evidence-derived notes for public suitability, integrate the approved preservation work, and regenerate the archive's public outputs and bridge manifest. Then continue deferred-source and corroboration work.
+- Likely current work: The preservation branch has been integrated in 993055e after reviewing its derivatives and removing private log filenames from the public lead note. All 24 approved records have existing local artifacts.
+- Next step: Resume deferred-source and public-corroboration research in bounded batches; raw private logs remain outside the repository.
 - Quality: One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.
-- Coordination note: Highest-value publication candidate: substantial preservation work already exists. Integration needs a content review; this audit did not merge or certify the evidence-derived notes.
-- Drift note: Verified October 3 after fetching shared-hub refs: the preservation-complete branch remains unmerged. Branch manifest dated May 17 reports 24 approved sources localized; current public bridge still reports 16.
+- Coordination note: Publication backlog closed; pursue source depth next, rather than repeating preservation setup.
+- Drift note: Preservation floor integrated and artifact existence verified. Source content was not exhaustively re-fact-checked in this maintenance pass.
 - Public links: [Project page](https://sgwoods.github.io/public/kinitos-neoedge.html), [Open working repository](kinitos-neoedge/), [Open work plan](kinitos-neoedge/WORK-PLAN.md), [Open recovery audit](kinitos-neoedge/PROJECT-STATE-AND-RECOVERY-2026-05-03.md)

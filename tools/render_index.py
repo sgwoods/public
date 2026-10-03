@@ -670,6 +670,39 @@ def render_style_guide_note() -> str:
         </section>"""
 
 
+def render_observations() -> str:
+    path = ROOT / "data/shared/repository-observations.json"
+    if not path.exists():
+        return ""
+    data = json.loads(path.read_text())
+    rows = []
+    dates = []
+    for observation in data.get("projects", {}).values():
+        state = observation["state"]
+        checked = observation.get("checked_at")
+        stale = not checked or datetime.now(timezone.utc) - parse_datetime(checked) > timedelta(days=8)
+        labels = {"matches": "Matches exported source", "different_commit": "Different source commit; review export",
+                  "dirty_snapshot": "Export included uncommitted changes; review source",
+                  "newer_commit": "Newer than reported snapshot", "legacy_unverified": "Legacy snapshot; commit identity unavailable",
+                  "not_observed": "No public repository configured", "check_failed": "Check failed; retained observation"}
+        label = labels[state] + (" (stale)" if stale and state != "not_observed" else "")
+        date_value = observation.get("commit_date")
+        if date_value:
+            dates.append(parse_datetime(date_value))
+        activity = html.escape(format_local_date(parse_datetime(date_value))) if date_value else "Unknown"
+        if observation.get("commit_url"):
+            activity = f'<a href="{html.escape(observation["commit_url"], quote=True)}">{activity}</a>'
+        checked_text = html.escape(format_local_datetime(parse_datetime(checked))) if checked else "Never"
+        rows.append(f"<tr><td>{html.escape(observation['display_name'])}</td><td>{activity}</td><td>{html.escape(label)}</td><td>{checked_text}</td></tr>")
+    latest = html.escape(format_local_date(max(dates))) if dates else "Unknown"
+    return f'''<section class="panel" id="repository-activity">
+            <h2>Repository Activity</h2>
+            <p>Latest observed development: <strong>{latest}</strong>. Observations track public default branches and archive-specific paths, independently of published releases. Checks older than eight days are marked stale.</p>
+            <div class="repositoryTable"><table><thead><tr><th>Project</th><th>Commit date</th><th>Snapshot comparison</th><th>Last successful check</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+            <p><a href="data/shared/repository-observations.json">Observation data</a> · <a href="PROJECT-STATUS-CONTRACT.md">Status contract and maintenance</a></p>
+        </section>'''
+
+
 def render() -> str:
     projects = sorted(
         [load_project(path) for path in sorted(DATA_DIR.glob("*.json"))]
@@ -726,7 +759,7 @@ def render() -> str:
                     <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
                 </div>
                 <div class="metaCard">
-                    <span class="metaLabel">Latest Reported Repo Update</span>
+                    <span class="metaLabel">Latest Published Snapshot Source</span>
                     <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(latest_project_repo_update))}</span>
                     <div class="metaNote">Newest repository date recorded in the exported project snapshots. Repository work may be newer. See the <a href="project-suite-overview.html">portfolio review for known gaps and newer activity</a>.</div>
                 </div>
@@ -737,6 +770,8 @@ def render() -> str:
                 </div>
             </div>
         </section>
+
+        {render_observations()}
 
         <section class="panel">
             <h2>Reference Pages</h2>

@@ -8,9 +8,17 @@ on:
       - "data/projects/*.json"
       - "*/project-manifest.json"
       - "assets/public-index.js"
+      - "assets/public-site.css"
       - "tools/render_index.py"
+      - "tools/render_project_suite_overview.py"
+      - "tools/refresh_public_coordination.py"
+      - "tools/check_repository_freshness.py"
+      - "tools/test_repository_freshness.py"
+      - "data/shared/project-suite-overview.json"
       - ".github/workflows/render-public-index.yml"
   workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1"
 
 concurrency:
   group: render-public-index-${{ github.ref }}
@@ -25,23 +33,39 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Render homepage index
-        run: python3 tools/render_index.py
+      - name: Observe repositories and refresh coordination pages
+        id: refresh
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/refresh_public_coordination.py --observe
+
+      - name: Validate freshness logic and generated pages
+        if: steps.refresh.outcome == 'success'
+        run: |
+          python3 tools/test_repository_freshness.py
+          python3 tools/refresh_public_coordination.py --check
 
       - name: Commit regenerated index
         run: |
-          if git diff --quiet -- index.html; then
+          if git diff --quiet -- index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json; then
             echo "No index changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "Render public index from manifests"
+          git add index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json
+          git commit -m "Refresh public repository observations and coordination pages"
           git push
+
+      - name: Report failed observation or rendering
+        if: steps.refresh.outcome == 'failure'
+        run: exit 1

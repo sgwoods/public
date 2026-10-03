@@ -34,3 +34,8 @@ Current important rule:
 - the older continuity/recovery lane is optional and should be used only for deliberate reconciliation work
 - `/Users/stevenwoods/GitPages/public` is a deprecated historical bridge checkout, not the normal active location
 - older iCloud recovery clones remain useful for continuity and reconciliation, but they are not the preferred default active clone model for ongoing shared-public work
+# Repository freshness
+
+Run `python3 tools/refresh_public_coordination.py --observe` to check GitHub and
+refresh the portfolio. Published source dates and observed development dates are
+separate. See [the status contract and Aurora handoff](PROJECT-STATUS-CONTRACT.md).

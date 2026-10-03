@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated_at": "2026-10-03",
-  "summary": "Repo-owned coordination layer for the full Steven Woods public suite. Per-project manifests remain the factual status layer; this file is the judgment layer for priority, quality, likely current work, and next-step tradeoffs. October 3, 2026 audit checked GitHub default-branch commits for the four public standalone projects and the MMath runner, local checkout status, and selected unmerged shared-hub and PhD branches. Aurora has September development beyond its June production export; Kinitos has unmerged preservation work; MMath, PhD, and AI Quotes have smaller May status gaps. This is a repository evidence audit, not a runtime or deployment certification. Private implementation and the full set of historical development branches were not audited.",
+  "summary": "Repo-owned portfolio coordination. October 3, 2026: repository observations now independently track public default branches and archive paths, with weekly checks, failure retention, and explicit freshness. MMath, PhD, and AI Quotes exporters now record source commits and refreshed public manifests. Kinitos preservation work has been integrated after review. Aurora production remains unchanged pending the other-machine handoff in PROJECT-STATUS-CONTRACT.md. Observations do not certify runtime health or promote releases.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
     "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
@@ -55,9 +55,9 @@
       "value": "high",
       "time_horizon": "short",
       "likely_current_work": "GitHub main at 181d8e296a (September 24) promotes a bounded Guardians Stage 5 dive policy after candidate/readability work. The local checkout also has uncommitted review-launcher, gameplay-adapter, rendering, and UI changes. The exported production baseline remains Aurora 1.4.1 build 1164 from June 11.",
-      "next_step": "Finish and validate the local Guardians review work in the owning repo, commit it there, then reconcile development versus hosted production and export an accurate status. Do not label September development as a new production release without release evidence.",
+      "next_step": "Use the Aurora handoff prompt in PROJECT-STATUS-CONTRACT.md on the active machine. Keep production source metadata tied to the released build, verify the active release lanes, and export only validated changes.",
       "quality_note": "This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.",
-      "drift_note": "Verified October 3: public export source 54398ff5 is dated June 11; GitHub main is 181d8e296a dated September 24. The owning repo also has local uncommitted work. Repository activity and the production release are distinct.",
+      "drift_note": "The GitHub observer now shows newer development independently of the June production export. No Aurora checkout was edited in this pass.",
       "coordination_note": "High-value continuity task: preserve and review current local work before starting another gameplay or publication batch.",
       "extra_links": [
         {
@@ -94,11 +94,11 @@
       "energy": "low",
       "value": "medium-high",
       "time_horizon": "short",
-      "likely_current_work": "GitHub main 7b71714c14 (May 9) updates the source-scan ledger from 139 to 145 and aligns status documentation. The added scans report no new quotes or source leads. The local checkout is clean.",
-      "next_step": "Reconcile status metadata through the existing export path, then favor one targeted editorial intake batch over repeating broad scans that produced no additions.",
+      "likely_current_work": "Public manifest refreshed from clean source 3cbaf56 with explicit commit provenance. The scan-ledger increase to 145 does not imply new approved quotes.",
+      "next_step": "Favor one targeted editorial intake batch, then publish through the updated exporter.",
       "quality_note": "The public page already reads cleanly and feels complete enough to trust; the main question is breadth and selection quality.",
-      "drift_note": "October 3 audit found a May 9 scan-log/status commit after the hub's May 9 export timestamp; that commit does not demonstrate approved-corpus growth. No newer default-branch commit was found.",
-      "coordination_note": "Low effort status reconciliation; measure future curation value by approved additions, not scan count.",
+      "drift_note": "Export reconciled October 3; the repository observer will flag subsequent source differences.",
+      "coordination_note": "Source metadata reconciled. Measure future curation value by approved additions rather than scan count.",
       "extra_links": [
         {
           "label": "Open approved JSON",
@@ -117,11 +117,11 @@
       "energy": "medium",
       "value": "high",
       "time_horizon": "medium",
-      "likely_current_work": "GitHub main 2bdf7a8bf6 (May 4) records the proven other-Mac clone after bootstrap and artifact-pipeline cleanup. Remote codex/fix-artifact-pipeline has three later migration/reporting documentation commits through 2b4e519210. The clean local checkout is on that branch name but still at 2bdf7a8.",
-      "next_step": "Fetch and reconcile the owning checkout with its remote documentation branch, review the three documentation commits for integration, then refresh the public status export. Keep intake/recovery as the next research lane; no new release was identified.",
+      "likely_current_work": "Exporter metadata now uses the source commit and real export time. A new --status-only mode refreshes public status without rebuilding thesis artifacts; the release remains 1.0.0.",
+      "next_step": "Review the three pre-existing remote migration/reporting documentation commits separately, then continue intake triage.",
       "quality_note": "One of the most mature documentation and validation surfaces in the suite.",
-      "drift_note": "October 3 audit: public manifest is dated May 3; main and the remote documentation branch have May 4 work. Local tracking status alone did not reveal the remote branch advance because its tracking ref was stale.",
-      "coordination_note": "Good candidate for steady, bounded progress rather than urgent intervention.",
+      "drift_note": "Public metadata now represents clean source f5eea43. Artifact dates remain independent. The older local checkout was not altered.",
+      "coordination_note": "Metadata fix published; the remote documentation branch remains a separate integration task.",
       "extra_links": [
         {
           "label": "Open handbook",
@@ -144,11 +144,11 @@
       "energy": "medium",
       "value": "high",
       "time_horizon": "short-medium",
-      "likely_current_work": "GitHub main ff7b8f4ae8 (May 9) clarifies the hosted-runner contract after portability and public-export cleanup. Runner main b71c6a8cc4 also documents that role. Both local checkouts are clean; no newer default-branch commits were found.",
-      "next_step": "Review preserved public commit 11329bd, which points experience_url to the hosted runner, verify that destination, and integrate the link correction. Re-export status through the owning repo while retaining the 1.0.0-rc.1 release unless release evidence changes.",
+      "likely_current_work": "Exporter provenance and public runner-link reconciliation completed October 3. The exported release remains 1.0.0-rc.1.",
+      "next_step": "Continue bounded portability or benchmark work; use the updated exporter for subsequent factual status changes.",
       "quality_note": "Strong research-restoration presentation with clear public framing; still benefits from discipline more than expansion.",
-      "drift_note": "October 3 audit: hub repo_pushed_at still says May 4; owning main has May 9 documentation and export work. Shared-hub branch codex/excluded-mmath-11329bd contains an unmerged runner-link change.",
-      "coordination_note": "Small, bounded integration task with good coordination value; this audit does not establish a new release.",
+      "drift_note": "Public status now identifies source commit 408c933 and the live runner URL. The runner responded HTTP 200 during this pass; experiment execution was not tested.",
+      "coordination_note": "Small publication gap closed; defer broader benchmark expansion until deliberately prioritized.",
       "extra_links": [
         {
           "label": "Open remote experiments guide",
@@ -325,15 +325,15 @@
     "kinitos-neoedge": {
       "surface_class": "Shared-public bridge archive",
       "visibility": "Public",
-      "priority_now": "publish",
+      "priority_now": "steady",
       "energy": "medium-high",
       "value": "high",
       "time_horizon": "medium",
-      "likely_current_work": "Remote branch codex/kinitos-private-evidence-first-contact remains six commits ahead of public main for this work, ending at 3992c6e. Its manifest reports all 24 approved sources localized, versus the public summary's 16; it also contains evidence-derived corroboration notes.",
-      "next_step": "Review the six branch commits and evidence-derived notes for public suitability, integrate the approved preservation work, and regenerate the archive's public outputs and bridge manifest. Then continue deferred-source and corroboration work.",
+      "likely_current_work": "The preservation branch has been integrated in 993055e after reviewing its derivatives and removing private log filenames from the public lead note. All 24 approved records have existing local artifacts.",
+      "next_step": "Resume deferred-source and public-corroboration research in bounded batches; raw private logs remain outside the repository.",
       "quality_note": "One of the strongest deep archives in the suite after Steven and Quack, with clear continuity discipline.",
-      "drift_note": "Verified October 3 after fetching shared-hub refs: the preservation-complete branch remains unmerged. Branch manifest dated May 17 reports 24 approved sources localized; current public bridge still reports 16.",
-      "coordination_note": "Highest-value publication candidate: substantial preservation work already exists. Integration needs a content review; this audit did not merge or certify the evidence-derived notes.",
+      "drift_note": "Preservation floor integrated and artifact existence verified. Source content was not exhaustively re-fact-checked in this maintenance pass.",
+      "coordination_note": "Publication backlog closed; pursue source depth next, rather than repeating preservation setup.",
       "extra_links": [
         {
           "label": "Open working repository",

@@ -566,3 +566,7 @@ code {
         min-height: 180px;
     }
 }
+.repositoryTable { overflow-x: auto; }
+.repositoryTable table { width: 100%; min-width: 640px; border-collapse: collapse; text-align: left; }
+.repositoryTable th, .repositoryTable td { padding: 12px; border-bottom: 1px solid rgba(135, 197, 255, .2); vertical-align: top; }
+.repositoryTable th { font-size: .85rem; }
