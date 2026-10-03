@@ -177,7 +177,7 @@
         }
 
         const details = [
-            `<div><strong>Last repo update</strong> ${escapeHtml(formatLocalDate(project.repo_pushed_at))}</div>`,
+            `<div><strong>Reported repo update</strong> ${escapeHtml(formatLocalDate(project.repo_pushed_at))}</div>`,
             project.timeline_label ? `<div><strong>Archive span</strong> ${escapeHtml(project.timeline_label)}</div>` : "",
             `<div><strong>${escapeHtml(project.status_label)}</strong> ${escapeHtml(project.status_value)}</div>`,
             `<div><strong>${escapeHtml(project.focus_label)}</strong> ${escapeHtml(project.focus_value)}</div>`,

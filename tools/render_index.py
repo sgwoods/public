@@ -621,7 +621,7 @@ def render_project_card(project: ProjectStatus) -> str:
     if project.repo_url:
         buttons.append(render_button(project.repo_url, "Open repository"))
     details = [
-        f"<div><strong>Last repo update</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>",
+        f"<div><strong>Reported repo update</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>",
         f"<div><strong>{html.escape(project.status_label)}</strong> {html.escape(project.status_value)}</div>",
         f"<div><strong>{html.escape(project.focus_label)}</strong> {html.escape(project.focus_value)}</div>",
     ]
@@ -726,9 +726,9 @@ def render() -> str:
                     <div class="metaNote">Active projects currently publishing homepage status manifests.</div>
                 </div>
                 <div class="metaCard">
-                    <span class="metaLabel">Latest Project Repo Update</span>
+                    <span class="metaLabel">Latest Reported Repo Update</span>
                     <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(latest_project_repo_update))}</span>
-                    <div class="metaNote">Most recent `repo_pushed_at` represented by the active project manifests, not the homepage render date.</div>
+                    <div class="metaNote">Newest repository date recorded in the exported project snapshots. Repository work may be newer. See the <a href="project-suite-overview.html">portfolio review for known gaps and newer activity</a>.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Homepage Rendered</span>
