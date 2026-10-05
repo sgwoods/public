@@ -55,7 +55,7 @@ Current branch snapshot: `main`
 | Project | Surface Class | Visibility | Priority | Current Manifest State |
 | --- | --- | --- | --- | --- |
 | [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
-| [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build cecf7ed; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
+| [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build 9b03b10; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
 | [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
@@ -90,7 +90,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Published build: Build cecf7ed. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Last repo update: October 3, 2026.
+- Current manifest state: Published build: Build 9b03b10. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Last repo update: October 5, 2026.
 - Likely current work: Active Claude/Firstmate development. The reviewed architecture describes playable formation-shooter mechanics, selectable variants, and a prompt-assisted content forge. Recent commits fix exit-card controls and remembered-variant rendering; the October 3 main CI run and Pages deployment passed.
 - Next step: Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.
 - Quality: State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.
