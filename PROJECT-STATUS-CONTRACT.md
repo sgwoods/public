@@ -32,8 +32,11 @@ an exported commit identity cannot establish equality. A different commit is a
 review signal, not proof that a release needs promotion. Historical branches,
 local edits, runtime health, and hosted release lanes require a separate review.
 
-The GitHub workflow checks weekly and on relevant changes. It updates all three
-generated coordination pages. An eight-day threshold marks observations stale.
+The GitHub workflow checks daily at 13:17 UTC, on relevant hub changes, and on
+workflow dispatch. It updates the coordination pages and opted-in external project
+pages. An eight-day threshold marks observations stale. Hub-generated project
+pages show the last successful check and its comparison with the published build;
+failed checks retain the previous observation and visibly report the failure.
 The workflow explicitly requests a Pages rebuild after publishing, using the
 [GitHub Pages build API](https://docs.github.com/en/rest/pages/pages#request-a-github-pages-build),
 so scheduled bot commits also reach the branch-published website.
@@ -113,7 +116,7 @@ Agent handoff prompt:
 > The public portfolio now consumes build.json, so no public-repo token or
 > second export is required. After a successful deployment, run
 > `python3 tools/refresh_public_coordination.py --observe` in sgwoods/public,
-> or dispatch its Render Public Index workflow; the weekly run also picks it up.
+> or dispatch its Render Public Index workflow; the daily run also picks it up.
 > If the project's purpose, URLs, or priorities change, update the hub's
 > data/projects/star-swarm.json and data/shared/project-suite-overview.json.
 > Do not treat a main-branch commit as deployed until the build identity confirms it.
@@ -122,3 +125,54 @@ The hub generates star-swarm.html from that manifest. Feature descriptions link
 to the canonical source docs instead of maintaining another feature checklist.
 Other projects can opt in only if they publish the same release build identity
 and use the same documented architecture/roadmap page convention.
+
+## Notifications after publication
+
+Projects ask the hub to run `render-public-index.yml` on `main` through
+`workflow_dispatch`. The request means "look now". The hub imports or reads the
+published snapshot, observes public repository activity separately, regenerates
+its pages, commits the results, and explicitly requests a Pages build. A successful
+notification or render does not prove a new export. Release and status labels
+remain controlled by the project's published artifact, never by an activity check.
+
+- **Observed projects:** the released artifact follows a successful deployment of
+  the default branch. Notify only after deployment succeeds and the live build
+  identity resolves to the commit that was deployed. Star Swarm is the reference:
+  [PR 51](https://github.com/sgwoods/star-swarm/pull/51) adds a separate notification
+  job after deployment. The hub reads the served `build.json`; a newer branch
+  commit alone does not replace that identity.
+- **Exporting projects:** MMath, the PhD work, and the quotes project publish
+  explicit exports whose released commit can differ from the default branch.
+  Notify only AFTER the exporter has published its approved outputs and canonical
+  manifest to the hub. A branch push is not the notification trigger. Resolve the
+  released source commit and its real date before publishing; fail clearly if
+  resolution fails, without substituting today's date. Observation differences
+  are review signals and must not rewrite exported release labels or source fields.
+
+For an optional cross-repository notification, Star Swarm uses
+`PUBLIC_HUB_DISPATCH_TOKEN`, a fine-grained token restricted to `sgwoods/public`
+with Actions read/write (and GitHub's automatic Metadata read permission). It can
+dispatch the hub workflow without writing hub contents. The project's own
+`GITHUB_TOKEN` cannot dispatch another repository's workflow. Keep the token in
+the source project's secret store. Private projects remain excluded from public
+imports and observations, including after a notification.
+
+The reference job warns and succeeds if the secret is absent, leaving the daily
+hub refresh as the fallback. With a configured secret, failure to serve the
+expected commit or a refused dispatch fails the separate notification job while
+preserving the successful deployment.
+
+Verified October 12, 2026: the notification job ran after deployment in
+[the October 11 run](https://github.com/sgwoods/star-swarm/actions/runs/38149588310/job/114501956725)
+and [the October 12 run](https://github.com/sgwoods/star-swarm/actions/runs/38290391794/job/114952463867).
+Both warned that `PUBLIC_HUB_DISPATCH_TOKEN` was missing. The deployment gate and
+missing-secret fallback have therefore run; a successful authenticated dispatch
+has not yet been demonstrated. The Star Swarm owner must configure that secret
+and verify the next notification produces a corresponding hub run. No source
+project was modified by this hub change.
+
+`render_external_project.py` currently generates Star Swarm's hub page. It adds
+freshness to every page generated through that renderer. MMath, PhD, quotes, and
+Aurora pages are published by their source exporters; adding the same panel to
+those pages requires their owners to adopt it in their export templates. Their
+observations remain available on the hub's Repository Activity section.

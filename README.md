@@ -43,7 +43,7 @@ refresh the portfolio. Published source dates and observed development dates are
 separate. See [the status contract and Aurora handoff](PROJECT-STATUS-CONTRACT.md).
 
 Star Swarm imports its existing public `build.json`; no agent-specific exporter or
-source-repository credentials are needed. Weekly and manual refreshes use the same
+source-repository credentials are needed. Daily and manual refreshes use the same
 path. Archive content fingerprints are deliberately reviewed separately: run
 `python3 tools/snapshot_archive_provenance.py --check` to detect changed content,
 then review the evidence before recording a new baseline without `--check`.

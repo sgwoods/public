@@ -65,13 +65,15 @@ def build_outputs(notes: dict, projects: list[render_index.ProjectStatus]) -> li
         ),
     ]
     import render_external_project
+    observation_path = ROOT / "data/shared/repository-observations.json"
+    observations = json.loads(observation_path.read_text()).get("projects", {}) if observation_path.exists() else {}
     for path in sorted((ROOT / "data/projects").glob("*.json")):
         payload = json.loads(path.read_text())
         if payload.get("active") and payload.get("status_sync") == "github-pages-build-v1":
             output_path = (ROOT / payload["project_page_path"]).resolve()
             if output_path.parent != ROOT or output_path.suffix != ".html":
                 raise SystemExit("External project pages must be root-level HTML files")
-            outputs.append(RenderedOutput(output_path, render_external_project.render(payload)))
+            outputs.append(RenderedOutput(output_path, render_external_project.render(payload, observations.get(payload["project_id"]))))
     return outputs
 
 

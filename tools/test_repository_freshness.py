@@ -1,12 +1,71 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
 import check_repository_freshness as checker
 from archive_provenance import content_digest
 from sync_external_status import updated_manifest
+from render_external_project import render, render_freshness
+
+
+class ProjectPageFreshnessTests(unittest.TestCase):
+    def setUp(self):
+        self.now = datetime(2026, 10, 12, 20, tzinfo=timezone.utc)
+        self.payload = {"source_commit": "a" * 40, "source_commit_at": "2026-10-11T12:00:00Z"}
+        self.observation = {"state": "matches", "branch": "main", "commit": "a" * 40,
+                            "snapshot_commit": "a" * 40, "commit_date": "2026-10-11T12:00:00Z",
+                            "checked_at": "2026-10-12T19:00:00Z"}
+
+    def test_match_is_tied_to_the_checked_snapshot(self):
+        output = render_freshness(self.payload, self.observation, self.now)
+        self.assertIn("October 12, 2026 at 3:00 PM", output)
+        self.assertIn("At that check, the observed main branch matched the published build", output)
+        output = render_freshness(dict(self.payload, source_commit="b" * 40), self.observation, self.now)
+        self.assertIn("refers to a different snapshot", output)
+        self.assertNotIn("matched the published build", output)
+
+    def test_different_commit_is_newer_only_with_a_later_date(self):
+        observation = dict(self.observation, state="different_commit", commit="b" * 40,
+                           commit_date="2026-10-12T12:00:00Z")
+        output = render_freshness(self.payload, observation, self.now)
+        self.assertIn("A newer commit exists on main", output)
+        self.assertIn("review signal", output)
+        self.assertNotIn("out of date", output)
+        observation["commit_date"] = "2026-10-10T12:00:00Z"
+        output = render_freshness(self.payload, observation, self.now)
+        self.assertIn("differs from the published build", output)
+        self.assertNotIn("A newer commit", output)
+
+    def test_failure_reports_retained_observation_without_claiming_a_match(self):
+        observation = dict(self.observation, state="check_failed", attempted_at="2026-10-12T20:00:00Z")
+        output = render_freshness(self.payload, observation, self.now)
+        self.assertIn("latest repository check failed", output)
+        self.assertIn("October 12, 2026 at 3:00 PM", output)
+        self.assertIn("last successful observation retained commit", output)
+        self.assertNotIn("matched the published build", output)
+
+    def test_missing_and_old_checks_are_explicit(self):
+        output = render_freshness(self.payload, now=self.now)
+        self.assertIn("not yet completed a successful repository check", output)
+        self.assertNotIn("October 12", output)
+        output = render_freshness(self.payload, dict(self.observation, checked_at="2026-10-03T19:00:00Z"), self.now)
+        self.assertIn("over eight days old", output)
+
+    def test_render_preserves_project_labels_and_escapes_observed_fields(self):
+        payload = dict(self.payload, display_name="Test", repo_url="https://github.com/example/test",
+                       experience_url="https://example.com", dashboard_url="https://example.com/ci",
+                       status_value="Release 1.0", source_build_at="2026-10-11T12:01:00Z",
+                       description="A project", focus_value="Project focus", project_id="test")
+        before = dict(payload)
+        output = render(payload, dict(self.observation, branch="<script>alert(1)</script>"), self.now)
+        self.assertEqual(payload, before)
+        self.assertIn("Release 1.0", output)
+        self.assertIn("2026-10-11T12:01:00Z", output)
+        self.assertIn("&lt;script&gt;", output)
+        self.assertNotIn("<script>alert", output)
 
 
 class FreshnessTests(unittest.TestCase):
