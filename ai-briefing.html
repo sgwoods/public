@@ -29,29 +29,34 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.1.6-beta</b>, public code commit <code>bfe54ab30040</code> (2026-10-22T19:53:34Z)</li>
+      <li><b>v0.1.7-beta</b>, public code commit <code>bb544793c92a</code> (2026-10-22T22:14:25Z)</li>
       <li>Latest edition: 2026-10-22 · 17 editions and 7 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-22/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-22T19:53:55Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-22T22:14:33Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.1.7-beta · 2026-10-22</h3>
+    <ul>
+      <li>Shipped editions don&#x27;t break. Once a day&#x27;s email has gone out, that day is shipped (<code>pipeline/shipped.py</code>), and:</li>
+      <li><b>Publish guard:</b> before every production publish, the new site is checked against what readers already have. It refuses (the live site is untouched and the owner is emailed) if any of these hold: - a shipped day page or deep dive is missing; - a shipped edition&#x27;s text changed without a correction; - a shipped MP3 inside the retention window is missing; - the home page or a feed is missing, or the podcast feed would shrink.</li>
+      <li><b>Corrections are explicit:</b> rebuilding a shipped day (<code>rebrief</code>, <code>reprocess</code>, <code>remaster</code>) needs <code>--correct &quot;what changed&quot;</code>, and the page shows &quot;Corrected &lt;date&gt;: …&quot;.</li>
+      <li><b>Remasters keep the old audio:</b> the earlier MP3 is carried over from the live site, so no audio URL breaks.</li>
+      <li><b>After-publish check:</b> once the site is live, the newest shipped pages, both feeds and the latest MP3 must answer. If not, the previous site is put back automatically, the email is held, and the owner is emailed. <code>./np publish restore</code> does the same by hand.</li>
+      <li><b>The email waits for a good publish:</b> if the publish fails or the after-publish check fails, no subscriber email goes out. Before, it went anyway.</li>
+      <li><b>Audio retention:</b> 30 days on the site and in the podcast feed, up from 14. 60 days would be about 1 GB, the GitHub Pages limit.</li>
+      <li><b>Slack:</b> links any member posts in the team channel now count, links only. Who posted is never stored, and their text is never used.</li>
+      <li><b>Staging preview:</b> carries only the newest day&#x27;s audio. The first full preview push timed out.</li>
+      <li><b>Site pushes are sturdier:</b> a push that stalls (under 1 KB/s for 60 s) fails and is retried once over HTTP/1.1, instead of hanging the morning run. Pushes no longer use one huge buffered upload, which is what GitHub was timing out with HTTP 408.</li>
+    </ul>
     <h3>v0.1.6-beta · 2026-10-22</h3>
     <ul>
       <li>Development preview: <code>./np staging publish [setup]</code> publishes the dev checkout&#x27;s site to its own Pages repo (sgwoods/ai-briefing-staging). The preview has a banner on every page linking back to the published site, is kept out of search engines (noindex, robots.txt), and has no subscribe form and no podcast feed. Staging can publish only there, and production never publishes there.</li>
       <li><code>./np staging compare [DAY]</code>: staging against production for the same day: sections, counts, words, source links, the evidence mix, fact-check counts and audio length, plus the privacy scan of the preview and a diff of the edition. Writes <code>logs/compare-DAY.md</code> and flags what needs review.</li>
       <li>Fix: a staging run no longer copies its MP3 into the owner&#x27;s iCloud folder. The first staging run had overwritten that day&#x27;s copy. It no longer deletes iCloud files either.</li>
       <li>Tests always run as production (<code>NP_ENV=production</code>), in either checkout.</li>
-    </ul>
-    <h3>v0.1.5-beta · 2026-10-22</h3>
-    <ul>
-      <li>Fix: the scheduled jobs had been firing exactly one hour early every day (the 05:00 run started at 04:00, the 20:30 preflight at 19:30). launchd now only ticks every half hour, and the Mac&#x27;s own local clock decides when a scheduled time has come (<code>pipeline/schedule.py</code>, <code>./np scheduled</code>). Times must be on :00 or :30.</li>
-      <li>Releases refuse checkout-local files (<code>.venv</code>, <code>.env</code>, <code>.staging</code>) committed on dev; <code>.venv</code> is ignored as a link too.</li>
-      <li>Fix: rebuilding an edition (<code>./np rebrief</code>, <code>./np staging run</code>) failed with KeyError &#x27;critique&#x27;, because the evidence check on Must reads needs the critique model, and a rebuild had stopped loading it. Found by the first staging run.</li>
-      <li>Git safety: every git call in the export, hub, dev and release code ignores GIT_DIR / GIT_WORK_TREE from the environment, and the tests that build throwaway repositories clear them. A leaked GIT_DIR once pointed a test&#x27;s <code>git init</code> at the production repository and wrote a wrong <code>core.worktree</code> into its config. Caught and fixed before any run used it.</li>
-      <li>The first release built on dev and promoted with <code>./np release</code>.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -73,7 +78,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="bfe54ab300401c52a885abdee52dbff186811937"
+           data-source-commit="bb544793c92a7da672129dd9b1a458af23eef5c1"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
