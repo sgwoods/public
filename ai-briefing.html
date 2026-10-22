@@ -22,33 +22,33 @@
       <a class="button" href="https://sgwoods.github.io/ai-briefing/#email">Get it by email</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/releases/index.html">Release notes</a>
       <a class="button" href="https://github.com/sgwoods/news-pipeline">Public code</a>
-      <a class="button" href="https://github.com/sgwoods/news-pipeline/blob/main/docs/ARCHITECTURE.md">Architecture</a>
+      <a class="button" href="https://sgwoods.github.io/ai-briefing/docs/index.html">Documentation</a>
     </div>
   </header>
 
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.1.2-beta</b>, public code commit <code>6386187e17cb</code> (2026-10-22T16:59:50Z)</li>
+      <li><b>v0.1.3-beta</b>, public code commit <code>a9ed7cfdecdb</code> (2026-10-22T17:13:41Z)</li>
       <li>Latest edition: 2026-10-22 · 17 editions and 7 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-22/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-22T17:00:06Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-22T17:13:58Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.1.3-beta · 2026-10-22</h3>
+    <ul>
+      <li>Documentation on the site at <code>/docs/</code>, rebuilt at every publish from the same markdown as the public code, with the diagrams embedded. Each page shows the running version and when it last changed. Linked from the footer and the hub page.</li>
+      <li>Generated sections in the architecture document: current facts and a component table built from each module&#x27;s own description. Drift tests fail a release if the document names a module that no longer exists, or doesn&#x27;t name the current version.</li>
+      <li>Release check: the tests line shows unittest&#x27;s own summary.</li>
+    </ul>
     <h3>v0.1.2-beta · 2026-10-22</h3>
     <ul>
       <li>Staging mode: a development checkout (marked by an untracked <code>.staging</code> file) can build everything but can&#x27;t reach readers. The release gate refuses every outbound action there. The mailer allows only reads and review copies to the owner, marked [STAGING]. A new release-gate invariant keeps every outbound function behind the gate.</li>
       <li>The hub project page shows the latest release notes and links to the architecture document.</li>
       <li>Architecture document with four diagrams: system overview, the daily run, repositories and privacy boundaries, and the release flow (<code>docs/ARCHITECTURE.md</code>).</li>
-    </ul>
-    <h3>v0.1.1-beta · 2026-10-22</h3>
-    <ul>
-      <li>AI Briefing on the public project hub (sgwoods.github.io/public) as an exporting project: after each publish, <code>./np hub push</code> writes its status (19 fields, naming this released public commit) and its project page with the hub&#x27;s freshness panel, and pushes only those two files. It refuses when the running code isn&#x27;t the release.</li>
-      <li>The site&#x27;s old <code>/hub/</code> copy of the status files is retired.</li>
-      <li><code>./np log &lt;command&gt;</code> saves any command&#x27;s output under <code>logs/</code>.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -70,7 +70,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="6386187e17cb856de679ac85f09cbf9f5f09b841"
+           data-source-commit="a9ed7cfdecdbebe983ad559873e062e650333fb5"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
