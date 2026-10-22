@@ -31,7 +31,7 @@ Current branch snapshot: `main`
 
 ## Current Priority Lanes
 
-- **Protect public surfaces** (3): Keep already-public software, docs, and dashboards trustworthy before expanding scope.
+- **Protect public surfaces** (4): Keep already-public software, docs, and dashboards trustworthy before expanding scope.
 - **Publish local progress** (0): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
 - **Steady advance** (8): Important ongoing work that benefits from regular small batches rather than a one-off push.
 - **Seed and clarify** (1): Early-stage areas where a small baseline is more valuable than broad exploration.
@@ -58,6 +58,7 @@ Current branch snapshot: `main`
 | [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build 65d1434; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
 | [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
+| [AI Briefing](ai-briefing.html) | Standalone repo export | Public code and publication / private operations | Protect public surfaces | v0.1.1-beta · edition 2026-10-22 + deep dive; Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks. |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
 | [Masters of Mathematics renovation project](mmath-renovation.html) | Standalone repo export | Public | Protect public surfaces | 1.0.0-rc.1; Portability hardening and disciplined post-RC continuation |
 | [Steven Woods Public Record Project](https://sgwoods.github.io/public/steven-woods-research.html) | Shared-public archive subproject | Public | Steady advance | Active research archive; Continuity layer, baseline identity, timeline, current profile sources, and one-page CV |
@@ -67,25 +68,6 @@ Current branch snapshot: `main`
 | [SEI Pittsburgh Archive](https://sgwoods.github.io/public/sei-pittsburgh-research.html) | Shared-public archive subproject | Public | Steady advance | Seeded era archive; Expanded baseline with two additional SEI papers and a localized AOL bridge |
 | [Quack.com Archive Project](https://sgwoods.github.io/public/quack-com.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press |
 | [Kinitos / NeoEdge Networks Archive](https://sgwoods.github.io/public/kinitos-neoedge.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up |
-
-## Awaiting First Export
-
-### AI Briefing
-
-A daily AI briefing, newsletter, and podcast for early-stage investors, in beta with a small outside readership.
-
-- Status: Registered; awaiting the owning project's first active, verified export. No released commit is asserted.
-- Surface class: Standalone repo export
-- Visibility: Public code and publication / private operations
-- Priority now: Protect public surfaces
-- Time-energy-value: energy medium; value high; horizon short
-- Likely current work: Beta publication and reader feedback, evidence checks, and the first standalone hub export. The public site has an October 22 edition and podcast; v0.1.0-beta is owner-reported, with its public tag not yet visible at registration.
-- Next step: Publish the clean released code commit and v0.1.0-beta tag to news-pipeline, then run the owning export after a successful publication. Prioritize source accuracy, dependable delivery, and a small reader-feedback batch before wider distribution.
-- Quality: The public site, feeds, and public code are available. Source documentation describes fact-checking and release gates; this onboarding review did not validate editorial accuracy, email delivery, or audio quality.
-- Drift note: The currently served legacy hub manifest has 15 fields, points to the site repository, and lacks source provenance. It is not imported as a verified release. The public code repository has no visible v0.1.0-beta tag at the October 22 registration check.
-- Coordination note: The project owns only data/projects/ai-briefing.json and ai-briefing.html in the hub. Repo-owned registration remains visible here until the first active manifest arrives; after that, normal manifest rendering takes over. Keep operational data and subscriber information private.
-- Public links: [Read AI Briefing](https://sgwoods.github.io/ai-briefing/), [Public code](https://github.com/sgwoods/news-pipeline), [Podcast feed](https://sgwoods.github.io/ai-briefing/podcast.xml), [Hub export handoff](AI-BRIEFING-EXPORT.md)
-
 
 ## Project Records
 
@@ -144,6 +126,20 @@ A daily AI briefing, newsletter, and podcast for early-stage investors, in beta 
 - Coordination note: Source metadata reconciled. Measure future curation value by approved additions rather than scan count.
 - Drift note: Export reconciled October 3; the repository observer will flag subsequent source differences.
 - Public links: [Project page](ai-dystopia-quotes.html), [Repository](https://github.com/sgwoods/sci-fi-ai-dystopian-project), [Open approved JSON](data/ai-dystopia-quotes.approved.json), [Open project manifest](data/projects/ai-dystopia-quotes.json)
+
+### AI Briefing
+
+- Surface class: Standalone repo export
+- Visibility: Public code and publication / private operations
+- Priority now: Protect public surfaces
+- Time-energy-value: energy medium; value high; horizon short
+- Current manifest state: Current release: v0.1.1-beta · edition 2026-10-22 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Last repo update: October 22, 2026.
+- Likely current work: Beta publication and reader feedback, evidence checks, and the first standalone hub export. The public site has an October 22 edition and podcast; v0.1.0-beta is owner-reported, with its public tag not yet visible at registration.
+- Next step: Publish the clean released code commit and v0.1.0-beta tag to news-pipeline, then run the owning export after a successful publication. Prioritize source accuracy, dependable delivery, and a small reader-feedback batch before wider distribution.
+- Quality: The public site, feeds, and public code are available. Source documentation describes fact-checking and release gates; this onboarding review did not validate editorial accuracy, email delivery, or audio quality.
+- Coordination note: The project owns only data/projects/ai-briefing.json and ai-briefing.html in the hub. Repo-owned registration remains visible here until the first active manifest arrives; after that, normal manifest rendering takes over. Keep operational data and subscriber information private.
+- Drift note: The currently served legacy hub manifest has 15 fields, points to the site repository, and lacks source provenance. It is not imported as a verified release. The public code repository has no visible v0.1.0-beta tag at the October 22 registration check.
+- Public links: [Project page](ai-briefing.html), [Live experience](https://sgwoods.github.io/ai-briefing/), [Repository](https://github.com/sgwoods/news-pipeline), [Read AI Briefing](https://sgwoods.github.io/ai-briefing/), [Public code](https://github.com/sgwoods/news-pipeline), [Podcast feed](https://sgwoods.github.io/ai-briefing/podcast.xml), [Hub export handoff](AI-BRIEFING-EXPORT.md)
 
 ### PhD renovation project
 
