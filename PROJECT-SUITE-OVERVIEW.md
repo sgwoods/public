@@ -1,8 +1,8 @@
 # Project Suite Overview
 
-Updated: `2026-10-03`
+Updated: `2026-10-22`
 
-Repo-owned portfolio coordination. October 3, 2026: 13 active projects, including Star Swarm. Repository observations independently track public default branches and archive paths. All seven shared archives now have verified source commits and content fingerprints; snapshot metadata changes do not count as content drift. MMath, PhD, and AI Quotes use source-aware exports. Star Swarm status imports its existing clean deployed build identity, independent of the coding agent. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep and the Aurora handoff.
+Repo-owned portfolio coordination. AI Briefing joins the portfolio as a standalone exporting project: its daily briefing, newsletter, and podcast are public, with private operations kept separate. Its first verified export activates the homepage card; registration alone does not establish a released code commit. Daily repository observations track public default branches and archive paths independently of published status. MMath, PhD, and AI Quotes use source-aware exports; Star Swarm imports its deployed build identity. The seven shared archives retain reviewed content fingerprints. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
@@ -67,6 +67,25 @@ Current branch snapshot: `main`
 | [SEI Pittsburgh Archive](https://sgwoods.github.io/public/sei-pittsburgh-research.html) | Shared-public archive subproject | Public | Steady advance | Seeded era archive; Expanded baseline with two additional SEI papers and a localized AOL bridge |
 | [Quack.com Archive Project](https://sgwoods.github.io/public/quack-com.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press |
 | [Kinitos / NeoEdge Networks Archive](https://sgwoods.github.io/public/kinitos-neoedge.html) | Shared-public bridge archive | Public | Steady advance | Active research archive; Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up |
+
+## Awaiting First Export
+
+### AI Briefing
+
+A daily AI briefing, newsletter, and podcast for early-stage investors, in beta with a small outside readership.
+
+- Status: Registered; awaiting the owning project's first active, verified export. No released commit is asserted.
+- Surface class: Standalone repo export
+- Visibility: Public code and publication / private operations
+- Priority now: Protect public surfaces
+- Time-energy-value: energy medium; value high; horizon short
+- Likely current work: Beta publication and reader feedback, evidence checks, and the first standalone hub export. The public site has an October 22 edition and podcast; v0.1.0-beta is owner-reported, with its public tag not yet visible at registration.
+- Next step: Publish the clean released code commit and v0.1.0-beta tag to news-pipeline, then run the owning export after a successful publication. Prioritize source accuracy, dependable delivery, and a small reader-feedback batch before wider distribution.
+- Quality: The public site, feeds, and public code are available. Source documentation describes fact-checking and release gates; this onboarding review did not validate editorial accuracy, email delivery, or audio quality.
+- Drift note: The currently served legacy hub manifest has 15 fields, points to the site repository, and lacks source provenance. It is not imported as a verified release. The public code repository has no visible v0.1.0-beta tag at the October 22 registration check.
+- Coordination note: The project owns only data/projects/ai-briefing.json and ai-briefing.html in the hub. Repo-owned registration remains visible here until the first active manifest arrives; after that, normal manifest rendering takes over. Keep operational data and subscriber information private.
+- Public links: [Read AI Briefing](https://sgwoods.github.io/ai-briefing/), [Public code](https://github.com/sgwoods/news-pipeline), [Podcast feed](https://sgwoods.github.io/ai-briefing/podcast.xml), [Hub export handoff](AI-BRIEFING-EXPORT.md)
+
 
 ## Project Records
 

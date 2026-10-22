@@ -5,6 +5,7 @@ public-only classification; private project details are intentionally excluded.
 
 | Repository | Portfolio role | Action |
 | --- | --- | --- |
+| [news-pipeline](https://github.com/sgwoods/news-pipeline) | AI Briefing public code; daily briefing, newsletter, and podcast with private operations separate | Registered October 22 as an exporting project; first verified hub export pending; publication at [AI Briefing](https://sgwoods.github.io/ai-briefing/) |
 | [star-swarm](https://github.com/sgwoods/star-swarm) | Active original game/content project, developed with Claude and Firstmate | Added as project 13; deployed identity imports and source activity checks enabled |
 | [firstmate](https://github.com/sgwoods/firstmate) | Public fork of kunchenguid/firstmate; development orchestration tooling | Reference as supporting tooling; do not present upstream work as an original portfolio product |
 | [Codex-Test1](https://github.com/sgwoods/Codex-Test1) | Aurora source | Already tracked; other-machine exporter handoff remains |

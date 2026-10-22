@@ -9,6 +9,8 @@ import check_repository_freshness as checker
 from archive_provenance import content_digest
 from sync_external_status import updated_manifest
 from render_external_project import render, render_freshness
+import render_project_suite_overview as suite
+from types import SimpleNamespace
 
 
 class ProjectPageFreshnessTests(unittest.TestCase):
@@ -69,6 +71,53 @@ class ProjectPageFreshnessTests(unittest.TestCase):
 
 
 class FreshnessTests(unittest.TestCase):
+    def test_registered_export_observes_only_public_code_and_uses_the_owners_commit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "data/projects").mkdir(parents=True)
+            (root / "data/shared").mkdir()
+            (root / "data/shared/project-suite-overview.json").write_text(json.dumps({"projects": {
+                "ai-briefing": {"awaiting_first_export": True, "display_name": "AI Briefing",
+                    "repo_url": "https://github.com/sgwoods/news-pipeline"}
+            }}))
+            endpoints = []
+            def get(endpoint):
+                endpoints.append(endpoint)
+                if "commits?" not in endpoint:
+                    return {"private": False, "default_branch": "main"}
+                return [{"sha": "a" * 40, "html_url": "https://github.com/sgwoods/news-pipeline/commit/" + "a" * 40,
+                         "commit": {"committer": {"date": "2026-10-22T10:00:00Z"}}}]
+            with patch.object(checker, "ROOT", root):
+                row = checker.observe(get=get)["projects"]["ai-briefing"]
+                self.assertEqual(row["state"], "awaiting_export")
+                self.assertIsNone(row["snapshot_commit"])
+                path = root / "data/projects/ai-briefing.json"
+                payload = {"project_id": "ai-briefing", "display_name": "AI Briefing", "active": True,
+                    "repo_url": "https://github.com/sgwoods/news-pipeline", "source_commit": "a" * 40,
+                    "repo_pushed_at": "2026-10-22T10:00:00Z", "status_generated_at": "2026-10-22T11:00:00Z",
+                    "status_value": "v0.1.0-beta"}
+                path.write_text(json.dumps(payload))
+                before = path.read_text()
+                self.assertEqual(checker.observe(get=get)["projects"]["ai-briefing"]["state"], "matches")
+                self.assertEqual(path.read_text(), before)
+                payload["source_commit"] = "b" * 40
+                path.write_text(json.dumps(payload))
+                self.assertEqual(checker.observe(get=get)["projects"]["ai-briefing"]["state"], "different_commit")
+            self.assertTrue(all(endpoint.startswith("repos/sgwoods/news-pipeline") for endpoint in endpoints))
+            self.assertIn("sha=main", endpoints[-1])
+
+    def test_pending_portfolio_registration_yields_to_the_first_manifest(self):
+        notes = {"projects": {"ai-briefing": {"awaiting_first_export": True,
+            "repo_url": "https://github.com/sgwoods/news-pipeline", "display_name": "AI Briefing"}}}
+        suite.validate(notes, [])
+        self.assertEqual([key for key, _ in suite.pending_projects(notes, [])], ["ai-briefing"])
+        published = [SimpleNamespace(project_id="ai-briefing")]
+        suite.validate(notes, published)
+        self.assertEqual(suite.pending_projects(notes, published), [])
+        notes["projects"]["misspelled-unregistered-project"] = {"awaiting_first_export": True}
+        with self.assertRaises(SystemExit):
+            suite.validate(notes, published)
+
     def test_archive_fingerprint_ignores_only_its_manifest(self):
         entries = [{"path": "archive/source-manifest.json", "mode": "100644", "type": "blob", "sha": "a"},
                    {"path": "archive/project-manifest.json", "mode": "100644", "type": "blob", "sha": "b"}]

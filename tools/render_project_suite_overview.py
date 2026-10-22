@@ -134,6 +134,24 @@ def html_link(label: str, url: str) -> str:
     return f'<a class="button button--ghost" href="{html.escape(url)}">{html.escape(label)}</a>'
 
 
+def pending_projects(notes: dict, projects: list[render_index.ProjectStatus]) -> list[tuple[str, dict]]:
+    published = {project.project_id for project in projects}
+    return [(key, note) for key, note in notes["projects"].items()
+            if key not in published and note.get("awaiting_first_export")]
+
+
+def pending_facts(note: dict, priority_map: dict) -> list[tuple[str, str]]:
+    return [
+        ("Status", "Registered; awaiting the owning project's first active, verified export. No released commit is asserted."),
+        ("Surface class", note["surface_class"]), ("Visibility", note["visibility"]),
+        ("Priority now", priority_map[note["priority_now"]]["label"]),
+        ("Time-energy-value", f"energy {note['energy']}; value {note['value']}; horizon {note['time_horizon']}"),
+        ("Likely current work", note["likely_current_work"]), ("Next step", note["next_step"]),
+        ("Quality", note["quality_note"]), ("Drift note", note["drift_note"]),
+        ("Coordination note", note["coordination_note"]),
+    ]
+
+
 def render_markdown(notes: dict[str, Any], projects: list[render_index.ProjectStatus]) -> str:
     priority_map = priority_lookup(notes)
     project_notes = notes["projects"]
@@ -195,6 +213,14 @@ def render_markdown(notes: dict[str, Any], projects: list[render_index.ProjectSt
             f"{format_surface_class(note)} | {format_visibility(note)} | {priority} | "
             f"{project.status_value}; {project.focus_value} |"
         )
+
+    pending = pending_projects(notes, projects)
+    if pending:
+        lines.extend(["", "## Awaiting First Export", ""])
+        for key, note in pending:
+            lines.extend([f"### {note['display_name']}", "", note["description"], ""])
+            lines.extend(f"- {label}: {value}" for label, value in pending_facts(note, priority_map))
+            lines.extend(["- Public links: " + ", ".join(markdown_link(link["label"], link["url"]) for link in note["extra_links"]), ""])
 
     lines.extend(["", "## Project Records", ""])
     for project in projects:
@@ -336,6 +362,14 @@ def render_html(notes: dict[str, Any], projects: list[render_index.ProjectStatus
         render_project_entry(project, project_notes[project.project_id], priority_map)
         for project in projects
     )
+    pending_entries = ""
+    for key, note in pending_projects(notes, projects):
+        facts = "".join(f"<li><strong>{html.escape(label)}:</strong> {html.escape(value)}</li>"
+                        for label, value in pending_facts(note, priority_map))
+        links = " ".join(html_link(link["label"], link["url"]) for link in note["extra_links"])
+        pending_entries += f'<article class="entry suiteEntry" id="project-{html.escape(key)}"><h3>{html.escape(note["display_name"])}</h3><p>{html.escape(note["description"])}</p><ul>{facts}</ul><div class="links">{links}</div></article>'
+    if pending_entries:
+        pending_entries = '<section class="panel"><h2>Awaiting First Export</h2><div class="entryGrid">' + pending_entries + '</div></section>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -490,6 +524,7 @@ def render_html(notes: dict[str, Any], projects: list[render_index.ProjectStatus
             </div>
         </section>
 
+{pending_entries}
         <section class="panel">
             <h2>Project Records</h2>
             <p class="footer">Per-project manifests stay factual. The judgments below are the portfolio layer used for reprioritization, quality calls, and next-step selection.</p>
@@ -507,7 +542,9 @@ def validate(notes: dict[str, Any], projects: list[render_index.ProjectStatus]) 
     project_ids = {project.project_id for project in projects}
     note_ids = set(notes["projects"].keys())
     missing = sorted(project_ids - note_ids)
-    extra = sorted(note_ids - project_ids)
+    pending_ids = {key for key, note in pending_projects(notes, projects)
+                   if key in render_index.PROJECT_ORDER and note.get("repo_url") and note.get("display_name")}
+    extra = sorted(note_ids - project_ids - pending_ids)
     if missing:
         raise SystemExit(f"Missing project-suite notes for: {', '.join(missing)}")
     if extra:

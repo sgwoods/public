@@ -14,6 +14,9 @@ prove a recent export.
 - `repo_pushed_at`: compatibility alias for `source_commit_at`, not a GitHub push time.
 - Existing release/status labels remain project-owned. Do not update them from an activity check.
 
+The four `source_*` fields above are the approved additive extension to the 15
+base fields in PUBLIC_STATUS_INTERFACE.md; new exporting projects publish all 19.
+
 For production exports, source fields identify the released commit, not an
 unrelated newer development commit. Avoid exporting dirty source as an approved
 release. Record it truthfully if a preview export is needed.
@@ -148,6 +151,33 @@ remain controlled by the project's published artifact, never by an activity chec
   released source commit and its real date before publishing; fail clearly if
   resolution fails, without substituting today's date. Observation differences
   are review signals and must not rewrite exported release labels or source fields.
+
+AI Briefing (`ai-briefing`, public code `sgwoods/news-pipeline`) uses this exporting
+pattern. Its publisher owns only `data/projects/ai-briefing.json` and
+`ai-briefing.html`. Registration can observe public development before the first
+manifest, explicitly labeled `awaiting_export` with no released source identity.
+Once the active manifest arrives, the observer compares its `source_commit` with
+the public default branch. The hub never imports its private operational state
+or promotes `main` into a released commit. See [AI-BRIEFING-EXPORT.md](AI-BRIEFING-EXPORT.md).
+
+A push of `data/projects/*.json` to hub `main` triggers this workflow; daily
+13:17 UTC runs are a fallback. A push of `ai-briefing.html` also triggers it.
+Use a fine-grained PAT or GitHub App token with Contents read/write on
+`sgwoods/public` for the two-file export. Such a push triggers the workflow
+normally. GitHub does not scope Contents write to individual paths, so the
+exporter must enforce the two-file allowlist. The source repository's automatic
+`GITHUB_TOKEN` cannot push into this different repository. Actions write is only
+needed for a separate workflow dispatch; it is not required for a normal PAT
+push. A hub-side `GITHUB_TOKEN` bot push does not trigger another push workflow,
+so explicitly dispatch or rely on the scheduled fallback in that case.
+
+Exporter-owned pages may use `assets/project-freshness.js` and a
+`data-project-freshness` panel containing the page's exact exported source commit
+and dirty flag. The script reads the hub's current observations, evaluates their
+age at page load, and reports a match only against the same snapshot. It leaves
+release labels and page content under the exporter's control. Failed requests
+show an unavailable comparison; a successful render alone never establishes an
+export or a fresh observation.
 
 For an optional cross-repository notification, Star Swarm uses
 `PUBLIC_HUB_DISPATCH_TOKEN`, a fine-grained token restricted to `sgwoods/public`

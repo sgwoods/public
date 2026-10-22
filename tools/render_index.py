@@ -44,6 +44,7 @@ PROJECT_ORDER = [
     "star-swarm",
     "confidential-project",
     "ai-dystopia-quotes",
+    "ai-briefing",
     "phd-renovation",
     "mmath-renovation",
     "steven-woods-research",
@@ -695,6 +696,7 @@ def render_observations() -> str:
                   "content_matches": "Archive content matches snapshot", "content_changed": "Archive content changed; review snapshot",
                   "dirty_snapshot": "Export included uncommitted changes; review source",
                   "newer_commit": "Newer than reported snapshot", "legacy_unverified": "Legacy snapshot; commit identity unavailable",
+                  "awaiting_export": "Awaiting first published export",
                   "not_observed": "No public repository configured", "check_failed": "Check failed; retained observation"}
         label = labels[state] + (" (stale)" if stale and state != "not_observed" else "")
         date_value = observation.get("commit_date")

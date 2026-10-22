@@ -31,6 +31,7 @@ Examples:
 - `phd-renovation`
 - `mmath-renovation`
 - `ai-dystopia-quotes`
+- `ai-briefing`
 
 This document is not the default publishing contract for shared-public
 subprojects such as:
@@ -84,6 +85,8 @@ Current canonical standalone-project files:
 - `data/projects/phd-renovation.json`
 - `data/projects/mmath-renovation.json`
 - `data/projects/ai-dystopia-quotes.json`
+- `data/projects/ai-briefing.json` (registered; first owner export pending)
+- `data/projects/star-swarm.json` (hub-managed deployed-build import)
 - `data/projects/confidential-project.json`
 
 Current bridge records that are still consumed by the homepage but are not the
@@ -96,14 +99,16 @@ Current compatibility alias files:
 
 - `data/projects/codex-test1.json`
 
-Only the owning project may write its canonical file.
+Only the owning project may write its canonical file, except for an explicitly
+opted-in hub-managed deployed-build import such as Star Swarm. Exporting projects
+such as AI Briefing retain ownership of their JSON and HTML page.
 
 For bridge records, keep ownership and purpose explicit. Do not add new bridge
 records casually.
 
 ## Required JSON Schema
 
-Each project must write one JSON object with this exact structure:
+Each project must write one JSON object with these 15 base fields:
 
 ```json
 {
@@ -124,6 +129,14 @@ Each project must write one JSON object with this exact structure:
   "focus_value": "Polished four-stage 1.0 slice"
 }
 ```
+
+The additive schema 1.0 contract in [PROJECT-STATUS-CONTRACT.md](PROJECT-STATUS-CONTRACT.md)
+also defines four provenance fields: `source_commit`, `source_commit_at`,
+`source_ref`, and `source_dirty`. New exporting projects must include them after
+the base fields. These 19 fields are supported without a schema version change.
+Use the full released public code commit and its committer timestamp; never
+substitute a private working-repository commit. `repo_pushed_at` is the
+compatibility alias for `source_commit_at`, not the publication time.
 
 ## Field Definitions
 
@@ -146,7 +159,8 @@ Each project must write one JSON object with this exact structure:
 - `experience_url`
   - Public playable/live experience URL, or `null` if none
 - `repo_pushed_at`
-  - Latest repository state represented by this payload
+  - Commit timestamp of the released source represented by this payload
+  - Equal to `source_commit_at`; not the edition or publication timestamp
   - Must be ISO 8601 UTC
 - `status_generated_at`
   - When this payload was produced
@@ -170,7 +184,8 @@ All project updaters must produce deterministic JSON:
 - trailing newline
 - UTF-8 encoding
 - use `null` for missing optional URLs
-- do not add extra fields unless the schema is formally updated
+- include the four additive provenance fields; do not add other fields unless
+  the schema is formally updated
 
 ## Allowed Project Update Flow
 
@@ -231,6 +246,12 @@ This keeps all homepage wording centralized in `public` while letting each
 project own only factual state.
 
 ## Project-Specific Guidance
+
+AI Briefing's complete field, page, and authentication handoff is
+[AI-BRIEFING-EXPORT.md](AI-BRIEFING-EXPORT.md). The hub observes the public code
+repository `sgwoods/news-pipeline`; private operational repositories are excluded.
+Its page remains exporter-owned and uses the shared freshness widget. It does not
+opt into Star Swarm's deployed-build importer.
 
 Aurora Galactica should publish:
 

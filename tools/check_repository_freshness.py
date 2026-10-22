@@ -25,6 +25,8 @@ def classify(snapshot, commit):
     source = snapshot.get("source_commit")
     if source:
         return "matches" if source == commit["sha"] else "different_commit"
+    if not snapshot.get("repo_pushed_at"):
+        return "awaiting_export"
     observed = render_index.parse_datetime(commit["commit"]["committer"]["date"])
     exported = render_index.parse_datetime(snapshot["repo_pushed_at"])
     return "newer_commit" if observed > exported else "legacy_unverified"
@@ -43,6 +45,13 @@ def observe(previous=None, get=api):
         key = snapshot["project_id"]
         if key not in snapshots or render_index.parse_datetime(snapshot["status_generated_at"]) > render_index.parse_datetime(snapshots[key][0]["status_generated_at"]):
             snapshots[key] = (snapshot, path)
+    notes_path = ROOT / "data/shared/project-suite-overview.json"
+    notes = json.loads(notes_path.read_text()).get("projects", {}) if notes_path.exists() else {}
+    for key, note in notes.items():
+        # Registration can observe public development before an owner publishes a release manifest.
+        if note.get("awaiting_first_export") and not (ROOT / "data/projects" / (key + ".json")).exists():
+            snapshots.setdefault(key, ({"project_id": key, "display_name": note["display_name"],
+                                       "repo_url": note["repo_url"], "repo_pushed_at": None}, None))
     metadata = {}
     trees = {}
     for key, (snapshot, path) in snapshots.items():

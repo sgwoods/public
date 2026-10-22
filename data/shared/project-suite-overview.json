@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-03",
-  "summary": "Repo-owned portfolio coordination. October 3, 2026: 13 active projects, including Star Swarm. Repository observations independently track public default branches and archive paths. All seven shared archives now have verified source commits and content fingerprints; snapshot metadata changes do not count as content drift. MMath, PhD, and AI Quotes use source-aware exports. Star Swarm status imports its existing clean deployed build identity, independent of the coding agent. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep and the Aurora handoff.",
+  "updated_at": "2026-10-22",
+  "summary": "Repo-owned portfolio coordination. AI Briefing joins the portfolio as a standalone exporting project: its daily briefing, newsletter, and podcast are public, with private operations kept separate. Its first verified export activates the homepage card; registration alone does not establish a released code commit. Daily repository observations track public default branches and archive paths independently of published status. MMath, PhD, and AI Quotes use source-aware exports; Star Swarm imports its deployed build identity. The seven shared archives retain reviewed content fingerprints. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
     "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
@@ -108,6 +108,29 @@
           "label": "Open project manifest",
           "url": "data/projects/ai-dystopia-quotes.json"
         }
+      ]
+    },
+    "ai-briefing": {
+      "awaiting_first_export": true,
+      "display_name": "AI Briefing",
+      "description": "A daily AI briefing, newsletter, and podcast for early-stage investors, in beta with a small outside readership.",
+      "repo_url": "https://github.com/sgwoods/news-pipeline",
+      "surface_class": "Standalone repo export",
+      "visibility": "Public code and publication / private operations",
+      "priority_now": "protect",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "short",
+      "likely_current_work": "Beta publication and reader feedback, evidence checks, and the first standalone hub export. The public site has an October 22 edition and podcast; v0.1.0-beta is owner-reported, with its public tag not yet visible at registration.",
+      "next_step": "Publish the clean released code commit and v0.1.0-beta tag to news-pipeline, then run the owning export after a successful publication. Prioritize source accuracy, dependable delivery, and a small reader-feedback batch before wider distribution.",
+      "quality_note": "The public site, feeds, and public code are available. Source documentation describes fact-checking and release gates; this onboarding review did not validate editorial accuracy, email delivery, or audio quality.",
+      "drift_note": "The currently served legacy hub manifest has 15 fields, points to the site repository, and lacks source provenance. It is not imported as a verified release. The public code repository has no visible v0.1.0-beta tag at the October 22 registration check.",
+      "coordination_note": "The project owns only data/projects/ai-briefing.json and ai-briefing.html in the hub. Repo-owned registration remains visible here until the first active manifest arrives; after that, normal manifest rendering takes over. Keep operational data and subscriber information private.",
+      "extra_links": [
+        {"label": "Read AI Briefing", "url": "https://sgwoods.github.io/ai-briefing/"},
+        {"label": "Public code", "url": "https://github.com/sgwoods/news-pipeline"},
+        {"label": "Podcast feed", "url": "https://sgwoods.github.io/ai-briefing/podcast.xml"},
+        {"label": "Hub export handoff", "url": "AI-BRIEFING-EXPORT.md"}
       ]
     },
     "phd-renovation": {
