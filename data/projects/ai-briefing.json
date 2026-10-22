@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "project_id": "ai-briefing",
+  "active": true,
+  "display_name": "AI Briefing",
+  "description": "A daily AI briefing, newsletter and podcast for early-stage investors: what happened, what holds up, and what it means, with occasional deep dives.",
+  "project_page_path": "ai-briefing.html",
+  "repo_url": "https://github.com/sgwoods/news-pipeline",
+  "dashboard_url": null,
+  "experience_url": "https://sgwoods.github.io/ai-briefing/",
+  "repo_pushed_at": "2026-10-22T13:50:32Z",
+  "status_generated_at": "2026-10-22T13:50:38Z",
+  "status_label": "Current release",
+  "status_value": "v0.1.1-beta · edition 2026-10-22 + deep dive",
+  "focus_label": "Current focus",
+  "focus_value": "Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.",
+  "source_commit": "9f9028cb9a8c528af3edbc2015a51be4309f89ba",
+  "source_commit_at": "2026-10-22T13:50:32Z",
+  "source_ref": "v0.1.1-beta",
+  "source_dirty": false
+}
