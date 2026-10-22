@@ -2,7 +2,16 @@ const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const { countsForProject, dedupeProjects, projectSortFactory, sourceComparison } = require("../assets/public-index.js");
 const { renderProjectCard, privateDetails } = require("../assets/public-index.js");
-const privateManifest = require("../data/projects/financial-planner.json");
+const privateManifest = {
+    project_id: "financial-planner", display_name: "Financial Planner", repo_pushed_at: null,
+    status_generated_at: "2026-10-22T17:53:59Z", status_label: "Public status",
+    status_value: "Private development", focus_label: "Scope", focus_value: "Personal planning",
+    private_metadata: {
+        checked_at: "2026-10-22T17:49:22Z", report_basis: "Hub-assisted metadata review",
+        last_default_branch_commit_at: "2026-09-27T13:37:15Z", release_version: null, released_at: null,
+        activity: { window_start: "2026-08-31T04:00:00Z", window_end: "2026-10-22T17:49:22Z", commit_count: 63 },
+    },
+};
 
 test("private cards expose only sanitized metadata, never a fake release snapshot", () => {
     const card = renderProjectCard({ ...privateManifest, project_page_href: "financial-planner.html" });

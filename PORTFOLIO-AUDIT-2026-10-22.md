@@ -81,3 +81,21 @@ cover other branches or local work. Private reports remain separate from the
 13 public-history chart series and require source-owned sanitized exports next.
 See [PRIVATE-PROJECT-STATUS.md](PRIVATE-PROJECT-STATUS.md) and the
 [one-at-a-time handoff queue](REPOSITORY-HANDOFFS.md).
+
+## Working-activity follow-up
+
+The owner reported daily work not reflected by the public coding charts. The
+audit confirmed a scope mismatch, not evidence of inactivity: AI Briefing's eight
+public code commits are October 22 exports, while its working history has 391
+commits across October 5-22. Aurora's public histories contain 11 default-branch
+commits and 14 across all branches since August 31, most recently October 15;
+its public docs describe sanitized delivery and preserved private history.
+Firstmate was excluded as supporting forked tooling even though the owner has
+attributable upstream contributions. Agent-state backups must not be called coding.
+
+The approved remedy keeps the existing public-history charts, names them Public
+Repository Commits, and adds the separate Working Activity view. Its first report
+is an assisted AI Briefing baseline with all commits unclassified and Toronto-day
+aggregates only. No private histories, hashes, messages, or source URLs were added.
+Other source reports are awaiting setup, not zero. The first new handoff is the
+AI Briefing working exporter; no source repository was edited by the hub work.

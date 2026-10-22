@@ -7,6 +7,29 @@ project. Kanban is excluded. Public activity charts cover 13 source/archive
 projects. Private cards separately show approved fixed-window aggregate reports,
 not a combined or rolling chart. These are different counts for different purposes.
 
+## Two Activity Views
+
+**Public Repository Commits** is the renamed existing chart, not a new collection
+policy: it still counts public default-branch history. It is not a complete record
+of daily coding. AI Briefing's allowlisted code export, Aurora's sanitized delivery,
+and Firstmate's upstream contribution workflow make that distinction important.
+
+**Working Activity** shows separately approved daily aggregates from the actual
+working history. Development, publication, automation, and unclassified commits
+are distinct categories. Missing reports are N/A, not zero. Never add these counts
+to the public charts, since the same work can occur in both. Each row has its own
+window and check time; uncommitted edits and hours are not counted.
+
+The initial AI Briefing baseline contains 391 unclassified commits across October
+5-22, using Toronto dates. It is not 391 verified code changes or an installed
+automatic exporter. Aurora, Firstmate contributions, and other software projects
+await source-owned reports. Private projects' earlier fixed-window metadata cards
+cannot be converted into invented daily histories. Firstmate is supporting tooling
+in this view, not another original product in the portfolio count.
+
+See [WORKING-ACTIVITY-INTERFACE.md](WORKING-ACTIVITY-INTERFACE.md) for the exact
+payload, privacy boundary, classification policy, and source-export workflow.
+
 ## Dates
 
 - **Snapshot source date** is the real source commit date represented by the
@@ -70,6 +93,7 @@ are the next setup step; daily public checks do not refresh these private report
 ```sh
 python3 tools/test_repository_freshness.py
 python3 tools/test_activity.py
+python3 tools/test_working_activity.py
 python3 tools/test_private_status.py
 node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
 python3 tools/refresh_public_coordination.py --check

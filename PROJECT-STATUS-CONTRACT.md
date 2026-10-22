@@ -247,3 +247,24 @@ exports must follow the review boundary before their first publication.
 Use [REPOSITORY-HANDOFFS.md](REPOSITORY-HANDOFFS.md) for one-at-a-time source
 coordination and its completion evidence, rather than treating a chat prompt as
 proof that an exporter has been installed.
+
+## Working activity is independent of released status
+
+The owner approved a second, privacy-safe working-activity lens on October 22.
+It reads approved `data/activity/<project_id>.json` aggregates, never private
+source APIs. The public commit charts remain separate and are named for their
+actual default-branch scope. Working totals must never be added to public totals.
+
+[WORKING-ACTIVITY-INTERFACE.md](WORKING-ACTIVITY-INTERFACE.md) is the authority
+for these daily reports, including ownership, allowed fields, classifications,
+coverage, check times, and confidentiality review. The assisted AI Briefing
+baseline is entirely unclassified and does not demonstrate installed upkeep.
+Firstmate reports cover the owner's contributions only, not upstream work.
+
+Working reports may publish at an approved daily/work checkpoint, independently
+of release publication. This is not a change to the release-notification rule:
+release notifications still follow the validated deployment/export. A working
+report must never relabel a release, advance a released-source date, promote a
+branch, or assert readiness. Authenticated pushes to `data/activity/*.json` trigger
+the hub renderer and its explicit Pages build. Daily public checks cannot refresh
+private/local working reports or advance their recorded measurement times.

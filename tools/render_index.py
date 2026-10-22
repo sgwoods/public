@@ -629,6 +629,7 @@ def render_observations() -> str:
 
 
 def render() -> str:
+    import working_activity
     projects = sorted(
         [load_project(path) for path in sorted(DATA_DIR.glob("*.json"))]
         + [load_project(path) for path in sorted(ROOT.glob("*/project-manifest.json"))],
@@ -686,7 +687,7 @@ def render() -> str:
                 <div class="metaCard">
                     <span class="metaLabel">Latest Published Snapshot Source</span>
                     <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(latest_project_repo_update)) if latest_project_repo_update else 'Not reported'}</span>
-                    <div class="metaNote">Newest source date among the published snapshots, not a freshness claim for every project. Each card shows its own source, export, and check dates. See the <a href="project-suite-overview.html">portfolio review</a>.</div>
+                    <div class="metaNote">Newest source date among published snapshots, not all work. See the <a href="#working-activity">working activity</a> view and <a href="project-suite-overview.html">portfolio review</a>.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Homepage Rendered</span>
@@ -721,9 +722,11 @@ def render() -> str:
             </div>
         </section>
 
+{working_activity.render(coding_projects, ROOT)}
+
 {render_activity_chart(
     chart_id="coding-daily",
-    title="Recent Coding Activity: Last 7 Days",
+    title="Public Repository Commits: Last 7 Days",
     lead="Daily committer-date counts from public source repositories. Private project summaries are excluded. Current periods are partial.",
     projects=coding_activity_projects,
     metric_label="commits",
@@ -733,7 +736,7 @@ def render() -> str:
 
 {render_activity_chart(
     chart_id="coding-weekly",
-    title="Recent Coding Activity: Weekly Summary",
+    title="Public Repository Commits: Weekly Summary",
     lead="Last 8 weeks of public default-branch commits, counted by committer date. Includes merges; source code activity is separate from release publication.",
     projects=coding_activity_projects,
     metric_label="commits",

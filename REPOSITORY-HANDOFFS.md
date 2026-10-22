@@ -7,17 +7,73 @@ over making the dashboard appear newly updated.
 
 | Order | Project | State / bounded outcome |
 | --- | --- | --- |
+| Activity priority | AI Briefing | Ready to send: owner-approved daily working report and classified upkeep. Prompt below; existing release export remains unchanged. |
 | 1 | AI Dystopia Quotes | Ready to send: review the one source/export difference, deliberately publish only if approved, add shared freshness support. Prompt below. |
 | 2 | Windigo Portfolio Portal | Awaiting handoff: establish sanitized export for existing `confidential-project` identity, verify active branch/runtime/release privately. |
 | 3 | Financial Planner | Awaiting handoff: owner-reviewed sanitized export; confirm active runtime and release policy without exporting planning data. |
 | 4 | Woods Financial Dashboard | Awaiting handoff: sanitized export and private discrepancy/runtime review; keep separate from the other two applications. |
 
-AI Briefing's first export and Star Swarm's deployment notification were verified
-in the October 22 audit. They do not currently need another setup prompt. Aurora
-is managed on another machine and is not part of this handoff queue. MMath and PhD
+AI Briefing's release export and Star Swarm's deployment notification were verified
+in the October 22 audit. AI Briefing now needs the separate working-activity export,
+not another release-export repair. Aurora is managed on another machine: its
+working-history report follows AI Briefing, without changing its release lane.
+Firstmate contribution attribution follows that; do not import all upstream history.
+MMath and PhD
 freshness-template improvements can be considered after the active queue; their
 source identities matched during the audit. Archive research gaps are already in
 the portfolio overview and are not another cross-repository setup campaign.
+
+If the previously supplied Quotes prompt is already running, verify that reply
+first; do not start two source handoffs concurrently. Its numbered section below
+is intentionally unchanged so existing forwarded prompts stay valid. Otherwise
+the next newly requested handoff is AI Briefing working activity.
+
+## AI Briefing working activity: prompt to send
+
+```text
+Add a privacy-safe working-activity export for AI Briefing, without changing your
+released status or existing two-file release export.
+
+Read your repository instructions, privacy rules, current work state, and these
+hub documents first:
+https://github.com/sgwoods/public/blob/main/WORKING-ACTIVITY-INTERFACE.md
+https://github.com/sgwoods/public/blob/main/PROJECT-STATUS-CONTRACT.md
+https://github.com/sgwoods/public/blob/main/data/activity/ai-briefing.json
+
+The public code mirror has eight October 22 commits, while the October 22 private
+working-history audit found 391 commits across October 5-22. The hub has published
+only daily Toronto-date aggregates, all unclassified, as an assisted baseline.
+That is not proof of automatic upkeep or 391 code changes. Recheck the source.
+
+In your own project, implement a reviewed exporter for ONLY
+data/activity/ai-briefing.json in sgwoods/public. Keep its measurement separate
+from ./np hub push's released-status manifest/page contract. Working reports may
+publish at a daily or deliberate work checkpoint without releasing anything.
+
+Pin the chosen working source head(s), read all history pages/commits in the
+reported window, deduplicate, and bucket committer dates in America/Toronto.
+Classify each measured commit once as development, publication, automation,
+or unclassified under a documented private policy. Leave ambiguous work
+unclassified; do not treat every private commit or backup as code development.
+Use owner-approved-export only after approval. Include honest coverage and
+check/generation times; missing or failed history must not become zero.
+
+Export no private hashes, messages, authors, branch names, filenames, repository
+or deployment URLs, raw histories, financial/editorial/subscriber data, or secrets.
+Keep classification evidence private. Review the exact staged JSON and allowlist.
+Use the hub validator and tests; add source tests for deduplication, categories,
+timezone boundaries, unknowns, failed checks, and private-data exclusion.
+
+Use the existing approved cross-repository credential, enforcing a one-path
+allowlist; do not expand the public hub token's access to private repositories.
+Authenticated activity-report pushes trigger the hub renderer, which explicitly
+requests Pages. Verify the live #working-activity view and unchanged release facts.
+Do not edit hub index/notes, other projects, or release labels for this work.
+
+Report source/hub commits, tests, counts by category, scope, approval, the actual
+upkeep mechanism/cadence, live verification, and any remaining gates. If approval
+or reliable classification is missing, explain the gate rather than inventing it.
+```
 
 ## 1. AI Dystopia Quotes: prompt to send
 
@@ -62,5 +118,7 @@ anything requiring a hub-owned change. Do not call unapproved work released.
 ## Completion record
 
 No source-repository handoff has been completed as part of this queue yet.
-Next action: send prompt 1 to the Quotes project's owning machine, then bring its
-reply back for verification. Do not mark the queue complete on a prompt alone.
+Next newly requested action: send the AI Briefing working-activity prompt unless
+the Quotes handoff is already running, then bring the reply back for verification.
+No source exporter has been installed by this hub-only implementation. Do not
+mark a handoff complete on a prompt, a baseline, or a successful hub render alone.

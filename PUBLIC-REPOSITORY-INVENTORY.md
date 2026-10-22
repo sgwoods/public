@@ -10,7 +10,7 @@ public-only classification; private project details are intentionally excluded.
 | [news-pipeline](https://github.com/sgwoods/news-pipeline) | AI Briefing public code | Active verified exporter, v0.1.4-beta at the October 22 audit |
 | [ai-briefing](https://github.com/sgwoods/ai-briefing) | AI Briefing publication and podcast hosting | Attached to AI Briefing; not a duplicate project |
 | [star-swarm](https://github.com/sgwoods/star-swarm) | Active original game/content project, developed with Claude and Firstmate | Added as project 13; deployed identity imports and source activity checks enabled |
-| [firstmate](https://github.com/sgwoods/firstmate) | Public fork of kunchenguid/firstmate; development orchestration tooling | Reference as supporting tooling; do not present upstream work as an original portfolio product |
+| [firstmate](https://github.com/sgwoods/firstmate) | Public fork of kunchenguid/firstmate; development orchestration tooling and owner contributions | Registered in the Working Activity coverage view, awaiting an own-contributions report; never count all upstream work as owner output or as an original portfolio product |
 | [Codex-Test1](https://github.com/sgwoods/Codex-Test1) | Aurora source | Already tracked; other-machine exporter handoff remains |
 | [Aurora-Galactica](https://github.com/sgwoods/Aurora-Galactica) | Aurora hosting surface | Keep attached to Aurora, not a duplicate project |
 | [mmath-renovation](https://github.com/sgwoods/mmath-renovation) | MMath source | Already tracked |

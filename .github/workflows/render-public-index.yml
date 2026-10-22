@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "data/projects/*.json"
+      - "data/activity/*.json"
       - "*/project-manifest.json"
       - "assets/public-index.js"
       - "assets/public-site.css"
@@ -17,6 +18,8 @@ on:
       - "tools/check_repository_freshness.py"
       - "tools/observe_activity.py"
       - "tools/test_activity.py"
+      - "tools/working_activity.py"
+      - "tools/test_working_activity.py"
       - "tools/private_status.py"
       - "tools/test_private_status.py"
       - "tools/test_public_index.cjs"
@@ -72,6 +75,7 @@ jobs:
         run: |
           python3 tools/test_repository_freshness.py
           python3 tools/test_activity.py
+          python3 tools/test_working_activity.py
           python3 tools/test_private_status.py
           node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
           python3 tools/refresh_public_coordination.py --check

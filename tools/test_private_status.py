@@ -12,8 +12,25 @@ import check_repository_freshness
 
 class PrivateStatusTests(unittest.TestCase):
     def setUp(self):
-        self.path = render_index.DATA_DIR / "financial-planner.json"
-        self.payload = json.loads(self.path.read_text())
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.path = Path(directory.name) / "financial-planner.json"
+        self.payload = {
+            "schema_version": "1.0", "project_id": "financial-planner", "active": True,
+            "display_name": "Financial Planner", "description": "Private personal planning",
+            "project_page_path": "financial-planner.html", "repo_url": None,
+            "dashboard_url": None, "experience_url": None, "repo_pushed_at": None,
+            "status_generated_at": "2026-10-22T17:53:59Z", "status_label": "Public status",
+            "status_value": "Private development; release not verified", "focus_label": "Scope",
+            "focus_value": "Personal planning", "status_sync": "private-summary-v1",
+            "private_metadata": {
+                "checked_at": "2026-10-22T17:49:22Z", "report_basis": "Hub-assisted metadata review",
+                "last_default_branch_commit_at": "2026-09-27T13:37:15Z", "release_version": None,
+                "released_at": None, "activity": {"window_start": "2026-08-31T04:00:00Z",
+                    "window_end": "2026-10-22T17:49:22Z", "commit_count": 63},
+            },
+        }
+        self.path.write_text(json.dumps(self.payload))
 
     def test_summary_has_no_release_source_or_private_links(self):
         private_status.validate(self.payload)

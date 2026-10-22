@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "project_id": "ai-briefing",
+  "generated_at": "2026-10-22T18:18:42Z",
+  "checked_at": "2026-10-22T18:12:10Z",
+  "timezone": "America/Toronto",
+  "scope": "working-default-branch",
+  "report_basis": "hub-assisted-baseline",
+  "uncommitted_work": "not_checked",
+  "window_start": "2026-10-05",
+  "window_end": "2026-10-23",
+  "days": [
+    {"date":"2026-10-05","development":0,"publication":0,"automation":0,"unclassified":10},
+    {"date":"2026-10-06","development":0,"publication":0,"automation":0,"unclassified":43},
+    {"date":"2026-10-07","development":0,"publication":0,"automation":0,"unclassified":24},
+    {"date":"2026-10-08","development":0,"publication":0,"automation":0,"unclassified":1},
+    {"date":"2026-10-09","development":0,"publication":0,"automation":0,"unclassified":14},
+    {"date":"2026-10-10","development":0,"publication":0,"automation":0,"unclassified":5},
+    {"date":"2026-10-11","development":0,"publication":0,"automation":0,"unclassified":3},
+    {"date":"2026-10-12","development":0,"publication":0,"automation":0,"unclassified":30},
+    {"date":"2026-10-13","development":0,"publication":0,"automation":0,"unclassified":36},
+    {"date":"2026-10-14","development":0,"publication":0,"automation":0,"unclassified":33},
+    {"date":"2026-10-15","development":0,"publication":0,"automation":0,"unclassified":23},
+    {"date":"2026-10-16","development":0,"publication":0,"automation":0,"unclassified":22},
+    {"date":"2026-10-17","development":0,"publication":0,"automation":0,"unclassified":17},
+    {"date":"2026-10-18","development":0,"publication":0,"automation":0,"unclassified":26},
+    {"date":"2026-10-19","development":0,"publication":0,"automation":0,"unclassified":36},
+    {"date":"2026-10-20","development":0,"publication":0,"automation":0,"unclassified":20},
+    {"date":"2026-10-21","development":0,"publication":0,"automation":0,"unclassified":23},
+    {"date":"2026-10-22","development":0,"publication":0,"automation":0,"unclassified":25}
+  ]
+}
