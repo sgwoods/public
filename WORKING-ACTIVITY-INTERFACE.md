@@ -15,9 +15,10 @@ public default-branch history and project-owned released status. It answers
   15. Public documents describe sanitized delivery and preserved private history.
   The hub cannot infer daily development from these snapshots or recover private
   working history. Ask the active machine; do not change release labels.
-- Firstmate is supporting forked tooling, but the owner also contributes to it.
-  Count only attributable contributions, not all upstream developers' activity.
-  Private agent-state backups are a different category from development.
+- Star Swarm is the independent game/content platform being developed with Claude
+  and Firstmate, as a parallel comparative attempt entirely separate from Aurora.
+  Firstmate is the development platform, not a separate work project in this suite.
+  Do not substitute its repository or private agent-state backups for Star Swarm work.
 
 The initial AI Briefing report is a **hub-assisted baseline**, not an installed
 source exporter. All 391 commits are **unclassified**, not presumed coding.
@@ -48,9 +49,10 @@ Rental-property operations and personal finance remain separate:
 | `financial-planner` | Personal financial planning |
 | `woods-financial-dashboard` | Personal portfolio dashboard and reconciliation |
 
-`firstmate` is registered for this working lens as supporting contributions, not
-as another original product or an extra homepage project. Other registered software
-projects can add reports under their existing ids. Archives retain their public
+Star Swarm reports under `star-swarm`; Aurora reports under `aurora-galactica`.
+They have independent code, history, releases, and roadmaps. `firstmate` is not a
+registered report id. Registered software projects can add reports under their
+existing ids. Archives retain their public
 content-history view. Kanban remains excluded. New ids require hub review.
 
 ## Exact schema, version 1.0
@@ -59,13 +61,12 @@ Use the checked-in `data/activity/ai-briefing.json` as a structural example, not
 source data to copy forward. Top-level fields are exactly:
 
 - `schema_version`: `1.0`.
-- `project_id`: an existing software project id, or `firstmate`.
+- `project_id`: an existing software project id, never a development tool's id.
 - `generated_at`: actual prepared/exported report time with timezone.
 - `checked_at`: actual successful source measurement time, no later than generation.
   Rendering, page loads, failed measurements, and public observations never advance it.
 - `timezone`: exactly `America/Toronto`.
-- `scope`: `working-default-branch`, `working-all-branches`, or
-  `contribution-branches`. Firstmate must use `contribution-branches`.
+- `scope`: `working-default-branch` or `working-all-branches` for the project itself.
 - `report_basis`: `owner-approved-export`; the initial assisted audit uses
   `hub-assisted-baseline` and is explicitly not proof of automatic upkeep.
 - `uncommitted_work`: `present`, `absent`, or `not_checked`. This is a safe signal,
@@ -95,9 +96,9 @@ development with unclassified work does **not** mean no coding occurred.
 
 Pin source heads before collection. Deduplicate commits across branches/worktrees,
 then bucket by actual committer time in Toronto. Source-private SHAs may be used
-internally but must not be exported. Do not count an upstream Firstmate sync as
-your contribution, or add upstream merged/squashed copies on top of the same
-source contribution. State and test that ownership policy privately.
+internally but must not be exported. For Star Swarm, measure the actual Star Swarm
+working history, not Firstmate's upstream code, its tooling fork, or unrelated
+agent-state backups. Never combine Star Swarm and Aurora histories for this view.
 
 A missing report is **N/A**, not zero. Zero rows are legitimate only after a
 complete successful measurement. Report windows can differ, so do not sum projects
@@ -140,4 +141,4 @@ supported hub notification after the approved report lands. Daily public refresh
 keep presentation current but cannot independently refresh private source reports.
 
 First source setup: AI Briefing, using the prompt in `REPOSITORY-HANDOFFS.md`.
-Aurora and Firstmate remain awaiting source reports, not zero-activity projects.
+Star Swarm and Aurora separately remain awaiting source reports, not zero-activity projects.

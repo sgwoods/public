@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated_at": "2026-10-22",
-  "summary": "Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Thirteen public histories feed the Public Repository Commits/archive charts. The separate Working Activity view reports approved daily working aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other reports, including Aurora and Firstmate's own contributions, await their source owners. No activity measure changes release labels. AI Briefing's v0.1.4-beta export is verified; Quotes has one source commit to review, Aurora's production snapshot matches its hosted build, and all seven archive fingerprints match. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.",
+  "summary": "Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Thirteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
     "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
@@ -404,11 +404,11 @@
       "energy": "medium",
       "value": "high",
       "time_horizon": "short",
-      "likely_current_work": "Active Claude/Firstmate development. October 22 deployment, notification, and hub import identify clean build 65d1434. The source repository owns the tested feature description and roadmap.",
+      "likely_current_work": "Independent Star Swarm game/content-platform development using Claude and Firstmate, as a parallel comparative attempt entirely separate from Aurora. October 22 deployment, notification, and hub import identify clean build 65d1434; source-owned docs remain authoritative for tested features.",
       "next_step": "Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.",
       "quality_note": "State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.",
       "drift_note": "The hub imports clean deployed build.json identities on refresh. Default-branch development is observed separately; detailed feature claims remain in the source architecture.",
-      "coordination_note": "Agent-neutral deployed-build import. Daily imports require no source-side hub token; immediate post-deployment notification uses a separate Actions-only token, verified working October 22.",
+      "coordination_note": "Firstmate names the development platform used to build Star Swarm, not another project to measure. Attribute Star Swarm's working report to star-swarm, never Firstmate's own repository or agent-state backups. Keep Aurora's code, activity, releases, and roadmap separate. Agent-neutral deployed-build imports and the verified post-deployment notification remain unchanged.",
       "extra_links": [
         {
           "label": "Canonical architecture",

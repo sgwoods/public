@@ -68,13 +68,35 @@ class WorkingActivityTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 activity.validate(report, self.registry, self.now)
 
-    def test_firstmate_cannot_claim_upstream_default_branch_history(self):
+    def test_firstmate_tooling_is_not_a_separate_work_series(self):
         report = copy.deepcopy(self.report)
         report["project_id"] = "firstmate"
         with self.assertRaises(ValueError):
             activity.validate(report, self.registry, self.now)
-        report["scope"] = "contribution-branches"
-        activity.validate(report, self.registry, self.now)
+        self.assertNotIn("firstmate", self.registry)
+        self.assertNotIn("Firstmate contributions", activity.render(self.projects, self.root, self.now))
+
+    def test_star_swarm_and_aurora_remain_independent_projects(self):
+        projects = self.projects + [
+            SimpleNamespace(project_id="star-swarm", display_name="Star Swarm", project_page_href="star-swarm.html"),
+            SimpleNamespace(project_id="aurora-galactica", display_name="Aurora", project_page_href="aurora-galactica.html"),
+        ]
+        registry = activity.project_registry(projects)
+        self.assertNotIn("firstmate", registry)
+        self.assertNotEqual(registry["star-swarm"]["href"], registry["aurora-galactica"]["href"])
+        for key, daily_count in (("star-swarm", 1), ("aurora-galactica", 2)):
+            report = copy.deepcopy(self.report)
+            report["project_id"] = key
+            for row in report["days"]:
+                row["unclassified"] = daily_count
+            (self.root / f"data/activity/{key}.json").write_text(json.dumps(report))
+        reports = activity.load_reports(self.root, registry, self.now)
+        self.assertEqual(activity.totals(reports["star-swarm"])["unclassified"], 18)
+        self.assertEqual(activity.totals(reports["aurora-galactica"])["unclassified"], 36)
+        self.assertEqual(activity.totals(reports["ai-briefing"])["unclassified"], 391)
+        page = activity.render(projects, self.root, self.now)
+        self.assertIn("independent parallel comparison with Aurora", page)
+        self.assertIn("separate histories, releases, and work reports", page)
 
     def test_owner_export_can_replace_and_classify_a_baseline(self):
         report = copy.deepcopy(self.report)
@@ -109,7 +131,7 @@ class WorkingActivityTests(unittest.TestCase):
         page = activity.render(self.projects, self.root, self.now)
         self.assertIn('href="confidential-project.html">Rental portal', page)
         self.assertIn('href="financial-planner.html">Personal planning', page)
-        self.assertEqual(page.count("Awaiting source report"), 3)  # Includes Firstmate.
+        self.assertEqual(page.count("Awaiting source report"), 2)
 
     def test_unknown_ids_duplicate_keys_and_mismatched_filenames_fail(self):
         report = copy.deepcopy(self.report)

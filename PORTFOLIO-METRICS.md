@@ -11,8 +11,9 @@ not a combined or rolling chart. These are different counts for different purpos
 
 **Public Repository Commits** is the renamed existing chart, not a new collection
 policy: it still counts public default-branch history. It is not a complete record
-of daily coding. AI Briefing's allowlisted code export, Aurora's sanitized delivery,
-and Firstmate's upstream contribution workflow make that distinction important.
+of daily coding. AI Briefing's allowlisted code export and Aurora's sanitized
+delivery make that distinction important. Star Swarm's own development is tracked
+separately from Aurora; Firstmate is its development platform, not another series.
 
 **Working Activity** shows separately approved daily aggregates from the actual
 working history. Development, publication, automation, and unclassified commits
@@ -22,10 +23,11 @@ window and check time; uncommitted edits and hours are not counted.
 
 The initial AI Briefing baseline contains 391 unclassified commits across October
 5-22, using Toronto dates. It is not 391 verified code changes or an installed
-automatic exporter. Aurora, Firstmate contributions, and other software projects
+automatic exporter. Aurora, Star Swarm, and other software projects
 await source-owned reports. Private projects' earlier fixed-window metadata cards
-cannot be converted into invented daily histories. Firstmate is supporting tooling
-in this view, not another original product in the portfolio count.
+cannot be converted into invented daily histories. Firstmate has no separate
+portfolio or working-report entry. Its repository and agent-state backups are
+not proxies for Star Swarm's coding activity.
 
 See [WORKING-ACTIVITY-INTERFACE.md](WORKING-ACTIVITY-INTERFACE.md) for the exact
 payload, privacy boundary, classification policy, and source-export workflow.

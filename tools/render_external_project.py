@@ -92,6 +92,7 @@ def render(payload, observation=None, now=None):
 </section>
 {render_freshness(payload, observation, now)}
 <section class="panel"><h2>Status and next steps</h2>
+<p>Star Swarm is an independent parallel comparison with Aurora, developed using Claude and the Firstmate platform. It is not an Aurora branch or shared release lane. Firstmate is development tooling, not the project being built. Each project keeps its own code, work history, release identity, and roadmap.</p>
 <p>The source repository owns the tested feature description and roadmap. This page follows the deployed build identity; newer development is tracked separately on the portfolio homepage.</p>
 <div class="links"><a class="button" href="project-suite-overview.html#project-{payload['project_id']}">Portfolio priorities</a>
 <a class="button" href="index.html#repository-activity">Repository activity</a>

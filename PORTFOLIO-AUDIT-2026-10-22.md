@@ -90,8 +90,13 @@ public code commits are October 22 exports, while its working history has 391
 commits across October 5-22. Aurora's public histories contain 11 default-branch
 commits and 14 across all branches since August 31, most recently October 15;
 its public docs describe sanitized delivery and preserved private history.
-Firstmate was excluded as supporting forked tooling even though the owner has
-attributable upstream contributions. Agent-state backups must not be called coding.
+The initial investigation incorrectly interpreted the owner's mention of Firstmate
+as a request to track work on Firstmate itself. The owner clarified that it is
+the development platform used to create Star Swarm, an independent parallel
+comparative attempt entirely separate from Aurora. The standalone Firstmate
+working series was removed; neither tooling commits nor agent-state backups
+are proxies for Star Swarm development. Keep both game projects' activity and
+release identities separate.
 
 The approved remedy keeps the existing public-history charts, names them Public
 Repository Commits, and adds the separate Working Activity view. Its first report

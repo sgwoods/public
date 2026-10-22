@@ -14,7 +14,6 @@ KEYS = {"schema_version", "project_id", "generated_at", "checked_at", "timezone"
 SCOPES = {
     "working-default-branch": "Working default-branch history",
     "working-all-branches": "Working branch histories, deduplicated",
-    "contribution-branches": "Own contributions only; upstream work excluded",
 }
 BASES = {"hub-assisted-baseline": "Baseline only; source export not yet established",
          "owner-approved-export": "Owner-approved source export"}
@@ -48,8 +47,6 @@ def validate(report, project_ids, now=None):
         raise ValueError("Working report dates use America/Toronto")
     if report["scope"] not in SCOPES or report["report_basis"] not in BASES:
         raise ValueError("Working report scope and basis must be explicit")
-    if report["project_id"] == "firstmate" and report["scope"] != "contribution-branches":
-        raise ValueError("Firstmate reports must exclude upstream developers' work")
     if report["uncommitted_work"] not in {"present", "absent", "not_checked"}:
         raise ValueError("Uncommitted work must be described without exposing files")
     checked, generated = timestamp(report["checked_at"]), timestamp(report["generated_at"])
@@ -72,11 +69,8 @@ def validate(report, project_ids, now=None):
 
 def project_registry(projects):
     # Archives retain their separate public-content view; this lens covers software work.
-    result = {project.project_id: {"name": project.display_name, "href": project.project_page_href}
-              for project in projects}
-    result["firstmate"] = {"name": "Firstmate contributions (supporting tooling)",
-                           "href": "https://github.com/sgwoods/firstmate"}
-    return result
+    return {project.project_id: {"name": project.display_name, "href": project.project_page_href}
+            for project in projects}
 
 
 def load_reports(root: Path, registry, now=None):
@@ -145,12 +139,17 @@ def render(projects, root: Path, now=None):
             <tbody>{daily}</tbody></table></div>
             <p><a href="data/activity/{escape(key)}.json">Approved aggregate report</a></p>
         </details>''')
+    context = ("<p>Star Swarm is an independent parallel comparison with Aurora, developed using Claude and Firstmate. "
+               "Firstmate is its development platform, not a separate project or activity series. "
+               "Star Swarm and Aurora keep separate histories, releases, and work reports.</p>"
+               if "star-swarm" in registry else "")
     return f'''<section class="panel" id="working-activity">
             <h2>Working Activity</h2>
             <p>Privacy-safe daily summaries of working histories, separate from public default-branch commits
-            and released snapshots. Reports can cover committed local/private work and own contributions.
+            and released snapshots. Reports can cover committed local/private project work.
             They do not count uncommitted edits, hours, effort, or release readiness. Never add these totals
             to the public charts: the same work may appear in both views.</p>
+            {context}
             <p>Each row has its own fixed reporting window. Missing reports are unknown, not zero.
             Unclassified commits can include code, content, publication, and automated backups;
             they are not all coding. The hub never advances source report times during rendering.</p>

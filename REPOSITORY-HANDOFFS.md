@@ -17,7 +17,9 @@ AI Briefing's release export and Star Swarm's deployment notification were verif
 in the October 22 audit. AI Briefing now needs the separate working-activity export,
 not another release-export repair. Aurora is managed on another machine: its
 working-history report follows AI Briefing, without changing its release lane.
-Firstmate contribution attribution follows that; do not import all upstream history.
+Star Swarm's separate working report follows that, measured from Star Swarm's
+actual working history. Firstmate is the development platform used to build it,
+not a separate source-report handoff. Never combine Star Swarm and Aurora work.
 MMath and PhD
 freshness-template improvements can be considered after the active queue; their
 source identities matched during the audit. Archive research gaps are already in

@@ -259,7 +259,10 @@ actual default-branch scope. Working totals must never be added to public totals
 for these daily reports, including ownership, allowed fields, classifications,
 coverage, check times, and confidentiality review. The assisted AI Briefing
 baseline is entirely unclassified and does not demonstrate installed upkeep.
-Firstmate reports cover the owner's contributions only, not upstream work.
+Star Swarm and Aurora have independent working reports and release identities.
+Firstmate is the development platform used for Star Swarm, not a separate report
+id or portfolio project. Its repository and agent-state backups must not be used
+as proxies for Star Swarm's work.
 
 Working reports may publish at an approved daily/work checkpoint, independently
 of release publication. This is not a change to the release-notification rule:
