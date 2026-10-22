@@ -1,0 +1,554 @@
+{
+  "schema_version": "1.0",
+  "attempted_at": "2026-10-22T17:38:16+00:00",
+  "date_basis": "committer",
+  "definition": "Reachable public default-branch commits; archive scopes exclude their own project manifest. Includes merges; not a progress or release metric.",
+  "projects": {
+    "aurora-galactica": {
+      "repo": "sgwoods/Codex-Test1",
+      "paths": [],
+      "exclude_paths": [],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "148f82e8b4e628ed7c51732f63f9c414bc7a752c",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": [
+        {
+          "sha": "8a02abc1099b99cf105fbb285f0551a522488725",
+          "date": "2026-09-24T18:04:41Z"
+        },
+        {
+          "sha": "181d8e296a9c0324c59b0ff8a8712c35a379e7a3",
+          "date": "2026-09-24T22:17:06Z"
+        },
+        {
+          "sha": "dd8c469f9864a038b35208d45efd59356ea72fbc",
+          "date": "2026-10-15T02:51:01Z"
+        },
+        {
+          "sha": "14607bed5bdb961e9ee8a7695836bc3e7b3a5da9",
+          "date": "2026-10-15T02:52:50Z"
+        },
+        {
+          "sha": "5ca9e528e2e081786b0be1e6b055496f1f826f43",
+          "date": "2026-10-15T03:04:16Z"
+        },
+        {
+          "sha": "5e968bfd3c077baccfedbe673200d6b21443c399",
+          "date": "2026-10-15T03:07:24Z"
+        },
+        {
+          "sha": "7dab1d79b752479853c2778bb1d1f60988818f12",
+          "date": "2026-10-15T03:13:48Z"
+        },
+        {
+          "sha": "8e93394bbc290d374d005cf13206e42e8c099b78",
+          "date": "2026-10-15T03:28:00Z"
+        },
+        {
+          "sha": "b7ce289809a1722320d998a2bf743667a95bc181",
+          "date": "2026-10-15T03:35:43Z"
+        },
+        {
+          "sha": "2412e8fde7e1e1dd7c18a6b6195240f20739a3fa",
+          "date": "2026-10-15T04:30:41Z"
+        },
+        {
+          "sha": "148f82e8b4e628ed7c51732f63f9c414bc7a752c",
+          "date": "2026-10-15T04:34:11Z"
+        }
+      ]
+    },
+    "star-swarm": {
+      "repo": "sgwoods/star-swarm",
+      "paths": [],
+      "exclude_paths": [],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "65d1434aeb3d952fc0d772c4cccc9a4981995568",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": [
+        {
+          "sha": "2c2271ce09746cd13b1c8e9fde58ac0898791906",
+          "date": "2026-09-24T17:54:55Z"
+        },
+        {
+          "sha": "b7a5769aa552bda9a8d789b630a25e60d2ae51d0",
+          "date": "2026-09-24T21:59:46Z"
+        },
+        {
+          "sha": "a8b5c75dccc660d98ef1af6f231e3c60876af8e1",
+          "date": "2026-09-24T22:26:20Z"
+        },
+        {
+          "sha": "c2e2e0be316847c95a909850a8b593b4801c3520",
+          "date": "2026-09-25T17:07:41Z"
+        },
+        {
+          "sha": "8a03698c1b83d104795fc0983f3d719e4f11a7f2",
+          "date": "2026-09-25T17:14:41Z"
+        },
+        {
+          "sha": "76d21187bdd6e7e4326878da28917983ad770525",
+          "date": "2026-09-25T17:58:29Z"
+        },
+        {
+          "sha": "ef52b4f2e62641d0212095380e284ba4f57aa93b",
+          "date": "2026-09-25T17:59:11Z"
+        },
+        {
+          "sha": "015a98eac1799822c637d967aedd59c3bfc52d96",
+          "date": "2026-09-25T18:02:05Z"
+        },
+        {
+          "sha": "3fc02028282fefc00cf72a2de634c5464d74244f",
+          "date": "2026-09-25T18:18:53Z"
+        },
+        {
+          "sha": "c2863a5246e909488c9f3dbf4303426c26acb77d",
+          "date": "2026-09-25T18:25:24Z"
+        },
+        {
+          "sha": "47d058242063b175139b841134b2b1b7e9696f7d",
+          "date": "2026-09-26T14:27:23Z"
+        },
+        {
+          "sha": "0b34e2c9277465cb4a6dec0a3bc0fc15248e3de3",
+          "date": "2026-09-26T14:48:06Z"
+        },
+        {
+          "sha": "7c618034d9b0f90364f1104b53ce8a40e45f3ef0",
+          "date": "2026-09-26T16:24:12Z"
+        },
+        {
+          "sha": "242b5cbb6a6023feed5350816eaeb649e7ea71d3",
+          "date": "2026-09-26T18:47:51Z"
+        },
+        {
+          "sha": "e26ff7a30bbbc45be7e0c199d555ce41461b89cf",
+          "date": "2026-09-26T18:55:50Z"
+        },
+        {
+          "sha": "01393cf1958a571ae60f1e7bb45984fe8066ec2e",
+          "date": "2026-09-26T19:04:11Z"
+        },
+        {
+          "sha": "738e2e00de1b20c6f91f43213bc03d49b71a640a",
+          "date": "2026-09-26T20:41:23Z"
+        },
+        {
+          "sha": "5ad8e2f6bae945a086909325f0d52f6c939d789c",
+          "date": "2026-09-26T21:02:17Z"
+        },
+        {
+          "sha": "20667e4554b6e727fcf3b11e2a0b33dfa979949e",
+          "date": "2026-09-26T21:37:31Z"
+        },
+        {
+          "sha": "014c3bc98846c0c11dfd6956b1179ecbe653db1d",
+          "date": "2026-09-26T21:47:01Z"
+        },
+        {
+          "sha": "f92d474eb91f76bf606660ed39bb31444b2134f3",
+          "date": "2026-09-28T15:01:47Z"
+        },
+        {
+          "sha": "79e1401d7d51e3d1fbce0582c84b56adb7e93808",
+          "date": "2026-09-28T15:06:24Z"
+        },
+        {
+          "sha": "e1438369d589678f99e8efcea9525b2565c1c02f",
+          "date": "2026-09-28T16:13:19Z"
+        },
+        {
+          "sha": "6f8a6a6a0ebd276c25c1f2d0fdcb976645fd8fd6",
+          "date": "2026-09-28T16:14:23Z"
+        },
+        {
+          "sha": "34bc8c44e81e2dbb3dc4bca0d94f9f5d6475eabe",
+          "date": "2026-09-28T17:21:43Z"
+        },
+        {
+          "sha": "3d1c9ded21cea4e994c5b23c57f30b4b4f63c6fc",
+          "date": "2026-09-28T17:39:06Z"
+        },
+        {
+          "sha": "9898194fe8f12b815718f295006b895664db6e16",
+          "date": "2026-09-28T18:16:14Z"
+        },
+        {
+          "sha": "9b05f4b35299af7244a189798cec7ee1069cae34",
+          "date": "2026-09-28T18:16:52Z"
+        },
+        {
+          "sha": "2fcd041a3f213e99433a4ad141ef8f0b34496654",
+          "date": "2026-09-28T18:26:46Z"
+        },
+        {
+          "sha": "0a4e9b7714e8a3cbe891eff6a0a58959f7cde9f5",
+          "date": "2026-09-30T14:26:35Z"
+        },
+        {
+          "sha": "f9ed359ec1eb5c86b40ddd6080ec4f702136d72a",
+          "date": "2026-09-30T14:36:26Z"
+        },
+        {
+          "sha": "ca906424cfa82d7da2a51cc26b139c54c68594be",
+          "date": "2026-10-01T18:56:59Z"
+        },
+        {
+          "sha": "852069b8661bcc05dd995e0f9bc2c2749562b4c5",
+          "date": "2026-10-02T17:11:52Z"
+        },
+        {
+          "sha": "f9fbff6beb3e06338b33fff5173e0e64b63c7626",
+          "date": "2026-10-03T13:01:00Z"
+        },
+        {
+          "sha": "cecf7ed2004f19b4fa0eb0f9ab9e9a05bd9cd826",
+          "date": "2026-10-03T13:48:47Z"
+        },
+        {
+          "sha": "705ab2499ada24e7e3834b1d0bdbaf96a5a5da5e",
+          "date": "2026-10-04T13:46:21Z"
+        },
+        {
+          "sha": "9738ca3c7bdd02755537a08f1465f66bb62e29cc",
+          "date": "2026-10-04T13:58:32Z"
+        },
+        {
+          "sha": "7704f8a5f8123615842e00177ee29db69ee7cf19",
+          "date": "2026-10-04T16:34:27Z"
+        },
+        {
+          "sha": "a5484222773294454e2992f426efc4f8201008c3",
+          "date": "2026-10-04T16:49:00Z"
+        },
+        {
+          "sha": "f0b87b644d494a9e503c8a0bd9d4cf4062b2a1c9",
+          "date": "2026-10-04T18:33:22Z"
+        },
+        {
+          "sha": "992ef0606cee96c49ce567bad3f93e8a13985719",
+          "date": "2026-10-04T18:45:33Z"
+        },
+        {
+          "sha": "02ff1a323d2deceadf1b838b8448f8cb1edf5ee7",
+          "date": "2026-10-04T18:58:54Z"
+        },
+        {
+          "sha": "7d301845c3759a738c1851a2522ca98fe9f91283",
+          "date": "2026-10-04T19:13:42Z"
+        },
+        {
+          "sha": "cdfa80f8b2dfa55c7899f44495bd470919b780c3",
+          "date": "2026-10-05T17:12:57Z"
+        },
+        {
+          "sha": "9b03b103b9aefc746f8f92750b0fbbe746c7d3fe",
+          "date": "2026-10-05T17:27:25Z"
+        },
+        {
+          "sha": "537c577c76cd88394271ab193ccb1531968b242f",
+          "date": "2026-10-06T15:16:59Z"
+        },
+        {
+          "sha": "30627fd7697952aac47494231d87468c9c99bfb5",
+          "date": "2026-10-06T18:06:37Z"
+        },
+        {
+          "sha": "6be9d8a562ebad6adf8a8a3ff3c028604c11b53b",
+          "date": "2026-10-06T18:22:03Z"
+        },
+        {
+          "sha": "69a26b1b1269804bef5645607cdd2633bd9a409d",
+          "date": "2026-10-06T18:38:04Z"
+        },
+        {
+          "sha": "8697d13cf1090dcd8a0e2e0a193fd720e18e3b4a",
+          "date": "2026-10-07T13:42:56Z"
+        },
+        {
+          "sha": "5a4d38d7968c02b9f1640fe644825c95fc6e049f",
+          "date": "2026-10-07T13:57:14Z"
+        },
+        {
+          "sha": "7a84786f4512a4a70dd231523c9da39f03f4b330",
+          "date": "2026-10-11T15:01:54Z"
+        },
+        {
+          "sha": "911317c7ebb2388f5a42ad3f9de47040dba996b0",
+          "date": "2026-10-12T18:21:46Z"
+        },
+        {
+          "sha": "67d857295571f310704dade470c2039d1e53bdc2",
+          "date": "2026-10-12T20:56:48Z"
+        },
+        {
+          "sha": "cdc7a3d098dab59995ce6be6eb5fad7e19c3a049",
+          "date": "2026-10-12T21:40:45Z"
+        },
+        {
+          "sha": "4e8ea2c4287949817e98244cc062485597a956ea",
+          "date": "2026-10-17T19:09:19Z"
+        },
+        {
+          "sha": "b1055e7d06f156acadb8dec7794ae18eea8517ab",
+          "date": "2026-10-17T19:29:07Z"
+        },
+        {
+          "sha": "98475b3092d6df76b5747c71c7d71cef54504d5b",
+          "date": "2026-10-18T14:23:08Z"
+        },
+        {
+          "sha": "1e47851c1fbdd14f8cee16b9d46a0a9e8d83710d",
+          "date": "2026-10-18T15:06:34Z"
+        },
+        {
+          "sha": "23c4c92003edaefe07dd237d7d4e7936550348c0",
+          "date": "2026-10-18T19:06:27Z"
+        },
+        {
+          "sha": "8eb0c4169f6d45d0c3fa9dc07f18862c895ed5c8",
+          "date": "2026-10-18T19:07:17Z"
+        },
+        {
+          "sha": "478a6282869bc83224face8036a12728bfb59800",
+          "date": "2026-10-22T12:40:52Z"
+        },
+        {
+          "sha": "65d1434aeb3d952fc0d772c4cccc9a4981995568",
+          "date": "2026-10-22T12:42:15Z"
+        }
+      ]
+    },
+    "ai-dystopia-quotes": {
+      "repo": "sgwoods/sci-fi-ai-dystopian-project",
+      "paths": [],
+      "exclude_paths": [],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "a0e7cc899512bdb0c3973903851387f993387b99",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": [
+        {
+          "sha": "3cbaf56f1f4aa31d01b536e747f25bbdd8c83b5c",
+          "date": "2026-10-03T16:49:37Z"
+        },
+        {
+          "sha": "a0e7cc899512bdb0c3973903851387f993387b99",
+          "date": "2026-10-04T14:12:47Z"
+        }
+      ]
+    },
+    "ai-briefing": {
+      "repo": "sgwoods/news-pipeline",
+      "paths": [],
+      "exclude_paths": [],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "e701aaca6fc66059efe41e177f81128a8fc30e91",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": [
+        {
+          "sha": "c850c4671c294d295957afbda05bb89ba9b6b22a",
+          "date": "2026-10-22T11:20:56Z"
+        },
+        {
+          "sha": "4b9185d65677a50e394485a3225bdbbea064fcd4",
+          "date": "2026-10-22T11:23:03Z"
+        },
+        {
+          "sha": "50827ee78606a41e9e5477f314c2ce9cf8240326",
+          "date": "2026-10-22T12:52:59Z"
+        },
+        {
+          "sha": "4afc40b0b572812e06b024a87cba9008788baacd",
+          "date": "2026-10-22T13:39:16Z"
+        },
+        {
+          "sha": "9f9028cb9a8c528af3edbc2015a51be4309f89ba",
+          "date": "2026-10-22T13:50:32Z"
+        },
+        {
+          "sha": "6386187e17cb856de679ac85f09cbf9f5f09b841",
+          "date": "2026-10-22T16:59:50Z"
+        },
+        {
+          "sha": "a9ed7cfdecdbebe983ad559873e062e650333fb5",
+          "date": "2026-10-22T17:13:41Z"
+        },
+        {
+          "sha": "e701aaca6fc66059efe41e177f81128a8fc30e91",
+          "date": "2026-10-22T17:23:16Z"
+        }
+      ]
+    },
+    "phd-renovation": {
+      "repo": "sgwoods/phd-renovation",
+      "paths": [],
+      "exclude_paths": [],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "f5eea43d71fd35a48bd235b96088e495ce6d157d",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": [
+        {
+          "sha": "f5eea43d71fd35a48bd235b96088e495ce6d157d",
+          "date": "2026-10-03T16:49:36Z"
+        }
+      ]
+    },
+    "mmath-renovation": {
+      "repo": "sgwoods/mmath-renovation",
+      "paths": [],
+      "exclude_paths": [],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "408c9330f9dc7abfca86b8ae30a13808a6c4073c",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": [
+        {
+          "sha": "408c9330f9dc7abfca86b8ae30a13808a6c4073c",
+          "date": "2026-10-03T16:49:39Z"
+        }
+      ]
+    },
+    "steven-woods-research": {
+      "repo": "sgwoods/public",
+      "paths": [
+        "steven-woods-research",
+        "steven-woods-research.html"
+      ],
+      "exclude_paths": [
+        "steven-woods-research/project-manifest.json"
+      ],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "7154c2a929b8ab2ad7a1ceb73f4749a737449b0f",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": []
+    },
+    "google-canada-research": {
+      "repo": "sgwoods/public",
+      "paths": [
+        "google-canada-research",
+        "google-canada-research.html"
+      ],
+      "exclude_paths": [
+        "google-canada-research/project-manifest.json"
+      ],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "7154c2a929b8ab2ad7a1ceb73f4749a737449b0f",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": []
+    },
+    "inovia-research": {
+      "repo": "sgwoods/public",
+      "paths": [
+        "inovia-research",
+        "inovia-research.html"
+      ],
+      "exclude_paths": [
+        "inovia-research/project-manifest.json"
+      ],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "7154c2a929b8ab2ad7a1ceb73f4749a737449b0f",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": []
+    },
+    "canberra-research": {
+      "repo": "sgwoods/public",
+      "paths": [
+        "canberra-research",
+        "canberra-research.html"
+      ],
+      "exclude_paths": [
+        "canberra-research/project-manifest.json"
+      ],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "7154c2a929b8ab2ad7a1ceb73f4749a737449b0f",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": []
+    },
+    "sei-pittsburgh-research": {
+      "repo": "sgwoods/public",
+      "paths": [
+        "sei-pittsburgh-research",
+        "sei-pittsburgh-research.html"
+      ],
+      "exclude_paths": [
+        "sei-pittsburgh-research/project-manifest.json"
+      ],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "7154c2a929b8ab2ad7a1ceb73f4749a737449b0f",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": []
+    },
+    "quack-com": {
+      "repo": "sgwoods/public",
+      "paths": [
+        "quack",
+        "quack-com.html"
+      ],
+      "exclude_paths": [
+        "quack/project-manifest.json"
+      ],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "7154c2a929b8ab2ad7a1ceb73f4749a737449b0f",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": []
+    },
+    "kinitos-neoedge": {
+      "repo": "sgwoods/public",
+      "paths": [
+        "kinitos-neoedge",
+        "kinitos-neoedge.html"
+      ],
+      "exclude_paths": [
+        "kinitos-neoedge/project-manifest.json"
+      ],
+      "attempted_at": "2026-10-22T17:38:16+00:00",
+      "state": "ok",
+      "branch": "main",
+      "branch_commit": "7154c2a929b8ab2ad7a1ceb73f4749a737449b0f",
+      "checked_at": "2026-10-22T17:38:16+00:00",
+      "window_start": "2026-08-31T04:00:00+00:00",
+      "commits": [
+        {
+          "sha": "993055ee863c2c560581ac0593ce5972ca04963f",
+          "date": "2026-10-03T16:47:32Z"
+        }
+      ]
+    }
+  }
+}

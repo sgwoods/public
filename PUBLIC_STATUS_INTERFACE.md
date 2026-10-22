@@ -85,7 +85,7 @@ Current canonical standalone-project files:
 - `data/projects/phd-renovation.json`
 - `data/projects/mmath-renovation.json`
 - `data/projects/ai-dystopia-quotes.json`
-- `data/projects/ai-briefing.json` (registered; first owner export pending)
+- `data/projects/ai-briefing.json`
 - `data/projects/star-swarm.json` (hub-managed deployed-build import)
 - `data/projects/confidential-project.json`
 

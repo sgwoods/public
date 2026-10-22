@@ -5,12 +5,11 @@ from __future__ import annotations
 
 import html
 import json
-import os
-import subprocess
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 try:
     from zoneinfo import ZoneInfo
@@ -22,21 +21,6 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "projects"
 OUTPUT = ROOT / "index.html"
 LOCAL_TZ = ZoneInfo("America/Toronto")
-
-
-def first_existing_path(candidates: list[Path]) -> Path:
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate
-    return candidates[0]
-
-
-def env_or_candidates(env_name: str, candidates: list[Path]) -> Path:
-    override_raw = os.environ.get(env_name)
-    if override_raw:
-        override = Path(override_raw).expanduser()
-        return override
-    return first_existing_path(candidates)
 
 
 PROJECT_ORDER = [
@@ -55,57 +39,7 @@ PROJECT_ORDER = [
     "quack-com",
     "kinitos-neoedge",
 ]
-KNOWN_CODING_REPOS: dict[str, dict[str, Any]] = {
-    "mmath-renovation": {
-        "label": "Abtweak",
-        "repo_path": env_or_candidates(
-            "PUBLIC_MMATH_REPO_PATH",
-            [
-                Path.home() / "Projects-All" / "mmath-renovation-working",
-                Path("/Users/steven/Projects-All/mmath-renovation-working"),
-                Path.home() / "Documents" / "GitPages" / "mmath-renovation",
-                Path("/Users/steven/Documents/GitPages/mmath-renovation"),
-                Path("/Users/stevenwoods/mmath-renovation"),
-            ],
-        ),
-        "ref": "origin/main",
-        "api_ref": "main",
-        "repo": "mmath-renovation",
-    },
-    "phd-renovation": {
-        "label": "CSP",
-        "repo_path": env_or_candidates(
-            "PUBLIC_PHD_REPO_PATH",
-            [
-                Path.home() / "Projects-All" / "phd-renovation-working",
-                Path("/Users/steven/Projects-All/phd-renovation-working"),
-                Path.home() / "Documents" / "GitPages" / "phd-renovation",
-                Path("/Users/steven/Documents/GitPages/phd-renovation"),
-                Path("/Users/stevenwoods/phd-renovation"),
-            ],
-        ),
-        "ref": "origin/main",
-        "api_ref": "main",
-        "repo": "phd-renovation",
-    },
-    "aurora-galactica": {
-        "label": "Aurora",
-        "repo_path": env_or_candidates(
-            "PUBLIC_AURORA_REPO_PATH",
-            [
-                Path.home() / "Projects-All" / "Codex-Test1",
-                Path("/Users/steven/Projects-All/Codex-Test1"),
-                Path.home() / "Documents" / "Codex-Test1",
-                Path.home() / "Documents" / "New project" / "Codex-Test1",
-                Path("/Users/steven/Documents/Codex-Test1"),
-                Path("/Users/stevenwoods/Documents/Codex-Test1"),
-            ],
-        ),
-        "ref": "origin/main",
-        "api_ref": "main",
-        "repo": "Codex-Test1",
-    },
-}
+CODING_LABELS = {"mmath-renovation": "Abtweak", "phd-renovation": "CSP", "aurora-galactica": "Aurora"}
 
 ACTIVITY_COLOR_PALETTE = [
     ("rgba(103, 230, 168, 0.96)", "rgba(57, 181, 124, 0.96)"),
@@ -175,6 +109,8 @@ class ProjectStatus:
     person_context: str | None
     timeline_label: str | None
     active: bool
+    source_commit: str | None = None
+    source_dirty: bool = False
 
 
 @dataclass
@@ -182,11 +118,15 @@ class ActivityBucket:
     start: datetime
     end: datetime
     label: str
-    counts: dict[str, int]
+    counts: dict[str, int | None]
 
     @property
-    def total(self) -> int:
-        return sum(self.counts.values())
+    def total(self) -> int | None:
+        return None if None in self.counts.values() else self.known_total
+
+    @property
+    def known_total(self) -> int:
+        return sum(value for value in self.counts.values() if value is not None)
 
 
 def parse_datetime(value: str) -> datetime:
@@ -232,6 +172,8 @@ def load_project(path: Path) -> ProjectStatus:
         person_context=payload.get("person_context"),
         timeline_label=timeline_span.get("label"),
         active=bool(payload["active"]),
+        source_commit=payload.get("source_commit"),
+        source_dirty=bool(payload.get("source_dirty")),
     )
 
 def sort_key(project: ProjectStatus) -> tuple[int, str]:
@@ -297,10 +239,6 @@ def render_reference_card(page: dict[str, str]) -> str:
                 </article>"""
 
 
-def git_datetime(value: datetime) -> str:
-    return value.astimezone(LOCAL_TZ).strftime("%Y-%m-%dT%H:%M:%S%z")
-
-
 def current_week_start(today: date | None = None) -> datetime:
     local_today = today or datetime.now(LOCAL_TZ).date()
     start_date = local_today - timedelta(days=local_today.weekday())
@@ -312,55 +250,32 @@ def current_day_start(today: date | None = None) -> datetime:
     return datetime.combine(local_today, time.min, tzinfo=LOCAL_TZ)
 
 
-def git_rev_list_count(
-    repo_path: Path,
-    ref: str,
-    start: datetime,
-    end: datetime,
-    pathspecs: list[str] | None = None,
-) -> int:
-    if not repo_path.exists():
-        return 0
-    command = [
-        "git",
-        "-C",
-        str(repo_path),
-        "rev-list",
-        "--count",
-        f"--since={git_datetime(start)}",
-        f"--before={git_datetime(end)}",
-        ref,
-    ]
-    if pathspecs:
-        command.extend(["--", *pathspecs])
+def load_activity_snapshot() -> dict:
+    path = ROOT / "data/shared/repository-activity.json"
+    return json.loads(path.read_text()) if path.exists() else {"projects": {}}
 
-    try:
-        result = subprocess.run(
-            command,
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return 0
-    return int(result.stdout.strip() or "0")
+
+def activity_count(snapshot: dict, project: dict, start: datetime, end: datetime) -> int | None:
+    row = snapshot.get("projects", {}).get(project["project_id"], {})
+    if (row.get("state") != "ok" or row.get("repo") != project["repo"]
+            or row.get("paths") != project["pathspecs"]
+            or row.get("exclude_paths", []) != project.get("exclude_paths", [])):
+        return None
+    if parse_datetime(row["window_start"]) > start or parse_datetime(row["checked_at"]) < start:
+        return None
+    return sum(start <= parse_datetime(commit["date"]) < end for commit in row["commits"])
 
 
 def load_weekly_activity_buckets(projects: list[dict[str, Any]], num_weeks: int = 8) -> list[ActivityBucket]:
     start = current_week_start() - timedelta(weeks=num_weeks - 1)
     weeks: list[ActivityBucket] = []
+    snapshot = load_activity_snapshot()
     for offset in range(num_weeks):
         week_start = start + timedelta(weeks=offset)
         week_end = week_start + timedelta(weeks=1)
-        counts: dict[str, int] = {}
+        counts: dict[str, int | None] = {}
         for project in projects:
-            counts[project["project_id"]] = git_rev_list_count(
-                project["repo_path"],
-                project["ref"],
-                week_start,
-                week_end,
-                project.get("pathspecs"),
-            )
+            counts[project["project_id"]] = activity_count(snapshot, project, week_start, week_end)
         weeks.append(
             ActivityBucket(
                 start=week_start,
@@ -375,18 +290,13 @@ def load_weekly_activity_buckets(projects: list[dict[str, Any]], num_weeks: int 
 def load_daily_activity_buckets(projects: list[dict[str, Any]], num_days: int = 7) -> list[ActivityBucket]:
     start = current_day_start() - timedelta(days=num_days - 1)
     days: list[ActivityBucket] = []
+    snapshot = load_activity_snapshot()
     for offset in range(num_days):
         day_start = start + timedelta(days=offset)
         day_end = day_start + timedelta(days=1)
-        counts: dict[str, int] = {}
+        counts: dict[str, int | None] = {}
         for project in projects:
-            counts[project["project_id"]] = git_rev_list_count(
-                project["repo_path"],
-                project["ref"],
-                day_start,
-                day_end,
-                project.get("pathspecs"),
-            )
+            counts[project["project_id"]] = activity_count(snapshot, project, day_start, day_end)
         days.append(
             ActivityBucket(
                 start=day_start,
@@ -446,50 +356,12 @@ def build_coding_activity_projects(projects: list[ProjectStatus]) -> list[dict[s
     activity_projects: list[dict[str, Any]] = []
     for index, project in enumerate(projects):
         color_top, color_bottom = activity_color(index)
-        known = KNOWN_CODING_REPOS.get(project.project_id)
-        if known:
-            activity_projects.append(
-                {
-                    "label": known["label"],
-                    "repo_path": known["repo_path"],
-                    "ref": known["ref"],
-                    "api_ref": known["api_ref"],
-                    "project_id": project.project_id,
-                    "repo": known["repo"],
-                    "color_top": color_top,
-                    "color_bottom": color_bottom,
-                    "pathspecs": known.get("pathspecs", []),
-                }
-            )
-            continue
-
-        if project.repo_url and project.repo_url.startswith("https://github.com/sgwoods/"):
-            repo = project.repo_url.rstrip("/").rsplit("/", 1)[-1]
+        if project.repo_url and urlparse(project.repo_url).netloc == "github.com":
+            repo = urlparse(project.repo_url).path.strip("/").removesuffix(".git")
             activity_projects.append({
-                "label": project.display_name, "repo_path": ROOT.parent / repo,
-                "ref": "origin/main", "api_ref": "main", "project_id": project.project_id,
+                "label": CODING_LABELS.get(project.project_id, project.display_name), "project_id": project.project_id,
                 "repo": repo, "pathspecs": [], "color_top": color_top, "color_bottom": color_bottom,
             })
-            continue
-
-        pathspecs = [project.project_page_href, f"data/projects/{project.project_id}.json"]
-        related_data = ROOT / "data" / f"{project.project_id}.approved.json"
-        if related_data.exists():
-            pathspecs.append(f"data/{project.project_id}.approved.json")
-
-        activity_projects.append(
-            {
-                "label": project.display_name,
-                "repo_path": ROOT,
-                "ref": "HEAD",
-                "api_ref": "main",
-                "project_id": project.project_id,
-                "repo": "public",
-                "pathspecs": pathspecs,
-                "color_top": color_top,
-                "color_bottom": color_bottom,
-            }
-        )
     return activity_projects
 
 
@@ -500,23 +372,22 @@ def build_research_activity_projects(projects: list[ProjectStatus]) -> list[dict
         color_top, color_bottom = activity_color(index)
         folder_name = folder_by_id.get(project.project_id)
         folder = ROOT / folder_name if folder_name else None
-        pathspecs = [project.project_page_href]
+        page_path = urlparse(project.project_page_href).path.removeprefix("/public/").lstrip("/")
+        pathspecs = [page_path]
         if folder and folder.exists():
             pathspecs.insert(0, folder_name)
         else:
-            fallback_folder = project.project_page_href.removesuffix(".html")
+            fallback_folder = page_path.removesuffix(".html")
             if (ROOT / fallback_folder).exists():
                 pathspecs.insert(0, fallback_folder)
 
         activity_projects.append(
             {
                 "label": project.display_name,
-                "repo_path": ROOT,
-                "ref": "HEAD",
-                "api_ref": "main",
                 "project_id": project.project_id,
-                "repo": "public",
+                "repo": "sgwoods/public",
                 "pathspecs": pathspecs,
+                "exclude_paths": [f"{folder_name}/project-manifest.json"] if folder_name else [],
                 "color_top": color_top,
                 "color_bottom": color_bottom,
             }
@@ -534,11 +405,14 @@ def render_activity_chart(
     buckets: list[ActivityBucket],
     bucket_mode: str,
 ) -> str:
-    ceiling = nice_upper_bound(max(bucket.total for bucket in buckets))
+    ceiling = nice_upper_bound(max(bucket.known_total for bucket in buckets))
     midpoint = ceiling // 2
+    snapshot = load_activity_snapshot()
+    checks = [row["checked_at"] for project in projects
+              if (row := snapshot.get("projects", {}).get(project["project_id"], {})).get("checked_at")]
     chart_config = {
         "chart_id": chart_id,
-        "generated_at": datetime.now(LOCAL_TZ).isoformat(),
+        "generated_at": min(checks, key=parse_datetime) if checks else None,
         "bucket_mode": bucket_mode,
         "buckets": [
             {
@@ -553,9 +427,9 @@ def render_activity_chart(
             {
                 "label": project["label"],
                 "project_id": project["project_id"],
-                "repo": project.get("repo", project["repo_path"].name),
-                "ref": project.get("api_ref", project["ref"].replace("origin/", "")),
+                "repo": project["repo"],
                 "paths": project.get("pathspecs", []),
+                "exclude_paths": project.get("exclude_paths", []),
                 "color_top": project["color_top"],
                 "color_bottom": project["color_bottom"],
             }
@@ -564,7 +438,8 @@ def render_activity_chart(
     }
     legend = []
     for project in projects:
-        total = sum(bucket.counts[project["project_id"]] for bucket in buckets)
+        values = [bucket.counts[project["project_id"]] for bucket in buckets]
+        total = "Unavailable" if None in values else str(sum(values))
         legend.append(
             f"""                <div class="activityLegendItem">
                     <span class="activityLegendSwatch" style="--activity-top: {project["color_top"]}; --activity-bottom: {project["color_bottom"]};"></span>
@@ -577,26 +452,28 @@ def render_activity_chart(
         segments = []
         for project in projects:
             count = bucket.counts[project["project_id"]]
-            height = (count / ceiling) * 100
+            height = ((count or 0) / ceiling) * 100
+            count_label = "Unavailable" if count is None else str(count)
             segments.append(
-                f"""                                <span class="activitySegment" data-activity-project="{project["project_id"]}" style="height: {height:.2f}%; --activity-top: {project["color_top"]}; --activity-bottom: {project["color_bottom"]};" title="{html.escape(project["label"])}: {count} {html.escape(metric_label)}"></span>"""
+                f"""                                <span class="activitySegment" data-activity-project="{project["project_id"]}" style="height: {height:.2f}%; --activity-top: {project["color_top"]}; --activity-bottom: {project["color_bottom"]};" title="{html.escape(project["label"])}: {count_label} {html.escape(metric_label)}"></span>"""
             )
+        total_label = "N/A" if bucket.total is None else str(bucket.total)
         columns.append(
             f"""                    <div class="activityWeek" data-activity-week="{bucket.start.isoformat()}">
                         <div class="activityColumn">
-                            <div class="activityStack" aria-label="{html.escape(bucket.label)}: {bucket.total} total {html.escape(metric_label)}">
+                            <div class="activityStack" aria-label="{html.escape(bucket.label)}: {total_label} total {html.escape(metric_label)}">
 {chr(10).join(segments)}
                             </div>
                         </div>
-                        <div class="activityTotal" data-activity-total>{bucket.total}</div>
+                        <div class="activityTotal" data-activity-total>{total_label}</div>
                         <div class="activityLabel">{html.escape(bucket.label)}</div>
                     </div>"""
         )
 
     chart_config_json = json.dumps(chart_config).replace("</", "<\\/")
-    generated_label = format_local_datetime(parse_datetime(chart_config["generated_at"]))
+    generated_label = format_local_datetime(parse_datetime(chart_config["generated_at"])) if chart_config["generated_at"] else "Not yet measured"
 
-    return f"""        <section class="panel" data-activity-chart data-activity-chart-id="{chart_id}">
+    return f"""        <section class="panel" id="activity-{chart_id}" data-activity-chart data-activity-chart-id="{chart_id}">
             <h2>{html.escape(title)}</h2>
             <p class="lead">{html.escape(lead)}</p>
             <div class="activityChart" style="--activity-columns: {len(buckets)};">
@@ -616,8 +493,9 @@ def render_activity_chart(
             <div class="activityLegend">
 {chr(10).join(legend)}
             </div>
-            <p class="footer"><strong>Last refreshed:</strong> <span data-activity-last-refreshed>{html.escape(generated_label)}</span></p>
-            <p class="footer" data-activity-status>Rendered from local repository history and refreshed from GitHub when the page loads.</p>
+            <p class="footer"><strong>History checked:</strong> <span data-activity-last-refreshed>{html.escape(generated_label)}</span> (America/Toronto)</p>
+            <p class="footer" data-activity-status>Published GitHub history snapshot. Unavailable history is N/A, never zero. Current periods are partial; commits are not a measure of effort, quality, or releases.</p>
+            <p class="footer"><a href="data/shared/repository-activity.json">History data</a> · <a href="PORTFOLIO-METRICS.md">Metric definitions</a> · <a href="PORTFOLIO-AUDIT-2026-10-22.md">October 22 audit</a></p>
             <script id="activity-chart-config-{chart_id}" type="application/json">{chart_config_json}</script>
         </section>"""
 
@@ -631,8 +509,22 @@ def render_project_card(project: ProjectStatus) -> str:
         buttons.insert(2, render_button(project.experience_url, "Open live experience"))
     if project.repo_url:
         buttons.append(render_button(project.repo_url, "Open repository"))
+    observation_path = ROOT / "data/shared/repository-observations.json"
+    observations = json.loads(observation_path.read_text()).get("projects", {}) if observation_path.exists() else {}
+    observation = observations.get(project.project_id, {})
+    checked = observation.get("checked_at")
+    checked_text = format_local_datetime(parse_datetime(checked)) if checked else "Not observed"
+    comparison = observation_label(observation)
+    if project.source_dirty and observation.get("state") != "check_failed":
+        comparison = "Export included uncommitted changes; review source"
+    elif project.source_commit and observation.get("state") not in {"check_failed", "not_observed"} and observation.get("snapshot_commit") != project.source_commit:
+        comparison = "New snapshot; repository comparison pending"
+    source_label = "Snapshot source date" if project.source_commit else "Reported snapshot date"
     details = [
-        f"<div><strong>Reported repo update</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>",
+        f"<div><strong>{source_label}</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>",
+        f"<div><strong>Status exported</strong> {html.escape(format_local_datetime(project.status_generated_at))}</div>",
+        f"<div><strong>Repository checked</strong> {html.escape(checked_text)}</div>",
+        f"<div><strong>Source comparison</strong> {html.escape(comparison)}</div>",
         f"<div><strong>{html.escape(project.status_label)}</strong> {html.escape(project.status_value)}</div>",
         f"<div><strong>{html.escape(project.focus_label)}</strong> {html.escape(project.focus_value)}</div>",
     ]
@@ -681,6 +573,19 @@ def render_style_guide_note() -> str:
         </section>"""
 
 
+def observation_label(observation: dict) -> str:
+    state = observation.get("state", "not_observed")
+    labels = {"matches": "Matches exported source", "different_commit": "Different source commit; review export",
+              "content_matches": "Archive content matches snapshot", "content_changed": "Archive content changed; review snapshot",
+              "dirty_snapshot": "Export included uncommitted changes; review source",
+              "newer_commit": "Newer than reported snapshot", "legacy_unverified": "Legacy snapshot; commit identity unavailable",
+              "awaiting_export": "Awaiting first published export",
+              "not_observed": "No public repository observation", "check_failed": "Check failed; retained observation"}
+    checked = observation.get("checked_at")
+    stale = not checked or datetime.now(timezone.utc) - parse_datetime(checked) > timedelta(days=8)
+    return labels.get(state, "Comparison unavailable") + (" (check over eight days old)" if stale and state != "not_observed" else "")
+
+
 def render_observations() -> str:
     path = ROOT / "data/shared/repository-observations.json"
     if not path.exists():
@@ -691,26 +596,19 @@ def render_observations() -> str:
     for observation in data.get("projects", {}).values():
         state = observation["state"]
         checked = observation.get("checked_at")
-        stale = not checked or datetime.now(timezone.utc) - parse_datetime(checked) > timedelta(days=8)
-        labels = {"matches": "Matches exported source", "different_commit": "Different source commit; review export",
-                  "content_matches": "Archive content matches snapshot", "content_changed": "Archive content changed; review snapshot",
-                  "dirty_snapshot": "Export included uncommitted changes; review source",
-                  "newer_commit": "Newer than reported snapshot", "legacy_unverified": "Legacy snapshot; commit identity unavailable",
-                  "awaiting_export": "Awaiting first published export",
-                  "not_observed": "No public repository configured", "check_failed": "Check failed; retained observation"}
-        label = labels[state] + (" (stale)" if stale and state != "not_observed" else "")
+        label = observation_label(observation)
         date_value = observation.get("commit_date")
         if date_value:
             dates.append(parse_datetime(date_value))
-        activity = html.escape(format_local_date(parse_datetime(date_value))) if date_value else "Unknown"
+        activity = html.escape(format_local_date(parse_datetime(date_value))) if date_value else ("Excluded" if state == "not_observed" else "Unknown")
         if observation.get("commit_url"):
             activity = f'<a href="{html.escape(observation["commit_url"], quote=True)}">{activity}</a>'
-        checked_text = html.escape(format_local_datetime(parse_datetime(checked))) if checked else "Never"
+        checked_text = html.escape(format_local_datetime(parse_datetime(checked))) if checked else "Not observed"
         rows.append(f"<tr><td>{html.escape(observation['display_name'])}</td><td>{activity}</td><td>{html.escape(label)}</td><td>{checked_text}</td></tr>")
     latest = html.escape(format_local_date(max(dates))) if dates else "Unknown"
     return f'''<section class="panel" id="repository-activity">
             <h2>Repository Activity</h2>
-            <p>Latest observed development: <strong>{latest}</strong>. Observations track public default branches and archive-specific paths, independently of published releases. Checks older than eight days are marked stale.</p>
+            <p>Latest observed public commit: <strong>{latest}</strong>. Observations track public default branches and archive-specific paths, independently of published releases. Scoped commits can include metadata edits; they are not evidence of new research. Checks older than eight days are marked stale. All times use America/Toronto.</p>
             <div class="repositoryTable"><table><thead><tr><th>Project</th><th>Commit date</th><th>Snapshot comparison</th><th>Last successful check</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
             <p><a href="data/shared/repository-observations.json">Observation data</a> · <a href="PROJECT-STATUS-CONTRACT.md">Status contract and maintenance</a></p>
         </section>'''
@@ -735,7 +633,6 @@ def render() -> str:
     rendered_at = datetime.now(LOCAL_TZ)
     project_cards = "\n".join(render_project_card(project) for project in projects)
     project_manifest_config = {
-        "repo_contents_api": "https://api.github.com/repos/sgwoods/public/contents/data/projects?ref=main",
         "fallback_manifest_paths": [f"data/projects/{path.name}" for path in sorted(DATA_DIR.glob("*.json"))],
         "supplemental_manifest_paths": [
             f"{path.parent.name}/{path.name}" for path in sorted(ROOT.glob("*/project-manifest.json"))
@@ -774,7 +671,7 @@ def render() -> str:
                 <div class="metaCard">
                     <span class="metaLabel">Latest Published Snapshot Source</span>
                     <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(latest_project_repo_update))}</span>
-                    <div class="metaNote">Newest repository date recorded in the exported project snapshots. Repository work may be newer. See the <a href="project-suite-overview.html">portfolio review for known gaps and newer activity</a>.</div>
+                    <div class="metaNote">Newest source date among the published snapshots, not a freshness claim for every project. Each card shows its own source, export, and check dates. See the <a href="project-suite-overview.html">portfolio review</a>.</div>
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Homepage Rendered</span>
@@ -812,7 +709,7 @@ def render() -> str:
 {render_activity_chart(
     chart_id="coding-daily",
     title="Recent Coding Activity: Last 7 Days",
-    lead="Daily commit counts for the last 7 days across all active coding project lines currently represented on this homepage.",
+    lead="Daily committer-date counts from public source repositories. Private project summaries are excluded. Current periods are partial.",
     projects=coding_activity_projects,
     metric_label="commits",
     buckets=load_daily_activity_buckets(coding_activity_projects, num_days=7),
@@ -822,7 +719,7 @@ def render() -> str:
 {render_activity_chart(
     chart_id="coding-weekly",
     title="Recent Coding Activity: Weekly Summary",
-    lead="Weekly commit counts on origin/main for the last 8 weeks across all active coding project lines currently represented on this homepage.",
+    lead="Last 8 weeks of public default-branch commits, counted by committer date. Includes merges; source code activity is separate from release publication.",
     projects=coding_activity_projects,
     metric_label="commits",
     buckets=load_weekly_activity_buckets(coding_activity_projects, num_weeks=8),
@@ -832,7 +729,7 @@ def render() -> str:
 {render_activity_chart(
     chart_id="research-daily",
     title="Recent Research Archive Activity: Last 7 Days",
-    lead="Daily path-scoped commit counts for the last 7 days across all active research archive lines represented on this homepage.",
+    lead="Daily commits changing archive files or their public pages. Archive project-manifest-only edits are excluded. Counts are not a measure of research progress.",
     projects=research_activity_projects,
     metric_label="commits",
     buckets=load_daily_activity_buckets(research_activity_projects, num_days=7),
@@ -842,7 +739,7 @@ def render() -> str:
 {render_activity_chart(
     chart_id="research-weekly",
     title="Recent Research Archive Activity: Weekly Summary",
-    lead="Weekly path-scoped commit counts in the public archive repo for the last 8 weeks across all active research archive lines represented on this homepage.",
+    lead="Last 8 weeks of archive file commits, excluding project-manifest-only edits and deduplicating overlapping paths within each archive. One shared commit may touch several archives.",
     projects=research_activity_projects,
     metric_label="commits",
     buckets=load_weekly_activity_buckets(research_activity_projects, num_weeks=8),

@@ -15,6 +15,9 @@ on:
       - "tools/render_project_suite_overview.py"
       - "tools/refresh_public_coordination.py"
       - "tools/check_repository_freshness.py"
+      - "tools/observe_activity.py"
+      - "tools/test_activity.py"
+      - "tools/test_public_index.cjs"
       - "tools/test_repository_freshness.py"
       - "tools/test_project_freshness.cjs"
       - "tools/archive_provenance.py"
@@ -66,18 +69,19 @@ jobs:
         if: steps.refresh.outcome == 'success'
         run: |
           python3 tools/test_repository_freshness.py
-          node --test tools/test_project_freshness.cjs
+          python3 tools/test_activity.py
+          node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
           python3 tools/refresh_public_coordination.py --check
 
       - name: Commit regenerated index
         run: |
-          if git diff --quiet -- index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/projects star-swarm.html; then
+          if git diff --quiet -- index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/shared/repository-activity.json data/projects star-swarm.html; then
             echo "No index changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/projects star-swarm.html
+          git add index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/shared/repository-activity.json data/projects star-swarm.html
           git commit -m "Refresh public repository observations and coordination pages"
           git push
 

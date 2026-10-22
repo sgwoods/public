@@ -150,12 +150,17 @@ def main() -> None:
             raise SystemExit("--observe writes observations; use it separately from --check")
         import check_repository_freshness
         import sync_external_status
+        import observe_activity
         try:
             sync_external_status.main()
         except SystemExit:
             observation_failed = True
         try:
             check_repository_freshness.main()
+        except SystemExit:
+            observation_failed = True
+        try:
+            observe_activity.main()
         except SystemExit:
             observation_failed = True
     notes, projects = load_context()

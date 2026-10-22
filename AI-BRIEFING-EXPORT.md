@@ -4,8 +4,8 @@ AI Briefing is registered after AI Dystopia Quotes in the homepage order and as 
 high-value, short-horizon **Protect public surfaces** portfolio priority. Its
 newsletter and podcast have outside beta readers, so reliable publication and
 source accuracy take precedence over wider distribution. The public code and
-live site are linked from the portfolio now. The homepage card activates when
-the owning project publishes its first active manifest.
+live site are linked from the portfolio. The first active export has arrived;
+the homepage card, source comparison, and freshness panel are verified working.
 
 ## Ownership and first export
 
@@ -24,11 +24,13 @@ against current `main` and retry; preserve other projects' updates.
 At the October 22 registration check, no hub manifest had arrived and the public
 code repository exposed no `v0.1.0-beta` tag. The live site's legacy `/hub/`
 manifest had only 15 fields and pointed to the site repository. Registration
-therefore observes public code as **awaiting first published export** and does
-not invent a released source identity or a timestamp. Publish the intended tag
-to the public code repository and export the approved release before considering
-the handoff complete. A GitHub Release object is optional; a public resolvable
-released commit is required.
+initially observed public code as **awaiting first published export**, without
+inventing a released identity or timestamp. Later on October 22 the project
+published a verified 19-field v0.1.4-beta export identifying clean public commit
+`e701aaca6fc66059efe41e177f81128a8fc30e91`; the public tag, canonical page, and
+observer match were confirmed. The initial handoff is complete. For future
+exports, publish the intended public released commit/ref first. A GitHub Release
+object is optional; a public resolvable released commit is required.
 
 ## Manifest values
 
@@ -48,11 +50,11 @@ four approved provenance fields from PROJECT-STATUS-CONTRACT.md:
 | `experience_url` | `"https://sgwoods.github.io/ai-briefing/"` |
 | `repo_pushed_at` | Exactly `source_commit_at`, in UTC; not the edition/publication time |
 | `status_generated_at` | Actual export generation time, in UTC |
-| `status_label`, `status_value` | Project-owned; `"Current release"` / `"v0.1.0-beta"` is suitable. A truthful `"Latest edition"` label is also supported |
+| `status_label`, `status_value` | Project-owned; `"Current release"` / `"v0.1.4-beta"` is suitable at this audit. A truthful edition label or release-plus-edition value is also supported |
 | `focus_label`, `focus_value` | Project-owned public focus, such as beta editorial accuracy, dependable delivery, and reader feedback |
 | `source_commit` | Full 40-character SHA of the released clean code in `sgwoods/news-pipeline`; never a private working-repository SHA |
 | `source_commit_at` | That public commit's real committer timestamp in UTC |
-| `source_ref` | `"v0.1.0-beta"` when that is the actual release ref; otherwise the actual released ref |
+| `source_ref` | Actual released ref; `"v0.1.4-beta"` at the October 22 verification |
 | `source_dirty` | JSON boolean `false` for an approved clean release; fail publication if that cannot be established |
 
 Retain two-space indentation, base-field order followed by the four source

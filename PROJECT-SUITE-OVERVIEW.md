@@ -2,7 +2,7 @@
 
 Updated: `2026-10-22`
 
-Repo-owned portfolio coordination. AI Briefing joins the portfolio as a standalone exporting project: its daily briefing, newsletter, and podcast are public, with private operations kept separate. Its first verified export activates the homepage card; registration alone does not establish a released code commit. Daily repository observations track public default branches and archive paths independently of published status. MMath, PhD, and AI Quotes use source-aware exports; Star Swarm imports its deployed build identity. The seven shared archives retain reviewed content fingerprints. Private repositories are excluded. See PROJECT-STATUS-CONTRACT.md for upkeep.
+Repo-owned portfolio coordination. October 22 audit: 14 active project summaries, including AI Briefing's verified v0.1.4-beta export. Thirteen public source/archive histories are observed; the confidential summary is excluded from activity metrics. Status source dates, export dates, and repository check times are independent. Metrics now use published GitHub committer-date snapshots and exclude archive manifest-only edits. AI Quotes has one unpublished source commit to review; Aurora's older production snapshot still matches its hosted build. All seven archive fingerprints match. See PORTFOLIO-AUDIT-2026-10-22.md and PORTFOLIO-METRICS.md for evidence and remaining work.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
@@ -78,11 +78,11 @@ Current branch snapshot: `main`
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
 - Current manifest state: Current release: 1.4.1. Current focus: Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates.. Last repo update: June 11, 2026.
-- Likely current work: GitHub main at 181d8e296a (September 24) promotes a bounded Guardians Stage 5 dive policy after candidate/readability work. The local checkout also has uncommitted review-launcher, gameplay-adapter, rendering, and UI changes. The exported production baseline remains Aurora 1.4.1 build 1164 from June 11.
+- Likely current work: Public main at 148f82e (October 15) records a beta dry-run pass and music acceptance hold. The live production build-info.json still identifies Aurora 1.4.1 build 1164, source 54398ff5, from June 11; the older exported production date is accurate.
 - Next step: Use the Aurora handoff prompt in PROJECT-STATUS-CONTRACT.md on the active machine. Keep production source metadata tied to the released build, verify the active release lanes, and export only validated changes.
 - Quality: This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.
 - Coordination note: High-value continuity task: preserve and review current local work before starting another gameplay or publication batch.
-- Drift note: The GitHub observer now shows newer development independently of the June production export. No Aurora checkout was edited in this pass.
+- Drift note: October 22: source main differs from the exported production commit, while the hosted production build matches that export. Review development on its owning machine; do not manufacture a fresh production date.
 - Public links: [Project page](aurora-galactica.html), [Dashboard](https://sgwoods.github.io/Aurora-Galactica/release-dashboard.html), [Live experience](https://sgwoods.github.io/Aurora-Galactica/), [Repository](https://github.com/sgwoods/Codex-Test1), [Open beta build](https://sgwoods.github.io/Aurora-Galactica/beta/), [Open project guide](https://sgwoods.github.io/Aurora-Galactica/project-guide.html), [Open Platinum guide](https://sgwoods.github.io/Aurora-Galactica/platinum-guide.html)
 
 ### Star Swarm
@@ -92,10 +92,10 @@ Current branch snapshot: `main`
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
 - Current manifest state: Published build: Build 65d1434. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Last repo update: October 22, 2026.
-- Likely current work: Active Claude/Firstmate development. The reviewed architecture describes playable formation-shooter mechanics, selectable variants, and a prompt-assisted content forge. Recent commits fix exit-card controls and remembered-variant rendering; the October 3 main CI run and Pages deployment passed.
+- Likely current work: Active Claude/Firstmate development. October 22 deployment, notification, and hub import identify clean build 65d1434. The source repository owns the tested feature description and roadmap.
 - Next step: Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.
 - Quality: State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.
-- Coordination note: Agent-neutral integration: Claude, Firstmate, and Codex share the same source repo and deployed build contract. No credentials for the public hub are needed by the source project.
+- Coordination note: Agent-neutral deployed-build import. Daily imports require no source-side hub token; immediate post-deployment notification uses a separate Actions-only token, verified working October 22.
 - Drift note: The hub imports clean deployed build.json identities on refresh. Default-branch development is observed separately; detailed feature claims remain in the source architecture.
 - Public links: [Project page](star-swarm.html), [Dashboard](https://github.com/sgwoods/star-swarm/actions/workflows/ci.yml), [Live experience](https://sgwoods.github.io/star-swarm/), [Repository](https://github.com/sgwoods/star-swarm), [Canonical architecture](https://github.com/sgwoods/star-swarm/blob/main/docs/ARCHITECTURE.md), [Roadmap](https://github.com/sgwoods/star-swarm/blob/main/docs/ROADMAP.md), [Deployed build identity](https://sgwoods.github.io/star-swarm/build.json)
 
@@ -120,11 +120,11 @@ Current branch snapshot: `main`
 - Time-energy-value: energy low; value medium-high; horizon short
 - Current manifest state: Current stage: Active curation + publishing. Current focus: Growing the approved canon and widening discovery. Last repo update: October 3, 2026.
 - Evidence status: Approved corpus: 32 entries.
-- Likely current work: Public manifest refreshed from clean source 3cbaf56 with explicit commit provenance. The scan-ledger increase to 145 does not imply new approved quotes.
-- Next step: Favor one targeted editorial intake batch, then publish through the updated exporter.
+- Likely current work: Public main a0e7cc8 (October 4) adds cached artwork, work links, and editorial updates. The hub still represents the approved October 3 export from 3cbaf56; one source commit is ahead of the public export.
+- Next step: Have the owning project review a0e7cc8 and deliberately publish its approved JSON, page, and local artwork assets through its exporter. Do not update the manifest alone to imply those outputs were deployed.
 - Quality: The public page already reads cleanly and feels complete enough to trust; the main question is breadth and selection quality.
 - Coordination note: Source metadata reconciled. Measure future curation value by approved additions rather than scan count.
-- Drift note: Export reconciled October 3; the repository observer will flag subsequent source differences.
+- Drift note: October 22 audit confirms a one-commit source/export difference. Public links work; the source owner must decide whether to publish the editorial and artwork batch.
 - Public links: [Project page](ai-dystopia-quotes.html), [Repository](https://github.com/sgwoods/sci-fi-ai-dystopian-project), [Open approved JSON](data/ai-dystopia-quotes.approved.json), [Open project manifest](data/projects/ai-dystopia-quotes.json)
 
 ### AI Briefing
@@ -134,11 +134,11 @@ Current branch snapshot: `main`
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
 - Current manifest state: Current release: v0.1.4-beta · edition 2026-10-22 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Last repo update: October 22, 2026.
-- Likely current work: Beta publication and reader feedback, evidence checks, and the first standalone hub export. The public site has an October 22 edition and podcast; v0.1.0-beta is owner-reported, with its public tag not yet visible at registration.
-- Next step: Publish the clean released code commit and v0.1.0-beta tag to news-pipeline, then run the owning export after a successful publication. Prioritize source accuracy, dependable delivery, and a small reader-feedback batch before wider distribution.
-- Quality: The public site, feeds, and public code are available. Source documentation describes fact-checking and release gates; this onboarding review did not validate editorial accuracy, email delivery, or audio quality.
-- Coordination note: The project owns only data/projects/ai-briefing.json and ai-briefing.html in the hub. Repo-owned registration remains visible here until the first active manifest arrives; after that, normal manifest rendering takes over. Keep operational data and subscriber information private.
-- Drift note: The currently served legacy hub manifest has 15 fields, points to the site repository, and lacks source provenance. It is not imported as a verified release. The public code repository has no visible v0.1.0-beta tag at the October 22 registration check.
+- Likely current work: Beta publication, reader feedback, and development/release workflow improvements. The verified hub export is v0.1.4-beta, public source e701aaca, with the October 22 edition and deep dive.
+- Next step: Keep publication and the two-file hub export connected. Prioritize editorial accuracy, dependable delivery, and one bounded reader-feedback batch before wider distribution; compare new releases against the public code tag.
+- Quality: The 19-field export, public tag, canonical page, links, and freshness panel are verified. This audit did not validate editorial accuracy, email delivery, or audio quality.
+- Coordination note: The project owns only data/projects/ai-briefing.json and ai-briefing.html. Its authenticated export push triggers the hub renderer; daily checks are the fallback. Keep operational and subscriber data private.
+- Drift note: Initial registration gaps are resolved: the canonical manifest points to news-pipeline, source identity matches v0.1.4-beta, and its page loads current hub observations. Public code commit counts exclude private operations and editions.
 - Public links: [Project page](ai-briefing.html), [Live experience](https://sgwoods.github.io/ai-briefing/), [Repository](https://github.com/sgwoods/news-pipeline), [Read AI Briefing](https://sgwoods.github.io/ai-briefing/), [Public code](https://github.com/sgwoods/news-pipeline), [Podcast feed](https://sgwoods.github.io/ai-briefing/podcast.xml), [Hub export handoff](AI-BRIEFING-EXPORT.md)
 
 ### PhD renovation project

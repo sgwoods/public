@@ -29,21 +29,6 @@
         }).format(new Date(value));
     }
 
-    function nextLink(linkHeader) {
-        if (!linkHeader) {
-            return null;
-        }
-
-        for (const part of linkHeader.split(",")) {
-            const match = part.match(/<([^>]+)>;\s*rel="next"/);
-            if (match) {
-                return match[1];
-            }
-        }
-
-        return null;
-    }
-
     function projectSortFactory(config) {
         const order = new Map((config.project_order || []).map((projectId, index) => [projectId, index]));
         return (left, right) => {
@@ -160,7 +145,22 @@
             .replaceAll('"', "&quot;");
     }
 
-    function renderProjectCard(project, config) {
+    function sourceComparison(project, observation) {
+        if (!observation || observation.state === "not_observed") return "No public repository observation";
+        if (observation.state === "check_failed") return "Check failed; previous observation retained";
+        if (project.source_dirty) return "Export included uncommitted changes; review source";
+        if (project.source_commit && observation.snapshot_commit !== project.source_commit) return "New snapshot; repository comparison pending";
+        const labels = {
+            matches: "Matches exported source", different_commit: "Different source commit; review export",
+            content_matches: "Archive content matches snapshot", content_changed: "Archive content changed; review snapshot",
+            dirty_snapshot: "Export included uncommitted changes", newer_commit: "Newer than reported snapshot",
+            legacy_unverified: "Commit identity unavailable", awaiting_export: "Awaiting first published export",
+        };
+        const stale = Date.now() - Date.parse(observation.checked_at) > 8 * 86400000;
+        return (labels[observation.state] || "Comparison unavailable") + (stale ? " (check over eight days old)" : "");
+    }
+
+    function renderProjectCard(project, observation) {
         const description = project.description || "Public project page synced from its repository status manifest.";
         const buttons = [
             renderButton(escapeHtml(project.project_page_href), "Open project page"),
@@ -177,7 +177,10 @@
         }
 
         const details = [
-            `<div><strong>Reported repo update</strong> ${escapeHtml(formatLocalDate(project.repo_pushed_at))}</div>`,
+            `<div><strong>${project.source_commit ? "Snapshot source date" : "Reported snapshot date"}</strong> ${escapeHtml(formatLocalDate(project.repo_pushed_at))}</div>`,
+            `<div><strong>Status exported</strong> ${escapeHtml(formatLocalDateTime(project.status_generated_at))}</div>`,
+            `<div><strong>Repository checked</strong> ${observation?.checked_at ? escapeHtml(formatLocalDateTime(observation.checked_at)) : "Not observed"}</div>`,
+            `<div><strong>Source comparison</strong> ${escapeHtml(sourceComparison(project, observation))}</div>`,
             project.timeline_label ? `<div><strong>Archive span</strong> ${escapeHtml(project.timeline_label)}</div>` : "",
             `<div><strong>${escapeHtml(project.status_label)}</strong> ${escapeHtml(project.status_value)}</div>`,
             `<div><strong>${escapeHtml(project.focus_label)}</strong> ${escapeHtml(project.focus_value)}</div>`,
@@ -200,27 +203,10 @@
                 </article>`;
     }
 
-    async function fetchManifestList(config) {
-        const response = await fetch(config.repo_contents_api, {
-            headers: {
-                Accept: "application/vnd.github+json",
-            },
-        });
-        if (!response.ok) {
-            throw new Error(`GitHub API returned ${response.status}`);
-        }
-
-        const payload = await response.json();
-        return payload
-            .filter((item) => item && item.type === "file" && item.name && item.name.endsWith(".json"))
-            .map((item) => item.download_url)
-            .filter(Boolean);
-    }
-
     async function fetchManifestPayloads(urls) {
         const results = await Promise.all(
             urls.map(async (url) => {
-                const response = await fetch(url);
+                const response = await fetch(url, { cache: "no-store" });
                 if (!response.ok) {
                     throw new Error(`Manifest fetch failed for ${url}`);
                 }
@@ -232,19 +218,10 @@
     }
 
     async function loadProjectManifests(config) {
-        try {
-            const manifestUrls = [
-                ...(await fetchManifestList(config)),
-                ...((config.supplemental_manifest_paths || []).map((path) => path)),
-            ];
-            return await fetchManifestPayloads(manifestUrls);
-        } catch (error) {
-            const fallbackUrls = [
-                ...((config.fallback_manifest_paths || []).map((path) => path)),
-                ...((config.supplemental_manifest_paths || []).map((path) => path)),
-            ];
-            return fetchManifestPayloads(fallbackUrls);
-        }
+        return fetchManifestPayloads([
+            ...(config.fallback_manifest_paths || []),
+            ...(config.supplemental_manifest_paths || []),
+        ]);
     }
 
     async function initProjectManifestCards() {
@@ -264,11 +241,16 @@
         }
 
         try {
-            const projects = dedupeProjects(await loadProjectManifests(config));
+            const [payloads, response] = await Promise.all([
+                loadProjectManifests(config), fetch("data/shared/repository-observations.json", { cache: "no-store" }),
+            ]);
+            if (!response.ok) throw new Error("Repository observations unavailable");
+            const observations = (await response.json()).projects || {};
+            const projects = dedupeProjects(payloads);
             projects.sort(projectSortFactory(config));
 
             if (grid) {
-                grid.innerHTML = projects.map((project) => renderProjectCard(project, config)).join("\n");
+                grid.innerHTML = projects.map((project) => renderProjectCard(project, observations[project.project_id])).join("\n");
             }
 
             if (countNode) {
@@ -285,7 +267,7 @@
             }
 
             if (statusNode) {
-                statusNode.textContent = `Project cards refreshed from published manifest files on ${formatLocalDateTime(new Date().toISOString())}.`;
+                statusNode.textContent = "Project cards loaded from this published site. Source dates, export dates, and repository check times are independent.";
             }
         } catch (error) {
             if (statusNode) {
@@ -324,49 +306,16 @@
         return counts;
     }
 
-    async function fetchCommitDatesForPath(project, sinceIso, path) {
-        const commitDates = new Map();
-        let url = `https://api.github.com/repos/sgwoods/${project.repo}/commits?sha=${encodeURIComponent(project.ref)}&since=${encodeURIComponent(sinceIso)}&per_page=100`;
-        if (path) {
-            url += `&path=${encodeURIComponent(path)}`;
-        }
-
-        while (url) {
-            const response = await fetch(url, {
-                headers: {
-                    Accept: "application/vnd.github+json",
-                },
-            });
-            if (!response.ok) {
-                throw new Error(`GitHub API returned ${response.status} for ${project.repo}`);
-            }
-            const payload = await response.json();
-            for (const commit of payload) {
-                const sha = commit?.sha;
-                const authoredAt = commit?.commit?.author?.date;
-                if (sha && authoredAt) {
-                    commitDates.set(sha, new Date(authoredAt));
-                }
-            }
-            url = nextLink(response.headers.get("link"));
-        }
-
-        return commitDates;
-    }
-
-    async function fetchProjectCounts(project, sinceIso, bucketStarts, bucketEnds) {
-        const paths = Array.isArray(project.paths) && project.paths.length > 0 ? project.paths : [null];
-        const dateMaps = await Promise.all(paths.map((path) => fetchCommitDatesForPath(project, sinceIso, path)));
-        const mergedDates = new Map();
-        for (const dateMap of dateMaps) {
-            for (const [sha, date] of dateMap.entries()) {
-                if (!mergedDates.has(sha)) {
-                    mergedDates.set(sha, date);
-                }
-            }
-        }
-
-        return bucketCounts(Array.from(mergedDates.values()), bucketStarts, bucketEnds);
+    function countsForProject(project, row, bucketStarts, bucketEnds) {
+        const unavailable = bucketStarts.map(() => null);
+        if (!row || row.state !== "ok" || row.repo !== project.repo ||
+            JSON.stringify(row.paths) !== JSON.stringify(project.paths) ||
+            JSON.stringify(row.exclude_paths || []) !== JSON.stringify(project.exclude_paths || [])) return unavailable;
+        const dates = new Map(row.commits.map((commit) => [commit.sha, new Date(commit.date)]));
+        const counts = bucketCounts([...dates.values()], bucketStarts, bucketEnds);
+        return counts.map((count, index) =>
+            Date.parse(row.window_start) <= bucketStarts[index].getTime() && Date.parse(row.checked_at) >= bucketStarts[index].getTime()
+                ? count : null);
     }
 
     function renderActivityData(chart, config, weeks, message) {
@@ -389,13 +338,16 @@
 
         weeks.forEach((week) => {
             let total = 0;
+            let incomplete = false;
             for (const project of config.projects) {
-                const count = week.counts[project.project_id] || 0;
-                totalsByProject.set(project.project_id, totalsByProject.get(project.project_id) + count);
-                total += count;
+                const count = week.counts[project.project_id];
+                const previous = totalsByProject.get(project.project_id);
+                totalsByProject.set(project.project_id, previous === null || count === null ? null : previous + count);
+                incomplete ||= count === null;
+                total += count || 0;
             }
             maxTotal = Math.max(maxTotal, total);
-            week.total = total;
+            week.total = incomplete ? null : total;
         });
 
         const ceiling = niceUpperBound(maxTotal);
@@ -410,38 +362,39 @@
             const week = weeks[index];
             const totalNode = weekNode.querySelector("[data-activity-total]");
             if (totalNode) {
-                totalNode.textContent = String(week.total);
+                totalNode.textContent = week.total === null ? "N/A" : String(week.total);
             }
 
             const stack = weekNode.querySelector(".activityStack");
             if (stack) {
                 const labelNode = weekNode.querySelector(".activityLabel");
                 const labelText = labelNode ? labelNode.textContent : `Week ${index + 1}`;
-                stack.setAttribute("aria-label", `${labelText}: ${week.total} total ${config.metric_label || "commits"}`);
+                stack.setAttribute("aria-label", `${labelText}: ${week.total === null ? "N/A" : week.total} total ${config.metric_label || "commits"}`);
             }
 
             const segmentNodes = Array.from(weekNode.querySelectorAll("[data-activity-project]"));
             for (const segmentNode of segmentNodes) {
                 const projectId = segmentNode.getAttribute("data-activity-project");
-                const count = week.counts[projectId] || 0;
-                const height = ceiling > 0 ? (count / ceiling) * 100 : 0;
+                const count = week.counts[projectId];
+                const height = ceiling > 0 ? ((count || 0) / ceiling) * 100 : 0;
                 const colors = projectColors.get(projectId) || ["rgba(121, 184, 255, 0.96)", "rgba(74, 126, 230, 0.96)"];
                 segmentNode.style.height = `${height.toFixed(2)}%`;
                 segmentNode.style.setProperty("--activity-top", colors[0]);
                 segmentNode.style.setProperty("--activity-bottom", colors[1]);
-                segmentNode.title = `${projectLabels.get(projectId) || projectId}: ${count} ${config.metric_label || "commits"}`;
+                segmentNode.title = `${projectLabels.get(projectId) || projectId}: ${count === null ? "Unavailable" : count} ${config.metric_label || "commits"}`;
             }
         });
 
         for (const [projectId, node] of legendTotals.entries()) {
-            node.textContent = String(totalsByProject.get(projectId) || 0);
+            const total = totalsByProject.get(projectId);
+            node.textContent = total === null ? "Unavailable" : String(total);
         }
 
         if (statusNode) {
             statusNode.textContent = message;
         }
         if (refreshedNode) {
-            refreshedNode.textContent = formatLocalDateTime(new Date().toISOString());
+            refreshedNode.textContent = config.checked_at ? formatLocalDateTime(config.checked_at) : "Not yet measured";
         }
     }
 
@@ -455,7 +408,6 @@
         const bucketConfig = Array.isArray(config.buckets) ? config.buckets : [];
         const bucketStarts = bucketConfig.map((entry) => new Date(entry.start));
         const bucketEnds = bucketConfig.map((entry) => new Date(entry.end));
-        const sinceIso = bucketStarts[0].toISOString();
         const refreshedNode = chart.querySelector("[data-activity-last-refreshed]");
         const statusNode = chart.querySelector("[data-activity-status]");
 
@@ -478,17 +430,18 @@
         }
 
         if (statusNode) {
-            statusNode.textContent = `Refreshing recent GitHub ${config.metric_label || "commit"} activity for ${config.projects.map((project) => project.label).join(", ")}...`;
+            statusNode.textContent = "Loading the published GitHub history snapshot...";
         }
 
         try {
-            const countsByProject = await Promise.all(
-                config.projects.map((project) => fetchProjectCounts(project, sinceIso, bucketStarts, computedBucketEnds))
-            );
+            const snapshot = await loadActivitySnapshot();
+            if (snapshot.date_basis !== "committer") throw new Error("Unknown history date basis");
+            const countsByProject = config.projects.map((project) => countsForProject(
+                project, snapshot.projects[project.project_id], bucketStarts, computedBucketEnds));
             const weeks = bucketStarts.map((start, index) => {
                 const counts = {};
                 config.projects.forEach((project, projectIndex) => {
-                    counts[project.project_id] = countsByProject[projectIndex][index] || 0;
+                    counts[project.project_id] = countsByProject[projectIndex][index];
                 });
                 return {
                     start: start.toISOString(),
@@ -497,14 +450,30 @@
                 };
             });
 
-            renderActivityData(chart, config, weeks, `Updated from live GitHub commit history on ${formatLocalDateTime(new Date().toISOString())}.`);
+            const checks = config.projects.map((project) => snapshot.projects[project.project_id]?.checked_at).filter(Boolean).sort((a, b) => Date.parse(a) - Date.parse(b));
+            config.checked_at = checks[0] || null;
+            const missing = config.projects.filter((project, index) => countsByProject[index].includes(null)).map((project) => project.label);
+            const stale = config.checked_at && Date.now() - Date.parse(config.checked_at) > 8 * 86400000;
+            renderActivityData(chart, config, weeks,
+                `Published public default-branch history, counted by committer date. Current periods are partial. Commits do not measure effort, quality, or releases.${missing.length ? ` Unavailable: ${missing.join(", ")}.` : ""}${stale ? " History check is over eight days old." : ""}`);
         } catch (error) {
             if (statusNode) {
-                statusNode.textContent = "Showing the local fallback chart because live GitHub stats are unavailable right now.";
+                statusNode.textContent = "Could not reload published activity data; showing the rendered history snapshot with its recorded check time.";
             }
         }
     }
 
+    let activitySnapshotPromise;
+    function loadActivitySnapshot() {
+        activitySnapshotPromise ||= fetch("data/shared/repository-activity.json", { cache: "no-store" }).then((response) => {
+            if (!response.ok) throw new Error("Published activity unavailable");
+            return response.json();
+        });
+        return activitySnapshotPromise;
+    }
+
+    if (typeof module !== "undefined") module.exports = { bucketCounts, countsForProject, dedupeProjects, projectSortFactory, sourceComparison };
+    if (typeof document === "undefined") return;
     initProjectManifestCards();
     document.querySelectorAll("[data-activity-chart]").forEach((chart) => {
         initActivityChart(chart);

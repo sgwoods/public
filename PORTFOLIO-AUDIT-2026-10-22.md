@@ -1,0 +1,63 @@
+# Portfolio verification: October 22, 2026
+
+This is a dated audit, not an assertion that every project releases daily.
+The current facts remain in the owning manifests and the latest repository and
+activity observations. Fourteen active project summaries are tracked.
+
+## Project status and dates
+
+| Project | Exported source date | Verified state / next action |
+| --- | --- | --- |
+| AI Briefing | October 22 | v0.1.4-beta / October 22 edition and deep dive; clean public SHA e701aaca matches the public tag, main, manifest, and page. Freshness widget and export-triggered hub refresh work. |
+| Star Swarm | October 22 | Clean deployed build 65d1434 matches main and the hub import. Deployment, notification, and hub dispatch have succeeded. |
+| Aurora Galactica | June 11 | Hosted production build-info.json still identifies 1.4.1 build 1164 / source 54398ff5. The old source date is correct; October 15 main contains beta work. Review newer work on its owning machine rather than relabeling production. |
+| AI Dystopia Quotes | October 3 | Main a0e7cc8 is one commit ahead of the exported 3cbaf56. The source change includes artwork and editorial output. Owning project should deliberately publish its approved batch; a manifest-only change is insufficient. |
+| PhD renovation | October 3 | Exported 1.0.0 / f5eea43 still matches default main. A repository push date on another branch does not change this source date. |
+| MMath renovation | October 3 | Exported 1.0.0-rc.1 / 408c933 matches main. Public runner link responds. Experiment execution was not tested. |
+| Kinitos / NeoEdge | October 3 | Archive content fingerprint matches; preservation merge supplies the one content-changing archive commit in the eight-week window. |
+| Quack | May 11 | Fingerprint matches; 3 of 6 approved sources localized at the last content review. Metadata checks do not close preservation gaps. |
+| Steven Woods | May 11 | Fingerprint matches; 18 of 22 approved sources localized at the last content review. |
+| Google Canada | May 11 | Fingerprint matches; seeded archive baseline remains unchanged. |
+| Inovia | May 11 | Fingerprint matches; seeded archive baseline remains unchanged. |
+| SEI Pittsburgh | May 11 | Fingerprint matches; seeded archive baseline remains unchanged. |
+| Canberra | March 24 | Fingerprint matches; still a scaffold with no formal source baseline at the last content review. |
+| Confidential project summary | April 1 | Public summary only; repository observations and activity metrics intentionally excluded. |
+
+All 28 project, source, dashboard, and live-experience links tested returned HTTP
+200. Another 43 portfolio/reference link checks also returned 200. HTTP success
+is not a full gameplay, email, editorial, or experiment quality test.
+
+## Repaired dashboard defects
+
+- CI rendered missing local source checkouts as zero activity. It now collects
+  authenticated GitHub history and publishes a durable snapshot.
+- Browser charts made overlapping unauthenticated API requests and used author
+  dates while the renderer used commit dates. Both now use the same published
+  committer-date history and recorded check times.
+- Absolute archive page URLs were being passed as Git paths. They now normalize
+  to repository paths, and overlapping results deduplicate by SHA.
+- Archive provenance-only edits inflated the eight-week count from eight to one.
+  The seven manifest-only edits are now excluded; the Kinitos content merge remains.
+- The private summary no longer appears as a misleading zero-valued coding series.
+- Cards show source, export, and repository-check dates separately. Rendering or
+  loading a page no longer makes old releases look newly exported.
+- Obsolete AI Briefing pending/tag-missing notes were replaced with verified
+  export evidence. Project-owned release labels and outputs were preserved.
+
+At collection, the eight-week public software totals were Aurora 11, Star Swarm
+63, AI Quotes 2, AI Briefing 8, PhD 1, and MMath 1. These are public default-branch
+commits, including merges, not a measure of work effort or private operations.
+See [the metric definitions](PORTFOLIO-METRICS.md) and current JSON for later counts.
+
+## Repository discovery
+
+All 18 public account repositories have a recorded role in
+[PUBLIC-REPOSITORY-INVENTORY.md](PUBLIC-REPOSITORY-INVENTORY.md). AI Briefing's
+publication repository is a hosting companion, not a second product. Firstmate
+is supporting forked tooling, and seven old examples remain historical.
+No additional unregistered standalone public project was found.
+
+Private repository metadata was reviewed only to identify possible private
+tracking gaps. Four application candidates need reconciliation with the existing
+private summary; their names, links, and contents are not published here. No
+private data was added to observation or metric snapshots.

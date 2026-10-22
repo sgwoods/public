@@ -197,12 +197,31 @@ Verified October 12, 2026: the notification job ran after deployment in
 and [the October 12 run](https://github.com/sgwoods/star-swarm/actions/runs/38290391794/job/114952463867).
 Both warned that `PUBLIC_HUB_DISPATCH_TOKEN` was missing. The deployment gate and
 missing-secret fallback have therefore run; a successful authenticated dispatch
-has not yet been demonstrated. The Star Swarm owner must configure that secret
-and verify the next notification produces a corresponding hub run. No source
-project was modified by this hub change.
+had not been demonstrated at that point. The October 22 follow-up verified the
+configured secret, live-build gate, and successful authenticated dispatch in
+[notification job 119835076322](https://github.com/sgwoods/star-swarm/actions/runs/39780542431/job/119835076322),
+followed by successful [hub run 39781934707](https://github.com/sgwoods/public/actions/runs/39781934707).
+The earlier missing-secret issue is resolved. No source project was modified by
+this hub change.
 
 `render_external_project.py` currently generates Star Swarm's hub page. It adds
 freshness to every page generated through that renderer. MMath, PhD, quotes, and
 Aurora pages are published by their source exporters; adding the same panel to
 those pages requires their owners to adopt it in their export templates. Their
 observations remain available on the hub's Repository Activity section.
+
+## Activity metrics
+
+The same `--observe` refresh also runs `tools/observe_activity.py` and publishes
+`data/shared/repository-activity.json`. It authenticates with the existing `gh`
+token, verifies repository visibility, pins each public default-branch head,
+and exhausts paginated history. No source checkout is needed. Rendering and
+browser display use this published snapshot; visitors do not call the GitHub API.
+
+Counts use committer timestamps in America/Toronto day/week boundaries. The
+current day/week is partial. A commit reached through overlapping archive paths
+is counted once within that archive; the archive's own project manifest is
+excluded. Private summaries have no metric series. Failed or incompatible
+history is unavailable/N/A, never silently converted to zero. Last successful
+history check times are retained separately from page-render and export times.
+See [PORTFOLIO-METRICS.md](PORTFOLIO-METRICS.md) for scope and limitations.
