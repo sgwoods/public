@@ -58,7 +58,7 @@ Current branch snapshot: `main`
 | [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build 65d1434; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
 | [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
-| [AI Briefing](ai-briefing.html) | Standalone repo export | Public code and publication / private operations | Protect public surfaces | v0.1.3-beta · edition 2026-10-22 + deep dive; Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks. |
+| [AI Briefing](ai-briefing.html) | Standalone repo export | Public code and publication / private operations | Protect public surfaces | v0.1.4-beta · edition 2026-10-22 + deep dive; Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks. |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
 | [Masters of Mathematics renovation project](mmath-renovation.html) | Standalone repo export | Public | Protect public surfaces | 1.0.0-rc.1; Portability hardening and disciplined post-RC continuation |
 | [Steven Woods Public Record Project](https://sgwoods.github.io/public/steven-woods-research.html) | Shared-public archive subproject | Public | Steady advance | Active research archive; Continuity layer, baseline identity, timeline, current profile sources, and one-page CV |
@@ -133,7 +133,7 @@ Current branch snapshot: `main`
 - Visibility: Public code and publication / private operations
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: v0.1.3-beta · edition 2026-10-22 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Last repo update: October 22, 2026.
+- Current manifest state: Current release: v0.1.4-beta · edition 2026-10-22 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Last repo update: October 22, 2026.
 - Likely current work: Beta publication and reader feedback, evidence checks, and the first standalone hub export. The public site has an October 22 edition and podcast; v0.1.0-beta is owner-reported, with its public tag not yet visible at registration.
 - Next step: Publish the clean released code commit and v0.1.0-beta tag to news-pipeline, then run the owning export after a successful publication. Prioritize source accuracy, dependable delivery, and a small reader-feedback batch before wider distribution.
 - Quality: The public site, feeds, and public code are available. Source documentation describes fact-checking and release gates; this onboarding review did not validate editorial accuracy, email delivery, or audio quality.
