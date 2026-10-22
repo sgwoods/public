@@ -29,26 +29,28 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.1.4-beta</b>, public code commit <code>e701aaca6fc6</code> (2026-10-22T17:23:16Z)</li>
+      <li><b>v0.1.5-beta</b>, public code commit <code>08c37cb750a8</code> (2026-10-22T18:57:56Z)</li>
       <li>Latest edition: 2026-10-22 · 17 editions and 7 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-22/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-22T17:23:25Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-22T18:58:08Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.1.5-beta · 2026-10-22</h3>
+    <ul>
+      <li>Fix: the scheduled jobs had been firing exactly one hour early every day (the 05:00 run started at 04:00, the 20:30 preflight at 19:30). launchd now only ticks every half hour, and the Mac&#x27;s own local clock decides when a scheduled time has come (<code>pipeline/schedule.py</code>, <code>./np scheduled</code>). Times must be on :00 or :30.</li>
+      <li>Releases refuse checkout-local files (<code>.venv</code>, <code>.env</code>, <code>.staging</code>) committed on dev; <code>.venv</code> is ignored as a link too.</li>
+      <li>Fix: rebuilding an edition (<code>./np rebrief</code>, <code>./np staging run</code>) failed with KeyError &#x27;critique&#x27;, because the evidence check on Must reads needs the critique model, and a rebuild had stopped loading it. Found by the first staging run.</li>
+      <li>Git safety: every git call in the export, hub, dev and release code ignores GIT_DIR / GIT_WORK_TREE from the environment, and the tests that build throwaway repositories clear them. A leaked GIT_DIR once pointed a test&#x27;s <code>git init</code> at the production repository and wrote a wrong <code>core.worktree</code> into its config. Caught and fixed before any run used it.</li>
+      <li>The first release built on dev and promoted with <code>./np release</code>.</li>
+    </ul>
     <h3>v0.1.4-beta · 2026-10-22</h3>
     <ul>
       <li>Development checkout: <code>./np dev setup</code> creates a second working copy of the repository on branch <code>dev</code>, in staging mode. Inside it: - <code>./np staging sync</code> brings in production&#x27;s latest data and fixes; - <code>./np staging run [DAY]</code> rebuilds an edition with the development code while outbound stays off, and <code>--email</code> sends the review copy to the owner only; - <code>./np staging reset</code> throws away what staging wrote.</li>
       <li>Staging outputs can&#x27;t be committed: the pre-commit hook refuses data paths in a staging checkout, archive commits are skipped there, alerts aren&#x27;t sent, and services can&#x27;t be installed. Staging runs keep out of the 03:30–08:30 production window.</li>
       <li>Releases and rollback: - <code>./np release VERSION &quot;reviewed: ...&quot;</code> merges dev into production between 08:30 and 20:00, needs one approval, then tags the release and pushes the public code, the backup and the hub status. It refuses if production has stray code changes, a run is in progress, dev&#x27;s version or changelog don&#x27;t match, or the staging marker was committed. - <code>./np rollback &quot;reviewed: ...&quot;</code> returns the code to the previous release.</li>
-    </ul>
-    <h3>v0.1.3-beta · 2026-10-22</h3>
-    <ul>
-      <li>Documentation on the site at <code>/docs/</code>, rebuilt at every publish from the same markdown as the public code, with the diagrams embedded. Each page shows the running version and when it last changed. Linked from the footer and the hub page.</li>
-      <li>Generated sections in the architecture document: current facts and a component table built from each module&#x27;s own description. Drift tests fail a release if the document names a module that no longer exists, or doesn&#x27;t name the current version.</li>
-      <li>Release check: the tests line shows unittest&#x27;s own summary.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -70,7 +72,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="e701aaca6fc66059efe41e177f81128a8fc30e91"
+           data-source-commit="08c37cb750a82fdf3d311a2466f3715a199d4884"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
