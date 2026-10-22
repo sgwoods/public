@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "project_id": "financial-planner",
+  "active": true,
+  "display_name": "Financial Planner",
+  "description": "Private financial-planning application with explicit assumptions, source provenance, and review workflows.",
+  "project_page_path": "financial-planner.html",
+  "repo_url": null,
+  "dashboard_url": null,
+  "experience_url": null,
+  "repo_pushed_at": null,
+  "status_generated_at": "2026-10-22T17:53:59Z",
+  "status_label": "Public status",
+  "status_value": "Private development; release not verified",
+  "focus_label": "Scope",
+  "focus_value": "Evidence-backed planning and explicit assumptions",
+  "status_sync": "private-summary-v1",
+  "private_metadata": {
+    "checked_at": "2026-10-22T17:49:22Z",
+    "report_basis": "Hub-assisted metadata review",
+    "last_default_branch_commit_at": "2026-09-27T13:37:15Z",
+    "release_version": null,
+    "released_at": null,
+    "activity": {
+      "window_start": "2026-08-31T04:00:00Z",
+      "window_end": "2026-10-22T17:49:22Z",
+      "commit_count": 63
+    }
+  }
+}

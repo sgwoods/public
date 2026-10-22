@@ -1,6 +1,19 @@
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const { countsForProject, dedupeProjects, projectSortFactory, sourceComparison } = require("../assets/public-index.js");
+const { renderProjectCard, privateDetails } = require("../assets/public-index.js");
+const privateManifest = require("../data/projects/financial-planner.json");
+
+test("private cards expose only sanitized metadata, never a fake release snapshot", () => {
+    const card = renderProjectCard({ ...privateManifest, project_page_href: "financial-planner.html" });
+    assert.match(card, /Metadata checked/);
+    assert.match(card, /63 commits;/);
+    assert.match(card, /Not verified; no release claimed/);
+    assert.doesNotMatch(card, /Reported snapshot date|Repository checked|Open repository|1970/);
+    const details = privateDetails({ ...privateManifest.private_metadata, activity: null, checked_at: "2020-01-01T00:00:00Z" });
+    assert.match(details.flat().join(" "), /Not reported \(not zero\)/);
+    assert.match(details.flat().join(" "), /over eight days old/);
+});
 
 test("published metrics use committer dates, deduplicate SHAs, and respect local-day boundaries", () => {
     const project = { project_id: "ai-briefing", repo: "sgwoods/news-pipeline", paths: [], exclude_paths: [] };

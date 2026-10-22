@@ -61,3 +61,23 @@ Private repository metadata was reviewed only to identify possible private
 tracking gaps. Four application candidates need reconciliation with the existing
 private summary; their names, links, and contents are not published here. No
 private data was added to observation or metric snapshots.
+
+## Owner-approved private-summary follow-up
+
+After this audit, the owner approved public-safe summaries and aggregate activity
+for three private projects, while keeping all code and underlying data private:
+Windigo Portfolio Portal, Financial Planner, and Woods Financial Dashboard.
+Kanban is excluded as a throwaway. The owner confirmed Windigo is the existing
+generic rental-portal card, so it is consolidated rather than counted twice.
+The portfolio now contains 16 summaries. The paragraph above records the earlier
+discovery boundary, not the new publication policy.
+
+Only approved descriptions, default-branch commit dates, fixed-window counts,
+and check times were added. No source histories, hashes, messages, deployment
+addresses, or financial contents were published. All three private releases are
+unverified, not inferred from pushes or activity. Initial fixed-window counts
+are 63 / 0 / 0 for Financial Planner / Windigo / Woods Dashboard; they do not
+cover other branches or local work. Private reports remain separate from the
+13 public-history chart series and require source-owned sanitized exports next.
+See [PRIVATE-PROJECT-STATUS.md](PRIVATE-PROJECT-STATUS.md) and the
+[one-at-a-time handoff queue](REPOSITORY-HANDOFFS.md).

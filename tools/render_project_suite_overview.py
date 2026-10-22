@@ -100,10 +100,15 @@ def format_surface_class(note: dict[str, Any]) -> str:
 
 
 def status_summary(project: render_index.ProjectStatus) -> str:
+    if project.private_metadata:
+        import private_status
+        report = "; ".join(f"{label}: {value}" for label, value in
+                           private_status.details(project.private_metadata, render_index.format_local_datetime))
+        return f"{project.status_label}: {project.status_value}. {project.focus_label}: {project.focus_value}. {report}."
     return (
         f"{project.status_label}: {project.status_value}. "
         f"{project.focus_label}: {project.focus_value}. "
-        f"Last repo update: {render_index.format_local_date(project.repo_pushed_at)}."
+        f"Snapshot source date: {render_index.format_local_date(project.repo_pushed_at) if project.repo_pushed_at else 'Not reported'}."
     )
 
 

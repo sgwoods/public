@@ -290,3 +290,15 @@ Independent projects own facts about themselves.
 The `public` project owns homepage presentation.
 
 That separation is what prevents `index.html` collisions.
+
+## Private-summary exception
+
+The owner-approved private summaries use [PRIVATE-PROJECT-STATUS.md](PRIVATE-PROJECT-STATUS.md),
+not the public released-source provenance interface. Their code and data stay
+private. They have the 15 base fields plus `status_sync` and `private_metadata`,
+null source/public URLs and `repo_pushed_at`, and no `source_commit` fields.
+The existing `confidential-project` identity now names Windigo Portfolio Portal;
+Financial Planner and Woods Financial Dashboard have their own manifests.
+Only approved descriptions, aggregate activity, and verified release metadata
+may cross the boundary. The hub renders these pages itself and does not poll
+their private repositories. Kanban is intentionally excluded.

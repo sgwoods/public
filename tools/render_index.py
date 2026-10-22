@@ -27,6 +27,8 @@ PROJECT_ORDER = [
     "aurora-galactica",
     "star-swarm",
     "confidential-project",
+    "financial-planner",
+    "woods-financial-dashboard",
     "ai-dystopia-quotes",
     "ai-briefing",
     "phd-renovation",
@@ -100,7 +102,7 @@ class ProjectStatus:
     repo_url: str | None
     dashboard_url: str | None
     experience_url: str | None
-    repo_pushed_at: datetime
+    repo_pushed_at: datetime | None
     status_generated_at: datetime
     status_label: str
     status_value: str
@@ -111,6 +113,7 @@ class ProjectStatus:
     active: bool
     source_commit: str | None = None
     source_dirty: bool = False
+    private_metadata: dict | None = None
 
 
 @dataclass
@@ -147,6 +150,11 @@ def format_local_datetime(value: datetime) -> str:
 
 def load_project(path: Path) -> ProjectStatus:
     payload: dict[str, Any] = json.loads(path.read_text())
+    import private_status
+    if (payload.get("status_sync") == "private-summary-v1"
+            or payload.get("project_id") in private_status.PROJECT_PAGES
+            or "private_metadata" in payload):
+        private_status.validate(payload)
     timeline_span = payload.get("timeline_span") or {}
     project_page_href = payload.get("project_page_url") or payload.get("project_page_path")
     if not project_page_href:
@@ -163,7 +171,7 @@ def load_project(path: Path) -> ProjectStatus:
         repo_url=payload.get("repo_url") or None,
         dashboard_url=payload.get("dashboard_url"),
         experience_url=payload.get("experience_url"),
-        repo_pushed_at=parse_datetime(payload["repo_pushed_at"]),
+        repo_pushed_at=parse_datetime(payload["repo_pushed_at"]) if payload["repo_pushed_at"] else None,
         status_generated_at=parse_datetime(payload["status_generated_at"]),
         status_label=status_label,
         status_value=status_value,
@@ -174,6 +182,7 @@ def load_project(path: Path) -> ProjectStatus:
         active=bool(payload["active"]),
         source_commit=payload.get("source_commit"),
         source_dirty=bool(payload.get("source_dirty")),
+        private_metadata=payload.get("private_metadata"),
     )
 
 def sort_key(project: ProjectStatus) -> tuple[int, str]:
@@ -185,7 +194,7 @@ def sort_key(project: ProjectStatus) -> tuple[int, str]:
 def project_rank(project: ProjectStatus) -> tuple[datetime, datetime, int, int, str]:
     return (
         project.status_generated_at,
-        project.repo_pushed_at,
+        project.repo_pushed_at or datetime.min.replace(tzinfo=timezone.utc),
         int(bool(project.person_context)),
         int(bool(project.repo_url)),
         project.project_id,
@@ -213,11 +222,11 @@ def dedupe_projects(projects: list[ProjectStatus]) -> list[ProjectStatus]:
             continue
         if (
             project.status_generated_at,
-            project.repo_pushed_at,
+            project.repo_pushed_at or datetime.min.replace(tzinfo=timezone.utc),
             project.project_id,
         ) > (
             existing.status_generated_at,
-            existing.repo_pushed_at,
+            existing.repo_pushed_at or datetime.min.replace(tzinfo=timezone.utc),
             existing.project_id,
         ):
             latest_by_repo[key] = project
@@ -521,13 +530,18 @@ def render_project_card(project: ProjectStatus) -> str:
         comparison = "New snapshot; repository comparison pending"
     source_label = "Snapshot source date" if project.source_commit else "Reported snapshot date"
     details = [
-        f"<div><strong>{source_label}</strong> {html.escape(format_local_date(project.repo_pushed_at))}</div>",
+        f"<div><strong>{source_label}</strong> {html.escape(format_local_date(project.repo_pushed_at)) if project.repo_pushed_at else 'Not reported'}</div>",
         f"<div><strong>Status exported</strong> {html.escape(format_local_datetime(project.status_generated_at))}</div>",
         f"<div><strong>Repository checked</strong> {html.escape(checked_text)}</div>",
         f"<div><strong>Source comparison</strong> {html.escape(comparison)}</div>",
         f"<div><strong>{html.escape(project.status_label)}</strong> {html.escape(project.status_value)}</div>",
         f"<div><strong>{html.escape(project.focus_label)}</strong> {html.escape(project.focus_value)}</div>",
     ]
+    if project.private_metadata:
+        import private_status
+        private_details = private_status.details(project.private_metadata, format_local_datetime)
+        details = [f"<div><strong>{html.escape(label)}</strong> {html.escape(value)}</div>"
+                   for label, value in private_details] + [details[1], details[-2], details[-1]]
     if project.timeline_label:
         details.insert(1, f"<div><strong>Archive span</strong> {html.escape(project.timeline_label)}</div>")
     person_context = ""
@@ -629,7 +643,8 @@ def render() -> str:
     if not projects:
         raise SystemExit("No active project manifests found.")
 
-    latest_project_repo_update = max(project.repo_pushed_at for project in projects)
+    source_dates = [project.repo_pushed_at for project in projects if project.repo_pushed_at]
+    latest_project_repo_update = max(source_dates) if source_dates else None
     rendered_at = datetime.now(LOCAL_TZ)
     project_cards = "\n".join(render_project_card(project) for project in projects)
     project_manifest_config = {
@@ -670,7 +685,7 @@ def render() -> str:
                 </div>
                 <div class="metaCard">
                     <span class="metaLabel">Latest Published Snapshot Source</span>
-                    <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(latest_project_repo_update))}</span>
+                    <span class="metaValue" data-project-last-updated>{html.escape(format_local_date(latest_project_repo_update)) if latest_project_repo_update else 'Not reported'}</span>
                     <div class="metaNote">Newest source date among the published snapshots, not a freshness claim for every project. Each card shows its own source, export, and check dates. See the <a href="project-suite-overview.html">portfolio review</a>.</div>
                 </div>
                 <div class="metaCard">

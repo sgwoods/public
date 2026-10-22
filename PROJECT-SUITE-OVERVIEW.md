@@ -2,7 +2,7 @@
 
 Updated: `2026-10-22`
 
-Repo-owned portfolio coordination. October 22 audit: 14 active project summaries, including AI Briefing's verified v0.1.4-beta export. Thirteen public source/archive histories are observed; the confidential summary is excluded from activity metrics. Status source dates, export dates, and repository check times are independent. Metrics now use published GitHub committer-date snapshots and exclude archive manifest-only edits. AI Quotes has one unpublished source commit to review; Aurora's older production snapshot still matches its hosted build. All seven archive fingerprints match. See PORTFOLIO-AUDIT-2026-10-22.md and PORTFOLIO-METRICS.md for evidence and remaining work.
+Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is consolidated into the existing confidential-project identity, not counted twice. Kanban is excluded. Thirteen public histories feed the charts; private fixed-window aggregate reports stay separate. No private release is claimed until verified by its owner. AI Briefing's v0.1.4-beta export is verified. AI Quotes has one source commit to review for publication; Aurora's older production snapshot matches its hosted build. All seven archive fingerprints match. Source dates, export dates, metadata checks, and homepage rendering are independent. See REPOSITORY-HANDOFFS.md for the one-at-a-time coordination queue.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
@@ -35,7 +35,7 @@ Current branch snapshot: `main`
 - **Publish local progress** (0): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
 - **Steady advance** (8): Important ongoing work that benefits from regular small batches rather than a one-off push.
 - **Seed and clarify** (1): Early-stage areas where a small baseline is more valuable than broad exploration.
-- **Private tracking** (1): Keep only a high-level public summary while the underlying work remains private.
+- **Private tracking** (3): Keep only a high-level public summary while the underlying work remains private.
 
 ## Web Entry Point
 
@@ -56,7 +56,9 @@ Current branch snapshot: `main`
 | --- | --- | --- | --- | --- |
 | [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
 | [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build 65d1434; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
-| [Plan private rental portal](confidential-project.html) | Private project summary | Mixed public summary / private implementation | Private tracking | Confidential project; Private rental portal and related product work |
+| [Windigo Portfolio Portal](confidential-project.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Reviewable property operations and reconciliation |
+| [Financial Planner](financial-planner.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Evidence-backed planning and explicit assumptions |
+| [Woods Financial Dashboard](woods-financial-dashboard.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Source-faithful financial review with clear modeling assumptions |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
 | [AI Briefing](ai-briefing.html) | Standalone repo export | Public code and publication / private operations | Protect public surfaces | v0.1.4-beta · edition 2026-10-22 + deep dive; Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks. |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
@@ -77,7 +79,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: 1.4.1. Current focus: Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates.. Last repo update: June 11, 2026.
+- Current manifest state: Current release: 1.4.1. Current focus: Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates.. Snapshot source date: June 11, 2026.
 - Likely current work: Public main at 148f82e (October 15) records a beta dry-run pass and music acceptance hold. The live production build-info.json still identifies Aurora 1.4.1 build 1164, source 54398ff5, from June 11; the older exported production date is accurate.
 - Next step: Use the Aurora handoff prompt in PROJECT-STATUS-CONTRACT.md on the active machine. Keep production source metadata tied to the released build, verify the active release lanes, and export only validated changes.
 - Quality: This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.
@@ -91,7 +93,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Published build: Build 65d1434. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Last repo update: October 22, 2026.
+- Current manifest state: Published build: Build 65d1434. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Snapshot source date: October 22, 2026.
 - Likely current work: Active Claude/Firstmate development. October 22 deployment, notification, and hub import identify clean build 65d1434. The source repository owns the tested feature description and roadmap.
 - Next step: Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.
 - Quality: State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.
@@ -99,18 +101,47 @@ Current branch snapshot: `main`
 - Drift note: The hub imports clean deployed build.json identities on refresh. Default-branch development is observed separately; detailed feature claims remain in the source architecture.
 - Public links: [Project page](star-swarm.html), [Dashboard](https://github.com/sgwoods/star-swarm/actions/workflows/ci.yml), [Live experience](https://sgwoods.github.io/star-swarm/), [Repository](https://github.com/sgwoods/star-swarm), [Canonical architecture](https://github.com/sgwoods/star-swarm/blob/main/docs/ARCHITECTURE.md), [Roadmap](https://github.com/sgwoods/star-swarm/blob/main/docs/ROADMAP.md), [Deployed build identity](https://sgwoods.github.io/star-swarm/build.json)
 
-### Plan private rental portal
+### Windigo Portfolio Portal
 
 - Surface class: Private project summary
-- Visibility: Mixed public summary / private implementation
+- Visibility: Private code and data / approved public summary
 - Priority now: Private tracking
 - Time-energy-value: energy medium; value high; horizon ongoing
-- Current manifest state: Current phase: Confidential project. Current focus: Private rental portal and related product work. Last repo update: April 1, 2026.
-- Likely current work: Private rental-portal delivery and related product execution.
-- Next step: Keep the public summary minimal and accurate; do not expand the public surface unless there is a deliberate client-safe artifact to add.
-- Quality: The public/private boundary is already clear, which is the main quality goal here.
-- Coordination note: Track only high-level continuity in public.
+- Current manifest state: Public status: Private development; release not verified. Scope: Reviewable property operations and reconciliation. Visibility: Private code and data; approved summary only; Metadata checked: October 22, 2026 at 1:49 PM; Metadata freshness: Recorded metadata check; not a live repository check; Report basis: Hub-assisted metadata review; Default-branch commit date: April 6, 2026 at 10:39 AM; Release: Not verified; no release claimed; Reported default-branch activity: 0 commits; August 31, 2026 at 12:00 AM to October 22, 2026 at 1:49 PM; Activity scope: Fixed window; includes merges and all file types; excludes other branches and local edits.
+- Likely current work: Owner-facing reconciliation, evidence review, and property operations. These are scope observations, not a verified release or current runtime assessment.
+- Next step: On the owning machine, review the active work lane and establish a sanitized status export under PRIVATE-PROJECT-STATUS.md. Verify a real release before naming it publicly.
+- Quality: Public boundary is explicit. Application correctness and deployment were not tested in this metadata review.
+- Coordination note: Private code and data remain fully private. Only approved descriptions, aggregate commit activity, and verified release metadata may be exported.
+- Drift note: User confirmed this is the former Plan private rental portal entry. Keep the confidential-project id and page for link compatibility. Default-branch activity excludes other branches and local work; zero is not inactivity.
 - Public links: [Project page](confidential-project.html)
+
+### Financial Planner
+
+- Surface class: Private project summary
+- Visibility: Private code and data / approved public summary
+- Priority now: Private tracking
+- Time-energy-value: energy medium; value high; horizon ongoing
+- Current manifest state: Public status: Private development; release not verified. Scope: Evidence-backed planning and explicit assumptions. Visibility: Private code and data; approved summary only; Metadata checked: October 22, 2026 at 1:49 PM; Metadata freshness: Recorded metadata check; not a live repository check; Report basis: Hub-assisted metadata review; Default-branch commit date: September 27, 2026 at 9:37 AM; Release: Not verified; no release claimed; Reported default-branch activity: 63 commits; August 31, 2026 at 12:00 AM to October 22, 2026 at 1:49 PM; Activity scope: Fixed window; includes merges and all file types; excludes other branches and local edits.
+- Likely current work: Financial planning with explicit assumptions, source provenance, and review workflows. Current execution and release readiness need owner confirmation.
+- Next step: Establish a sanitized owner-approved status export; validate the active runtime, tests, and release policy privately before publishing a release label.
+- Quality: High-level documentation describes structured planning and auditability. This hub review did not validate calculations or financial advice.
+- Coordination note: Separate from Woods Financial Dashboard and Windigo. Keep all implementation and planning data private.
+- Drift note: Initial metadata review reports 63 default-branch commits in the fixed August 31 to October 22 window. Counts are not code-only changes, effort, financial-data freshness, or a release.
+- Public links: [Project page](financial-planner.html)
+
+### Woods Financial Dashboard
+
+- Surface class: Private project summary
+- Visibility: Private code and data / approved public summary
+- Priority now: Private tracking
+- Time-energy-value: energy medium; value high; horizon ongoing
+- Current manifest state: Public status: Private development; release not verified. Scope: Source-faithful financial review with clear modeling assumptions. Visibility: Private code and data; approved summary only; Metadata checked: October 22, 2026 at 1:49 PM; Metadata freshness: Recorded metadata check; not a live repository check; Report basis: Hub-assisted metadata review; Default-branch commit date: May 4, 2026 at 9:02 AM; Release: Not verified; no release claimed; Reported default-branch activity: 0 commits; August 31, 2026 at 12:00 AM to October 22, 2026 at 1:49 PM; Activity scope: Fixed window; includes merges and all file types; excludes other branches and local edits.
+- Likely current work: Local-first source-faithful financial review and reconciliation; the current work lane needs owner confirmation.
+- Next step: Review the discrepancy ledger privately, confirm the active runtime, and establish a sanitized owner-approved status export without publishing financial records.
+- Quality: This is a distinct personal-finance dashboard, not the rental portal. The hub has not validated its calculations or current data.
+- Coordination note: Keep source documents, balances, model details, code, and deployment addresses private. Publish approved aggregates only.
+- Drift note: No default-branch commits in the reported fixed window does not establish that no local or branch work occurred. Release remains unverified.
+- Public links: [Project page](woods-financial-dashboard.html)
 
 ### AI Dystopia Quotes
 
@@ -118,7 +149,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy low; value medium-high; horizon short
-- Current manifest state: Current stage: Active curation + publishing. Current focus: Growing the approved canon and widening discovery. Last repo update: October 3, 2026.
+- Current manifest state: Current stage: Active curation + publishing. Current focus: Growing the approved canon and widening discovery. Snapshot source date: October 3, 2026.
 - Evidence status: Approved corpus: 32 entries.
 - Likely current work: Public main a0e7cc8 (October 4) adds cached artwork, work links, and editorial updates. The hub still represents the approved October 3 export from 3cbaf56; one source commit is ahead of the public export.
 - Next step: Have the owning project review a0e7cc8 and deliberately publish its approved JSON, page, and local artwork assets through its exporter. Do not update the manifest alone to imply those outputs were deployed.
@@ -133,7 +164,7 @@ Current branch snapshot: `main`
 - Visibility: Public code and publication / private operations
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: v0.1.4-beta · edition 2026-10-22 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Last repo update: October 22, 2026.
+- Current manifest state: Current release: v0.1.4-beta · edition 2026-10-22 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Snapshot source date: October 22, 2026.
 - Likely current work: Beta publication, reader feedback, and development/release workflow improvements. The verified hub export is v0.1.4-beta, public source e701aaca, with the October 22 edition and deep dive.
 - Next step: Keep publication and the two-file hub export connected. Prioritize editorial accuracy, dependable delivery, and one bounded reader-feedback batch before wider distribution; compare new releases against the public code tag.
 - Quality: The 19-field export, public tag, canonical page, links, and freshness panel are verified. This audit did not validate editorial accuracy, email delivery, or audio quality.
@@ -147,7 +178,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium; value high; horizon medium
-- Current manifest state: Current build line: 1.0.0. Current focus: Intake triage. Last repo update: October 3, 2026.
+- Current manifest state: Current build line: 1.0.0. Current focus: Intake triage. Snapshot source date: October 3, 2026.
 - Likely current work: Exporter metadata now uses the source commit and real export time. A new --status-only mode refreshes public status without rebuilding thesis artifacts; the release remains 1.0.0.
 - Next step: Review the three pre-existing remote migration/reporting documentation commits separately, then continue intake triage.
 - Quality: One of the most mature documentation and validation surfaces in the suite.
@@ -161,7 +192,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short-medium
-- Current manifest state: Current release: 1.0.0-rc.1. Current focus: Portability hardening and disciplined post-RC continuation. Last repo update: October 3, 2026.
+- Current manifest state: Current release: 1.0.0-rc.1. Current focus: Portability hardening and disciplined post-RC continuation. Snapshot source date: October 3, 2026.
 - Likely current work: Exporter provenance and public runner-link reconciliation completed October 3. The exported release remains 1.0.0-rc.1.
 - Next step: Continue bounded portability or benchmark work; use the updated exporter for subsequent factual status changes.
 - Quality: Strong research-restoration presentation with clear public framing; still benefits from discipline more than expansion.
@@ -175,7 +206,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Last repo update: May 11, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Snapshot source date: May 11, 2026.
 - Evidence status: Evidence baseline: 22 approved / 0 deferred / 0 rejected (22 total).
 - Likely current work: Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.
 - Next step: Preserve the remaining URL-backed baseline pages and reconcile the review-ledger-only captures that should become formal source records.
@@ -190,7 +221,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy low-medium; value high; horizon short
-- Current manifest state: Current phase: Seeded era archive. Current focus: Expanded baseline with original-provenance interview coverage and first-party transition context. Last repo update: May 11, 2026.
+- Current manifest state: Current phase: Seeded era archive. Current focus: Expanded baseline with original-provenance interview coverage and first-party transition context. Snapshot source date: May 11, 2026.
 - Evidence status: Evidence baseline: 9 approved / 0 deferred / 0 rejected (9 total).
 - Likely current work: Now that the seeded baseline is public, deepen interview, media, and transition coverage in small, high-signal batches.
 - Next step: Add one more interview or ecosystem source batch, then tighten the public summary only if the center of gravity changes materially.
@@ -205,7 +236,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy low; value medium-high; horizon short
-- Current manifest state: Current phase: Seeded era archive. Current focus: First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture. Last repo update: May 11, 2026.
+- Current manifest state: Current phase: Seeded era archive. Current focus: First-source baseline, continuity-safe restartability, and the next round of current-role and ecosystem capture. Snapshot source date: May 11, 2026.
 - Evidence status: Evidence baseline: 3 approved / 0 deferred / 0 rejected (3 total).
 - Likely current work: Seeded-baseline maintenance plus current-role, team-profile, and ecosystem appearance capture.
 - Next step: Localize the current team profile and add one more public-appearance or ecosystem source batch.
@@ -220,7 +251,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Seed and clarify
 - Time-energy-value: energy medium; value medium; horizon short
-- Current manifest state: Current phase: Scaffolded research project. Current focus: CSIRO references, Knights records, and Australian local context. Last repo update: March 24, 2026.
+- Current manifest state: Current phase: Scaffolded research project. Current focus: CSIRO references, Knights records, and Australian local context. Snapshot source date: March 24, 2026.
 - Evidence status: Evidence baseline: no formal source records yet.
 - Likely current work: Still mostly a scaffold, with the core value in establishing a first honest source baseline rather than broad research.
 - Next step: Seed the first CSIRO, Canberra Knights, and local-context sources so the archive has a real evidence floor.
@@ -235,7 +266,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy low-medium; value high; horizon short
-- Current manifest state: Current phase: Seeded era archive. Current focus: Expanded baseline with two additional SEI papers and a localized AOL bridge. Last repo update: May 11, 2026.
+- Current manifest state: Current phase: Seeded era archive. Current focus: Expanded baseline with two additional SEI papers and a localized AOL bridge. Snapshot source date: May 11, 2026.
 - Evidence status: Evidence baseline: 12 approved / 0 deferred / 0 rejected (12 total).
 - Likely current work: Seeded-baseline maintenance plus additional staff, paper, and startup-transition context around the SEI-to-Quack bridge.
 - Next step: Add one more staff or transition-context batch, then refresh the summary only when the bridge story materially improves.
@@ -250,7 +281,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium-high; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Last repo update: May 11, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Snapshot source date: May 11, 2026.
 - Evidence status: Evidence baseline: 6 approved / 14 deferred / 0 rejected (20 total).
 - Likely current work: Preservation and source-completeness work around AOL by Phone, investor outcomes, first-party capture gaps, and stronger preserved press.
 - Next step: Keep working campaign-by-campaign, preserving fragile or first-party evidence before widening the editorial surface.
@@ -265,7 +296,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium-high; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up. Last repo update: October 3, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Approved-source preservation floor completed; all twenty-four approved sources now have local copies, and the next pass can shift to deferred-source and corroboration follow-up. Snapshot source date: October 3, 2026.
 - Evidence status: Evidence baseline: 24 approved / 8 deferred / 0 rejected (32 total).
 - Likely current work: The preservation branch has been integrated in 993055e after reviewing its derivatives and removing private log filenames from the public lead note. All 24 approved records have existing local artifacts.
 - Next step: Resume deferred-source and public-corroboration research in bounded batches; raw private logs remain outside the repository.

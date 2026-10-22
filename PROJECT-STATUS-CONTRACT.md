@@ -29,7 +29,8 @@ Use `python3 tools/refresh_public_coordination.py --check` for a no-write check.
 
 The observer checks public default branches. Shared archives use path-scoped
 history, so another project's commit does not imply activity in that archive.
-Private projects are excluded. Each row records its successful check time;
+Private repositories are excluded from this public observer. Approved private
+project summaries use the separate sanitized interface below. Each observer row records its successful check time;
 failed checks preserve previous observations and return nonzero. Dates without
 an exported commit identity cannot establish equality. A different commit is a
 review signal, not proof that a release needs promotion. Historical branches,
@@ -221,7 +222,28 @@ browser display use this published snapshot; visitors do not call the GitHub API
 Counts use committer timestamps in America/Toronto day/week boundaries. The
 current day/week is partial. A commit reached through overlapping archive paths
 is counted once within that archive; the archive's own project manifest is
-excluded. Private summaries have no metric series. Failed or incompatible
+excluded. Private summaries have no public-history metric series; approved
+fixed-window aggregate reports are labeled separately. Failed or incompatible
 history is unavailable/N/A, never silently converted to zero. Last successful
 history check times are retained separately from page-render and export times.
 See [PORTFOLIO-METRICS.md](PORTFOLIO-METRICS.md) for scope and limitations.
+
+## Approved summaries of private projects
+
+The October 22 owner instruction permits approved non-confidential summaries of
+Windigo Portfolio Portal, Financial Planner, and Woods Financial Dashboard.
+Code and underlying data remain fully private. Kanban is explicitly excluded.
+Windigo keeps the existing `confidential-project` identity; it is not a fourth
+private project. These records are not observed public repositories.
+
+[PRIVATE-PROJECT-STATUS.md](PRIVATE-PROJECT-STATUS.md) defines the strict
+`private-summary-v1` payload, allowed aggregates, release verification, review
+boundary, and narrow source-owned export path. The hub generates their pages
+from approved metadata only. It never fetches private histories during public
+CI, acquires private repository credentials, or advances their check times on a
+daily render. No release or deployment is inferred from activity. Future owner
+exports must follow the review boundary before their first publication.
+
+Use [REPOSITORY-HANDOFFS.md](REPOSITORY-HANDOFFS.md) for one-at-a-time source
+coordination and its completion evidence, rather than treating a chat prompt as
+proof that an exporter has been installed.

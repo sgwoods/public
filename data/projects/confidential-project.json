@@ -2,16 +2,29 @@
   "schema_version": "1.0",
   "project_id": "confidential-project",
   "active": true,
-  "display_name": "Plan private rental portal",
-  "description": "Confidential client-facing portal and product work summarized here only at a high level.",
+  "display_name": "Windigo Portfolio Portal",
+  "description": "Private property-owner portal for financial review, booking reconciliation, and evidence-backed operations.",
   "project_page_path": "confidential-project.html",
   "repo_url": null,
   "dashboard_url": null,
   "experience_url": null,
-  "repo_pushed_at": "2026-04-01T17:55:00Z",
-  "status_generated_at": "2026-04-01T17:55:00Z",
-  "status_label": "Current phase",
-  "status_value": "Confidential project",
-  "focus_label": "Current focus",
-  "focus_value": "Private rental portal and related product work"
+  "repo_pushed_at": null,
+  "status_generated_at": "2026-10-22T17:53:59Z",
+  "status_label": "Public status",
+  "status_value": "Private development; release not verified",
+  "focus_label": "Scope",
+  "focus_value": "Reviewable property operations and reconciliation",
+  "status_sync": "private-summary-v1",
+  "private_metadata": {
+    "checked_at": "2026-10-22T17:49:22Z",
+    "report_basis": "Hub-assisted metadata review",
+    "last_default_branch_commit_at": "2026-04-06T14:39:24Z",
+    "release_version": null,
+    "released_at": null,
+    "activity": {
+      "window_start": "2026-08-31T04:00:00Z",
+      "window_end": "2026-10-22T17:49:22Z",
+      "commit_count": 0
+    }
+  }
 }

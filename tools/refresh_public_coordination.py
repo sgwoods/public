@@ -69,6 +69,12 @@ def build_outputs(notes: dict, projects: list[render_index.ProjectStatus]) -> li
     observations = json.loads(observation_path.read_text()).get("projects", {}) if observation_path.exists() else {}
     for path in sorted((ROOT / "data/projects").glob("*.json")):
         payload = json.loads(path.read_text())
+        if payload.get("active") and payload.get("status_sync") == "private-summary-v1":
+            import private_status
+            output_path = (ROOT / payload["project_page_path"]).resolve()
+            if output_path.parent != ROOT or output_path.suffix != ".html":
+                raise SystemExit("Private summary pages must be root-level HTML files")
+            outputs.append(RenderedOutput(output_path, private_status.render(payload, render_index.format_local_datetime)))
         if payload.get("active") and payload.get("status_sync") == "github-pages-build-v1":
             output_path = (ROOT / payload["project_page_path"]).resolve()
             if output_path.parent != ROOT or output_path.suffix != ".html":

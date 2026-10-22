@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated_at": "2026-10-22",
-  "summary": "Repo-owned portfolio coordination. October 22 audit: 14 active project summaries, including AI Briefing's verified v0.1.4-beta export. Thirteen public source/archive histories are observed; the confidential summary is excluded from activity metrics. Status source dates, export dates, and repository check times are independent. Metrics now use published GitHub committer-date snapshots and exclude archive manifest-only edits. AI Quotes has one unpublished source commit to review; Aurora's older production snapshot still matches its hosted build. All seven archive fingerprints match. See PORTFOLIO-AUDIT-2026-10-22.md and PORTFOLIO-METRICS.md for evidence and remaining work.",
+  "summary": "Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is consolidated into the existing confidential-project identity, not counted twice. Kanban is excluded. Thirteen public histories feed the charts; private fixed-window aggregate reports stay separate. No private release is claimed until verified by its owner. AI Briefing's v0.1.4-beta export is verified. AI Quotes has one source commit to review for publication; Aurora's older production snapshot matches its hosted build. All seven archive fingerprints match. Source dates, export dates, metadata checks, and homepage rendering are independent. See REPOSITORY-HANDOFFS.md for the one-at-a-time coordination queue.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
     "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
@@ -76,16 +76,42 @@
     },
     "confidential-project": {
       "surface_class": "Private project summary",
-      "visibility": "Mixed public summary / private implementation",
+      "visibility": "Private code and data / approved public summary",
       "priority_now": "private",
       "energy": "medium",
       "value": "high",
       "time_horizon": "ongoing",
-      "likely_current_work": "Private rental-portal delivery and related product execution.",
-      "next_step": "Keep the public summary minimal and accurate; do not expand the public surface unless there is a deliberate client-safe artifact to add.",
-      "quality_note": "The public/private boundary is already clear, which is the main quality goal here.",
-      "drift_note": null,
-      "coordination_note": "Track only high-level continuity in public."
+      "likely_current_work": "Owner-facing reconciliation, evidence review, and property operations. These are scope observations, not a verified release or current runtime assessment.",
+      "next_step": "On the owning machine, review the active work lane and establish a sanitized status export under PRIVATE-PROJECT-STATUS.md. Verify a real release before naming it publicly.",
+      "quality_note": "Public boundary is explicit. Application correctness and deployment were not tested in this metadata review.",
+      "drift_note": "User confirmed this is the former Plan private rental portal entry. Keep the confidential-project id and page for link compatibility. Default-branch activity excludes other branches and local work; zero is not inactivity.",
+      "coordination_note": "Private code and data remain fully private. Only approved descriptions, aggregate commit activity, and verified release metadata may be exported."
+    },
+    "financial-planner": {
+      "surface_class": "Private project summary",
+      "visibility": "Private code and data / approved public summary",
+      "priority_now": "private",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "ongoing",
+      "likely_current_work": "Financial planning with explicit assumptions, source provenance, and review workflows. Current execution and release readiness need owner confirmation.",
+      "next_step": "Establish a sanitized owner-approved status export; validate the active runtime, tests, and release policy privately before publishing a release label.",
+      "quality_note": "High-level documentation describes structured planning and auditability. This hub review did not validate calculations or financial advice.",
+      "drift_note": "Initial metadata review reports 63 default-branch commits in the fixed August 31 to October 22 window. Counts are not code-only changes, effort, financial-data freshness, or a release.",
+      "coordination_note": "Separate from Woods Financial Dashboard and Windigo. Keep all implementation and planning data private."
+    },
+    "woods-financial-dashboard": {
+      "surface_class": "Private project summary",
+      "visibility": "Private code and data / approved public summary",
+      "priority_now": "private",
+      "energy": "medium",
+      "value": "high",
+      "time_horizon": "ongoing",
+      "likely_current_work": "Local-first source-faithful financial review and reconciliation; the current work lane needs owner confirmation.",
+      "next_step": "Review the discrepancy ledger privately, confirm the active runtime, and establish a sanitized owner-approved status export without publishing financial records.",
+      "quality_note": "This is a distinct personal-finance dashboard, not the rental portal. The hub has not validated its calculations or current data.",
+      "drift_note": "No default-branch commits in the reported fixed window does not establish that no local or branch work occurred. Release remains unverified.",
+      "coordination_note": "Keep source documents, balances, model details, code, and deployment addresses private. Publish approved aggregates only."
     },
     "ai-dystopia-quotes": {
       "surface_class": "Standalone repo export",

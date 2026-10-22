@@ -7,6 +7,7 @@ from pathlib import Path
 from urllib.parse import urlencode, urlparse
 
 import render_index
+import private_status
 from archive_provenance import content_digest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,6 +56,10 @@ def observe(previous=None, get=api):
     metadata = {}
     trees = {}
     for key, (snapshot, path) in snapshots.items():
+        if key in private_status.PROJECT_PAGES or snapshot.get("status_sync") == "private-summary-v1":
+            rows[key] = {"display_name": snapshot["display_name"], "state": "not_observed",
+                         "attempted_at": now, "reason": "Private summary; metadata is owner-approved, not publicly observed"}
+            continue
         row = dict(previous.get("projects", {}).get(key, {}))
         row.update(display_name=snapshot["display_name"], attempted_at=now,
                    snapshot_commit=snapshot.get("source_commit"),

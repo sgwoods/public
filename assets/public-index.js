@@ -176,8 +176,8 @@
             buttons.push(renderButton(escapeHtml(project.repo_url), "Open repository"));
         }
 
-        const details = [
-            `<div><strong>${project.source_commit ? "Snapshot source date" : "Reported snapshot date"}</strong> ${escapeHtml(formatLocalDate(project.repo_pushed_at))}</div>`,
+        let details = [
+            `<div><strong>${project.source_commit ? "Snapshot source date" : "Reported snapshot date"}</strong> ${project.repo_pushed_at ? escapeHtml(formatLocalDate(project.repo_pushed_at)) : "Not reported"}</div>`,
             `<div><strong>Status exported</strong> ${escapeHtml(formatLocalDateTime(project.status_generated_at))}</div>`,
             `<div><strong>Repository checked</strong> ${observation?.checked_at ? escapeHtml(formatLocalDateTime(observation.checked_at)) : "Not observed"}</div>`,
             `<div><strong>Source comparison</strong> ${escapeHtml(sourceComparison(project, observation))}</div>`,
@@ -185,6 +185,11 @@
             `<div><strong>${escapeHtml(project.status_label)}</strong> ${escapeHtml(project.status_value)}</div>`,
             `<div><strong>${escapeHtml(project.focus_label)}</strong> ${escapeHtml(project.focus_value)}</div>`,
         ].filter(Boolean);
+        if (project.private_metadata) {
+            details = privateDetails(project.private_metadata).map(([label, value]) =>
+                `<div><strong>${escapeHtml(label)}</strong> ${escapeHtml(value)}</div>`
+            ).concat([details[1], ...details.slice(-2)]);
+        }
 
         const personContext = project.person_context
             ? `<p class="footer">${escapeHtml(project.person_context)}</p>`
@@ -201,6 +206,21 @@
                         ${buttons.join(" ")}
                     </div>
                 </article>`;
+    }
+
+    function privateDetails(metadata) {
+        const date = (value) => value ? formatLocalDateTime(value) : "Not reported";
+        const activity = metadata.activity;
+        return [
+            ["Visibility", "Private code and data; approved summary only"],
+            ["Metadata checked", date(metadata.checked_at)],
+            ["Metadata freshness", Date.now() - Date.parse(metadata.checked_at) > 8 * 86400000 ? "Report over eight days old; review needed" : "Recorded metadata check; not a live repository check"],
+            ["Report basis", metadata.report_basis],
+            ["Default-branch commit date", date(metadata.last_default_branch_commit_at)],
+            ["Release", metadata.release_version ? `${metadata.release_version}; ${date(metadata.released_at)}` : "Not verified; no release claimed"],
+            ["Reported default-branch activity", activity ? `${activity.commit_count} commits; ${date(activity.window_start)} to ${date(activity.window_end)}` : "Not reported (not zero)"],
+            ["Activity scope", "Fixed window; includes merges and all file types; excludes other branches and local edits"],
+        ];
     }
 
     async function fetchManifestPayloads(urls) {
@@ -258,6 +278,7 @@
             }
 
             const lastUpdated = projects.reduce((latest, project) => {
+                if (!project.repo_pushed_at) return latest;
                 const current = new Date(project.repo_pushed_at);
                 return !latest || current > latest ? current : latest;
             }, null);
@@ -472,7 +493,7 @@
         return activitySnapshotPromise;
     }
 
-    if (typeof module !== "undefined") module.exports = { bucketCounts, countsForProject, dedupeProjects, projectSortFactory, sourceComparison };
+    if (typeof module !== "undefined") module.exports = { bucketCounts, countsForProject, dedupeProjects, projectSortFactory, sourceComparison, renderProjectCard, privateDetails };
     if (typeof document === "undefined") return;
     initProjectManifestCards();
     document.querySelectorAll("[data-activity-chart]").forEach((chart) => {

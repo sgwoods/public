@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "project_id": "woods-financial-dashboard",
+  "active": true,
+  "display_name": "Woods Financial Dashboard",
+  "description": "Private local-first personal-finance dashboard for source-backed financial review and reconciliation.",
+  "project_page_path": "woods-financial-dashboard.html",
+  "repo_url": null,
+  "dashboard_url": null,
+  "experience_url": null,
+  "repo_pushed_at": null,
+  "status_generated_at": "2026-10-22T17:53:59Z",
+  "status_label": "Public status",
+  "status_value": "Private development; release not verified",
+  "focus_label": "Scope",
+  "focus_value": "Source-faithful financial review with clear modeling assumptions",
+  "status_sync": "private-summary-v1",
+  "private_metadata": {
+    "checked_at": "2026-10-22T17:49:22Z",
+    "report_basis": "Hub-assisted metadata review",
+    "last_default_branch_commit_at": "2026-05-04T13:02:13Z",
+    "release_version": null,
+    "released_at": null,
+    "activity": {
+      "window_start": "2026-08-31T04:00:00Z",
+      "window_end": "2026-10-22T17:49:22Z",
+      "commit_count": 0
+    }
+  }
+}

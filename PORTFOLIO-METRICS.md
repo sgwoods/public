@@ -1,16 +1,19 @@
 # Portfolio dates and activity metrics
 
-The homepage tracks 14 project summaries at the October 22 audit: six public
-software/publication projects, seven shared archive projects, and one private
-summary. Activity metrics cover the 13 public source/archive projects. These are
-different counts for different purposes.
+The homepage tracks 16 project summaries after the October 22 follow-up: six
+public software/publication projects, seven shared archive projects, and three
+private summaries. Windigo is the former generic confidential entry, not another
+project. Kanban is excluded. Public activity charts cover 13 source/archive
+projects. Private cards separately show approved fixed-window aggregate reports,
+not a combined or rolling chart. These are different counts for different purposes.
 
 ## Dates
 
 - **Snapshot source date** is the real source commit date represented by the
   approved export, not a general last-worked date. Older released artifacts can
-  remain correct. A legacy/private summary without commit identity says
-  **Reported snapshot date** instead.
+  remain correct. A legacy summary without commit identity says **Reported snapshot
+  date** instead. Private summaries have no released snapshot date until verified;
+  their metadata-check and default-branch commit dates are labeled separately.
 - **Status exported** is when the owning project generated its public record.
 - **Repository checked** is the last successful observation of the public default
   branch or archive scope. Its age does not change a released version.
@@ -45,7 +48,7 @@ of unauthenticated GitHub requests.
   deduplicated by SHA within one archive. A shared commit can count for multiple
   archives when it changes content in each.
 - Hosting mirrors, companion runners, support forks, branches other than the
-  default, private repositories, and local uncommitted work are outside these series.
+  default, private repositories, and local uncommitted work are outside these public series.
 - A completed successful history request with no commits is zero. Missing,
   failed, incompatible, or insufficient-window history is **Unavailable/N/A**.
   Partial series are never presented as a complete total. Prior evidence is
@@ -56,11 +59,18 @@ effort, editorial quality, research progress, output volume, or release readines
 For current release facts use the owning manifest and source artifact; for
 priority decisions use [the portfolio overview](PROJECT-SUITE-OVERVIEW.md).
 
+Private summaries follow [PRIVATE-PROJECT-STATUS.md](PRIVATE-PROJECT-STATUS.md).
+Their initial owner-authorized review publishes aggregate counts and dates only,
+never private source histories. A fixed-window zero does not rule out local or
+other-branch work. No private release was verified. Source-owned sanitized exports
+are the next setup step; daily public checks do not refresh these private reports.
+
 ## Checks
 
 ```sh
 python3 tools/test_repository_freshness.py
 python3 tools/test_activity.py
+python3 tools/test_private_status.py
 node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
 python3 tools/refresh_public_coordination.py --check
 ```
