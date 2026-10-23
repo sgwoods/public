@@ -55,7 +55,7 @@ Current branch snapshot: `main`
 | Project | Surface Class | Visibility | Priority | Current Manifest State |
 | --- | --- | --- | --- | --- |
 | [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
-| [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build 5b2ca65; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
+| [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build 0c1a38d; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
 | [Windigo Portfolio Portal](confidential-project.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Reviewable property operations and reconciliation |
 | [Financial Planner](financial-planner.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Evidence-backed planning and explicit assumptions |
 | [Woods Financial Dashboard](woods-financial-dashboard.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Source-faithful financial review with clear modeling assumptions |
@@ -93,7 +93,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Published build: Build 5b2ca65. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Snapshot source date: October 23, 2026.
+- Current manifest state: Published build: Build 0c1a38d. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Snapshot source date: October 23, 2026.
 - Likely current work: Independent Star Swarm game/content-platform development using Claude and Firstmate, as a parallel comparative attempt entirely separate from Aurora. October 22 deployment, notification, and hub import identify clean build 65d1434; source-owned docs remain authoritative for tested features.
 - Next step: Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.
 - Quality: State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.
