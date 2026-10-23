@@ -29,24 +29,25 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.1.13-beta</b>, public code commit <code>95a23386bdd7</code> (2026-10-23T20:57:08Z)</li>
+      <li><b>v0.1.14-beta</b>, public code commit <code>591c64fefc50</code> (2026-10-23T21:13:09Z)</li>
       <li>Latest edition: 2026-10-23 · 18 editions and 8 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-23/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-23T20:57:14Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-23T21:13:15Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.1.14-beta · 2026-10-23</h3>
+    <ul>
+      <li><b>First-lines check for the daily briefing:</b> the day in brief and Top of mind are now checked against the edition&#x27;s own body, as deep-dive summaries have been since v0.1.9 (<code>consistency.check_briefing</code>). A figure belongs to its whole story, so a line can name the company in its lead. A sentence that ties a figure to the wrong company, or says something wasn&#x27;t disclosed when the body gives it, is dropped.</li>
+      <li><b>Across days (flag):</b> a &quot;not disclosed&quot; claim is compared with the previous 14 editions and flagged for review if an earlier day gave the figure for the same company.</li>
+      <li>The &quot;not disclosed&quot; test is stricter everywhere: a question asking for a figure, or a sentence saying it&#x27;s lacking, no longer counts as giving it, and it must be about the same company.</li>
+      <li><code>./np consistency [DAY|all]</code> (also a run-queue recipe) runs the checks over published editions as a dry run. Over all 18 editions and 8 deep dives it found one misattributed figure (10-22&#x27;s day in brief) and two cross-day flags (10-23).</li>
+    </ul>
     <h3>v0.1.13-beta · 2026-10-23</h3>
     <ul>
       <li>Fix: the run queue&#x27;s launchd tick never started a job. Its quick idle check listed both queue folders with <code>ls</code>, which fails whenever one of them is empty. It now checks each file, and a test runs the real <code>./np runner tick</code>.</li>
-    </ul>
-    <h3>v0.1.12-beta · 2026-10-23</h3>
-    <ul>
-      <li><b>Run queue:</b> releases, corrections and checks can be started from the Claude chat instead of pasted into a shell (<code>pipeline/runner.py</code>, <code>./np runner</code>, docs/plans/run-queue.md). Claude queues a named recipe and the Mac runs it. There are three tiers: tests, staging and verify run at once; corrections and publish need Steven&#x27;s yes in the chat; releases, rollbacks, approvals and the public code push need Approve in a dialog on the Mac. The click grants presence for that job only (<code>pipeline/presence.py</code>), and no file can stand in for it. Release invariant 10 guards the runner. One-time setup: <code>./np runner install</code>.</li>
-      <li><b>Docs stay current:</b> release-gate tests now require every public module to be described in a hand-written doc and every diagram to be used. Each release lists the modules that changed while their docs didn&#x27;t (&quot;docs to review&quot;), in the approval dialog and in <code>data/state/docs-impact.json</code>, for a weekly docs refresh.</li>
-      <li><b>Docs:</b> Fact checking is rewritten as &quot;Grounding and fact checking&quot;: six layers, a new diagram, why the first-lines check exists, corrections and known gaps. Architecture gains sections on grounding, the run queue (with a diagram) and keeping docs current, plus every smaller module.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -68,7 +69,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="95a23386bdd70436d27501689208a44119d0176d"
+           data-source-commit="591c64fefc5096050284e3bd4b6dc06356d8d159"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
