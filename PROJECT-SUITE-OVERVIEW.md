@@ -55,12 +55,12 @@ Current branch snapshot: `main`
 | Project | Surface Class | Visibility | Priority | Current Manifest State |
 | --- | --- | --- | --- | --- |
 | [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
-| [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build 0c1a38d; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
+| [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build cc463a0; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
 | [Windigo Portfolio Portal](confidential-project.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Reviewable property operations and reconciliation |
 | [Financial Planner](financial-planner.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Evidence-backed planning and explicit assumptions |
 | [Woods Financial Dashboard](woods-financial-dashboard.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Source-faithful financial review with clear modeling assumptions |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
-| [AI Briefing](ai-briefing.html) | Standalone repo export | Public code and publication / private operations | Protect public surfaces | v0.2.0-beta · edition 2026-10-24 + deep dive; Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks. |
+| [AI Briefing](ai-briefing.html) | Standalone repo export | Public code and publication / private operations | Protect public surfaces | v0.2.1-beta · edition 2026-10-24 + deep dive; Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks. |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
 | [Masters of Mathematics renovation project](mmath-renovation.html) | Standalone repo export | Public | Protect public surfaces | 1.0.0-rc.1; Portability hardening and disciplined post-RC continuation |
 | [Steven Woods Public Record Project](https://sgwoods.github.io/public/steven-woods-research.html) | Shared-public archive subproject | Public | Steady advance | Active research archive; Continuity layer, baseline identity, timeline, current profile sources, and one-page CV |
@@ -93,7 +93,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Published build: Build 0c1a38d. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Snapshot source date: October 23, 2026.
+- Current manifest state: Published build: Build cc463a0. Project direction: Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository.. Snapshot source date: October 24, 2026.
 - Likely current work: Independent Star Swarm game/content-platform development using Claude and Firstmate, as a parallel comparative attempt entirely separate from Aurora. October 22 deployment, notification, and hub import identify clean build 65d1434; source-owned docs remain authoritative for tested features.
 - Next step: Follow the source roadmap: configurable pack/stage editing and playability validation, broader lab previews, and art/audio provenance review. Choose one bounded batch; do not treat roadmap items as shipped.
 - Quality: State documentation is checked by tests, and deployment is gated by CI. This audit verified build identity and CI, not exhaustive gameplay quality.
@@ -164,7 +164,7 @@ Current branch snapshot: `main`
 - Visibility: Public code and publication / private operations
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: v0.2.0-beta · edition 2026-10-24 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Snapshot source date: October 23, 2026.
+- Current manifest state: Current release: v0.2.1-beta · edition 2026-10-24 + deep dive. Current focus: Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks.. Snapshot source date: October 24, 2026.
 - Likely current work: Beta publication, reader feedback, and development/release workflow improvements. The verified hub export is v0.1.4-beta, public source e701aaca, with the October 22 edition and deep dive.
 - Next step: Implement the separate approved daily working-activity report using REPOSITORY-HANDOFFS.md. Classify the private working history without exposing it, preserving the existing two-file release export and release facts. Then prioritize editorial accuracy and bounded reader feedback.
 - Quality: The 19-field export, public tag, canonical page, links, and freshness panel are verified. This audit did not validate editorial accuracy, email delivery, or audio quality.
