@@ -29,23 +29,26 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.7-beta</b>, public code commit <code>fcbc9e450deb</code> (2026-10-25T20:53:43Z)</li>
+      <li><b>v0.2.8-beta</b>, public code commit <code>3bfcf4fef730</code> (2026-10-25T21:26:57Z)</li>
       <li>Latest edition: 2026-10-25 · 20 editions and 10 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-25/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-25T20:53:48Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-25T21:27:04Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.8-beta · 2026-10-25</h3>
+    <ul>
+      <li><b>Takes on the site, fixed for an open page:</b> the takes email&#x27;s site link adds <code>?v=&lt;day&gt;</code> so the browser loads the page fresh, and the boxes also appear when only the <code>#takes=</code> part changes (on 10-25 a cached page showed none).</li>
+      <li><b>Run-queue jobs for takes:</b> <code>takes-test DAY</code> (the takes email marked [TEST], to the owner), <code>takes-check DAY</code> (what would publish now: email, site, Slack, with the privacy check; saves nothing), <code>takes-apply DAY</code> (chat tier: save the day&#x27;s takes and publish; for a shipped day only the written takes change).</li>
+      <li><b>The mail script via clasp</b> (<code>pipeline/clasp.py</code>, <code>./np mailer status | setup | deploy</code>): <code>mailer-status</code> checks the live script against the repo, <code>deploy-mailer</code> (Approve on the Mac) pushes Code.gs and updates the same deployment, so mail-script changes stop needing copy and paste. One-time setup by Steven: docs/EMAIL-SETUP.md.</li>
+      <li>The site script is a raw string (Python&#x27;s escape warning is gone).</li>
+    </ul>
     <h3>v0.2.7-beta · 2026-10-25</h3>
     <ul>
       <li><b>Takes on the website:</b> the private takes email has a &quot;Read and comment on the site&quot; link to the day&#x27;s page. With Steven&#x27;s signed token (after the <code>#</code>, valid two days) the page shows a box after the day in brief, Top of mind, each Must-read story and Worth knowing, and one Submit (with &quot;Done: send the edition now&quot;). Visitors without the token see nothing different. The mail script checks the token and stores the takes; the pipeline reads them during the hold together with email replies and Slack, and the same privacy hold applies.</li>
       <li><b>Needs a redeploy of the mail script</b> (<code>scripts/apps-script/Code.gs</code>: new <code>takes</code> / <code>takes_pull</code> actions, owner token scope <code>t</code>, a <code>{{OWNERT}}</code> placeholder for owner sends). Until then the site link shows no boxes and everything else works as before.</li>
-    </ul>
-    <h3>v0.2.6-beta · 2026-10-25</h3>
-    <ul>
-      <li>Takes email: bold lead phrases were pale blue on white (the subscriber email&#x27;s dark-mode colour) and now read dark; links are blue. A &quot;W&quot; slot covers Worth knowing (button in the takes email, a take box under Worth knowing in the subscriber email and on the site, and read after the quick hits in the podcast).</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -67,7 +70,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="fcbc9e450debac33b7ef0fab9c6eef45c8988e22"
+           data-source-commit="3bfcf4fef7306e6b749bfe6f8e6909b065f21087"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
