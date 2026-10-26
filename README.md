@@ -12,6 +12,7 @@ It is not just a standalone project site. Its job is to provide one clear public
 Start here in this repo:
 
 - [REPOSITORY-PERSISTENCE.md](REPOSITORY-PERSISTENCE.md): what is saved, tool/interface map, recovery snapshot, and remaining preservation gaps.
+- [ARCHIVE-PRESERVATION.md](ARCHIVE-PRESERVATION.md): six newly preserved source records, the LinkedIn access blocker, and the repeatable capture/coverage process.
 - [PROJECT-SUITE-OVERVIEW.md](PROJECT-SUITE-OVERVIEW.md)
 - [REPOSITORY-HANDOFFS.md](REPOSITORY-HANDOFFS.md)
 - [PRIVATE-PROJECT-STATUS.md](PRIVATE-PROJECT-STATUS.md)

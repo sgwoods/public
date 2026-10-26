@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "title": "Steven Woods - Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Steven_Woods",
+  "retrieved_url": "https://en.wikipedia.org/wiki/Steven_Woods",
+  "checked_on": "2026-10-26",
+  "method": "public-http",
+  "selector": {
+    "tag": "div",
+    "attribute": "class",
+    "value": "mw-parser-output"
+  },
+  "capture_kind": "content-only-text-and-links",
+  "source_revision": "1368795449",
+  "license_note": "Text by Wikipedia contributors, Steven Woods, revision 1368795449: https://en.wikipedia.org/w/index.php?title=Steven_Woods&oldid=1368795449 ; history: https://en.wikipedia.org/w/index.php?title=Steven_Woods&action=history . Text adapted to a plain-text-and-links capture under CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/ . Images omitted. This is secondary synthesis, not a new verification of biographical claims.",
+  "input_sha256": "59f744d78a01abd0861115726a800e71ff222d24d743dc6b8d0310d7c88bdf61",
+  "limitations": "Not a byte-for-byte page, image, styling or script archive. Capture date is not the source publication date.",
+  "capture_sha256": "696837d55c7dbbe09460bcc15084001e535daca4af02fe7963304335e7d174dd"
+}

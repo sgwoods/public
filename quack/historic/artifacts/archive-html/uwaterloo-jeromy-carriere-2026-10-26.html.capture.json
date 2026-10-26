@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "title": "Jeromy Carriere | Mathematics | University of Waterloo",
+  "source_url": "https://uwaterloo.ca/math/profiles/jeromy-carriere",
+  "retrieved_url": "https://uwaterloo.ca/math/profiles/jeromy-carriere",
+  "checked_on": "2026-10-26",
+  "method": "public-http",
+  "selector": {
+    "tag": "article",
+    "attribute": "class",
+    "value": "uw-node__node"
+  },
+  "capture_kind": "content-only-text-and-links",
+  "source_revision": null,
+  "license_note": "University of Waterloo profile, preserved as attributed research evidence. Source copyright retained; images and page design are not copied. This capture does not relicense the source.",
+  "input_sha256": "575f9d1be72907792a43a7da598bc1c3202024994cc632a359889cd332cdfe21",
+  "limitations": "Not a byte-for-byte page, image, styling or script archive. Capture date is not the source publication date.",
+  "capture_sha256": "277d00a02dbea7caaaa1b62970eb195eeeafb668d1eb09ae75d83aed01decac6"
+}

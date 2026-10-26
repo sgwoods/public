@@ -290,7 +290,7 @@
       },
       "urls": {
         "canonical": "https://www.inovia.vc/team/steve-woods/",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/inovia-team-steve-woods-2026-10-26.html",
         "archive_web": null
       },
       "ownership": {
@@ -300,7 +300,7 @@
       },
       "tags": ["profile", "inovia", "baseline", "current-role"],
       "status": "approved",
-      "notes": "Use as the current first-party role and summary source."
+      "notes": "Use as a first-party role and summary source. Public biography transcribed from the new Inovia team modal on October 26, 2026; the original profile URL now redirects. Content-only capture and provenance sidecar retained; capture date is separate from this record's original review date."
     },
     {
       "source_id": "src-steven-current-linkedin-profile",
@@ -325,7 +325,7 @@
       },
       "tags": ["profile", "linkedin", "baseline", "current-role"],
       "status": "approved",
-      "notes": "Treat as a major baseline identity and chronology source, but not as a substitute for independent sourcing."
+      "notes": "Treat as a major baseline identity and chronology source, but not as a substitute for independent sourcing. October 26, 2026 preservation attempt was blocked (HTTP 999); no local content copy is claimed. Obtain a user-approved public-only profile export or retry ordinary public access later; never bypass login or copy private account data."
     },
     {
       "source_id": "src-steven-current-about-me-profile",
@@ -365,7 +365,7 @@
       },
       "urls": {
         "canonical": "https://bio.link/sgwoods",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/bio-link-sgwoods-2026-10-26.html",
         "archive_web": null
       },
       "ownership": {
@@ -375,7 +375,7 @@
       },
       "tags": ["profile", "bio-link", "baseline", "link-hub"],
       "status": "approved",
-      "notes": "Useful as a live public link map even when direct archival capture is difficult."
+      "notes": "Public headings, expanded Short Bio and link map transcribed in the browser on October 26, 2026 after the HTTP client received 403. Content-only capture and provenance retained. Malformed Instagram and AngelList destinations and the Bluesky CDN link are preserved as observed, not endorsed as working links."
     },
     {
       "source_id": "src-steven-current-wikipedia-page",
@@ -390,7 +390,7 @@
       },
       "urls": {
         "canonical": "https://en.wikipedia.org/wiki/Steven_Woods",
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/wikipedia-steven-woods-2026-10-26.html",
         "archive_web": null
       },
       "ownership": {
@@ -400,7 +400,7 @@
       },
       "tags": ["profile", "wikipedia", "secondary", "baseline"],
       "status": "approved",
-      "notes": "Treat as a public synthesis page rather than a primary authority."
+      "notes": "Treat as a public synthesis page rather than a primary authority. Content-only capture checked October 26, 2026, revision 1368795449; Wikipedia contributor attribution, history and CC BY-SA 4.0 license retained. This preservation pass does not newly verify its biographical claims."
     },
     {
       "source_id": "src-steven-2012-slideshare-keynote-deck",

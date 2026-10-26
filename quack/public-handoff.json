@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "quack-com",
-  "handoff_generated_at": "2026-05-10T20:13:50Z",
+  "handoff_generated_at": "2026-10-26T22:28:46Z",
   "items_for_public": [
     {
       "source_id": "src-quack-2000-earful-of-internet-voice-portals-read-news-and-2758206-php",
@@ -46,6 +46,9 @@
     },
     {
       "question": "Some investor-outcome and Waterloo brain-drain claims still need stronger primary sourcing."
+    },
+    {
+      "question": "October 26 preservation checkpoint: all six approved records now have local content captures, including both patents and the Jeromy Carriere profile. Images and original page code are not preserved; see ARCHIVE-PRESERVATION.md."
     }
   ]
 }

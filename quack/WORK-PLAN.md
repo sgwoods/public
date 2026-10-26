@@ -1,6 +1,6 @@
 # Quack.com Living Work Plan
 
-Last updated: `2026-05-10`
+Last updated: `2026-10-26`
 
 This is the living execution plan for the Quack archive project. Keep it current as the archive, preservation baseline, and restart path change.
 
@@ -32,7 +32,7 @@ Preserve Quack.com as the canonical deep archive for the company story, includin
 - the public summary page exists at `public/quack-com.html`
 - the repo-facing working page exists at `public/quack/index.html`
 - current manifest counts are `20` total / `6` approved / `14` deferred / `0` rejected
-- `5` source records currently resolve to checked-in local archive files
+- `8` source records currently resolve to local archive files, including all `6` approved records
 - Quack now has repo-owned continuity surfaces:
   - `WORK-PLAN.md`
   - `WORKSPACE-STATUS.md`
@@ -70,8 +70,10 @@ Goals:
 
 Current checkpoint:
 
-- `5` Quack source records now resolve to checked-in local archive files
-- `3` of those local archive paths belong to `approved` sources
+- `8` Quack source records now resolve to local archive files
+- `6` of those local archive paths belong to `approved` sources
+- October 26 added attributed text-and-link captures of both approved patents and the Jeromy Carriere Waterloo profile; source dates and approval decisions remain unchanged
+- capture scope, provenance, and the suite's remaining LinkedIn blocker are tracked in [the preservation register](../ARCHIVE-PRESERVATION.md)
 - the next highest-value preservation targets remain AOL by Phone / AOL Anywhere first-party pages, plus additional URL-backed acquisition, financing, and partner sources
 
 Priority queue:

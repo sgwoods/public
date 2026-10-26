@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "title": "US6687734B1 - System and method for determining if one web site has the same information as another web site",
+  "source_url": "https://patents.google.com/patent/US6687734B1/en",
+  "retrieved_url": "https://patents.google.com/patent/US6687734B1/en",
+  "checked_on": "2026-10-26",
+  "method": "public-http",
+  "selector": {
+    "tag": "article",
+    "attribute": "class",
+    "value": "result"
+  },
+  "capture_kind": "content-only-text-and-links",
+  "source_revision": null,
+  "license_note": "Patent publication text and public bibliographic data via Google Patents. Attribution and source links retained; no claim of rights in the Google page design or third-party material.",
+  "input_sha256": "92a7dca697c4f7608285fa13bcb1fd95bd2933449eaeec54497d6774a734904d",
+  "limitations": "Not a byte-for-byte page, image, styling or script archive. Capture date is not the source publication date.",
+  "capture_sha256": "8b958b27e1f223c67f3f07dc8952f5fcde63fd773a501ab4f46b6cab2f3244c2"
+}

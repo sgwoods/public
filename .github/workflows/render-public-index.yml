@@ -22,6 +22,11 @@ on:
       - "tools/test_working_activity.py"
       - "tools/private_status.py"
       - "tools/test_private_status.py"
+      - "tools/start_codex_on_new_mac.sh"
+      - "tools/test_mac_bootstrap.py"
+      - "tools/capture_archive_source.py"
+      - "tools/test_archive_capture.py"
+      - "tools/check_archive_coverage.py"
       - "tools/test_public_index.cjs"
       - "tools/test_repository_freshness.py"
       - "tools/test_project_freshness.cjs"
@@ -77,6 +82,9 @@ jobs:
           python3 tools/test_activity.py
           python3 tools/test_working_activity.py
           python3 tools/test_private_status.py
+          python3 tools/test_mac_bootstrap.py
+          python3 tools/test_archive_capture.py
+          python3 tools/check_archive_coverage.py --check
           node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
           python3 tools/refresh_public_coordination.py --check
 

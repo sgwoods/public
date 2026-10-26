@@ -1136,6 +1136,10 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
     approved = [source for source in source_manifest["sources"] if source["status"] == "approved"]
     deferred = [source for source in source_manifest["sources"] if source["status"] == "deferred"]
     archived_count = sum(1 for source in source_manifest["sources"] if source["urls"].get("archive_local"))
+    approved_local_count = sum(
+        1 for source in approved
+        if source["urls"].get("archive_local") and (ROOT / source["urls"]["archive_local"]).is_file()
+    )
     theme_counts = defaultdict(int)
     tag_counts = defaultdict(int)
     for lead in load_leads().get("leads", []):
@@ -1290,7 +1294,7 @@ def render_project_page(project_manifest: dict[str, Any], source_manifest: dict[
             "body": "Strong or fragile sources are now being copied into the Quack layer, which keeps the archive useful even when older web coverage disappears or changes.",
             "details": [
                 f"<strong>Local archive copies</strong> {archived_count}",
-                "<strong>Approved with local copies</strong> 3 of 6 approved sources currently resolve to checked-in local files",
+                f"<strong>Approved with local copies</strong> {approved_local_count} of {len(approved)} approved sources currently resolve to local files",
             ],
         },
         {

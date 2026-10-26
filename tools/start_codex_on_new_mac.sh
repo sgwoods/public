@@ -8,6 +8,7 @@ ACTIVE_TARGET="${HOME}/Projects-All/public"
 RECOVERY_BRANCH="codex/public-recovery-stabilization"
 RECOVERY_TARGET="${HOME}/Library/Mobile Documents/com~apple~CloudDocs/StevenWoods/public-quack-recovery"
 HOMEBREW_INSTALL_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+NODE_FORMULA="node@24"
 
 usage() {
   cat <<EOF
@@ -106,6 +107,40 @@ ensure_brew_package() {
   fi
 }
 
+node_is_supported() {
+  local version major
+  command -v node >/dev/null 2>&1 || return 1
+  version="$(node --version 2>/dev/null)" || return 1
+  [[ "$version" =~ ^v([0-9]+)\. ]] || return 1
+  major="${BASH_REMATCH[1]}"
+  [[ "$major" -ge 24 ]]
+}
+
+select_installed_node() {
+  node_is_supported && return 0
+  local brew_path prefix
+  brew_path="$(brew_bin 2>/dev/null || true)"
+  [[ -n "$brew_path" ]] || return 1
+  prefix="$("$brew_path" --prefix "$NODE_FORMULA" 2>/dev/null)" || return 1
+  [[ -x "$prefix/bin/node" ]] || return 1
+  # Versioned Homebrew Node is keg-only; do not force-link over another runtime.
+  export PATH="$prefix/bin:$PATH"
+  hash -r
+  node_is_supported
+}
+
+ensure_node() {
+  select_installed_node && return 0
+  local brew_path
+  brew_path="$(brew_bin)"
+  print_header "Installing ${NODE_FORMULA}"
+  "$brew_path" install "$NODE_FORMULA"
+  select_installed_node || {
+    echo "Node 24 or newer is still unavailable after installing $NODE_FORMULA." >&2
+    exit 1
+  }
+}
+
 install_required_toolchain() {
   print_header "Installing required toolchain"
 
@@ -115,6 +150,10 @@ install_required_toolchain() {
   ensure_brew_package jq jq
   ensure_brew_package ripgrep rg
   ensure_brew_package ghostscript gs
+  ensure_brew_package gh gh
+  ensure_node
+  echo 'GitHub authentication is separate: run gh auth login when needed; credentials are never saved in this repo.'
+  echo 'Node selection applies to this script only. See START-HERE-NEW-MAC.md for your interactive shell.'
 }
 
 check_optional_tools() {
@@ -148,10 +187,12 @@ report_dashboard_repo_paths() {
 
 fetch_public_refs() {
   local target="$1"
+  local branch="${2:-$ACTIVE_BRANCH}"
 
-  git -C "$target" fetch origin \
-    "main:refs/remotes/origin/main" \
-    "$RECOVERY_BRANCH:refs/remotes/origin/$RECOVERY_BRANCH" >/dev/null
+  git -C "$target" fetch origin "main:refs/remotes/origin/main" >/dev/null
+  if [[ "$branch" != "$ACTIVE_BRANCH" ]]; then
+    git -C "$target" fetch origin "$branch:refs/remotes/origin/$branch" >/dev/null
+  fi
 }
 
 ensure_clean_checkout() {
@@ -242,6 +283,12 @@ validate_checkout() {
   require_cmd python3
   require_cmd jq
   require_cmd rg
+  require_cmd curl
+  require_cmd gh
+  if ! select_installed_node; then
+    echo "Node 24 or newer is required. Run: bash tools/start_codex_on_new_mac.sh install" >&2
+    exit 1
+  fi
 
   print_header "Validating ${mode_label} checkout"
 
@@ -257,7 +304,7 @@ validate_checkout() {
     exit 1
   fi
 
-  fetch_public_refs "$target"
+  fetch_public_refs "$target" "$expected_branch"
   ensure_clean_checkout "$target"
 
   for relpath in "${required_files[@]}"; do
@@ -272,6 +319,8 @@ validate_checkout() {
   python3 --version
   jq --version
   rg --version | head -n 1
+  node --version
+  gh --version
   check_optional_tools
 
   print_header "Compiling Python entry points"
@@ -340,7 +389,7 @@ setup_checkout() {
   if [[ -d "$target/.git" ]]; then
     print_header "Refreshing existing ${mode_label} checkout"
     ensure_clean_checkout "$target"
-    fetch_public_refs "$target"
+    fetch_public_refs "$target" "$branch"
     git -C "$target" checkout "$branch"
     git -C "$target" pull --ff-only origin "$branch"
   else
@@ -386,4 +435,6 @@ main() {
   esac
 }
 
-main "$@"
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  main "$@"
+fi

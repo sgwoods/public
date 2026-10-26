@@ -1304,11 +1304,11 @@
       "state": "manifested",
       "duplicate_of": null,
       "fetch": {
-        "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
-        "archive_local": null,
+        "status": "fetched-remote",
+        "last_attempt": "2026-10-26",
+        "archive_local": "historic/artifacts/archive-html/us20060149633a1-2026-10-26.html",
         "shared_local": null,
-        "http_status": null,
+        "http_status": 200,
         "error": null
       },
       "analysis": {
@@ -1326,7 +1326,7 @@
           "person-jeromy-carriere",
           "org-quack"
         ],
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/us20060149633a1-2026-10-26.html",
         "canonical_url": "https://patents.google.com/patent/US20060149633A1",
         "source_id": "src-quack-2006-us20060149633a1"
       },
@@ -1388,11 +1388,11 @@
       "state": "manifested",
       "duplicate_of": null,
       "fetch": {
-        "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
-        "archive_local": null,
+        "status": "fetched-remote",
+        "last_attempt": "2026-10-26",
+        "archive_local": "historic/artifacts/archive-html/us6687734b1-2026-10-26.html",
         "shared_local": null,
-        "http_status": null,
+        "http_status": 200,
         "error": null
       },
       "analysis": {
@@ -1409,7 +1409,7 @@
           "person-steven-woods",
           "person-jeromy-carriere"
         ],
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/us6687734b1-2026-10-26.html",
         "canonical_url": "https://patents.google.com/patent/US6687734B1/en",
         "source_id": "src-quack-2004-en"
       },
@@ -1783,11 +1783,11 @@
       "state": "manifested",
       "duplicate_of": null,
       "fetch": {
-        "status": "skipped",
-        "last_attempt": "2026-03-25T00:11:05Z",
-        "archive_local": null,
+        "status": "fetched-remote",
+        "last_attempt": "2026-10-26",
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-jeromy-carriere-2026-10-26.html",
         "shared_local": null,
-        "http_status": null,
+        "http_status": 200,
         "error": null
       },
       "analysis": {
@@ -1803,7 +1803,7 @@
           "person-jeromy-carriere",
           "org-uwaterloo"
         ],
-        "archive_local": null,
+        "archive_local": "historic/artifacts/archive-html/uwaterloo-jeromy-carriere-2026-10-26.html",
         "canonical_url": "https://uwaterloo.ca/math/profiles/jeromy-carriere",
         "source_id": "src-quack-2014-jeromy-carriere"
       },

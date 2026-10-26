@@ -99,12 +99,21 @@ All of these are checked into this repository, not dependent on recovering chat.
 | `tools/render_publications.py` | BibTeX-driven publication page |
 | `tools/render_steven_sources.py`, `tools/render_steven_cv.py` | Source index/category pages and text/PostScript/PDF CV outputs |
 | `tools/start_codex_on_new_mac.sh` | `install`, `setup`, `validate`, and deliberate recovery-lane equivalents |
+| `tools/capture_archive_source.py`, `tools/check_archive_coverage.py` | Reviewed content-only captures with provenance sidecars; current source coverage and tracked-artifact/hash validation |
+| `tools/test_mac_bootstrap.py`, `tools/test_archive_capture.py` | Offline installation/selection decisions, safe captures, provenance hashes and regeneration tests |
 | `quack/tools/quack_research_pipeline.py` | `discover`, `fetch`, `analyze`, `classify`, `summarize`, `run`, `validate`; fetching requires deliberate network opt-in |
 | `quack/tools/start-quack-codex.sh` | Project launcher and continuity entry point |
 | `tools/test_repository_freshness.py`, `tools/test_activity.py`, `tools/test_private_status.py`, `tools/test_working_activity.py` | Python behavior/privacy/provenance tests |
 | `tools/test_project_freshness.cjs`, `tools/test_public_index.cjs` | Browser-side freshness, card and chart logic tests through Node's test runner |
 
 ## Artifact coverage, not just Git cleanliness
+
+October 26 follow-through: [the preservation register](ARCHIVE-PRESERVATION.md)
+records six completed content captures from the seven-record backlog below.
+Coverage is now **75/76 approved records** (Quack 6/6; Steven 21/22); LinkedIn
+remains explicitly uncaptured because public access was blocked. The following
+table is the original audit baseline, not the post-capture count. Use
+`python3 tools/check_archive_coverage.py --check` for current checked-in coverage.
 
 The seven archive source manifests contain 98 records, 76 approved. All **69
 declared local artifact references on approved records** resolve to existing,
@@ -150,9 +159,10 @@ not a Git backup failure.
 - The current full hub workflow uses Git, Python (CI: 3.12), Node (CI: 24), `gh`,
   and `curl`; setup/archive convenience tools also use `jq` and `rg`. CV PDF
   regeneration needs Ghostscript (`gs`). Checked-in PDFs do not require it to view.
-- The older Mac bootstrap installs Git/Python/jq/rg/Ghostscript, but does not yet
-  install Node or `gh`. Verify these separately before expecting full tests or
-  `--observe` to work on a fresh machine; installer parity is follow-up work.
+- The Mac bootstrap now installs Git/Python/jq/rg/Ghostscript and `gh`, and selects
+  Node 24+ (installing keg-only `node@24` if needed). It does not force-link Node,
+  alter shell profiles or authenticate GitHub. See [new-Mac setup](START-HERE-NEW-MAC.md)
+  for shell PATH and sign-in. Clean-Mac installation is not yet field-tested.
 - Source-owned exporters for other projects remain in their owning repositories.
   Approved hub outputs do not back up those projects' complete working data/code.
   Private repositories must remain private.
@@ -180,6 +190,9 @@ python3 tools/test_repository_freshness.py
 python3 tools/test_activity.py
 python3 tools/test_private_status.py
 python3 tools/test_working_activity.py
+python3 tools/test_mac_bootstrap.py
+python3 tools/test_archive_capture.py
+python3 tools/check_archive_coverage.py --check
 node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
 python3 tools/refresh_public_coordination.py --check
 python3 tools/snapshot_archive_provenance.py --check
@@ -192,6 +205,11 @@ recovery ref, then verify the ref on GitHub. Applying the recovery stash is not
 part of the normal update process. Leave it untouched unless a specific historical
 change needs deliberate reconciliation.
 
+The approved follow-through adds 17 tests (9 bootstrap, 8 archive capture), for
+**61 passing tests** locally. The bootstrap was syntax-checked; capture hashes,
+Quack validation and generated coordination were checked. These tests do not
+claim a real clean-Mac install, a new source release, or LinkedIn preservation.
+
 To inspect the saved historical patch in a new clone:
 
 ```sh
@@ -199,6 +217,8 @@ git fetch origin
 git diff origin/codex/preserved-autostash-2026-10-26^1 origin/codex/preserved-autostash-2026-10-26
 ```
 
-This audit adds the inventory and portable skill link on main; it does not
-regenerate releases, recapture remote research, install software, or change
-private/public ownership. Follow-up capture and bootstrap work remains explicit.
+The initial audit added the inventory and portable skill link. The approved
+follow-through adds the bootstrap fix, capture/coverage tools, tests, six content
+captures and their provenance; it does not install software on this Mac, sign in,
+change project releases or alter private/public ownership. The LinkedIn blocker
+and bio.link owner-side link repairs remain explicit in the preservation register.

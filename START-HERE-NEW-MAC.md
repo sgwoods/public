@@ -86,6 +86,10 @@ These tools were present and working during the portability audit:
 
 Those are the expected baseline tools for the bootstrap and validation path.
 
+October 26 update: the full hub also needs Node 24 or newer and GitHub CLI (`gh`).
+The bootstrap now installs `gh` and, when needed, Homebrew `node@24` (matching
+CI's major version). Existing usable Node 24+ installations are retained.
+
 ## Archive payload sizes from the retiring MacBook
 
 These give a rough expectation for cloned content already tracked in git:
@@ -114,8 +118,29 @@ What `setup` does now:
   - `jq`
   - `rg`
   - `gs`
+  - `gh` (GitHub CLI)
+- selects Node 24+; installs keg-only `node@24` if no suitable runtime is available
 - clones or refreshes the preferred active checkout at `~/Projects-All/public` by default
 - validates the checkout until it is usable
+
+It does not force-link Node, change shell profiles, sign in to GitHub, or store
+credentials. Its PATH selection only lasts for the script process. If your
+interactive shell still selects an older Node, run this in that shell:
+
+```bash
+eval "$(brew shellenv)"
+export PATH="$(brew --prefix node@24)/bin:$PATH"
+node --version
+gh --version
+gh auth login
+```
+
+Use `gh auth status` to check access without exposing tokens. Public-only reads
+may work unauthenticated; pushing, authenticated observations and requesting a
+Pages build require appropriate access to `sgwoods/public`. Do not commit tokens
+or `gh` credential files. `validate` checks binaries and Node's minimum version
+without installing tools or requiring sign-in. Active setup no longer depends on
+the historical recovery branch still being present on the remote.
 
 If you want a different target location:
 

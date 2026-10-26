@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "title": "Steven Gregory Woods - bio.link public profile",
+  "source_url": "https://bio.link/sgwoods",
+  "retrieved_url": "https://bio.link/sgwoods",
+  "checked_on": "2026-10-26",
+  "method": "public-browser-transcription",
+  "selector": {
+    "tag": "article",
+    "attribute": null,
+    "value": null
+  },
+  "capture_kind": "content-only-text-and-links",
+  "source_revision": null,
+  "license_note": "Steven Gregory Woods public bio.link profile. Attributed transcription of the displayed heading, expanded Short Bio and public link map; images and site code omitted. Malformed external destinations retained as observed. This is self-presented identity evidence, not independent sourcing or a raw HTML capture.",
+  "input_sha256": "f88d3137b3a38742241731ba14666bdaf43305f75bc41bcd26c5ee027343603c",
+  "limitations": "Not a byte-for-byte page, image, styling or script archive. Capture date is not the source publication date.",
+  "capture_sha256": "90fcd9024d8746e110996a5e670f6032db2615e02a91bc09dfe7ae48b33a4788"
+}

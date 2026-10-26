@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "title": "US20060149633A1 - System and method for advertising with an internet voice portal",
+  "source_url": "https://patents.google.com/patent/US20060149633A1",
+  "retrieved_url": "https://patents.google.com/patent/US20060149633A1",
+  "checked_on": "2026-10-26",
+  "method": "public-http",
+  "selector": {
+    "tag": "article",
+    "attribute": "class",
+    "value": "result"
+  },
+  "capture_kind": "content-only-text-and-links",
+  "source_revision": null,
+  "license_note": "Patent publication text and public bibliographic data via Google Patents. Attribution and source links retained; no claim of rights in the Google page design or third-party material.",
+  "input_sha256": "5db6c76a5bb7fbfea19bc8e23e9b6a2cb0639fba988630f96aef84a621ba1be4",
+  "limitations": "Not a byte-for-byte page, image, styling or script archive. Capture date is not the source publication date.",
+  "capture_sha256": "c1c6d001c2539f68d369fc880e1c249ababff85531ecab5ce60decc89a32f12a"
+}

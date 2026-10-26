@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "steven-woods-research",
-  "handoff_generated_at": "2026-03-24T23:50:00Z",
+  "handoff_generated_at": "2026-10-26T22:28:46Z",
   "items_for_public": [
     {
       "source_id": "src-steven-2023-riddick-show",
@@ -28,6 +28,9 @@
     },
     {
       "question": "Continue verifying exact original hosts for older Quack-era profile articles."
+    },
+    {
+      "question": "October 26 preservation checkpoint: 21 of 22 approved records have local artifacts. LinkedIn still has no local content copy because ordinary public access returned HTTP 999. See ARCHIVE-PRESERVATION.md for capture scopes and safe next steps."
     }
   ]
 }

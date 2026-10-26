@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "title": "Steve Woods - Inovia team profile",
+  "source_url": "https://www.inovia.vc/team/steve-woods/",
+  "retrieved_url": "https://www.inovia.vc/team?person=Steve%20Woods",
+  "checked_on": "2026-10-26",
+  "method": "public-browser-transcription",
+  "selector": {
+    "tag": "article",
+    "attribute": null,
+    "value": null
+  },
+  "capture_kind": "content-only-text-and-links",
+  "source_revision": null,
+  "license_note": "Inovia Capital profile. Attributed transcription of the public profile biography visible in the browser; team grid, investments panel, images and site code omitted. Copyright retained by source; this is not a raw HTML capture or independent verification of its claims.",
+  "input_sha256": "e9433ae7f463984a8122cfa22a2353b5fab4a818a70cfaedc851d15e1f46604f",
+  "limitations": "Not a byte-for-byte page, image, styling or script archive. Capture date is not the source publication date.",
+  "capture_sha256": "3d307c5694edd213d4d017727ecddb1e0cae3a249d691520771b91fe4322e0cb"
+}
