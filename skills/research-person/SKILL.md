@@ -29,7 +29,7 @@ Typical tasks:
    - `source-manifest.json`
    - `public-handoff.json`
 2. Read:
-   - `/Users/stevenwoods/GitPages/public/ARCHIVE_PROJECT_INTERFACE.md`
+   - [ARCHIVE_PROJECT_INTERFACE.md](../../ARCHIVE_PROJECT_INTERFACE.md) in this checkout
    - [references/source-hierarchy.md](references/source-hierarchy.md)
 3. If a Wikipedia-style draft is requested, also read:
    - [references/wikipedia-biography-drafts.md](references/wikipedia-biography-drafts.md)

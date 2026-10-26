@@ -11,6 +11,7 @@ It is not just a standalone project site. Its job is to provide one clear public
 
 Start here in this repo:
 
+- [REPOSITORY-PERSISTENCE.md](REPOSITORY-PERSISTENCE.md): what is saved, tool/interface map, recovery snapshot, and remaining preservation gaps.
 - [PROJECT-SUITE-OVERVIEW.md](PROJECT-SUITE-OVERVIEW.md)
 - [REPOSITORY-HANDOFFS.md](REPOSITORY-HANDOFFS.md)
 - [PRIVATE-PROJECT-STATUS.md](PRIVATE-PROJECT-STATUS.md)
