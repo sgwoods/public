@@ -54,7 +54,7 @@ Current branch snapshot: `main`
 
 | Project | Surface Class | Visibility | Priority | Current Manifest State |
 | --- | --- | --- | --- | --- |
-| [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.1; Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates. |
+| [Aurora Galactica](aurora-galactica.html) | Standalone repo export | Public | Protect public surfaces | 1.4.2; 1.4.2 is user-approved for production from accepted beta5, after final production gates. The deployed lane build-info.json is the authority for current identity. Expert consistency remains limited. |
 | [Star Swarm](star-swarm.html) | Standalone repo / hosted build import | Public | Protect public surfaces | Build cc463a0; Playable formation shooter and promptable content system; canonical architecture and roadmap remain in the source repository. |
 | [Windigo Portfolio Portal](confidential-project.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Reviewable property operations and reconciliation |
 | [Financial Planner](financial-planner.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Evidence-backed planning and explicit assumptions |
@@ -79,7 +79,7 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Protect public surfaces
 - Time-energy-value: energy medium; value high; horizon short
-- Current manifest state: Current release: 1.4.1. Current focus: Aurora 1.4.1 is the production quality release for hosted `/production`, promoted from the accepted 1.4.1 beta review with Stage 3 keepers, audio/theme clarity, sign-in repair, and stronger release gates.. Snapshot source date: June 11, 2026.
+- Current manifest state: Current release: 1.4.2. Current focus: 1.4.2 is user-approved for production from accepted beta5, after final production gates. The deployed lane build-info.json is the authority for current identity. Expert consistency remains limited.. Snapshot source date: October 24, 2026.
 - Likely current work: Public main at 148f82e (October 15) records a beta dry-run pass and music acceptance hold. The live production build-info.json still identifies Aurora 1.4.1 build 1164, source 54398ff5, from June 11; the older exported production date is accurate.
 - Next step: On the active machine, review the full working history and prepare an approved daily aggregate report under WORKING-ACTIVITY-INTERFACE.md after the AI Briefing setup. Keep production source metadata tied to the released build; this does not authorize promotion or change release ownership.
 - Quality: This is the strongest product-style public surface in the suite, so small inconsistencies are disproportionately expensive.
