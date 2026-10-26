@@ -1,6 +1,6 @@
 # Project Suite Overview
 
-Updated: `2026-10-22`
+Updated: `2026-10-26`
 
 Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Thirteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.
 
@@ -206,14 +206,14 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Snapshot source date: May 11, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Snapshot source date: October 26, 2026.
 - Evidence status: Evidence baseline: 22 approved / 0 deferred / 0 rejected (22 total).
 - Likely current work: Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.
-- Next step: Preserve the remaining URL-backed baseline pages and reconcile the review-ledger-only captures that should become formal source records.
-- Quality: One of the best organized archive areas, with clear role boundaries and strong continuity surfaces.
+- Next step: Obtain a user-approved public-only LinkedIn profile export or retry ordinary public access; then reconcile review-ledger-only captures without widening into private account data.
+- Quality: Clear role boundaries and continuity surfaces; 21 of 22 approved records now have local artifacts. New Inovia and bio.link copies are explicit public-browser transcriptions, not original page dumps.
 - Coordination note: Use this as the canonical person-centric layer, not a dumping ground for company-depth material.
-- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
-- Public links: [Project page](https://sgwoods.github.io/public/steven-woods-research.html), [Open one-page CV](steven-woods-cv.pdf), [Open work plan](steven-woods-research/WORK-PLAN.md), [Open review ledger](steven-woods-research/research/media-sources-review.md)
+- Drift note: October 26 added Inovia, bio.link and attributed Wikipedia content captures. LinkedIn remains uncaptured; capture dates do not replace original source/review dates. Committed content fingerprints do not prove multimedia completeness.
+- Public links: [Project page](https://sgwoods.github.io/public/steven-woods-research.html), [Open one-page CV](steven-woods-cv.pdf), [Open work plan](steven-woods-research/WORK-PLAN.md), [Open review ledger](steven-woods-research/research/media-sources-review.md), [Open preservation register](ARCHIVE-PRESERVATION.md)
 
 ### Steven at Google Canada Archive
 
@@ -281,13 +281,13 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium-high; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Snapshot source date: May 11, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Targeted follow-up on AOL by Phone, investor outcomes, first-party capture gaps, and preserved press. Snapshot source date: October 26, 2026.
 - Evidence status: Evidence baseline: 6 approved / 14 deferred / 0 rejected (20 total).
 - Likely current work: Preservation and source-completeness work around AOL by Phone, investor outcomes, first-party capture gaps, and stronger preserved press.
 - Next step: Keep working campaign-by-campaign, preserving fragile or first-party evidence before widening the editorial surface.
-- Quality: A strong archive workflow is in place, but evidence completeness still matters more than polish.
+- Quality: All 6 approved records now have local content captures, with 8 local paths across all 20 records; 14 deferred leads still need evidence work. The approved-copy page metric is calculated rather than hard-coded.
 - Coordination note: Treat the bridge record as compatibility, not as a second canonical home.
-- Drift note: October 3 provenance repair records the archive's actual committed content and a fingerprint that excludes its own manifest. Dates retain the source history; this repair does not claim new research or completeness.
+- Drift note: October 26 preserved both approved patent pages and the Jeromy Carriere Waterloo profile, retaining original dates and approval labels. Source commits identify committed archive content, not a new historical discovery or complete image/PDF preservation.
 - Public links: [Project page](https://sgwoods.github.io/public/quack-com.html), [Open working repository](quack/), [Open work plan](quack/WORK-PLAN.md), [Open run report](quack/research/run-report.md)
 
 ### Kinitos / NeoEdge Networks Archive
