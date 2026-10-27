@@ -1,0 +1,39 @@
+name: Validate Content Inventory
+
+on:
+  push:
+    branches: ["codex/content-inventory-*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Retain review-branch context for generated documentation checks
+        env:
+          REVIEW_BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          if [ "$(git branch --show-current)" != "$REVIEW_BRANCH" ]; then
+            git switch -c "$REVIEW_BRANCH"
+          fi
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install schema test dependency
+        run: python3 -m pip install -r tools/requirements-content-tests.txt
+      - name: Test and validate without publishing
+        run: |
+          python3 tools/test_content_inventory.py
+          python3 tools/test_person_content.py
+          python3 tools/render_person_content.py --check
+          python3 tools/content_inventory.py check --schema
+          python3 tools/check_archive_coverage.py --check
+          python3 tools/snapshot_archive_provenance.py --check
+          python3 tools/refresh_public_coordination.py --check

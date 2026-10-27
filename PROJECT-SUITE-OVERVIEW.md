@@ -1,6 +1,6 @@
 # Project Suite Overview
 
-Updated: `2026-10-26`
+Updated: `2026-10-27`
 
 Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Thirteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.
 
@@ -41,6 +41,7 @@ Current branch snapshot: `main`
 
 ### Reference Pages
 
+- [Repository content inventory](CONTENT-INVENTORY.md): Text, recordings, transcripts, file provenance and machine-readable source discovery across the full versioned repository.
 - [Project suite overview](project-suite-overview.html): Portfolio map, public/private surface guide, and reprioritization layer across the full project suite.
 - [Profile](steven-woods-profile.html): Compact executive profile with current links to LinkedIn, Inovia, and the open archive projects.
 - [Academic ancestry](academic.html): Direct advisor lineage with links to the Mathematics Genealogy Project.
@@ -206,10 +207,10 @@ Current branch snapshot: `main`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Snapshot source date: October 26, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Snapshot source date: October 27, 2026.
 - Evidence status: Evidence baseline: 22 approved / 0 deferred / 0 rejected (22 total).
 - Likely current work: Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.
-- Next step: Obtain a user-approved public-only LinkedIn profile export or retry ordinary public access; then reconcile review-ledger-only captures without widening into private account data.
+- Next step: Use the content inventory to recover prior private transcripts, review existing first-person Q&A and resolve source identity/edition gaps. Keep LinkedIn exports and unreviewed transcripts in a private working repo; public copies need explicit approval.
 - Quality: Clear role boundaries and continuity surfaces; 21 of 22 approved records now have local artifacts. New Inovia and bio.link copies are explicit public-browser transcriptions, not original page dumps.
 - Coordination note: Use this as the canonical person-centric layer, not a dumping ground for company-depth material.
 - Drift note: October 26 added Inovia, bio.link and attributed Wikipedia content captures. LinkedIn remains uncaptured; capture dates do not replace original source/review dates. Committed content fingerprints do not prove multimedia completeness.

@@ -2,7 +2,7 @@
 
 Working source file for a future public page covering interviews, podcasts, talks, presentations, profiles, and third-party media mentions involving Steven Gregory Woods.
 
-Last updated: 2026-05-10
+Last updated: 2026-10-27
 
 ## Source-of-truth rule
 
@@ -12,6 +12,39 @@ Use this file together with the manifest triad intentionally:
 - this review ledger is the broader working file for supporting captures, blocked preservation targets, and source candidates not yet promoted into the manifest
 
 That means a checked-in local capture may legitimately appear here before it becomes a formal source-manifest entry. Company-overlap items may also remain here as person-centric context even when deeper company treatment belongs in Quack or Kinitos / NeoEdge.
+
+## Content discovery checkpoint
+
+The approved baseline remains 22 sources; 21 have local artifacts. LinkedIn alone
+is uncaptured. Inovia, bio.link and Wikipedia were captured on October 26; their
+original review/source dates were not replaced by capture dates. See
+[the preservation register](../../ARCHIVE-PRESERVATION.md) for capture scope.
+
+Use [the generated repository inventory](../../CONTENT-INVENTORY.md) and
+[`data/content/sources.json`](../../data/content/sources.json) for explicit text,
+recording, transcript, attribution and freshness states. The root-relative paths
+there are authoritative discovery links; the abbreviated `archive-html/` paths
+in the historical tables below mean `historic/artifacts/archive-html/` here.
+
+- Riddick's saved RSS feed contains episode metadata and an audio enclosure; the
+  Apple capture also contains embedded feed/episode metadata. Neither is a
+  transcript or a locally saved audio recording.
+- The Springboard 2013 Q&A already contains publisher-attributed answers by
+  Dr. Woods. It is readable first-person interview text, not audio verification.
+- The Research Discovery Days video and event page are different kinds of link,
+  not automatically contradictory sources. Reconfirm their exact pairing.
+- The 2012 SlideShare deck has an unresolved identity concern: marketing/revenue
+  material and possible confusion with a namesake. Do not use it for Steven's
+  voice, views or quotations until primary identity evidence is reviewed.
+- Local SEI copies include Software Architectural Transformation and a related
+  CORUM II report. Match editions before treating them as exact proceedings copies.
+- No full transcript is catalogued in this public baseline. Private work may
+  exist on another machine; recover it before rerunning transcription.
+
+Unreviewed transcripts, LinkedIn exports, cookies, private contact data and
+account archives must stay outside this public checkout in private staging.
+An `incoming/` or `historic/` folder is not a privacy boundary. Source approval
+is not speaker attribution, style-corpus approval or republication permission.
 
 ## Inclusion buckets
 
@@ -38,14 +71,14 @@ That means a checked-in local capture may legitimately appear here before it bec
 | Type | Title | Approx. date | URL | Evidence / notes | Local archive |
 | --- | --- | --- | --- | --- | --- |
 | profile | Steven Woods | reviewed 2026-04-01 | https://www.linkedin.com/in/stevenwoods/ | Major self-approved baseline profile for current role, employer sequence, and public identity. Useful as a baseline, not as the sole independent source. | none |
-| profile | Steve Woods | reviewed 2026-04-01 | https://www.inovia.vc/team/steve-woods/ | Current first-party employer profile summarizing founder history, Google Canada leadership, and current Inovia role. | none |
+| profile | Steve Woods | reviewed 2026-04-01; captured 2026-10-26 | https://www.inovia.vc/team/steve-woods/ | Redirects to the new team modal. Public-browser transcription of the biography, not a raw page capture. | `archive-html/inovia-team-steve-woods-2026-10-26.html` and capture sidecar |
 | profile | Steven Woods - Alumni and Friends | 2021 | https://alumni.usask.ca/get-involved/achieve/2021/woods.php | USask distinguished alumni feature/profile. | `archive-html/usask-alumni-profile-2021.html` |
 | profile | Steven Woods \| Mathematics \| University of Waterloo | 2010-era profile page | https://uwaterloo.ca/math/profiles/steven-woods | J.W. Graham Medal profile page. | `archive-html/uwaterloo-jw-graham-profile.html` |
 | profile | Inovia welcomes two world-class partners ... Steven Woods as Chief Technology Officer | 2021-07-23 | https://www.inovia.vc/inovia-conversations/inovia-welcomes-two-world-class-partners-krista-skalde-joins-as-chief-talent-officer-and-steven-woods-as-chief-technology-officer/ | Strong first-party profile/announcement. | `archive-html/inovia-welcomes-steven-woods.html` |
-| profile | Steven Woods Keynote presentation | 2012-10-03 | https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346 | SlideShare deck; createdAt found in page payload. Event context still needs tightening. | `archive-html/slideshare-steven-woods-keynote.html` |
+| profile | Steven Woods Keynote presentation | 2012-10-03 | https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346 | Identity unresolved; marketing/revenue-generation deck may belong to a namesake. Existing manifest approval is not approval for voice use. Verify subject and event before extraction or attribution. | `archive-html/slideshare-steven-woods-keynote.html` |
 | profile | about.me/sgw | current self-profile | https://about.me/sgw | Useful bio hub, but likely belongs in a supporting links section rather than the main public page. | `archive-html/about-me-sgw.html` |
-| profile | bio.link / sgwoods | reviewed 2026-04-01 | https://bio.link/sgwoods | Live link hub for current public profile destinations. Direct archival capture remains difficult, but it is useful as a baseline link map. | none |
-| profile | Steven Woods | reviewed 2026-04-01 | https://en.wikipedia.org/wiki/Steven_Woods | Public synthesis page useful for comparison, gap-finding, and future Wikipedia-style draft work. | none |
+| profile | bio.link / sgwoods | reviewed 2026-04-01; captured 2026-10-26 | https://bio.link/sgwoods | Public-browser transcription of heading, Short Bio and link map. Malformed outbound links preserved as observed; owner-side repairs remain pending. | `archive-html/bio-link-sgwoods-2026-10-26.html` and capture sidecar |
+| profile | Steven Woods | reviewed 2026-04-01; captured 2026-10-26 | https://en.wikipedia.org/wiki/Steven_Woods | Secondary synthesis, not Steven's own voice. Revision 1368795449; attribution and CC BY-SA license retained. | `archive-html/wikipedia-steven-woods-2026-10-26.html` and capture sidecar |
 
 ## Google-era media mentions
 
@@ -67,7 +100,7 @@ That means a checked-in local capture may legitimately appear here before it bec
 | media-mention | AOL Gets Vocal, Buys Quack.com | 2000 | https://www.ecommercetimes.com/story/aol-gets-vocal-buys-quack-com-4185.html | Third-party coverage of the Quack acquisition. | archive fetch blocked |
 | media-mention | EARFUL OF INTERNET / Voice portals read news and other information via phone to users on the go | 2000 | https://www.sfgate.com/business/article/EARFUL-OF-INTERNET-Voice-portals-read-news-and-2758206.php | Broader voice-portal coverage naming Quack.com as a key company in the space. | `archive-html/sfgate-earful-of-internet-2000.html` |
 | media-mention | The Net Finds Its Voice | 2001 | https://www.computerworld.com/article/1575186/the-net-finds-its-voice.html | Voice portal feature coverage from the post-exit period, useful as broader Quack market context. | `archive-html/computerworld-net-finds-voice-2001.html` |
-| media-mention | SEI Architecture Practices Propel Successful Startup | 2002-era retrospective | https://www.sei.cmu.edu/library/abstracts/news-at-sei/feature11q02.cfm | Historical retrospective connecting SEI work to the Quack/Kinitos startup path. | local copy not yet captured |
+| media-mention | SEI Architecture Practices Propel Successful Startup | 2002-era retrospective | https://www.sei.cmu.edu/asset_files/newsletter/2002_102_001_413759.pdf | Historical retrospective connecting SEI work to the Quack/Kinitos startup path. Canonical PDF URL is taken from the owning SEI source manifest; old feature11q02 URL is historical. | [SEI-owned PDF](../../sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf) |
 | media-mention | Risking it all for dot-com gold in California | archived 2007 capture of older article | https://web.archive.org/web/20070806021124/http://www.digitalmooselounge.com/press/press_5.htm | Cited in secondary biographies as a Steve/Quack profile article; needs direct archive verification. | none |
 
 ## Kinitos / NeoEdge era media mentions
@@ -75,14 +108,15 @@ That means a checked-in local capture may legitimately appear here before it bec
 | Type | Title | Approx. date | URL | Evidence / notes | Local archive |
 | --- | --- | --- | --- | --- | --- |
 | media-mention | VSLive Wrap: Microsoft shines a spotlight on PC clients | 2004-02-09 | https://www.infoworld.com/article/2223377/vslive-wrap-microsoft-shines-a-spotlight-on-pc-clients.html | InfoWorld article mentioning Kinitos application management for .NET smart clients. | none |
-| media-mention | Bushnell joins NeoEdge board | 2007-05 | https://www.gamespot.com/articles/bushnell-joins-neoedge-board/1100-6171273/ | Third-party NeoEdge coverage around Nolan Bushnell joining the board. | archive fetch pending |
-| media-mention | NeoEdge raises $4M for in-game video ads from game-focused VC firm | 2009 | https://gamesbeat.com/neoedge-raises-4m-for-in-game-video-ads-from-game-focused-vc-firm/ | Venture/media coverage of NeoEdge financing and ad-tech direction. | archive fetch pending |
+| media-mention | Bushnell joins NeoEdge board | 2007-05 | https://www.gamespot.com/articles/bushnell-joins-neoedge-board/1100-6171273/ | Third-party NeoEdge coverage around Nolan Bushnell joining the board. Reader capture exists in the owning company archive; not a raw full-site mirror. | [Kinitos/NeoEdge reader capture](../../kinitos-neoedge/historic/artifacts/archive-html/bushnell-joins-neoedge-board-2007-05-22-gamespot-reader.html) |
+| media-mention | NeoEdge raises $4M for in-game video ads from game-focused VC firm | 2009 | https://gamesbeat.com/neoedge-raises-4m-for-in-game-video-ads-from-game-focused-vc-firm/ | Venture/media coverage of NeoEdge financing and ad-tech direction. Reader capture exists in the owning company archive. | [Kinitos/NeoEdge reader capture](../../kinitos-neoedge/historic/artifacts/archive-html/neoedge-raises-4m-2009-09-29-gamesbeat-reader.html) |
 | media-mention | NeoEdge merges with Offspring, expands into game creation | 2009 | https://www.gamedeveloper.com/game-platforms/neoedge-merges-with-offspring-expands-into-game-creation | Industry coverage of NeoEdge strategy shift. | `archive-html/gamedeveloper-neoedge-merges-offspring-2009.html` |
 
 ## Still to verify / pursue
 
 - Exact canonical event page and date for the `Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community` YouTube video
 - Better archival copy for the original University Affairs article if accessible
-- Direct archival copies for TheStreet, eCommerceTimes, GameSpot, GamesBeat, and GameDeveloper articles
+- TheStreet and eCommerceTimes remain uncaptured here. GameSpot/GamesBeat reader captures already exist in Kinitos/NeoEdge; a GameDeveloper support capture already exists here. Review completeness, source identity and edition rather than requesting the same capture again
 - Additional Quack.com-era profile/interview coverage beyond acquisition articles
-- Possible Eloqua / Nudge.ai era interviews if they fit the scope cleanly
+- Exclude Eloqua / Nudge.ai namesake leads from the person/voice corpus unless primary identity evidence establishes relevance; never merge biographies on name alone
+- Recover existing private transcripts, obtain the complete sanitized 32-candidate list, and follow the [corrected iMac handoff](../../IMAC-CONTENT-HANDOFF.md)

@@ -4,3 +4,12 @@
 __pycache__/
 **/__pycache__/
 *.pyc
+
+# Defense in depth, not a privacy boundary: never put these in this checkout.
+.venv-voice/
+.private/
+private/
+**/private-transcripts/
+**/linkedin-exports/
+**/Shares.csv
+**/cookies.txt

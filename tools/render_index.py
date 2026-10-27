@@ -67,6 +67,12 @@ LEGACY_ARCHIVES = [
 ]
 REFERENCE_PAGES = [
     {
+        "title": "Repository content inventory",
+        "description": "Text, recordings, transcripts, file provenance and machine-readable source discovery across the full versioned repository.",
+        "page_path": "CONTENT-INVENTORY.md",
+        "button_label": "Open inventory",
+    },
+    {
         "title": "Project suite overview",
         "description": "Portfolio map, public/private surface guide, and reprioritization layer across the full project suite.",
         "page_path": "project-suite-overview.html",
@@ -663,6 +669,7 @@ def render() -> str:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Woods Public Pages</title>
+    <link rel="alternate" type="application/json" href="data/content/catalog.json" title="Repository content catalog">
     <link rel="stylesheet" href="assets/public-site.css">
     <script src="assets/public-index.js" defer></script>
 </head>

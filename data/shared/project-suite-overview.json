@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-26",
+  "updated_at": "2026-10-27",
   "summary": "Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Thirteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
@@ -220,7 +220,7 @@
       "value": "high",
       "time_horizon": "medium",
       "likely_current_work": "Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.",
-      "next_step": "Obtain a user-approved public-only LinkedIn profile export or retry ordinary public access; then reconcile review-ledger-only captures without widening into private account data.",
+      "next_step": "Use the content inventory to recover prior private transcripts, review existing first-person Q&A and resolve source identity/edition gaps. Keep LinkedIn exports and unreviewed transcripts in a private working repo; public copies need explicit approval.",
       "quality_note": "Clear role boundaries and continuity surfaces; 21 of 22 approved records now have local artifacts. New Inovia and bio.link copies are explicit public-browser transcriptions, not original page dumps.",
       "drift_note": "October 26 added Inovia, bio.link and attributed Wikipedia content captures. LinkedIn remains uncaptured; capture dates do not replace original source/review dates. Committed content fingerprints do not prove multimedia completeness.",
       "coordination_note": "Use this as the canonical person-centric layer, not a dumping ground for company-depth material.",
