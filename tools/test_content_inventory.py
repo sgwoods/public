@@ -63,6 +63,20 @@ class InventoryTests(unittest.TestCase):
         self.assertEqual(metadata["README.md"]["revision"], first)
         self.assertEqual(metadata["new.txt"]["revision"], self.run_git("rev-parse", "HEAD"))
 
+    def test_history_includes_files_created_only_by_merge_resolution(self):
+        base = self.run_git("branch", "--show-current")
+        self.run_git("switch", "-c", "side")
+        self.write("side.md", "side")
+        self.commit()
+        self.run_git("switch", base)
+        self.write("main.md", "main")
+        self.commit()
+        self.run_git("-c", "user.name=Inventory Test", "-c", "user.email=test@example.invalid", "merge", "--no-commit", "--no-ff", "side")
+        self.write("merge-only.md", "created in merge resolution")
+        self.commit()
+        self.assertEqual(ci.history(self.root)["merge-only.md"]["revision"], self.run_git("rev-parse", "HEAD"))
+        self.assertNotIn("preview_only_uncommitted_inputs", json.loads(self.build()[ci.OUTPUTS[0]]))
+
     def test_catalog_outputs_do_not_cause_recursive_churn(self):
         first = self.build()
         for name, contents in first.items():

@@ -83,7 +83,7 @@ def private_path(path):
 
 def history(root):
     # NUL-delimited Git output preserves spaces, tabs and non-ASCII path names.
-    tokens = git(root, "log", "--format=%x00%H%x00%cI", "--name-only", "-z", "--no-renames").decode().split("\0")
+    tokens = git(root, "log", "--format=%x00%H%x00%cI", "--name-only", "-z", "--no-renames", "--diff-merges=first-parent").decode().split("\0")
     result, revision, timestamp = {}, None, None
     i = 0
     while i < len(tokens):
@@ -210,7 +210,9 @@ def artifact_inventory(root, policy, allow_dirty=False):
         kind, access, mime = classify(name, raw)
         provenance = dict(revisions.get(name, {}))
         provenance["basis"] = "git_content_change_not_source_publication_or_external_check"
-        if name in dirty or not provenance.get("revision"):
+        if not provenance.get("revision") and name not in dirty:
+            raise ValueError("Cannot resolve committed file provenance; inspect Git history: " + name)
+        if name in dirty:
             provenance.update(revision=None, committed_at=None, state="uncommitted")
         else:
             provenance["state"] = "committed"
