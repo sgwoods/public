@@ -16,7 +16,7 @@
         "duration_seconds_from_feed": 5104,
         "other_speakers": ["David Kinley"]
       }],
-      "transcript": {"state": "private_asr_in_progress", "public_artifacts": [], "production_summary": "data/content/production/riddick-2026-10-27.json", "speaker_attribution_verified": false, "review_required": ["listen_and_correct", "verify_speaker_turns", "review_names_and_dates", "rights_and_publication_approval"]},
+      "transcript": {"state": "private_draft_unreviewed", "public_artifacts": [], "production_summary": "data/content/production/riddick-2026-10-27.json", "speaker_attribution_verified": false, "review_required": ["listen_and_correct", "verify_speaker_turns", "check_chunk_boundaries", "review_names_and_dates", "rights_and_publication_approval"]},
       "research_note": "No prior transcript is known to Steven. User approved local private regeneration. Current publisher feed supplies a new public enclosure for the same episode GUID; the old path returns 403. Audio/transcript bytes stay outside this public repository."
     },
     "steven-woods-research/src-steven-2023-cscan-collaboration-talk": {

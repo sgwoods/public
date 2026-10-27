@@ -21,7 +21,7 @@ parallel archive-production effort.
 
 | Lane | Result / Boundary | Evidence |
 | --- | --- | --- |
-| Riddick | Publisher feed supplies a new audio enclosure for the same episode GUID; the old path returns 403. The full audio is 5,104.95 seconds. Local-only ASR uses pinned model files and resumable private checkpoints. The status report, not this narrative, states completion. No reviewed/public transcript or verified speaker attribution is claimed. | [Media evidence](data/content/checks/2026-10-27-media-research.json), [sanitized production state](data/content/production/riddick-2026-10-27.json) |
+| Riddick | Publisher feed supplies a new audio enclosure for the same episode GUID; the old path returns 403. All nine local-only ASR chunks completed for the 5,104.95-second recording, producing a private, unreviewed 16,705-word draft. Pinned model files and resumable checkpoints are recorded. No reviewed/public transcript or verified speaker attribution is claimed. | [Media evidence](data/content/checks/2026-10-27-media-research.json), [sanitized production state](data/content/production/riddick-2026-10-27.json) |
 | Existing SEI papers | Both local PDFs equal the official institutional downloads. Keep author-form/edition caveats; matching titles or page counts do not prove a final proceedings edition. Private reading extractions were produced. | [Edition evidence](data/content/checks/2026-10-27-text-research.json), [reading-copy metadata](data/content/production/text-recovery-2026-10-27.json) |
 | Discipline paper | A public institutional manuscript candidate was privately obtained and extracted. It is not a verified final journal edition or a new public full-text export. | [Reading-copy metadata](data/content/production/text-recovery-2026-10-27.json) |
 | Tradeoff paper | Candidate draft author lists differ from the publisher-deposited record. Do not treat these as exact-edition/personal-authorship proof. | [Edition evidence](data/content/checks/2026-10-27-text-research.json) |
@@ -45,7 +45,7 @@ correct words, names, dates or attribution.
 
 ## Next Gates
 
-1. Finish/check the full private Riddick draft, then listen/correct and verify
+1. Listen/correct the complete private Riddick draft and verify
    speaker turns, names, dates and chunk boundaries before any attributed output.
 2. Review the private reading pack against the preserved source bytes and label
    editions explicitly. Do not publicize full copyrighted derivatives without a

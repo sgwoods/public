@@ -109,7 +109,7 @@
       "title": "Private interview production and verified media",
       "value": "Highest likely value for source-faithful first-person content; Riddick is the first candidate.",
       "effort": "Recovery triage approximately 15-30 minutes once a private location is supplied; fresh processing and speaker review require a separate estimate after inspecting the roughly 85-minute Riddick recording",
-      "next_action": "Riddick local ASR is underway; review before any usable export. Keep other media identities/durations distinct; do not transcribe an unrelated speaker.",
+      "next_action": "The full private Riddick ASR draft is ready for listening and speaker review before any usable export. Keep other media identities/durations distinct; do not transcribe an unrelated speaker.",
       "stop_gate": "No raw ASR text, private paths or speaker/style approval enters the public repository"
     },
     {
@@ -1089,13 +1089,14 @@
       "reason": "transcript_gap",
       "title": "Steven Woods - Partner and Chief Technology Officer, Inovia Capital",
       "canonical_url": "https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947",
-      "state": "in_progress",
+      "state": "ready",
       "batch_id": "private-talks",
-      "decision": "Publisher's current feed supplied a new enclosure for the same episode GUID. Audio downloaded privately and local, resumable ASR is underway. No prior transcript is known; no public transcript or speaker approval is claimed.",
+      "decision": "Publisher's current feed supplied a new enclosure for the same episode GUID. The complete 85-minute recording was transcribed locally into a private, unreviewed 16,705-word draft. Ready for listening, chunk-boundary and speaker review, not resolved: no public transcript or speaker approval is claimed.",
       "evidence_paths": [
         "steven-woods-research/historic/artifacts/archive-html/apple-riddick-show.html",
         "steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml",
-        "data/content/checks/2026-10-27-media-research.json"
+        "data/content/checks/2026-10-27-media-research.json",
+        "data/content/production/riddick-2026-10-27.json"
       ],
       "question_ids": [
         "Q1",
