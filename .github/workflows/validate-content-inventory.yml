@@ -16,6 +16,13 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
+      - name: Retain review-branch context for generated documentation checks
+        env:
+          REVIEW_BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          if [ "$(git branch --show-current)" != "$REVIEW_BRANCH" ]; then
+            git switch -c "$REVIEW_BRANCH"
+          fi
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"

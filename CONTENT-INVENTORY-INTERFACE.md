@@ -178,3 +178,8 @@ To maintain the inventory:
 uncommitted inputs. No update request alters source-owned status. The normal hub
 workflow refreshes this inventory after committing its observations/coordination,
 then explicitly requests Pages publication, **only after this work is merged**.
+It runs on every `main` push (all files are inventory inputs), daily and on manual
+dispatch. Its token-authenticated bot commits do not recursively trigger the
+workflow. The review-branch validation workflow has read-only repository access
+and never publishes. PR checks attach the exact head SHA to its branch name for
+the existing branch-labelled overview checks; they do not merge it into main.
