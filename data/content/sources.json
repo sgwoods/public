@@ -30,7 +30,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 88,
+          "line": 131,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -88,7 +88,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 87,
+          "line": 130,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -146,7 +146,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 67,
+          "line": 75,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -256,7 +256,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 89,
+          "line": 132,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -314,7 +314,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 65,
+          "line": 73,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -372,7 +372,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 90,
+          "line": 133,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -482,7 +482,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 77,
+          "line": 120,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -540,7 +540,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 90,
+          "line": 133,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -598,7 +598,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 77,
+          "line": 120,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -656,7 +656,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 59,
+          "line": 67,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -1096,7 +1096,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 66,
+          "line": 74,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -1256,12 +1256,6 @@
       "owner": "kinitos-neoedge",
       "recordings": [],
       "related_external_url": null,
-      "review_ledger_refs": [
-        {
-          "line": 64,
-          "path": "steven-woods-research/research/media-sources-review.md"
-        }
-      ],
       "source_date": {
         "display": "April 2023",
         "precision": "month",
@@ -1472,7 +1466,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 111,
+          "line": 154,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -1965,7 +1959,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 112,
+          "line": 155,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -2266,7 +2260,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 91,
+          "line": 134,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -2313,7 +2307,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 110,
+          "line": 153,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -2331,6 +2325,64 @@
       "text_availability": [],
       "text_role": "metadata_only",
       "title": "VSLive Wrap: Microsoft shines a spotlight on PC clients",
+      "transcript": {
+        "public_artifacts": [],
+        "state": "not_catalogued"
+      }
+    },
+    {
+      "artifact_provenance": [
+        {
+          "basis": "git_content_change_not_source_publication_or_external_check",
+          "committed_at": "2026-03-24T19:55:22-04:00",
+          "path": "steven-woods-research/historic/artifacts/archive-html/uwaterloo-research-discovery-days.html",
+          "revision": "68c3dab0a56fe940ef22c2ecfa3a970f5059731b",
+          "sha256": "b7f09ad197ba2d3193ddcea239e9ec2d441d3af8814053807b6b9f0610e75f01",
+          "state": "committed"
+        }
+      ],
+      "authorship": "not_verified_for_voice",
+      "canonical_url": "https://uwaterloo.ca/math-innovation/events/math-and-computing-research-discovery-days",
+      "content_id": "ledger:333f4a9ca944875dcbcd",
+      "freshness": {
+        "assessment": "historical_not_age_expired",
+        "days_since_successful_check": null,
+        "last_successful_external_check": null,
+        "policy": "historical"
+      },
+      "identity_review": "not_assessed_for_voice",
+      "local_artifacts": [
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-research-discovery-days.html"
+      ],
+      "owner": "steven-woods-research",
+      "recordings": [],
+      "related_external_url": null,
+      "review_ledger_refs": [
+        {
+          "line": 72,
+          "path": "steven-woods-research/research/media-sources-review.md"
+        }
+      ],
+      "source_date": {
+        "display": "2023-04-18 (event)",
+        "precision": "approximate",
+        "sort": null
+      },
+      "source_id": "ledger-333f4a9ca944875dcbcd",
+      "source_manifest": "steven-woods-research/research/media-sources-review.md",
+      "source_status": "review_ledger_only_not_approved",
+      "source_type": "appearance",
+      "style_eligible": false,
+      "supporting_artifacts": [],
+      "text_availability": [
+        {
+          "extraction_quality": "not_verified",
+          "method": "local_html_extractable",
+          "path": "steven-woods-research/historic/artifacts/archive-html/uwaterloo-research-discovery-days.html"
+        }
+      ],
+      "text_role": "support_capture_not_reviewed_for_voice",
+      "title": "Founding Innovation Keynote: Steven Woods",
       "transcript": {
         "public_artifacts": [],
         "state": "not_catalogued"
@@ -2365,7 +2417,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 113,
+          "line": 156,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -2423,7 +2475,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 92,
+          "line": 135,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -2470,7 +2522,7 @@
       "owner": "publications",
       "recordings": [],
       "related_external_url": null,
-      "research_note": "Local SEI copy exists outside the bibliography's archive_pdf fields. Verify exact edition and completeness before asserting a proceedings match.",
+      "research_note": "Verified byte identity with the current official SEI PDF; correct three-author order appears in the PDF despite incomplete landing-page metadata. Eleven pages match the proceedings length, but final typeset edition is not established. Keep supporting-only. Evidence: data/content/checks/2026-10-27-text-research.json.",
       "source_date": {
         "display": "1999",
         "precision": "year"
@@ -2509,7 +2561,7 @@
       "owner": "publications",
       "recordings": [],
       "related_external_url": null,
-      "research_note": "Related SEI CORUM II report is present. Do not silently equate it with the exact WCRE proceedings edition; compare versions first.",
+      "research_note": "Text-first cycle verified byte identity with the current official SEI PDF. This 11-page author-form layout differs from the 10-page proceedings span 154-163. Keep supporting-only, not exact-version-of-record proof. Evidence: data/content/checks/2026-10-27-text-research.json.",
       "source_date": {
         "display": "1998",
         "precision": "year"
@@ -2548,6 +2600,7 @@
       "owner": "publications",
       "recordings": [],
       "related_external_url": null,
+      "research_note": "Public RIT/HKUST candidate drafts omit Woods from their first-page author list, unlike the five-author publisher DOI record. Do not use these as exact-edition or personal-authorship proof. Evidence: data/content/checks/2026-10-27-text-research.json.",
       "source_date": {
         "display": "1999",
         "precision": "year"
@@ -2584,6 +2637,7 @@
       "owner": "publications",
       "recordings": [],
       "related_external_url": null,
+      "research_note": "Author-attributed public manuscript lead and a 26-page institutional course copy found, versus the journal's pages 5-33. Private reading candidate only; acceptance status, textual equivalence and redistribution approval unresolved. Evidence: data/content/checks/2026-10-27-text-research.json and data/content/production/text-recovery-2026-10-27.json.",
       "source_date": {
         "display": "2000",
         "precision": "year"
@@ -2809,6 +2863,7 @@
       "owner": "publications",
       "recordings": [],
       "related_external_url": null,
+      "research_note": "Bounded public search verified publisher-deposited title/authors/pages but no qualifying public full text. Do not substitute the related 1997 New Experiments paper. No outreach or paywall bypass. Evidence: data/content/checks/2026-10-27-text-research.json.",
       "source_date": {
         "display": "2000",
         "precision": "year"
@@ -3800,7 +3855,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 99,
+          "line": 142,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -3847,7 +3902,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 98,
+          "line": 141,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -3923,7 +3978,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 100,
+          "line": 143,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -3975,7 +4030,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 101,
+          "line": 144,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -4138,7 +4193,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 102,
+          "line": 145,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -4381,7 +4436,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 104,
+          "line": 147,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -4627,7 +4682,7 @@
       "research_note": "Exact canonical Wikipedia subject URL matches the preserved person-archive revision 1368795449; attribution/license remain in that copy. Reuse, not another capture. Deferred source approval remains unchanged.",
       "review_ledger_refs": [
         {
-          "line": 81,
+          "line": 124,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5105,7 +5160,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 99,
+          "line": 142,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5163,7 +5218,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 103,
+          "line": 146,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5221,7 +5276,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 103,
+          "line": 146,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5387,7 +5442,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 99,
+          "line": 142,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5445,7 +5500,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 101,
+          "line": 144,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5503,7 +5558,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 66,
+          "line": 74,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5561,7 +5616,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 88,
+          "line": 131,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5619,7 +5674,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 76,
+          "line": 119,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5678,7 +5733,7 @@
       "research_note": "Marketing/revenue-generation deck uploaded by Increase A/S. Possible namesake confusion with Eloqua's Steven Woods. Quarantined from voice use pending primary identity evidence; source approval is not changed by this inventory.",
       "review_ledger_refs": [
         {
-          "line": 78,
+          "line": 121,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5736,7 +5791,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 87,
+          "line": 130,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5795,7 +5850,7 @@
       "research_note": "Existing readable answers are attributed to Dr. Woods in the article. Extract and review answer spans separately from interviewer questions, navigation and boilerplate.",
       "review_ledger_refs": [
         {
-          "line": 67,
+          "line": 75,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5853,7 +5908,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 89,
+          "line": 132,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -5909,25 +5964,28 @@
       "owner": "steven-woods-research",
       "recordings": [
         {
+          "duration_seconds": 3243,
+          "evidence_path": "data/content/checks/2026-10-27-media-research.json",
           "local_path": null,
           "other_speakers": [
             "Verna Friesen"
           ],
-          "state": "manifest_link_not_download_verified",
+          "state": "verified_official_symposium_video_not_downloaded",
           "url": "https://www.youtube.com/watch?v=3cDnlKwbtTY"
         }
       ],
       "related_external_url": null,
+      "research_note": "Official symposium page embeds the exact joint video. September 28 event is distinct from November 1 upload. Public caption responses were empty; no usable transcript obtained.",
       "review_ledger_refs": [
         {
-          "line": 65,
+          "line": 73,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
       "source_date": {
-        "display": "2017",
-        "precision": "year",
-        "sort": "2017-01-01"
+        "display": "September 28, 2017 (event)",
+        "precision": "day",
+        "sort": "2017-09-28"
       },
       "source_id": "src-steven-2017-google-waterloo-uw-community",
       "source_manifest": "steven-woods-research/source-manifest.json",
@@ -5979,7 +6037,7 @@
       "research_note": "Specific official event URL recovered October 27, 2026; historical listing capture retained. Recording remains unlocated. See data/content/checks/2026-10-27.json.",
       "review_ledger_refs": [
         {
-          "line": 61,
+          "line": 69,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6037,7 +6095,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 77,
+          "line": 120,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6095,7 +6153,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 75,
+          "line": 118,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6154,7 +6212,7 @@
       "research_note": "The captured page links the organizer's YouTube channel, not an identified recording of this talk.",
       "review_ledger_refs": [
         {
-          "line": 60,
+          "line": 68,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6210,23 +6268,25 @@
       "owner": "steven-woods-research",
       "recordings": [
         {
+          "duration_seconds": 176,
+          "evidence_path": "data/content/checks/2026-10-27-media-research.json",
           "local_path": null,
-          "state": "manifest_link_event_pairing_needs_reconfirmation",
+          "state": "verified_subject_promotional_clip_not_full_keynote",
           "url": "https://www.youtube.com/watch?v=C_HIi0IKK90"
         }
       ],
-      "related_external_url": "https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days",
-      "research_note": "Recording and Waterloo context page can both be valid. The legacy archive_web field is not proof that the context page is a web archive. Reconfirm exact event/video pairing before transcription.",
+      "related_external_url": "https://uwaterloo.ca/math-innovation/events/math-and-computing-research-discovery-days",
+      "research_note": "Correct subject, but the 2:56 clip is a registration promo published April 4. Actual keynote event was April 18; a full keynote recording is not established. Public captions were advertised but yielded empty responses, not usable text. Evidence: data/content/checks/2026-10-27-media-research.json.",
       "review_ledger_refs": [
         {
-          "line": 63,
+          "line": 71,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
       "source_date": {
-        "display": "November 2, 2023",
+        "display": "April 4, 2023 (video publication)",
         "precision": "day",
-        "sort": "2023-11-02"
+        "sort": "2023-04-04"
       },
       "source_id": "src-steven-2023-research-discovery-days-keynote",
       "source_manifest": "steven-woods-research/source-manifest.json",
@@ -6241,8 +6301,8 @@
           "path": "steven-woods-research/historic/artifacts/archive-html/uwaterloo-research-discovery-days.html"
         }
       ],
-      "text_role": "event_listing_not_talk_transcript",
-      "title": "Research Discovery Days 2023: Steven Woods",
+      "text_role": "promotional_video_not_full_keynote_transcript",
+      "title": "Research Discovery Days 2023: Steven Woods (promotional video)",
       "transcript": {
         "public_artifacts": [],
         "state": "not_catalogued"
@@ -6276,19 +6336,20 @@
       "recordings": [
         {
           "duration_seconds_from_feed": 5104,
-          "evidence_path": "steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml",
+          "evidence_path": "data/content/checks/2026-10-27-media-research.json",
           "local_path": null,
           "other_speakers": [
             "David Kinley"
           ],
-          "state": "remote_link_in_saved_feed_not_download_verified",
-          "url": "https://media.rss.com/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3"
+          "state": "publisher_current_feed_enclosure_downloaded_to_private_staging",
+          "url": "https://content.rss.com/episodes/189738/932219/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3"
         }
       ],
       "related_external_url": null,
+      "research_note": "No prior transcript is known to Steven. User approved local private regeneration. Current publisher feed supplies a new public enclosure for the same episode GUID; the old path returns 403. Audio/transcript bytes stay outside this public repository.",
       "review_ledger_refs": [
         {
-          "line": 59,
+          "line": 67,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6315,8 +6376,17 @@
       "text_role": "episode_metadata_not_spoken_words",
       "title": "Steven Woods - Partner and Chief Technology Officer, Inovia Capital",
       "transcript": {
+        "production_summary": "data/content/production/riddick-2026-10-27.json",
         "public_artifacts": [],
-        "state": "not_catalogued"
+        "review_required": [
+          "listen_and_correct",
+          "verify_speaker_turns",
+          "check_chunk_boundaries",
+          "review_names_and_dates",
+          "rights_and_publication_approval"
+        ],
+        "speaker_attribution_verified": false,
+        "state": "private_draft_unreviewed"
       }
     },
     {
@@ -6331,7 +6401,7 @@
         }
       ],
       "authorship": "not_verified_for_voice",
-      "canonical_url": "https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series",
+      "canonical_url": "https://uwaterloo.ca/math-innovation/events-entrepreneurship-and-impact-series",
       "content_id": "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact",
       "freshness": {
         "assessment": "historical_not_age_expired",
@@ -6344,17 +6414,12 @@
         "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
       ],
       "owner": "steven-woods-research",
-      "recordings": [
-        {
-          "local_path": null,
-          "state": "manifest_link_not_download_verified",
-          "url": "https://www.youtube.com/watch?v=L64GbHRcsFQ"
-        }
-      ],
-      "related_external_url": "https://www.youtube.com/watch?v=L64GbHRcsFQ",
+      "recordings": [],
+      "related_external_url": null,
+      "research_note": "Prior video association rejected: L64GbHRcsFQ belongs to Natalie Gordon. Steven's April 2023 listing has no verified recording. Public search only; no organizer contacted. Evidence: data/content/checks/2026-10-27-media-research.json.",
       "review_ledger_refs": [
         {
-          "line": 62,
+          "line": 70,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6414,7 +6479,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 79,
+          "line": 122,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6474,7 +6539,7 @@
       "research_note": "Malformed external destinations were retained in the historical capture. Request owner-side repairs, not silent archival rewriting.",
       "review_ledger_refs": [
         {
-          "line": 80,
+          "line": 123,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6535,7 +6600,7 @@
       "related_external_url": null,
       "review_ledger_refs": [
         {
-          "line": 74,
+          "line": 117,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6588,7 +6653,7 @@
       "research_note": "HTTP 999 on public access. Authenticated account view was deliberately not captured. Raw exports must stay in a private repo and out of public metadata.",
       "review_ledger_refs": [
         {
-          "line": 73,
+          "line": 116,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],
@@ -6642,7 +6707,7 @@
       "research_note": "Preserved revision 1368795449 and attribution/license are in the capture sidecar. Not a primary identity or style authority.",
       "review_ledger_refs": [
         {
-          "line": 81,
+          "line": 124,
           "path": "steven-woods-research/research/media-sources-review.md"
         }
       ],

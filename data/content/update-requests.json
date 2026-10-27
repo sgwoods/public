@@ -1,5 +1,5 @@
 {
-  "catalog_source_tree_sha256": "7c075612fb832eb4f0191537530f7305baccb55cd62be7e702024c35fe5ba0f6",
+  "catalog_source_tree_sha256": "5dff0a3189642a91cab4cdc80731a785cefe044e69b340e7a7f88da7dd9ae37d",
   "evaluated_on": "2026-10-27",
   "requests": [
     {
@@ -185,6 +185,18 @@
     {
       "automatic_fetch": false,
       "changes_release_status": false,
+      "content_id": "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact",
+      "owner": "steven-woods-research",
+      "priority": "normal",
+      "reason": "recording_link_gap",
+      "request_id": "61c003acde1ccfede5f8",
+      "state": "proposed_not_sent",
+      "suggested_action": "Ask the organizer/source owner whether a public recording, slides or notes exist; a channel link is not this talk's recording.",
+      "target": "sgwoods/public_maintainer"
+    },
+    {
+      "automatic_fetch": false,
+      "changes_release_status": false,
       "content_id": "publication:quilici2000matching",
       "owner": "publications",
       "priority": "normal",
@@ -312,18 +324,6 @@
       "request_id": "9f456134020261121cbc",
       "state": "proposed_not_sent",
       "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
-      "target": "sgwoods/public_maintainer"
-    },
-    {
-      "automatic_fetch": false,
-      "changes_release_status": false,
-      "content_id": "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact",
-      "owner": "steven-woods-research",
-      "priority": "normal",
-      "reason": "transcript_gap",
-      "request_id": "9f829d3f98508bf0ce3c",
-      "state": "proposed_not_sent",
-      "suggested_action": "First recover prior private work; if needed transcribe in a private repo, verify speakers and request review before any public export.",
       "target": "sgwoods/public_maintainer"
     },
     {
@@ -563,7 +563,7 @@
       "reason": "transcript_gap",
       "request_id": "ebd184ac955ddd22b390",
       "state": "proposed_not_sent",
-      "suggested_action": "First recover prior private work; if needed transcribe in a private repo, verify speakers and request review before any public export.",
+      "suggested_action": "A private draft exists. Do not retranscribe by default; request maintainer listening, speaker attribution and content/rights review before any usable export.",
       "target": "sgwoods/public_maintainer"
     },
     {

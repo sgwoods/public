@@ -1,5 +1,9 @@
 {
   "artifacts": "data/content/artifacts.jsonl",
+  "content_production_reports": [
+    "data/content/production/riddick-2026-10-27.json",
+    "data/content/production/text-recovery-2026-10-27.json"
+  ],
   "contract": "CONTENT-INVENTORY-INTERFACE.md",
   "curation": "data/content/curation.json",
   "duplicate_content_groups": [
@@ -5353,7 +5357,7 @@
   "evaluated_on": "2026-10-27",
   "file_kinds": {
     "binary": 180,
-    "code": 808,
+    "code": 811,
     "compressed_archive": 253,
     "generated_inventory": 5,
     "html": 467,
@@ -5362,13 +5366,13 @@
     "legacy_text": 807,
     "pdf": 45,
     "recording": 2,
-    "structured_data": 58,
-    "text": 224
+    "structured_data": 62,
+    "text": 228
   },
   "handoff": "IMAC-CONTENT-HANDOFF.md",
   "human_overview": "CONTENT-INVENTORY.md",
-  "indexed_paths": 3273,
-  "input_files": 3268,
+  "indexed_paths": 3284,
+  "input_files": 3279,
   "operating_model": {
     "other_machines": "consume_approved_content_and_request_updates",
     "private_production": "maintainer_controlled_private_staging_only",
@@ -5383,10 +5387,10 @@
     "CONTENT-INVENTORY.md"
   ],
   "outputs_sha256": {
-    "CONTENT-INVENTORY.md": "db315b85ef22dfb251f3a439886955e0b88d1e0b6cc01659935a354e1c5cf92e",
-    "data/content/artifacts.jsonl": "9d116a276f637d517927ddfa202be1c96a70165598eb21d4d8b997a6005d95e0",
-    "data/content/sources.json": "568d891dee58650c7020d0584ba6f5a50cbfb4d7e7790b0f7f97b82376ab787f",
-    "data/content/update-requests.json": "d8178274d156aae42595a62d36903f7d11acba2dee8945753bef2c7b9d9fca72"
+    "CONTENT-INVENTORY.md": "f74264bdfc83e0dcb9a53c3f7eeab5a66415954804c6504e0e562a76445dcded",
+    "data/content/artifacts.jsonl": "d88737d49a061e2916444e5ce82c2e9549133d37b34be6039caf7d4e4ea627b2",
+    "data/content/sources.json": "10454bc417dcbe4b686bc9655accb9750e244f00649ef0ff01a0185ddd36f69a",
+    "data/content/update-requests.json": "1e5c53b096b2fffe137ee77ac24d52e32ed3d0ee68f42bd801c93a99689cb7a8"
   },
   "project_status_manifests": [
     "canberra-research/project-manifest.json",
@@ -5422,8 +5426,8 @@
   "schema_ref": "data/content/schema.json#/$defs/catalog",
   "schema_version": "1.0",
   "scope": "Every versioned regular file plus descriptors for the five generated inventory outputs; no ignored/untracked/private files or other repositories.",
-  "source_records": 135,
-  "source_tree_sha256": "7c075612fb832eb4f0191537530f7305baccb55cd62be7e702024c35fe5ba0f6",
+  "source_records": 136,
+  "source_tree_sha256": "5dff0a3189642a91cab4cdc80731a785cefe044e69b340e7a7f88da7dd9ae37d",
   "sources": "data/content/sources.json",
   "update_requests": "data/content/update-requests.json"
 }
