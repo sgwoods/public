@@ -656,8 +656,8 @@
   ],
   "metadata": {
     "schema_version": "1.0",
-    "content_updated_at": "2026-10-27T08:14:56-04:00",
-    "content_commit": "26e93ec05974fdba4203ac03321d213ba7bc5fd0",
+    "content_updated_at": "2026-10-27T08:36:29-04:00",
+    "content_commit": "27dbfe8fbfb8a6a6f073a250bbce7024d8c874e8",
     "content_sha256": "c3a22c2aabab8c5ec9d86e574001c90680d20d36128947c31fc75c10d1f2ed6a",
     "content_hash_scope": "Canonical JSON of all top-level fields except metadata",
     "date_semantics": "Last committed source-registry content change; not source publication, external verification or page rendering.",
