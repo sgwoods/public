@@ -5353,7 +5353,7 @@
   "evaluated_on": "2026-10-27",
   "file_kinds": {
     "binary": 180,
-    "code": 804,
+    "code": 806,
     "compressed_archive": 253,
     "generated_inventory": 5,
     "html": 467,
@@ -5367,8 +5367,14 @@
   },
   "handoff": "IMAC-CONTENT-HANDOFF.md",
   "human_overview": "CONTENT-INVENTORY.md",
-  "indexed_paths": 3266,
-  "input_files": 3261,
+  "indexed_paths": 3268,
+  "input_files": 3263,
+  "operating_model": {
+    "other_machines": "consume_approved_content_and_request_updates",
+    "private_production": "maintainer_controlled_private_staging_only",
+    "public_information_maintainer": "sgwoods/public",
+    "request_delivery": "explicit_user_authorized_handoff_not_automatic"
+  },
   "output_hash_exclusions": [
     "data/content/catalog.json",
     "data/content/artifacts.jsonl",
@@ -5377,10 +5383,10 @@
     "CONTENT-INVENTORY.md"
   ],
   "outputs_sha256": {
-    "CONTENT-INVENTORY.md": "f93f1df66b7bcb11e50951359a0d91a8b8debb9b44d17b54562a213e58d807dc",
-    "data/content/artifacts.jsonl": "249393629fea49cd7e9c44bb44f79b1299294954e5ef8ea4bdce9a7546401436",
+    "CONTENT-INVENTORY.md": "8c1989575008929a7d919a19f90fbf1416e77ac5ca6d5bf567a754058dc801af",
+    "data/content/artifacts.jsonl": "3a263f89312085c2b3b628969122ea1419615ca866083dedc75bc31b8f376f1e",
     "data/content/sources.json": "007f4295ccfcb96dd916f4f9ad6d38166262bf793d0d6d1156ad2e2aef9c0cfa",
-    "data/content/update-requests.json": "9e6f0a52327133fa572297742604abb3ad58bac1c4dbd03c0119bf8f49f4655a"
+    "data/content/update-requests.json": "c09b4e59abc48a2144846d2c0df5483ac55786c8aa23d83034beabd8728e617f"
   },
   "project_status_manifests": [
     "canberra-research/project-manifest.json",
@@ -5415,7 +5421,7 @@
   "schema_version": "1.0",
   "scope": "Every versioned regular file plus descriptors for the five generated inventory outputs; no ignored/untracked/private files or other repositories.",
   "source_records": 135,
-  "source_tree_sha256": "6136645fa07e1417bf590bccc72acdd2af222c3c5b31482dca1435a47b129b88",
+  "source_tree_sha256": "8743d09485215b9154ab54bc13e7661c509b3fa665c32a1ebeb99b05fc6f1ce6",
   "sources": "data/content/sources.json",
   "update_requests": "data/content/update-requests.json"
 }
