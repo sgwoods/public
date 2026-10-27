@@ -47,7 +47,9 @@ on this history. **They do not mean original publication, recording date, latest
 external source check, authorship, release approval or freshness of the claims.**
 Development previews label changed inputs `uncommitted` with null revision/date;
 they must never be committed as a verified catalog baseline. Full history is
-required. Identical bytes share a SHA-256 and appear in `duplicate_content_groups`;
+required. Working bytes must match the indexed Git blob; a clean status/stat cache
+alone is not sufficient. Custom clean/smudge filters require deliberate handling,
+not a fabricated hash match. Identical bytes share a SHA-256 and appear in `duplicate_content_groups`;
 do not count copies as independent evidence or distinct original works.
 
 Text access is deliberately conservative:
@@ -162,8 +164,10 @@ Never install dependencies globally merely to read the inventory.
 To maintain the inventory:
 
 1. Review and commit source/curation/code/documentation changes on a review branch.
-2. If an archive changed, snapshot its **committed** provenance with the existing
-   archive tool. Refresh and commit coordination outputs before cataloguing them.
+2. If an archive changed, snapshot only its **committed** provenance, for example
+   `python3 tools/snapshot_archive_provenance.py --scope steven-woods-research`.
+   Do not relabel unrelated archives merely because you are on a review branch.
+   Refresh and commit coordination outputs before cataloguing them.
 3. Run `python3 tools/content_inventory.py build --as-of YYYY-MM-DD`, then `check`
    and tests. Commit only the five inventory outputs separately. Catalog outputs
    do not change their own input digest or path-change dates.

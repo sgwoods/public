@@ -207,7 +207,7 @@ Current branch snapshot: `codex/content-inventory-imac-handoff`
 - Visibility: Public
 - Priority now: Steady advance
 - Time-energy-value: energy medium; value high; horizon medium
-- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Snapshot source date: October 26, 2026.
+- Current manifest state: Current phase: Active research archive. Current focus: Continuity layer, baseline identity, timeline, current profile sources, and one-page CV. Snapshot source date: October 27, 2026.
 - Evidence status: Evidence baseline: 22 approved / 0 deferred / 0 rejected (22 total).
 - Likely current work: Person-centric continuity work, baseline identity tightening, profile preservation, and keeping the source-manifest and review-ledger split deliberate.
 - Next step: Use the content inventory to recover prior private transcripts, review existing first-person Q&A and resolve source identity/edition gaps. Keep LinkedIn exports and unreviewed transcripts in a private working repo; public copies need explicit approval.

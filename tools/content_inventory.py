@@ -201,6 +201,12 @@ def artifact_inventory(root, policy, allow_dirty=False):
         if mode not in {"100644", "100755"} or not full.is_file():
             raise ValueError("Inventory supports existing regular versioned files only: " + name)
         raw = full.read_bytes()
+        blob_bytes = f"blob {len(raw)}\0".encode() + raw
+        actual_oid = (hashlib.sha1(blob_bytes) if len(oid) == 40 else hashlib.sha256(blob_bytes)).hexdigest()
+        if actual_oid != oid:
+            if not allow_dirty:
+                raise ValueError("Working bytes do not match the Git index; inspect filters or local changes: " + name)
+            dirty.add(name)
         kind, access, mime = classify(name, raw)
         provenance = dict(revisions.get(name, {}))
         provenance["basis"] = "git_content_change_not_source_publication_or_external_check"

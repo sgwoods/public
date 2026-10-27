@@ -94,6 +94,14 @@ class InventoryTests(unittest.TestCase):
         groups = json.loads(self.build()[ci.OUTPUTS[0]])["duplicate_content_groups"]
         self.assertTrue(any(set(group["paths"]) == {"README.md", "duplicate.md"} for group in groups))
 
+    def test_byte_verification_does_not_trust_a_clean_stat_cache(self):
+        self.write("README.md", "changed without trusting status\n")
+        original = ci.git
+        def hidden_diff(root, *args):
+            return b"" if args[0] == "diff" else original(root, *args)
+        with patch.object(ci, "git", side_effect=hidden_diff), self.assertRaisesRegex(ValueError, "do not match the Git index"):
+            self.build()
+
     def test_traversal_and_absolute_paths_fail(self):
         for value in ("/tmp/private", "../private", "archive/../../private", "C:\\private"):
             with self.subTest(value=value), self.assertRaises(ValueError):
@@ -206,6 +214,24 @@ class InventoryTests(unittest.TestCase):
         self.assertNotIn("apple.com", json.dumps(riddick["recordings"]))
         self.assertFalse(policy["approved_public_transcript_paths"])
         self.assertEqual(overrides["steven-woods-research/src-steven-2012-slideshare-keynote-deck"]["identity_review"], "needs_identity_verification")
+
+    def test_archive_snapshot_can_be_limited_without_touching_other_scopes(self):
+        import snapshot_archive_provenance as snapshot
+        self.write("archive/project-manifest.json", ci.dumps(dict(active=True, project_id="example", repo_url=None)))
+        self.write("other/project-manifest.json", ci.dumps(dict(active=True, project_id="other", repo_url=None)))
+        self.write("other/content.md", "Unrelated archive")
+        self.commit()
+        before = (self.root / "other/project-manifest.json").read_bytes()
+        self.write("other/content.md", "Unrelated dirty work")
+        with patch.object(snapshot, "ROOT", self.root):
+            snapshot.snapshot(scopes=["archive"])
+        self.assertIn("source_content_sha256", json.loads((self.root / "archive/project-manifest.json").read_text()))
+        self.assertEqual(before, (self.root / "other/project-manifest.json").read_bytes())
+
+    def test_archive_snapshot_rejects_unknown_scope(self):
+        import snapshot_archive_provenance as snapshot
+        with patch.object(snapshot, "ROOT", self.root), self.assertRaisesRegex(SystemExit, "Unknown archive"):
+            snapshot.snapshot(scopes=["not-an-archive"])
 
     def test_schema_definitions_accept_generated_outputs(self):
         import jsonschema

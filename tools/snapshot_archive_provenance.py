@@ -15,9 +15,15 @@ def git(*args):
     return subprocess.check_output(["git", "-C", str(ROOT), *args], text=True).strip()
 
 
-def snapshot(check=False):
+def snapshot(check=False, scopes=None):
     failures = []
-    for path in sorted(ROOT.glob("*/project-manifest.json")):
+    paths = sorted(ROOT.glob("*/project-manifest.json"))
+    if scopes:
+        unknown = set(scopes) - {path.parent.name for path in paths}
+        if unknown:
+            raise SystemExit("Unknown archive scope: " + ", ".join(sorted(unknown)))
+        paths = [path for path in paths if path.parent.name in scopes]
+    for path in paths:
         data = json.loads(path.read_text())
         if not data.get("active") or data.get("repo_url"):
             continue
@@ -57,4 +63,6 @@ def snapshot(check=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
-    snapshot(parser.parse_args().check)
+    parser.add_argument("--scope", action="append", help="Limit baselining/checks to a named archive folder; repeat as needed")
+    args = parser.parse_args()
+    snapshot(args.check, args.scope)
