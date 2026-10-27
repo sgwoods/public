@@ -1,0 +1,29 @@
+name: Validate Content Inventory
+
+on:
+  push:
+    branches: ["codex/content-inventory-*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install schema test dependency
+        run: python3 -m pip install -r tools/requirements-content-tests.txt
+      - name: Test and validate without publishing
+        run: |
+          python3 tools/test_content_inventory.py
+          python3 tools/content_inventory.py check --schema
+          python3 tools/check_archive_coverage.py --check
+          python3 tools/snapshot_archive_provenance.py --check
+          python3 tools/refresh_public_coordination.py --check

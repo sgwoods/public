@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-10-27",
+  "approved_public_transcript_paths": [],
+  "source_overrides": {
+    "steven-woods-research/src-steven-2023-riddick-show": {
+      "supporting_artifacts": ["steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml"],
+      "text_role": "episode_metadata_not_spoken_words",
+      "identity_review": "episode_metadata_matches_subject",
+      "authorship": "interview_multiple_speakers_not_diarized",
+      "recordings": [{
+        "url": "https://media.rss.com/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3",
+        "local_path": null,
+        "state": "remote_link_in_saved_feed_not_download_verified",
+        "evidence_path": "steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml",
+        "duration_seconds_from_feed": 5104,
+        "other_speakers": ["David Kinley"]
+      }]
+    },
+    "steven-woods-research/src-steven-2023-cscan-collaboration-talk": {
+      "text_role": "event_listing_not_talk_transcript",
+      "research_note": "The captured page links the organizer's YouTube channel, not an identified recording of this talk."
+    },
+    "steven-woods-research/src-steven-2021-entrepreneurial-computer-scientist": {
+      "text_role": "event_listing_not_talk_transcript"
+    },
+    "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact": {
+      "text_role": "event_listing_not_talk_transcript",
+      "recordings": [{"url": "https://www.youtube.com/watch?v=L64GbHRcsFQ", "local_path": null, "state": "manifest_link_not_download_verified"}]
+    },
+    "steven-woods-research/src-steven-2023-research-discovery-days-keynote": {
+      "text_role": "event_listing_not_talk_transcript",
+      "research_note": "Recording and Waterloo context page can both be valid. The legacy archive_web field is not proof that the context page is a web archive. Reconfirm exact event/video pairing before transcription.",
+      "recordings": [{"url": "https://www.youtube.com/watch?v=C_HIi0IKK90", "local_path": null, "state": "manifest_link_event_pairing_needs_reconfirmation"}]
+    },
+    "steven-woods-research/src-steven-2017-google-waterloo-uw-community": {
+      "text_role": "event_listing_not_talk_transcript",
+      "authorship": "co_presented_not_diarized",
+      "recordings": [{"url": "https://www.youtube.com/watch?v=3cDnlKwbtTY", "local_path": null, "state": "manifest_link_not_download_verified", "other_speakers": ["Verna Friesen"]}]
+    },
+    "steven-woods-research/src-steven-2003-usask-sorenson-lecture": {
+      "text_role": "event_listing_not_talk_transcript"
+    },
+    "steven-woods-research/src-steven-2013-springboard-google-canada-interview": {
+      "text_role": "publisher_attributed_first_person_written_q_and_a",
+      "identity_review": "article_identifies_google_canada_engineering_director",
+      "authorship": "edited_interview_answers_not_independent_audio_verification",
+      "research_note": "Existing readable answers are attributed to Dr. Woods in the article. Extract and review answer spans separately from interviewer questions, navigation and boilerplate."
+    },
+    "steven-woods-research/src-steven-2012-slideshare-keynote-deck": {
+      "text_role": "deck_landing_page_identity_unresolved",
+      "identity_review": "needs_identity_verification",
+      "authorship": "unknown_do_not_attribute_to_subject",
+      "research_note": "Marketing/revenue-generation deck uploaded by Increase A/S. Possible namesake confusion with Eloqua's Steven Woods. Quarantined from voice use pending primary identity evidence; source approval is not changed by this inventory."
+    },
+    "steven-woods-research/src-steven-current-inovia-team-profile": {
+      "text_role": "employer_biography_not_personal_voice",
+      "freshness": {"policy": "current_profile", "last_successful_external_check": "2026-10-26", "review_after_days": 30}
+    },
+    "steven-woods-research/src-steven-current-bio-link": {
+      "text_role": "self_presented_bio_and_public_link_map",
+      "freshness": {"policy": "current_profile", "last_successful_external_check": "2026-10-26", "review_after_days": 30},
+      "research_note": "Malformed external destinations were retained in the historical capture. Request owner-side repairs, not silent archival rewriting."
+    },
+    "steven-woods-research/src-steven-current-about-me-profile": {
+      "text_role": "self_presented_profile_unreviewed_for_voice",
+      "freshness": {"policy": "current_profile", "last_successful_external_check": null, "review_after_days": 30}
+    },
+    "steven-woods-research/src-steven-current-wikipedia-page": {
+      "text_role": "third_party_synthesis_not_personal_voice",
+      "freshness": {"policy": "current_profile", "last_successful_external_check": "2026-10-26", "review_after_days": 90},
+      "research_note": "Preserved revision 1368795449 and attribution/license are in the capture sidecar. Not a primary identity or style authority."
+    },
+    "steven-woods-research/src-steven-current-linkedin-profile": {
+      "text_role": "metadata_only_public_capture_blocked",
+      "freshness": {"policy": "current_profile", "last_successful_external_check": null, "last_attempt_on": "2026-10-26", "access_state": "blocked", "review_after_days": 30},
+      "research_note": "HTTP 999 on public access. Authenticated account view was deliberately not captured. Raw exports must stay in a private repo and out of public metadata."
+    },
+    "publication:kazman1998corum": {
+      "supporting_artifacts": ["sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf"],
+      "research_note": "Related SEI CORUM II report is present. Do not silently equate it with the exact WCRE proceedings edition; compare versions first."
+    },
+    "publication:carriere1999transformation": {
+      "supporting_artifacts": ["sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf"],
+      "research_note": "Local SEI copy exists outside the bibliography's archive_pdf fields. Verify exact edition and completeness before asserting a proceedings match."
+    },
+    "publication:sellink2004sameinformation": {
+      "supporting_artifacts": ["quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html"],
+      "research_note": "Text of this same patent number is preserved in Quack. Drawings/PDF are not included in that content-only capture."
+    }
+  },
+  "supplemental_sources": [
+    {
+      "content_id": "writing:phd-thesis",
+      "source_id": "writing-phd-thesis",
+      "owner": "publications",
+      "title": "PhD thesis - public renovation export and historical archive",
+      "source_type": "thesis",
+      "source_status": "existing_public_artifact_not_voice_approval",
+      "source_manifest": "data/content/curation.json",
+      "source_date": {"display": "Historical PhD thesis; renovation export has separate edition provenance", "sort": null, "precision": "unknown"},
+      "local_artifacts": ["phd-renovation-thesis.pdf", "phd-renovation-thesis.ps", "Spectra/Html/Publication-Archive/phd-thesis.pdf", "Spectra/Html/Publication-Archive/phd-thesis.ps"],
+      "supporting_artifacts": [],
+      "recordings": [],
+      "text_role": "historical_academic_writing_edition_comparison_required",
+      "identity_review": "repository_attribution_only",
+      "authorship": "verify_title_page_and_edition_before_attribution",
+      "style_eligible": false,
+      "transcript": {"state": "not_applicable", "public_artifacts": []},
+      "freshness": {"policy": "historical", "last_successful_external_check": null},
+      "source_repository": "sgwoods/phd-renovation"
+    },
+    {
+      "content_id": "writing:mmath-thesis",
+      "source_id": "writing-mmath-thesis",
+      "owner": "publications",
+      "title": "MMath thesis - AbTweak public export",
+      "source_type": "thesis",
+      "source_status": "existing_public_artifact_not_voice_approval",
+      "source_manifest": "data/content/curation.json",
+      "source_date": {"display": "Historical MMath thesis; verify original date against title page", "sort": null, "precision": "unknown"},
+      "local_artifacts": ["mmath-thesis.pdf", "mmath-thesis.ps"],
+      "supporting_artifacts": [],
+      "recordings": [],
+      "text_role": "historical_academic_writing",
+      "identity_review": "repository_attribution_only",
+      "authorship": "verify_title_page_and_edition_before_attribution",
+      "style_eligible": false,
+      "transcript": {"state": "not_applicable", "public_artifacts": []},
+      "freshness": {"policy": "historical", "last_successful_external_check": null},
+      "source_repository": "sgwoods/mmath-renovation"
+    },
+    {
+      "content_id": "writing:cv",
+      "source_id": "writing-cv",
+      "owner": "steven-woods-research",
+      "title": "One-page CV public export",
+      "source_type": "cv",
+      "source_status": "existing_public_artifact_not_voice_approval",
+      "source_manifest": "data/content/curation.json",
+      "source_date": null,
+      "local_artifacts": ["steven-woods-cv.pdf"],
+      "supporting_artifacts": [],
+      "recordings": [],
+      "text_role": "biographical_summary_not_personal_voice",
+      "identity_review": "repository_attribution_only",
+      "authorship": "generated_cv_not_unedited_writing",
+      "style_eligible": false,
+      "transcript": {"state": "not_applicable", "public_artifacts": []},
+      "freshness": {"policy": "historical", "last_successful_external_check": null}
+    },
+    {
+      "content_id": "recording:steve-welcome",
+      "source_id": "recording-steve-welcome",
+      "owner": "steven-woods-research",
+      "title": "Legacy Spectra welcome recording",
+      "source_type": "recording",
+      "source_status": "existing_public_artifact_not_voice_approval",
+      "source_manifest": "data/content/curation.json",
+      "source_date": {"display": "Undated legacy recording", "sort": null, "precision": "unknown"},
+      "local_artifacts": ["Spectra/Html/steve-welcome.wav"],
+      "supporting_artifacts": [],
+      "recordings": [{"url": null, "local_path": "Spectra/Html/steve-welcome.wav", "state": "local_audio_not_transcribed_or_speaker_verified"}],
+      "text_role": "no_spoken_text_catalogued",
+      "identity_review": "listen_and_verify_speaker",
+      "authorship": "speaker_not_verified",
+      "style_eligible": false,
+      "transcript": {"state": "not_catalogued", "public_artifacts": []},
+      "freshness": {"policy": "historical", "last_successful_external_check": null}
+    }
+  ]
+}

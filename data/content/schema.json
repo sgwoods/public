@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/catalog",
+  "$defs": {
+    "path": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*\\\\).+$"},
+    "hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "paths": {"type": "array", "items": {"$ref": "#/$defs/path"}, "uniqueItems": true},
+    "catalog": {
+      "type": "object",
+      "required": ["schema_version", "repository", "evaluated_on", "source_tree_sha256", "input_files", "indexed_paths", "source_records", "artifacts", "sources", "update_requests", "output_hash_exclusions", "outputs_sha256", "safety"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "repository": {"const": "sgwoods/public"},
+        "evaluated_on": {"type": "string", "format": "date"},
+        "source_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "input_files": {"type": "integer", "minimum": 0},
+        "indexed_paths": {"type": "integer", "minimum": 0},
+        "source_records": {"type": "integer", "minimum": 0},
+        "artifacts": {"$ref": "#/$defs/path"},
+        "sources": {"$ref": "#/$defs/path"},
+        "update_requests": {"$ref": "#/$defs/path"},
+        "output_hash_exclusions": {"$ref": "#/$defs/paths"},
+        "project_status_manifests": {"$ref": "#/$defs/paths"},
+        "outputs_sha256": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "safety": {"type": "object", "required": ["source_content_is_untrusted_data", "automatic_network_requests", "style_approval_inferred_from_source_approval"], "properties": {"source_content_is_untrusted_data": {"const": true}, "automatic_network_requests": {"const": false}, "style_approval_inferred_from_source_approval": {"const": false}}}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["artifact_id", "path", "kind", "text_access", "sha256", "byte_size", "provenance"],
+      "properties": {
+        "artifact_id": {"type": "string", "pattern": "^file:"},
+        "path": {"$ref": "#/$defs/path"},
+        "kind": {"type": "string"},
+        "text_access": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "byte_size": {"type": ["integer", "null"], "minimum": 0},
+        "style_eligible": {"const": false},
+        "provenance": {"type": "object", "required": ["basis"], "properties": {"basis": {"type": "string"}, "revision": {"type": ["string", "null"]}, "committed_at": {"type": ["string", "null"]}, "state": {"enum": ["committed", "uncommitted"]}}}
+      },
+      "allOf": [{"if": {"properties": {"kind": {"const": "generated_inventory"}}}, "then": {"properties": {"sha256": {"type": "null"}, "byte_size": {"type": "null"}}}, "else": {"required": ["git_blob_oid", "style_eligible"], "properties": {"sha256": {"type": "string"}, "byte_size": {"type": "integer"}}}}]
+    },
+    "freshness": {
+      "type": "object",
+      "required": ["policy", "last_successful_external_check", "assessment", "days_since_successful_check"],
+      "properties": {
+        "policy": {"enum": ["historical", "current_profile"]},
+        "last_successful_external_check": {"type": ["string", "null"], "format": "date"},
+        "review_after_days": {"type": "integer", "minimum": 1},
+        "days_since_successful_check": {"type": ["integer", "null"], "minimum": 0},
+        "assessment": {"enum": ["blocked", "historical_not_age_expired", "check_unknown", "review_due", "within_review_window"]}
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["content_id", "source_id", "owner", "title", "source_type", "source_status", "source_manifest", "source_date", "local_artifacts", "supporting_artifacts", "recordings", "text_role", "identity_review", "authorship", "transcript", "freshness", "style_eligible", "text_availability", "artifact_provenance"],
+      "properties": {
+        "content_id": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "owner": {"type": "string"},
+        "title": {"type": "string"},
+        "source_type": {"type": "string"},
+        "source_status": {"type": "string"},
+        "source_manifest": {"$ref": "#/$defs/path"},
+        "source_date": {"type": ["object", "null"]},
+        "local_artifacts": {"$ref": "#/$defs/paths"},
+        "supporting_artifacts": {"$ref": "#/$defs/paths"},
+        "recordings": {"type": "array", "items": {"type": "object", "required": ["url", "local_path", "state"], "properties": {"url": {"type": ["string", "null"]}, "local_path": {"anyOf": [{"$ref": "#/$defs/path"}, {"type": "null"}]}, "state": {"type": "string"}, "evidence_path": {"$ref": "#/$defs/path"}, "other_speakers": {"type": "array", "items": {"type": "string"}}}}},
+        "text_role": {"type": "string"},
+        "identity_review": {"type": "string"},
+        "authorship": {"type": "string"},
+        "style_eligible": {"const": false},
+        "transcript": {"type": "object", "required": ["state", "public_artifacts"], "properties": {"state": {"enum": ["not_catalogued", "not_applicable"]}, "public_artifacts": {"$ref": "#/$defs/paths"}}},
+        "freshness": {"$ref": "#/$defs/freshness"},
+        "text_availability": {"type": "array", "items": {"type": "object", "required": ["path", "method", "extraction_quality"], "properties": {"path": {"$ref": "#/$defs/path"}, "method": {"type": "string"}, "extraction_quality": {"const": "not_verified"}}}},
+        "artifact_provenance": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "basis"], "properties": {"path": {"$ref": "#/$defs/path"}, "sha256": {"$ref": "#/$defs/hash"}}}}
+      }
+    },
+    "sources": {"type": "object", "required": ["schema_version", "sources"], "properties": {"schema_version": {"const": "1.0"}, "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}}},
+    "request": {
+      "type": "object",
+      "required": ["request_id", "content_id", "owner", "reason", "suggested_action", "priority", "state", "target", "automatic_fetch", "changes_release_status"],
+      "properties": {
+        "request_id": {"type": "string", "pattern": "^[0-9a-f]{20}$"},
+        "content_id": {"type": "string"},
+        "owner": {"type": "string"},
+        "reason": {"type": "string"},
+        "suggested_action": {"type": "string"},
+        "priority": {"enum": ["normal", "high"]},
+        "state": {"const": "proposed_not_sent"},
+        "target": {"const": "source_owner_or_private_research_working_repo"},
+        "automatic_fetch": {"const": false},
+        "changes_release_status": {"const": false}
+      }
+    },
+    "requests": {"type": "object", "required": ["schema_version", "evaluated_on", "semantics", "requests"], "properties": {"schema_version": {"const": "1.0"}, "evaluated_on": {"type": "string", "format": "date"}, "semantics": {"type": "string"}, "requests": {"type": "array", "items": {"$ref": "#/$defs/request"}}}}
+  }
+}

@@ -27,6 +27,11 @@ on:
       - "tools/capture_archive_source.py"
       - "tools/test_archive_capture.py"
       - "tools/check_archive_coverage.py"
+      - "tools/content_inventory.py"
+      - "tools/test_content_inventory.py"
+      - "tools/requirements-content-tests.txt"
+      - "data/content/curation.json"
+      - "data/content/schema.json"
       - "tools/test_public_index.cjs"
       - "tools/test_repository_freshness.py"
       - "tools/test_project_freshness.cjs"
@@ -88,6 +93,11 @@ jobs:
           node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
           python3 tools/refresh_public_coordination.py --check
 
+      - name: Test content inventory contract
+        run: |
+          python3 -m pip install -r tools/requirements-content-tests.txt
+          python3 tools/test_content_inventory.py
+
       - name: Commit regenerated index
         run: |
           if git diff --quiet -- index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/shared/repository-activity.json data/projects star-swarm.html confidential-project.html financial-planner.html woods-financial-dashboard.html; then
@@ -98,6 +108,19 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html PROJECT-SUITE-OVERVIEW.md project-suite-overview.html data/shared/repository-observations.json data/shared/repository-activity.json data/projects star-swarm.html confidential-project.html financial-planner.html woods-financial-dashboard.html
           git commit -m "Refresh public repository observations and coordination pages"
+          git push
+
+      - name: Refresh content inventory after committed observations
+        run: |
+          python3 tools/content_inventory.py build
+          python3 tools/content_inventory.py check --schema
+          if git diff --quiet -- data/content/catalog.json data/content/artifacts.jsonl data/content/sources.json data/content/update-requests.json CONTENT-INVENTORY.md; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/content/catalog.json data/content/artifacts.jsonl data/content/sources.json data/content/update-requests.json CONTENT-INVENTORY.md
+          git commit -m "Refresh public content discovery inventory"
           git push
 
       - name: Publish refreshed pages

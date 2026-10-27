@@ -100,6 +100,7 @@ All of these are checked into this repository, not dependent on recovering chat.
 | `tools/render_steven_sources.py`, `tools/render_steven_cv.py` | Source index/category pages and text/PostScript/PDF CV outputs |
 | `tools/start_codex_on_new_mac.sh` | `install`, `setup`, `validate`, and deliberate recovery-lane equivalents |
 | `tools/capture_archive_source.py`, `tools/check_archive_coverage.py` | Reviewed content-only captures with provenance sidecars; current source coverage and tracked-artifact/hash validation |
+| `tools/content_inventory.py` | Versioned-file catalog, semantic text/recording/transcript inventory, checksum validation, safe text extraction and proposed update requests; see [consumer contract](CONTENT-INVENTORY-INTERFACE.md) |
 | `tools/test_mac_bootstrap.py`, `tools/test_archive_capture.py` | Offline installation/selection decisions, safe captures, provenance hashes and regeneration tests |
 | `quack/tools/quack_research_pipeline.py` | `discover`, `fetch`, `analyze`, `classify`, `summarize`, `run`, `validate`; fetching requires deliberate network opt-in |
 | `quack/tools/start-quack-codex.sh` | Project launcher and continuity entry point |
@@ -107,6 +108,12 @@ All of these are checked into this repository, not dependent on recovering chat.
 | `tools/test_project_freshness.cjs`, `tools/test_public_index.cjs` | Browser-side freshness, card and chart logic tests through Node's test runner |
 
 ## Artifact coverage, not just Git cleanliness
+
+October 27 discovery layer: [CONTENT-INVENTORY.md](CONTENT-INVENTORY.md) and
+[`data/content/catalog.json`](data/content/catalog.json) index the whole versioned
+tree, not just artifact paths declared by approved records. This is discovery and
+provenance, not a claim that every file has complete text or belongs to Steven's
+voice. Unreviewed transcripts and LinkedIn exports remain private and excluded.
 
 October 26 follow-through: [the preservation register](ARCHIVE-PRESERVATION.md)
 records six completed content captures from the seven-record backlog below.

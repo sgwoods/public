@@ -1,6 +1,6 @@
 # Steven Woods Research Living Work Plan
 
-Last updated: `2026-05-10`
+Last updated: `2026-10-27`
 
 This is the living execution plan for the Steven Woods public-record archive. Keep it current as the continuity layer, preservation baseline, and shared-layer role evolve.
 
@@ -32,10 +32,11 @@ Preserve the canonical person-centric public record for Steven Woods, including:
 - the working repository page exists at `public/steven-woods-research/index.html`
 - the public summary page exists at `public/steven-woods-research.html`
 - current machine-readable counts are `22` total / `22` approved / `0` deferred / `0` rejected
-- `18` approved source records currently resolve to checked-in local archive files
-- `4` approved baseline/profile sources remain URL-backed
-- `24` files exist under `historic/artifacts/archive-html/`
-- `6` of those checked-in files are still tracked only in the review ledger rather than the source manifest
+- `21` approved source records resolve to local archive files
+- LinkedIn is the only approved baseline/profile source without a local content capture
+- Inovia, bio.link and Wikipedia content captures and provenance were added October 26; historical/review dates are unchanged
+- [The repository content inventory](../CONTENT-INVENTORY.md) distinguishes text, recordings, transcripts, Git provenance and external checks across the entire versioned tree
+- Supporting captures and sidecars need not be standalone source-manifest entries; use the inventory rather than stale hand-maintained file counts
 - Quack intentionally uses this project as supporting person-centric context, but company-specific depth still belongs in Quack
 
 ## Active plan
@@ -69,13 +70,18 @@ Goals:
 
 Current checkpoint:
 
-- `18` approved Steven source records now resolve to checked-in local archive files
-- the remaining URL-backed approved sources are the current Inovia profile, LinkedIn profile, bio.link page, and Wikipedia comparison page
+- `21` approved Steven source records now resolve to local archive files
+- LinkedIn remains blocked for public capture; authenticated account views were not archived
+- the review ledger is reconciled with the October 26 profile captures
+- speech recordings have explicit per-source links; no full transcript is catalogued in the public baseline
+- the SlideShare identity concern blocks voice use independently of its legacy source approval
 - several additional checked-in captures already exist in the review ledger and should be reconciled deliberately rather than silently ignored
 
 Priority queue:
 
-- preserve the current profile/baseline pages where feasible
+- recover private transcripts before retranscribing, and keep LinkedIn exports/unreviewed speech text outside this public checkout
+- extract and review existing first-person Q&A before broad new sourcing
+- recheck current profiles when documented successful source checks become due; do not age-expire historical papers
 - decide which review-ledger-only captures should become formal source-manifest entries
 - keep Quack and Kinitos overlap sources person-centric here and company-centric there
 
@@ -100,3 +106,4 @@ Tasks:
 2. Run `bash steven-woods-research/tools/start-steven-woods-codex.sh` before substantive continuity-sensitive work.
 3. Read `WORKSPACE-STATUS.md` and `PROJECT-STATE-AND-RECOVERY-2026-05-10.md` before expanding the archive.
 4. Continue with preservation completeness and manifest/review-ledger reconciliation, not a broad research redesign.
+5. Use `../IMAC-CONTENT-HANDOFF.md` and `../CONTENT-INVENTORY-INTERFACE.md` for cross-machine ingestion, freshness review requests and private staging rules.

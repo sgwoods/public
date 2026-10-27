@@ -9,6 +9,12 @@ This project collects:
 - cross-company public record and media mentions
 - locally preserved source captures
 
+For machine ingestion, start with [the repository content catalog](../data/content/catalog.json),
+[the text/recording/transcript inventory](../CONTENT-INVENTORY.md), and
+[the corrected iMac continuation prompt](../IMAC-CONTENT-HANDOFF.md).
+Full unreviewed transcripts and LinkedIn exports belong in private staging outside
+this public checkout, never in `incoming/` merely because it sounds temporary.
+
 This project is the canonical deep archive for Steven-centric public-record research, while the top-level `public` pages provide only short summary presentation.
 
 ## Coordination files
