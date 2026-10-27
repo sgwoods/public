@@ -29,25 +29,24 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.15-beta</b>, public code commit <code>2c7ae19415d9</code> (2026-10-27T12:53:58Z)</li>
+      <li><b>v0.2.17-beta</b>, public code commit <code>03ddce8b0b43</code> (2026-10-27T17:24:42Z)</li>
       <li>Latest edition: 2026-10-27 · 22 editions and 12 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-27/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-27T12:54:05Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-27T17:24:53Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
-    <h3>v0.2.15-beta · 2026-10-27</h3>
+    <h3>v0.2.17-beta · 2026-10-27</h3>
     <ul>
-      <li>Fix (mail script): rewriting a Drive doc that ends with a list (Steven&#x27;s takes) failed in clear(); an empty paragraph is added first (10-27). Needs a mail-script deploy (the next ship does it).</li>
+      <li><b>Hear what was published</b> (Steven, 10-27): after the email, the day&#x27;s episode is downloaded from the public feed, transcribed locally (Whisper, free) and compared with its script. A missing or garbled section (like 10-27&#x27;s intro) sends one action-needed email. The as-published transcript is published with the next publish (WebVTT, <code>podcast:transcript</code> in the feed, a link on the day&#x27;s page). <code>./np listen [DAY]</code>; run queue <code>listen</code>; <code>setup</code> (chat tier) installs the new requirement (mlx-whisper, Apple silicon).</li>
+      <li><b>The deep dives as their own podcast:</b> <code>deepdive.xml</code>, &quot;AI Briefing: Deep Dive&quot;, with its own cover. The daily show still flows from the briefing into the deep dive. The deep-dive feed is promoted on the site (Deep dives section, each deep-dive page, the footer) and in the email (&quot;▶ Listen to the deep dive&quot;, &quot;subscribe to the deep dives&quot;).</li>
     </ul>
-    <h3>v0.2.14-beta · 2026-10-27</h3>
+    <h3>v0.2.16-beta · 2026-10-27</h3>
     <ul>
-      <li>Fix: the public export&#x27;s tests failed because the photo isn&#x27;t exported (the public code push stopped).</li>
-      <li>Fix: <code>./np release … --force</code> never reached the release (the command line took <code>--force</code> for another command).</li>
-      <li>Fix: the release itself still waited for 08:30 when the run queue let it go early; it now follows the same rule (once today&#x27;s edition is out).</li>
-      <li>Shares: a link shared in Slack is labelled &quot;Shared internally today&quot; (it said &quot;Shared in Steven&#x27;s team channel&quot;); Steven&#x27;s own Bluesky posts say &quot;Posted by Steven on Bluesky&quot; (Steven, 10-27).</li>
+      <li><b>Podcast brand matches the newsletter</b> (Steven, 10-27): new 3000×3000 cover in the teal of his photo, with his photo, &quot;AI Briefing&quot;, the tagline and &quot;Curated by Steven Woods&quot;. Podcast apps pick up new artwork on their own schedule (Apple can take a few days).</li>
+      <li><b>The show is named in the first seconds</b> (Steven, 10-27: &quot;the audio today has no introduction&quot;): the cold open now starts &quot;On today&#x27;s AI Briefing.&quot; Each recording also gets a <code>.sections.json</code> with every section&#x27;s length, so a section that comes out silent or clipped is visible.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -69,7 +68,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="2c7ae19415d99e7bd13cf4246944e72ccf56a016"
+           data-source-commit="03ddce8b0b4383cf8af5f003ba2cb4f8d692b792"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
