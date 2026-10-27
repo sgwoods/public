@@ -428,12 +428,6 @@
       "owner": "google-canada-research",
       "recordings": [],
       "related_external_url": null,
-      "review_ledger_refs": [
-        {
-          "line": 61,
-          "path": "steven-woods-research/research/media-sources-review.md"
-        }
-      ],
       "source_date": {
         "display": "January 20, 2021",
         "precision": "day",
@@ -2870,7 +2864,16 @@
       }
     },
     {
-      "artifact_provenance": [],
+      "artifact_provenance": [
+        {
+          "basis": "git_content_change_not_source_publication_or_external_check",
+          "committed_at": "2026-10-26T18:31:59-04:00",
+          "path": "quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html",
+          "revision": "91f8ab38c9047e48d3edcd0527f1c4010ce60251",
+          "sha256": "8b958b27e1f223c67f3f07dc8952f5fcde63fd773a501ab4f46b6cab2f3244c2",
+          "state": "committed"
+        }
+      ],
       "authors": "MPA Sellink and SJ Carriere and SG Woods",
       "authorship": "coauthors_must_be_preserved",
       "canonical_url": "https://patents.google.com/patent/US6687734B1/en",
@@ -2883,7 +2886,9 @@
         "policy": "historical"
       },
       "identity_review": "bibliographic_attribution_only",
-      "local_artifacts": [],
+      "local_artifacts": [
+        "quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html"
+      ],
       "owner": "publications",
       "recordings": [],
       "related_external_url": null,
@@ -2900,8 +2905,14 @@
       "supporting_artifacts": [
         "quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html"
       ],
-      "text_availability": [],
-      "text_role": "coauthored_or_authorship_review_required",
+      "text_availability": [
+        {
+          "extraction_quality": "not_verified",
+          "method": "local_html_extractable",
+          "path": "quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html"
+        }
+      ],
+      "text_role": "same_patent_number_content_only_capture_not_drawings",
       "title": "System and method for determining if one web site has the same information as another web site",
       "transcript": {
         "public_artifacts": [],
@@ -4157,7 +4168,16 @@
       }
     },
     {
-      "artifact_provenance": [],
+      "artifact_provenance": [
+        {
+          "basis": "git_content_change_not_source_publication_or_external_check",
+          "committed_at": "2026-05-11T15:09:57-04:00",
+          "path": "sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf",
+          "revision": "8757063df4ca209e5330e63d6594bb5ed070f537",
+          "sha256": "9a5df147ba505e5a071aa22d3db31a808067bfe8397223718b0a4bb4089cee6f",
+          "state": "committed"
+        }
+      ],
       "authorship": "not_verified_for_voice",
       "canonical_url": "https://www.sei.cmu.edu/library/abstracts/news-at-sei/feature11q02.cfm",
       "content_id": "quack/src-quack-2002-feature11q02-cfm",
@@ -4168,10 +4188,13 @@
         "policy": "historical"
       },
       "identity_review": "not_assessed_for_voice",
-      "local_artifacts": [],
+      "local_artifacts": [
+        "sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf"
+      ],
       "owner": "quack",
       "recordings": [],
       "related_external_url": null,
+      "research_note": "Same titled Bill Pollak article starts at PDF page 26 (printed page 22) in the preserved First Quarter 2002 newsletter. Reuse the SEI-owned copy. Deferred source approval remains unchanged.",
       "source_date": {
         "display": "2002-era retrospective",
         "precision": "approximate",
@@ -4183,8 +4206,14 @@
       "source_type": "media-mention",
       "style_eligible": false,
       "supporting_artifacts": [],
-      "text_availability": [],
-      "text_role": "metadata_only",
+      "text_availability": [
+        {
+          "extraction_quality": "not_verified",
+          "method": "requires_local_pdf_extraction",
+          "path": "sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf"
+        }
+      ],
+      "text_role": "article_in_existing_newsletter_pdf_not_voice_approval",
       "title": "SEI Architecture Practices Propel Successful Startup",
       "transcript": {
         "public_artifacts": [],
@@ -4569,7 +4598,16 @@
       }
     },
     {
-      "artifact_provenance": [],
+      "artifact_provenance": [
+        {
+          "basis": "git_content_change_not_source_publication_or_external_check",
+          "committed_at": "2026-10-26T18:31:59-04:00",
+          "path": "steven-woods-research/historic/artifacts/archive-html/wikipedia-steven-woods-2026-10-26.html",
+          "revision": "91f8ab38c9047e48d3edcd0527f1c4010ce60251",
+          "sha256": "696837d55c7dbbe09460bcc15084001e535daca4af02fe7963304335e7d174dd",
+          "state": "committed"
+        }
+      ],
       "authorship": "not_verified_for_voice",
       "canonical_url": "https://en.wikipedia.org/wiki/Steven_Woods",
       "content_id": "quack/src-quack-2026-steven-woods",
@@ -4580,10 +4618,13 @@
         "policy": "historical"
       },
       "identity_review": "not_assessed_for_voice",
-      "local_artifacts": [],
+      "local_artifacts": [
+        "steven-woods-research/historic/artifacts/archive-html/wikipedia-steven-woods-2026-10-26.html"
+      ],
       "owner": "quack",
       "recordings": [],
       "related_external_url": null,
+      "research_note": "Exact canonical Wikipedia subject URL matches the preserved person-archive revision 1368795449; attribution/license remain in that copy. Reuse, not another capture. Deferred source approval remains unchanged.",
       "review_ledger_refs": [
         {
           "line": 81,
@@ -4601,8 +4642,14 @@
       "source_type": "profile",
       "style_eligible": false,
       "supporting_artifacts": [],
-      "text_availability": [],
-      "text_role": "metadata_only",
+      "text_availability": [
+        {
+          "extraction_quality": "not_verified",
+          "method": "local_html_extractable",
+          "path": "steven-woods-research/historic/artifacts/archive-html/wikipedia-steven-woods-2026-10-26.html"
+        }
+      ],
+      "text_role": "third_party_synthesis_not_personal_voice",
       "title": "Steven Woods",
       "transcript": {
         "public_artifacts": [],
@@ -5218,10 +5265,12 @@
       "canonical_url": "https://www.sei.cmu.edu/authors/s-carriere/",
       "content_id": "sei-pittsburgh-research/src-sei-current-jeromy-carriere-author-profile",
       "freshness": {
-        "assessment": "check_unknown",
-        "days_since_successful_check": null,
-        "last_successful_external_check": null,
-        "policy": "current_profile"
+        "assessment": "within_review_window",
+        "days_since_successful_check": 0,
+        "evidence_path": "data/content/checks/2026-10-27.json",
+        "last_successful_external_check": "2026-10-27",
+        "policy": "current_profile",
+        "review_after_days": 30
       },
       "identity_review": "not_assessed_for_voice",
       "local_artifacts": [
@@ -5270,10 +5319,12 @@
       "canonical_url": "https://www.sei.cmu.edu/authors/steve-woods/",
       "content_id": "sei-pittsburgh-research/src-sei-current-steve-woods-author-profile",
       "freshness": {
-        "assessment": "check_unknown",
-        "days_since_successful_check": null,
-        "last_successful_external_check": null,
-        "policy": "current_profile"
+        "assessment": "within_review_window",
+        "days_since_successful_check": 0,
+        "evidence_path": "data/content/checks/2026-10-27.json",
+        "last_successful_external_check": "2026-10-27",
+        "policy": "current_profile",
+        "review_after_days": 30
       },
       "identity_review": "not_assessed_for_voice",
       "local_artifacts": [
@@ -5910,7 +5961,7 @@
         }
       ],
       "authorship": "not_verified_for_voice",
-      "canonical_url": "https://uwaterloo.ca/math/lecture?page=1",
+      "canonical_url": "https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist",
       "content_id": "steven-woods-research/src-steven-2021-entrepreneurial-computer-scientist",
       "freshness": {
         "assessment": "historical_not_age_expired",
@@ -5925,6 +5976,7 @@
       "owner": "steven-woods-research",
       "recordings": [],
       "related_external_url": null,
+      "research_note": "Specific official event URL recovered October 27, 2026; historical listing capture retained. Recording remains unlocated. See data/content/checks/2026-10-27.json.",
       "review_ledger_refs": [
         {
           "line": 61,
@@ -6346,9 +6398,10 @@
       "canonical_url": "https://about.me/sgw",
       "content_id": "steven-woods-research/src-steven-current-about-me-profile",
       "freshness": {
-        "assessment": "check_unknown",
-        "days_since_successful_check": null,
-        "last_successful_external_check": null,
+        "assessment": "within_review_window",
+        "days_since_successful_check": 0,
+        "evidence_path": "data/content/checks/2026-10-27.json",
+        "last_successful_external_check": "2026-10-27",
         "policy": "current_profile",
         "review_after_days": 30
       },

@@ -1,5 +1,5 @@
 {
-  "catalog_source_tree_sha256": "1c0f9a93578fac9178ec0d10a02821b562ab32bba5ff00176dbd4f3d0e73210e",
+  "catalog_source_tree_sha256": "80a1b97ff07b1b0090b3179ac99ed9e166b31785d2cc397eff247d8b83919ad2",
   "evaluated_on": "2026-10-27",
   "requests": [
     {
@@ -94,18 +94,6 @@
       "priority": "normal",
       "reason": "local_content_gap",
       "request_id": "2b5a8a4e55fbd36ea2d8",
-      "state": "proposed_not_sent",
-      "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
-      "target": "sgwoods/public_maintainer"
-    },
-    {
-      "automatic_fetch": false,
-      "changes_release_status": false,
-      "content_id": "quack/src-quack-2002-feature11q02-cfm",
-      "owner": "quack",
-      "priority": "normal",
-      "reason": "local_content_gap",
-      "request_id": "39d710fa8a89fcf66f5a",
       "state": "proposed_not_sent",
       "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
       "target": "sgwoods/public_maintainer"
@@ -221,18 +209,6 @@
     {
       "automatic_fetch": false,
       "changes_release_status": false,
-      "content_id": "sei-pittsburgh-research/src-sei-current-jeromy-carriere-author-profile",
-      "owner": "sei-pittsburgh-research",
-      "priority": "normal",
-      "reason": "external_check_unknown",
-      "request_id": "6bbd8bfbae86755e6713",
-      "state": "proposed_not_sent",
-      "suggested_action": "Ask the owning researcher to check the public source; Git commit/review dates are not external checks.",
-      "target": "sgwoods/public_maintainer"
-    },
-    {
-      "automatic_fetch": false,
-      "changes_release_status": false,
       "content_id": "publication:woods2010transformation",
       "owner": "publications",
       "priority": "normal",
@@ -305,18 +281,6 @@
     {
       "automatic_fetch": false,
       "changes_release_status": false,
-      "content_id": "steven-woods-research/src-steven-current-about-me-profile",
-      "owner": "steven-woods-research",
-      "priority": "normal",
-      "reason": "external_check_unknown",
-      "request_id": "95bda0ae5d4e9ac7e793",
-      "state": "proposed_not_sent",
-      "suggested_action": "Ask the owning researcher to check the public source; Git commit/review dates are not external checks.",
-      "target": "sgwoods/public_maintainer"
-    },
-    {
-      "automatic_fetch": false,
-      "changes_release_status": false,
       "content_id": "kinitos-neoedge/src-neoedge-2008-techmeme-yahoo-games-free-games-startups",
       "owner": "kinitos-neoedge",
       "priority": "normal",
@@ -360,18 +324,6 @@
       "request_id": "9f829d3f98508bf0ce3c",
       "state": "proposed_not_sent",
       "suggested_action": "First recover prior private work; if needed transcribe in a private repo, verify speakers and request review before any public export.",
-      "target": "sgwoods/public_maintainer"
-    },
-    {
-      "automatic_fetch": false,
-      "changes_release_status": false,
-      "content_id": "quack/src-quack-2026-steven-woods",
-      "owner": "quack",
-      "priority": "normal",
-      "reason": "local_content_gap",
-      "request_id": "a2e82985207409ef3ba9",
-      "state": "proposed_not_sent",
-      "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
       "target": "sgwoods/public_maintainer"
     },
     {
@@ -629,35 +581,11 @@
     {
       "automatic_fetch": false,
       "changes_release_status": false,
-      "content_id": "sei-pittsburgh-research/src-sei-current-steve-woods-author-profile",
-      "owner": "sei-pittsburgh-research",
-      "priority": "normal",
-      "reason": "external_check_unknown",
-      "request_id": "f5d1564b491f3d8eff9f",
-      "state": "proposed_not_sent",
-      "suggested_action": "Ask the owning researcher to check the public source; Git commit/review dates are not external checks.",
-      "target": "sgwoods/public_maintainer"
-    },
-    {
-      "automatic_fetch": false,
-      "changes_release_status": false,
       "content_id": "kinitos-neoedge/src-blue-noodle-2009-gaebler-funding-round",
       "owner": "kinitos-neoedge",
       "priority": "normal",
       "reason": "local_content_gap",
       "request_id": "f6f399b04a913c02611d",
-      "state": "proposed_not_sent",
-      "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
-      "target": "sgwoods/public_maintainer"
-    },
-    {
-      "automatic_fetch": false,
-      "changes_release_status": false,
-      "content_id": "publication:sellink2004sameinformation",
-      "owner": "publications",
-      "priority": "normal",
-      "reason": "local_content_gap",
-      "request_id": "fbe3c4d81193d47f74c5",
       "state": "proposed_not_sent",
       "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
       "target": "sgwoods/public_maintainer"

@@ -5353,7 +5353,7 @@
   "evaluated_on": "2026-10-27",
   "file_kinds": {
     "binary": 180,
-    "code": 806,
+    "code": 808,
     "compressed_archive": 253,
     "generated_inventory": 5,
     "html": 467,
@@ -5362,13 +5362,13 @@
     "legacy_text": 807,
     "pdf": 45,
     "recording": 2,
-    "structured_data": 56,
-    "text": 223
+    "structured_data": 58,
+    "text": 224
   },
   "handoff": "IMAC-CONTENT-HANDOFF.md",
   "human_overview": "CONTENT-INVENTORY.md",
-  "indexed_paths": 3268,
-  "input_files": 3263,
+  "indexed_paths": 3273,
+  "input_files": 3268,
   "operating_model": {
     "other_machines": "consume_approved_content_and_request_updates",
     "private_production": "maintainer_controlled_private_staging_only",
@@ -5383,10 +5383,10 @@
     "CONTENT-INVENTORY.md"
   ],
   "outputs_sha256": {
-    "CONTENT-INVENTORY.md": "8c1989575008929a7d919a19f90fbf1416e77ac5ca6d5bf567a754058dc801af",
-    "data/content/artifacts.jsonl": "c853ed181342b33426ca104f6aa784b97554e1e3a39b73ecb5be9f69aef3d477",
-    "data/content/sources.json": "007f4295ccfcb96dd916f4f9ad6d38166262bf793d0d6d1156ad2e2aef9c0cfa",
-    "data/content/update-requests.json": "a69424b5c3c8aa1e9b7c4035245f02776d5a84fef6a3268464bc3c3d3e0ed353"
+    "CONTENT-INVENTORY.md": "db315b85ef22dfb251f3a439886955e0b88d1e0b6cc01659935a354e1c5cf92e",
+    "data/content/artifacts.jsonl": "ce65966d11270db59847ffafdaa7898a81639769a4761d21e161de05f60aafee",
+    "data/content/sources.json": "568d891dee58650c7020d0584ba6f5a50cbfb4d7e7790b0f7f97b82376ab787f",
+    "data/content/update-requests.json": "6ad93d988466ec0eac63437492676d1c2d23418b41eb453d2e329b16bccfe34b"
   },
   "project_status_manifests": [
     "canberra-research/project-manifest.json",
@@ -5410,6 +5410,8 @@
     "steven-woods-research/project-manifest.json"
   ],
   "repository": "sgwoods/public",
+  "request_triage": "data/content/request-triage.json",
+  "request_triage_overview": "CONTENT-REQUEST-TRIAGE.md",
   "safety": {
     "automatic_network_requests": false,
     "linkedin_exports": "private_working_repo_only",
@@ -5421,7 +5423,7 @@
   "schema_version": "1.0",
   "scope": "Every versioned regular file plus descriptors for the five generated inventory outputs; no ignored/untracked/private files or other repositories.",
   "source_records": 135,
-  "source_tree_sha256": "1c0f9a93578fac9178ec0d10a02821b562ab32bba5ff00176dbd4f3d0e73210e",
+  "source_tree_sha256": "80a1b97ff07b1b0090b3179ac99ed9e166b31785d2cc397eff247d8b83919ad2",
   "sources": "data/content/sources.json",
   "update_requests": "data/content/update-requests.json"
 }
