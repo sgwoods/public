@@ -656,9 +656,9 @@
   ],
   "metadata": {
     "schema_version": "1.0",
-    "content_updated_at": "2026-10-27T08:36:29-04:00",
-    "content_commit": "27dbfe8fbfb8a6a6f073a250bbce7024d8c874e8",
-    "content_sha256": "c3a22c2aabab8c5ec9d86e574001c90680d20d36128947c31fc75c10d1f2ed6a",
+    "content_updated_at": "2026-10-27T18:19:59-04:00",
+    "content_commit": "d59c4af9120098669ec9729558f3c0b072697fa4",
+    "content_sha256": "f43e5f40bad6ff8b579e8c03547db08c204dd265e5aaf4ca0da62b3a4526dd8f",
     "content_hash_scope": "Canonical JSON of all top-level fields except metadata",
     "date_semantics": "Last committed source-registry content change; not source publication, external verification or page rendering.",
     "maintainer": "sgwoods/public",
