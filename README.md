@@ -13,7 +13,7 @@ Start here in this repo:
 
 - [CONTENT-INVENTORY.md](CONTENT-INVENTORY.md): repository-wide file, text, recording, transcript and provenance inventory.
 - [Machine content catalog](data/content/catalog.json): start here for programmatic discovery; [consumer contract](CONTENT-INVENTORY-INTERFACE.md).
-- [IMAC-CONTENT-HANDOFF.md](IMAC-CONTENT-HANDOFF.md): corrected continuation prompt with private staging and safe update requests.
+- [IMAC-CONTENT-HANDOFF.md](IMAC-CONTENT-HANDOFF.md): consumer-only prompt; this public maintainer owns gathering, transcript review, indexes and publication.
 - [REPOSITORY-PERSISTENCE.md](REPOSITORY-PERSISTENCE.md): what is saved, tool/interface map, recovery snapshot, and remaining preservation gaps.
 - [ARCHIVE-PRESERVATION.md](ARCHIVE-PRESERVATION.md): six newly preserved source records, the LinkedIn access blocker, and the repeatable capture/coverage process.
 - [PROJECT-SUITE-OVERVIEW.md](PROJECT-SUITE-OVERVIEW.md)

@@ -357,7 +357,7 @@ def update_requests(sources, as_of):
         requests.append(dict(request_id=digest((source["content_id"] + ":" + reason).encode())[:20],
                              content_id=source["content_id"], owner=source["owner"], reason=reason,
                              suggested_action=action, priority=priority, state="proposed_not_sent",
-                             target="source_owner_or_private_research_working_repo",
+                             target="sgwoods/public_maintainer",
                              automatic_fetch=False, changes_release_status=False))
 
     for source in sources:
@@ -419,6 +419,10 @@ def build(root=ROOT, allow_dirty=False, as_of=None):
                    update_requests="data/content/update-requests.json", contract="CONTENT-INVENTORY-INTERFACE.md",
                    schema_ref="data/content/schema.json#/$defs/catalog",
                    curation=POLICY, human_overview="CONTENT-INVENTORY.md", handoff="IMAC-CONTENT-HANDOFF.md",
+                   operating_model={"public_information_maintainer": "sgwoods/public",
+                                    "other_machines": "consume_approved_content_and_request_updates",
+                                    "request_delivery": "explicit_user_authorized_handoff_not_automatic",
+                                    "private_production": "maintainer_controlled_private_staging_only"},
                    output_hash_exclusions=list(OUTPUTS),
                    duplicate_content_groups=[dict(sha256=sha, paths=names) for sha, names in sorted(groups.items()) if len(names) > 1],
                    safety={"unreviewed_transcripts": "private_working_repo_only", "linkedin_exports": "private_working_repo_only",

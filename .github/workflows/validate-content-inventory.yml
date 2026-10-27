@@ -31,6 +31,8 @@ jobs:
       - name: Test and validate without publishing
         run: |
           python3 tools/test_content_inventory.py
+          python3 tools/test_person_content.py
+          python3 tools/render_person_content.py --check
           python3 tools/content_inventory.py check --schema
           python3 tools/check_archive_coverage.py --check
           python3 tools/snapshot_archive_provenance.py --check

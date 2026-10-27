@@ -77,6 +77,20 @@
       }
     },
     "sources": {"type": "object", "required": ["schema_version", "sources"], "properties": {"schema_version": {"const": "1.0"}, "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}}},
+    "person_manifest_metadata": {
+      "type": "object",
+      "required": ["schema_version", "content_updated_at", "content_commit", "content_sha256", "content_hash_scope", "date_semantics", "maintainer", "consumer_role"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "content_updated_at": {"type": "string", "format": "date-time"},
+        "content_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "content_sha256": {"$ref": "#/$defs/hash"},
+        "content_hash_scope": {"const": "Canonical JSON of all top-level fields except metadata"},
+        "date_semantics": {"type": "string"},
+        "maintainer": {"const": "sgwoods/public"},
+        "consumer_role": {"const": "read_and_request_updates"}
+      }
+    },
     "request": {
       "type": "object",
       "required": ["request_id", "content_id", "owner", "reason", "suggested_action", "priority", "state", "target", "automatic_fetch", "changes_release_status"],
@@ -88,7 +102,7 @@
         "suggested_action": {"type": "string"},
         "priority": {"enum": ["normal", "high"]},
         "state": {"const": "proposed_not_sent"},
-        "target": {"const": "source_owner_or_private_research_working_repo"},
+        "target": {"const": "sgwoods/public_maintainer"},
         "automatic_fetch": {"const": false},
         "changes_release_status": {"const": false}
       }

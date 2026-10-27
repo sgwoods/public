@@ -107,3 +107,19 @@ Tasks:
 3. Read `WORKSPACE-STATUS.md` and `PROJECT-STATE-AND-RECOVERY-2026-05-10.md` before expanding the archive.
 4. Continue with preservation completeness and manifest/review-ledger reconciliation, not a broad research redesign.
 5. Use `../IMAC-CONTENT-HANDOFF.md` and `../CONTENT-INVENTORY-INTERFACE.md` for cross-machine ingestion, freshness review requests and private staging rules.
+
+## Public Maintainer And Consumer Requests
+
+This public-repository effort owns public-information gathering, verification,
+transcript production/review in private staging, source metadata, indexes and
+publication. The other Mac consumes approved content and returns requests; it
+does not produce this archive's transcripts or maintain parallel public indexes.
+Triage its public-safe request IDs here, retaining the catalog digest and evidence.
+Do not copy unreviewed transcripts or LinkedIn exports into this work plan.
+
+Current checkpoint: the repository-wide inventory is ready for main/Pages
+publication. The person summary derives its registry date and local-source count
+from committed sources. Source registry changes require
+`python3 tools/render_person_content.py`, a committed metadata/summary update,
+then the scoped archive snapshot and catalog rebuild. Daily CI verifies these
+surfaces but does not claim to perform every external source check.

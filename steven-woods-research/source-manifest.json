@@ -23,7 +23,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["podcast", "interview", "inovia", "appearance"],
+      "tags": [
+        "podcast",
+        "interview",
+        "inovia",
+        "appearance"
+      ],
       "status": "approved",
       "notes": "Feed metadata and direct audio URL are preserved locally."
     },
@@ -48,7 +53,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["talk", "cs-can", "appearance", "university-industry"],
+      "tags": [
+        "talk",
+        "cs-can",
+        "appearance",
+        "university-industry"
+      ],
       "status": "approved",
       "notes": "Recording still to be confirmed."
     },
@@ -73,7 +83,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["waterloo", "lecture", "appearance"],
+      "tags": [
+        "waterloo",
+        "lecture",
+        "appearance"
+      ],
       "status": "approved",
       "notes": "Useful for the public-speaking timeline."
     },
@@ -98,7 +112,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["waterloo", "video", "appearance", "entrepreneurship"],
+      "tags": [
+        "waterloo",
+        "video",
+        "appearance",
+        "entrepreneurship"
+      ],
       "status": "approved",
       "notes": "Event page includes the direct YouTube recording."
     },
@@ -123,7 +142,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["keynote", "waterloo", "youtube", "appearance"],
+      "tags": [
+        "keynote",
+        "waterloo",
+        "youtube",
+        "appearance"
+      ],
       "status": "approved",
       "notes": "Combine the YouTube recording with the Waterloo event page in summary use."
     },
@@ -148,7 +172,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["youtube", "google", "waterloo", "appearance"],
+      "tags": [
+        "youtube",
+        "google",
+        "waterloo",
+        "appearance"
+      ],
       "status": "approved",
       "notes": "Likely tied to the 2017 Cheriton Research Symposium."
     },
@@ -173,7 +202,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["kinitos", "lecture", "usask", "appearance"],
+      "tags": [
+        "kinitos",
+        "lecture",
+        "usask",
+        "appearance"
+      ],
       "status": "approved",
       "notes": "Also relevant to the Kinitos archive, but person-centric treatment lives here."
     },
@@ -198,7 +232,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["interview", "google", "appearance"],
+      "tags": [
+        "interview",
+        "google",
+        "appearance"
+      ],
       "status": "approved",
       "notes": "Good Google-era interview anchor."
     },
@@ -223,7 +261,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "award", "usask"],
+      "tags": [
+        "profile",
+        "award",
+        "usask"
+      ],
       "status": "approved",
       "notes": "Important retrospective profile."
     },
@@ -248,7 +290,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "waterloo", "award"],
+      "tags": [
+        "profile",
+        "waterloo",
+        "award"
+      ],
       "status": "approved",
       "notes": "Good recognition anchor."
     },
@@ -273,7 +319,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "inovia", "transition"],
+      "tags": [
+        "profile",
+        "inovia",
+        "transition"
+      ],
       "status": "approved",
       "notes": "Strong transition/profile source."
     },
@@ -298,7 +348,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "inovia", "baseline", "current-role"],
+      "tags": [
+        "profile",
+        "inovia",
+        "baseline",
+        "current-role"
+      ],
       "status": "approved",
       "notes": "Use as a first-party role and summary source. Public biography transcribed from the new Inovia team modal on October 26, 2026; the original profile URL now redirects. Content-only capture and provenance sidecar retained; capture date is separate from this record's original review date."
     },
@@ -323,7 +378,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "linkedin", "baseline", "current-role"],
+      "tags": [
+        "profile",
+        "linkedin",
+        "baseline",
+        "current-role"
+      ],
       "status": "approved",
       "notes": "Treat as a major baseline identity and chronology source, but not as a substitute for independent sourcing. October 26, 2026 preservation attempt was blocked (HTTP 999); no local content copy is claimed. Obtain a user-approved public-only profile export or retry ordinary public access later; never bypass login or copy private account data."
     },
@@ -348,7 +408,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "about-me", "baseline", "self-authored"],
+      "tags": [
+        "profile",
+        "about-me",
+        "baseline",
+        "self-authored"
+      ],
       "status": "approved",
       "notes": "Useful baseline source for education, interests, geography, and public link-network discovery."
     },
@@ -373,7 +438,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "bio-link", "baseline", "link-hub"],
+      "tags": [
+        "profile",
+        "bio-link",
+        "baseline",
+        "link-hub"
+      ],
       "status": "approved",
       "notes": "Public headings, expanded Short Bio and link map transcribed in the browser on October 26, 2026 after the HTTP client received 403. Content-only capture and provenance retained. Malformed Instagram and AngelList destinations and the Bluesky CDN link are preserved as observed, not endorsed as working links."
     },
@@ -398,7 +468,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["profile", "wikipedia", "secondary", "baseline"],
+      "tags": [
+        "profile",
+        "wikipedia",
+        "secondary",
+        "baseline"
+      ],
       "status": "approved",
       "notes": "Treat as a public synthesis page rather than a primary authority. Content-only capture checked October 26, 2026, revision 1368795449; Wikipedia contributor attribution, history and CC BY-SA 4.0 license retained. This preservation pass does not newly verify its biographical claims."
     },
@@ -423,7 +498,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["slides", "keynote", "presentation"],
+      "tags": [
+        "slides",
+        "keynote",
+        "presentation"
+      ],
       "status": "approved",
       "notes": "Identity unresolved: this marketing/revenue-generation deck may belong to a namesake. Do not use it as Steven Gregory Woods' writing, speech or style evidence until subject and event are verified. The legacy approved-source label is not voice-corpus or publication approval."
     },
@@ -448,7 +527,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["google", "media", "profile"],
+      "tags": [
+        "google",
+        "media",
+        "profile"
+      ],
       "status": "approved",
       "notes": "Good Google-era media mention."
     },
@@ -473,7 +556,11 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["google", "waterloo", "media"],
+      "tags": [
+        "google",
+        "waterloo",
+        "media"
+      ],
       "status": "approved",
       "notes": "Short but useful local-media anchor."
     },
@@ -498,7 +585,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["google", "waterloo", "hq", "media"],
+      "tags": [
+        "google",
+        "waterloo",
+        "hq",
+        "media"
+      ],
       "status": "approved",
       "notes": "Strong Google-era feature page."
     },
@@ -523,7 +615,12 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["quack", "aol", "acquisition", "media"],
+      "tags": [
+        "quack",
+        "aol",
+        "acquisition",
+        "media"
+      ],
       "status": "approved",
       "notes": "Person-centric summary is here; company-deep interpretation belongs in the Quack archive."
     },
@@ -548,9 +645,23 @@
         "person_hub_use": "summary-ok",
         "company_deep_link": "preferred"
       },
-      "tags": ["quack", "voice-portal", "media"],
+      "tags": [
+        "quack",
+        "voice-portal",
+        "media"
+      ],
       "status": "approved",
       "notes": "Useful broader market framing."
     }
-  ]
+  ],
+  "metadata": {
+    "schema_version": "1.0",
+    "content_updated_at": "2026-10-27T08:14:56-04:00",
+    "content_commit": "26e93ec05974fdba4203ac03321d213ba7bc5fd0",
+    "content_sha256": "c3a22c2aabab8c5ec9d86e574001c90680d20d36128947c31fc75c10d1f2ed6a",
+    "content_hash_scope": "Canonical JSON of all top-level fields except metadata",
+    "date_semantics": "Last committed source-registry content change; not source publication, external verification or page rendering.",
+    "maintainer": "sgwoods/public",
+    "consumer_role": "read_and_request_updates"
+  }
 }

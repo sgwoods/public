@@ -54,6 +54,9 @@ class InventoryTests(unittest.TestCase):
         self.assertNotIn("untracked-private.txt", outputs[ci.OUTPUTS[1]])
         catalog = json.loads(outputs[ci.OUTPUTS[0]])
         self.assertEqual(catalog["input_files"], len(expected - set(ci.OUTPUTS)))
+        self.assertEqual(catalog["operating_model"]["public_information_maintainer"], "sgwoods/public")
+        requests = json.loads(outputs[ci.OUTPUTS[3]])["requests"]
+        self.assertTrue(all(item["target"] == "sgwoods/public_maintainer" for item in requests))
 
     def test_history_is_actual_file_change_not_latest_catalog_commit(self):
         first = self.run_git("rev-parse", "HEAD")

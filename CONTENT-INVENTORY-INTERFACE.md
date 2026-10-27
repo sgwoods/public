@@ -2,6 +2,21 @@
 
 Version 1.0. Owner: `sgwoods/public`. Reviewed October 27, 2026.
 
+## Ownership And Consumer Role
+
+This workspace is the sole maintainer of the public-information projects. It
+owns source gathering/verification, transcript production and review in private
+staging, public-safe exports, manifests, indexes and publication. The other Mac
+consumes approved content and returns requests here; it does not maintain the
+public archive, produce its transcripts or publish parallel updates. This does
+not transfer ownership of unrelated software projects described by the hub.
+
+`catalog.operating_model` and request `target: sgwoods/public_maintainer` expose
+that division to machines. The corrected consumer prompt and a public-safe
+request-packet example live in `IMAC-CONTENT-HANDOFF.md`. Requests must be explicitly
+handed back, not silently dispatched. Raw transcripts and LinkedIn exports are
+never included, even on public review branches.
+
 ## Entry Points
 
 Read `data/content/catalog.json` first, then its relative references:
@@ -137,7 +152,7 @@ label or create an issue, notify another chat, use credentials or fetch sources.
 Do not automatically dispatch them without Steven's authorization.
 
 To request an update, return only the content ID, request ID, catalog tree digest,
-reason and public-safe evidence. A researcher can respond with a reviewed capture,
+reason and public-safe evidence. This maintainer responds with a reviewed capture,
 explicit observation outcome/date, and appropriate curation changes. Unknown or
 failed checks stay unknown/failed. Raw exports, token-bearing URLs and unreviewed
 quotes must not be embedded in requests or public status metadata.
@@ -164,6 +179,9 @@ Never install dependencies globally merely to read the inventory.
 To maintain the inventory:
 
 1. Review and commit source/curation/code/documentation changes on a review branch.
+   For person-registry changes, run `python3 tools/render_person_content.py`
+   after committing its source payload; commit the metadata/summary output before
+   snapshotting the archive. `--check` fails on mismatched metadata or summary.
 2. If an archive changed, snapshot only its **committed** provenance, for example
    `python3 tools/snapshot_archive_provenance.py --scope steven-woods-research`.
    Do not relabel unrelated archives merely because you are on a review branch.
@@ -183,3 +201,20 @@ dispatch. Its token-authenticated bot commits do not recursively trigger the
 workflow. The review-branch validation workflow has read-only repository access
 and never publishes. PR checks attach the exact head SHA to its branch name for
 the existing branch-labelled overview checks; they do not merge it into main.
+
+## Person Registry Metadata
+
+`steven-woods-research/source-manifest.json` has additive `metadata` with
+`content_updated_at`, `content_commit` and `content_sha256`. These identify the
+schema at `data/content/schema.json#/$defs/person_manifest_metadata` and the
+last semantic change to the committed registry payload, excluding `metadata`.
+Metadata-only changes and daily renders do not advance that date. Full Git
+history and committed source content are required; unresolved provenance fails,
+never falls back to today. Formatting-only commits are also ignored.
+
+The person landing page derives its registry date and approved/local counts from
+that manifest. CI checks both on every main push and daily, before publication.
+This does not imply that every external page was rechecked or a transcript was
+produced. Per-source successful external checks remain in `sources.json`, with
+explicit unknown/blocked states and their own review windows. Other archive
+manifests do not yet claim this new metadata contract.
