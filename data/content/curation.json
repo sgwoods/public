@@ -22,7 +22,8 @@
       "research_note": "The captured page links the organizer's YouTube channel, not an identified recording of this talk."
     },
     "steven-woods-research/src-steven-2021-entrepreneurial-computer-scientist": {
-      "text_role": "event_listing_not_talk_transcript"
+      "text_role": "event_listing_not_talk_transcript",
+      "research_note": "Specific official event URL recovered October 27, 2026; historical listing capture retained. Recording remains unlocated. See data/content/checks/2026-10-27.json."
     },
     "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact": {
       "text_role": "event_listing_not_talk_transcript",
@@ -64,7 +65,7 @@
     },
     "steven-woods-research/src-steven-current-about-me-profile": {
       "text_role": "self_presented_profile_unreviewed_for_voice",
-      "freshness": {"policy": "current_profile", "last_successful_external_check": null, "review_after_days": 30}
+      "freshness": {"policy": "current_profile", "last_successful_external_check": "2026-10-27", "review_after_days": 30, "evidence_path": "data/content/checks/2026-10-27.json"}
     },
     "steven-woods-research/src-steven-current-wikipedia-page": {
       "text_role": "third_party_synthesis_not_personal_voice",
@@ -85,8 +86,26 @@
       "research_note": "Local SEI copy exists outside the bibliography's archive_pdf fields. Verify exact edition and completeness before asserting a proceedings match."
     },
     "publication:sellink2004sameinformation": {
+      "local_artifacts": ["quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html"],
       "supporting_artifacts": ["quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html"],
+      "text_role": "same_patent_number_content_only_capture_not_drawings",
       "research_note": "Text of this same patent number is preserved in Quack. Drawings/PDF are not included in that content-only capture."
+    },
+    "quack/src-quack-2002-feature11q02-cfm": {
+      "local_artifacts": ["sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf"],
+      "text_role": "article_in_existing_newsletter_pdf_not_voice_approval",
+      "research_note": "Same titled Bill Pollak article starts at PDF page 26 (printed page 22) in the preserved First Quarter 2002 newsletter. Reuse the SEI-owned copy. Deferred source approval remains unchanged."
+    },
+    "quack/src-quack-2026-steven-woods": {
+      "local_artifacts": ["steven-woods-research/historic/artifacts/archive-html/wikipedia-steven-woods-2026-10-26.html"],
+      "text_role": "third_party_synthesis_not_personal_voice",
+      "research_note": "Exact canonical Wikipedia subject URL matches the preserved person-archive revision 1368795449; attribution/license remain in that copy. Reuse, not another capture. Deferred source approval remains unchanged."
+    },
+    "sei-pittsburgh-research/src-sei-current-steve-woods-author-profile": {
+      "freshness": {"policy": "current_profile", "last_successful_external_check": "2026-10-27", "review_after_days": 30, "evidence_path": "data/content/checks/2026-10-27.json"}
+    },
+    "sei-pittsburgh-research/src-sei-current-jeromy-carriere-author-profile": {
+      "freshness": {"policy": "current_profile", "last_successful_external_check": "2026-10-27", "review_after_days": 30, "evidence_path": "data/content/checks/2026-10-27.json"}
     }
   },
   "supplemental_sources": [

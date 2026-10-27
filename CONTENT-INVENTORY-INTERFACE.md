@@ -26,6 +26,7 @@ Read `data/content/catalog.json` first, then its relative references:
 | `artifacts.jsonl` | One JSON object per versioned path, including docs, data, code, media, legacy Spectra files and bibliography sources |
 | `sources.json` | Semantic records from all seven source manifests, the BibTeX bibliography, review-ledger-only sources and explicitly curated thesis/CV/recording entries |
 | `update-requests.json` | Proposed review requests evaluated on a stated date; not messages already sent |
+| `request-triage.json` | Maintainer decisions against a pinned queue snapshot; never silently suppresses new signals |
 | `curation.json` | Human-maintained source associations, voice/identity cautions, successful external checks and review policies |
 | `schema.json` | JSON Schema definitions for consumers; artifact rows use `#/$defs/artifact` |
 | `CONTENT-INVENTORY.md` | Generated human-readable discovery overview |
@@ -161,6 +162,30 @@ First check whether the local clone is behind the requested GitHub branch. A
 catalog can accurately index an older checkout. Compare the fetched branch and
 `source_tree_sha256`, respecting dirty work; never reset or overwrite it. The
 catalog does not promise its branch has been merged or deployed to Pages.
+
+## Maintainer Request Triage
+
+`data/content/request-triage.json` is the public-safe decision register, separate
+from the generated signal queue. `CONTENT-REQUEST-TRIAGE.md` renders its dated
+review, batches, effort/value judgments, questions and unsent outreach drafts.
+All effort ranges are planning estimates, not measured time or budget approval.
+No question response grants source approval, transcript publication rights or
+permission to contact someone unless Steven explicitly gives that direction.
+
+Run `python3 tools/triage_content_requests.py check` to verify the historical queue
+commit/hash, complete per-request coverage, evidence links and rendered report.
+Run `python3 tools/triage_content_requests.py status` to join the current verified
+inventory to the decisions. New signals remain `untriaged`; a resolved signal
+that returns becomes `reopened_needs_review`, never silently stays resolved.
+The normal daily/main workflow reports that status after rebuilding the catalog.
+The dated report does not pretend its old judgments were rerun every day.
+
+Reviewed `local_artifacts` curation overrides may associate an exact existing
+copy across archives without copying bytes or changing the source-owned approval
+label. Related editions remain `supporting_artifacts`, not exact-edition proof.
+Freshness evidence paths must resolve inside the versioned inventory. Private
+paths, raw transcripts, exports and user answers containing private information
+must remain in private staging, not in this register.
 
 ## Safe Extraction And Maintenance
 

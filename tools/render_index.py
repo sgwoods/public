@@ -73,6 +73,12 @@ REFERENCE_PAGES = [
         "button_label": "Open inventory",
     },
     {
+        "title": "Content requests and decisions",
+        "description": "Reviewed source gaps, ranked maintenance batches, evidence-backed resolutions and decisions needed from Steven.",
+        "page_path": "CONTENT-REQUEST-TRIAGE.md",
+        "button_label": "Open triage",
+    },
+    {
         "title": "Project suite overview",
         "description": "Portfolio map, public/private surface guide, and reprioritization layer across the full project suite.",
         "page_path": "project-suite-overview.html",

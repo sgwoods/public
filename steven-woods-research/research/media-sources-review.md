@@ -58,7 +58,7 @@ is not speaker attribution, style-corpus approval or republication permission.
 | --- | --- | --- | --- | --- | --- |
 | appearance | The Riddick Show: Steven Woods - Partner and Chief Technology Officer, Inovia Capital | 2023-05-01 | https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947 | Exact episode date and duration confirmed from the RSS feed; direct MP3 URL is public. | `archive-html/apple-riddick-show.html`, `archive-html/riddick-show-feed.xml` |
 | appearance | Models of University/Industry Collaboration - What Works and What Doesn't | circa 2023 | https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/ | CS-CAN event page naming Steven Woods as speaker; recording not yet found. | `archive-html/cscan-university-industry-collaboration.html` |
-| appearance | The entrepreneurial computer scientist | 2021-01-20 | https://uwaterloo.ca/math/lecture?page=1 | Waterloo lecture listing with exact date and Steven-specific event card. | `archive-html/uwaterloo-entrepreneurial-computer-scientist.html` |
+| appearance | The entrepreneurial computer scientist | 2021-01-20 | https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist | Specific official event page recovered October 27; the old lecture listing redirects elsewhere. Recording still unlocated, not proven absent. | `archive-html/uwaterloo-entrepreneurial-computer-scientist.html` (historical listing capture retained) |
 | appearance | Entrepreneurship and Impact Series - April 2023, Steven Woods | 2023-04 | https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series | Waterloo event page includes a direct recording link. Video: https://www.youtube.com/watch?v=L64GbHRcsFQ | `archive-html/uwaterloo-entrepreneurship-impact-series.html` |
 | appearance | Research Discovery Days 2023: Steven Woods | 2023-11-02 | https://www.youtube.com/watch?v=C_HIi0IKK90 | Exact YouTube title confirmed via oEmbed; event context matches Waterloo Research Discovery Days keynote page. | `archive-html/uwaterloo-research-discovery-days.html` |
 | appearance | Founding Innovation Keynote: Steven Woods | 2023-11-02 | https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days | Event page contains keynote block and Steven bio. Pair with the YouTube recording above. | `archive-html/uwaterloo-research-discovery-days.html` |
@@ -113,6 +113,14 @@ is not speaker attribution, style-corpus approval or republication permission.
 | media-mention | NeoEdge merges with Offspring, expands into game creation | 2009 | https://www.gamedeveloper.com/game-platforms/neoedge-merges-with-offspring-expands-into-game-creation | Industry coverage of NeoEdge strategy shift. | `archive-html/gamedeveloper-neoedge-merges-offspring-2009.html` |
 
 ## Still to verify / pursue
+
+The October 27 request cycle is triaged in
+[the decision register](../../CONTENT-REQUEST-TRIAGE.md), with machine-readable
+per-request dispositions in `../../data/content/request-triage.json`.
+Three unknown profile checks were completed with evidence in
+`../../data/content/checks/2026-10-27.json`; three existing cross-archive copies
+were associated without promoting deferred source labels. Private transcript
+locations and any raw exports must not be entered in this public ledger.
 
 - Exact canonical event page and date for the `Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community` YouTube video
 - Better archival copy for the original University Affairs article if accessible

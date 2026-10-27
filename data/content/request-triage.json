@@ -1,0 +1,1165 @@
+{
+  "schema_version": "1.0",
+  "schema_ref": "data/content/schema.json#/$defs/request_triage",
+  "reviewed_on": "2026-10-27",
+  "maintainer": "sgwoods/public",
+  "baseline": {
+    "commit": "68b94d9b7178a5e2a9a248a2ac7d804d2ef74f8d",
+    "requests_sha256": "a69424b5c3c8aa1e9b7c4035245f02776d5a84fef6a3268464bc3c3d3e0ed353",
+    "request_count": 57
+  },
+  "summary": "Six signals are resolved by three actual public profile checks and three reviewed associations to existing copies. The Waterloo 2021 canonical URL is repaired, but its recording signal remains open. Twenty original sources were already deferred; one further source was ledger-only. The queue is not an approved-source preservation count. No source-approval or release labels were promoted, no transcript produced, no private workspace searched, no outreach sent and no paid access used.",
+  "questions": [
+    {
+      "question_id": "Q1",
+      "title": "Recover existing private interview work",
+      "question": "Is any transcript or diarized text already available for Riddick 2023, Waterloo Entrepreneurship and Impact 2023, Research Discovery Days 2023, or the 2017 Woods/Friesen presentation? Tell this maintainer where existing private work can be found, privately; otherwise say none known.",
+      "recommended": "Recover prior private work first; if none exists, begin with Riddick after agreeing a private staging location.",
+      "options": [
+        "Existing private work exists; provide its location privately",
+        "None known; plan new private Riddick transcription",
+        "Defer transcript work"
+      ],
+      "blocks": "Private recovery/transcription work for four talks; not public indexing of their known metadata",
+      "answer_state": "awaiting_user"
+    },
+    {
+      "question_id": "Q2",
+      "title": "Choose the next bounded work cycle",
+      "question": "Which outcome is worth the next maintenance cycle: usable interview/research text, or broader patent and company-press preservation?",
+      "recommended": "Readable text first: a 90-minute discovery/edition-review pass, then the private Riddick lane once Q1 is answered. No paid access or model spending is authorized by this estimate.",
+      "options": [
+        "Interview/research text first",
+        "Patent and company-history preservation first",
+        "Pause new gathering; maintain current evidence only"
+      ],
+      "blocks": "Reprioritization and starting a new production batch, not this completed triage",
+      "answer_state": "awaiting_user"
+    },
+    {
+      "question_id": "Q3",
+      "title": "Confirm or exclude the 2012 deck",
+      "question": "Is the September 25, 2012 Road to Revenue / Buying and Selling presentation uploaded by Increase A/S actually yours? It may be a namesake; the evidence does not establish attribution.",
+      "recommended": "Keep it quarantined and excluded from quotes, biography claims and style use. If it is not yours, explicitly reject it in the next reviewed source update.",
+      "options": [
+        "Not mine; remove it from approved personal sources",
+        "Mine; supply event/identity confirmation",
+        "Unsure; keep quarantined"
+      ],
+      "blocks": "Any attribution or use of the deck as Steven Gregory Woods' work",
+      "answer_state": "awaiting_user"
+    },
+    {
+      "question_id": "Q4",
+      "title": "Organizer outreach",
+      "question": "If bounded public searching cannot find a recording, should we contact CS-CAN, Waterloo Mathematics or USask about the three missing-recording talks?",
+      "recommended": "No messages yet. Use public research first; Steven can approve individual unsent drafts and choose the sender/channel later.",
+      "options": [
+        "Public research only; no outreach",
+        "Approve one draft at a time after reviewing sender/channel",
+        "I will contact organizers myself"
+      ],
+      "blocks": "Sending the organizer drafts, not continuing ordinary public searching",
+      "answer_state": "awaiting_user"
+    },
+    {
+      "question_id": "Q5",
+      "title": "LinkedIn access boundary",
+      "question": "Should the LinkedIn record stay explicitly blocked, or will you provide a sanitized public-profile-only subset for private review? Do not place raw exports or private account data in a public branch.",
+      "recommended": "Leave blocked unless the public-profile content adds unique value. Employer/institutional sources already provide alternatives.",
+      "options": [
+        "Leave blocked and use alternative public sources",
+        "Provide a sanitized public-only subset privately",
+        "Revisit later"
+      ],
+      "blocks": "LinkedIn capture/review only; no other archive work",
+      "answer_state": "awaiting_user"
+    }
+  ],
+  "batches": [
+    {
+      "batch_id": "completed",
+      "rank": 0,
+      "title": "Completed verification and copy-discovery fixes",
+      "value": "Six signals closed without producing or publishing new private material.",
+      "effort": "Completed in this triage cycle; no measured duration claimed",
+      "next_action": "Validate regenerated inventory; retain evidence and existing source approval states.",
+      "stop_gate": "Do not treat a text-only patent copy as drawings or a daily inventory render as an external check"
+    },
+    {
+      "batch_id": "identity",
+      "rank": 1,
+      "title": "Identity guard before attribution",
+      "value": "Prevents namesake material entering the personal record.",
+      "effort": "User confirmation, then approximately 10-20 minutes to reconcile reviewed source metadata",
+      "next_action": "Await Q3; retain the quarantine and identity warning.",
+      "stop_gate": "No quotation, style extraction or biography attribution without primary identity evidence"
+    },
+    {
+      "batch_id": "private-talks",
+      "rank": 2,
+      "title": "Recover private interview/talk transcripts",
+      "value": "Highest likely value for source-faithful first-person content; Riddick is the first candidate.",
+      "effort": "Recovery triage approximately 15-30 minutes once a private location is supplied; fresh processing and speaker review require a separate estimate after inspecting the roughly 85-minute Riddick recording",
+      "next_action": "Await Q1, then recover before retranscribing. This maintainer produces/reviews privately; the other Mac remains a consumer.",
+      "stop_gate": "No private filesystem sweep, transcription, paid model use or public transcript export is authorized by the triage"
+    },
+    {
+      "batch_id": "related-editions",
+      "rank": 3,
+      "title": "Compare two locally available publication editions",
+      "value": "Existing SEI-hosted papers may avoid redundant downloads while preserving publication-version accuracy.",
+      "effort": "Approximately 20-45 minutes total for metadata/page/edition comparison; not a full scholarly review",
+      "next_action": "Match CORUM II and Software Architectural Transformation against their DOI/proceedings records; keep them supporting-only until verified.",
+      "stop_gate": "A matching title/authors is not proof of the exact proceedings edition"
+    },
+    {
+      "batch_id": "paper-recovery",
+      "rank": 4,
+      "title": "Three core research-paper recovery leads",
+      "value": "More useful text than indiscriminate profile or patent coverage if the consumer's priority is research.",
+      "effort": "Approximately 45-90 minutes for a bounded public/author-repository search",
+      "next_action": "Look for permitted editions of plan matching, architecture tradeoff analysis and scenario-based architectural engineering; do not substitute similarly titled Spectra papers.",
+      "stop_gate": "Stop on paywall/access controls or uncertain edition; metadata-only is preferable to a false full-text claim"
+    },
+    {
+      "batch_id": "recording-discovery",
+      "rank": 5,
+      "title": "Three recording or slides searches",
+      "value": "Clarifies whether historical talk listings can yield usable content.",
+      "effort": "At most 15-20 minutes per talk before reviewing whether outreach is worthwhile",
+      "next_action": "Use the repaired Waterloo event page, CS-CAN listing and USask 2003 entry as bounded leads; Q4 controls outreach only.",
+      "stop_gate": "No messages sent, and failure to find a recording is not proof it never existed"
+    },
+    {
+      "batch_id": "patents",
+      "rank": 6,
+      "title": "Fifteen missing patent-text captures",
+      "value": "Good for completeness and inventor/company history; lower immediate value for personal speaking/writing material.",
+      "effort": "Approximately 2-4 hours for all fifteen with reviewed identity, content-only capture and provenance; begin with two, not all fifteen",
+      "next_action": "After Q2, capture two exact-number public patent pages, preserving co-inventors, application/grant versions and limitations.",
+      "stop_gate": "No paywall bypass or bulk promotion; text-only captures do not contain all diagrams or establish legal status"
+    },
+    {
+      "batch_id": "priority-press",
+      "rank": 7,
+      "title": "Four selective company-history leads",
+      "value": "Potentially useful acquisition, startup-profile and Kinitos product context; original source statuses stay deferred/ledger-only.",
+      "effort": "Approximately 45-90 minutes for initial access/identity review, not guaranteed capture completion",
+      "next_action": "Prioritize TheStreet/eCommerceTimes acquisition coverage, the older startup profile and InfoWorld Kinitos article; review before promotion.",
+      "stop_gate": "Do not pay, bypass access controls, contact publishers or duplicate an equivalent approved source without a deliberate next step"
+    },
+    {
+      "batch_id": "deferred-leads",
+      "rank": 8,
+      "title": "Fifteen lower-priority deferred sources",
+      "value": "Often redundant news, secondary profiles/funding databases or restricted case material; not an approved-source emergency.",
+      "effort": "No work scheduled; 15-minute usefulness/access check per candidate only when a concrete claim needs it",
+      "next_action": "Keep metadata and source-owned deferred labels. Revisit only for a specific coverage gap.",
+      "stop_gate": "No blanket fetching, subscriptions, purchases or treating all deferred records as preservation failures"
+    },
+    {
+      "batch_id": "reference-only",
+      "rank": 9,
+      "title": "Book and editorial-preface references",
+      "value": "Retain citations; full-book republication and a short editorial are not automatically worth acquisition effort.",
+      "effort": "No full-text acquisition scheduled",
+      "next_action": "Keep bibliographic links; seek a permitted author edition only if a specific consumer need justifies it.",
+      "stop_gate": "No book purchase, copyrighted full-text republication or model-training/style approval inferred"
+    },
+    {
+      "batch_id": "linkedin",
+      "rank": 10,
+      "title": "LinkedIn remains blocked",
+      "value": "Optional completeness, not a blocker for the public record as a whole.",
+      "effort": "No work unless Q5 changes the direction",
+      "next_action": "Keep the blocked check honest; any user-provided raw export remains private.",
+      "stop_gate": "No authenticated scraping, cookies, account UI capture or public raw export"
+    },
+    {
+      "batch_id": "legacy-audio",
+      "rank": 11,
+      "title": "Legacy welcome WAV",
+      "value": "Low incremental value until speaker identity and intended use are established.",
+      "effort": "Defer; approximately 10-20 minutes for private identity/duration review if later justified",
+      "next_action": "Retain the public file as bytes, not a verified Steven transcript or voice sample.",
+      "stop_gate": "Do not spend transcription/review effort or infer speaker identity from its filename"
+    }
+  ],
+  "outreach_drafts": [
+    {
+      "draft_id": "D1",
+      "recipient_role": "CS-CAN / INFOCAN event organizer",
+      "body": "We are maintaining Steven Woods' public record. Is a public recording, slide deck or published summary available for Models of University/Industry Collaboration - What Works and What Doesn't? We have the event listing, but no exact recording URL. A public link or confirmation of availability would help us label the archive accurately."
+    },
+    {
+      "draft_id": "D2",
+      "recipient_role": "University of Waterloo Mathematics event organizer",
+      "body": "We are maintaining Steven Woods' public record. Is a public recording or slide deck available for The entrepreneurial computer scientist, held January 20, 2021? We have located the specific official event page, but no recording. Please share a public link or clarify whether only the event listing remains available."
+    },
+    {
+      "draft_id": "D3",
+      "recipient_role": "University of Saskatchewan Computer Science lecture archivist",
+      "body": "We are maintaining Steven Woods' public record. Does the department hold a shareable recording, slide deck or published text from his 2003 P.G. Sorenson lecture while CEO of Kinitos? We have the official lecture listing. We seek only a permitted public reference, not private archives or personal contact information."
+    }
+  ],
+  "entries": [
+    {
+      "request_id": "064bb25b31a4123681c7",
+      "content_id": "kinitos-neoedge/src-neoedge-2008-campaign-yahoo-sony-ad-funded-games",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "Yahoo, Sony extend ad-funded games offerings",
+      "canonical_url": "https://www.campaignlive.co.uk/article/yahoo-sony-extend-ad-funded-games-offerings/831158",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "074884f24990766ff07b",
+      "content_id": "publication:carriere1999transformation",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Software architectural transformation",
+      "canonical_url": "https://doi.org/10.1109/WCRE.1999.806943",
+      "state": "ready",
+      "batch_id": "related-editions",
+      "decision": "Related local paper inspected by title/authors. Compare publication edition/pagination/DOI before changing it from supporting evidence to an exact local copy.",
+      "evidence_paths": [
+        "sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "0f82a74350afec305ab0",
+      "content_id": "quack/src-quack-2000-speechworks-calling-on-investors",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "SpeechWorks: Calling on Investors",
+      "canonical_url": "https://www.internetnews.com/it-management/speechworks-calling-on-investors",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "17a176ca6e1425a2c394",
+      "content_id": "ledger:16620bd0017af7ee04ac",
+      "owner": "steven-woods-research",
+      "reason": "local_content_gap",
+      "title": "VSLive Wrap: Microsoft shines a spotlight on PC clients",
+      "canonical_url": "https://www.infoworld.com/article/2223377/vslive-wrap-microsoft-shines-a-spotlight-on-pc-clients.html",
+      "state": "ready",
+      "batch_id": "priority-press",
+      "decision": "Useful company-history lead, but still deferred or ledger-only. Do a bounded access/identity/redundancy review before any preservation or promotion.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "17fa4f1c8caf491d28ca",
+      "content_id": "quack/src-quack-2000-if-it-walks-like-a-duck-quack-com",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "If It Walks Like a Duck, Quack.com",
+      "canonical_url": "https://www.internetnews.com/it-management/if-it-walks-like-a-duck-quack-com",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "22fb1fd951376c3f3e78",
+      "content_id": "publication:kominek2007canonicalization",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for the transformation and canonicalization of semantically structured data",
+      "canonical_url": "https://patents.google.com/patent/US7213027B1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "26c5078e5eca40f45361",
+      "content_id": "steven-woods-research/src-steven-2017-google-waterloo-uw-community",
+      "owner": "steven-woods-research",
+      "reason": "transcript_gap",
+      "title": "Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community",
+      "canonical_url": "https://www.youtube.com/watch?v=3cDnlKwbtTY",
+      "state": "blocked_user",
+      "batch_id": "private-talks",
+      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html"
+      ],
+      "question_ids": [
+        "Q1",
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "2b5a8a4e55fbd36ea2d8",
+      "content_id": "publication:woods2007providecontent",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for providing content, applications, services and digital media to users in a peer-to-peer network",
+      "canonical_url": "https://patents.google.com/patent/US20070237133A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "39d710fa8a89fcf66f5a",
+      "content_id": "quack/src-quack-2002-feature11q02-cfm",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "SEI Architecture Practices Propel Successful Startup",
+      "canonical_url": "https://www.sei.cmu.edu/library/abstracts/news-at-sei/feature11q02.cfm",
+      "state": "resolved",
+      "batch_id": "completed",
+      "decision": "Reuse the preserved SEI newsletter article (PDF page 26, printed page 22), reviewed by title/byline. Do not promote the deferred Quack source status.",
+      "evidence_paths": [
+        "sei-pittsburgh-research/historic/artifacts/archive-pdf/sei-architecture-practices-propel-successful-startup-2002.pdf"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "3f2c9c134d9ebc92e83b",
+      "content_id": "steven-woods-research/src-steven-current-linkedin-profile",
+      "owner": "steven-woods-research",
+      "reason": "public_access_blocked",
+      "title": "Steven Woods",
+      "canonical_url": "https://www.linkedin.com/in/stevenwoods/",
+      "state": "blocked_user",
+      "batch_id": "linkedin",
+      "decision": "No public copy is claimed. Keep the October 26 access failure and successful-check null; do not retry through account UI or ingest raw exports.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q5"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "43ea55834c5c177d885d",
+      "content_id": "steven-woods-research/src-steven-2023-cscan-collaboration-talk",
+      "owner": "steven-woods-research",
+      "reason": "recording_link_gap",
+      "title": "Models of University/Industry Collaboration - What Works and What Doesn't",
+      "canonical_url": "https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/",
+      "state": "ready",
+      "batch_id": "recording-discovery",
+      "decision": "Exact recording/slides remain unlocated in the bounded first pass. Retain the historical listing and search public sources before considering organizer contact.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/cscan-university-industry-collaboration.html"
+      ],
+      "question_ids": [
+        "Q4"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "446624ea064f054bf368",
+      "content_id": "kinitos-neoedge/src-neoedge-2026-crunchbase-funding-profile",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "NeoEdge Networks - Crunchbase Company Profile & Funding",
+      "canonical_url": "https://www.crunchbase.com/organization/neoedge-networks",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "4a493327ce6b8ab60a7b",
+      "content_id": "steven-woods-research/src-steven-2003-usask-sorenson-lecture",
+      "owner": "steven-woods-research",
+      "reason": "recording_link_gap",
+      "title": "P.G. Sorenson Lecture: Dr. Steven Woods, CEO of Kinitos, Inc.",
+      "canonical_url": "https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php",
+      "state": "ready",
+      "batch_id": "recording-discovery",
+      "decision": "Exact recording/slides remain unlocated in the bounded first pass. Retain the historical listing and search public sources before considering organizer contact.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/usask-pg-sorenson-lectures.html"
+      ],
+      "question_ids": [
+        "Q4"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "4b95ab7fa7b79c7390a9",
+      "content_id": "quack/src-quack-1999-vc-buzz-246-55-million-in-todays-deals",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "VC Buzz - $246.55+ Million in Today's Deals",
+      "canonical_url": "https://www.internetnews.com/it-management/vc-buzz-246-55-million-in-todays-deals",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "4d5c5c0bcc3163e337e6",
+      "content_id": "steven-woods-research/src-steven-2012-slideshare-keynote-deck",
+      "owner": "steven-woods-research",
+      "reason": "identity_unresolved",
+      "title": "Steven Woods Keynote presentation",
+      "canonical_url": "https://www.slideshare.net/slideshow/steven-woods-keynote-presentation/14571346",
+      "state": "quarantined",
+      "batch_id": "identity",
+      "decision": "Do not attribute this revenue/marketing deck to the subject without identity confirmation. Source-owned legacy approval is not changed by this triage.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/slideshare-steven-woods-keynote.html"
+      ],
+      "question_ids": [
+        "Q3"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "611a6835fc9da07a21a8",
+      "content_id": "publication:woods2012funneling",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for funneling user responses in an internet voice portal system to determine a desired item or service",
+      "canonical_url": "https://patents.google.com/patent/US8131555B1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "6545209622aa0749d9cd",
+      "content_id": "publication:quilici2000matching",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Program plan matching: experiments with a constraint-based approach",
+      "canonical_url": "https://doi.org/10.1016/S0167-6423(99)00039-8",
+      "state": "ready",
+      "batch_id": "paper-recovery",
+      "decision": "Seek a permitted exact or clearly labelled author edition; similar Spectra titles inspected are not an automatic match. No paid access or full-text availability claim.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "67161d7863b7b126bd89",
+      "content_id": "quack/src-quack-2000-aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "AOL Buys a Voice Portal, Boosting Bid.com's Fortunes",
+      "canonical_url": "https://www.thestreet.com/technology/aol-buys-a-voice-portal-boosting-bidcoms-fortunes-1062982",
+      "state": "ready",
+      "batch_id": "priority-press",
+      "decision": "Useful company-history lead, but still deferred or ledger-only. Do a bounded access/identity/redundancy review before any preservation or promotion.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "6bbd8bfbae86755e6713",
+      "content_id": "sei-pittsburgh-research/src-sei-current-jeromy-carriere-author-profile",
+      "owner": "sei-pittsburgh-research",
+      "reason": "external_check_unknown",
+      "title": "Jeromy Carriere",
+      "canonical_url": "https://www.sei.cmu.edu/authors/s-carriere/",
+      "state": "resolved",
+      "batch_id": "completed",
+      "decision": "Public SEI alumni profile and identity reviewed October 27; retain the existing capture.",
+      "evidence_paths": [
+        "data/content/checks/2026-10-27.json"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "7604ee0a326565e9a62c",
+      "content_id": "publication:woods2010transformation",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Transformation and canonicalization of semantically structured data",
+      "canonical_url": "https://patents.google.com/patent/US7676500B2/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "7ab8adba86a49550e1ec",
+      "content_id": "publication:quilici2011voiceover",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for using voice over a telephone to access, process, and carry out transactions over the internet",
+      "canonical_url": "https://patents.google.com/patent/US7974875B1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "7c331910fc93a4235f27",
+      "content_id": "publication:woods2007servicemessaging",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Service and messaging infrastructure to support creation of distributed, peer to peer applications with a service oriented architecture",
+      "canonical_url": "https://patents.google.com/patent/US20070239819A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "8543ca549b4674f1caab",
+      "content_id": "publication:phillips2013areas",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Identification of areas of interest on a web page",
+      "canonical_url": "https://patents.google.com/patent/US8379053B1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "93d48f646061e0c56cc1",
+      "content_id": "recording:steve-welcome",
+      "owner": "steven-woods-research",
+      "reason": "transcript_gap",
+      "title": "Legacy Spectra welcome recording",
+      "canonical_url": null,
+      "state": "deferred",
+      "batch_id": "legacy-audio",
+      "decision": "Filename is not identity evidence. Defer private speaker/duration inspection until there is a concrete need.",
+      "evidence_paths": [
+        "Spectra/Html/steve-welcome.wav"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "9575a633c80b3836940d",
+      "content_id": "steven-woods-research/src-steven-2023-research-discovery-days-keynote",
+      "owner": "steven-woods-research",
+      "reason": "transcript_gap",
+      "title": "Research Discovery Days 2023: Steven Woods",
+      "canonical_url": "https://www.youtube.com/watch?v=C_HIi0IKK90",
+      "state": "blocked_user",
+      "batch_id": "private-talks",
+      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-research-discovery-days.html"
+      ],
+      "question_ids": [
+        "Q1",
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "95bda0ae5d4e9ac7e793",
+      "content_id": "steven-woods-research/src-steven-current-about-me-profile",
+      "owner": "steven-woods-research",
+      "reason": "external_check_unknown",
+      "title": "Steven Woods on about.me",
+      "canonical_url": "https://about.me/sgw",
+      "state": "resolved",
+      "batch_id": "completed",
+      "decision": "Public profile fetched successfully and identity markers reviewed October 27; record evidence-backed check, not a new full capture.",
+      "evidence_paths": [
+        "data/content/checks/2026-10-27.json"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "97922660fe5422b93621",
+      "content_id": "kinitos-neoedge/src-neoedge-2008-techmeme-yahoo-games-free-games-startups",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "Yahoo Games shifts to free games in alliance with two game ad start-ups",
+      "canonical_url": "https://www.techmeme.com/080710/p89",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "9a3a2bdc274b1227e8f3",
+      "content_id": "quack/src-quack-2000-aol-formalizes-anywhere-strategy",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "AOL Formalizes 'Anywhere' Strategy",
+      "canonical_url": "https://www.internetnews.com/it-management/aol-formalizes-anywhere-strategy",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "9f456134020261121cbc",
+      "content_id": "publication:voisin2006advertising",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for advertising with an internet voice portal",
+      "canonical_url": "https://patents.google.com/patent/US7103563B1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "9f829d3f98508bf0ce3c",
+      "content_id": "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact",
+      "owner": "steven-woods-research",
+      "reason": "transcript_gap",
+      "title": "Entrepreneurship and Impact Series - April 2023, Steven Woods",
+      "canonical_url": "https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series",
+      "state": "blocked_user",
+      "batch_id": "private-talks",
+      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
+      ],
+      "question_ids": [
+        "Q1",
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "a2e82985207409ef3ba9",
+      "content_id": "quack/src-quack-2026-steven-woods",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "Steven Woods",
+      "canonical_url": "https://en.wikipedia.org/wiki/Steven_Woods",
+      "state": "resolved",
+      "batch_id": "completed",
+      "decision": "Reuse the person archive's capture of the exact Wikipedia canonical URL, revision 1368795449. Keep attribution/license and deferred source status.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/wikipedia-steven-woods-2026-10-26.html"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "a55cf0f6d1c9c4162599",
+      "content_id": "publication:slough2008interstitial",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Interstitial advertising in a gaming environment",
+      "canonical_url": "https://patents.google.com/patent/US20080207328A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "a9c242d6d109f66da039",
+      "content_id": "kinitos-neoedge/src-neoedge-2008-betanews-yahoo-free-ad-supported-games",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "Yahoo to offer free ad-supported games",
+      "canonical_url": "https://betanews.com/2008/07/10/yahoo-to-offer-free-ad-supported-games/",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "a9fd71207461ae59332f",
+      "content_id": "kinitos-neoedge/src-neoedge-2008-adweek-yahoo-bolsters-ad-supported-games",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "Yahoo! Bolsters Ad-Supported Games",
+      "canonical_url": "https://www.adweek.com/brand-marketing/yahoo-bolsters-ad-supported-games-96328/",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "aa87e909effa70441a72",
+      "content_id": "quack/src-quack-2026-quack-com",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "Quack.com",
+      "canonical_url": "https://en.wikipedia.org/wiki/Quack.com",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "abcc49e0f1e3f0054bc8",
+      "content_id": "publication:woods1997constraint",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Constraint-Based Design Recovery for Software Reengineering: Theory and Experiments",
+      "canonical_url": "https://link.springer.com/book/10.1007/978-1-4615-5461-5",
+      "state": "deferred",
+      "batch_id": "reference-only",
+      "decision": "Keep a metadata citation. No purchase or full-text republication requested; revisit only for a concrete reading need.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "ad39c3db16df62553a32",
+      "content_id": "publication:simons2010serviceenabling",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Apparatus and method for service-enabling computer programs",
+      "canonical_url": "https://patents.google.com/patent/US20100211934A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "af176e133adfe1845175",
+      "content_id": "quack/src-quack-2002-view",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "Strategic Direction at Quack.com (A)",
+      "canonical_url": "https://www.thecasecentre.org/products/view?id=14578",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "b0c3559527c227a4e171",
+      "content_id": "kinitos-neoedge/src-neoedge-2008-cnet-yahoo-ad-supported-games",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "Yahoo to offer ad-supported online games",
+      "canonical_url": "https://www.cnet.com/tech/services-and-software/yahoo-to-offer-ad-supported-online-games/",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "b12cbb1a5670721b8572",
+      "content_id": "publication:smith2001preface",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Preface",
+      "canonical_url": "https://dblp.org/rec/journals/scp/SmithW01",
+      "state": "deferred",
+      "batch_id": "reference-only",
+      "decision": "Keep a metadata citation. No purchase or full-text republication requested; revisit only for a concrete reading need.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "c567fb9912d5e6415a1a",
+      "content_id": "publication:woods2007peer",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for advertisement identification, selection, and distribution involving a peer-to-peer network",
+      "canonical_url": "https://patents.google.com/patent/US20070233879A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "c91575392aa3eb42a49e",
+      "content_id": "publication:slough2010overlay",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Overlay content in a gaming environment",
+      "canonical_url": "https://patents.google.com/patent/US20100210357A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "d0c7f4ce94f44af10e76",
+      "content_id": "quack/src-quack-2000-aol-gets-vocal-buys-quack-com-4185-html",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "AOL Gets Vocal, Buys Quack.com",
+      "canonical_url": "https://www.ecommercetimes.com/story/aol-gets-vocal-buys-quack-com-4185.html",
+      "state": "ready",
+      "batch_id": "priority-press",
+      "decision": "Useful company-history lead, but still deferred or ledger-only. Do a bounded access/identity/redundancy review before any preservation or promotion.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "daade19a49598a9f10cc",
+      "content_id": "publication:kazman1999tradeoff",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Experience with performing architecture tradeoff analysis",
+      "canonical_url": "https://dl.acm.org/doi/10.1145/302405.302452",
+      "state": "ready",
+      "batch_id": "paper-recovery",
+      "decision": "Seek a permitted exact or clearly labelled author edition; similar Spectra titles inspected are not an automatic match. No paid access or full-text availability claim.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "dd2dac0251f27037d5ea",
+      "content_id": "publication:kazman1998corum",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Requirements for integrating software architecture and reengineering models: CORUM II",
+      "canonical_url": "https://doi.org/10.1109/WCRE.1998.723185",
+      "state": "ready",
+      "batch_id": "related-editions",
+      "decision": "Related local paper inspected by title/authors. Compare publication edition/pagination/DOI before changing it from supporting evidence to an exact local copy.",
+      "evidence_paths": [
+        "sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "de8fc4174637203d2ae8",
+      "content_id": "publication:woods2003voiceaccess",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for voice access to internet-based information",
+      "canonical_url": "https://patents.google.com/patent/US6510417B1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "e042943278bfa0b73b9c",
+      "content_id": "steven-woods-research/src-steven-2021-entrepreneurial-computer-scientist",
+      "owner": "steven-woods-research",
+      "reason": "recording_link_gap",
+      "title": "The entrepreneurial computer scientist",
+      "canonical_url": "https://uwaterloo.ca/math/lecture?page=1",
+      "state": "ready",
+      "batch_id": "recording-discovery",
+      "decision": "Specific official event URL repaired; recording search remains open. A migrated paginated list is not the event. No organizer contact sent.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html"
+      ],
+      "question_ids": [
+        "Q4"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "e24ce92cd1eb1c6f875f",
+      "content_id": "kinitos-neoedge/src-blue-noodle-2006-gaebler-funding-round",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "Blue Noodle 6/30/2006 Capital Raise",
+      "canonical_url": "https://www.gaebler.com/VC-Funding-9CA4B75F-4611-46EA-8023-BA4C6F14A3C9-Blue-Noodle-06-30-2006",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "e361973b44f35fa12ef2",
+      "content_id": "publication:kazman2000discipline",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Toward a discipline of scenario-based architectural engineering",
+      "canonical_url": "https://link.springer.com/article/10.1023/A:1018964405965",
+      "state": "ready",
+      "batch_id": "paper-recovery",
+      "decision": "Seek a permitted exact or clearly labelled author edition; similar Spectra titles inspected are not an automatic match. No paid access or full-text availability claim.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "e3d2ad20a4aee0b1b9b3",
+      "content_id": "quack/src-quack-2007-press-5-htm",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "Risking it all for dot-com gold in California",
+      "canonical_url": "https://web.archive.org/web/20070806021124/http://www.digitalmooselounge.com/press/press_5.htm",
+      "state": "ready",
+      "batch_id": "priority-press",
+      "decision": "Useful company-history lead, but still deferred or ledger-only. Do a bounded access/identity/redundancy review before any preservation or promotion.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "ebd184ac955ddd22b390",
+      "content_id": "steven-woods-research/src-steven-2023-riddick-show",
+      "owner": "steven-woods-research",
+      "reason": "transcript_gap",
+      "title": "Steven Woods - Partner and Chief Technology Officer, Inovia Capital",
+      "canonical_url": "https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947",
+      "state": "blocked_user",
+      "batch_id": "private-talks",
+      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "evidence_paths": [
+        "steven-woods-research/historic/artifacts/archive-html/apple-riddick-show.html",
+        "steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml"
+      ],
+      "question_ids": [
+        "Q1",
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "f2e1ba67841d24028d44",
+      "content_id": "publication:simons2010associating",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Associating advertisements and game data in a flash-based gaming environment",
+      "canonical_url": "https://patents.google.com/patent/US20100175047A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "f5d1564b491f3d8eff9f",
+      "content_id": "sei-pittsburgh-research/src-sei-current-steve-woods-author-profile",
+      "owner": "sei-pittsburgh-research",
+      "reason": "external_check_unknown",
+      "title": "Steve Woods",
+      "canonical_url": "https://www.sei.cmu.edu/authors/steve-woods/",
+      "state": "resolved",
+      "batch_id": "completed",
+      "decision": "Public SEI alumni profile and historical publication listing reviewed October 27; retain the existing capture.",
+      "evidence_paths": [
+        "data/content/checks/2026-10-27.json"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "f6f399b04a913c02611d",
+      "content_id": "kinitos-neoedge/src-blue-noodle-2009-gaebler-funding-round",
+      "owner": "kinitos-neoedge",
+      "reason": "local_content_gap",
+      "title": "Blue Noodle 9/29/2009 Capital Raise",
+      "canonical_url": "https://www.gaebler.com/VC-Funding-2B95D8C5-FF27-4A64-A55E-09A8AE90DBA4-Blue-Noodle-09-29-2009",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "fbe3c4d81193d47f74c5",
+      "content_id": "publication:sellink2004sameinformation",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "System and method for determining if one web site has the same information as another web site",
+      "canonical_url": "https://patents.google.com/patent/US6687734B1/en",
+      "state": "resolved",
+      "batch_id": "completed",
+      "decision": "Associate the existing capture of exact patent US6687734B1 as local content. This resolves discovery of text, not missing drawings/PDF or publication rights.",
+      "evidence_paths": [
+        "quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html",
+        "quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html.capture.json"
+      ],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "fd6810d5fd1b01d00e0e",
+      "content_id": "quack/src-quack-2000-lycos-quack-com-launch-new-portal",
+      "owner": "quack",
+      "reason": "local_content_gap",
+      "title": "Lycos, Quack.com Launch New Portal",
+      "canonical_url": "https://www.internetnews.com/it-management/lycos-quack-com-launch-new-portal",
+      "state": "deferred",
+      "batch_id": "deferred-leads",
+      "decision": "Retain source-owned deferral. Secondary profiles, funding records or overlapping press are lower-value until tied to a specific unsupported claim.",
+      "evidence_paths": [],
+      "question_ids": [],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    },
+    {
+      "request_id": "ff511cc84127a6be3a4c",
+      "content_id": "publication:nanavati2015region",
+      "owner": "publications",
+      "reason": "local_content_gap",
+      "title": "Region classification based on regional distribution information",
+      "canonical_url": "https://patents.google.com/patent/US20150019551A1/en",
+      "state": "ready",
+      "batch_id": "patents",
+      "decision": "Exact-number public patent text is a bounded preservation task, not a voice source. Start with two only after priority selection; preserve inventors and grant/application distinctions.",
+      "evidence_paths": [],
+      "question_ids": [
+        "Q2"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false
+    }
+  ]
+}

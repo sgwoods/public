@@ -321,7 +321,7 @@ def source_inventory(root, policy, artifacts):
     for identifier, override in policy.get("source_overrides", {}).items():
         if identifier not in by_id:
             raise ValueError("Unknown override ID: " + identifier)
-        if not set(override) <= {"supporting_artifacts", "text_role", "identity_review", "authorship", "recordings", "freshness", "research_note"}:
+        if not set(override) <= {"local_artifacts", "supporting_artifacts", "text_role", "identity_review", "authorship", "recordings", "freshness", "research_note"}:
             raise ValueError("Unsupported curation override field for " + identifier)
         by_id[identifier].update(override)
     for record in sources:
@@ -334,6 +334,8 @@ def source_inventory(root, policy, artifacts):
             raise ValueError("Unknown freshness policy")
         if record["freshness"].get("review_after_days", 30) < 1:
             raise ValueError("Review intervals must be positive")
+        if record["freshness"].get("evidence_path"):
+            paths([record["freshness"]["evidence_path"]])
         if record.get("style_eligible"):
             raise ValueError("This baseline has no reviewed style excerpts; explicit future interface review is required")
         for recording in record.get("recordings", []):
@@ -419,6 +421,7 @@ def build(root=ROOT, allow_dirty=False, as_of=None):
                    update_requests="data/content/update-requests.json", contract="CONTENT-INVENTORY-INTERFACE.md",
                    schema_ref="data/content/schema.json#/$defs/catalog",
                    curation=POLICY, human_overview="CONTENT-INVENTORY.md", handoff="IMAC-CONTENT-HANDOFF.md",
+                   request_triage="data/content/request-triage.json", request_triage_overview="CONTENT-REQUEST-TRIAGE.md",
                    operating_model={"public_information_maintainer": "sgwoods/public",
                                     "other_machines": "consume_approved_content_and_request_updates",
                                     "request_delivery": "explicit_user_authorized_handoff_not_automatic",
@@ -442,6 +445,7 @@ def build(root=ROOT, allow_dirty=False, as_of=None):
              "- [Machine entry point](data/content/catalog.json)", "- [Every versioned artifact (JSONL)](data/content/artifacts.jsonl)",
              "- [Source/text/recording/transcript inventory](data/content/sources.json)", "- [Proposed update requests](data/content/update-requests.json)",
              "- [Consumer contract](CONTENT-INVENTORY-INTERFACE.md)", "- [Corrected iMac continuation prompt](IMAC-CONTENT-HANDOFF.md)", "",
+             "- [Maintainer triage and decisions](CONTENT-REQUEST-TRIAGE.md)", "",
              "## Person Archive: Text, Recordings and Transcripts", "",
              "| Source | Local Content | Text Role | Recording | Transcript |", "| --- | --- | --- | --- | --- |"]
     for source in sources:

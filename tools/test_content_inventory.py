@@ -212,6 +212,35 @@ class InventoryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unknown override"):
             self.build()
 
+    def test_reviewed_local_association_does_not_promote_source_status(self):
+        payload = json.loads((self.root / "archive/source-manifest.json").read_text())
+        payload["sources"][0]["status"] = "deferred"
+        payload["sources"][0]["urls"]["archive_local"] = None
+        self.write("archive/source-manifest.json", ci.dumps(payload))
+        self.policy["source_overrides"]["archive/src-historical"] = {"local_artifacts": ["archive/historic/source.html"]}
+        self.write(ci.POLICY, ci.dumps(self.policy))
+        self.commit()
+        outputs = self.build()
+        source = json.loads(outputs[ci.OUTPUTS[2]])["sources"][0]
+        self.assertEqual(source["source_status"], "deferred")
+        self.assertEqual(source["local_artifacts"], ["archive/historic/source.html"])
+        self.assertEqual(json.loads(outputs[ci.OUTPUTS[3]])["requests"], [])
+        self.policy["source_overrides"]["archive/src-historical"]["source_status"] = "approved"
+        self.write(ci.POLICY, ci.dumps(self.policy))
+        self.commit()
+        with self.assertRaisesRegex(ValueError, "Unsupported curation"):
+            self.build()
+
+    def test_check_evidence_must_exist_in_versioned_inventory(self):
+        self.policy["source_overrides"]["archive/src-historical"] = {"freshness": {
+            "policy": "current_profile", "last_successful_external_check": "2026-10-27", "evidence_path": "untracked.json"}}
+        self.write(ci.POLICY, ci.dumps(self.policy))
+        self.write("untracked.json", "{}")
+        self.run_git("add", ci.POLICY)
+        self.run_git("-c", "user.name=Test", "-c", "user.email=test@example.invalid", "commit", "-qm", "policy")
+        with self.assertRaisesRegex(ValueError, "outside versioned inventory"):
+            self.build()
+
     def test_ledger_only_captures_are_discoverable_without_promotion(self):
         self.write("steven-woods-research/historic/artifacts/archive-html/support.html", "<p>Supporting source</p>")
         self.write("steven-woods-research/research/media-sources-review.md", "| media-mention | Supporting article | 2001 | https://example.org/support | Pending review | `archive-html/support.html` |\n")

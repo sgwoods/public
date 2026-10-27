@@ -45,6 +45,7 @@
       "required": ["policy", "last_successful_external_check", "assessment", "days_since_successful_check"],
       "properties": {
         "policy": {"enum": ["historical", "current_profile"]},
+        "evidence_path": {"$ref": "#/$defs/path"},
         "last_successful_external_check": {"type": ["string", "null"], "format": "date"},
         "review_after_days": {"type": "integer", "minimum": 1},
         "days_since_successful_check": {"type": ["integer", "null"], "minimum": 0},
@@ -77,6 +78,41 @@
       }
     },
     "sources": {"type": "object", "required": ["schema_version", "sources"], "properties": {"schema_version": {"const": "1.0"}, "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}}},
+    "request_triage": {
+      "type": "object",
+      "required": ["schema_version", "reviewed_on", "maintainer", "baseline", "summary", "questions", "batches", "outreach_drafts", "entries"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "reviewed_on": {"type": "string", "format": "date"},
+        "maintainer": {"const": "sgwoods/public"},
+        "summary": {"type": "string", "minLength": 1},
+        "baseline": {
+          "type": "object", "required": ["commit", "requests_sha256", "request_count"],
+          "properties": {"commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "requests_sha256": {"$ref": "#/$defs/hash"}, "request_count": {"type": "integer", "minimum": 1}}
+        },
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/triage_entry"}},
+        "questions": {"type": "array", "items": {"type": "object", "required": ["question_id", "title", "question", "recommended", "options", "blocks", "answer_state"], "properties": {
+          "question_id": {"type": "string"}, "title": {"type": "string"}, "question": {"type": "string"}, "recommended": {"type": "string"}, "options": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "blocks": {"type": "string"}, "answer_state": {"enum": ["awaiting_user", "answered", "superseded"]}
+        }}},
+        "batches": {"type": "array", "items": {"type": "object", "required": ["batch_id", "rank", "title", "value", "effort", "next_action", "stop_gate"], "properties": {
+          "batch_id": {"type": "string"}, "rank": {"type": "integer", "minimum": 0}, "title": {"type": "string"}, "value": {"type": "string"}, "effort": {"type": "string"}, "next_action": {"type": "string"}, "stop_gate": {"type": "string"}
+        }}},
+        "outreach_drafts": {"type": "array", "items": {"type": "object", "required": ["draft_id", "recipient_role", "body"], "properties": {"draft_id": {"type": "string"}, "recipient_role": {"type": "string"}, "body": {"type": "string"}}}}
+      }
+    },
+    "triage_entry": {
+      "type": "object",
+      "required": ["request_id", "content_id", "owner", "reason", "title", "state", "batch_id", "decision", "evidence_paths", "question_ids", "automatic_fetch", "changes_release_status"],
+      "properties": {
+        "request_id": {"type": "string", "pattern": "^[0-9a-f]{20}$"},
+        "content_id": {"type": "string"}, "owner": {"type": "string"}, "reason": {"type": "string"}, "title": {"type": "string"},
+        "state": {"enum": ["resolved", "ready", "deferred", "blocked_user", "quarantined"]},
+        "batch_id": {"type": "string"}, "decision": {"type": "string", "minLength": 1},
+        "evidence_paths": {"$ref": "#/$defs/paths"},
+        "question_ids": {"type": "array", "items": {"type": "string"}},
+        "automatic_fetch": {"const": false}, "changes_release_status": {"const": false}
+      }
+    },
     "person_manifest_metadata": {
       "type": "object",
       "required": ["schema_version", "content_updated_at", "content_commit", "content_sha256", "content_hash_scope", "date_semantics", "maintainer", "consumer_role"],

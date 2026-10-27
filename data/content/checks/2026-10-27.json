@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-10-27",
+  "method": "public_https_get_with_platform_tls_then_identity_and_content_review",
+  "limitations": "These are access/identity/content checks, not verification of every biographical claim or new full-page captures. Raw responses were inspected temporarily outside the repository; no account state or cookies were used.",
+  "checks": [
+    {
+      "content_id": "steven-woods-research/src-steven-current-about-me-profile",
+      "url": "https://about.me/sgw",
+      "http_status": 200,
+      "response_sha256": "dcf5f8afab878559158c6a0163cd3505514693b44447e03810ca68bfd0e8ccf9",
+      "outcome": "public_profile_accessible_identity_confirmed",
+      "observed": "Steven Woods; Inovia partner/CTO and Quack co-founder references present.",
+      "approval_changes": false
+    },
+    {
+      "content_id": "sei-pittsburgh-research/src-sei-current-steve-woods-author-profile",
+      "url": "https://www.sei.cmu.edu/authors/steve-woods/",
+      "http_status": 200,
+      "response_sha256": "515e61735b90236d798ec8948b7ba5d4e03e4645dbe55ba03f2491dd0e7a4a69",
+      "outcome": "public_profile_accessible_identity_confirmed",
+      "observed": "Steve Woods; SEI alumni description and historical publication listing present.",
+      "approval_changes": false
+    },
+    {
+      "content_id": "sei-pittsburgh-research/src-sei-current-jeromy-carriere-author-profile",
+      "url": "https://www.sei.cmu.edu/authors/s-carriere/",
+      "http_status": 200,
+      "response_sha256": "35d091a857ed3f9212b6704252292aafe59301a44c167b06238bc3b8dcac49b8",
+      "outcome": "public_profile_accessible_identity_confirmed",
+      "observed": "Jeromy Carriere; SEI alumni description and historical publication listing present.",
+      "approval_changes": false
+    },
+    {
+      "content_id": "steven-woods-research/src-steven-2021-entrepreneurial-computer-scientist",
+      "url": "https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist",
+      "http_status": 200,
+      "response_sha256": "2193dd42758247bb329da609cd1a94359c736307605b710f084bbf2a159f74e0",
+      "outcome": "specific_official_event_page_recovered",
+      "observed": "Event title, Steven Woods and January 20, 2021 agree. Old paginated listing now redirects to a different event list. Recording remains unlocated, not proven absent.",
+      "approval_changes": false
+    }
+  ]
+}

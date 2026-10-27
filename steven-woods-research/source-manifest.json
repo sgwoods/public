@@ -74,7 +74,7 @@
         "precision": "day"
       },
       "urls": {
-        "canonical": "https://uwaterloo.ca/math/lecture?page=1",
+        "canonical": "https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist",
         "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html",
         "archive_web": null
       },
@@ -89,7 +89,7 @@
         "appearance"
       ],
       "status": "approved",
-      "notes": "Useful for the public-speaking timeline."
+      "notes": "Specific official event page recovered and checked October 27, 2026; title, speaker and January 20, 2021 date match. The old paginated lecture URL now redirects to a different listing. Historical local capture retained. No recording or transcript is claimed."
     },
     {
       "source_id": "src-steven-2023-uwaterloo-entrepreneurship-impact",
