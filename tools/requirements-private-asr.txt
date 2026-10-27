@@ -1,0 +1,2 @@
+# Install only in an isolated PRIVATE working environment, not globally or in CI.
+mlx-whisper==0.4.3
