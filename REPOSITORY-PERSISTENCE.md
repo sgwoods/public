@@ -101,6 +101,7 @@ All of these are checked into this repository, not dependent on recovering chat.
 | `tools/start_codex_on_new_mac.sh` | `install`, `setup`, `validate`, and deliberate recovery-lane equivalents |
 | `tools/capture_archive_source.py`, `tools/check_archive_coverage.py` | Reviewed content-only captures with provenance sidecars; current source coverage and tracked-artifact/hash validation |
 | `tools/content_inventory.py` | Versioned-file catalog, semantic text/recording/transcript inventory, checksum validation, safe text extraction and proposed update requests; see [consumer contract](CONTENT-INVENTORY-INTERFACE.md) |
+| `tools/render_person_content.py`, `tools/test_person_content.py` | Committed person-registry metadata and summary freshness; semantic dates ignore metadata/formatting-only commits; daily no-write drift checks |
 | `tools/test_mac_bootstrap.py`, `tools/test_archive_capture.py` | Offline installation/selection decisions, safe captures, provenance hashes and regeneration tests |
 | `quack/tools/quack_research_pipeline.py` | `discover`, `fetch`, `analyze`, `classify`, `summarize`, `run`, `validate`; fetching requires deliberate network opt-in |
 | `quack/tools/start-quack-codex.sh` | Project launcher and continuity entry point |

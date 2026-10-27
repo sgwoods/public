@@ -1,6 +1,6 @@
 # Public Repo Operating Model
 
-Updated: `2026-05-09`
+Updated: `2026-10-27`
 
 This file defines the intended ongoing role of `sgwoods/public`.
 
@@ -43,6 +43,23 @@ Use these classes consistently when deciding where work belongs.
 | Legacy, compatibility, or deprecated patterns | Transitional aliases, duplicate publication paths, or older local clone habits that should not expand casually | `data/projects/codex-test1.json`, `codex-test1.html`, the bridge `data/projects/quack-com.json`, the bridge `data/projects/kinitos-neoedge.json`, older sparse single-purpose local clones of `public`, deprecated `/Users/stevenwoods/GitPages/public` checkout, optional recovery-lane iCloud clones | Keep only when needed for continuity or compatibility; label them clearly |
 
 ## Ongoing ownership model
+
+### Public-information maintainer and consumer machines
+
+The effort in this canonical `public` workspace is the sole maintainer of the
+shared public-information projects. It owns source gathering and verification,
+transcript production/review in private staging, safe public exports, manifests,
+indexes, the content inventory and publication. Other Macs consume approved
+content and return requests for this maintainer to manage; they do not maintain
+parallel archives or independently produce/publish transcripts for this record.
+
+Start consumer ingestion at `data/content/catalog.json`. Follow
+[CONTENT-INVENTORY-INTERFACE.md](CONTENT-INVENTORY-INTERFACE.md) for provenance and
+freshness semantics and [IMAC-CONTENT-HANDOFF.md](IMAC-CONTENT-HANDOFF.md) for the
+consumer prompt and safe request packet. Nothing sends requests automatically.
+Unreviewed transcripts, LinkedIn exports and account data stay outside all public
+checkouts and public branches. This rule does not change the source ownership of
+standalone software projects or their approved status-export interfaces below.
 
 ### 1. Shared top-level layer
 
