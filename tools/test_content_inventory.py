@@ -241,6 +241,25 @@ class InventoryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "outside versioned inventory"):
             self.build()
 
+    def test_private_draft_keeps_review_signal_without_retranscription(self):
+        source = self.request_source(recordings=[{"url": "https://example.org/audio.mp3"}],
+                                     transcript={"state": "private_draft_unreviewed", "public_artifacts": []})
+        request = ci.update_requests([source], date(2026, 10, 27))["requests"][0]
+        self.assertEqual(request["reason"], "transcript_gap")
+        self.assertIn("Do not retranscribe", request["suggested_action"])
+        source["transcript"]["state"] = "private_asr_in_progress"
+        self.assertEqual(ci.update_requests([source], date(2026, 10, 27))["requests"][0]["request_id"], request["request_id"])
+
+    def test_transcript_override_cannot_include_private_text_or_publish_unreviewed_paths(self):
+        for change in ({"text": "unreviewed words"}, {"private_path": "/private/data"},
+                       {"speaker_attribution_verified": True}, {"public_artifacts": ["archive/historic/source.html"]}):
+            self.policy["source_overrides"]["archive/src-historical"] = {
+                "transcript": {"state": "private_draft_unreviewed", "public_artifacts": [], **change}}
+            self.write(ci.POLICY, ci.dumps(self.policy))
+            self.commit()
+            with self.assertRaises(ValueError):
+                self.build()
+
     def test_ledger_only_captures_are_discoverable_without_promotion(self):
         self.write("steven-woods-research/historic/artifacts/archive-html/support.html", "<p>Supporting source</p>")
         self.write("steven-woods-research/research/media-sources-review.md", "| media-mention | Supporting article | 2001 | https://example.org/support | Pending review | `archive-html/support.html` |\n")

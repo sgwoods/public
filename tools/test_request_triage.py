@@ -99,6 +99,26 @@ class TriageTests(unittest.TestCase):
         self.assertEqual(result["active_signal_count"], 0)
         self.assertEqual(result["resolved_baseline_signals_absent"], [self.signal["request_id"]])
 
+    def test_followup_is_explicit_and_cannot_shadow_baseline(self):
+        extra = {**self.entry, "content_id": "archive/other", "reason": "recording_link_gap", "state": "in_progress"}
+        extra["request_id"] = ci.digest(b"archive/other:recording_link_gap")[:20]
+        self.ledger["followup_entries"] = [extra]
+        triage.validate(self.ledger, self.root)
+        result = triage.compare(self.ledger, dict(evaluated_on="2026-10-27", requests=[extra]))
+        self.assertEqual(result["counts"], {"in_progress": 1})
+        self.ledger["followup_entries"] = [deepcopy(self.entry)]
+        with self.assertRaisesRegex(ValueError, "Duplicate"):
+            triage.validate(self.ledger, self.root)
+
+    def test_answered_direction_and_outreach_safety(self):
+        self.ledger["questions"] = [dict(question_id="Q", answer_state="answered")]
+        with self.assertRaisesRegex(ValueError, "direction recorded"):
+            triage.validate(self.ledger, self.root)
+        self.ledger["questions"][0]["decision"] = "Search only."
+        self.ledger["outreach_drafts"] = [dict(sent=True)]
+        with self.assertRaisesRegex(ValueError, "unsent drafts"):
+            triage.validate(self.ledger, self.root)
+
     def test_status_rejects_a_register_from_a_different_bundle(self):
         (self.root / triage.LEDGER).write_text(ci.dumps(self.ledger))
         outputs = {ci.OUTPUTS[1]: json.dumps(dict(path=triage.LEDGER, sha256=ci.digest((self.root / triage.LEDGER).read_bytes()))) + "\n",

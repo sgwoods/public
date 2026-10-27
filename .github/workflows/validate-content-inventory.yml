@@ -32,6 +32,8 @@ jobs:
         run: |
           python3 tools/test_content_inventory.py
           python3 tools/test_request_triage.py
+          python3 tools/test_private_asr.py
+          python3 tools/test_media_attribution.py
           python3 tools/triage_content_requests.py check --schema
           python3 tools/test_person_content.py
           python3 tools/render_person_content.py --check

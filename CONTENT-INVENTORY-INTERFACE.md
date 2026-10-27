@@ -118,6 +118,19 @@ answer spans still need review. A future style-excerpt interface must carry
 verified speaker/author, exact spans/timestamps, source hashes, review evidence
 and publication permission. Machine diarization alone is not verification.
 
+Private production is explicit without exposing its content or location:
+`transcript.state` may be `private_asr_in_progress` or `private_draft_unreviewed`,
+with empty `public_artifacts`, false speaker verification and a public-safe
+`production_summary` path. The stable `transcript_gap` signal remains open with
+an action to finish/review the existing private work, not duplicate transcription.
+Neither state authorizes publication, personal attribution or style use.
+Raw transcript text and private paths are rejected in this metadata interface.
+
+`catalog.content_production_reports` locates sanitized availability/count/hash
+reports. Counts describe production, not accuracy, coverage of every utterance,
+rights or approved consumer access. Private reading derivatives can be reported
+here while exact public-edition availability remains unresolved.
+
 ## Freshness And Update Requests
 
 Historical items use `historical_not_age_expired`: old papers and talks do not
@@ -179,6 +192,12 @@ inventory to the decisions. New signals remain `untriaged`; a resolved signal
 that returns becomes `reopened_needs_review`, never silently stays resolved.
 The normal daily/main workflow reports that status after rebuilding the catalog.
 The dated report does not pretend its old judgments were rerun every day.
+
+Direct user directions are retained as public-safe question `decision` fields.
+The original queue snapshot and identities remain intact. Explicit
+`followup_entries` may classify newly introduced signals; their IDs must match
+the generator, cannot duplicate baseline IDs, and otherwise stay untriaged.
+`in_progress` means real maintainer work, not a resolved/approved artifact.
 
 Reviewed `local_artifacts` curation overrides may associate an exact existing
 copy across archives without copying bytes or changing the source-owned approval

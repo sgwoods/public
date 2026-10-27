@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "steven-woods-research",
-  "handoff_generated_at": "2026-10-26T22:28:46Z",
+  "handoff_generated_at": "2026-10-27T22:43:07Z",
   "items_for_public": [
     {
       "source_id": "src-steven-2023-riddick-show",
@@ -11,9 +11,9 @@
     },
     {
       "source_id": "src-steven-2023-research-discovery-days-keynote",
-      "reason": "Major recent keynote appearance",
+      "reason": "Short event promotional video; full keynote recording not established",
       "recommended_section": "media-appearances",
-      "summary": "Waterloo Research Discovery Days keynote with direct YouTube recording."
+      "summary": "A 2:56 promotional clip published April 4, 2023. The keynote event was April 18; this clip is not its full recording."
     },
     {
       "source_id": "src-steven-2021-usask-alumni-profile",
@@ -24,7 +24,7 @@
   ],
   "open_questions": [
     {
-      "question": "Tighten the event context for the 2012 SlideShare keynote deck."
+      "question": "Confirm whether the 2012 Road to Revenue deck is Steven Gregory Woods' work. Its identity remains unresolved and it stays quarantined from attribution and style use."
     },
     {
       "question": "Continue verifying exact original hosts for older Quack-era profile articles."

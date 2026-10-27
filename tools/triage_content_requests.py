@@ -13,7 +13,7 @@ import content_inventory as ci
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = "data/content/request-triage.json"
 REPORT = "CONTENT-REQUEST-TRIAGE.md"
-STATES = {"resolved", "ready", "deferred", "blocked_user", "quarantined"}
+STATES = {"resolved", "ready", "in_progress", "deferred", "blocked_user", "quarantined"}
 
 
 def validate(ledger, root=ROOT):
@@ -32,15 +32,24 @@ def validate(ledger, root=ROOT):
         raise ValueError("Duplicate triage request ID")
     if set(original) != {entry["request_id"] for entry in entries} or len(entries) != baseline["request_count"]:
         raise ValueError("Triage must cover every request in its historical baseline exactly once")
+    all_entries = entries + ledger.get("followup_entries", [])
+    if len({entry["request_id"] for entry in all_entries}) != len(all_entries):
+        raise ValueError("Duplicate baseline/follow-up request ID")
     batches = {item["batch_id"] for item in ledger["batches"]}
     questions = {item["question_id"] for item in ledger["questions"]}
     tracked = set(ci.git(root, "ls-files", "-z").decode().split("\0"))
     if len(batches) != len(ledger["batches"]) or len(questions) != len(ledger["questions"]):
         raise ValueError("Duplicate batch/question ID")
-    for entry in entries:
-        old = original[entry["request_id"]]
-        if any(entry[key] != old[key] for key in ("content_id", "reason", "owner")):
-            raise ValueError("Historical request identity changed")
+    for question in ledger["questions"]:
+        if question["answer_state"] == "answered" and not question.get("decision"):
+            raise ValueError("Answered questions need the public-safe direction recorded")
+    for entry in all_entries:
+        old = original.get(entry["request_id"])
+        if old is not None:
+            if any(entry[key] != old[key] for key in ("content_id", "reason", "owner")):
+                raise ValueError("Historical request identity changed")
+        elif entry["request_id"] != ci.digest((entry["content_id"] + ":" + entry["reason"]).encode())[:20]:
+            raise ValueError("Follow-up request identity must match the signal generator")
         if entry["state"] not in STATES or entry["batch_id"] not in batches:
             raise ValueError("Unknown triage state/batch")
         if not set(entry["question_ids"]) <= questions:
@@ -54,6 +63,11 @@ def validate(ledger, root=ROOT):
             if ci.private_path(name) or not path.is_file() or name not in tracked:
                 raise ValueError("Missing or private triage evidence")
         ci.safe_url(entry.get("canonical_url"))
+    for draft in ledger["outreach_drafts"]:
+        if draft.get("sent"):
+            raise ValueError("This register contains unsent drafts only; record authorized outreach separately")
+        for url in draft.get("contact_routes", []):
+            ci.safe_url(url)
     return ledger
 
 
@@ -64,19 +78,25 @@ def render(ledger):
              "; ".join(f"**{count} {state.replace('_', ' ')}**" for state, count in sorted(counts.items())) + ".", "",
              ledger["summary"], "", "This is a dated triage, not a daily re-review or a claim that all gaps are closed. New signals and reopened resolutions are reported by `python3 tools/triage_content_requests.py status`. The generated signal queue remains separate.", "",
              "## Decisions For Steven", "", "Recommendations below are not submitted answers. Return private locations privately, not in a GitHub issue or this register.", ""]
+    if ledger.get("last_cycle_report"):
+        lines[2:2] = [f"Current cycle: [Text-first recovery and review gates]({ledger['last_cycle_report']}).", ""]
     for question in ledger["questions"]:
         lines += [f"### {question['question_id']}: {question['title']}", "", question["question"], "",
                   f"Recommendation: **{question['recommended']}**", "", f"Options: {'; '.join(question['options'])}.", "",
                   f"Blocks: {question['blocks']}. Answer state: `{question['answer_state']}`.", ""]
+        if question.get("decision"):
+            lines += [f"Recorded direction: **{question['decision']}**", ""]
     lines += ["## Ranked Work Batches", "", "Effort ranges are rough maintainer planning estimates, not measured duration, spending approval or a promise. Stop at the stated gate rather than expanding a blocked search.", ""]
     for batch in sorted(ledger["batches"], key=lambda item: item["rank"]):
-        members = [entry for entry in ledger["entries"] if entry["batch_id"] == batch["batch_id"]]
+        members = [entry for entry in ledger["entries"] + ledger.get("followup_entries", []) if entry["batch_id"] == batch["batch_id"]]
         noun = "signal" if len(members) == 1 else "signals"
         lines += [f"### {batch['rank']}. {batch['title']}", "", f"{len(members)} baseline {noun}. {batch['value']}", "",
                   f"Effort: {batch['effort']}. Next: {batch['next_action']}", "", f"Stop gate: {batch['stop_gate']}.", ""]
     lines += ["## Unsent Organizer Questions", "", "Drafts only. No recipient has been contacted, no private artifact attached and no contact detail inferred. Steven must approve outreach and its sender/channel first.", ""]
     for draft in ledger["outreach_drafts"]:
         lines += [f"### {draft['draft_id']}: {draft['recipient_role']}", "", draft["body"], ""]
+        if draft.get("contact_routes"):
+            lines += ["Future official routes (unsent): " + "; ".join(f"[Contact page]({url})" for url in draft["contact_routes"]), ""]
     lines += ["## Every Baseline Request", "", "Source approval/status is unchanged. A reused capture resolves a copy-discovery signal, not authorship, republication permission, exact-edition review or voice approval.", "",
               "| Request / Source | Original Signal | Disposition | Evidence / Next Action |", "| --- | --- | --- | --- |"]
     for entry in sorted(ledger["entries"], key=lambda item: (item["batch_id"], item["content_id"])):
@@ -85,13 +105,17 @@ def render(ledger):
         cells = [f"`{entry['request_id']}` / {entry['title']} (`{entry['content_id']}`)", entry["reason"],
                  f"{entry['state']} / {entry['batch_id']}", detail]
         lines.append("| " + " | ".join(cell.replace("|", "\\|").replace("\n", " ") for cell in cells) + " |")
+    if ledger.get("followup_entries"):
+        lines += ["", "## Explicitly Reviewed Follow-up Signals", "", "These are additional signals introduced after the pinned baseline, not silent rewrites of its original request identities.", ""]
+        for entry in ledger["followup_entries"]:
+            lines += [f"- `{entry['request_id']}` / `{entry['content_id']}`: **{entry['state']}** ({entry['reason']}). {entry['decision']}"]
     lines += ["", "## Maintenance", "", "Update a decision only with evidence or Steven's explicit direction. Preserve request IDs and the historical baseline. After each catalog refresh, run `python3 tools/triage_content_requests.py status`; unmatched requests need a new dated cycle, not silent suppression. A due review is not evidence that a historical source is wrong.", "",
               "No unreviewed transcript, LinkedIn export, private location, credential or user answer containing private information belongs in these public files. The public-information maintainer does the work; other machines consume approved results and request changes.", ""]
     return "\n".join(lines)
 
 
 def compare(ledger, requests):
-    decisions = {entry["request_id"]: entry for entry in ledger["entries"]}
+    decisions = {entry["request_id"]: entry for entry in ledger["entries"] + ledger.get("followup_entries", [])}
     active = {entry["request_id"]: entry for entry in requests["requests"]}
     rows = []
     for identifier, signal in sorted(active.items()):
@@ -103,7 +127,8 @@ def compare(ledger, requests):
     return dict(schema_version="1.0", evaluated_on=requests["evaluated_on"],
                 semantics="Signals compared with dated decisions; no messages sent and no source/release status changed.",
                 active_signal_count=len(rows), counts=dict(sorted(Counter(row["triage_state"] for row in rows).items())),
-                resolved_baseline_signals_absent=[key for key, entry in decisions.items() if entry["state"] == "resolved" and key not in active],
+                resolved_baseline_signals_absent=[entry["request_id"] for entry in ledger["entries"] if entry["state"] == "resolved" and entry["request_id"] not in active],
+                resolved_followup_signals_absent=[entry["request_id"] for entry in ledger.get("followup_entries", []) if entry["state"] == "resolved" and entry["request_id"] not in active],
                 signals=rows)
 
 

@@ -79,8 +79,9 @@ approved channel, not by automatically opening an issue or messaging a chat.
 
 ## Known Boundaries
 
-- The Riddick recording is indexed, but no reviewed public transcript is claimed.
-  Existing private work may exist; request recovery instead of retranscribing.
+- Riddick private ASR production is tracked in the catalog's production reports.
+  No reviewed public transcript is claimed. Do not retranscribe on the consumer
+  machine; request a reviewed derivative from this maintainer instead.
 - The Springboard Q&A has public text, not a verified style corpus.
 - Papers can have co-authors and alternate editions; preserve attribution.
 - SlideShare needs subject-identity verification before quotation or style use.

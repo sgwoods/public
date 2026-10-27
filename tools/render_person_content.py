@@ -82,6 +82,7 @@ def render_summary(root, payload):
                 <a class="button button--ghost" href="data/content/sources.json">Source freshness and transcript availability</a>
                 <a class="button button--ghost" href="data/content/update-requests.json">Review and update requests</a>
                 <a class="button button--ghost" href="CONTENT-REQUEST-TRIAGE.md">Maintainer decisions and next work</a>
+                <a class="button button--ghost" href="CONTENT-TEXT-RECOVERY.md">Text recovery and private production status</a>
                 <a class="button button--ghost" href="IMAC-CONTENT-HANDOFF.md">Consumer handoff</a>
             </div>
         </section>'''

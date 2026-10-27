@@ -8,7 +8,7 @@
     "requests_sha256": "a69424b5c3c8aa1e9b7c4035245f02776d5a84fef6a3268464bc3c3d3e0ed353",
     "request_count": 57
   },
-  "summary": "Six signals are resolved by three actual public profile checks and three reviewed associations to existing copies. The Waterloo 2021 canonical URL is repaired, but its recording signal remains open. Twenty original sources were already deferred; one further source was ledger-only. The queue is not an approved-source preservation count. No source-approval or release labels were promoted, no transcript produced, no private workspace searched, no outreach sent and no paid access used.",
+  "summary": "Text-first recovery and parallel work approved by Steven. No existing private transcript is known; local Riddick ASR production is tracked separately and is not a reviewed/public transcript. Three private paper-reading copies were produced. A wrong-speaker video association was removed, a short promo/date misclassification corrected, and the 2017 joint presentation verified. Search-only outreach policy and LinkedIn deferral are explicit. Source approval/release labels remain unchanged; no raw transcript or reading text is published.",
   "questions": [
     {
       "question_id": "Q1",
@@ -21,7 +21,9 @@
         "Defer transcript work"
       ],
       "blocks": "Private recovery/transcription work for four talks; not public indexing of their known metadata",
-      "answer_state": "awaiting_user"
+      "answer_state": "answered",
+      "decision": "No prior private transcript is known. Steven authorizes regenerating Riddick locally from the publisher's public audio; no unreviewed transcript publication is authorized.",
+      "decision_recorded_on": "2026-10-27"
     },
     {
       "question_id": "Q2",
@@ -34,7 +36,9 @@
         "Pause new gathering; maintain current evidence only"
       ],
       "blocks": "Reprioritization and starting a new production batch, not this completed triage",
-      "answer_state": "awaiting_user"
+      "answer_state": "answered",
+      "decision": "Proceed text-first with bounded paper/edition work and maximize independent parallel tasks. Commit safe code, evidence, documentation and index updates at each major cycle.",
+      "decision_recorded_on": "2026-10-27"
     },
     {
       "question_id": "Q3",
@@ -60,7 +64,9 @@
         "I will contact organizers myself"
       ],
       "blocks": "Sending the organizer drafts, not continuing ordinary public searching",
-      "answer_state": "awaiting_user"
+      "answer_state": "answered",
+      "decision": "Public searching only. Preserve official future outreach routes and draft questions, but do not contact organizers.",
+      "decision_recorded_on": "2026-10-27"
     },
     {
       "question_id": "Q5",
@@ -73,7 +79,9 @@
         "Revisit later"
       ],
       "blocks": "LinkedIn capture/review only; no other archive work",
-      "answer_state": "awaiting_user"
+      "answer_state": "answered",
+      "decision": "Leave LinkedIn explicitly blocked for now. Manual public-only content or other permitted strategies can be considered later; no raw export intake or authenticated scraping is authorized.",
+      "decision_recorded_on": "2026-10-27"
     }
   ],
   "batches": [
@@ -81,9 +89,9 @@
       "batch_id": "completed",
       "rank": 0,
       "title": "Completed verification and copy-discovery fixes",
-      "value": "Six signals closed without producing or publishing new private material.",
+      "value": "Six initial evidence/copy fixes plus a false transcript association resolved; not seven newly produced transcripts.",
       "effort": "Completed in this triage cycle; no measured duration claimed",
-      "next_action": "Validate regenerated inventory; retain evidence and existing source approval states.",
+      "next_action": "Retain evidence and source-owned approval states; distinguish corrected association from transcript availability.",
       "stop_gate": "Do not treat a text-only patent copy as drawings or a daily inventory render as an external check"
     },
     {
@@ -98,19 +106,19 @@
     {
       "batch_id": "private-talks",
       "rank": 2,
-      "title": "Recover private interview/talk transcripts",
+      "title": "Private interview production and verified media",
       "value": "Highest likely value for source-faithful first-person content; Riddick is the first candidate.",
       "effort": "Recovery triage approximately 15-30 minutes once a private location is supplied; fresh processing and speaker review require a separate estimate after inspecting the roughly 85-minute Riddick recording",
-      "next_action": "Await Q1, then recover before retranscribing. This maintainer produces/reviews privately; the other Mac remains a consumer.",
-      "stop_gate": "No private filesystem sweep, transcription, paid model use or public transcript export is authorized by the triage"
+      "next_action": "Riddick local ASR is underway; review before any usable export. Keep other media identities/durations distinct; do not transcribe an unrelated speaker.",
+      "stop_gate": "No raw ASR text, private paths or speaker/style approval enters the public repository"
     },
     {
       "batch_id": "related-editions",
       "rank": 3,
-      "title": "Compare two locally available publication editions",
+      "title": "Local author-form editions checked",
       "value": "Existing SEI-hosted papers may avoid redundant downloads while preserving publication-version accuracy.",
       "effort": "Approximately 20-45 minutes total for metadata/page/edition comparison; not a full scholarly review",
-      "next_action": "Match CORUM II and Software Architectural Transformation against their DOI/proceedings records; keep them supporting-only until verified.",
+      "next_action": "Use the private reading copies with edition caveats; keep exact proceedings availability unresolved without repeating this completed comparison.",
       "stop_gate": "A matching title/authors is not proof of the exact proceedings edition"
     },
     {
@@ -119,7 +127,7 @@
       "title": "Three core research-paper recovery leads",
       "value": "More useful text than indiscriminate profile or patent coverage if the consumer's priority is research.",
       "effort": "Approximately 45-90 minutes for a bounded public/author-repository search",
-      "next_action": "Look for permitted editions of plan matching, architecture tradeoff analysis and scenario-based architectural engineering; do not substitute similarly titled Spectra papers.",
+      "next_action": "Review the recovered private discipline manuscript. Keep tradeoff's author discrepancy and matching's full-text gap explicit; no paywall bypass or outreach.",
       "stop_gate": "Stop on paywall/access controls or uncertain edition; metadata-only is preferable to a false full-text claim"
     },
     {
@@ -128,7 +136,7 @@
       "title": "Three recording or slides searches",
       "value": "Clarifies whether historical talk listings can yield usable content.",
       "effort": "At most 15-20 minutes per talk before reviewing whether outreach is worthwhile",
-      "next_action": "Use the repaired Waterloo event page, CS-CAN listing and USask 2003 entry as bounded leads; Q4 controls outreach only.",
+      "next_action": "Public searches completed without verified recordings; preserve official future contact routes and drafts, no messages.",
       "stop_gate": "No messages sent, and failure to find a recording is not proof it never existed"
     },
     {
@@ -173,7 +181,7 @@
       "title": "LinkedIn remains blocked",
       "value": "Optional completeness, not a blocker for the public record as a whole.",
       "effort": "No work unless Q5 changes the direction",
-      "next_action": "Keep the blocked check honest; any user-provided raw export remains private.",
+      "next_action": "User explicitly chose continued blocked/deferred status; consider a manual public-only subset later if useful.",
       "stop_gate": "No authenticated scraping, cookies, account UI capture or public raw export"
     },
     {
@@ -190,17 +198,33 @@
     {
       "draft_id": "D1",
       "recipient_role": "CS-CAN / INFOCAN event organizer",
-      "body": "We are maintaining Steven Woods' public record. Is a public recording, slide deck or published summary available for Models of University/Industry Collaboration - What Works and What Doesn't? We have the event listing, but no exact recording URL. A public link or confirmation of availability would help us label the archive accurately."
+      "body": "We are maintaining Steven Woods' public record. Is a public recording, slide deck or published summary available for Models of University/Industry Collaboration - What Works and What Doesn't? We have the event listing, but no exact recording URL. A public link or confirmation of availability would help us label the archive accurately.",
+      "contact_routes": [
+        "https://cscan-infocan.ca/contact-us/"
+      ],
+      "sent": false,
+      "authorization": "not_authorized_search_only"
     },
     {
       "draft_id": "D2",
       "recipient_role": "University of Waterloo Mathematics event organizer",
-      "body": "We are maintaining Steven Woods' public record. Is a public recording or slide deck available for The entrepreneurial computer scientist, held January 20, 2021? We have located the specific official event page, but no recording. Please share a public link or clarify whether only the event listing remains available."
+      "body": "We are maintaining Steven Woods' public record. Is a public recording or slide deck available for The entrepreneurial computer scientist, held January 20, 2021? We have located the specific official event page, but no recording. Please share a public link or clarify whether only the event listing remains available.",
+      "contact_routes": [
+        "https://uwaterloo.ca/math/about/contact-us",
+        "https://uwaterloo.ca/math-innovation/about/contact-information"
+      ],
+      "sent": false,
+      "authorization": "not_authorized_search_only"
     },
     {
       "draft_id": "D3",
       "recipient_role": "University of Saskatchewan Computer Science lecture archivist",
-      "body": "We are maintaining Steven Woods' public record. Does the department hold a shareable recording, slide deck or published text from his 2003 P.G. Sorenson lecture while CEO of Kinitos? We have the official lecture listing. We seek only a permitted public reference, not private archives or personal contact information."
+      "body": "We are maintaining Steven Woods' public record. Does the department hold a shareable recording, slide deck or published text from his 2003 P.G. Sorenson lecture while CEO of Kinitos? We have the official lecture listing. We seek only a permitted public reference, not private archives or personal contact information.",
+      "contact_routes": [
+        "https://www.cs.usask.ca/about/contact-us.php"
+      ],
+      "sent": false,
+      "authorization": "not_authorized_search_only"
     }
   ],
   "entries": [
@@ -226,11 +250,13 @@
       "reason": "local_content_gap",
       "title": "Software architectural transformation",
       "canonical_url": "https://doi.org/10.1109/WCRE.1999.806943",
-      "state": "ready",
+      "state": "deferred",
       "batch_id": "related-editions",
-      "decision": "Related local paper inspected by title/authors. Compare publication edition/pagination/DOI before changing it from supporting evidence to an exact local copy.",
+      "decision": "Local PDF equals official SEI bytes with correct three authors. Eleven-page length alone does not establish final proceedings edition; SEI landing metadata omits first author. Private reading text made; retain supporting-only status.",
       "evidence_paths": [
-        "sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf"
+        "sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf",
+        "data/content/checks/2026-10-27-text-research.json",
+        "data/content/production/text-recovery-2026-10-27.json"
       ],
       "question_ids": [],
       "automatic_fetch": false,
@@ -307,11 +333,12 @@
       "reason": "transcript_gap",
       "title": "Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community",
       "canonical_url": "https://www.youtube.com/watch?v=3cDnlKwbtTY",
-      "state": "blocked_user",
+      "state": "ready",
       "batch_id": "private-talks",
-      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "decision": "Verified official symposium embed and Sep28 event versus Nov1 upload. This is a 54:03 joint presentation with Verna Friesen, not Woods-only speech. Public caption responses were empty. Await a permitted usable audio/text acquisition path; no alternate-client bypass.",
       "evidence_paths": [
-        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html"
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-cheriton-symposium-2017.html",
+        "data/content/checks/2026-10-27-media-research.json"
       ],
       "question_ids": [
         "Q1",
@@ -361,9 +388,9 @@
       "reason": "public_access_blocked",
       "title": "Steven Woods",
       "canonical_url": "https://www.linkedin.com/in/stevenwoods/",
-      "state": "blocked_user",
+      "state": "deferred",
       "batch_id": "linkedin",
-      "decision": "No public copy is claimed. Keep the October 26 access failure and successful-check null; do not retry through account UI or ingest raw exports.",
+      "decision": "Steven chose to leave public access blocked for now. Manual public-profile-only content may be considered later; do not use account UI, cookies or raw exports.",
       "evidence_paths": [],
       "question_ids": [
         "Q5"
@@ -378,11 +405,12 @@
       "reason": "recording_link_gap",
       "title": "Models of University/Industry Collaboration - What Works and What Doesn't",
       "canonical_url": "https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/",
-      "state": "ready",
+      "state": "deferred",
       "batch_id": "recording-discovery",
-      "decision": "Exact recording/slides remain unlocated in the bounded first pass. Retain the historical listing and search public sources before considering organizer contact.",
+      "decision": "Bounded public search completed; official listing/biography exists but no exact recording, slides or transcript was located. Not proof of absence. Future official contact routes retained, with no outreach authorized.",
       "evidence_paths": [
-        "steven-woods-research/historic/artifacts/archive-html/cscan-university-industry-collaboration.html"
+        "steven-woods-research/historic/artifacts/archive-html/cscan-university-industry-collaboration.html",
+        "data/content/checks/2026-10-27-media-research.json"
       ],
       "question_ids": [
         "Q4"
@@ -412,11 +440,12 @@
       "reason": "recording_link_gap",
       "title": "P.G. Sorenson Lecture: Dr. Steven Woods, CEO of Kinitos, Inc.",
       "canonical_url": "https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php",
-      "state": "ready",
+      "state": "deferred",
       "batch_id": "recording-discovery",
-      "decision": "Exact recording/slides remain unlocated in the bounded first pass. Retain the historical listing and search public sources before considering organizer contact.",
+      "decision": "Bounded public search completed; official listing/biography exists but no exact recording, slides or transcript was located. Not proof of absence. Future official contact routes retained, with no outreach authorized.",
       "evidence_paths": [
-        "steven-woods-research/historic/artifacts/archive-html/usask-pg-sorenson-lectures.html"
+        "steven-woods-research/historic/artifacts/archive-html/usask-pg-sorenson-lectures.html",
+        "data/content/checks/2026-10-27-media-research.json"
       ],
       "question_ids": [
         "Q4"
@@ -482,10 +511,12 @@
       "reason": "local_content_gap",
       "title": "Program plan matching: experiments with a constraint-based approach",
       "canonical_url": "https://doi.org/10.1016/S0167-6423(99)00039-8",
-      "state": "ready",
+      "state": "deferred",
       "batch_id": "paper-recovery",
-      "decision": "Seek a permitted exact or clearly labelled author edition; similar Spectra titles inspected are not an automatic match. No paid access or full-text availability claim.",
-      "evidence_paths": [],
+      "decision": "Bounded public search did not verify a qualifying full text. Keep publisher metadata and defer further acquisition until an author-held copy or stronger permitted lead is available; no 1997 substitution.",
+      "evidence_paths": [
+        "data/content/checks/2026-10-27-text-research.json"
+      ],
       "question_ids": [
         "Q2"
       ],
@@ -618,11 +649,12 @@
       "reason": "transcript_gap",
       "title": "Research Discovery Days 2023: Steven Woods",
       "canonical_url": "https://www.youtube.com/watch?v=C_HIi0IKK90",
-      "state": "blocked_user",
+      "state": "deferred",
       "batch_id": "private-talks",
-      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "decision": "Verified 2:56 promotional clip, not a full-keynote recording. Video published April 4; keynote event April 18. No usable public captions obtained. Defer clip transcription behind the long interview; do not claim full-keynote text.",
       "evidence_paths": [
-        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-research-discovery-days.html"
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-research-discovery-days.html",
+        "data/content/checks/2026-10-27-media-research.json"
       ],
       "question_ids": [
         "Q1",
@@ -702,11 +734,12 @@
       "reason": "transcript_gap",
       "title": "Entrepreneurship and Impact Series - April 2023, Steven Woods",
       "canonical_url": "https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series",
-      "state": "blocked_user",
-      "batch_id": "private-talks",
-      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "state": "resolved",
+      "batch_id": "completed",
+      "decision": "The original transcript signal depended on a Natalie Gordon video incorrectly assigned to Steven. Remove that association, not treat it as a completed Steven transcript. The newly identified missing-recording signal is explicitly tracked as a follow-up.",
       "evidence_paths": [
-        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html"
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
+        "data/content/checks/2026-10-27-media-research.json"
       ],
       "question_ids": [
         "Q1",
@@ -931,8 +964,10 @@
       "canonical_url": "https://dl.acm.org/doi/10.1145/302405.302452",
       "state": "ready",
       "batch_id": "paper-recovery",
-      "decision": "Seek a permitted exact or clearly labelled author edition; similar Spectra titles inspected are not an automatic match. No paid access or full-text availability claim.",
-      "evidence_paths": [],
+      "decision": "Publisher DOI record lists Woods, but two public candidate drafts omit him from the first-page authors. Do not adopt them as exact editions or personal-authorship proof; retain the discrepancy for a later version review.",
+      "evidence_paths": [
+        "data/content/checks/2026-10-27-text-research.json"
+      ],
       "question_ids": [
         "Q2"
       ],
@@ -946,11 +981,13 @@
       "reason": "local_content_gap",
       "title": "Requirements for integrating software architecture and reengineering models: CORUM II",
       "canonical_url": "https://doi.org/10.1109/WCRE.1998.723185",
-      "state": "ready",
+      "state": "deferred",
       "batch_id": "related-editions",
-      "decision": "Related local paper inspected by title/authors. Compare publication edition/pagination/DOI before changing it from supporting evidence to an exact local copy.",
+      "decision": "Local PDF equals official SEI bytes, but its 11-page author layout differs from proceedings pages 154-163 (ten pages). Private reading text made; retain supporting-only association and stop redundant exact-copy search unless specifically needed.",
       "evidence_paths": [
-        "sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf"
+        "sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf",
+        "data/content/checks/2026-10-27-text-research.json",
+        "data/content/production/text-recovery-2026-10-27.json"
       ],
       "question_ids": [],
       "automatic_fetch": false,
@@ -979,12 +1016,13 @@
       "owner": "steven-woods-research",
       "reason": "recording_link_gap",
       "title": "The entrepreneurial computer scientist",
-      "canonical_url": "https://uwaterloo.ca/math/lecture?page=1",
-      "state": "ready",
+      "canonical_url": "https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist",
+      "state": "deferred",
       "batch_id": "recording-discovery",
-      "decision": "Specific official event URL repaired; recording search remains open. A migrated paginated list is not the event. No organizer contact sent.",
+      "decision": "Bounded public search completed; official listing/biography exists but no exact recording, slides or transcript was located. Not proof of absence. Future official contact routes retained, with no outreach authorized.",
       "evidence_paths": [
-        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html"
+        "steven-woods-research/historic/artifacts/archive-html/uwaterloo-entrepreneurial-computer-scientist.html",
+        "data/content/checks/2026-10-27-media-research.json"
       ],
       "question_ids": [
         "Q4"
@@ -1016,8 +1054,11 @@
       "canonical_url": "https://link.springer.com/article/10.1023/A:1018964405965",
       "state": "ready",
       "batch_id": "paper-recovery",
-      "decision": "Seek a permitted exact or clearly labelled author edition; similar Spectra titles inspected are not an automatic match. No paid access or full-text availability claim.",
-      "evidence_paths": [],
+      "decision": "A 26-page institutional manuscript candidate was privately obtained and text-extracted, with an author-attributed public lead also recorded. Not the verified 29-page journal edition; reading/edition/rights review remains before any public derivative.",
+      "evidence_paths": [
+        "data/content/checks/2026-10-27-text-research.json",
+        "data/content/production/text-recovery-2026-10-27.json"
+      ],
       "question_ids": [
         "Q2"
       ],
@@ -1048,12 +1089,13 @@
       "reason": "transcript_gap",
       "title": "Steven Woods - Partner and Chief Technology Officer, Inovia Capital",
       "canonical_url": "https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947",
-      "state": "blocked_user",
+      "state": "in_progress",
       "batch_id": "private-talks",
-      "decision": "Recover any existing private work first. No public transcript or verified speaker spans are claimed. New private production needs a separate reviewed plan.",
+      "decision": "Publisher's current feed supplied a new enclosure for the same episode GUID. Audio downloaded privately and local, resumable ASR is underway. No prior transcript is known; no public transcript or speaker approval is claimed.",
       "evidence_paths": [
         "steven-woods-research/historic/artifacts/archive-html/apple-riddick-show.html",
-        "steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml"
+        "steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml",
+        "data/content/checks/2026-10-27-media-research.json"
       ],
       "question_ids": [
         "Q1",
@@ -1160,6 +1202,29 @@
       ],
       "automatic_fetch": false,
       "changes_release_status": false
+    }
+  ],
+  "last_cycle_report": "CONTENT-TEXT-RECOVERY.md",
+  "followup_entries": [
+    {
+      "request_id": "61c003acde1ccfede5f8",
+      "content_id": "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact",
+      "owner": "steven-woods-research",
+      "reason": "recording_link_gap",
+      "title": "Entrepreneurship and Impact Series - April 2023, Steven Woods",
+      "canonical_url": "https://uwaterloo.ca/math-innovation/events-entrepreneurship-and-impact-series",
+      "state": "deferred",
+      "batch_id": "recording-discovery",
+      "decision": "Steven's official event listing has no verified recording after removing Natalie Gordon's video. Public searching only; keep the future Math Innovation contact route, do not contact anyone.",
+      "evidence_paths": [
+        "data/content/checks/2026-10-27-media-research.json"
+      ],
+      "question_ids": [
+        "Q4"
+      ],
+      "automatic_fetch": false,
+      "changes_release_status": false,
+      "introduced_on": "2026-10-27"
     }
   ]
 }

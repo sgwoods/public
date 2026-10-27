@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-10-27",
+  "method": "Parallel bounded public-source research; current publisher RSS and cookie-free public video metadata; no login or outreach",
+  "riddick": {
+    "content_id": "steven-woods-research/src-steven-2023-riddick-show",
+    "feed_url": "https://media.rss.com/riddickpodcast/feed.xml",
+    "feed_response_sha256": "8efbc470361212eae1fa0b2cfb8c47f9ea67a2ba74e84c4a1d4cfad5e36fe39b",
+    "episode_guid": "cfe8d5a4-30c6-4537-bac4-453e8de53f3a",
+    "episode_url": "https://rss.com/podcasts/riddickpodcast/932219",
+    "old_enclosure_url": "https://media.rss.com/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3",
+    "old_enclosure_http_status": 403,
+    "current_enclosure_url": "https://content.rss.com/episodes/189738/932219/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3",
+    "current_enclosure_http_status": 200,
+    "audio_bytes": 81679965,
+    "audio_sha256": "ca7e2acbed5ba3c534af8400717a291aa49ff6122dfb98b9b43cd21d8c6bc5ff",
+    "duration_seconds_probed": 5104.953469,
+    "duration_seconds_feed": 5104,
+    "storage": "private_maintainer_staging_only",
+    "limitations": "Audio was downloaded from the new enclosure explicitly supplied by the public publisher feed. A private ASR draft does not establish speaker attribution, factual accuracy or permission to publish a transcript."
+  },
+  "videos": [
+    {
+      "video_id": "L64GbHRcsFQ",
+      "url": "https://www.youtube.com/watch?v=L64GbHRcsFQ",
+      "title": "Natalie Gordon | Ask-Me-Anything | Math Innovation Entrepreneurship and Impact Series",
+      "channel": "Faculty of Mathematics, University of Waterloo",
+      "duration_seconds": 2834,
+      "published_on": "2023-05-02",
+      "outcome": "wrong_subject_removed_from_steven_recording_association",
+      "evidence_url": "https://uwaterloo.ca/math-innovation/events-entrepreneurship-and-impact-series",
+      "note": "Current official series page and the historical local capture place this URL under Natalie Gordon, March 2023. Steven's event listing is not this video."
+    },
+    {
+      "video_id": "C_HIi0IKK90",
+      "url": "https://www.youtube.com/watch?v=C_HIi0IKK90",
+      "title": "Research Discovery Days 2023: Steven Woods",
+      "channel": "Faculty of Mathematics, University of Waterloo",
+      "duration_seconds": 176,
+      "published_on": "2023-04-04",
+      "event_on": "2023-04-18",
+      "outcome": "correct_subject_short_promotional_clip_not_full_keynote",
+      "evidence_url": "https://uwaterloo.ca/math/news/inaugural-research-discovery-days-highlights-cutting-edge",
+      "note": "Registration invitation and short duration support promotional framing. Official event report places Woods' keynote on April 18, not the previous November 2 association."
+    },
+    {
+      "video_id": "3cDnlKwbtTY",
+      "url": "https://www.youtube.com/watch?v=3cDnlKwbtTY",
+      "title": "Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community",
+      "channel": "uwaterloo",
+      "duration_seconds": 3243,
+      "published_on": "2017-11-01",
+      "event_on": "2017-09-28",
+      "outcome": "official_symposium_page_directly_embeds_matching_joint_presentation",
+      "evidence_url": "https://uwaterloo.ca/computer-science/events/2017-cheriton-research-symposium",
+      "note": "The event page schedules the joint presentation at 4 p.m. on September 28. Speaker turns in audio still require review."
+    }
+  ],
+  "caption_observation": {
+    "video_ids": ["C_HIi0IKK90", "3cDnlKwbtTY"],
+    "advertised": "English auto-generated tracks in public watch responses",
+    "usable_text_obtained": false,
+    "outcome": "Supplied public caption URLs returned empty bodies; no alternate-client bypass attempted",
+    "signed_caption_urls_retained": false
+  },
+  "recording_searches": [
+    {"content_id": "steven-woods-research/src-steven-2023-cscan-collaboration-talk", "outcome": "recording_slides_transcript_unlocated_not_proven_absent", "source_url": "https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/", "text_role": "publisher_description_and_biography_not_spoken_words", "exact_event_date_verified": false},
+    {"content_id": "steven-woods-research/src-steven-2021-entrepreneurial-computer-scientist", "outcome": "recording_slides_transcript_unlocated_not_proven_absent", "source_url": "https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist", "text_role": "publisher_description_and_biography_not_spoken_words", "note": "Closed Zoom registration is not a recording."},
+    {"content_id": "steven-woods-research/src-steven-2003-usask-sorenson-lecture", "outcome": "recording_slides_transcript_unlocated_not_proven_absent", "source_url": "https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php", "text_role": "official_lecture_title_and_biography_not_spoken_words"}
+  ],
+  "future_contact_routes": [
+    {"role": "CS-CAN event organizer", "url": "https://cscan-infocan.ca/contact-us/", "sent": false},
+    {"role": "Waterloo Mathematics event staff", "url": "https://uwaterloo.ca/math/about/contact-us", "sent": false},
+    {"role": "Waterloo Math Innovation organizers", "url": "https://uwaterloo.ca/math-innovation/about/contact-information", "sent": false},
+    {"role": "USask Computer Science lecture-series administration", "url": "https://www.cs.usask.ca/about/contact-us.php", "sent": false}
+  ],
+  "outreach_policy": "public_search_only_no_messages_authorized",
+  "source_approval_changes": false
+}

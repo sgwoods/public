@@ -1,0 +1,242 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-10-27",
+  "original_check_timestamp_utc": null,
+  "timestamp_note": "Original successful remote checks occurred on the session date above; exact times were not recorded. The window below applies only to the subsequent local hash recheck.",
+  "local_hash_recheck_window_utc": {
+    "start": "2026-10-27T22:30:33Z",
+    "end": "2026-10-27T22:30:34Z"
+  },
+  "method": "Local pypdf inspection; public HTTPS GET with curl and platform TLS for official PDF byte comparisons, publisher-deposited Crossref metadata, and institutional candidate PDF inspection; web-tool page retrieval for SEI, Springer, and the author-attributed ResearchGate manuscript.",
+  "limitations": [
+    "IEEE document pages presented verification barriers; no IEEE version-of-record PDF was inspected.",
+    "Publisher-deposited Crossref metadata is distinguished from inspection of a publisher PDF.",
+    "Search snippets are leads only, not successful page or full-text checks.",
+    "PDF text extraction does not establish visual layout fidelity or textual equivalence between editions.",
+    "Public availability, institutional hosting, and author-upload attribution do not establish a redistribution license or republication approval."
+  ],
+  "approval_changes": false,
+  "candidate_pdf_files_created": [],
+  "temporary_content_handling": "Remote PDF bytes used for checks were held in memory; no candidate PDFs were saved to disk and no candidate hashes were retained.",
+  "checks": [
+    {
+      "content_id": "publication:kazman1998corum",
+      "last_successful_external_check": "2026-10-27",
+      "canonical_url": "https://doi.org/10.1109/WCRE.1998.723185",
+      "institutional_landing_url": "https://www.sei.cmu.edu/library/requirements-for-integrating-software-architecture/",
+      "local_artifact": "sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf",
+      "local_sha256": "d0967ec27911d139058366953bd15dc3fbd5bd9e230296adb47b065809bf3da0",
+      "official_pdf_url": "https://www.sei.cmu.edu/documents/200/1998_019_001_29754.pdf",
+      "official_pdf_sha256": "d0967ec27911d139058366953bd15dc3fbd5bd9e230296adb47b065809bf3da0",
+      "byte_identity": "local_equals_current_official_sei_download",
+      "publisher_metadata": {
+        "source_url": "https://api.crossref.org/works/10.1109/WCRE.1998.723185",
+        "check_method": "successful_public_https_get_json_parsed",
+        "doi": "10.1109/WCRE.1998.723185",
+        "title": "Requirements for integrating software architecture and reengineering models: CORUM II",
+        "authors_in_order": [
+          {"given": "R.", "family": "Kazman"},
+          {"given": "S.G.", "family": "Woods"},
+          {"given": "S.J.", "family": "Carriere"}
+        ],
+        "proceedings": "Proceedings Fifth Working Conference on Reverse Engineering (Cat. No.98TB100261)",
+        "pages": "154-163",
+        "publisher": "IEEE Comput. Soc"
+      },
+      "observed": {
+        "local_pdf_pages": 11,
+        "publisher_page_span_length": 10,
+        "first_page_title_and_author_order_match": true,
+        "conference_identifier_in_extracted_text": "1998 Working Conference on Reverse Engineering",
+        "last_page": "Continuation of the final bibliography entry, reference 28.",
+        "publisher_identifiers": "No IEEE copyright or DOI identifier was found in extracted text.",
+        "landing_metadata_caveat": "SEI uses a shortened title, a report classification, and a different author order; the PDF itself supplies the full title and conference author order."
+      },
+      "edition_conclusion": "Author-form manuscript in a different layout from the proceedings pagination; not an exact proceedings-edition copy.",
+      "edition_caveats": [
+        "The author-form classification is an inference from the PDF and pagination, not an explicit acceptance-status declaration.",
+        "Submitted versus accepted manuscript status and full textual equivalence remain unresolved.",
+        "SEI catalog dates and PDF creation metadata are not acceptance or publication-edition proof."
+      ],
+      "safe_next_action": "Retain as supporting evidence with verified SEI byte provenance; do not promote to an exact proceedings copy."
+    },
+    {
+      "content_id": "publication:carriere1999transformation",
+      "last_successful_external_check": "2026-10-27",
+      "canonical_url": "https://doi.org/10.1109/WCRE.1999.806943",
+      "institutional_landing_url": "https://www.sei.cmu.edu/library/software-architectural-transformation/",
+      "local_artifact": "sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf",
+      "local_sha256": "dd1b799c04f916a17229ca7095d466e42c3048f3624a10702aefc7a3f9b2458c",
+      "official_pdf_url": "https://www.sei.cmu.edu/documents/189/1999_019_001_29645.pdf",
+      "official_pdf_sha256": "dd1b799c04f916a17229ca7095d466e42c3048f3624a10702aefc7a3f9b2458c",
+      "byte_identity": "local_equals_current_official_sei_download",
+      "publisher_metadata": {
+        "source_url": "https://api.crossref.org/works/10.1109/WCRE.1999.806943",
+        "check_method": "successful_public_https_get_json_parsed",
+        "doi": "10.1109/WCRE.1999.806943",
+        "title": "Software architectural transformation",
+        "authors_in_order": [
+          {"given": "S.J.", "family": "Carriere"},
+          {"given": "S.", "family": "Woods"},
+          {"given": "R.", "family": "Kazman"}
+        ],
+        "proceedings": "Sixth Working Conference on Reverse Engineering (Cat. No.PR00303)",
+        "pages": "13-23",
+        "publisher": "IEEE Comput. Soc"
+      },
+      "observed": {
+        "local_pdf_pages": 11,
+        "publisher_page_span_length": 11,
+        "first_page_title_and_author_order_match": true,
+        "publisher_identifiers": "Proceedings pagination, DOI, and a publisher copyright identifier were not found in extracted text.",
+        "last_page": "References continue through entry 17; entry 16 retains to-appear wording.",
+        "landing_metadata_caveat": "SEI lists only Kazman and Woods, omitting first author Carriere; the PDF includes all three in the DOI-record order."
+      },
+      "edition_conclusion": "SEI-hosted author-form candidate; exact proceedings edition remains unresolved.",
+      "edition_caveats": [
+        "The matching page count, title, and authors do not establish the final typeset edition.",
+        "To-appear references and missing extracted identifiers suggest manuscript form but do not prove acceptance status or textual differences.",
+        "Completeness relative to the publisher edition has not been established by a full comparison."
+      ],
+      "safe_next_action": "Retain as supporting evidence with verified SEI byte provenance pending publisher-edition comparison."
+    },
+    {
+      "content_id": "publication:kazman1999tradeoff",
+      "last_successful_external_check": "2026-10-27",
+      "canonical_url": "https://dl.acm.org/doi/10.1145/302405.302452",
+      "publisher_page_access": "Web-tool retrieval returned 403; publisher PDF not inspected.",
+      "publisher_metadata": {
+        "source_url": "https://api.crossref.org/works/10.1145/302405.302452",
+        "check_method": "successful_public_https_get_json_parsed",
+        "doi": "10.1145/302405.302452",
+        "title": "Experience with performing architecture tradeoff analysis",
+        "authors_in_order": [
+          {"given": "Rick", "family": "Kazman"},
+          {"given": "Mario", "family": "Barbacci"},
+          {"given": "Mark", "family": "Klein"},
+          {"given": "S. Jeromy", "family": "Carri\u00e8re"},
+          {"given": "Steven G.", "family": "Woods"}
+        ],
+        "proceedings": "Proceedings of the 21st international conference on Software engineering",
+        "pages": "54-63",
+        "publisher": "ACM"
+      },
+      "candidate_checks": [
+        {
+          "url": "https://www.se.rit.edu/~se440/documents/atam_experience.pdf",
+          "provenance": "Institutional course-hosted copy; not an established author deposit.",
+          "checked_on": "2026-10-27",
+          "method": "successful_public_https_get_pdf_parsed_in_memory",
+          "pdf_pages": 10,
+          "sha256": null
+        },
+        {
+          "url": "https://cse.hkust.edu.hk/~charlesz/comp610/paper/icse99.pdf",
+          "provenance": "Institutional course-hosted copy; not an established author deposit.",
+          "checked_on": "2026-10-27",
+          "method": "successful_public_https_get_pdf_parsed_in_memory",
+          "pdf_pages": 10,
+          "sha256": null
+        }
+      ],
+      "candidate_first_page_authors_in_order": [
+        "Rick Kazman",
+        "Mario Barbacci",
+        "Mark Klein",
+        "S. Jeromy Carri\u00e8re"
+      ],
+      "authorship_mismatch": "Both candidate first pages omit Steven G. Woods, whom ACM's publisher-deposited DOI record lists as fifth author.",
+      "edition_conclusion": "Public institutional manuscript candidates only; neither is a verified exact proceedings substitute.",
+      "safe_next_action": "Keep recovery pending until the author-list discrepancy, edition, and reuse basis are resolved."
+    },
+    {
+      "content_id": "publication:kazman2000discipline",
+      "last_successful_external_check": "2026-10-27",
+      "canonical_url": "https://link.springer.com/article/10.1023/A:1018964405965",
+      "publisher_metadata": {
+        "source_url": "https://link.springer.com/article/10.1023/A:1018964405965",
+        "check_method": "web_tool_page_retrieval_and_content_review",
+        "doi": "10.1023/A:1018964405965",
+        "title": "Toward a discipline of scenario-based architectural engineering",
+        "title_note": "Hyphen normalized to ASCII from publisher typography.",
+        "authors_in_order": ["Rick Kazman", "S. Jeromy Carri\u00e8re", "Steven G. Woods"],
+        "journal": "Annals of Software Engineering",
+        "volume": "9",
+        "pages": "5-33",
+        "issue_date": "2000-05",
+        "access_observation": "Subscription preview; no publisher full text inspected."
+      },
+      "candidate_checks": [
+        {
+          "url": "https://www.researchgate.net/publication/220300638_Toward_a_discipline_of_scenario-based_architectural_engineering",
+          "provenance": "Public full text explicitly attributed by the page to author Rick Kazman.",
+          "checked_on": "2026-10-27",
+          "method": "web_tool_page_retrieval_and_public_manuscript_text_review",
+          "observed": "Expected title and three authors; manuscript text numbered through page 26 with closing references.",
+          "pdf_download_status": "Download link retrieval failed; PDF bytes not inspected or retained."
+        },
+        {
+          "url": "https://people.computing.clemson.edu/~johnmc/courses/cpsc881/annals-scenario.pdf",
+          "provenance": "Institutional course-hosted manuscript; not an established author deposit.",
+          "checked_on": "2026-10-27",
+          "method": "successful_public_https_get_pdf_parsed_in_memory",
+          "pdf_pages": 26,
+          "sha256": null
+        }
+      ],
+      "edition_conclusion": "Public author-manuscript lead, not a verified Springer version of record.",
+      "edition_caveats": [
+        "The journal spans 29 pages; the displayed author manuscript and institutional candidate have 26 pages.",
+        "Submitted versus accepted status and textual equivalence are unresolved.",
+        "The ResearchGate and Clemson copies were not established as byte-identical."
+      ],
+      "safe_next_action": "Prioritize the author-attributed lead for future edition and rights review; do not infer republication approval."
+    },
+    {
+      "content_id": "publication:quilici2000matching",
+      "last_successful_external_check": "2026-10-27",
+      "canonical_url": "https://doi.org/10.1016/S0167-6423(99)00039-8",
+      "publisher_landing_url": "https://www.sciencedirect.com/science/article/pii/S0167642399000398",
+      "publisher_metadata": {
+        "source_url": "https://api.crossref.org/works/10.1016/S0167-6423(99)00039-8",
+        "check_method": "successful_public_https_get_json_parsed",
+        "doi": "10.1016/S0167-6423(99)00039-8",
+        "title": "Program plan matching: experiments with a constraint-based approach",
+        "authors_in_order": [
+          {"given": "Alex", "family": "Quilici"},
+          {"given": "Steven", "family": "Woods"},
+          {"given": "Yongjun", "family": "Zhang"}
+        ],
+        "journal": "Science of Computer Programming",
+        "pages": "285-302",
+        "issue_date": "2000-03",
+        "publisher": "Elsevier BV"
+      },
+      "full_text_status": "unresolved_no_qualifying_public_copy_verified_in_bounded_search",
+      "access_attempts_and_search_leads": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0167642399000398",
+          "attempted_on": "2026-10-27",
+          "outcome": "Web-tool direct retrieval returned 403; search snippets were not treated as full-text verification."
+        },
+        {
+          "url": "https://www.researchgate.net/publication/222322003_Program_plan_matching_Experiments_with_a_constraint-based_approach",
+          "attempted_on": "2026-10-27",
+          "outcome": "Web-tool direct retrieval returned 403. A search result described no full text and an author-request option; that remains a search-only availability lead, not a successful page check."
+        }
+      ],
+      "safe_next_action": "Keep unresolved. Do not substitute the related 1997 New Experiments paper or infer that no public copy exists."
+    }
+  ],
+  "future_no_contact_clarification_entry_points": [
+    {
+      "url": "https://www.sei.cmu.edu/library/requirements-for-integrating-software-architecture/",
+      "observed_roles": ["Ask a question about this SEI Report", "Request Permission to Use SEI Materials"]
+    },
+    {
+      "url": "https://www.sei.cmu.edu/library/software-architectural-transformation/",
+      "observed_roles": ["Ask a question about this SEI Report", "Request Permission to Use SEI Materials"]
+    }
+  ],
+  "contact_limitations": "Only the official landing-page role labels were inspected; destination forms and a named edition owner were not verified. No contact was made."
+}

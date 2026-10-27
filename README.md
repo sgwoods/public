@@ -14,6 +14,7 @@ Start here in this repo:
 - [CONTENT-INVENTORY.md](CONTENT-INVENTORY.md): repository-wide file, text, recording, transcript and provenance inventory.
 - [Machine content catalog](data/content/catalog.json): start here for programmatic discovery; [consumer contract](CONTENT-INVENTORY-INTERFACE.md).
 - [CONTENT-REQUEST-TRIAGE.md](CONTENT-REQUEST-TRIAGE.md): per-request dispositions, ranked next work and decisions for Steven; [machine decision register](data/content/request-triage.json).
+- [CONTENT-TEXT-RECOVERY.md](CONTENT-TEXT-RECOVERY.md): current text-first cycle, private production availability and review gates; [private-production runbook](PRIVATE-CONTENT-PRODUCTION.md).
 - [IMAC-CONTENT-HANDOFF.md](IMAC-CONTENT-HANDOFF.md): consumer-only prompt; this public maintainer owns gathering, transcript review, indexes and publication.
 - [REPOSITORY-PERSISTENCE.md](REPOSITORY-PERSISTENCE.md): what is saved, tool/interface map, recovery snapshot, and remaining preservation gaps.
 - [ARCHIVE-PRESERVATION.md](ARCHIVE-PRESERVATION.md): six newly preserved source records, the LinkedIn access blocker, and the repeatable capture/coverage process.

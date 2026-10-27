@@ -71,7 +71,11 @@
         "identity_review": {"type": "string"},
         "authorship": {"type": "string"},
         "style_eligible": {"const": false},
-        "transcript": {"type": "object", "required": ["state", "public_artifacts"], "properties": {"state": {"enum": ["not_catalogued", "not_applicable"]}, "public_artifacts": {"$ref": "#/$defs/paths"}}},
+        "transcript": {"type": "object", "additionalProperties": false, "required": ["state", "public_artifacts"], "properties": {
+          "state": {"enum": ["not_catalogued", "not_applicable", "private_asr_in_progress", "private_draft_unreviewed"]},
+          "public_artifacts": {"$ref": "#/$defs/paths"}, "production_summary": {"$ref": "#/$defs/path"},
+          "review_required": {"type": "array", "items": {"type": "string"}}, "speaker_attribution_verified": {"const": false}
+        }},
         "freshness": {"$ref": "#/$defs/freshness"},
         "text_availability": {"type": "array", "items": {"type": "object", "required": ["path", "method", "extraction_quality"], "properties": {"path": {"$ref": "#/$defs/path"}, "method": {"type": "string"}, "extraction_quality": {"const": "not_verified"}}}},
         "artifact_provenance": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "basis"], "properties": {"path": {"$ref": "#/$defs/path"}, "sha256": {"$ref": "#/$defs/hash"}}}}
@@ -91,6 +95,7 @@
           "properties": {"commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "requests_sha256": {"$ref": "#/$defs/hash"}, "request_count": {"type": "integer", "minimum": 1}}
         },
         "entries": {"type": "array", "items": {"$ref": "#/$defs/triage_entry"}},
+        "followup_entries": {"type": "array", "items": {"$ref": "#/$defs/triage_entry"}},
         "questions": {"type": "array", "items": {"type": "object", "required": ["question_id", "title", "question", "recommended", "options", "blocks", "answer_state"], "properties": {
           "question_id": {"type": "string"}, "title": {"type": "string"}, "question": {"type": "string"}, "recommended": {"type": "string"}, "options": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "blocks": {"type": "string"}, "answer_state": {"enum": ["awaiting_user", "answered", "superseded"]}
         }}},
@@ -106,7 +111,7 @@
       "properties": {
         "request_id": {"type": "string", "pattern": "^[0-9a-f]{20}$"},
         "content_id": {"type": "string"}, "owner": {"type": "string"}, "reason": {"type": "string"}, "title": {"type": "string"},
-        "state": {"enum": ["resolved", "ready", "deferred", "blocked_user", "quarantined"]},
+        "state": {"enum": ["resolved", "ready", "in_progress", "deferred", "blocked_user", "quarantined"]},
         "batch_id": {"type": "string"}, "decision": {"type": "string", "minLength": 1},
         "evidence_paths": {"$ref": "#/$defs/paths"},
         "question_ids": {"type": "array", "items": {"type": "string"}},

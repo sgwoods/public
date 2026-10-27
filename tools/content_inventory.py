@@ -321,13 +321,34 @@ def source_inventory(root, policy, artifacts):
     for identifier, override in policy.get("source_overrides", {}).items():
         if identifier not in by_id:
             raise ValueError("Unknown override ID: " + identifier)
-        if not set(override) <= {"local_artifacts", "supporting_artifacts", "text_role", "identity_review", "authorship", "recordings", "freshness", "research_note"}:
+        if not set(override) <= {"local_artifacts", "supporting_artifacts", "text_role", "identity_review", "authorship", "recordings", "transcript", "freshness", "research_note"}:
             raise ValueError("Unsupported curation override field for " + identifier)
         by_id[identifier].update(override)
     for record in sources:
         paths([record["source_manifest"]])
         paths(record["local_artifacts"] + record.get("supporting_artifacts", []))
         paths(record.get("transcript", {}).get("public_artifacts", []))
+        transcript = record["transcript"]
+        if not set(transcript) <= {"state", "public_artifacts", "production_summary", "review_required", "speaker_attribution_verified"}:
+            raise ValueError("Transcript metadata must not contain raw text or private locations")
+        if transcript["state"] not in {"not_catalogued", "not_applicable", "private_asr_in_progress", "private_draft_unreviewed"}:
+            raise ValueError("Unsupported transcript review state")
+        if transcript.get("speaker_attribution_verified"):
+            raise ValueError("No speaker-attribution approval is defined in this interface")
+        if set(transcript.get("public_artifacts", [])) - set(policy.get("approved_public_transcript_paths", [])):
+            raise ValueError("Public transcript paths need explicit reviewed approval")
+        if transcript.get("production_summary"):
+            paths([transcript["production_summary"]])
+            from transcribe_private_audio import safe_summary
+            summary = json.loads((root / transcript["production_summary"]).read_text())
+            if safe_summary(summary) != summary or summary.get("content_id") != record["content_id"]:
+                raise ValueError("Transcript production report must be an allowlisted text-free summary for this source")
+            if summary.get("state") != transcript["state"]:
+                raise ValueError("Transcript production report and curation states differ")
+            safe_url(summary.get("source_url"))
+            if summary["state"] == "private_draft_unreviewed" and (
+                    not summary.get("chunks_expected") or summary.get("chunks_complete") != summary["chunks_expected"] or not summary.get("word_count")):
+                raise ValueError("Completed private draft needs all checkpoints and nonempty text")
         safe_url(record.get("canonical_url"))
         safe_url(record.get("related_external_url"))
         if record["freshness"]["policy"] not in {"historical", "current_profile"}:
@@ -376,8 +397,13 @@ def update_requests(sources, as_of):
                 add(source, "external_check_unknown", "Ask the owning researcher to check the public source; Git commit/review dates are not external checks.")
             elif (as_of - date.fromisoformat(checked[:10])).days >= freshness.get("review_after_days", 30):
                 add(source, "external_review_due", "Recheck the public source and record evidence/outcome; retain historical captures and release labels.")
-        if source.get("recordings") and source["transcript"]["state"] == "not_catalogued":
-            add(source, "transcript_gap", "First recover prior private work; if needed transcribe in a private repo, verify speakers and request review before any public export.")
+        if source.get("recordings") and source["transcript"]["state"] in {"not_catalogued", "private_asr_in_progress", "private_draft_unreviewed"}:
+            action = "First recover prior private work; if needed transcribe in a private repo, verify speakers and request review before any public export."
+            if source["transcript"]["state"] == "private_asr_in_progress":
+                action = "Private local transcription is in progress. Do not duplicate it; completion and speaker/content review are still required."
+            elif source["transcript"]["state"] == "private_draft_unreviewed":
+                action = "A private draft exists. Do not retranscribe by default; request maintainer listening, speaker attribution and content/rights review before any usable export."
+            add(source, "transcript_gap", action)
         if source["source_type"] == "appearance" and source.get("text_role") == "event_listing_not_talk_transcript" and not source.get("recordings"):
             add(source, "recording_link_gap", "Ask the organizer/source owner whether a public recording, slides or notes exist; a channel link is not this talk's recording.")
         if not source["local_artifacts"] and freshness.get("access_state") != "blocked":
@@ -422,6 +448,7 @@ def build(root=ROOT, allow_dirty=False, as_of=None):
                    schema_ref="data/content/schema.json#/$defs/catalog",
                    curation=POLICY, human_overview="CONTENT-INVENTORY.md", handoff="IMAC-CONTENT-HANDOFF.md",
                    request_triage="data/content/request-triage.json", request_triage_overview="CONTENT-REQUEST-TRIAGE.md",
+                   content_production_reports=sorted(path.relative_to(root).as_posix() for path in (root / "data/content/production").glob("*.json")),
                    operating_model={"public_information_maintainer": "sgwoods/public",
                                     "other_machines": "consume_approved_content_and_request_updates",
                                     "request_delivery": "explicit_user_authorized_handoff_not_automatic",

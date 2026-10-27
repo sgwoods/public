@@ -68,6 +68,8 @@ jobs:
           python3 -m pip install -r tools/requirements-content-tests.txt
           python3 tools/test_content_inventory.py
           python3 tools/test_request_triage.py
+          python3 tools/test_private_asr.py
+          python3 tools/test_media_attribution.py
           python3 tools/triage_content_requests.py check --schema
 
       - name: Commit regenerated index

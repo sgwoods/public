@@ -60,7 +60,7 @@
         "university-industry"
       ],
       "status": "approved",
-      "notes": "Recording still to be confirmed."
+      "notes": "October 27, 2026 public search confirmed the official speaker listing, biography and discussion abstract, but did not locate a recording, slides or transcript. The page links the organizer's YouTube channel, not an identified recording; its public channel search for Woods returned no match. The existing circa-2023 dating is not an exact date established by the current page. Search failure is not proof of absence; historical capture retained."
     },
     {
       "source_id": "src-steven-2021-entrepreneurial-computer-scientist",
@@ -89,23 +89,23 @@
         "appearance"
       ],
       "status": "approved",
-      "notes": "Specific official event page recovered and checked October 27, 2026; title, speaker and January 20, 2021 date match. The old paginated lecture URL now redirects to a different listing. Historical local capture retained. No recording or transcript is claimed."
+      "notes": "Specific official event page recovered and checked October 27, 2026; title, speaker and January 20, 2021 date match. The old paginated lecture URL now redirects to a different listing. The event link is closed Zoom registration, not a public recording. Bounded public searches did not locate a recording, slides or transcript; absence is not established. Historical local capture retained as listing evidence."
     },
     {
       "source_id": "src-steven-2023-uwaterloo-entrepreneurship-impact",
       "title": "Entrepreneurship and Impact Series - April 2023, Steven Woods",
       "source_type": "appearance",
       "company_context": "Steven Woods / cross-company",
-      "person_relevance": "Waterloo appearance with a direct video recording and concise retrospective framing.",
+      "person_relevance": "Official Waterloo listing of Steven Woods as an April 2023 Entrepreneurship and Impact Series speaker; his recording remains unlocated.",
       "date": {
         "display": "April 2023",
         "sort": "2023-04-01",
         "precision": "month"
       },
       "urls": {
-        "canonical": "https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series",
+        "canonical": "https://uwaterloo.ca/math-innovation/events-entrepreneurship-and-impact-series",
         "archive_local": "historic/artifacts/archive-html/uwaterloo-entrepreneurship-impact-series.html",
-        "archive_web": "https://www.youtube.com/watch?v=L64GbHRcsFQ"
+        "archive_web": null
       },
       "ownership": {
         "canonical_repo": "steven-woods-research",
@@ -114,28 +114,28 @@
       },
       "tags": [
         "waterloo",
-        "video",
+        "event-listing",
         "appearance",
         "entrepreneurship"
       ],
       "status": "approved",
-      "notes": "Event page includes the direct YouTube recording."
+      "notes": "October 27, 2026 public verification: the previously linked YouTube video belongs to Natalie Gordon's March 2023 session, not Steven Woods. Both the current official series page and the retained historical capture place that recording under Natalie Gordon. Steven's April 2023 listing has biography text, but his recording remains unlocated. Historical capture preserved unchanged as evidence, not a transcript."
     },
     {
       "source_id": "src-steven-2023-research-discovery-days-keynote",
-      "title": "Research Discovery Days 2023: Steven Woods",
+      "title": "Research Discovery Days 2023: Steven Woods (promotional video)",
       "source_type": "appearance",
       "company_context": "Steven Woods / cross-company",
-      "person_relevance": "Recent keynote appearance with direct YouTube access and preserved event context.",
+      "person_relevance": "Short Steven Woods promotional video published ahead of Waterloo's April 2023 Research Discovery Days; not a verified full-keynote recording.",
       "date": {
-        "display": "November 2, 2023",
-        "sort": "2023-11-02",
+        "display": "April 4, 2023 (video publication)",
+        "sort": "2023-04-04",
         "precision": "day"
       },
       "urls": {
         "canonical": "https://www.youtube.com/watch?v=C_HIi0IKK90",
         "archive_local": "historic/artifacts/archive-html/uwaterloo-research-discovery-days.html",
-        "archive_web": "https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days"
+        "archive_web": "https://uwaterloo.ca/math-innovation/events/math-and-computing-research-discovery-days"
       },
       "ownership": {
         "canonical_repo": "steven-woods-research",
@@ -143,13 +143,13 @@
         "company_deep_link": "preferred"
       },
       "tags": [
-        "keynote",
+        "promo",
         "waterloo",
         "youtube",
         "appearance"
       ],
       "status": "approved",
-      "notes": "Combine the YouTube recording with the Waterloo event page in summary use."
+      "notes": "October 27, 2026 cookie-free public YouTube metadata confirms the exact title 'Research Discovery Days 2023: Steven Woods', channel Faculty of Mathematics, University of Waterloo (@waterloomath), duration 2:56, publication April 4, 2023 and a registration invitation in the description. Treat this as a short promo, not the full keynote. The official event page covers April 17-18, 2023; Waterloo's April 24 report places Woods' fireside keynote on day two, April 18: https://uwaterloo.ca/math/news/inaugural-research-discovery-days-highlights-cutting-edge. The retained historical context capture contains separate April and November sections; November 2 is not this source's publication or Woods' keynote date. English auto-generated captions are advertised, but the supplied public caption URL returned an empty body; no usable caption text or transcript was obtained. Historical capture preserved unchanged as context evidence."
     },
     {
       "source_id": "src-steven-2017-google-waterloo-uw-community",
@@ -158,9 +158,9 @@
       "company_context": "Google Canada",
       "person_relevance": "Useful public talk connecting Steven Woods, Google Waterloo, and University of Waterloo community ties.",
       "date": {
-        "display": "2017",
-        "sort": "2017-01-01",
-        "precision": "year"
+        "display": "September 28, 2017 (event)",
+        "sort": "2017-09-28",
+        "precision": "day"
       },
       "urls": {
         "canonical": "https://www.youtube.com/watch?v=3cDnlKwbtTY",
@@ -179,7 +179,7 @@
         "appearance"
       ],
       "status": "approved",
-      "notes": "Likely tied to the 2017 Cheriton Research Symposium."
+      "notes": "October 27, 2026 verification: the official symposium page schedules Woods and Verna Friesen at 4 p.m. on September 28, 2017 and directly embeds this video: https://uwaterloo.ca/computer-science/events/2017-cheriton-research-symposium. Public YouTube metadata confirms the title, channel uwaterloo (@uwaterloo), duration 54:03 and November 1, 2017 video publication; that upload date is distinct from the event date. English auto-generated captions are advertised, but the supplied public caption URL returned an empty body; no usable caption text or transcript was obtained. Co-presented material is not diarized or attributable solely to Woods. Historical capture preserved unchanged as event evidence."
     },
     {
       "source_id": "src-steven-2003-usask-sorenson-lecture",
@@ -209,7 +209,7 @@
         "appearance"
       ],
       "status": "approved",
-      "notes": "Also relevant to the Kinitos archive, but person-centric treatment lives here."
+      "notes": "Also relevant to the Kinitos archive, but person-centric treatment lives here. October 27, 2026 public search confirmed the official 2003 entry, Kinitos CEO role, talk title about timing and starting a software company, and brief biography. No recording, slides or transcript was located; this is not proof of absence. Historical lecture-listing capture retained unchanged as evidence, not spoken text."
     },
     {
       "source_id": "src-steven-2013-springboard-google-canada-interview",

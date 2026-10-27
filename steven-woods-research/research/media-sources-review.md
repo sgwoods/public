@@ -22,17 +22,25 @@ original review/source dates were not replaced by capture dates. See
 
 Use [the generated repository inventory](../../CONTENT-INVENTORY.md) and
 [`data/content/sources.json`](../../data/content/sources.json) for explicit text,
-recording, transcript, attribution and freshness states. The root-relative paths
-there are authoritative discovery links; the abbreviated `archive-html/` paths
+recording, transcript, attribution and freshness states. Inventory paths are
+repository-root-relative; the abbreviated `archive-html/` paths
 in the historical tables below mean `historic/artifacts/archive-html/` here.
+The search-only corrections below are limited to this ledger and the source
+manifest. Root curation/triage, metadata, generated inventory and pages remain
+for the parent to reconcile; regeneration alone will not fix stale overrides.
 
 - Riddick's saved RSS feed contains episode metadata and an audio enclosure; the
   Apple capture also contains embedded feed/episode metadata. Neither is a
   transcript or a locally saved audio recording.
 - The Springboard 2013 Q&A already contains publisher-attributed answers by
   Dr. Woods. It is readable first-person interview text, not audio verification.
-- The Research Discovery Days video and event page are different kinds of link,
-  not automatically contradictory sources. Reconfirm their exact pairing.
+- The previously associated Entrepreneurship and Impact video belongs to Natalie
+  Gordon, not Steven Woods. Steven's April 2023 recording remains unlocated.
+- The Research Discovery Days video is a 2:56 promo published April 4, 2023,
+  not a verified full-keynote recording. The actual Woods keynote was April 18;
+  November 2 came from a separate section of the historical context page.
+- The Woods/Friesen symposium pairing is verified: September 28, 2017 event,
+  distinct from the November 1 video publication. It is co-presented material.
 - The 2012 SlideShare deck has an unresolved identity concern: marketing/revenue
   material and possible confusion with a namesake. Do not use it for Steven's
   voice, views or quotations until primary identity evidence is reviewed.
@@ -57,14 +65,49 @@ is not speaker attribution, style-corpus approval or republication permission.
 | Type | Title | Approx. date | URL | Evidence / notes | Local archive |
 | --- | --- | --- | --- | --- | --- |
 | appearance | The Riddick Show: Steven Woods - Partner and Chief Technology Officer, Inovia Capital | 2023-05-01 | https://podcasts.apple.com/br/podcast/steven-woods-partner-and-chief-technology-officer/id1681596688?i=1000611307947 | Exact episode date and duration confirmed from the RSS feed; direct MP3 URL is public. | `archive-html/apple-riddick-show.html`, `archive-html/riddick-show-feed.xml` |
-| appearance | Models of University/Industry Collaboration - What Works and What Doesn't | circa 2023 | https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/ | CS-CAN event page naming Steven Woods as speaker; recording not yet found. | `archive-html/cscan-university-industry-collaboration.html` |
-| appearance | The entrepreneurial computer scientist | 2021-01-20 | https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist | Specific official event page recovered October 27; the old lecture listing redirects elsewhere. Recording still unlocated, not proven absent. | `archive-html/uwaterloo-entrepreneurial-computer-scientist.html` (historical listing capture retained) |
-| appearance | Entrepreneurship and Impact Series - April 2023, Steven Woods | 2023-04 | https://uwaterloo.ca/math-innovation/student-entrepreneurship/entrepreneurship-and-impact-series | Waterloo event page includes a direct recording link. Video: https://www.youtube.com/watch?v=L64GbHRcsFQ | `archive-html/uwaterloo-entrepreneurship-impact-series.html` |
-| appearance | Research Discovery Days 2023: Steven Woods | 2023-11-02 | https://www.youtube.com/watch?v=C_HIi0IKK90 | Exact YouTube title confirmed via oEmbed; event context matches Waterloo Research Discovery Days keynote page. | `archive-html/uwaterloo-research-discovery-days.html` |
-| appearance | Founding Innovation Keynote: Steven Woods | 2023-11-02 | https://uwaterloo.ca/math-innovation/research-partners/math-and-computing-research-discovery-days | Event page contains keynote block and Steven bio. Pair with the YouTube recording above. | `archive-html/uwaterloo-research-discovery-days.html` |
-| appearance | Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community | circa 2017 | https://www.youtube.com/watch?v=3cDnlKwbtTY | YouTube title confirmed via oEmbed; likely tied to the 2017 Cheriton Research Symposium. | `archive-html/uwaterloo-cheriton-symposium-2017.html` |
-| appearance | P.G. Sorenson Lecture: Dr. Steven Woods, CEO of Kinitos, Inc. | 2003 | https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php | Exact lecture title present on USask page. | `archive-html/usask-pg-sorenson-lectures.html` |
+| appearance | Models of University/Industry Collaboration - What Works and What Doesn't | circa 2023 (exact date unverified) | https://cscan-infocan.ca/models-of-university-industry-collaboration-what-works-and-what-doesnt/ | Official speaker listing, biography and discussion abstract; no recording, slides or transcript located in bounded public search. | `archive-html/cscan-university-industry-collaboration.html` |
+| appearance | The entrepreneurial computer scientist | 2021-01-20 | https://uwaterloo.ca/math/events/entrepreneurial-computer-scientist | Official title/date/speaker confirmed; closed Zoom registration is not a recording. No recording, slides or transcript located. | `archive-html/uwaterloo-entrepreneurial-computer-scientist.html` (historical listing capture retained) |
+| appearance | Entrepreneurship and Impact Series - April 2023, Steven Woods | 2023-04 | https://uwaterloo.ca/math-innovation/events-entrepreneurship-and-impact-series | Steven's listing is confirmed; his recording remains unlocated. The previously associated video belongs to the separate March Natalie Gordon entry. | `archive-html/uwaterloo-entrepreneurship-impact-series.html` |
+| appearance | Research Discovery Days 2023: Steven Woods (promotional video) | 2023-04-04 (video publication) | https://www.youtube.com/watch?v=C_HIi0IKK90 | Exact YouTube title without the parenthetical: Research Discovery Days 2023: Steven Woods. Faculty of Mathematics, University of Waterloo (@waterloomath); 2:56; registration invitation. Short promo, not the full keynote. | `archive-html/uwaterloo-research-discovery-days.html` (historical context, not video/transcript) |
+| appearance | Founding Innovation Keynote: Steven Woods | 2023-04-18 (event) | https://uwaterloo.ca/math-innovation/events/math-and-computing-research-discovery-days | Official event dates April 17-18; the [April 24 official report](https://uwaterloo.ca/math/news/inaugural-research-discovery-days-highlights-cutting-edge) places Woods' fireside keynote on day two. Do not present the short promo above as its full recording or assign the separate November event date. | `archive-html/uwaterloo-research-discovery-days.html` (April section; later November section is separate) |
+| appearance | Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community | 2017-09-28 (event); 2017-11-01 (video publication) | https://www.youtube.com/watch?v=3cDnlKwbtTY | Channel uwaterloo (@uwaterloo); 54:03. The [official symposium page](https://uwaterloo.ca/computer-science/events/2017-cheriton-research-symposium) schedules the joint talk at 4 p.m. September 28 and embeds this exact video. Not diarized. | `archive-html/uwaterloo-cheriton-symposium-2017.html` |
+| appearance | P.G. Sorenson Lecture: Dr. Steven Woods, CEO of Kinitos, Inc. | 2003 | https://www.cs.usask.ca/research/lectures/p.g.-sorenson-lectures.php | Official entry confirms role, biography and talk title about timing and starting a software company. No recording, slides or transcript located in bounded public search. | `archive-html/usask-pg-sorenson-lectures.html` |
 | appearance | A Conversation With Steven Woods, Engineering Director At Google Canada | 2013-01-30 | https://springboardatlantic.ca/a-conversation-with-steven-woods-engineering-director-at-google-canada/ | Interview/Q&A article republishing the University Affairs interview. | `archive-html/springboard-google-canada-interview.html` |
+
+## Public search-only verification, October 27, 2026
+
+Primary evidence was the official event/series pages and report linked above,
+plus cookie-free public YouTube oEmbed and watch-page metadata. No private
+workspace search, login, cookies, media download, paid tools, outreach or new
+transcription was used. Source IDs and approval labels are unchanged.
+
+- Wrong-video evidence: [L64GbHRcsFQ](https://www.youtube.com/watch?v=L64GbHRcsFQ)
+  is titled "Natalie Gordon | Ask-Me-Anything | Math Innovation Entrepreneurship
+  and Impact Series", on Faculty of Mathematics, University of Waterloo
+  (@waterloomath), 47:14, published May 2, 2023. Both the current series page
+  and unchanged historical capture place the link under Natalie, not Steven.
+- Public watch metadata advertised English auto-generated caption tracks for
+  all three candidate IDs. Following the supplied public caption URLs for
+  C_HIi0IKK90 and 3cDnlKwbtTY returned empty bodies. No usable caption text or
+  transcript was obtained; advertised tracks are not verified speaker spans.
+  Natalie's captions must not be used as Steven's speech.
+- Exact-title, speaker/date, organizer-site, video and slide/PDF searches left
+  the CS-CAN, Waterloo 2021 and USask 2003 recording/slides/transcript gaps
+  unresolved. The [organizer-linked CS-CAN channel search for Woods](https://www.youtube.com/channel/UC3pMzc-XDxb32Xo-7zyi8PQ/search?query=woods)
+  returned no matching content. These are bounded search outcomes, not proof
+  that recordings never existed or are unavailable elsewhere.
+- Safely readable text is limited to publisher event descriptions, biographies,
+  the USask talk title and the official Waterloo event report. None is a talk
+  transcript. Historical captures remain unchanged evidence of page context;
+  the two obsolete Math Innovation context URLs returned 404s, not evidence
+  that the events or recordings are absent.
+
+Potential future organizer routes, recorded only; no message was sent:
+
+- CS-CAN event organizer: [official contact page](https://cscan-infocan.ca/contact-us/).
+- Waterloo 2021 Mathematics event staff: [Faculty contact page](https://uwaterloo.ca/math/about/contact-us).
+- Math Innovation series/Research Discovery Days organizers: [official contact information](https://uwaterloo.ca/math-innovation/about/contact-information).
+- USask lecture-series/Computer Science administration: [department contact page](https://www.cs.usask.ca/about/contact-us.php).
 
 ## Profiles and feature pages
 
@@ -122,7 +165,8 @@ Three unknown profile checks were completed with evidence in
 were associated without promoting deferred source labels. Private transcript
 locations and any raw exports must not be entered in this public ledger.
 
-- Exact canonical event page and date for the `Steve Woods and Verna Friesen, Google Waterloo 28 Years of UW Community` YouTube video
+- Locate Steven's April 2023 Entrepreneurship and Impact recording and the April 18 Research Discovery Days full keynote, if public; the Natalie video and short promo do not close those gaps
+- Usable public captions and speaker attribution for the Woods videos remain unresolved; no diarized transcript is claimed
 - Better archival copy for the original University Affairs article if accessible
 - TheStreet and eCommerceTimes remain uncaptured here. GameSpot/GamesBeat reader captures already exist in Kinitos/NeoEdge; a GameDeveloper support capture already exists here. Review completeness, source identity and edition rather than requesting the same capture again
 - Additional Quack.com-era profile/interview coverage beyond acquisition articles

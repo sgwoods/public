@@ -117,8 +117,15 @@ does not produce this archive's transcripts or maintain parallel public indexes.
 Triage its public-safe request IDs here, retaining the catalog digest and evidence.
 Do not copy unreviewed transcripts or LinkedIn exports into this work plan.
 
-Current checkpoint: the repository-wide inventory is ready for main/Pages
-publication. The person summary derives its registry date and local-source count
+Current checkpoint: the repository-wide inventory and request triage are live.
+Steven approved text-first recovery, local private transcription when prior work
+is not known, search-only recording discovery with possible outreach tracked but
+unsent, and retaining LinkedIn's blocked status. The other Mac remains a consumer.
+The unanswered 2012 deck-identity question remains quarantined. The current cycle
+is tracked in `../CONTENT-TEXT-RECOVERY.md`; public-safe code and evidence are
+committed at each major checkpoint, never raw unreviewed transcripts.
+
+The person summary derives its registry date and local-source count
 from committed sources. Source registry changes require
 `python3 tools/render_person_content.py`, a committed metadata/summary update,
 then the scoped archive snapshot and catalog rebuild. Daily CI verifies these

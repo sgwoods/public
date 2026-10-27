@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "evaluated_on": "2026-10-27",
+  "scope": "Private reading derivatives and public-safe availability metadata; no extracted paper text published",
+  "state": "private_reading_copies_unreviewed",
+  "storage": "maintainer_controlled_private_staging_outside_public_checkout",
+  "public_derivatives_available": false,
+  "style_eligible": false,
+  "review_required": ["text_extraction_completeness", "edition_and_author_order", "reading_order", "rights_before_any_republication"],
+  "records": [
+    {
+      "content_id": "publication:kazman1998corum",
+      "source_artifact": "sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf",
+      "source_sha256": "d0967ec27911d139058366953bd15dc3fbd5bd9e230296adb47b065809bf3da0",
+      "text_sha256": "6cfbd42ce773fbc7db0087fc6ce91563beed0aa4810cc2507b7989ef14f8be57",
+      "extracted_word_count": 7081,
+      "edition": "official_sei_author_form_different_from_proceedings_pagination",
+      "full_text_equivalence_verified": false
+    },
+    {
+      "content_id": "publication:carriere1999transformation",
+      "source_artifact": "sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf",
+      "source_sha256": "dd1b799c04f916a17229ca7095d466e42c3048f3624a10702aefc7a3f9b2458c",
+      "text_sha256": "ceca34b5619ac751d7ac44fc1f8488c97c60628f41c1a90fd3bce1ab1fd3390e",
+      "extracted_word_count": 6403,
+      "edition": "official_sei_author_form_exact_proceedings_edition_unresolved",
+      "full_text_equivalence_verified": false
+    },
+    {
+      "content_id": "publication:kazman2000discipline",
+      "source_url": "https://people.computing.clemson.edu/~johnmc/courses/cpsc881/annals-scenario.pdf",
+      "source_sha256": "bf81dde49c82c0a00879a3edf6cb69f4031f00bc1df458fd7dca879bfe35dda5",
+      "source_pdf_pages": 26,
+      "text_sha256": "44950e4d6073afd3049a912c4d14ebea6021d307af55172d3bd68bb57760aa24",
+      "extracted_word_count": 12020,
+      "edition": "institutional_course_hosted_author_manuscript_candidate_not_verified_journal_edition",
+      "full_text_equivalence_verified": false,
+      "rights_note": "Private reading and comparison only. Institutional availability does not establish redistribution permission."
+    }
+  ],
+  "evidence_path": "data/content/checks/2026-10-27-text-research.json",
+  "not_recovered": [
+    {"content_id": "publication:kazman1999tradeoff", "reason": "Candidate drafts omit Woods from their first-page author list, unlike the publisher's five-author DOI record; not accepted as an authoritative substitute."},
+    {"content_id": "publication:quilici2000matching", "reason": "No qualifying public full text verified in bounded search; related 1997 work is not a substitute."}
+  ],
+  "private_locations_included": false,
+  "external_messages_sent": false
+}

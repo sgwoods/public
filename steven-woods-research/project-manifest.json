@@ -17,8 +17,8 @@
   "status_label": "Current phase",
   "status_value": "Active research archive",
   "focus_label": "Current focus",
-  "focus_value": "Continuity layer, baseline identity, timeline, current profile sources, and one-page CV",
-  "current_focus": "Continuity layer, baseline identity, timeline, current profile sources, and one-page CV",
+  "focus_value": "Text-first recovery, private Riddick transcription, and verified media attribution",
+  "current_focus": "Text-first recovery, private Riddick transcription, and verified media attribution",
   "notable_items": [
     {
       "label": "One-page CV",
@@ -34,10 +34,10 @@
     },
     {
       "label": "Waterloo Entrepreneurship and Impact appearance",
-      "url": "https://www.youtube.com/watch?v=L64GbHRcsFQ"
+      "url": "https://uwaterloo.ca/math-innovation/events-entrepreneurship-and-impact-series"
     },
     {
-      "label": "Research Discovery Days 2023 keynote",
+      "label": "Research Discovery Days 2023 promotional clip (not full keynote)",
       "url": "https://www.youtube.com/watch?v=C_HIi0IKK90"
     }
   ],

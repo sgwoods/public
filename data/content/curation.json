@@ -9,13 +9,15 @@
       "identity_review": "episode_metadata_matches_subject",
       "authorship": "interview_multiple_speakers_not_diarized",
       "recordings": [{
-        "url": "https://media.rss.com/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3",
+        "url": "https://content.rss.com/episodes/189738/932219/riddickpodcast/2023_05_01_12_41_35_bbc54e52-e0c3-480e-bfd6-fe42afa396af.mp3",
         "local_path": null,
-        "state": "remote_link_in_saved_feed_not_download_verified",
-        "evidence_path": "steven-woods-research/historic/artifacts/archive-html/riddick-show-feed.xml",
+        "state": "publisher_current_feed_enclosure_downloaded_to_private_staging",
+        "evidence_path": "data/content/checks/2026-10-27-media-research.json",
         "duration_seconds_from_feed": 5104,
         "other_speakers": ["David Kinley"]
-      }]
+      }],
+      "transcript": {"state": "private_asr_in_progress", "public_artifacts": [], "production_summary": "data/content/production/riddick-2026-10-27.json", "speaker_attribution_verified": false, "review_required": ["listen_and_correct", "verify_speaker_turns", "review_names_and_dates", "rights_and_publication_approval"]},
+      "research_note": "No prior transcript is known to Steven. User approved local private regeneration. Current publisher feed supplies a new public enclosure for the same episode GUID; the old path returns 403. Audio/transcript bytes stay outside this public repository."
     },
     "steven-woods-research/src-steven-2023-cscan-collaboration-talk": {
       "text_role": "event_listing_not_talk_transcript",
@@ -27,17 +29,19 @@
     },
     "steven-woods-research/src-steven-2023-uwaterloo-entrepreneurship-impact": {
       "text_role": "event_listing_not_talk_transcript",
-      "recordings": [{"url": "https://www.youtube.com/watch?v=L64GbHRcsFQ", "local_path": null, "state": "manifest_link_not_download_verified"}]
+      "recordings": [],
+      "research_note": "Prior video association rejected: L64GbHRcsFQ belongs to Natalie Gordon. Steven's April 2023 listing has no verified recording. Public search only; no organizer contacted. Evidence: data/content/checks/2026-10-27-media-research.json."
     },
     "steven-woods-research/src-steven-2023-research-discovery-days-keynote": {
-      "text_role": "event_listing_not_talk_transcript",
-      "research_note": "Recording and Waterloo context page can both be valid. The legacy archive_web field is not proof that the context page is a web archive. Reconfirm exact event/video pairing before transcription.",
-      "recordings": [{"url": "https://www.youtube.com/watch?v=C_HIi0IKK90", "local_path": null, "state": "manifest_link_event_pairing_needs_reconfirmation"}]
+      "text_role": "promotional_video_not_full_keynote_transcript",
+      "research_note": "Correct subject, but the 2:56 clip is a registration promo published April 4. Actual keynote event was April 18; a full keynote recording is not established. Public captions were advertised but yielded empty responses, not usable text. Evidence: data/content/checks/2026-10-27-media-research.json.",
+      "recordings": [{"url": "https://www.youtube.com/watch?v=C_HIi0IKK90", "local_path": null, "state": "verified_subject_promotional_clip_not_full_keynote", "duration_seconds": 176, "evidence_path": "data/content/checks/2026-10-27-media-research.json"}]
     },
     "steven-woods-research/src-steven-2017-google-waterloo-uw-community": {
       "text_role": "event_listing_not_talk_transcript",
       "authorship": "co_presented_not_diarized",
-      "recordings": [{"url": "https://www.youtube.com/watch?v=3cDnlKwbtTY", "local_path": null, "state": "manifest_link_not_download_verified", "other_speakers": ["Verna Friesen"]}]
+      "recordings": [{"url": "https://www.youtube.com/watch?v=3cDnlKwbtTY", "local_path": null, "state": "verified_official_symposium_video_not_downloaded", "other_speakers": ["Verna Friesen"], "duration_seconds": 3243, "evidence_path": "data/content/checks/2026-10-27-media-research.json"}],
+      "research_note": "Official symposium page embeds the exact joint video. September 28 event is distinct from November 1 upload. Public caption responses were empty; no usable transcript obtained."
     },
     "steven-woods-research/src-steven-2003-usask-sorenson-lecture": {
       "text_role": "event_listing_not_talk_transcript"
@@ -79,11 +83,20 @@
     },
     "publication:kazman1998corum": {
       "supporting_artifacts": ["sei-pittsburgh-research/historic/artifacts/archive-pdf/requirements-for-integrating-software-architecture-1998-sei.pdf"],
-      "research_note": "Related SEI CORUM II report is present. Do not silently equate it with the exact WCRE proceedings edition; compare versions first."
+      "research_note": "Text-first cycle verified byte identity with the current official SEI PDF. This 11-page author-form layout differs from the 10-page proceedings span 154-163. Keep supporting-only, not exact-version-of-record proof. Evidence: data/content/checks/2026-10-27-text-research.json."
     },
     "publication:carriere1999transformation": {
       "supporting_artifacts": ["sei-pittsburgh-research/historic/artifacts/archive-pdf/software-architectural-transformation-1999-sei.pdf"],
-      "research_note": "Local SEI copy exists outside the bibliography's archive_pdf fields. Verify exact edition and completeness before asserting a proceedings match."
+      "research_note": "Verified byte identity with the current official SEI PDF; correct three-author order appears in the PDF despite incomplete landing-page metadata. Eleven pages match the proceedings length, but final typeset edition is not established. Keep supporting-only. Evidence: data/content/checks/2026-10-27-text-research.json."
+    },
+    "publication:kazman1999tradeoff": {
+      "research_note": "Public RIT/HKUST candidate drafts omit Woods from their first-page author list, unlike the five-author publisher DOI record. Do not use these as exact-edition or personal-authorship proof. Evidence: data/content/checks/2026-10-27-text-research.json."
+    },
+    "publication:kazman2000discipline": {
+      "research_note": "Author-attributed public manuscript lead and a 26-page institutional course copy found, versus the journal's pages 5-33. Private reading candidate only; acceptance status, textual equivalence and redistribution approval unresolved. Evidence: data/content/checks/2026-10-27-text-research.json and data/content/production/text-recovery-2026-10-27.json."
+    },
+    "publication:quilici2000matching": {
+      "research_note": "Bounded public search verified publisher-deposited title/authors/pages but no qualifying public full text. Do not substitute the related 1997 New Experiments paper. No outreach or paywall bypass. Evidence: data/content/checks/2026-10-27-text-research.json."
     },
     "publication:sellink2004sameinformation": {
       "local_artifacts": ["quack/historic/artifacts/archive-html/us6687734b1-2026-10-26.html"],
