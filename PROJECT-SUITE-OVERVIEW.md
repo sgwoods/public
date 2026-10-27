@@ -42,6 +42,7 @@ Current branch snapshot: `main`
 ### Reference Pages
 
 - [Repository content inventory](CONTENT-INVENTORY.md): Text, recordings, transcripts, file provenance and machine-readable source discovery across the full versioned repository.
+- [Content requests and decisions](CONTENT-REQUEST-TRIAGE.md): Reviewed source gaps, ranked maintenance batches, evidence-backed resolutions and decisions needed from Steven.
 - [Project suite overview](project-suite-overview.html): Portfolio map, public/private surface guide, and reprioritization layer across the full project suite.
 - [Profile](steven-woods-profile.html): Compact executive profile with current links to LinkedIn, Inovia, and the open archive projects.
 - [Academic ancestry](academic.html): Direct advisor lineage with links to the Mathematics Genealogy Project.
