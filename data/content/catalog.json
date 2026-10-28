@@ -5388,9 +5388,9 @@
   ],
   "outputs_sha256": {
     "CONTENT-INVENTORY.md": "0770c4718e8fe782dd7ff8faada0a9e31810a42813e7d6fc57f5b0d35ba780d5",
-    "data/content/artifacts.jsonl": "11cc1e6f9ac2535ed2ec7d10c8c2f628215ee516980464da6b6303c5559ea8b6",
+    "data/content/artifacts.jsonl": "ab88a849b612faabf174512d29acbb2a3786d1ad155f7497d80f0f61585fe510",
     "data/content/sources.json": "9f230e308fa9e75eb92bf8ad3922221a61a23bf45577fdd2ebea7b3069bc3465",
-    "data/content/update-requests.json": "07fa277a5077ed76de5fe6556899790d4cc7c82601a119f5bd625a33540d614e"
+    "data/content/update-requests.json": "2333c690640fabd0c555868d9869335d55824d9e29167c33b078e9702a0075f1"
   },
   "project_status_manifests": [
     "canberra-research/project-manifest.json",
@@ -5427,7 +5427,7 @@
   "schema_version": "1.0",
   "scope": "Every versioned regular file plus descriptors for the five generated inventory outputs; no ignored/untracked/private files or other repositories.",
   "source_records": 136,
-  "source_tree_sha256": "85de46b811cfd3d4963f3952cc9c7b06bcc6a30000d26bfac7da0d742d7dc6da",
+  "source_tree_sha256": "317890362935e4a51a4b10fbee2aee97e2d3ebdfe0050a562b04b6843bcf3d7e",
   "sources": "data/content/sources.json",
   "update_requests": "data/content/update-requests.json"
 }
