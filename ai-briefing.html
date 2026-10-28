@@ -29,25 +29,25 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.22-beta</b>, public code commit <code>c1b2479cc485</code> (2026-10-28T11:17:46Z)</li>
+      <li><b>v0.2.23-beta</b>, public code commit <code>e4f10cdcf1e7</code> (2026-10-28T11:33:16Z)</li>
       <li>Latest edition: 2026-10-28 · 23 editions and 13 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-28/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-28T11:17:54Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-28T11:33:22Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.23-beta · 2026-10-28</h3>
+    <ul>
+      <li>Phone approvals: the job file now says why a phone answer wasn&#x27;t accepted (no answer yet, the check failed, or the passphrase didn&#x27;t match), and a passphrase that doesn&#x27;t match gets one Mac notification, as promised.</li>
+    </ul>
     <h3>v0.2.22-beta · 2026-10-28</h3>
     <ul>
       <li><b>Calls we made</b> (site page): every house-view call with what would change our mind and its check date. On Sundays the run scores the calls that are due against what we&#x27;ve reported since (right, wrong, mixed; too early gets 90 more days). <code>./np positions [list|score]</code>; run-queue job <code>positions-score</code>.</li>
       <li><b>Accuracy audit</b>: after the email, about five of the day&#x27;s claims are re-checked against their own sources (supported, partly, not found, contradicted), and the consistency flags are counted. Partly right or contradicted claims send one alert email; the site&#x27;s Accuracy page shows the daily counts and every correction. <code>./np audit [DAY]</code>; run-queue job <code>audit</code>. Dashboard switch: Briefing structure → &quot;Accuracy audit after the email&quot; (on).</li>
       <li><b>Phone approvals</b> (Steven, 10-27): mac-tier jobs (ship, release, approve...) can be approved from the phone. The runner emails a one-time link; on the page you type your approval passphrase and tap Approve or Reject. The passphrase never leaves the phone (the page sends a proof the Mac checks against its Keychain), so a link or a record alone can&#x27;t approve. Turn it on once with the <code>phone-setup</code> job (a Mac dialog asks for the passphrase). Security-sensitive: a second approval path. Needs the mail-script deploy (the ship does it).</li>
       <li><b>Merged top, on</b> (Steven, 10-27): Briefing structure → &quot;Top of the edition&quot; = merged gives one 5-bullet &quot;Today in 30 seconds&quot; with the diligence question under it, instead of the day in brief plus Top of mind (critic #7A). Audio, email, takes, Drive and the checks read both shapes.</li>
-    </ul>
-    <h3>v0.2.21-beta · 2026-10-27</h3>
-    <ul>
-      <li><b>House views.</b> Our read takes a position under one of the views in <code>house_views.md</code> (1–10 plus Steven&#x27;s theses 11–17) and names it (&quot;House view: …&quot;). The lead story adds the case for, the case against, the deciding question and our lean, in place of its other view. Each position is logged in <code>data/positions/ledger.jsonl</code> with what would change our mind and a check date (a thesis&#x27;s own, else 90 days). Dashboard switch: Editorial lens → &quot;Take positions under the house views&quot;. Security: <code>house_views.md</code> steers the models, so it joins the files whose changes need release approval.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -69,7 +69,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="c1b2479cc485e321c8e60e966b1d4533a7e71618"
+           data-source-commit="e4f10cdcf1e75606e841a0b7117d1106104fd2b7"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
