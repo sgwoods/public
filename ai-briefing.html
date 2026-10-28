@@ -29,24 +29,24 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.27-beta</b>, public code commit <code>2a254396e321</code> (2026-10-28T15:03:55Z)</li>
+      <li><b>v0.2.28-beta</b>, public code commit <code>c70279895cb0</code> (2026-10-28T15:48:50Z)</li>
       <li>Latest edition: 2026-10-28 · 23 editions and 13 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-28/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-28T15:04:03Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-28T15:48:57Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.28-beta · 2026-10-28</h3>
+    <ul>
+      <li><b>The deep dive in the thread</b> (Steven, 10-28): right after the morning post, a reply in its thread with the deep dive: title, summary, Steven&#x27;s take on it and the links, with its own card in the deep-dive cover&#x27;s colours. <code>./np slack-post deepdive DAY</code>; run-queue job <code>slack-deepdive</code> (chat). Card text now ends at a full sentence or an ellipsis, never mid-sentence.</li>
+    </ul>
     <h3>v0.2.27-beta · 2026-10-28</h3>
     <ul>
       <li><b>The morning Slack post</b> (Steven, 10-28): when the email goes out, one post in cto-musings from the bot user &quot;AI Briefing&quot;: the day&#x27;s three leads, one of Steven&#x27;s published takes (his words, the one with the most bite that fits), the deep dive and the links, with the day&#x27;s card attached: a 1600×900 image in the newsletter&#x27;s teal with the masthead, photo, leads, the take and the deep-dive band (<code>pipeline/card.py</code>, Pillow + Inter, new in requirements). Set up once with the <code>slack-setup</code> job (a Mac dialog takes the bot token; scopes chat:write, files:write, channels:read; invite the bot to the channel). <code>./np slack-post preview DAY</code> shows the text and renders the card; run-queue jobs <code>slack-card</code> (auto) and <code>slack-post</code> (chat). Security: a new outbound step, gated like the others; never in staging; bot posts are ignored by the Slack reader.</li>
       <li>Fix: the Drive check re-queued a takes-sync every 20 minutes after a plain re-publish (the Docs weren&#x27;t rewritten, so nothing recorded our own last write). A take the commentary already has is never an edit, and takes-sync now rewrites the Docs.</li>
       <li><b>Podcast artwork refresh</b>: podcast apps cache artwork by URL and never refetch it (Apple still showed the old cover a day after the new one went up), so the feeds now name a copy whose filename carries the image&#x27;s hash. Apple Podcasts picks up the new covers at its next feed check.</li>
-    </ul>
-    <h3>v0.2.26-beta · 2026-10-28</h3>
-    <ul>
-      <li>Fix: the runner&#x27;s minute tick exited before the Drive check when the queue was empty, so edited takes were never noticed on their own. It now runs the check every 20 minutes regardless.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -68,7 +68,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="2a254396e3215b6e3652c621fcf592e453b35df2"
+           data-source-commit="c70279895cb04c40593ef57ee81d6bb1b47829c1"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
