@@ -29,22 +29,22 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.25-beta</b>, public code commit <code>d57889e7d35e</code> (2026-10-28T13:43:44Z)</li>
+      <li><b>v0.2.26-beta</b>, public code commit <code>7c0b06beb106</code> (2026-10-28T14:06:26Z)</li>
       <li>Latest edition: 2026-10-28 · 23 editions and 13 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-28/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-28T13:43:50Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-28T14:06:32Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.26-beta · 2026-10-28</h3>
+    <ul>
+      <li>Fix: the runner&#x27;s minute tick exited before the Drive check when the queue was empty, so edited takes were never noticed on their own. It now runs the check every 20 minutes regardless.</li>
+    </ul>
     <h3>v0.2.25-beta · 2026-10-28</h3>
     <ul>
       <li><b>Takes edited in the Docs count</b> (Steven, 10-28: a take written in the morning boxes, then augmented in the car with Claude editing the shared Doc). The pipeline reads the published edition&#x27;s &quot;Steven&#x27;s takes&quot; and the deep dive&#x27;s &quot;Steven&#x27;s take&quot; back from Drive; lines that changed after its own last write are new takes, checked like any other. The runner looks every 20 minutes once the edition is out and queues a <code>takes-sync</code> job (auto tier) that applies them and re-publishes the site and email boxes; an edited deep-dive take re-records the deep dive and re-publishes its episode. No email is re-sent. <code>./np takes apply DAY</code> does the same by hand.</li>
-    </ul>
-    <h3>v0.2.24-beta · 2026-10-28</h3>
-    <ul>
-      <li><b>Phone notifications and one-tap approvals</b> (Steven, 10-28: &quot;more control from my iPhone&quot;): through the free, open-source ntfy app. Approvals arrive as a notification with Approve and Reject buttons; one tap, no passphrase, no browser. The tap sends a one-time token the Mac checks, over private topics only the Mac&#x27;s Keychain and the phone know. Nudges: the takes page is ready (tap opens it), the evening deep-dive note is out (tap opens the queue page), a run needs attention, a run-queue job finished. Turn on with the <code>ntfy-setup</code> job (a Mac Approve; the topic lands on the clipboard for the phone), then &quot;ntfy test&quot;. The passphrase path stays as a fallback. Security-sensitive: a third approval path.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -66,7 +66,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="d57889e7d35ea9863efe6aa11bec2766b30cf5a5"
+           data-source-commit="7c0b06beb106a8d18bdad247eedf09ad59a6db35"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
