@@ -29,22 +29,24 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.26-beta</b>, public code commit <code>7c0b06beb106</code> (2026-10-28T14:06:26Z)</li>
+      <li><b>v0.2.27-beta</b>, public code commit <code>2a254396e321</code> (2026-10-28T15:03:55Z)</li>
       <li>Latest edition: 2026-10-28 · 23 editions and 13 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-28/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-28T14:06:32Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-28T15:04:03Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.27-beta · 2026-10-28</h3>
+    <ul>
+      <li><b>The morning Slack post</b> (Steven, 10-28): when the email goes out, one post in cto-musings from the bot user &quot;AI Briefing&quot;: the day&#x27;s three leads, one of Steven&#x27;s published takes (his words, the one with the most bite that fits), the deep dive and the links, with the day&#x27;s card attached: a 1600×900 image in the newsletter&#x27;s teal with the masthead, photo, leads, the take and the deep-dive band (<code>pipeline/card.py</code>, Pillow + Inter, new in requirements). Set up once with the <code>slack-setup</code> job (a Mac dialog takes the bot token; scopes chat:write, files:write, channels:read; invite the bot to the channel). <code>./np slack-post preview DAY</code> shows the text and renders the card; run-queue jobs <code>slack-card</code> (auto) and <code>slack-post</code> (chat). Security: a new outbound step, gated like the others; never in staging; bot posts are ignored by the Slack reader.</li>
+      <li>Fix: the Drive check re-queued a takes-sync every 20 minutes after a plain re-publish (the Docs weren&#x27;t rewritten, so nothing recorded our own last write). A take the commentary already has is never an edit, and takes-sync now rewrites the Docs.</li>
+      <li><b>Podcast artwork refresh</b>: podcast apps cache artwork by URL and never refetch it (Apple still showed the old cover a day after the new one went up), so the feeds now name a copy whose filename carries the image&#x27;s hash. Apple Podcasts picks up the new covers at its next feed check.</li>
+    </ul>
     <h3>v0.2.26-beta · 2026-10-28</h3>
     <ul>
       <li>Fix: the runner&#x27;s minute tick exited before the Drive check when the queue was empty, so edited takes were never noticed on their own. It now runs the check every 20 minutes regardless.</li>
-    </ul>
-    <h3>v0.2.25-beta · 2026-10-28</h3>
-    <ul>
-      <li><b>Takes edited in the Docs count</b> (Steven, 10-28: a take written in the morning boxes, then augmented in the car with Claude editing the shared Doc). The pipeline reads the published edition&#x27;s &quot;Steven&#x27;s takes&quot; and the deep dive&#x27;s &quot;Steven&#x27;s take&quot; back from Drive; lines that changed after its own last write are new takes, checked like any other. The runner looks every 20 minutes once the edition is out and queues a <code>takes-sync</code> job (auto tier) that applies them and re-publishes the site and email boxes; an edited deep-dive take re-records the deep dive and re-publishes its episode. No email is re-sent. <code>./np takes apply DAY</code> does the same by hand.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -66,7 +68,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="7c0b06beb106a8d18bdad247eedf09ad59a6db35"
+           data-source-commit="2a254396e3215b6e3652c621fcf592e453b35df2"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
