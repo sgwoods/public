@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "attempted_at": "2026-10-28T11:18:16+00:00",
+  "attempted_at": "2026-10-28T11:33:44+00:00",
   "date_basis": "committer",
   "definition": "Reachable public default-branch commits; archive scopes exclude their own project manifest. Includes merges; not a progress or release metric.",
   "projects": {
@@ -8,11 +8,11 @@
       "repo": "sgwoods/Codex-Test1",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "3c7d2667cca3fb2da7515cb7d2a1fd1f543873f8",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -253,11 +253,11 @@
       "repo": "sgwoods/star-swarm",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "cc463a0be578aee2131976b3556c633a2d5181b5",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -530,11 +530,11 @@
       "repo": "sgwoods/sci-fi-ai-dystopian-project",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "a0e7cc899512bdb0c3973903851387f993387b99",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -551,11 +551,11 @@
       "repo": "sgwoods/news-pipeline",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c1b2479cc485e321c8e60e966b1d4533a7e71618",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "e4f10cdcf1e75606e841a0b7117d1106104fd2b7",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -681,6 +681,10 @@
         {
           "sha": "c1b2479cc485e321c8e60e966b1d4533a7e71618",
           "date": "2026-10-28T11:17:46Z"
+        },
+        {
+          "sha": "e4f10cdcf1e75606e841a0b7117d1106104fd2b7",
+          "date": "2026-10-28T11:33:16Z"
         }
       ]
     },
@@ -688,11 +692,11 @@
       "repo": "sgwoods/phd-renovation",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "f5eea43d71fd35a48bd235b96088e495ce6d157d",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -705,11 +709,11 @@
       "repo": "sgwoods/mmath-renovation",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "408c9330f9dc7abfca86b8ae30a13808a6c4073c",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -727,11 +731,11 @@
       "exclude_paths": [
         "steven-woods-research/project-manifest.json"
       ],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "f0720748761b7ea46878879cd9251e7e75d7cc03",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "b943682b1aca8d1c6266f75faaf83f2c67dfebee",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -777,11 +781,11 @@
       "exclude_paths": [
         "google-canada-research/project-manifest.json"
       ],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "f0720748761b7ea46878879cd9251e7e75d7cc03",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "b943682b1aca8d1c6266f75faaf83f2c67dfebee",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": []
     },
@@ -794,11 +798,11 @@
       "exclude_paths": [
         "inovia-research/project-manifest.json"
       ],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "f0720748761b7ea46878879cd9251e7e75d7cc03",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "b943682b1aca8d1c6266f75faaf83f2c67dfebee",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": []
     },
@@ -811,11 +815,11 @@
       "exclude_paths": [
         "canberra-research/project-manifest.json"
       ],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "f0720748761b7ea46878879cd9251e7e75d7cc03",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "b943682b1aca8d1c6266f75faaf83f2c67dfebee",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": []
     },
@@ -828,11 +832,11 @@
       "exclude_paths": [
         "sei-pittsburgh-research/project-manifest.json"
       ],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "f0720748761b7ea46878879cd9251e7e75d7cc03",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "b943682b1aca8d1c6266f75faaf83f2c67dfebee",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": []
     },
@@ -845,11 +849,11 @@
       "exclude_paths": [
         "quack/project-manifest.json"
       ],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "f0720748761b7ea46878879cd9251e7e75d7cc03",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "b943682b1aca8d1c6266f75faaf83f2c67dfebee",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
@@ -867,11 +871,11 @@
       "exclude_paths": [
         "kinitos-neoedge/project-manifest.json"
       ],
-      "attempted_at": "2026-10-28T11:18:16+00:00",
+      "attempted_at": "2026-10-28T11:33:44+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "f0720748761b7ea46878879cd9251e7e75d7cc03",
-      "checked_at": "2026-10-28T11:18:16+00:00",
+      "branch_commit": "b943682b1aca8d1c6266f75faaf83f2c67dfebee",
+      "checked_at": "2026-10-28T11:33:44+00:00",
       "window_start": "2026-09-07T04:00:00+00:00",
       "commits": [
         {
