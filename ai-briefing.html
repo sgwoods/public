@@ -29,25 +29,25 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.30-beta</b>, public code commit <code>75a96ea8a433</code> (2026-10-29T14:04:15Z)</li>
+      <li><b>v0.2.31-beta</b>, public code commit <code>39d97d7f8876</code> (2026-10-29T14:25:58Z)</li>
       <li>Latest edition: 2026-10-29 · 24 editions and 14 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-29/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-29T14:04:23Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-29T14:26:07Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.31-beta · 2026-10-29</h3>
+    <ul>
+      <li><b>The advance deep dive</b> (Steven, 10-29): at 15:30 (schedule.advance) tomorrow&#x27;s deep dive is written and checked and saved to Drive as &quot;&lt;day&gt; · Deep dive · &lt;title&gt; (draft)&quot;, with a nudge and an email. The Doc ends with two sections: &quot;Steven&#x27;s take&quot; (read verbatim after the episode) and &quot;Notes for the editor&quot; (what to change). The 05:00 run reads them back: the take goes in; notes make the writer revise the draft, which is checked again; then it is voiced and shipped. Install the agent once with the <code>service-install</code> job (kind: advance). <code>./np advance</code> drafts now; run-queue job <code>advance</code>. The Schedule page has the row.</li>
+    </ul>
     <h3>v0.2.30-beta · 2026-10-29</h3>
     <ul>
       <li><b>Schedule page</b> (Steven, 10-29): the dashboard&#x27;s new Schedule tab (and <code>./np schedule</code>) lists what is produced through the day, when, where it goes, and the window for feedback on each piece and how it is picked up.</li>
       <li><b>The review page keeps your takes</b> (Steven, 10-29: a page of typed takes was lost by tapping a source link). Every link on the page opens in a new tab; each box is kept in the browser as you type and sent to the mail script a few seconds after you stop (a later save for the same box replaces the earlier one); leaving the page with unsent text asks first. Submit and Done work as before.</li>
       <li><b>Pronunciations</b> (Steven, 10-29): the table gains outlets and acronyms said by name (NYT is &quot;New York Times&quot;, WSJ, FT, GAAP as &quot;gap&quot;, METR as &quot;meter&quot;, S-1 as &quot;S one&quot;, PBC and LTBT spelled out) and more people and companies (Qwen is now &quot;Kwen&quot;, Nvidia, Pichai, Nadella, Dwarkesh, Azeem Azhar, Stratechery, Zhipu, Mistral). Uncertain ones carry a comment. <code>./np pronounce lint [DAYS]</code> lists what the voice may have garbled lately, for the next additions (docs/OPERATIONS.md).</li>
       <li>Fix: takes edited in the Drive Doc before the edition ships were not read, because the Doc is still the draft then (&quot;held for your takes&quot;); the draft is read when the published one isn&#x27;t there yet.</li>
-    </ul>
-    <h3>v0.2.29-beta · 2026-10-28</h3>
-    <ul>
-      <li><b>Readers suggest deep dives</b> (Steven, 10-28): a &quot;Suggest a deep dive&quot; link in the email&#x27;s deep-dive section (with the reader&#x27;s own token) and on every deep-dive page on the site. The page asks for a topic, why now, and an optional name. Suggestions land in the queue as &quot;suggested by &lt;name&gt;&quot; (else &quot;a reader&quot;) and show that way in the evening note, on the queue page and in the dashboard; when one runs, the deep dive&#x27;s notes say who suggested it. Addresses stay in the private queue file. Capped per reader and per day. Needs the mail-script deploy (the ship does it).</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -69,7 +69,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="75a96ea8a43304a7b99ddf9f7714123ac5bea2f4"
+           data-source-commit="39d97d7f8876ecb37745ccc72a762e45fb91bec0"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
