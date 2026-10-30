@@ -28,8 +28,14 @@ jobs:
           python-version: "3.12"
       - name: Install schema test dependency
         run: python3 -m pip install -r tools/requirements-content-tests.txt
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
       - name: Test and validate without publishing
         run: |
+          python3 tools/test_repository_freshness.py
+          python3 tools/test_external_projects.py
+          node --test tools/test_project_freshness.cjs tools/test_public_index.cjs
           python3 tools/test_content_inventory.py
           python3 tools/test_request_triage.py
           python3 tools/test_private_asr.py

@@ -5357,22 +5357,22 @@
   "evaluated_on": "2026-10-30",
   "file_kinds": {
     "binary": 180,
-    "code": 811,
+    "code": 812,
     "compressed_archive": 253,
     "generated_inventory": 5,
-    "html": 467,
+    "html": 468,
     "image": 246,
     "legacy_document": 178,
     "legacy_text": 807,
     "pdf": 45,
     "recording": 2,
-    "structured_data": 62,
+    "structured_data": 63,
     "text": 228
   },
   "handoff": "IMAC-CONTENT-HANDOFF.md",
   "human_overview": "CONTENT-INVENTORY.md",
-  "indexed_paths": 3284,
-  "input_files": 3279,
+  "indexed_paths": 3287,
+  "input_files": 3282,
   "operating_model": {
     "other_machines": "consume_approved_content_and_request_updates",
     "private_production": "maintainer_controlled_private_staging_only",
@@ -5387,10 +5387,10 @@
     "CONTENT-INVENTORY.md"
   ],
   "outputs_sha256": {
-    "CONTENT-INVENTORY.md": "696a7222df35f2b6dbe0a988b9beda904677eb63535e03ae3fca618fd581e6d6",
-    "data/content/artifacts.jsonl": "9f90c2a019b6768ffd00d179d8562307bb1448a0e9e53a31cf717b6afaa46b34",
+    "CONTENT-INVENTORY.md": "3a5fe762b483c4912fc8b3ec16dde14644055984286f549a764c9f7cfdd89942",
+    "data/content/artifacts.jsonl": "0fadc4ce6fa48477ce5eac5a700d0753e911ace3413f9616990a94b2a019d903",
     "data/content/sources.json": "617e8a03b78ee4af938e0133c76c1bc44c222ae1ed31653d356e2f57b55a0265",
-    "data/content/update-requests.json": "28f0cd58f3bb8376007b2df62a6c5a75801ed3a3a0da86d1424d7dad5c7257b4"
+    "data/content/update-requests.json": "dd85244a84e549448c8ebabc4258abcdc067f873acb96c9c80055c7ebc9167ed"
   },
   "project_status_manifests": [
     "canberra-research/project-manifest.json",
@@ -5405,6 +5405,7 @@
     "data/projects/phd-renovation.json",
     "data/projects/quack-com.json",
     "data/projects/star-swarm.json",
+    "data/projects/virtual-bookshelf.json",
     "data/projects/woods-financial-dashboard.json",
     "google-canada-research/project-manifest.json",
     "inovia-research/project-manifest.json",
@@ -5427,7 +5428,7 @@
   "schema_version": "1.0",
   "scope": "Every versioned regular file plus descriptors for the five generated inventory outputs; no ignored/untracked/private files or other repositories.",
   "source_records": 136,
-  "source_tree_sha256": "7e59bcf692117b02b1a96b29843c30b38b5a2e59ed647ef92e3135d446f8d914",
+  "source_tree_sha256": "c4f2b43c9200f2d1171e89ef6e39005f06e84351a8fe0f38e8f377c1a21c15b4",
   "sources": "data/content/sources.json",
   "update_requests": "data/content/update-requests.json"
 }

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "project_id": "virtual-bookshelf",
+  "active": true,
+  "display_name": "Virtual Bookshelf",
+  "description": "A cover-first catalogue of my physical books, read from shelf photos and matched on Open Library.",
+  "project_page_path": "virtual-bookshelf.html",
+  "repo_url": "https://github.com/sgwoods/virtual-bookshelf",
+  "dashboard_url": "https://github.com/sgwoods/virtual-bookshelf/actions/workflows/pages.yml",
+  "experience_url": "https://sgwoods.github.io/virtual-bookshelf/",
+  "repo_pushed_at": null,
+  "status_generated_at": "2026-10-30T20:19:10Z",
+  "source_commit": null,
+  "source_commit_at": null,
+  "source_ref": null,
+  "source_dirty": null,
+  "source_build_at": null,
+  "status_label": "Published build",
+  "status_value": "Awaiting first deployment",
+  "focus_label": "Project direction",
+  "focus_value": "Finish the Phase 1b review, then covers, SQLite, search and detail pages; canonical architecture and roadmap remain in the source repository.",
+  "status_sync": "github-pages-build-v1"
+}

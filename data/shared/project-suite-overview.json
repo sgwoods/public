@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-27",
-  "summary": "Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Thirteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.",
+  "updated_at": "2026-10-30",
+  "summary": "Repo-owned portfolio coordination: 17 active summaries, comprising seven public software/publication projects, seven archives, and three private projects with approved public metadata only. Virtual Bookshelf is registered as an observed project awaiting its first verified deployment. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Fourteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.",
   "use_this_page_for": [
     "Keep one durable portfolio-level mental model in the repo instead of in chat only.",
     "Separate factual project status from portfolio judgment, so the manifest exports can stay factual while priority and time-energy-value tradeoffs can change faster.",
@@ -156,6 +156,33 @@
         {"label": "Public code", "url": "https://github.com/sgwoods/news-pipeline"},
         {"label": "Podcast feed", "url": "https://sgwoods.github.io/ai-briefing/podcast.xml"},
         {"label": "Hub export handoff", "url": "AI-BRIEFING-EXPORT.md"}
+      ]
+    },
+    "virtual-bookshelf": {
+      "surface_class": "Standalone repo / hosted build import",
+      "visibility": "Public",
+      "priority_now": "seed",
+      "energy": "low-medium",
+      "value": "medium-high",
+      "time_horizon": "short",
+      "likely_current_work": "Phase 1b catalogue matching and review for roughly 520 physical books. The public October 30 status log reports a 20-book live matching trial; the requested static cover-grid deployment is not yet verifiable.",
+      "next_step": "Publish the source architecture and Pages workflow, complete the Phase 1b review gate, and verify the first clean release build.json before importing a deployed source identity. Covers, SQLite, search and detail pages remain roadmap work.",
+      "quality_note": "The source uses Python's standard library. Its status log reports a 20/20 matching trial, not complete catalogue accuracy. ARCHITECTURE.md and its claimed documentation tests were not present on public main at registration; no hosted build or test run was verified.",
+      "drift_note": "October 30 registration found build.json HTTP 404 and no Actions runs. Published source commit and build dates remain null. Public branch activity is observed separately and must not become a release claim.",
+      "coordination_note": "Observed project, not an exporter. The hub owns this registration, presentation and deployed-build import; the source owns architecture, roadmap and publication. Phase 2 reading status, ratings and notes would be public once added; the owner decides what is published. No source repository was edited.",
+      "external_page": {
+        "experience_label": "Browse the bookshelf",
+        "architecture_label": null,
+        "dashboard_label": null,
+        "paragraphs": [
+          "The source repository's docs/ARCHITECTURE.md owns the description of what is built, and docs/ROADMAP.md owns planned work. This hub page follows the deployed build, not the latest branch commit. At registration, the architecture document and release build identity were not yet served; no shipped feature checklist is inferred.",
+          "Finish the Phase 1b review before expanding the catalogue. Reading status, ratings and notes planned for Phase 2 would be public once added; the owner will decide what is published."
+        ]
+      },
+      "extra_links": [
+        {"label": "Canonical architecture", "url": "https://github.com/sgwoods/virtual-bookshelf/blob/main/docs/ARCHITECTURE.md"},
+        {"label": "Roadmap", "url": "https://github.com/sgwoods/virtual-bookshelf/blob/main/docs/ROADMAP.md"},
+        {"label": "Deployed build identity", "url": "https://sgwoods.github.io/virtual-bookshelf/build.json"}
       ]
     },
     "phd-renovation": {
@@ -402,6 +429,17 @@
       ]
     },
     "star-swarm": {
+      "external_page": {
+        "experience_label": "Play the published build",
+        "image": {
+          "path": "docs/media/arch-gameplay.gif",
+          "alt": "Star Swarm gameplay from the published source documentation"
+        },
+        "paragraphs": [
+          "Star Swarm is an independent parallel comparison with Aurora, developed using Claude and the Firstmate platform. It is not an Aurora branch or shared release lane. Firstmate is development tooling, not the project being built. Each project keeps its own code, work history, release identity, and roadmap.",
+          "The source repository owns the tested feature description and roadmap. This page follows the deployed build identity; newer development is tracked separately on the portfolio homepage."
+        ]
+      },
       "surface_class": "Standalone repo / hosted build import",
       "visibility": "Public",
       "priority_now": "protect",

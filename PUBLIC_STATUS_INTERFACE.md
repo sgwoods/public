@@ -32,6 +32,8 @@ Examples:
 - `mmath-renovation`
 - `ai-dystopia-quotes`
 - `ai-briefing`
+- `star-swarm` (observed deployed build)
+- `virtual-bookshelf` (observed deployed build)
 
 This document is not the default publishing contract for shared-public
 subprojects such as:
@@ -87,6 +89,7 @@ Current canonical standalone-project files:
 - `data/projects/ai-dystopia-quotes.json`
 - `data/projects/ai-briefing.json`
 - `data/projects/star-swarm.json` (hub-managed deployed-build import)
+- `data/projects/virtual-bookshelf.json` (hub-managed deployed-build import; awaiting first deployment at registration)
 - `data/projects/confidential-project.json`
 
 Current bridge records that are still consumed by the homepage but are not the
@@ -100,7 +103,7 @@ Current compatibility alias files:
 - `data/projects/codex-test1.json`
 
 Only the owning project may write its canonical file, except for an explicitly
-opted-in hub-managed deployed-build import such as Star Swarm. Exporting projects
+opted-in hub-managed deployed-build import such as Star Swarm or Virtual Bookshelf. Exporting projects
 such as AI Briefing retain ownership of their JSON and HTML page.
 
 For bridge records, keep ownership and purpose explicit. Do not add new bridge
@@ -137,6 +140,34 @@ the base fields. These 19 fields are supported without a schema version change.
 Use the full released public code commit and its committer timestamp; never
 substitute a private working-repository commit. `repo_pushed_at` is the
 compatibility alias for `source_commit_at`, not the publication time.
+
+### Observed Pages Builds
+
+Star Swarm and Virtual Bookshelf opt into `status_sync: github-pages-build-v1`.
+This existing transport extension imports a clean, public, deployed `build.json`;
+`source_build_at` records its build time separately from the source commit date.
+It does not expand the 19 base/provenance fields or grant source projects ownership
+of shared pages. The hub generates their HTML pages. See
+[PROJECT-STATUS-CONTRACT.md](PROJECT-STATUS-CONTRACT.md#notifications-after-publication).
+
+Hub-owned `external_page` presentation lives on each project's entry in
+`data/shared/project-suite-overview.json`, never in its status manifest:
+`experience_label`, optional `image` (`path` relative to the source repository,
+and `alt`), and plain-text `paragraphs`. Shared CSS remains
+`assets/public-site.css`, with `shell`, `hero`, `panel`, and repository freshness
+sections. No image is assumed; Virtual Bookshelf uses “Browse the bookshelf”.
+Optional `architecture_label` and `dashboard_label` can be null to omit those
+hero links until the corresponding source documents/workflow are published.
+Virtual Bookshelf keeps the intended URLs in its portfolio record with explicit
+pending notes; enable its hero links after source publication is verified.
+
+Before the first verified deployment, the active manifest may say “Awaiting first
+deployment” with null `source_commit`, `source_commit_at`, `source_ref`,
+`source_dirty`, `source_build_at`, and `repo_pushed_at`. Its generation time is
+only the registration time, not a release. An initial HTTP 404 for `build.json`
+leaves it pending; other failures are reported, and loss of an already imported
+build is a failure that retains the previous snapshot. The next normal refresh
+imports the first valid build without changing this interface.
 
 ## Field Definitions
 

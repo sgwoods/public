@@ -50,15 +50,30 @@ test("an archive scope or date-window change cannot reuse incompatible history",
     assert.deepEqual(countsForProject(project, row, start, end), [null]);
 });
 
-test("manifest cards deduplicate bridges and retain the registered AI Briefing order", () => {
+test("manifest cards deduplicate bridges and keep Virtual Bookshelf after AI Briefing", () => {
     const projects = dedupeProjects([
         { project_id: "quack-com", active: true, repo_pushed_at: "2026-05-11T00:00:00Z", status_generated_at: "2026-10-03T00:00:00Z" },
         { project_id: "quack-com", active: true, repo_pushed_at: "2026-05-11T00:00:00Z", status_generated_at: "2026-10-04T00:00:00Z", status_value: "New bridge" },
         { project_id: "ai-briefing", active: true }, { project_id: "ai-dystopia-quotes", active: true },
+        { project_id: "virtual-bookshelf", active: true },
     ]);
-    projects.sort(projectSortFactory({ project_order: ["ai-dystopia-quotes", "ai-briefing", "quack-com"] }));
-    assert.deepEqual(projects.map((p) => p.project_id), ["ai-dystopia-quotes", "ai-briefing", "quack-com"]);
-    assert.equal(projects[2].status_value, "New bridge");
+    projects.sort(projectSortFactory({ project_order: ["ai-dystopia-quotes", "ai-briefing", "virtual-bookshelf", "quack-com"] }));
+    assert.deepEqual(projects.map((p) => p.project_id), ["ai-dystopia-quotes", "ai-briefing", "virtual-bookshelf", "quack-com"]);
+    assert.equal(projects[3].status_value, "New bridge");
+});
+
+test("Virtual Bookshelf pending deployment has real links and no invented source date", () => {
+    const project = require("../data/projects/virtual-bookshelf.json");
+    const card = renderProjectCard({ ...project, project_page_href: project.project_page_path });
+    assert.match(card, /virtual-bookshelf.html/);
+    assert.match(card, /https:\/\/github.com\/sgwoods\/virtual-bookshelf/);
+    assert.match(card, /https:\/\/sgwoods.github.io\/virtual-bookshelf\//);
+    assert.doesNotMatch(card, /1970/);
+    if (!project.source_commit) {
+        assert.match(card, /Awaiting first deployment/);
+        assert.match(card, /Not reported/);
+    }
+    assert.match(sourceComparison({ source_commit: null }, { state: "awaiting_deployment", checked_at: new Date().toISOString() }), /Awaiting first deployment/);
 });
 
 test("a new manifest cannot inherit a match from an older observation", () => {

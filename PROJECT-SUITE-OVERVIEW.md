@@ -1,13 +1,13 @@
 # Project Suite Overview
 
-Updated: `2026-10-27`
+Updated: `2026-10-30`
 
-Repo-owned portfolio coordination: 16 active summaries, comprising six public software/publication projects, seven archives, and three private projects with approved public metadata only. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Thirteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.
+Repo-owned portfolio coordination: 17 active summaries, comprising seven public software/publication projects, seven archives, and three private projects with approved public metadata only. Virtual Bookshelf is registered as an observed project awaiting its first verified deployment. Windigo is the Costa Rica rental portal under confidential-project, separate from personal financial planning and the Woods Financial Dashboard. Kanban is excluded. Star Swarm is an entirely separate parallel comparison with Aurora, developed using Claude and Firstmate; Firstmate is tooling, not a separate portfolio project or work series. Fourteen public histories feed the public commit/archive charts. Working Activity reports approved daily aggregates; AI Briefing has a 391-commit unclassified assisted baseline, not 391 verified code changes or installed upkeep. Other projects, including Star Swarm and Aurora separately, await source-owned reports. No activity measure changes release labels. See REPOSITORY-HANDOFFS.md for one-at-a-time coordination.
 
 This overview tracks the current repo coordination state in this checkout.
 Per-project manifests remain the factual status layer; this overview is the portfolio judgment layer.
 
-Current branch snapshot: `main`
+Current branch snapshot: `codex/register-virtual-bookshelf`
 
 ## What This Page Is For
 
@@ -34,7 +34,7 @@ Current branch snapshot: `main`
 - **Protect public surfaces** (4): Keep already-public software, docs, and dashboards trustworthy before expanding scope.
 - **Publish local progress** (0): High-value, usually lower-energy work where repo docs or manifests are already ahead of the public surface.
 - **Steady advance** (8): Important ongoing work that benefits from regular small batches rather than a one-off push.
-- **Seed and clarify** (1): Early-stage areas where a small baseline is more valuable than broad exploration.
+- **Seed and clarify** (2): Early-stage areas where a small baseline is more valuable than broad exploration.
 - **Private tracking** (3): Keep only a high-level public summary while the underlying work remains private.
 
 ## Web Entry Point
@@ -63,6 +63,7 @@ Current branch snapshot: `main`
 | [Woods Financial Dashboard](woods-financial-dashboard.html) | Private project summary | Private code and data / approved public summary | Private tracking | Private development; release not verified; Source-faithful financial review with clear modeling assumptions |
 | [AI Dystopia Quotes](ai-dystopia-quotes.html) | Standalone repo export | Public | Steady advance | Active curation + publishing; Growing the approved canon and widening discovery |
 | [AI Briefing](ai-briefing.html) | Standalone repo export | Public code and publication / private operations | Protect public surfaces | v0.2.34-beta · edition 2026-10-30 + deep dive; Beta: aggressive fact checking before email and audio, wider source coverage; podcast listing after four green weeks. |
+| [Virtual Bookshelf](virtual-bookshelf.html) | Standalone repo / hosted build import | Public | Seed and clarify | Awaiting first deployment; Finish the Phase 1b review, then covers, SQLite, search and detail pages; canonical architecture and roadmap remain in the source repository. |
 | [PhD renovation project](phd-renovation.html) | Standalone repo export | Public | Steady advance | 1.0.0; Intake triage |
 | [Masters of Mathematics renovation project](mmath-renovation.html) | Standalone repo export | Public | Protect public surfaces | 1.0.0-rc.1; Portability hardening and disciplined post-RC continuation |
 | [Steven Woods Public Record Project](https://sgwoods.github.io/public/steven-woods-research.html) | Shared-public archive subproject | Public | Steady advance | Active research archive; Text-first recovery, private Riddick transcription, and verified media attribution |
@@ -173,6 +174,20 @@ Current branch snapshot: `main`
 - Coordination note: Release exports own data/projects/ai-briefing.json and ai-briefing.html. The new independent working report may own only data/activity/ai-briefing.json. Source-owned upkeep remains to be installed; daily public checks cannot refresh private working activity. Keep operational and subscriber data private.
 - Drift note: Initial registration gaps are resolved: the canonical manifest points to news-pipeline, source identity matches v0.1.4-beta, and its page loads current hub observations. Public code commit counts exclude private operations and editions.
 - Public links: [Project page](ai-briefing.html), [Live experience](https://sgwoods.github.io/ai-briefing/), [Repository](https://github.com/sgwoods/news-pipeline), [Read AI Briefing](https://sgwoods.github.io/ai-briefing/), [Public code](https://github.com/sgwoods/news-pipeline), [Podcast feed](https://sgwoods.github.io/ai-briefing/podcast.xml), [Hub export handoff](AI-BRIEFING-EXPORT.md)
+
+### Virtual Bookshelf
+
+- Surface class: Standalone repo / hosted build import
+- Visibility: Public
+- Priority now: Seed and clarify
+- Time-energy-value: energy low-medium; value medium-high; horizon short
+- Current manifest state: Published build: Awaiting first deployment. Project direction: Finish the Phase 1b review, then covers, SQLite, search and detail pages; canonical architecture and roadmap remain in the source repository.. Snapshot source date: Not reported.
+- Likely current work: Phase 1b catalogue matching and review for roughly 520 physical books. The public October 30 status log reports a 20-book live matching trial; the requested static cover-grid deployment is not yet verifiable.
+- Next step: Publish the source architecture and Pages workflow, complete the Phase 1b review gate, and verify the first clean release build.json before importing a deployed source identity. Covers, SQLite, search and detail pages remain roadmap work.
+- Quality: The source uses Python's standard library. Its status log reports a 20/20 matching trial, not complete catalogue accuracy. ARCHITECTURE.md and its claimed documentation tests were not present on public main at registration; no hosted build or test run was verified.
+- Coordination note: Observed project, not an exporter. The hub owns this registration, presentation and deployed-build import; the source owns architecture, roadmap and publication. Phase 2 reading status, ratings and notes would be public once added; the owner decides what is published. No source repository was edited.
+- Drift note: October 30 registration found build.json HTTP 404 and no Actions runs. Published source commit and build dates remain null. Public branch activity is observed separately and must not become a release claim.
+- Public links: [Project page](virtual-bookshelf.html), [Dashboard](https://github.com/sgwoods/virtual-bookshelf/actions/workflows/pages.yml), [Live experience](https://sgwoods.github.io/virtual-bookshelf/), [Repository](https://github.com/sgwoods/virtual-bookshelf), [Canonical architecture](https://github.com/sgwoods/virtual-bookshelf/blob/main/docs/ARCHITECTURE.md), [Roadmap](https://github.com/sgwoods/virtual-bookshelf/blob/main/docs/ROADMAP.md), [Deployed build identity](https://sgwoods.github.io/virtual-bookshelf/build.json)
 
 ### PhD renovation project
 

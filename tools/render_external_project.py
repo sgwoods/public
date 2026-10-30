@@ -1,6 +1,7 @@
 """Render an opted-in external project's small hub page from its manifest."""
 import html
 from datetime import datetime, timedelta, timezone
+from pathlib import PurePosixPath
 
 from render_index import format_local_datetime, parse_datetime
 
@@ -38,6 +39,8 @@ def render_freshness(payload, observation=None, now=None):
             messages.append("The last successful observation retained commit " + commit_text + ".")
     elif state == "not_observed":
         messages.append("No public repository observation is configured.")
+    elif state == "awaiting_deployment" and not source:
+        messages.append("Awaiting the first verified clean release deployment; the observed branch is not a published build.")
     elif not checked or not observed:
         messages.append("The observed branch cannot yet be compared with the published build.")
     elif observation.get("snapshot_commit") != source:
@@ -69,16 +72,25 @@ def render_freshness(payload, observation=None, now=None):
     ) + '\n<p><a href="index.html#repository-activity">Portfolio repository activity</a> · <a href="data/shared/repository-observations.json">Observation data</a></p>\n</section>'
 
 
-def render(payload, observation=None, now=None):
+def render(payload, observation=None, now=None, *, presentation):
     name = html.escape(payload["display_name"])
     repo = payload["repo_url"]
-    links = [(payload["experience_url"], "Play the published build"), (repo, "Source repository"),
-             (repo + "/blob/main/docs/ARCHITECTURE.md", "Current architecture and features"),
+    links = [(payload["experience_url"], presentation["experience_label"]), (repo, "Source repository"),
+             (repo + "/blob/main/docs/ARCHITECTURE.md", presentation.get("architecture_label", "Current architecture and features")),
              (repo + "/blob/main/docs/ROADMAP.md", "Roadmap"),
-             (payload["dashboard_url"], "Build and test history")]
-    buttons = " ".join(f'<a class="button" href="{html.escape(url, quote=True)}">{label}</a>' for url, label in links)
-    sha = payload["source_commit"]
-    image = f"https://raw.githubusercontent.com/{repo.removeprefix('https://github.com/')}/{sha}/docs/media/arch-gameplay.gif"
+             (payload["dashboard_url"], presentation.get("dashboard_label", "Build and test history"))]
+    buttons = " ".join(f'<a class="button" href="{html.escape(url, quote=True)}">{html.escape(label)}</a>' for url, label in links if url and label)
+    image_markup = ""
+    image = presentation.get("image")
+    if image and payload.get("source_commit"):
+        path = PurePosixPath(image["path"])
+        if path.is_absolute() or ".." in path.parts or "\\" in image["path"] or ":" in image["path"]:
+            raise ValueError("External page images must be repository-relative paths")
+        image_url = f"https://raw.githubusercontent.com/{repo.removeprefix('https://github.com/')}/{payload['source_commit']}/{path}"
+        image_markup = f'<img src="{html.escape(image_url, quote=True)}" alt="{html.escape(image["alt"], quote=True)}" style="max-width:100%;height:auto" loading="lazy">\n'
+    build = ("Built " + html.escape(payload["source_build_at"]) if payload.get("source_commit") and payload.get("source_build_at")
+             else "No verified release build has been imported yet.")
+    paragraphs = "\n".join("<p>" + html.escape(text) + "</p>" for text in presentation["paragraphs"])
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{name} | Steven Woods Projects</title><link rel="stylesheet" href="assets/public-site.css"></head>
@@ -86,14 +98,12 @@ def render(payload, observation=None, now=None):
 <section class="hero"><span class="eyebrow">Public project</span><h1>{name}</h1>
 <p>{html.escape(payload['description'])}</p><div class="links">{buttons}</div></section>
 <section class="panel"><h2>Published build</h2>
-<p><strong>{html.escape(payload['status_value'])}</strong> · Built {html.escape(payload['source_build_at'])}</p>
+<p><strong>{html.escape(payload['status_value'])}</strong> · {build}</p>
 <p>{html.escape(payload['focus_value'])}</p>
-<img src="{image}" alt="Star Swarm gameplay from the published source documentation" style="max-width:100%;height:auto" loading="lazy">
-</section>
+{image_markup}</section>
 {render_freshness(payload, observation, now)}
 <section class="panel"><h2>Status and next steps</h2>
-<p>Star Swarm is an independent parallel comparison with Aurora, developed using Claude and the Firstmate platform. It is not an Aurora branch or shared release lane. Firstmate is development tooling, not the project being built. Each project keeps its own code, work history, release identity, and roadmap.</p>
-<p>The source repository owns the tested feature description and roadmap. This page follows the deployed build identity; newer development is tracked separately on the portfolio homepage.</p>
+{paragraphs}
 <div class="links"><a class="button" href="project-suite-overview.html#project-{payload['project_id']}">Portfolio priorities</a>
 <a class="button" href="index.html#repository-activity">Repository activity</a>
 <a class="button" href="PROJECT-STATUS-CONTRACT.md">Maintaining this status</a></div>

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Import explicitly opted-in public Pages build identities, without source writes."""
+import argparse
 import json
 import re
 import subprocess
@@ -29,11 +30,32 @@ def updated_manifest(payload, identity, commit):
     return result
 
 
-def main():
+def fetch_identity(url):
+    # Keep HTTP status separate from the body; only an initial 404 is pending.
+    response = subprocess.run(
+        ["curl", "--silent", "--show-error", "--location", "--max-time", "20",
+         "--write-out", "\n%{http_code}", url], check=True, capture_output=True, text=True)
+    body, status = response.stdout.rsplit("\n", 1)
+    if status == "404":
+        raise FileNotFoundError("Build identity is not served yet")
+    if status != "200":
+        raise ValueError("Build identity request failed")
+    return json.loads(body)
+
+
+def main(project_ids=None):
     failed = []
+    selected = set(project_ids) if project_ids else None
+    projects = []
     for path in sorted((ROOT / "data/projects").glob("*.json")):
         payload = json.loads(path.read_text())
-        if not payload.get("active") or payload.get("status_sync") != "github-pages-build-v1":
+        if payload.get("active") and payload.get("status_sync") == "github-pages-build-v1":
+            projects.append((path, payload))
+    unknown = selected - {payload["project_id"] for _, payload in projects} if selected is not None else set()
+    if unknown:
+        raise SystemExit("Unknown opted-in projects: " + ", ".join(sorted(unknown)))
+    for path, payload in projects:
+        if selected is not None and payload["project_id"] not in selected:
             continue
         try:
             parsed = urlparse(payload["repo_url"])
@@ -44,12 +66,13 @@ def main():
                 raise ValueError("Private repository excluded")
             owner, name = repo.split("/")
             url = f"https://{owner}.github.io/{name}/build.json"
-            # Use the system trust store on macOS as well as Linux runners.
-            response = subprocess.run(
-                ["curl", "--fail", "--silent", "--show-error", "--location", "--max-time", "20", url],
-                check=True, capture_output=True, text=True,
-            )
-            identity = json.loads(response.stdout)
+            try:
+                identity = fetch_identity(url)
+            except FileNotFoundError:
+                if payload.get("source_commit") or payload.get("source_build_at"):
+                    raise
+                print(f"{payload['project_id']}: awaiting first deployment (build.json HTTP 404); no source identity asserted")
+                continue
             sha = identity.get("commit", "")
             if not re.fullmatch(r"[0-9a-f]{7,40}", sha):
                 raise ValueError("Invalid build identity")
@@ -66,4 +89,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--project", action="append", help="Import only this project; repeat to select several")
+    main(parser.parse_args().project)

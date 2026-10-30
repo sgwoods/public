@@ -1,14 +1,17 @@
 # Public repository inventory
 
-Reviewed October 22, 2026 against all 18 public sgwoods repositories. Every public
-repository has a source, hosting, tooling, or historical role below; no additional
-unregistered standalone public project was found. This is a
-public-only classification; private project details are intentionally excluded.
+Baseline reviewed October 22, 2026 against all 18 then-public sgwoods repositories.
+Virtual Bookshelf was added by a targeted October 30 registration; this is not a
+new account-wide discovery audit. The baseline classified every repository as
+source, hosting, tooling, or historical, with no additional unregistered standalone
+project found then. This is a public-only classification; private project details
+are intentionally excluded.
 
 | Repository | Portfolio role | Action |
 | --- | --- | --- |
 | [news-pipeline](https://github.com/sgwoods/news-pipeline) | AI Briefing public code | Active verified exporter, v0.1.4-beta at the October 22 audit |
 | [ai-briefing](https://github.com/sgwoods/ai-briefing) | AI Briefing publication and podcast hosting | Attached to AI Briefing; not a duplicate project |
+| [virtual-bookshelf](https://github.com/sgwoods/virtual-bookshelf) | Physical-book catalogue from shelf photos, with Open Library matching; source and intended static hosting | Observed `github-pages-build-v1` registration, awaiting first verified deployment. Architecture/workflow and live build identity were not yet public at the October 30 check; Phase 2 reading status, ratings and notes require the owner's public/private decision |
 | [star-swarm](https://github.com/sgwoods/star-swarm) | Independent game/content platform built using Claude and Firstmate; a parallel comparative attempt entirely separate from Aurora | Track its own source activity, working report, deployment, and roadmap under `star-swarm` |
 | [firstmate](https://github.com/sgwoods/firstmate) | Supporting development platform used for Star Swarm; public fork of kunchenguid/firstmate | Reference only; not a separate portfolio project or working-activity series. Do not substitute Firstmate repository activity or agent-state backups for Star Swarm development |
 | [Codex-Test1](https://github.com/sgwoods/Codex-Test1) | Aurora source | Already tracked; other-machine exporter handoff remains |
