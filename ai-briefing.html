@@ -29,22 +29,27 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.32-beta</b>, public code commit <code>e171595f3ea3</code> (2026-10-30T13:10:47Z)</li>
+      <li><b>v0.2.33-beta</b>, public code commit <code>96f3f6012293</code> (2026-10-30T17:05:46Z)</li>
       <li>Latest edition: 2026-10-30 · 25 editions and 15 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-30/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-30T13:10:54Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-30T17:05:53Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.33-beta · 2026-10-30</h3>
+    <ul>
+      <li>The fact check runs <b>before</b> the edition is sent (Steven, 2026-10-30, after &quot;CDIC&quot; was corrected the same morning): every factual sentence of the top section, What happened and Worth knowing checked against its sources; partly-right or contradicted lines rewritten (links kept) and re-checked; anything unsettled listed in the takes email. Acronyms no source contains are checked first. The day page ends with a Notes footnote: the fact check&#x27;s time and every correction with date and time (ET). New queue recipe <code>remaster</code> (chat): re-record a day&#x27;s podcast from its corrected text, recorded as a correction.</li>
+      <li>Fact-check gaps closed (Steven, 2026-10-30): ranked excerpts with twice the room and a 12,000-character second look before &quot;not found&quot;; a search for a live page (government and regulators first) when the cited sources lack a fact, which the rewrite may cite with one new link that also joins the Sources line; a second, different model (<code>llm.stages.judge2</code>, local by default) re-checks rewrites and runs the after-send audit.</li>
+      <li>The deep dive gets the same sentence check before it is recorded (factual sections only; spoken-sentence rewrites; a found page joins its Sources; second-model re-check). Open items go to the draft Doc (&quot;Fact check: please look&quot;) and the takes email; the deep-dive page has the Notes footnote.</li>
+      <li><code>./np audit deepdive DAY</code> (queue recipe <code>audit-deepdive</code>, auto): the deep-dive check on a recorded dive as a dry run; proposed fixes go in only as corrections.</li>
+      <li>Release rules for day-to-day stability (Steven, 2026-10-30): <code>ship</code> has lanes. The default slot lane releases once per weekday from 13:00 (<code>release.slot</code> in config.yaml), after the edition and before the 15:30 draft; <code>lane: fix</code> is for broken things, any time in the release window; no slot releases at weekends. Every ship soaks first: <code>staging run</code> rebuilds today&#x27;s edition with the dev code and <code>staging compare</code> checks it against production; a compare that needs review stops the ship before Approve unless <code>accept</code> quotes Steven&#x27;s OK. The Approve shows the lane and the soak verdict. Schedule tab gains the release-slot row.</li>
+      <li>Docs brought up to date with v0.2.10–v0.2.32: README (Steven&#x27;s day, the run, new commands), OPERATIONS (the advance, runner, ntfy, Slack and Jev services), RELEASE (the three approval paths), DEEP-DIVES (drafts, takes, suggestions, Slack). Fix: <code>./np schedule</code> printed the service status (an old alias); it now shows the timetable (<code>show</code>), and <code>./np timetable</code> is the same.</li>
+    </ul>
     <h3>v0.2.32-beta · 2026-10-30</h3>
     <ul>
       <li><b>Jev shadow filter</b> (Steven, 10-29/30): TypeSafe&#x27;s Jev (a structured-decision model, sub-second, ~$0.04 per million input tokens) is asked keep/drop for every item the local filter judged; both answers are logged, the morning report shows the agreement, and nothing changes in the edition. Daily token budget (400k, about two cents). Public fetched items only; never in staging. One-time: the <code>jev-setup</code> job (a Mac dialog stores the key in the Keychain and makes one test call). <code>./np jev report [DAYS]</code>; run-queue job <code>jev-report</code>.</li>
-    </ul>
-    <h3>v0.2.31-beta · 2026-10-29</h3>
-    <ul>
-      <li><b>The advance deep dive</b> (Steven, 10-29): at 15:30 (schedule.advance) tomorrow&#x27;s deep dive is written and checked and saved to Drive as &quot;&lt;day&gt; · Deep dive · &lt;title&gt; (draft)&quot;, with a nudge and an email. The Doc ends with two sections: &quot;Steven&#x27;s take&quot; (read verbatim after the episode) and &quot;Notes for the editor&quot; (what to change). The 05:00 run reads them back: the take goes in; notes make the writer revise the draft, which is checked again; then it is voiced and shipped. Install the agent once with the <code>service-install</code> job (kind: advance). <code>./np advance</code> drafts now; run-queue job <code>advance</code>. The Schedule page has the row.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -66,7 +71,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="e171595f3ea3d555f91228a81513f1cf4ac91c3d"
+           data-source-commit="96f3f60122932ba29c7cca5ddf026a9ac4d34d4c"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
