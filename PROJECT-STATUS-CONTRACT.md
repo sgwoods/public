@@ -130,6 +130,33 @@ to the canonical source docs instead of maintaining another feature checklist.
 Other projects can opt in only if they publish the same release build identity
 and use the same documented architecture/roadmap page convention.
 
+### Virtual Bookshelf: Second Observed Pages Project
+
+Virtual Bookshelf (`sgwoods/virtual-bookshelf`) is the second
+`github-pages-build-v1` registration. Its canonical hub manifest is
+`data/projects/virtual-bookshelf.json`; the hub renders `virtual-bookshelf.html`.
+Architecture and roadmap remain source-owned. Hub-only presentation is configured
+under `external_page` in `data/shared/project-suite-overview.json`, including the
+experience label, optional repository-relative image, and narrative paragraphs.
+These are not new status-manifest fields.
+
+October 30 registration found the public repo but HTTP 404 for the live
+`build.json`, no public Pages workflow or architecture document, and no Actions
+runs. It is therefore awaiting first deployment, not a published release. All
+released-source/build fields and the compatibility source date remain null.
+The requested source workflow contract is `check` -> `deploy` -> `notify-hub`;
+its actual installation and successful notification remain to be verified.
+See [the registration evidence](REPOSITORY-HANDOFFS.md#virtual-bookshelf-registration-october-30-2026).
+
+An initial build-identity HTTP 404 is an explicit pending state, not a fabricated
+snapshot or a failed repository observation. Other transport/identity failures,
+and a missing build after an earlier successful import, retain the previous
+snapshot and fail visibly. Run a bounded registration refresh with
+`python3 tools/refresh_public_coordination.py --observe --import-project virtual-bookshelf`
+to restrict manifest imports without suppressing repository/activity observations.
+Normal daily refreshes import all opted-in builds. No other project's manifest
+is changed by the registration.
+
 ## Notifications after publication
 
 Projects ask the hub to run `render-public-index.yml` on `main` through
@@ -145,6 +172,9 @@ remain controlled by the project's published artifact, never by an activity chec
   [PR 51](https://github.com/sgwoods/star-swarm/pull/51) adds a separate notification
   job after deployment. The hub reads the served `build.json`; a newer branch
   commit alone does not replace that identity.
+  Virtual Bookshelf adopts this pattern as the second observed registration;
+  until its first deployment, the pattern is expected, not a verified source-side
+  notification. Do not notify on an un-deployed branch push.
 - **Exporting projects:** MMath, the PhD work, and the quotes project publish
   explicit exports whose released commit can differ from the default branch.
   Notify only AFTER the exporter has published its approved outputs and canonical
@@ -205,7 +235,7 @@ followed by successful [hub run 39781934707](https://github.com/sgwoods/public/a
 The earlier missing-secret issue is resolved. No source project was modified by
 this hub change.
 
-`render_external_project.py` currently generates Star Swarm's hub page. It adds
+`render_external_project.py` generates Star Swarm's and Virtual Bookshelf's hub pages. It adds
 freshness to every page generated through that renderer. MMath, PhD, quotes, and
 Aurora pages are published by their source exporters; adding the same panel to
 those pages requires their owners to adopt it in their export templates. Their

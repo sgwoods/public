@@ -31,6 +31,7 @@ PROJECT_ORDER = [
     "woods-financial-dashboard",
     "ai-dystopia-quotes",
     "ai-briefing",
+    "virtual-bookshelf",
     "phd-renovation",
     "mmath-renovation",
     "steven-woods-research",
@@ -606,6 +607,7 @@ def observation_label(observation: dict) -> str:
               "dirty_snapshot": "Export included uncommitted changes; review source",
               "newer_commit": "Newer than reported snapshot", "legacy_unverified": "Legacy snapshot; commit identity unavailable",
               "awaiting_export": "Awaiting first published export",
+              "awaiting_deployment": "Awaiting first deployment",
               "not_observed": "No public repository observation", "check_failed": "Check failed; retained observation"}
     checked = observation.get("checked_at")
     stale = not checked or datetime.now(timezone.utc) - parse_datetime(checked) > timedelta(days=8)

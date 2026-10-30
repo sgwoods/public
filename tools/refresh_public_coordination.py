@@ -79,7 +79,9 @@ def build_outputs(notes: dict, projects: list[render_index.ProjectStatus]) -> li
             output_path = (ROOT / payload["project_page_path"]).resolve()
             if output_path.parent != ROOT or output_path.suffix != ".html":
                 raise SystemExit("External project pages must be root-level HTML files")
-            outputs.append(RenderedOutput(output_path, render_external_project.render(payload, observations.get(payload["project_id"]))))
+            presentation = notes["projects"][payload["project_id"]]["external_page"]
+            outputs.append(RenderedOutput(output_path, render_external_project.render(
+                payload, observations.get(payload["project_id"]), presentation=presentation)))
     return outputs
 
 
@@ -135,6 +137,10 @@ def parse_args() -> argparse.Namespace:
         )
     )
     parser.add_argument(
+        "--import-project", action="append",
+        help="With --observe, import only this opted-in manifest; other observations still refresh. Repeat as needed."
+    )
+    parser.add_argument(
         "--observe", action="store_true", help="Check public GitHub source activity before rendering (requires gh)."
     )
     parser.add_argument(
@@ -150,6 +156,8 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    if args.import_project and not args.observe:
+        raise SystemExit("--import-project requires --observe")
     observation_failed = False
     if args.observe:
         if args.check:
@@ -158,7 +166,7 @@ def main() -> None:
         import sync_external_status
         import observe_activity
         try:
-            sync_external_status.main()
+            sync_external_status.main(args.import_project)
         except SystemExit:
             observation_failed = True
         try:

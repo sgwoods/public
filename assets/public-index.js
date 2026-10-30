@@ -155,6 +155,7 @@
             content_matches: "Archive content matches snapshot", content_changed: "Archive content changed; review snapshot",
             dirty_snapshot: "Export included uncommitted changes", newer_commit: "Newer than reported snapshot",
             legacy_unverified: "Commit identity unavailable", awaiting_export: "Awaiting first published export",
+            awaiting_deployment: "Awaiting first deployment",
         };
         const stale = Date.now() - Date.parse(observation.checked_at) > 8 * 86400000;
         return (labels[observation.state] || "Comparison unavailable") + (stale ? " (check over eight days old)" : "");

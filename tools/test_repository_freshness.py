@@ -56,13 +56,20 @@ class ProjectPageFreshnessTests(unittest.TestCase):
         output = render_freshness(self.payload, dict(self.observation, checked_at="2026-10-03T19:00:00Z"), self.now)
         self.assertIn("over eight days old", output)
 
+    def test_newly_imported_build_does_not_inherit_a_pending_observation(self):
+        observation = dict(self.observation, snapshot_commit=None, state="awaiting_deployment")
+        output = render_freshness(self.payload, observation, self.now)
+        self.assertIn("refers to a different snapshot", output)
+        self.assertNotIn("Awaiting the first", output)
+
     def test_render_preserves_project_labels_and_escapes_observed_fields(self):
         payload = dict(self.payload, display_name="Test", repo_url="https://github.com/example/test",
                        experience_url="https://example.com", dashboard_url="https://example.com/ci",
                        status_value="Release 1.0", source_build_at="2026-10-11T12:01:00Z",
                        description="A project", focus_value="Project focus", project_id="test")
         before = dict(payload)
-        output = render(payload, dict(self.observation, branch="<script>alert(1)</script>"), self.now)
+        output = render(payload, dict(self.observation, branch="<script>alert(1)</script>"), self.now,
+                        presentation={"experience_label": "View", "paragraphs": ["A project."]})
         self.assertEqual(payload, before)
         self.assertIn("Release 1.0", output)
         self.assertIn("2026-10-11T12:01:00Z", output)
@@ -147,6 +154,7 @@ class FreshnessTests(unittest.TestCase):
         self.assertEqual(checker.classify({"source_commit": "b", "source_dirty": True}, commit), "dirty_snapshot")
         self.assertEqual(checker.classify({"repo_pushed_at": "2026-06-11T00:00:00Z"}, commit), "newer_commit")
         self.assertEqual(checker.classify({"repo_pushed_at": "2026-10-01T00:00:00Z"}, commit), "legacy_unverified")
+        self.assertEqual(checker.classify({"status_sync": "github-pages-build-v1"}, commit), "awaiting_deployment")
 
     def test_failed_check_retains_previous_success(self):
         with tempfile.TemporaryDirectory() as directory:

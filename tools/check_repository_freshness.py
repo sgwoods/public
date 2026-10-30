@@ -27,7 +27,7 @@ def classify(snapshot, commit):
     if source:
         return "matches" if source == commit["sha"] else "different_commit"
     if not snapshot.get("repo_pushed_at"):
-        return "awaiting_export"
+        return "awaiting_deployment" if snapshot.get("status_sync") == "github-pages-build-v1" else "awaiting_export"
     observed = render_index.parse_datetime(commit["commit"]["committer"]["date"])
     exported = render_index.parse_datetime(snapshot["repo_pushed_at"])
     return "newer_commit" if observed > exported else "legacy_unverified"
