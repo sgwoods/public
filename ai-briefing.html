@@ -17,7 +17,7 @@
     <h1>AI Briefing</h1>
     <p>A daily AI briefing, newsletter and podcast for early-stage investors: what happened, what holds up, and what it means, with occasional deep dives.</p>
     <div class="links">
-      <a class="button" href="https://sgwoods.github.io/ai-briefing/2026-10-30/index.html">Read today&#x27;s edition</a>
+      <a class="button" href="https://sgwoods.github.io/ai-briefing/2026-10-31/index.html">Read today&#x27;s edition</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/podcast.xml">Podcast feed</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/#email">Get it by email</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/releases/index.html">Release notes</a>
@@ -29,27 +29,24 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.34-beta</b>, public code commit <code>e30cdbdf922b</code> (2026-10-30T17:21:01Z)</li>
-      <li>Latest edition: 2026-10-30 · 25 editions and 15 deep dives published</li>
-      <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-30/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-30T17:21:08Z by the project's own pipeline</li>
+      <li><b>v0.2.38-beta</b>, public code commit <code>023853ba7181</code> (2026-10-31T12:32:05Z)</li>
+      <li>Latest edition: 2026-10-31 · 26 editions and 16 deep dives published</li>
+      <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-31/deep-dive/index.html">read or listen</a></li>
+      <li>Status exported 2026-10-31T12:32:12Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
-    <h3>v0.2.34-beta · 2026-10-30 (fix lane)</h3>
+    <h3>v0.2.38-beta · 2026-10-31 (fix lane)</h3>
     <ul>
-      <li>Fact-check fixes from the first dry run on the 10-30 deep dive: a search result that is a homepage or section front (anthropic.com, claude.com) is never a found source, and a found page must also carry a second name or a figure from the claim; the second judge checks one claim per call (the local model answered a batch with only its first verdict) and falls back to the first model; a rewrite is kept only when the second check confirms it, otherwise it is undone and goes to Steven (&quot;rewrite not confirmed&quot;); rewrites narrow the original claim, never swap in a different one, and may return nothing (then Steven decides).</li>
+      <li>Fix: <code>deepdive --topic</code> on a topic already in the queue (the dive being rebuilt) found no item and wrote nothing, and the rebuild recipe then recorded a correction anyway. The queued item is reused, and <code>deepdive --topic</code> exits 1 when no dive was written, so a rebuild stops before recording a correction.</li>
+      <li>Fix: the subcommand-argument tests read config.yaml, which the public export doesn&#x27;t have (public tests failed).</li>
     </ul>
-    <h3>v0.2.33-beta · 2026-10-30</h3>
+    <h3>v0.2.37-beta · 2026-10-31 (fix lane)</h3>
     <ul>
-      <li>The fact check runs <b>before</b> the edition is sent (Steven, 2026-10-30, after &quot;CDIC&quot; was corrected the same morning): every factual sentence of the top section, What happened and Worth knowing checked against its sources; partly-right or contradicted lines rewritten (links kept) and re-checked; anything unsettled listed in the takes email. Acronyms no source contains are checked first. The day page ends with a Notes footnote: the fact check&#x27;s time and every correction with date and time (ET). New queue recipe <code>remaster</code> (chat): re-record a day&#x27;s podcast from its corrected text, recorded as a correction.</li>
-      <li>Fact-check gaps closed (Steven, 2026-10-30): ranked excerpts with twice the room and a 12,000-character second look before &quot;not found&quot;; a search for a live page (government and regulators first) when the cited sources lack a fact, which the rewrite may cite with one new link that also joins the Sources line; a second, different model (<code>llm.stages.judge2</code>, local by default) re-checks rewrites and runs the after-send audit.</li>
-      <li>The deep dive gets the same sentence check before it is recorded (factual sections only; spoken-sentence rewrites; a found page joins its Sources; second-model re-check). Open items go to the draft Doc (&quot;Fact check: please look&quot;) and the takes email; the deep-dive page has the Notes footnote.</li>
-      <li><code>./np audit deepdive DAY</code> (queue recipe <code>audit-deepdive</code>, auto): the deep-dive check on a recorded dive as a dry run; proposed fixes go in only as corrections.</li>
-      <li>Release rules for day-to-day stability (Steven, 2026-10-30): <code>ship</code> has lanes. The default slot lane releases once per weekday from 13:00 (<code>release.slot</code> in config.yaml), after the edition and before the 15:30 draft; <code>lane: fix</code> is for broken things, any time in the release window; no slot releases at weekends. Every ship soaks first: <code>staging run</code> rebuilds today&#x27;s edition with the dev code and <code>staging compare</code> checks it against production; a compare that needs review stops the ship before Approve unless <code>accept</code> quotes Steven&#x27;s OK. The Approve shows the lane and the soak verdict. Schedule tab gains the release-slot row.</li>
-      <li>Docs brought up to date with v0.2.10–v0.2.32: README (Steven&#x27;s day, the run, new commands), OPERATIONS (the advance, runner, ntfy, Slack and Jev services), RELEASE (the three approval paths), DEEP-DIVES (drafts, takes, suggestions, Slack). Fix: <code>./np schedule</code> printed the service status (an old alias); it now shows the timetable (<code>show</code>), and <code>./np timetable</code> is the same.</li>
+      <li>Fix: <code>./np deepdive DAY --topic &quot;...&quot; --force</code> stopped at the argument parser (--topic unknown, --force taken as the top-level flag), so the deepdive-rebuild recipe failed; <code>./np staging run --force</code> lost its --force the same way, so the ship&#x27;s soak refused before 08:30. Everything after a subcommand that takes arguments now goes to it.</li>
+      <li>Approvals up front (Steven, 2026-10-31): a <code>ship</code>/<code>release</code> carrying Steven&#x27;s quoted yes from chat runs on its own after tests and the soak pass, with no phone prompt; rollback, code push and secrets keep the tap. <code>remaster</code> and <code>deepdive-rebuild</code> no longer need a chat quote (auto tier). See docs/security/RELEASE.md.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -71,7 +68,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="e30cdbdf922bb44c7baf33ffd3b3b0f4477915ec"
+           data-source-commit="023853ba71819647a0ef86f76246572dd8a003b0"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
