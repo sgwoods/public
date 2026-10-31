@@ -29,23 +29,30 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.42-beta</b>, public code commit <code>b323378f936f</code> (2026-10-31T14:46:11Z)</li>
-      <li>Latest edition: 2026-10-31 · 26 editions and 16 deep dives published</li>
+      <li><b>v0.2.43-beta</b>, public code commit <code>14a991be804a</code> (2026-10-31T21:12:46Z)</li>
+      <li>Latest edition: 2026-10-31 · 26 editions and 17 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-31/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-31T14:46:18Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-31T21:12:54Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.43-beta · 2026-11-02 (weekday slot)</h3>
+    <ul>
+      <li>Public pages never show a local address (2026-10-31): release notes and the hub page turn a URL on the Mac (the X tool&#x27;s) into plain words, so the hub export is no longer refused.</li>
+      <li>Technical deep dives (Steven, 2026-10-31): the daily suggestions now include at least one &quot;technical&quot; candidate (world models, robotics, scaling laws including test-time compute, surprising results...; <code>deepdive.technical_themes</code>), and a technical episode is written as an explainer for investors and business people.</li>
+      <li>Watchlist skips newsletter sales emails (Steven, 2026-10-31): an Exponential View &quot;24 hours to get 50% off&quot; email surfaced as a watchlist company mention. Titles that read as a discount or subscribe deadline are no longer matched.</li>
+      <li>Credentials never pass through links (2026-10-31): a Stratechery feed&#x27;s per-reader access token reached the 10-31 page and email. Token, key and signature parameters are now stripped from every link, and the publish privacy scan refuses any page carrying a JWT or a token parameter.</li>
+      <li>X reposts skipped (2026-10-31): xsukax lists reposts in an account&#x27;s feed; a post whose link is another account&#x27;s is no longer credited to the person who reposted it.</li>
+      <li>Links from more Slack channels (Steven, 2026-10-31): <code>slack.channels</code> (first: #discuss-generative-ai), read by the AI Briefing bot. Linked content only; the message is a private relevance cue (mentions and links stripped, never quoted or attributed); posters never stored; each pull logged with its time in data/state/slack-pulls.jsonl.</li>
+      <li>Subscribers page (was Email): one row per person with every channel they get the briefing through (email, Slack #cto-ai-newsletter; podcast listeners are anonymous). <code>pipeline/audience.py</code>.</li>
+      <li><b>One brand template</b> (Steven, 2026-10-31; docs/BRAND.md): <code>brand/brand.yaml</code> (teal palette with a dark mode, Inter, the one author image, the waveform, the taglines) and <code>pipeline/brand.py</code>. The website moves from navy and mint to the teal brand: pale reading surface (deep teal in dark mode), teal masthead with the author image, wordmark, tagline and waveform on every page, deep-teal masthead on deep-dive pages, the day&#x27;s Slack card as each page&#x27;s link preview, &quot;Today in 30 seconds&quot; on the home page. The email: pale surface, white cards, teal buttons, Inter. Slack cards, the channel banner and the covers read their colours, taglines and author image from the brand (<code>./np brand build [--covers]</code>); the author image is the glasses photo everywhere (also the site&#x27;s og:image and bio). Feeds: author &quot;Steven Woods&quot;; the RSS feed has the cover and the main tagline. Dashboard: brand colours and header, and a Brand tab showing the template and where it appears.</li>
+    </ul>
     <h3>v0.2.42-beta · 2026-10-31</h3>
     <ul>
       <li>Monthly promo (Steven, 2026-10-31, option A): on the first Monday of each month, once the edition is out, one short post in #cto-musings pointing to #cto-ai-newsletter (a channel link: one click opens it with Join), the website and email sign-up, with the channel banner. <code>./np slack-post promo [--preview|--now]</code>, queue recipe <code>slack-promo</code>.</li>
       <li><code>brand/</code>: the author image master (<code>author-master.png</code>, the glasses photo cut from the podcast cover) and the Slack channel banner (<code>slack-channel-banner.png</code>), the first files of the brand template (see the brand plan).</li>
-    </ul>
-    <h3>v0.2.41-beta · 2026-10-31</h3>
-    <ul>
-      <li>Fix: the bot couldn&#x27;t find #cto-ai-newsletter by name (public, bot invited); <code>slack.post.channel_id</code> is now used directly when set (C0CDBLD1JT1), so the morning post and Earlier editions don&#x27;t depend on the lookup.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -67,7 +74,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="b323378f936fa9cdfd39ddf744051e8928640bbe"
+           data-source-commit="14a991be804a15104bc565820e2c63957851a975"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
