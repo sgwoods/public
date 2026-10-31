@@ -29,22 +29,23 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.41-beta</b>, public code commit <code>d110c83f4e5c</code> (2026-10-31T14:20:17Z)</li>
+      <li><b>v0.2.42-beta</b>, public code commit <code>b323378f936f</code> (2026-10-31T14:46:11Z)</li>
       <li>Latest edition: 2026-10-31 · 26 editions and 16 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-31/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-31T14:20:24Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-31T14:46:18Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.42-beta · 2026-10-31</h3>
+    <ul>
+      <li>Monthly promo (Steven, 2026-10-31, option A): on the first Monday of each month, once the edition is out, one short post in #cto-musings pointing to #cto-ai-newsletter (a channel link: one click opens it with Join), the website and email sign-up, with the channel banner. <code>./np slack-post promo [--preview|--now]</code>, queue recipe <code>slack-promo</code>.</li>
+      <li><code>brand/</code>: the author image master (<code>author-master.png</code>, the glasses photo cut from the podcast cover) and the Slack channel banner (<code>slack-channel-banner.png</code>), the first files of the brand template (see the brand plan).</li>
+    </ul>
     <h3>v0.2.41-beta · 2026-10-31</h3>
     <ul>
       <li>Fix: the bot couldn&#x27;t find #cto-ai-newsletter by name (public, bot invited); <code>slack.post.channel_id</code> is now used directly when set (C0CDBLD1JT1), so the morning post and Earlier editions don&#x27;t depend on the lookup.</li>
-    </ul>
-    <h3>v0.2.40-beta · 2026-10-31</h3>
-    <ul>
-      <li><code>./np slack-post archive FROM TO [--preview]</code> (queue recipe <code>slack-archive</code>, chat): one &quot;Earlier editions&quot; message in the post channel, a line per day with its first lead and briefing and deep-dive links, posted once. For the days posted to #cto-musings before the move; Steven deletes the old bot posts there himself.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -66,7 +67,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="d110c83f4e5cc747534d123eee27bc39cb914a13"
+           data-source-commit="b323378f936fa9cdfd39ddf744051e8928640bbe"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
