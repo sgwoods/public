@@ -29,24 +29,25 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.38-beta</b>, public code commit <code>023853ba7181</code> (2026-10-31T12:32:05Z)</li>
+      <li><b>v0.2.39-beta</b>, public code commit <code>f9682d2fd00b</code> (2026-10-31T13:04:34Z)</li>
       <li>Latest edition: 2026-10-31 · 26 editions and 16 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-31/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-31T12:32:12Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-31T13:04:41Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.39-beta · 2026-10-31 (weekend exception, Steven&#x27;s yes in chat)</h3>
+    <ul>
+      <li>The morning Slack post (card + deep-dive thread) goes to #cto-ai-newsletter instead of #cto-musings (Steven, 2026-10-31). Links are still read from #cto-musings.</li>
+      <li>Fix: a page found by the fact check&#x27;s search joins the Sources (or is linked) only when it carries words of the fixed sentence itself (a 5-word run or its quotation); on 10-31 an unrelated TechCrunch story was added to the rebuilt deep dive&#x27;s Sources because the fix was supported by the dive&#x27;s own sources (removed by hand).</li>
+      <li>Docs: ARCHITECTURE, FACT-CHECKING and DEEP-DIVES brought up to v0.2.38 (pre-send and deep-dive fact checks, v0.2.34 search and second-judge rules, release lanes and soak, chat approval for ship/release, auto-tier remaster and deepdive-rebuild, X via list members and a local RSS generator); run-queue, release-flow and fact-checking diagrams updated.</li>
+    </ul>
     <h3>v0.2.38-beta · 2026-10-31 (fix lane)</h3>
     <ul>
       <li>Fix: <code>deepdive --topic</code> on a topic already in the queue (the dive being rebuilt) found no item and wrote nothing, and the rebuild recipe then recorded a correction anyway. The queued item is reused, and <code>deepdive --topic</code> exits 1 when no dive was written, so a rebuild stops before recording a correction.</li>
       <li>Fix: the subcommand-argument tests read config.yaml, which the public export doesn&#x27;t have (public tests failed).</li>
-    </ul>
-    <h3>v0.2.37-beta · 2026-10-31 (fix lane)</h3>
-    <ul>
-      <li>Fix: <code>./np deepdive DAY --topic &quot;...&quot; --force</code> stopped at the argument parser (--topic unknown, --force taken as the top-level flag), so the deepdive-rebuild recipe failed; <code>./np staging run --force</code> lost its --force the same way, so the ship&#x27;s soak refused before 08:30. Everything after a subcommand that takes arguments now goes to it.</li>
-      <li>Approvals up front (Steven, 2026-10-31): a <code>ship</code>/<code>release</code> carrying Steven&#x27;s quoted yes from chat runs on its own after tests and the soak pass, with no phone prompt; rollback, code push and secrets keep the tap. <code>remaster</code> and <code>deepdive-rebuild</code> no longer need a chat quote (auto tier). See docs/security/RELEASE.md.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -68,7 +69,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="023853ba71819647a0ef86f76246572dd8a003b0"
+           data-source-commit="f9682d2fd00b16f2f33af3a8dbf79341c62a699d"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
