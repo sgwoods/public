@@ -6,6 +6,14 @@
   <title>AI Briefing | Steven Woods Projects</title>
   <link rel="stylesheet" href="assets/public-site.css">
   <script src="assets/project-freshness.js" defer></script>
+  <style>
+    .hero{border-top:4px solid #3e7e8a}
+    .ab-brand{display:flex;gap:14px;align-items:center}
+    .ab-brand img{width:64px;height:64px;border-radius:50%;border:3px solid #3e7e8a;object-fit:cover}
+    .ab-brand h1{margin:0} .ab-tag{margin:2px 0 0;color:#3e7e8a;font-weight:600}
+    .hero .button{background:#3e7e8a;border-color:#3e7e8a;color:#fff}
+    @media (prefers-color-scheme: dark){.ab-tag{color:#9fcfd6}}
+  </style>
 </head>
 <body>
 <main class="shell shell--narrow">
@@ -14,7 +22,10 @@
       <span class="eyebrow">Public project</span>
       <a class="heroHomeLink" href="index.html">Steven Woods</a>
     </div>
-    <h1>AI Briefing</h1>
+    <div class="ab-brand">
+      <img src="https://sgwoods.github.io/ai-briefing/steven-woods.jpg" alt="Steven Woods" width="64" height="64">
+      <div><h1>AI Briefing</h1><p class="ab-tag">Slowly, then fast. Every morning.</p></div>
+    </div>
     <p>A daily AI briefing, newsletter and podcast for early-stage investors: what happened, what holds up, and what it means, with occasional deep dives.</p>
     <div class="links">
       <a class="button" href="https://sgwoods.github.io/ai-briefing/2026-10-31/index.html">Read today&#x27;s edition</a>
@@ -29,15 +40,22 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.43-beta</b>, public code commit <code>14a991be804a</code> (2026-10-31T21:12:46Z)</li>
+      <li><b>v0.2.44-beta</b>, public code commit <code>d33c257e9614</code> (2026-10-31T22:04:15Z)</li>
       <li>Latest edition: 2026-10-31 · 26 editions and 17 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-10-31/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-10-31T21:12:54Z by the project's own pipeline</li>
+      <li>Status exported 2026-10-31T22:04:23Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.44-beta · 2026-11-02 (weekday slot)</h3>
+    <ul>
+      <li>Hub page in the brand (Steven, 2026-10-31): the project page on the public hub shows the author photo, the tagline and the teal accents (this page only; the hub&#x27;s shared style is untouched).</li>
+      <li>Deep-dive fact check checks facts only (2026-10-31: 12 items held on 10-31, most of them framing): sentences that frame a reading (&quot;the AI-realist reading says...&quot;), imagine an example (&quot;Picture a startup...&quot;) or give our view are no longer checked; in &quot;How people read it&quot;, only a sentence that attributes a view to someone is.</li>
+      <li>The release soak covers the deep dive: <code>./np staging run --force --deepdive</code> rewrites the day&#x27;s deep dive on the same topic with the dev code, and <code>staging compare</code> reports it (status, words, sources, checked / held).</li>
+      <li>A rebuilt Saturday deep dive keeps the two-voice flagship format (10-31&#x27;s rebuild came out in one voice).</li>
+    </ul>
     <h3>v0.2.43-beta · 2026-11-02 (weekday slot)</h3>
     <ul>
       <li>Public pages never show a local address (2026-10-31): release notes and the hub page turn a URL on the Mac (the X tool&#x27;s) into plain words, so the hub export is no longer refused.</li>
@@ -48,11 +66,6 @@
       <li>Links from more Slack channels (Steven, 2026-10-31): <code>slack.channels</code> (first: #discuss-generative-ai), read by the AI Briefing bot. Linked content only; the message is a private relevance cue (mentions and links stripped, never quoted or attributed); posters never stored; each pull logged with its time in data/state/slack-pulls.jsonl.</li>
       <li>Subscribers page (was Email): one row per person with every channel they get the briefing through (email, Slack #cto-ai-newsletter; podcast listeners are anonymous). <code>pipeline/audience.py</code>.</li>
       <li><b>One brand template</b> (Steven, 2026-10-31; docs/BRAND.md): <code>brand/brand.yaml</code> (teal palette with a dark mode, Inter, the one author image, the waveform, the taglines) and <code>pipeline/brand.py</code>. The website moves from navy and mint to the teal brand: pale reading surface (deep teal in dark mode), teal masthead with the author image, wordmark, tagline and waveform on every page, deep-teal masthead on deep-dive pages, the day&#x27;s Slack card as each page&#x27;s link preview, &quot;Today in 30 seconds&quot; on the home page. The email: pale surface, white cards, teal buttons, Inter. Slack cards, the channel banner and the covers read their colours, taglines and author image from the brand (<code>./np brand build [--covers]</code>); the author image is the glasses photo everywhere (also the site&#x27;s og:image and bio). Feeds: author &quot;Steven Woods&quot;; the RSS feed has the cover and the main tagline. Dashboard: brand colours and header, and a Brand tab showing the template and where it appears.</li>
-    </ul>
-    <h3>v0.2.42-beta · 2026-10-31</h3>
-    <ul>
-      <li>Monthly promo (Steven, 2026-10-31, option A): on the first Monday of each month, once the edition is out, one short post in #cto-musings pointing to #cto-ai-newsletter (a channel link: one click opens it with Join), the website and email sign-up, with the channel banner. <code>./np slack-post promo [--preview|--now]</code>, queue recipe <code>slack-promo</code>.</li>
-      <li><code>brand/</code>: the author image master (<code>author-master.png</code>, the glasses photo cut from the podcast cover) and the Slack channel banner (<code>slack-channel-banner.png</code>), the first files of the brand template (see the brand plan).</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -74,7 +87,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="14a991be804a15104bc565820e2c63957851a975"
+           data-source-commit="d33c257e9614d2ca1e5adcda12fc5b1427678f83"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
