@@ -40,22 +40,30 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.47-beta</b>, public code commit <code>bbe40d2220ea</code> (2026-11-01T15:21:39Z)</li>
+      <li><b>v0.2.48-beta</b>, public code commit <code>96e38954abf5</code> (2026-11-01T18:45:09Z)</li>
       <li>Latest edition: 2026-11-01 · 27 editions and 17 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-01/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-11-01T15:21:51Z by the project's own pipeline</li>
+      <li>Status exported 2026-11-01T18:45:18Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.48-beta · 2026-11-02 (weekday slot)</h3>
+    <ul>
+      <li>Quality fixes from the 10-31 review:</li>
+      <li>Story fatigue: when today&#x27;s lead is the same story as a lead in the last two editions and brings no new primary source or report, the next Must read leads instead (<code>editorial.stale_lead</code>; the S-1 led five days running).</li>
+      <li>A capability slot: when no Must read is about what AI can now do and a well-backed release or result sits in Worth knowing, it moves up (<code>editorial.capability_slot</code>). The summary prompt rates capability news 3+, 4 for a first or a new generation (DeepMind&#x27;s Genie 4 had been rated 2 and never reached the edition).</li>
+      <li>Verdict labels that discriminate: Reported / Self-reported / Single source instead of a blanket &quot;Unverified&quot; (all five Must reads on 10-31). Machine phrasing in evidence lines is put into plain words.</li>
+      <li>The board-seat scrubber no longer removes &quot;a disclosure.&quot; from the middle of a sentence (it left &quot;not But&quot; in the 11-01 deep dive); the deep-dive check lists any sentence that looks cut short.</li>
+      <li>A held-back edition, sent later, also posts to Slack (the 11-01 post had to be sent by hand). Dashboard refresh (Steven, 11-01: &quot;pertinent information front and centre&quot;):</li>
+      <li>A new home screen: Needs you (approvals, protected-file changes, an unsent edition, held takes, fact-check items, new feedback; &quot;Nothing needs you right now&quot; when calm), Today (run, site, email, Slack, takes, deep dive and corrections as status pills, with the day&#x27;s top lines), Tomorrow (the deep dive to be drafted and what follows) and Health (critic score and rank, the release, failing sources, a trend chart against the top three shows).</li>
+      <li>Five menus instead of twenty tabs: Today, Editions, Sources, Audience, System. The old status page is /status.</li>
+      <li>A release restarts the dashboard, so it always runs the released code (11-01: a stale process failed every page).</li>
+    </ul>
     <h3>v0.2.47-beta · 2026-11-01 (fix lane)</h3>
     <ul>
       <li>A re-recorded podcast keeps Steven&#x27;s takes (2026-11-01): <code>remaster</code> rebuilt the briefing audio from the take-free script, so the re-records of 10-30, 10-31 and 11-01 dropped his takes from the episode. It now splices the published takes back in (the same step the morning run uses) and stops if it can&#x27;t.</li>
-    </ul>
-    <h3>v0.2.46-beta · 2026-11-02 (weekday slot)</h3>
-    <ul>
-      <li>Protected files change only through a release (2026-11-01: a house-views edit committed straight to production held the morning edition and its email until the gate was approved): - the pre-commit hook refuses a commit on production&#x27;s main branch that touches a security-sensitive file (code, tests, config.yaml, house_views.md, newsletters.yaml, ...); releases and rollbacks pass (NP_RELEASE=1); - the run queue watches for protected files that differ from the last approval, including uncommitted edits, and says so at once: a notice, and an approval job so Steven gets the prompt on his phone right away instead of finding the edition held at 05:00 (no extra job when a release is already queued: it approves them).</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -77,7 +85,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="bbe40d2220ea14e05bddea4ac571d20a3fd03294"
+           data-source-commit="96e38954abf51047f7696e49d81ff62e54a1508b"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
