@@ -40,23 +40,28 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.54-beta</b>, public code commit <code>3385fb0b38f7</code> (2026-11-04T16:21:10Z)</li>
-      <li>Latest edition: 2026-11-04 · 30 editions and 20 deep dives published</li>
+      <li><b>v0.2.55-beta</b>, public code commit <code>bb09fcabec19</code> (2026-11-04T19:03:15Z)</li>
+      <li>Latest edition: 2026-11-04 · 30 editions and 21 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-04/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-11-04T16:21:24Z by the project's own pipeline</li>
+      <li>Status exported 2026-11-04T19:03:24Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.55-beta · 2026-11-04</h3>
+    <ul>
+      <li>&quot;Who they are&quot; (Steven, 2026-11-04; <code>pipeline/intros.py</code>): the first time the briefing names a company, one or two sentences on what it does and how it differs from or complements the well-known players; a company back after two weeks (<code>analysis.who_they_are_days</code>) gets a one-sentence reminder that builds on our earlier lines (kept in data/state/companies.json) and changes only where the company has. Recent and household names get nothing. Every number must be in the story&#x27;s sources. Must read: a &quot;Who they are&quot; field; other sections: italics after the headline.</li>
+      <li>Fact checks in the takes email (<code>pipeline/factopts.py</code>): the pre-send check, the deep-dive check and the accuracy audit (now run before the takes email, not after sending) are listed at the bottom as F1, F2 ... each with A/B/C options and a recommendation. Steven answers in the same reply (&quot;F1: B&quot;); unanswered items get the recommendation. Choices are applied to the edition and the deep dive before publishing, and the podcast is re-recorded if it changed.</li>
+      <li>The home page says plainly whether anything is waiting on Steven (11-04): a green &quot;Nothing is waiting on you&quot; or a red &quot;Waiting on you: N decisions&quot; heads the page; a release or other job in progress shows as &quot;Running now&quot; with its step in words (&quot;step 3 of 8, rebuilding today&#x27;s edition with the new code&quot;) instead of &quot;Queued, waiting&quot;; queued jobs and items worth a look say &quot;Nothing for you to do&quot;. Today&#x27;s deep-dive fact-check items stop showing once the edition is sent (they are choices in the takes email now).</li>
+      <li>Campaigns (<code>pipeline/campaigns.py</code>, dashboard Audience → Campaigns): invite lists with each person&#x27;s status worked out from the subscriber list (invited, signed up, subscribed, abandoned, declined) and their replies, the funnel and conversion. The friends trial (Nov 2026) is set up with its invite; people are added from the dashboard.</li>
+      <li>Special editions (Steven, 2026-11-04; <code>pipeline/special.py</code>, <code>./np special</code>): an occasional extra deep dive that goes out on its own the day news breaks, dated that day; the daily deep dive is untouched. Draft (written and checked, not voiced) → a review email to Steven with the article and its fact checks as F1, F2 ... (A/B/C, a recommendation) → his notes or choices → Release (chat, or the button on the dashboard home page): recorded, its page at &lt;site&gt;/DAY/special/ (in no podcast feed), then one email to every active subscriber once the page is live (07:00-21:00). It opens &quot;This is an AI Briefing special edition for ...&quot; with no hand-off. At most one a day and four in 30 days. Run-queue recipes: special-draft, special-revise, special-decide, special-release.</li>
+      <li>Fewer good sources dropped as dead (11-04 trial over 24 dropped links): a link check retries once (10 of 24 were fine on a retry) and GETs where a server refuses HEAD; a page the plain fetch can&#x27;t read gets one try in the Mac&#x27;s Chrome, headless (<code>pipeline/headless.py</code>; 5 of 24: bot checks, Bluesky posts that need JavaScript), only where robots.txt allows and only public hosts, with a throwaway profile and a cap per run. Pages behind real walls (paywalls, Cloudflare; 9 of 24) stay out. Off with <code>fetch.headless: false</code>.</li>
+    </ul>
     <h3>v0.2.54-beta · 2026-11-04</h3>
     <ul>
       <li>Fix: the nightly rehearsal never queued (11-04 00:30: <code>cmd_rehearse_queue</code> lacked an import, NameError). A test now runs the real entry point.</li>
       <li>Fix: rebuilding a day (staging soaks, rehearsals, rebriefs) now starts from the items that day&#x27;s edition considered, not only items first seen that day. Since the overnight runs, most of a day&#x27;s items are first seen the evening before: the 11-04 soak rebuilt the edition with no Must read (8 of its 11 cited items missing) and stopped the ship.</li>
-    </ul>
-    <h3>v0.2.53-beta · 2026-11-03</h3>
-    <ul>
-      <li>The night does the work (Steven, 2026-11-03): - Overnight analysis at 23:30, 01:30 and 03:30 (<code>./np overnight</code>, schedule.overnight): new items are fetched, filtered, ranked and given the critical pass as they arrive; the 05:00 run only reads the last hour and writes. A failure at 01:30 is simply retried at 03:30. The 03:30 slot also checks the day&#x27;s deep-dive draft sentence by sentence. The Mac is kept awake (caffeinate) from the first overnight run until 05:45. - Nightly rehearsal at 00:30 (a <code>rehearse</code> run-queue job): the dev code rebuilds the latest edition and is compared with production; a pass is recorded with the dev code&#x27;s fingerprint, and a ship of exactly that code the next day skips its 15-minute soak. A rehearsal never runs during the morning window or alongside a run. - Approvals are settled the evening before: the preflight runs at 21:00 and again at 23:00. - <code>wake-schedule</code> run-queue job: wakes the Mac at 23:25 daily (pmset; macOS asks for the administrator password in its own dialog). - The home page shows one edition flow (Built → Takes → Site → Email → Slack) with the one button that unsticks it, plus the night&#x27;s analysis runs and the last rehearsal.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -78,7 +83,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="3385fb0b38f715dd7b27f2ccfea5d960545b4824"
+           data-source-commit="bb09fcabec19d9a4b03d39b60d6de82c5502b8ae"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
