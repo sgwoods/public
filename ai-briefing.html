@@ -28,7 +28,7 @@
     </div>
     <p>A daily AI briefing, newsletter and podcast for early-stage investors: what happened, what holds up, and what it means, with occasional deep dives.</p>
     <div class="links">
-      <a class="button" href="https://sgwoods.github.io/ai-briefing/2026-11-03/index.html">Read today&#x27;s edition</a>
+      <a class="button" href="https://sgwoods.github.io/ai-briefing/2026-11-04/index.html">Read today&#x27;s edition</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/podcast.xml">Podcast feed</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/#email">Get it by email</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/releases/index.html">Release notes</a>
@@ -40,25 +40,23 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.50-beta</b>, public code commit <code>db244c204ad4</code> (2026-11-01T23:56:03Z)</li>
-      <li>Latest edition: 2026-11-03 · 29 editions and 19 deep dives published</li>
-      <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-03/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-11-03T13:11:37Z by the project's own pipeline</li>
+      <li><b>v0.2.54-beta</b>, public code commit <code>3385fb0b38f7</code> (2026-11-04T16:21:10Z)</li>
+      <li>Latest edition: 2026-11-04 · 30 editions and 20 deep dives published</li>
+      <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-04/deep-dive/index.html">read or listen</a></li>
+      <li>Status exported 2026-11-04T16:21:24Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
-    <h3>v0.2.50-beta · 2026-11-02 (weekday slot)</h3>
+    <h3>v0.2.54-beta · 2026-11-04</h3>
     <ul>
-      <li>Money section: up to five funding, deal and valuation stories (a deal word plus a stated amount) get their own &quot;Money&quot; block in the briefing, email and site, between Recommended reading and In brief.</li>
-      <li>One chart a day: the write stage asks for a 3-6 bar chart from one Must-read story; every value must appear in that story&#x27;s own sources or no chart is made. Shown under the story in the email and on the site, labelled &quot;Figures as reported in this story&#x27;s sources.&quot; (<code>analysis.chart: false</code> turns it off.)</li>
-      <li>Dashboard phase 3: Briefings shows email time and count, takes status and corrections per day, with the rebuild action folded under Maintenance; Sources leads with failing sources and folds the queue and history; Runs shows the last 14 with a health line and folds older runs; Subscribers has one channel summary and folds manual sends and list management.</li>
-      <li>Fixes found by the ship check: gift links carrying any <code>*_token</code> parameter (a Washington Post <code>pwapi_token</code> JWT reached the staging site and the privacy scan stopped the release) are cleaned like other tracking parameters; the chart accepts a story number returned as text (&quot;2&quot;) and logs why no chart was made.</li>
+      <li>Fix: the nightly rehearsal never queued (11-04 00:30: <code>cmd_rehearse_queue</code> lacked an import, NameError). A test now runs the real entry point.</li>
+      <li>Fix: rebuilding a day (staging soaks, rehearsals, rebriefs) now starts from the items that day&#x27;s edition considered, not only items first seen that day. Since the overnight runs, most of a day&#x27;s items are first seen the evening before: the 11-04 soak rebuilt the edition with no Must read (8 of its 11 cited items missing) and stopped the ship.</li>
     </ul>
-    <h3>v0.2.49-beta · 2026-11-02 (weekday slot)</h3>
+    <h3>v0.2.53-beta · 2026-11-03</h3>
     <ul>
-      <li>Core beliefs, first refresh (Steven approved all six proposals, 2026-11-01; doc &quot;Core Beliefs: Proposed Updates&quot;): thesis 16 says containment is conceptual until proven; view 5 adds founders&#x27; liability; view 15 warns against writing off incumbents on early cannibalisation; new view 22, &quot;Human provenance or ruin&quot;; perspective.md adds robotics and AI-driven science, agent-to-agent authority, and a liability-and-insurance diligence rule.</li>
+      <li>The night does the work (Steven, 2026-11-03): - Overnight analysis at 23:30, 01:30 and 03:30 (<code>./np overnight</code>, schedule.overnight): new items are fetched, filtered, ranked and given the critical pass as they arrive; the 05:00 run only reads the last hour and writes. A failure at 01:30 is simply retried at 03:30. The 03:30 slot also checks the day&#x27;s deep-dive draft sentence by sentence. The Mac is kept awake (caffeinate) from the first overnight run until 05:45. - Nightly rehearsal at 00:30 (a <code>rehearse</code> run-queue job): the dev code rebuilds the latest edition and is compared with production; a pass is recorded with the dev code&#x27;s fingerprint, and a ship of exactly that code the next day skips its 15-minute soak. A rehearsal never runs during the morning window or alongside a run. - Approvals are settled the evening before: the preflight runs at 21:00 and again at 23:00. - <code>wake-schedule</code> run-queue job: wakes the Mac at 23:25 daily (pmset; macOS asks for the administrator password in its own dialog). - The home page shows one edition flow (Built → Takes → Site → Email → Slack) with the one button that unsticks it, plus the night&#x27;s analysis runs and the last rehearsal.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -80,7 +78,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="db244c204ad4f5d414cbbd2891efafda92e6002c"
+           data-source-commit="3385fb0b38f715dd7b27f2ccfea5d960545b4824"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
