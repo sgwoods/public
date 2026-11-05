@@ -40,28 +40,24 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.57-beta</b>, public code commit <code>89bd0e0b8c7f</code> (2026-11-05T13:48:38Z)</li>
+      <li><b>v0.2.58-beta</b>, public code commit <code>d05922511235</code> (2026-11-05T14:20:56Z)</li>
       <li>Latest edition: 2026-11-05 · 31 editions and 21 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-05/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-11-05T13:48:46Z by the project's own pipeline</li>
+      <li>Status exported 2026-11-05T14:21:04Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.58-beta · 2026-11-05</h3>
+    <ul>
+      <li>Releases go when they are ready (Steven, 2026-11-05: &quot;move forward as we want when things are shipped, not for arbitrary deadlines&quot;). The 08:30-20:00 release window is gone. A ship or release waits only while a run is in progress, or while today&#x27;s edition is between the morning run and its send (from 04:30 until it is sent, at most until 11:00). Evenings and nights are fine. Waiting approvals lapse at 23:30 instead of 20:00 (an approval is signed for one day); the &quot;no Mac dialog that would be answered after 20:00&quot; rule moves to 23:30 too.</li>
+    </ul>
     <h3>v0.2.57-beta · 2026-11-05</h3>
     <ul>
       <li>Special editions everywhere (Steven, 2026-11-05): besides their page, the email and the deep-dive feed, a special is now a bonus episode in the daily podcast feed (podcast.xml), a card on the front page with the deep dives (marked &quot;special edition&quot;), a link on that day&#x27;s briefing page, an item in feed.xml, a post in the team Slack channel (the last step of a release; <code>./np special slack DAY</code>, recipe special-slack), a &quot;Special edition · yesterday&quot; card in the next morning&#x27;s email, and a Special editions section on the dashboard&#x27;s Deep dives page with its status and a Release button. Any topic in the deep-dive queue has &quot;★ make it a special&quot; to draft one.</li>
       <li>Source health (Steven, 2026-11-05; <code>pipeline/sourcehealth.py</code>): the Sources page opens with every source we know about in one table: status (failing, known but not ingested, quiet, ingesting), category (X, Bluesky, email newsletter, RSS feed, web page, Slack, deep-dive citation) with the reason (HTTP 403 blocked, 404 moved, rate limited, timeout, unreadable feed, no X mirror answered, never arrived, bot wall / paywall) and a priority order for fixing them: failing first, then sources we follow closely, then the size of the gap.</li>
       <li>New source: Steven&#x27;s Bluesky list (did:plc:ahl7dzintpt7a2vpxsx63sbo/lists/3mzksmnapxf2o) in config bluesky.lists.</li>
-    </ul>
-    <h3>v0.2.56-beta · 2026-11-04</h3>
-    <ul>
-      <li>Tighter pronunciation (Steven, 2026-11-04): OpenAI&#x27;s letter-o models are said &quot;four-oh&quot; and &quot;oh three&quot; everywhere (GPT-4o, 4o, o3, o4-mini); chips and parts are spelled, then the number (GB300 &quot;G B three hundred&quot;, MI300X, B200s, H100); about forty more acronyms said letter by letter or as the word people use (FTC, SEC, EU, CEO, VC, ETF, SB, PAC &quot;pack&quot; ...) in pronunciations.yaml.</li>
-      <li>Fix: a comma right after a number was dropped from what the voice said (&quot;SB 53, the law&quot; was read &quot;fifty-three the law&quot;), so the voice ran clauses together. Numbers now take a comma only as a thousands separator.</li>
-      <li>Steven&#x27;s takes are read with real pauses at his commas, semicolons and dashes (0.22 s, 0.32 s): each clause is voiced on its own and joined, so &quot;and&quot;, &quot;but&quot; and &quot;so&quot; after a comma no longer run on. Only where both sides have at least four words; only takes. <code>./np say-compare &quot;a take&quot;</code> (run-queue recipe say-compare) renders before and after.</li>
-      <li>Special editions are in the deep-dive podcast feed too (deepdive.xml; Steven, 2026-11-04 evening), titled &quot;Special edition: ...&quot;, dated the day they went out; still not in the daily feed.</li>
-      <li>Fix: the Slack shared-links read logged &quot;FAIL shared links (Slack): unsupported operand ...&quot; in every release&#x27;s test step since v0.2.0 (a test reads Slack with no folder to write to). A read without one now writes nothing.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -83,7 +79,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="89bd0e0b8c7f8347eca4ca77e182e4a65feb4204"
+           data-source-commit="d05922511235e8f81dab9a0794b7b57eb4af1aff"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
