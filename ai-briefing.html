@@ -40,15 +40,21 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.56-beta</b>, public code commit <code>e7b2d4092d24</code> (2026-11-05T13:03:05Z)</li>
+      <li><b>v0.2.57-beta</b>, public code commit <code>89bd0e0b8c7f</code> (2026-11-05T13:48:38Z)</li>
       <li>Latest edition: 2026-11-05 · 31 editions and 21 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-05/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-11-05T13:03:21Z by the project's own pipeline</li>
+      <li>Status exported 2026-11-05T13:48:46Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.57-beta · 2026-11-05</h3>
+    <ul>
+      <li>Special editions everywhere (Steven, 2026-11-05): besides their page, the email and the deep-dive feed, a special is now a bonus episode in the daily podcast feed (podcast.xml), a card on the front page with the deep dives (marked &quot;special edition&quot;), a link on that day&#x27;s briefing page, an item in feed.xml, a post in the team Slack channel (the last step of a release; <code>./np special slack DAY</code>, recipe special-slack), a &quot;Special edition · yesterday&quot; card in the next morning&#x27;s email, and a Special editions section on the dashboard&#x27;s Deep dives page with its status and a Release button. Any topic in the deep-dive queue has &quot;★ make it a special&quot; to draft one.</li>
+      <li>Source health (Steven, 2026-11-05; <code>pipeline/sourcehealth.py</code>): the Sources page opens with every source we know about in one table: status (failing, known but not ingested, quiet, ingesting), category (X, Bluesky, email newsletter, RSS feed, web page, Slack, deep-dive citation) with the reason (HTTP 403 blocked, 404 moved, rate limited, timeout, unreadable feed, no X mirror answered, never arrived, bot wall / paywall) and a priority order for fixing them: failing first, then sources we follow closely, then the size of the gap.</li>
+      <li>New source: Steven&#x27;s Bluesky list (did:plc:ahl7dzintpt7a2vpxsx63sbo/lists/3mzksmnapxf2o) in config bluesky.lists.</li>
+    </ul>
     <h3>v0.2.56-beta · 2026-11-04</h3>
     <ul>
       <li>Tighter pronunciation (Steven, 2026-11-04): OpenAI&#x27;s letter-o models are said &quot;four-oh&quot; and &quot;oh three&quot; everywhere (GPT-4o, 4o, o3, o4-mini); chips and parts are spelled, then the number (GB300 &quot;G B three hundred&quot;, MI300X, B200s, H100); about forty more acronyms said letter by letter or as the word people use (FTC, SEC, EU, CEO, VC, ETF, SB, PAC &quot;pack&quot; ...) in pronunciations.yaml.</li>
@@ -56,15 +62,6 @@
       <li>Steven&#x27;s takes are read with real pauses at his commas, semicolons and dashes (0.22 s, 0.32 s): each clause is voiced on its own and joined, so &quot;and&quot;, &quot;but&quot; and &quot;so&quot; after a comma no longer run on. Only where both sides have at least four words; only takes. <code>./np say-compare &quot;a take&quot;</code> (run-queue recipe say-compare) renders before and after.</li>
       <li>Special editions are in the deep-dive podcast feed too (deepdive.xml; Steven, 2026-11-04 evening), titled &quot;Special edition: ...&quot;, dated the day they went out; still not in the daily feed.</li>
       <li>Fix: the Slack shared-links read logged &quot;FAIL shared links (Slack): unsupported operand ...&quot; in every release&#x27;s test step since v0.2.0 (a test reads Slack with no folder to write to). A read without one now writes nothing.</li>
-    </ul>
-    <h3>v0.2.55-beta · 2026-11-04</h3>
-    <ul>
-      <li>&quot;Who they are&quot; (Steven, 2026-11-04; <code>pipeline/intros.py</code>): the first time the briefing names a company, one or two sentences on what it does and how it differs from or complements the well-known players; a company back after two weeks (<code>analysis.who_they_are_days</code>) gets a one-sentence reminder that builds on our earlier lines (kept in data/state/companies.json) and changes only where the company has. Recent and household names get nothing. Every number must be in the story&#x27;s sources. Must read: a &quot;Who they are&quot; field; other sections: italics after the headline.</li>
-      <li>Fact checks in the takes email (<code>pipeline/factopts.py</code>): the pre-send check, the deep-dive check and the accuracy audit (now run before the takes email, not after sending) are listed at the bottom as F1, F2 ... each with A/B/C options and a recommendation. Steven answers in the same reply (&quot;F1: B&quot;); unanswered items get the recommendation. Choices are applied to the edition and the deep dive before publishing, and the podcast is re-recorded if it changed.</li>
-      <li>The home page says plainly whether anything is waiting on Steven (11-04): a green &quot;Nothing is waiting on you&quot; or a red &quot;Waiting on you: N decisions&quot; heads the page; a release or other job in progress shows as &quot;Running now&quot; with its step in words (&quot;step 3 of 8, rebuilding today&#x27;s edition with the new code&quot;) instead of &quot;Queued, waiting&quot;; queued jobs and items worth a look say &quot;Nothing for you to do&quot;. Today&#x27;s deep-dive fact-check items stop showing once the edition is sent (they are choices in the takes email now).</li>
-      <li>Campaigns (<code>pipeline/campaigns.py</code>, dashboard Audience → Campaigns): invite lists with each person&#x27;s status worked out from the subscriber list (invited, signed up, subscribed, abandoned, declined) and their replies, the funnel and conversion. The friends trial (Nov 2026) is set up with its invite; people are added from the dashboard.</li>
-      <li>Special editions (Steven, 2026-11-04; <code>pipeline/special.py</code>, <code>./np special</code>): an occasional extra deep dive that goes out on its own the day news breaks, dated that day; the daily deep dive is untouched. Draft (written and checked, not voiced) → a review email to Steven with the article and its fact checks as F1, F2 ... (A/B/C, a recommendation) → his notes or choices → Release (chat, or the button on the dashboard home page): recorded, its page at &lt;site&gt;/DAY/special/ (in no podcast feed), then one email to every active subscriber once the page is live (07:00-21:00). It opens &quot;This is an AI Briefing special edition for ...&quot; with no hand-off. At most one a day and four in 30 days. Run-queue recipes: special-draft, special-revise, special-decide, special-release.</li>
-      <li>Fewer good sources dropped as dead (11-04 trial over 24 dropped links): a link check retries once (10 of 24 were fine on a retry) and GETs where a server refuses HEAD; a page the plain fetch can&#x27;t read gets one try in the Mac&#x27;s Chrome, headless (<code>pipeline/headless.py</code>; 5 of 24: bot checks, Bluesky posts that need JavaScript), only where robots.txt allows and only public hosts, with a throwaway profile and a cap per run. Pages behind real walls (paywalls, Cloudflare; 9 of 24) stay out. Off with <code>fetch.headless: false</code>.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -86,7 +83,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="e7b2d4092d245eb77b2cf818ca9226e07b1ddc7e"
+           data-source-commit="89bd0e0b8c7f8347eca4ca77e182e4a65feb4204"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
