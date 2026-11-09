@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "attempted_at": "2026-11-08T18:59:56+00:00",
+  "attempted_at": "2026-11-09T12:10:31+00:00",
   "date_basis": "committer",
   "definition": "Reachable public default-branch commits; archive scopes exclude their own project manifest. Includes merges; not a progress or release metric.",
   "projects": {
@@ -8,12 +8,12 @@
       "repo": "sgwoods/Codex-Test1",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "3439042ec7716033ebd3ed9e4b95eb942e3083f9",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "8a02abc1099b99cf105fbb285f0551a522488725",
@@ -333,12 +333,12 @@
       "repo": "sgwoods/star-swarm",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "cc463a0be578aee2131976b3556c633a2d5181b5",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "2c2271ce09746cd13b1c8e9fde58ac0898791906",
@@ -610,12 +610,12 @@
       "repo": "sgwoods/sci-fi-ai-dystopian-project",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "a0e7cc899512bdb0c3973903851387f993387b99",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "3cbaf56f1f4aa31d01b536e747f25bbdd8c83b5c",
@@ -631,12 +631,12 @@
       "repo": "sgwoods/news-pipeline",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "d05922511235e8f81dab9a0794b7b57eb4af1aff",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "c850c4671c294d295957afbda05bb89ba9b6b22a",
@@ -900,12 +900,12 @@
       "repo": "sgwoods/phd-renovation",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "f5eea43d71fd35a48bd235b96088e495ce6d157d",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "f5eea43d71fd35a48bd235b96088e495ce6d157d",
@@ -917,12 +917,12 @@
       "repo": "sgwoods/mmath-renovation",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "408c9330f9dc7abfca86b8ae30a13808a6c4073c",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "408c9330f9dc7abfca86b8ae30a13808a6c4073c",
@@ -939,12 +939,12 @@
       "exclude_paths": [
         "steven-woods-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "caffafbcad0a6d1e18870be0a3f98f119880dd03",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "branch_commit": "73f586f59283dd453b1fff3be117debb5e290071",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "91f8ab38c9047e48d3edcd0527f1c4010ce60251",
@@ -989,12 +989,12 @@
       "exclude_paths": [
         "google-canada-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "caffafbcad0a6d1e18870be0a3f98f119880dd03",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "branch_commit": "73f586f59283dd453b1fff3be117debb5e290071",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": []
     },
     "inovia-research": {
@@ -1006,12 +1006,12 @@
       "exclude_paths": [
         "inovia-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "caffafbcad0a6d1e18870be0a3f98f119880dd03",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "branch_commit": "73f586f59283dd453b1fff3be117debb5e290071",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": []
     },
     "canberra-research": {
@@ -1023,12 +1023,12 @@
       "exclude_paths": [
         "canberra-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "caffafbcad0a6d1e18870be0a3f98f119880dd03",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "branch_commit": "73f586f59283dd453b1fff3be117debb5e290071",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": []
     },
     "sei-pittsburgh-research": {
@@ -1040,12 +1040,12 @@
       "exclude_paths": [
         "sei-pittsburgh-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "caffafbcad0a6d1e18870be0a3f98f119880dd03",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "branch_commit": "73f586f59283dd453b1fff3be117debb5e290071",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": []
     },
     "quack-com": {
@@ -1057,12 +1057,12 @@
       "exclude_paths": [
         "quack/project-manifest.json"
       ],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "caffafbcad0a6d1e18870be0a3f98f119880dd03",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "branch_commit": "73f586f59283dd453b1fff3be117debb5e290071",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "91f8ab38c9047e48d3edcd0527f1c4010ce60251",
@@ -1079,12 +1079,12 @@
       "exclude_paths": [
         "kinitos-neoedge/project-manifest.json"
       ],
-      "attempted_at": "2026-11-08T18:59:56+00:00",
+      "attempted_at": "2026-11-09T12:10:31+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "caffafbcad0a6d1e18870be0a3f98f119880dd03",
-      "checked_at": "2026-11-08T18:59:56+00:00",
-      "window_start": "2026-09-14T04:00:00+00:00",
+      "branch_commit": "73f586f59283dd453b1fff3be117debb5e290071",
+      "checked_at": "2026-11-09T12:10:31+00:00",
+      "window_start": "2026-09-21T04:00:00+00:00",
       "commits": [
         {
           "sha": "993055ee863c2c560581ac0593ce5972ca04963f",
