@@ -28,7 +28,7 @@
     </div>
     <p>A daily AI briefing, newsletter and podcast for early-stage investors: what happened, what holds up, and what it means, with occasional deep dives.</p>
     <div class="links">
-      <a class="button" href="https://sgwoods.github.io/ai-briefing/2026-11-09/index.html">Read today&#x27;s edition</a>
+      <a class="button" href="https://sgwoods.github.io/ai-briefing/2026-11-14/index.html">Read today&#x27;s edition</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/podcast.xml">Podcast feed</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/#email">Get it by email</a>
       <a class="button" href="https://sgwoods.github.io/ai-briefing/releases/index.html">Release notes</a>
@@ -40,24 +40,51 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.58-beta</b>, public code commit <code>d05922511235</code> (2026-11-05T14:20:56Z)</li>
-      <li>Latest edition: 2026-11-09 · 35 editions and 25 deep dives published</li>
-      <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-09/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-11-09T12:10:08Z by the project's own pipeline</li>
+      <li><b>v0.2.61-beta</b>, public code commit <code>a9406a399abc</code> (2026-11-14T23:00:12Z)</li>
+      <li>Latest edition: 2026-11-14 · 40 editions and 31 deep dives published</li>
+      <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-14/deep-dive/index.html">read or listen</a></li>
+      <li>Status exported 2026-11-14T23:00:25Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
-    <h3>v0.2.58-beta · 2026-11-05</h3>
+    <h3>v0.2.61-beta · 2026-11-14</h3>
     <ul>
-      <li>Releases go when they are ready (Steven, 2026-11-05: &quot;move forward as we want when things are shipped, not for arbitrary deadlines&quot;). The 08:30-20:00 release window is gone. A ship or release waits only while a run is in progress, or while today&#x27;s edition is between the morning run and its send (from 04:30 until it is sent, at most until 11:00). Evenings and nights are fine. Waiting approvals lapse at 23:30 instead of 20:00 (an approval is signed for one day); the &quot;no Mac dialog that would be answered after 20:00&quot; rule moves to 23:30 too.</li>
+      <li>Operations without Terminal (the Queue page, the status board), selection, the morning check, names.</li>
+      <li>Selection: how the day&#x27;s stories are chosen (review: docs/plans/selection-review-2026-11-13 in the project; the</li>
+      <li>14-day audit found the filter dropping legal-AI, robotics and deal items and the Nvidia governance story, 23 of 62</li>
+      <li>Must-read leads that were Bluesky posts, and no record of why anything was picked).</li>
+      <li>Name check in the listen check (Steven, 11-12: &quot;Huang&quot; read as &quot;H-wong&quot;, &quot;AMD&quot; as &quot;a, MD&quot;): names in the voiced script that the published episode&#x27;s transcript does not contain as written, with what was heard in their place (respelled words reported under their real spelling). Quality page: the last week&#x27;s candidates with an audition button (hear it with the current table) and an add box that writes pronunciations.yaml (guarded: approve before the next publish). Acronyms starting with A are spelled &quot;Ay-M-D&quot; by default unless the table or a short word list says otherwise.</li>
+      <li><code>schedule.timezone</code> (e.g. America/Toronto): the daily schedule, the takes cutoff and the morning check are read in that zone wherever the Mac is (Steven travelling, 11-11); the status board shows a Clock tile when the Mac&#x27;s zone differs. Empty = the Mac&#x27;s clock, as before. File timestamps stay in the Mac&#x27;s local time.</li>
+      <li>After a publish, the wait for the live site also waits for podcast.xml to carry the day&#x27;s episode and the MP3 to be served, so the as-published listen check never reads yesterday&#x27;s feed (the 11-14 race).</li>
+      <li>Subject line follows Must read 1: the first Top-of-mind bullet only while it is about Must read 1; when the fact check cut it (11-12: story 2 took the subject), Must read 1&#x27;s headline.</li>
+      <li>Special editions carry their real release time in both feeds (was a flat 18:00, which future-dated the 11-12 item).</li>
+      <li>System status board (Steven, 11-11): a &quot;System&quot; strip at the top of Home, one tile per link in the chain (Ingestion, Today&#x27;s run, Edition, Podcast, Slack, Runner, Release gate, Takes, Morning check, Special), green / amber / red with a timestamp, a one-line reason and the button that fixes it; headline &quot;All well as of HH:MM&quot; or &quot;N problems: …&quot;, also printed after the morning run (phone notification only when something is red). <code>./np health</code> (exit 1 if anything is red), <code>/api/health</code>. <code>pipeline/health.py</code>; nothing calls the network.</li>
+      <li>Dashboard → System → Queue: queue any run-queue job (ship, release, publish, send-held, takes-done, approve, correct, remaster, rescue-item, morning-check, rollback, tests, gate…) with its arguments as fields and a typed &quot;yes&quot; recorded as the approval — the end of Terminal pastes for jobs Claude cannot queue from the chat app.</li>
+      <li><code>./np morning --force</code> / recipe <code>morning-check</code>: re-run today by hand while the edition is held (rebuild regardless of the judgement call).</li>
+      <li>Filter prompt rewritten around an explicit KEEP list (research and capabilities incl. robotics and a lab&#x27;s own announcements, business value and incidents, legal AI, deals of any size, AI economics, the companies and people making the market incl. governance once it reaches a board or regulator, sovereign/Canadian/European, policy, tracked persons; &quot;when unsure, KEEP&quot;).</li>
+      <li>Fail-open before the model: publications (not social posts) from portfolio, follow-closely and configured beat sources (<code>filter_keep_flags/tiers/sources</code>), and any item with a deal amount, are never dropped by the model filter; only rule drops apply (duplicates, empty, excluded URLs). 102 of the last 1,658 drops would have passed.</li>
+      <li>A second look: Claude reviews the day&#x27;s model-dropped publication items once (<code>rescue</code>, cap 40) and rescues what an early-stage AI investor would want; rescued items are analysed with the rest.</li>
+      <li>Headline-only feeds (Sifted, Hugging Face, OpenAI news, TechCrunch) get their article read before the filter, through the local headless browser when the page needs JavaScript; the model judges the article, not an empty item.</li>
+      <li>Claude selects: after cluster, one call with the top 25 candidates (plus beat stories at importance ≥ 3), perspective and house views, yesterday&#x27;s edition; it returns the Must reads, Worth knowing and Money picks with a one-line reason each, the next five left out and why, and a note on the lead. Code keeps its guards (grounded, not sponsored, no post-only lead in Must read, per-source caps, fatigue, the capability slot and a portfolio/beat slot) and demotes rather than drops; the mechanical selector runs if the call fails.</li>
+      <li>Dashboard → Editions → Selection: per day, every pick with its reason and fate, what was left out, what the filter kept without the model, rescued, and dropped (model vs rule) — with a one-click rescue on any drop (<code>./np rescue DAY ID</code>, run-queue recipe <code>rescue-item</code>). The takes email gains a 5-line &quot;Left out today&quot;.</li>
+      <li>Morning check (08:00, on the daily agent&#x27;s tick, during the hold): a light fetch (feeds, Bluesky, X), the new items analysed, one Claude call on whether anything would displace the lead or enter the top three; if so the cutoff is extended 20 min, Steven is told, the edition is rebuilt and a fresh takes email goes out (the 11-12 Huang re-run, automated). <code>morning:</code> in config.yaml; off with <code>enabled: false</code>.</li>
+      <li>Listen check: a section not heard in the full transcript gets a second pass over its own time window before any alert; the alert says &quot;not heard by the check&quot; and asks for a listen first (11-14 false alarm after the sound logo). Sound-logo levels halved under speech.</li>
+      <li>Docs: ARCHITECTURE.md, FACT-CHECKING.md and DEEP-DIVES.md brought up to v0.2.60 (overnight analysis and nightly rehearsal, protected files and release merges, the current run-queue recipes, the accuracy audit before the takes email and its F1/F2 choices, the Pages build check, credential links, pronunciation, the technical deep-dive candidate); the daily-run, release-flow and run-queue diagrams no longer show the old clock windows.</li>
     </ul>
-    <h3>v0.2.57-beta · 2026-11-05</h3>
+    <h3>v0.2.60-beta · 2026-11-09</h3>
     <ul>
-      <li>Special editions everywhere (Steven, 2026-11-05): besides their page, the email and the deep-dive feed, a special is now a bonus episode in the daily podcast feed (podcast.xml), a card on the front page with the deep dives (marked &quot;special edition&quot;), a link on that day&#x27;s briefing page, an item in feed.xml, a post in the team Slack channel (the last step of a release; <code>./np special slack DAY</code>, recipe special-slack), a &quot;Special edition · yesterday&quot; card in the next morning&#x27;s email, and a Special editions section on the dashboard&#x27;s Deep dives page with its status and a Release button. Any topic in the deep-dive queue has &quot;★ make it a special&quot; to draft one.</li>
-      <li>Source health (Steven, 2026-11-05; <code>pipeline/sourcehealth.py</code>): the Sources page opens with every source we know about in one table: status (failing, known but not ingested, quiet, ingesting), category (X, Bluesky, email newsletter, RSS feed, web page, Slack, deep-dive citation) with the reason (HTTP 403 blocked, 404 moved, rate limited, timeout, unreadable feed, no X mirror answered, never arrived, bot wall / paywall) and a priority order for fixing them: failing first, then sources we follow closely, then the size of the gap.</li>
-      <li>New source: Steven&#x27;s Bluesky list (did:plc:ahl7dzintpt7a2vpxsx63sbo/lists/3mzksmnapxf2o) in config bluesky.lists.</li>
+      <li>Source health and intake hygiene (plan: docs/plans/source-health.md).</li>
+      <li>Source health: a newsletter marked <code>backup: true</code> in newsletters.yaml counts as ingesting while its web feed is (note shows the feed&#x27;s newest item) instead of &quot;never arrived&quot;; a backup with no ingesting web feed is still a gap.</li>
+      <li>Source health: <code>every_days</code> per newsletter sets its own cadence; &quot;quiet&quot; now means 1.5x that cadence overdue (floor 14 days) rather than a flat 14, so monthly letters stop raising false alarms.</li>
+      <li>Email auto-add: a new sender that belongs to a listed newsletter (plus-address root, the publication&#x27;s own domain, or the same display name; shared mail platforms such as substack.com and beehiiv.com never match by domain) is merged into it as a <code>merge_into</code> entry in newsletters-auto.yaml instead of becoming a duplicate source. newsletters.yaml stays hand-edited. <code>./np newsletters merges</code> lists existing duplicates (dry run).</li>
+      <li>Release: a production file that is edited locally and also changed by the release no longer aborts the merge when the two copies are identical (x.yaml and newsletters.yaml stopped the v0.2.59 ship); it is restored and the merge brings the same bytes in. When the copies differ the release stops and names the file, and nothing is merged.</li>
+      <li><code>./np service status</code> no longer crashes on the runner agent (KeyError); every launchd agent is listed.</li>
+      <li>Deep-dive link checks go out with a browser User-Agent (Wikipedia returned 403 to the reader&#x27;s name), and a 403 or 429 counts as live when archive.org holds a snapshot of the page. Known paywalled outlets (WSJ, FT, NYT, The Information, Reuters, Bloomberg, Economist, Washington Post, Semafor, The Times) keep their citation, labelled &quot;(paywalled)&quot; in Sources, instead of being dropped; a dive still needs two live sources and at least one open one.</li>
+      <li>Publish: when today&#x27;s page is not live after the wait, the GitHub Pages build is checked through <code>gh</code>; an errored build is rebuilt once and the wait restarts, a slow one gets another round. If the page is still not served the email is held and an alert goes out, instead of sending links to a page that does not exist (11-09: Pages failed its build at 07:09, the email went at 07:15, the site served Sunday until 16:41).</li>
+      <li>Runner: the approval dialog and comments no longer mention 08:30 or 20:00 (the no-window rule since v0.2.58).</li>
+      <li>Docs: NEWSLETTERS.md (backup, cadence, merged senders), DEEP-DIVES.md (link checks), release-process.md (live content vs the merge), ARCHITECTURE.md (source health), and the plan in docs/plans/source-health.md, which also records what was found and left for Steven: X lists are not configured in x.yaml; the 11-02 rollback explains the lost x.yaml line; a date-skew test run needs freezegun.</li>
     </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
@@ -79,7 +106,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="d05922511235e8f81dab9a0794b7b57eb4af1aff"
+           data-source-commit="a9406a399abc63b4b3be9ba269b95f9e31a18506"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
