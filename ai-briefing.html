@@ -40,15 +40,24 @@
   <section class="panel">
     <h2>Current release</h2>
     <ul>
-      <li><b>v0.2.61-beta</b>, public code commit <code>a9406a399abc</code> (2026-11-14T23:00:12Z)</li>
+      <li><b>v0.2.62-beta</b>, public code commit <code>1604f7ecb639</code> (2026-11-18T17:51:48Z)</li>
       <li>Latest edition: 2026-11-18 · 44 editions and 34 deep dives published</li>
       <li>Deep dive the same day: <a href="https://sgwoods.github.io/ai-briefing/2026-11-18/deep-dive/index.html">read or listen</a></li>
-      <li>Status exported 2026-11-18T16:38:49Z by the project's own pipeline</li>
+      <li>Status exported 2026-11-18T17:52:07Z by the project's own pipeline</li>
     </ul>
   </section>
 
   <section class="panel">
     <h2>Release notes</h2>
+    <h3>v0.2.62-beta · 2026-11-18</h3>
+    <ul>
+      <li>Publish retries through a flaky connection: a push that fails is retried every 10 min for up to 2 h (<code>publish.retry_every_minutes</code>, <code>publish.retry_minutes</code>), waiting for DNS between tries, instead of leaving the edition for the next scheduled slot (11-17: the hotel Wi-Fi dropped exactly at the push; the edition went out 90 min late). A push still running after 20 min is cut and retried rather than holding the morning run.</li>
+      <li><b>Fix: &quot;AI&quot; was being spelled &quot;Ay-I&quot; and voiced as &quot;I.I.&quot; (the 11-16 episode).</b> The A-acronym rule now covers 3-4 letters only and spells with spaces (&quot;Ay M D&quot;), the form the table already uses and the transcript hears right. The 11-16 episode is re-recorded (<code>remaster</code>).</li>
+      <li><code>schedule.timezone: America/Toronto</code> set: the schedule, takes cutoff and morning check follow Toronto while Steven travels.</li>
+      <li>Morning check gets its own launchd agent (<code>./np service install morning</code>, or the Queue page&#x27;s service-install with kind <code>morning</code>): on 11-15 it never ran because it rode the daily agent, whose 05:00 instance was still holding the edition at 08:00 and launchd starts no second instance.</li>
+      <li>Status board: the Runner tile allows the idle tick cadence (every ~20 min; 11-15/16 false alarms) and points a stuck runner at Control.</li>
+      <li>A nightly rehearsal whose compare &quot;needs review&quot; is no longer reported as failed; it simply records no pass, so the next ship soaks.</li>
+    </ul>
     <h3>v0.2.61-beta · 2026-11-14</h3>
     <ul>
       <li>Operations without Terminal (the Queue page, the status board), selection, the morning check, names.</li>
@@ -73,19 +82,6 @@
       <li>Listen check: a section not heard in the full transcript gets a second pass over its own time window before any alert; the alert says &quot;not heard by the check&quot; and asks for a listen first (11-14 false alarm after the sound logo). Sound-logo levels halved under speech.</li>
       <li>Docs: ARCHITECTURE.md, FACT-CHECKING.md and DEEP-DIVES.md brought up to v0.2.60 (overnight analysis and nightly rehearsal, protected files and release merges, the current run-queue recipes, the accuracy audit before the takes email and its F1/F2 choices, the Pages build check, credential links, pronunciation, the technical deep-dive candidate); the daily-run, release-flow and run-queue diagrams no longer show the old clock windows.</li>
     </ul>
-    <h3>v0.2.60-beta · 2026-11-09</h3>
-    <ul>
-      <li>Source health and intake hygiene (plan: docs/plans/source-health.md).</li>
-      <li>Source health: a newsletter marked <code>backup: true</code> in newsletters.yaml counts as ingesting while its web feed is (note shows the feed&#x27;s newest item) instead of &quot;never arrived&quot;; a backup with no ingesting web feed is still a gap.</li>
-      <li>Source health: <code>every_days</code> per newsletter sets its own cadence; &quot;quiet&quot; now means 1.5x that cadence overdue (floor 14 days) rather than a flat 14, so monthly letters stop raising false alarms.</li>
-      <li>Email auto-add: a new sender that belongs to a listed newsletter (plus-address root, the publication&#x27;s own domain, or the same display name; shared mail platforms such as substack.com and beehiiv.com never match by domain) is merged into it as a <code>merge_into</code> entry in newsletters-auto.yaml instead of becoming a duplicate source. newsletters.yaml stays hand-edited. <code>./np newsletters merges</code> lists existing duplicates (dry run).</li>
-      <li>Release: a production file that is edited locally and also changed by the release no longer aborts the merge when the two copies are identical (x.yaml and newsletters.yaml stopped the v0.2.59 ship); it is restored and the merge brings the same bytes in. When the copies differ the release stops and names the file, and nothing is merged.</li>
-      <li><code>./np service status</code> no longer crashes on the runner agent (KeyError); every launchd agent is listed.</li>
-      <li>Deep-dive link checks go out with a browser User-Agent (Wikipedia returned 403 to the reader&#x27;s name), and a 403 or 429 counts as live when archive.org holds a snapshot of the page. Known paywalled outlets (WSJ, FT, NYT, The Information, Reuters, Bloomberg, Economist, Washington Post, Semafor, The Times) keep their citation, labelled &quot;(paywalled)&quot; in Sources, instead of being dropped; a dive still needs two live sources and at least one open one.</li>
-      <li>Publish: when today&#x27;s page is not live after the wait, the GitHub Pages build is checked through <code>gh</code>; an errored build is rebuilt once and the wait restarts, a slow one gets another round. If the page is still not served the email is held and an alert goes out, instead of sending links to a page that does not exist (11-09: Pages failed its build at 07:09, the email went at 07:15, the site served Sunday until 16:41).</li>
-      <li>Runner: the approval dialog and comments no longer mention 08:30 or 20:00 (the no-window rule since v0.2.58).</li>
-      <li>Docs: NEWSLETTERS.md (backup, cadence, merged senders), DEEP-DIVES.md (link checks), release-process.md (live content vs the merge), ARCHITECTURE.md (source health), and the plan in docs/plans/source-health.md, which also records what was found and left for Steven: X lists are not configured in x.yaml; the 11-02 rollback explains the lost x.yaml line; a date-skew test run needs freezegun.</li>
-    </ul>
     <p><a href="https://sgwoods.github.io/ai-briefing/releases/index.html">All release notes</a></p>
   </section>
 
@@ -106,7 +102,7 @@
 
   <section class="panel" id="repository-freshness"
            data-project-freshness="ai-briefing"
-           data-source-commit="a9406a399abc63b4b3be9ba269b95f9e31a18506"
+           data-source-commit="1604f7ecb639e374dea2d383ffa552b99318d494"
            data-source-dirty="false" aria-live="polite">
     <h2>Repository freshness</h2>
     <p>See <a href="index.html#repository-activity">the latest hub observation</a>.
