@@ -5354,7 +5354,7 @@
       "sha256": "ff9aaf6ae1e3399f2f6805108dec9d2604c9dc2137688f1362e0bceee6664fde"
     }
   ],
-  "evaluated_on": "2026-11-22",
+  "evaluated_on": "2026-11-23",
   "file_kinds": {
     "binary": 180,
     "code": 811,
@@ -5387,10 +5387,10 @@
     "CONTENT-INVENTORY.md"
   ],
   "outputs_sha256": {
-    "CONTENT-INVENTORY.md": "2c19c268277b99263f28d0f66e9778f118ec9696c1bcb07201a6ab636bcdd0f3",
-    "data/content/artifacts.jsonl": "a38137653537d2f052a5314e67a0a93c330e03eed876229b49f40e43455d1544",
-    "data/content/sources.json": "a292d082e27994b33bf88c7b4d5312eb4530ce32ccbd13e5fbf0166f0ac2c4ce",
-    "data/content/update-requests.json": "b241d6d1103c9653dc1b3bfe4e7d52c4cc0e06fcd677a18b520983d0aa61e965"
+    "CONTENT-INVENTORY.md": "cf1a48b1dcf9ccebfbc2e6672864b66c79c2a1f307d74ce09ad54c39e07c832e",
+    "data/content/artifacts.jsonl": "b905d76932748bcafa4360a6fa8b1f1f2c007f266068c519850fd2dd4b8e8062",
+    "data/content/sources.json": "128b3dc56386ee1065252da9594e5c46bb3e3b50262ba662773c82abc6bc5ba8",
+    "data/content/update-requests.json": "759a9d77f1daf2fea52fa882f786a7799f6bc55516250f48a17e344329bd0c6f"
   },
   "project_status_manifests": [
     "canberra-research/project-manifest.json",
@@ -5427,7 +5427,7 @@
   "schema_version": "1.0",
   "scope": "Every versioned regular file plus descriptors for the five generated inventory outputs; no ignored/untracked/private files or other repositories.",
   "source_records": 136,
-  "source_tree_sha256": "81c1b62d203ff263e6f5733296e4d1ad31349754baa782af77e4329cac0c0d38",
+  "source_tree_sha256": "5f8c5eafcce26dd965d40a526bfdf475782b168969f00c88986db8064c6e1ce1",
   "sources": "data/content/sources.json",
   "update_requests": "data/content/update-requests.json"
 }

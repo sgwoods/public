@@ -1,6 +1,6 @@
 {
-  "catalog_source_tree_sha256": "81c1b62d203ff263e6f5733296e4d1ad31349754baa782af77e4329cac0c0d38",
-  "evaluated_on": "2026-11-22",
+  "catalog_source_tree_sha256": "5f8c5eafcce26dd965d40a526bfdf475782b168969f00c88986db8064c6e1ce1",
+  "evaluated_on": "2026-11-23",
   "requests": [
     {
       "automatic_fetch": false,
