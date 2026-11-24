@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "attempted_at": "2026-11-22T20:23:34+00:00",
+  "attempted_at": "2026-11-24T00:04:19+00:00",
   "date_basis": "committer",
   "definition": "Reachable public default-branch commits; archive scopes exclude their own project manifest. Includes merges; not a progress or release metric.",
   "projects": {
@@ -8,12 +8,12 @@
       "repo": "sgwoods/Codex-Test1",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "3439042ec7716033ebd3ed9e4b95eb942e3083f9",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": [
         {
           "sha": "dd8c469f9864a038b35208d45efd59356ea72fbc",
@@ -325,105 +325,13 @@
       "repo": "sgwoods/star-swarm",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "cc463a0be578aee2131976b3556c633a2d5181b5",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": [
-        {
-          "sha": "f92d474eb91f76bf606660ed39bb31444b2134f3",
-          "date": "2026-09-28T15:01:47Z"
-        },
-        {
-          "sha": "79e1401d7d51e3d1fbce0582c84b56adb7e93808",
-          "date": "2026-09-28T15:06:24Z"
-        },
-        {
-          "sha": "e1438369d589678f99e8efcea9525b2565c1c02f",
-          "date": "2026-09-28T16:13:19Z"
-        },
-        {
-          "sha": "6f8a6a6a0ebd276c25c1f2d0fdcb976645fd8fd6",
-          "date": "2026-09-28T16:14:23Z"
-        },
-        {
-          "sha": "34bc8c44e81e2dbb3dc4bca0d94f9f5d6475eabe",
-          "date": "2026-09-28T17:21:43Z"
-        },
-        {
-          "sha": "3d1c9ded21cea4e994c5b23c57f30b4b4f63c6fc",
-          "date": "2026-09-28T17:39:06Z"
-        },
-        {
-          "sha": "9898194fe8f12b815718f295006b895664db6e16",
-          "date": "2026-09-28T18:16:14Z"
-        },
-        {
-          "sha": "9b05f4b35299af7244a189798cec7ee1069cae34",
-          "date": "2026-09-28T18:16:52Z"
-        },
-        {
-          "sha": "2fcd041a3f213e99433a4ad141ef8f0b34496654",
-          "date": "2026-09-28T18:26:46Z"
-        },
-        {
-          "sha": "0a4e9b7714e8a3cbe891eff6a0a58959f7cde9f5",
-          "date": "2026-09-30T14:26:35Z"
-        },
-        {
-          "sha": "f9ed359ec1eb5c86b40ddd6080ec4f702136d72a",
-          "date": "2026-09-30T14:36:26Z"
-        },
-        {
-          "sha": "ca906424cfa82d7da2a51cc26b139c54c68594be",
-          "date": "2026-10-01T18:56:59Z"
-        },
-        {
-          "sha": "852069b8661bcc05dd995e0f9bc2c2749562b4c5",
-          "date": "2026-10-02T17:11:52Z"
-        },
-        {
-          "sha": "f9fbff6beb3e06338b33fff5173e0e64b63c7626",
-          "date": "2026-10-03T13:01:00Z"
-        },
-        {
-          "sha": "cecf7ed2004f19b4fa0eb0f9ab9e9a05bd9cd826",
-          "date": "2026-10-03T13:48:47Z"
-        },
-        {
-          "sha": "705ab2499ada24e7e3834b1d0bdbaf96a5a5da5e",
-          "date": "2026-10-04T13:46:21Z"
-        },
-        {
-          "sha": "9738ca3c7bdd02755537a08f1465f66bb62e29cc",
-          "date": "2026-10-04T13:58:32Z"
-        },
-        {
-          "sha": "7704f8a5f8123615842e00177ee29db69ee7cf19",
-          "date": "2026-10-04T16:34:27Z"
-        },
-        {
-          "sha": "a5484222773294454e2992f426efc4f8201008c3",
-          "date": "2026-10-04T16:49:00Z"
-        },
-        {
-          "sha": "f0b87b644d494a9e503c8a0bd9d4cf4062b2a1c9",
-          "date": "2026-10-04T18:33:22Z"
-        },
-        {
-          "sha": "992ef0606cee96c49ce567bad3f93e8a13985719",
-          "date": "2026-10-04T18:45:33Z"
-        },
-        {
-          "sha": "02ff1a323d2deceadf1b838b8448f8cb1edf5ee7",
-          "date": "2026-10-04T18:58:54Z"
-        },
-        {
-          "sha": "7d301845c3759a738c1851a2522ca98fe9f91283",
-          "date": "2026-10-04T19:13:42Z"
-        },
         {
           "sha": "cdfa80f8b2dfa55c7899f44495bd470919b780c3",
           "date": "2026-10-05T17:12:57Z"
@@ -522,33 +430,24 @@
       "repo": "sgwoods/sci-fi-ai-dystopian-project",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "a0e7cc899512bdb0c3973903851387f993387b99",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
-      "commits": [
-        {
-          "sha": "3cbaf56f1f4aa31d01b536e747f25bbdd8c83b5c",
-          "date": "2026-10-03T16:49:37Z"
-        },
-        {
-          "sha": "a0e7cc899512bdb0c3973903851387f993387b99",
-          "date": "2026-10-04T14:12:47Z"
-        }
-      ]
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
+      "commits": []
     },
     "ai-briefing": {
       "repo": "sgwoods/news-pipeline",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "1604f7ecb639e374dea2d383ffa552b99318d494",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": [
         {
           "sha": "c850c4671c294d295957afbda05bb89ba9b6b22a",
@@ -828,35 +727,25 @@
       "repo": "sgwoods/phd-renovation",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "f5eea43d71fd35a48bd235b96088e495ce6d157d",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
-      "commits": [
-        {
-          "sha": "f5eea43d71fd35a48bd235b96088e495ce6d157d",
-          "date": "2026-10-03T16:49:36Z"
-        }
-      ]
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
+      "commits": []
     },
     "mmath-renovation": {
       "repo": "sgwoods/mmath-renovation",
       "paths": [],
       "exclude_paths": [],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
       "branch_commit": "408c9330f9dc7abfca86b8ae30a13808a6c4073c",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
-      "commits": [
-        {
-          "sha": "408c9330f9dc7abfca86b8ae30a13808a6c4073c",
-          "date": "2026-10-03T16:49:39Z"
-        }
-      ]
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
+      "commits": []
     },
     "steven-woods-research": {
       "repo": "sgwoods/public",
@@ -867,12 +756,12 @@
       "exclude_paths": [
         "steven-woods-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c759ccb165e4410bf37cc8262119a8410d533d8e",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "branch_commit": "b484eca1978b21e7005e6d619b3f949e83856840",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": [
         {
           "sha": "91f8ab38c9047e48d3edcd0527f1c4010ce60251",
@@ -917,12 +806,12 @@
       "exclude_paths": [
         "google-canada-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c759ccb165e4410bf37cc8262119a8410d533d8e",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "branch_commit": "b484eca1978b21e7005e6d619b3f949e83856840",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": []
     },
     "inovia-research": {
@@ -934,12 +823,12 @@
       "exclude_paths": [
         "inovia-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c759ccb165e4410bf37cc8262119a8410d533d8e",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "branch_commit": "b484eca1978b21e7005e6d619b3f949e83856840",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": []
     },
     "canberra-research": {
@@ -951,12 +840,12 @@
       "exclude_paths": [
         "canberra-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c759ccb165e4410bf37cc8262119a8410d533d8e",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "branch_commit": "b484eca1978b21e7005e6d619b3f949e83856840",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": []
     },
     "sei-pittsburgh-research": {
@@ -968,12 +857,12 @@
       "exclude_paths": [
         "sei-pittsburgh-research/project-manifest.json"
       ],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c759ccb165e4410bf37cc8262119a8410d533d8e",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "branch_commit": "b484eca1978b21e7005e6d619b3f949e83856840",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": []
     },
     "quack-com": {
@@ -985,12 +874,12 @@
       "exclude_paths": [
         "quack/project-manifest.json"
       ],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c759ccb165e4410bf37cc8262119a8410d533d8e",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
+      "branch_commit": "b484eca1978b21e7005e6d619b3f949e83856840",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
       "commits": [
         {
           "sha": "91f8ab38c9047e48d3edcd0527f1c4010ce60251",
@@ -1007,18 +896,13 @@
       "exclude_paths": [
         "kinitos-neoedge/project-manifest.json"
       ],
-      "attempted_at": "2026-11-22T20:23:34+00:00",
+      "attempted_at": "2026-11-24T00:04:19+00:00",
       "state": "ok",
       "branch": "main",
-      "branch_commit": "c759ccb165e4410bf37cc8262119a8410d533d8e",
-      "checked_at": "2026-11-22T20:23:34+00:00",
-      "window_start": "2026-09-28T04:00:00+00:00",
-      "commits": [
-        {
-          "sha": "993055ee863c2c560581ac0593ce5972ca04963f",
-          "date": "2026-10-03T16:47:32Z"
-        }
-      ]
+      "branch_commit": "b484eca1978b21e7005e6d619b3f949e83856840",
+      "checked_at": "2026-11-24T00:04:19+00:00",
+      "window_start": "2026-10-05T04:00:00+00:00",
+      "commits": []
     }
   }
 }
