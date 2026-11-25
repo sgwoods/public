@@ -1,6 +1,6 @@
 {
-  "catalog_source_tree_sha256": "672aac418d91196ff2dad219b538ca1e1aedd61391d8013e2c2de441cfe1b4e6",
-  "evaluated_on": "2026-11-24",
+  "catalog_source_tree_sha256": "0aed54dfe06e27a597d7b1784a6c5a5dc7bff22d05796a5a5d25bbdd432d8152",
+  "evaluated_on": "2026-11-25",
   "requests": [
     {
       "automatic_fetch": false,
@@ -108,6 +108,18 @@
       "request_id": "3f2c9c134d9ebc92e83b",
       "state": "proposed_not_sent",
       "suggested_action": "Request a user-approved public-only copy in private staging; do not use account UI or browser cookies.",
+      "target": "sgwoods/public_maintainer"
+    },
+    {
+      "automatic_fetch": false,
+      "changes_release_status": false,
+      "content_id": "steven-woods-research/src-steven-current-inovia-team-profile",
+      "owner": "steven-woods-research",
+      "priority": "normal",
+      "reason": "external_review_due",
+      "request_id": "4281377f58a46acb9f6f",
+      "state": "proposed_not_sent",
+      "suggested_action": "Recheck the public source and record evidence/outcome; retain historical captures and release labels.",
       "target": "sgwoods/public_maintainer"
     },
     {
@@ -312,6 +324,18 @@
       "request_id": "9a3a2bdc274b1227e8f3",
       "state": "proposed_not_sent",
       "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
+      "target": "sgwoods/public_maintainer"
+    },
+    {
+      "automatic_fetch": false,
+      "changes_release_status": false,
+      "content_id": "steven-woods-research/src-steven-current-bio-link",
+      "owner": "steven-woods-research",
+      "priority": "normal",
+      "reason": "external_review_due",
+      "request_id": "9ea50061bfdf6927d95f",
+      "state": "proposed_not_sent",
+      "suggested_action": "Recheck the public source and record evidence/outcome; retain historical captures and release labels.",
       "target": "sgwoods/public_maintainer"
     },
     {
