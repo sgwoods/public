@@ -4326,7 +4326,7 @@
       "content_id": "quack/src-quack-2004-en",
       "freshness": {
         "assessment": "historical_not_age_expired",
-        "days_since_successful_check": 30,
+        "days_since_successful_check": 31,
         "last_successful_external_check": "2026-10-26",
         "policy": "historical"
       },
@@ -4380,7 +4380,7 @@
       "content_id": "quack/src-quack-2006-us20060149633a1",
       "freshness": {
         "assessment": "historical_not_age_expired",
-        "days_since_successful_check": 30,
+        "days_since_successful_check": 31,
         "last_successful_external_check": "2026-10-26",
         "policy": "historical"
       },
@@ -4475,7 +4475,7 @@
       "content_id": "quack/src-quack-2014-jeromy-carriere",
       "freshness": {
         "assessment": "historical_not_age_expired",
-        "days_since_successful_check": 30,
+        "days_since_successful_check": 31,
         "last_successful_external_check": "2026-10-26",
         "policy": "historical"
       },
@@ -5320,8 +5320,8 @@
       "canonical_url": "https://www.sei.cmu.edu/authors/s-carriere/",
       "content_id": "sei-pittsburgh-research/src-sei-current-jeromy-carriere-author-profile",
       "freshness": {
-        "assessment": "within_review_window",
-        "days_since_successful_check": 29,
+        "assessment": "review_due",
+        "days_since_successful_check": 30,
         "evidence_path": "data/content/checks/2026-10-27.json",
         "last_successful_external_check": "2026-10-27",
         "policy": "current_profile",
@@ -5374,8 +5374,8 @@
       "canonical_url": "https://www.sei.cmu.edu/authors/steve-woods/",
       "content_id": "sei-pittsburgh-research/src-sei-current-steve-woods-author-profile",
       "freshness": {
-        "assessment": "within_review_window",
-        "days_since_successful_check": 29,
+        "assessment": "review_due",
+        "days_since_successful_check": 30,
         "evidence_path": "data/content/checks/2026-10-27.json",
         "last_successful_external_check": "2026-10-27",
         "policy": "current_profile",
@@ -6463,8 +6463,8 @@
       "canonical_url": "https://about.me/sgw",
       "content_id": "steven-woods-research/src-steven-current-about-me-profile",
       "freshness": {
-        "assessment": "within_review_window",
-        "days_since_successful_check": 29,
+        "assessment": "review_due",
+        "days_since_successful_check": 30,
         "evidence_path": "data/content/checks/2026-10-27.json",
         "last_successful_external_check": "2026-10-27",
         "policy": "current_profile",
@@ -6524,7 +6524,7 @@
       "content_id": "steven-woods-research/src-steven-current-bio-link",
       "freshness": {
         "assessment": "review_due",
-        "days_since_successful_check": 30,
+        "days_since_successful_check": 31,
         "last_successful_external_check": "2026-10-26",
         "policy": "current_profile",
         "review_after_days": 30
@@ -6586,7 +6586,7 @@
       "content_id": "steven-woods-research/src-steven-current-inovia-team-profile",
       "freshness": {
         "assessment": "review_due",
-        "days_since_successful_check": 30,
+        "days_since_successful_check": 31,
         "last_successful_external_check": "2026-10-26",
         "policy": "current_profile",
         "review_after_days": 30
@@ -6692,7 +6692,7 @@
       "content_id": "steven-woods-research/src-steven-current-wikipedia-page",
       "freshness": {
         "assessment": "within_review_window",
-        "days_since_successful_check": 30,
+        "days_since_successful_check": 31,
         "last_successful_external_check": "2026-10-26",
         "policy": "current_profile",
         "review_after_days": 90

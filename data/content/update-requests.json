@@ -1,6 +1,6 @@
 {
-  "catalog_source_tree_sha256": "0aed54dfe06e27a597d7b1784a6c5a5dc7bff22d05796a5a5d25bbdd432d8152",
-  "evaluated_on": "2026-11-25",
+  "catalog_source_tree_sha256": "b7312754427233edc899abc7717924a495b5d1691202032e0b99cca7e73b4df1",
+  "evaluated_on": "2026-11-26",
   "requests": [
     {
       "automatic_fetch": false,
@@ -60,6 +60,18 @@
       "request_id": "17fa4f1c8caf491d28ca",
       "state": "proposed_not_sent",
       "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
+      "target": "sgwoods/public_maintainer"
+    },
+    {
+      "automatic_fetch": false,
+      "changes_release_status": false,
+      "content_id": "sei-pittsburgh-research/src-sei-current-steve-woods-author-profile",
+      "owner": "sei-pittsburgh-research",
+      "priority": "normal",
+      "reason": "external_review_due",
+      "request_id": "1bae03787052bcf1a937",
+      "state": "proposed_not_sent",
+      "suggested_action": "Recheck the public source and record evidence/outcome; retain historical captures and release labels.",
       "target": "sgwoods/public_maintainer"
     },
     {
@@ -228,6 +240,18 @@
       "request_id": "67161d7863b7b126bd89",
       "state": "proposed_not_sent",
       "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
+      "target": "sgwoods/public_maintainer"
+    },
+    {
+      "automatic_fetch": false,
+      "changes_release_status": false,
+      "content_id": "steven-woods-research/src-steven-current-about-me-profile",
+      "owner": "steven-woods-research",
+      "priority": "normal",
+      "reason": "external_review_due",
+      "request_id": "6ee4f661b4492e13dab8",
+      "state": "proposed_not_sent",
+      "suggested_action": "Recheck the public source and record evidence/outcome; retain historical captures and release labels.",
       "target": "sgwoods/public_maintainer"
     },
     {
@@ -456,6 +480,18 @@
       "request_id": "b12cbb1a5670721b8572",
       "state": "proposed_not_sent",
       "suggested_action": "Check related archive editions first; request a permitted public-safe copy from the source owner. Do not bypass access controls.",
+      "target": "sgwoods/public_maintainer"
+    },
+    {
+      "automatic_fetch": false,
+      "changes_release_status": false,
+      "content_id": "sei-pittsburgh-research/src-sei-current-jeromy-carriere-author-profile",
+      "owner": "sei-pittsburgh-research",
+      "priority": "normal",
+      "reason": "external_review_due",
+      "request_id": "b464425ab9c2c432ab1b",
+      "state": "proposed_not_sent",
+      "suggested_action": "Recheck the public source and record evidence/outcome; retain historical captures and release labels.",
       "target": "sgwoods/public_maintainer"
     },
     {
